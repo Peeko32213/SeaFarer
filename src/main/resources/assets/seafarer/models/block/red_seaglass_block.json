@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "all": "seafarer:block/red_seaglass_block"
+  }
+}

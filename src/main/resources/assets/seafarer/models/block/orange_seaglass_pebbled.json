@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "seafarer:block/orange_seaglass_pebbled"
+  }
+}

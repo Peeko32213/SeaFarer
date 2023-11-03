@@ -1,0 +1,79 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.sunfish.swim": {
+			"loop": true,
+			"bones": {
+				"Body": {
+					"rotation": {
+						"vector": [0, 0, "((query.anim_time - 0.1) * 11.25) * 0.3"]
+					}
+				},
+				"Tail": {
+					"rotation": {
+						"vector": [0, "Math.cos((query.anim_time - 0.11) * 90) * 25", 0]
+					}
+				},
+				"Fin1": {
+					"rotation": {
+						"vector": [0, "Math.cos((query.anim_time - 0.3) * 90) * 10", 0]
+					}
+				},
+				"Fin2": {
+					"rotation": {
+						"vector": [0, "Math.cos((query.anim_time - 0.3) * 90) * -10", 0]
+					}
+				},
+				"TopFin": {
+					"rotation": {
+						"vector": [0, 0, "Math.cos((query.anim_time - 0.5) * 90) * -20"]
+					}
+				},
+				"BottomFin": {
+					"rotation": {
+						"vector": [0, 0, "Math.cos((query.anim_time - 0.5) * 90) * 20"]
+					}
+				}
+			}
+		},
+		"animation.sunfish.beached": {
+			"loop": true,
+			"bones": {
+				"Body": {
+					"rotation": {
+						"vector": ["Math.cos((query.anim_time - 0.3) * 90) * 2", 0, 90]
+					},
+					"position": {
+						"vector": [0, -11, 0]
+					}
+				},
+				"Tail": {
+					"rotation": {
+						"vector": [0, "Math.cos((query.anim_time - 0.11) * 360) * 10", 0]
+					}
+				},
+				"Fin1": {
+					"rotation": {
+						"vector": [0, "Math.cos((query.anim_time - 0.3) * 360) * 10", 0]
+					}
+				},
+				"Fin2": {
+					"rotation": {
+						"vector": [0, "Math.cos((query.anim_time - 0.3) * 360) * -10", 0]
+					}
+				},
+				"TopFin": {
+					"rotation": {
+						"vector": [0, 0, "Math.cos((query.anim_time - 0.5) * 180) * -10"]
+					}
+				},
+				"BottomFin": {
+					"rotation": {
+						"vector": [0, 0, "Math.cos((query.anim_time - 0.5) * 180) * 10"]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

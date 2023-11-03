@@ -1,0 +1,28 @@
+
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="MIT"
+[[mods]]
+modId="seafarer" #mandatory
+version="0.0.1" #mandatory
+displayName="Sea Farer" #mandatory
+authors="Peeko32213 and Omaypaty for Block Textures" #optional
+description='''A Mod that expands on minecrafts oceans in a unique way'''
+[[dependencies.seafarer]] #optional
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="${forge_version_range}" #mandatory
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.seafarer]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.geckolib]]
+modId="geckolib"
+mandatory=true
+versionRange="[4.2,)"
+ordering="BEFORE"
+side="BOTH"

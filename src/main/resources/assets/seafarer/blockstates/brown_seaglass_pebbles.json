@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "seafarer:block/brown_seaglass_pebbles"
+      },
+      {
+        "model": "seafarer:block/brown_seaglass_pebbles",
+        "y": 90
+      },
+      {
+        "model": "seafarer:block/brown_seaglass_pebbles",
+        "y": 180
+      },
+      {
+        "model": "seafarer:block/brown_seaglass_pebbles",
+        "y": 270
+      }
+    ]
+  }
+}
