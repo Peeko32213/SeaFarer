@@ -42,10 +42,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'unusualprehistory'
+            property 'forge.enabledGameTestNamespaces', 'seafarer'
 
             mods {
-                unusualprehistory {
+                seafarer {
                     source sourceSets.main
                 }
             }
@@ -58,10 +58,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'unusualprehistory'
+            property 'forge.enabledGameTestNamespaces', 'seafarer'
 
             mods {
-                unusualprehistory {
+                seafarer {
                     source sourceSets.main
                 }
             }
@@ -74,10 +74,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            property 'forge.enabledGameTestNamespaces', 'unusualprehistory'
+            property 'forge.enabledGameTestNamespaces', 'seafarer'
 
             mods {
-                unusualprehistory {
+                seafarer {
                     source sourceSets.main
                 }
             }
@@ -90,10 +90,10 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'unusualprehistory', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'seafarer', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
-                unusualprehistory {
+                seafarer {
                     source sourceSets.main
                 }
             }
