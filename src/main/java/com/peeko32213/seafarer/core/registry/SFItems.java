@@ -17,7 +17,7 @@ public class SFItems {
             SeaFarer.MODID);
 
     public static final RegistryObject<ForgeSpawnEggItem> SUNFISH_SPAWN_EGG = registerSpawnEggs("sunfish_spawn_egg",
-            SFEntities.SUNFISH , 0x611f0d, 0x33436b);
+            SFEntities.SUNFISH , 0x628398, 0x33436b);
 
     private static RegistryObject<ForgeSpawnEggItem> registerSpawnEggs(String name, Supplier<? extends EntityType<? extends Mob>> type, int backgroundColor, int highlightColor) {
         return ITEMS.register(name, () -> new ForgeSpawnEggItem(type, backgroundColor, highlightColor,new Item.Properties()));
