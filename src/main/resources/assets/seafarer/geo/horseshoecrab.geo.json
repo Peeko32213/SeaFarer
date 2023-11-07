@@ -1,0 +1,50 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.horseshoecrab",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "Body",
+					"pivot": [0, 2, 2],
+					"cubes": [
+						{"origin": [-4.5, 0, -3], "size": [9, 3, 9], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "Ridge1",
+					"parent": "Body",
+					"pivot": [2, 3.375, 2],
+					"rotation": [0, 0, 2.5],
+					"cubes": [
+						{"origin": [2, 3.375, -2], "size": [2, 0, 7], "uv": [0, 12]}
+					]
+				},
+				{
+					"name": "Ridge2",
+					"parent": "Body",
+					"pivot": [-2, 3.375, 2],
+					"rotation": [0, 0, -2.5],
+					"cubes": [
+						{"origin": [-4, 3.375, -2], "size": [2, 0, 7], "uv": [0, 12], "mirror": true}
+					]
+				},
+				{
+					"name": "Tail",
+					"parent": "Body",
+					"pivot": [0, 1, 6],
+					"cubes": [
+						{"origin": [-0.5, 0, 6], "size": [1, 1, 6], "uv": [11, 12]}
+					]
+				}
+			]
+		}
+	]
+}

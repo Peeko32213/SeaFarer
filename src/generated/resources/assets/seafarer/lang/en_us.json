@@ -34,7 +34,11 @@
   "block.seafarer.yellow_seaglass_bricks": "Red Sea Glass Bricks",
   "block.seafarer.yellow_seaglass_pebbled": "Pebbled Red Sea Glass",
   "block.seafarer.yellow_seaglass_pebbles": "Red Sea Glass",
+  "entity.seafarer.crab": "Crab",
+  "entity.seafarer.horseshoe_crab": "Horseshoe Crab",
   "entity.seafarer.sunfish": "Sunfish",
+  "item.seafarer.crab_spawn_egg": "Crab Spawn Egg",
+  "item.seafarer.horseshoe_crab_spawn_egg": "Horseshoe Crab Spawn Egg",
   "item.seafarer.sunfish_spawn_egg": "Sunfish Spawn Egg",
   "itemGroup.seafarer": "Seafarer"
 }
