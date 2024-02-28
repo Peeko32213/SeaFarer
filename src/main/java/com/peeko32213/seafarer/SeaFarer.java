@@ -1,10 +1,7 @@
 package com.peeko32213.seafarer;
 
 import com.peeko32213.seafarer.client.event.ClientEvents;
-import com.peeko32213.seafarer.core.registry.SFBlocks;
-import com.peeko32213.seafarer.core.registry.SFCreativeTabs;
-import com.peeko32213.seafarer.core.registry.SFEntities;
-import com.peeko32213.seafarer.core.registry.SFItems;
+import com.peeko32213.seafarer.core.registry.*;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -38,6 +35,7 @@ public class SeaFarer{
         SFItems.ITEMS.register(modEventBus);
         SFCreativeTabs.DEF_REG.register(modEventBus);
         SFEntities.ENTITIES.register(modEventBus);
+        SFFeatures.FEATURES.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

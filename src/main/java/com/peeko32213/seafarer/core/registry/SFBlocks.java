@@ -1,6 +1,8 @@
 package com.peeko32213.seafarer.core.registry;
 
 import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.common.block.AlgaeBlock;
+import com.peeko32213.seafarer.common.block.AlgaePlantBlock;
 import com.peeko32213.seafarer.common.block.SFWallBlock;
 import com.peeko32213.seafarer.common.block.SFFloorLayerBlock;
 import net.minecraft.world.item.BlockItem;
@@ -299,6 +301,127 @@ public class SFBlocks {
                     .noOcclusion()
                     .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> DEAD_STARFISH_BLUE = register("dead_starfish_blue",
+            () -> new SFWallBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.CORAL_BLOCK)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> DEAD_STARFISH_GREEN = register("dead_starfish_green",
+            () -> new SFWallBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.CORAL_BLOCK)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> DEAD_STARFISH_PINK = register("dead_starfish_pink",
+            () -> new SFWallBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.CORAL_BLOCK)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> DEAD_STARFISH_PURPLE = register("dead_starfish_purple",
+            () -> new SFWallBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.CORAL_BLOCK)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> DEAD_STARFISH_RED = register("dead_starfish_red",
+            () -> new SFWallBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.CORAL_BLOCK)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> DEAD_STARFISH_YELLOW = register("dead_starfish_yellow",
+            () -> new SFWallBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.CORAL_BLOCK)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> SHELL_BLOCK_CLAMS = register("shell_block_clams",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.BONE_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<Block> SHELL_BLOCK_MOSAIC = register("shell_block_mosaic",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.BONE_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<RotatedPillarBlock> SHELL_BLOCK_PILLAR = register("shell_block_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties
+                    .copy(Blocks.BONE_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<Block> SHELL_BLOCK_SHINGLES = register("shell_block_shingles",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.BONE_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<Block> SHELL_BLOCK_SPIRAL = register("shell_block_spiral",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.BONE_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<Block> ALGAE_BLOCK = register("algae_block",
+            () -> new AlgaeBlock(BlockBehaviour.Properties
+                    .copy(Blocks.MOSS_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<Block> ALGAE_CARPET = register("algae_carpet",
+            () -> new SFWallBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.MOSS_CARPET)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> ALGAE_PLANT = registerBlock("algae_plant", () ->
+            new AlgaePlantBlock(BlockBehaviour.Properties.
+                    copy(Blocks.LILY_PAD)
+                    .noCollission()
+                    .instabreak()
+                    .sound(SoundType.WET_GRASS)));
+
+
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<Block> block) {
         RegistryObject<? extends Block> ret = BLOCKS.register(name, block);
         SFItems.ITEMS.register(name, () -> new BlockItem(ret.get(), new Item.Properties()));

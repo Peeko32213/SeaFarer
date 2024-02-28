@@ -2,6 +2,7 @@ package com.peeko32213.seafarer.datagen;
 
 import com.mojang.logging.LogUtils;
 import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.core.registry.SFBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
@@ -59,6 +60,23 @@ public class BlockstateGenerator extends BlockStateProvider {
         //fenceGateBlock(UPBlocks.PETRIFIED_WOOD_FENCE_GATE.get(), new ResourceLocation(UnusualPrehistory.MODID, "block/petrified_planks"));
         //signBlock((StandingSignBlock) UPBlocks.PETRIFIED_WOOD_SIGN.get(), (WallSignBlock) UPBlocks.PETRIFIED_WOOD_WALL_SIGN.get(), new ResourceLocation(UnusualPrehistory.MODID, "block/petrified_wood_sign"));
 
+        logBlock(SFBlocks.SHELL_BLOCK_PILLAR.get());
+        simpleBlockItem(SFBlocks.SHELL_BLOCK_PILLAR.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_PILLAR.get()))));
+
+        simpleBlock(SFBlocks.SHELL_BLOCK_CLAMS.get());
+        simpleBlockItem(SFBlocks.SHELL_BLOCK_CLAMS.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_CLAMS.get()))));
+
+        simpleBlock(SFBlocks.SHELL_BLOCK_MOSAIC.get());
+        simpleBlockItem(SFBlocks.SHELL_BLOCK_MOSAIC.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_MOSAIC.get()))));
+
+        simpleBlock(SFBlocks.SHELL_BLOCK_SHINGLES.get());
+        simpleBlockItem(SFBlocks.SHELL_BLOCK_SHINGLES.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_SHINGLES.get()))));
+
+        simpleBlock(SFBlocks.SHELL_BLOCK_SPIRAL.get());
+        simpleBlockItem(SFBlocks.SHELL_BLOCK_SPIRAL.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_SPIRAL.get()))));
+
+        simpleBlock(SFBlocks.ALGAE_BLOCK.get());
+        simpleBlockItem(SFBlocks.ALGAE_BLOCK.get(), existingModel((getName(SFBlocks.ALGAE_BLOCK.get()))));
 
     }
 

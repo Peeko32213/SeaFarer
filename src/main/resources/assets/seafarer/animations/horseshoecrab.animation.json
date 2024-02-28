@@ -16,6 +16,21 @@
 				}
 			}
 		},
+		"animation.horseshoecrab.move": {
+			"loop": true,
+			"bones": {
+				"Body": {
+					"rotation": {
+						"vector": [0, 0, "Math.cos((query.anim_time) * 180) * 5"]
+					}
+				},
+				"Tail": {
+					"rotation": {
+						"vector": [0, "Math.cos((query.anim_time - 0.4) * 180) * 15", 0]
+					}
+				}
+			}
+		},
 		"animation.horseshoecrab.idle": {
 			"loop": true,
 			"bones": {
@@ -30,7 +45,6 @@
 			}
 		},
 		"animation.horseshoecrab.burrow": {
-			"loop": "hold_on_last_frame",
 			"animation_length": 0.5,
 			"bones": {
 				"Body": {

@@ -1,5 +1,6 @@
 package com.peeko32213.seafarer.common.entity;
 
+import com.peeko32213.seafarer.common.entity.goal.GrazeAlgaeGoal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -27,11 +28,18 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class EntityCrab extends Animal implements GeoAnimatable {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-    private static final RawAnimation CRAB_WALK = RawAnimation.begin().thenLoop("animation.crab.walk");
-    private static final RawAnimation CRAB_SPRINT = RawAnimation.begin().thenLoop("animation.crab.sprint");
     private static final RawAnimation CRAB_IDLE = RawAnimation.begin().thenLoop("animation.crab.idle");
+    private static final RawAnimation CRAB_WALK = RawAnimation.begin().thenLoop("animation.crab.walk");
+    private static final RawAnimation CRAB_SPRINT_1 = RawAnimation.begin().thenLoop("animation.crab.sprint1");
+    private static final RawAnimation CRAB_SPRINT_2 = RawAnimation.begin().thenLoop("animation.crab.sprint2");
+    private static final RawAnimation CRAB_SWIM = RawAnimation.begin().thenLoop("animation.crab.swim");
     private static final RawAnimation CRAB_GRAZE = RawAnimation.begin().thenLoop("animation.crab.graze");
-
+    private static final RawAnimation CRAB_DANCE = RawAnimation.begin().thenLoop("animation.crab.dance");
+    private static final RawAnimation CRAB_BLINK = RawAnimation.begin().thenLoop("animation.crab.blink");
+    private static final RawAnimation CRAB_CLAW = RawAnimation.begin().thenLoop("animation.crab.claw");
+    private static final RawAnimation CRAB_WAVE = RawAnimation.begin().thenLoop("animation.crab.wave");
+    private GrazeAlgaeGoal eatBlockGoal;
+    private int eatAnimationTick;
     public EntityCrab(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
@@ -47,6 +55,8 @@ public class EntityCrab extends Animal implements GeoAnimatable {
 
     @Override
     protected void registerGoals() {
+        this.eatBlockGoal = new GrazeAlgaeGoal(this);
+        this.goalSelector.addGoal(2, this.eatBlockGoal);
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new PanicGoal(this, 1.25D));
         this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1.0D));
@@ -69,28 +79,79 @@ public class EntityCrab extends Animal implements GeoAnimatable {
         return null;
     }
 
+
+    @Override
     public void aiStep() {
         super.aiStep();
+
+        if (this.level().isClientSide) {
+            this.eatAnimationTick = Math.max(0, this.eatAnimationTick - 1);
+        }
+    }
+
+    @Override
+    public void handleEntityEvent(byte pId) {
+        if (pId == 10) {
+            this.eatAnimationTick = 40;
+        } else {
+            super.handleEntityEvent(pId);
+        }
+    }
+
+    public boolean isEating() {
+        return this.eatAnimationTick > 0;
+    }
+
+    private boolean isStillEnough() {
+        return this.getDeltaMovement().horizontalDistance() < 0.05;
     }
 
     protected <E extends EntityCrab> PlayState Controller(final software.bernie.geckolib.core.animation.AnimationState<E> event) {
-        if (!(event.getLimbSwingAmount() > -0.06F && event.getLimbSwingAmount() < 0.06F)) {
+        if (!(event.getLimbSwingAmount() > -0.06F && event.getLimbSwingAmount() < 0.06F) && !this.isInWater()) {
             if (this.isSprinting()) {
-                event.setAndContinue(CRAB_SPRINT);
-                event.getController().setAnimationSpeed(2.3D);
+                event.setAndContinue(CRAB_SPRINT_1);
+                event.getController().setAnimationSpeed(2.0F);
             } else {
                 event.setAndContinue(CRAB_WALK);
             }
         }
-        else {
-            event.setAndContinue(CRAB_IDLE);
+        if (this.isInWater()) {
+            event.setAndContinue(CRAB_SWIM);
+            event.getController().setAnimationSpeed(1.0F);
+            return PlayState.CONTINUE;
+        }
+        else if (random.nextInt(500) == 0){
+            float rand = random.nextFloat();
+            if (rand < 0.10F) {
+                return event.setAndContinue(CRAB_WAVE);
+            }
+            if (rand < 0.15F) {
+                return event.setAndContinue(CRAB_CLAW);
+            }
+            if (rand < 0.77F) {
+                return event.setAndContinue(CRAB_BLINK);
+            }
+            if (rand < 0.9F) {
+                event.setAndContinue(CRAB_IDLE);
+            }
+            event.getController().forceAnimationReset();
         }
         return PlayState.CONTINUE;
+    }
+
+    protected <E extends EntityCrab> PlayState eatController(final software.bernie.geckolib.core.animation.AnimationState<E> event) {
+        if (this.isEating()) {
+            event.setAndContinue(CRAB_GRAZE);
+            return PlayState.CONTINUE;
+        }
+        event.getController().forceAnimationReset();
+        return PlayState.STOP;
     }
 
     @Override
     public void registerControllers(final AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(new AnimationController<>(this, "Normal", 5, this::Controller));
+        controllers.add(new AnimationController<>(this, "Graze", 5, this::eatController));
     }
 
 

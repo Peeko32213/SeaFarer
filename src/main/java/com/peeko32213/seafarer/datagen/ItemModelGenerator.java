@@ -29,6 +29,8 @@ public class ItemModelGenerator extends ItemModelProvider {
         }
 
     }
+
+
     private void toBlock(RegistryObject<Block> b) {
         toBlockModel(b, b.getId().getPath());
     }

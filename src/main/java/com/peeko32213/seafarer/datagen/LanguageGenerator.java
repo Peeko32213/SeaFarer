@@ -71,6 +71,13 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.STARFISH_RED, "Red Starfish");
         addBlock(SFBlocks.STARFISH_YELLOW, "Yellow Starfish");
 
+        addBlock(SFBlocks.DEAD_STARFISH_BLUE, "Dead Blue Starfish");
+        addBlock(SFBlocks.DEAD_STARFISH_GREEN, "Dead Green Starfish");
+        addBlock(SFBlocks.DEAD_STARFISH_PINK, "Dead Pink Starfish");
+        addBlock(SFBlocks.DEAD_STARFISH_PURPLE, "Dead Purple Starfish");
+        addBlock(SFBlocks.DEAD_STARFISH_RED, "Dead Red Starfish");
+        addBlock(SFBlocks.DEAD_STARFISH_YELLOW, "Dead Yellow Starfish");
+
         addEntityType(SFEntities.SUNFISH, "Sunfish");
         addItem(SFItems.SUNFISH_SPAWN_EGG, "Sunfish Spawn Egg");
 
@@ -79,6 +86,16 @@ public class LanguageGenerator extends LanguageProvider {
 
         addEntityType(SFEntities.HORSESHOE_CRAB, "Horseshoe Crab");
         addItem(SFItems.HORSESHOE_CRAB_SPAWN_EGG, "Horseshoe Crab Spawn Egg");
+
+        addBlock(SFBlocks.SHELL_BLOCK_PILLAR, "Shell Pillar");
+        addBlock(SFBlocks.SHELL_BLOCK_MOSAIC, "Shell Mosaic");
+        addBlock(SFBlocks.SHELL_BLOCK_SHINGLES, "Shell Shingles");
+        addBlock(SFBlocks.SHELL_BLOCK_CLAMS, "Shell Clams");
+        addBlock(SFBlocks.SHELL_BLOCK_SPIRAL, "Shell Spiral");
+
+        addBlock(SFBlocks.ALGAE_BLOCK, "Algae Block");
+        addBlock(SFBlocks.ALGAE_CARPET, "Algae Carpet");
+        addBlock(SFBlocks.ALGAE_PLANT, "Algae Growth");
 
     }
 
