@@ -3,6 +3,7 @@ package com.peeko32213.seafarer.client.event;
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.client.model.ModelCrab;
 import com.peeko32213.seafarer.client.model.ModelHorseshoeCrab;
+import com.peeko32213.seafarer.client.model.ModelMarineIguana;
 import com.peeko32213.seafarer.client.model.ModelSunfish;
 import com.peeko32213.seafarer.client.render.LivingEntityRenderer;
 import com.peeko32213.seafarer.core.registry.SFBlocks;
@@ -37,6 +38,7 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.PURPLE_SEAGLASS_PEBBLES.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.RED_SEAGLASS_PEBBLES.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.YELLOW_SEAGLASS_PEBBLES.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.WHITE_SEAGLASS_PEBBLES.get(), RenderType.translucent());
 
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.STARFISH_BLUE.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.STARFISH_GREEN.get(), RenderType.translucent());
@@ -63,6 +65,8 @@ public final class ClientEvents {
         event.registerEntityRenderer(SFEntities.SUNFISH.get(), e -> new LivingEntityRenderer<>(e, new ModelSunfish()));
         event.registerEntityRenderer(SFEntities.CRAB.get(), e -> new LivingEntityRenderer<>(e, new ModelCrab()));
         event.registerEntityRenderer(SFEntities.HORSESHOE_CRAB.get(), e -> new LivingEntityRenderer<>(e, new ModelHorseshoeCrab()));
+        event.registerEntityRenderer(SFEntities.MARINE_IGUANA.get(), e -> new LivingEntityRenderer<>(e, new ModelMarineIguana()));
+
     }
 
 }

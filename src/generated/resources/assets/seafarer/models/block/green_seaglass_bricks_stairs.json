@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "seafarer:block/green_seaglass_bricks",
+    "side": "seafarer:block/green_seaglass_bricks",
+    "top": "seafarer:block/green_seaglass_bricks"
+  }
+}

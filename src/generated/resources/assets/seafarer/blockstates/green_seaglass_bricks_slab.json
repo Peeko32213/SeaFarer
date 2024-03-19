@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "seafarer:block/green_seaglass_bricks_slab"
+    },
+    "type=double": {
+      "model": "seafarer:block/green_seaglass_bricks"
+    },
+    "type=top": {
+      "model": "seafarer:block/green_seaglass_bricks_slab_top"
+    }
+  }
+}

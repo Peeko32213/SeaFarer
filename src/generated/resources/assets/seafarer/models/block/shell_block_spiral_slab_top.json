@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "seafarer:block/shell_block_spiral",
+    "side": "seafarer:block/shell_block_spiral",
+    "top": "seafarer:block/shell_block_spiral"
+  }
+}

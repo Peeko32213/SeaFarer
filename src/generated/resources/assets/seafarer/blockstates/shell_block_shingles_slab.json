@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "seafarer:block/shell_block_shingles_slab"
+    },
+    "type=double": {
+      "model": "seafarer:block/shell_block_shingles_slab"
+    },
+    "type=top": {
+      "model": "seafarer:block/shell_block_shingles_slab_top"
+    }
+  }
+}

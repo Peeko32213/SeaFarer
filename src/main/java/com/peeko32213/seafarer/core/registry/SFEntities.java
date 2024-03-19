@@ -3,6 +3,7 @@ package com.peeko32213.seafarer.core.registry;
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.common.entity.EntityCrab;
 import com.peeko32213.seafarer.common.entity.EntityHorseshoeCrab;
+import com.peeko32213.seafarer.common.entity.EntityMarineIguana;
 import com.peeko32213.seafarer.common.entity.EntitySunfish;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -29,4 +30,7 @@ public class SFEntities {
             () -> EntityType.Builder.of(EntityHorseshoeCrab::new, MobCategory.CREATURE).sized(0.7F, 0.5F)
                     .build(new ResourceLocation(SeaFarer.MODID, "horseshoe_crab").toString()));
 
+    public static final RegistryObject<EntityType<EntityMarineIguana>> MARINE_IGUANA = ENTITIES.register("marine_iguana",
+            () -> EntityType.Builder.of(EntityMarineIguana::new, MobCategory.CREATURE).sized(0.7F, 0.5F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "marine_iguana").toString()));
 }

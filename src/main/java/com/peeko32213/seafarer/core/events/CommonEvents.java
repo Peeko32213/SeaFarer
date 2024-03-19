@@ -19,6 +19,7 @@ public class CommonEvents {
         event.put(SFEntities.SUNFISH.get(), EntitySunfish.createAttributes().build());
         event.put(SFEntities.CRAB.get(), EntityCrab.createAttributes().build());
         event.put(SFEntities.HORSESHOE_CRAB.get(), EntityHorseshoeCrab.createAttributes().build());
+        event.put(SFEntities.MARINE_IGUANA.get(), EntityHorseshoeCrab.createAttributes().build());
 
     }
 
