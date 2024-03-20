@@ -28,13 +28,18 @@ public class AlgaeBlock extends MossBlock implements BonemealableBlock {
         return pLevel.getBlockState(pPos.above()).isAir();
     }
 
-    public boolean isBonemealSuccess(Level pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
+    @Override
+    public boolean isBonemealSuccess(Level p_153802_, RandomSource p_153803_, BlockPos p_153804_, BlockState p_153805_)
+    {
         return true;
     }
 
-    @Override
-    public void performBonemeal(ServerLevel serverLevel, RandomSource randomSource, BlockPos blockPos, BlockState blockState) {
-        Registry<ConfiguredFeature<?, ?>> configuredFeatureRegistry = serverLevel.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE);
-        configuredFeatureRegistry.get(SFFeatures.ALGAE_PATCH_BONEMEAL).place(serverLevel, serverLevel.getChunkSource().getGenerator(), randomSource, blockPos.above());
+    public void performBonemeal(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
+        pLevel.registryAccess().registry(Registries.CONFIGURED_FEATURE).flatMap((p_258973_) -> {
+            return p_258973_.getHolder(SFFeatures.ALGAE_PATCH_BONEMEAL);
+        }).ifPresent((p_255669_) -> {
+            p_255669_.value().place(pLevel, pLevel.getChunkSource().getGenerator(), pRandom, pPos.above());
+        });
     }
+
 }
