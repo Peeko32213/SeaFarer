@@ -121,6 +121,37 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.DEAD_STARFISH_RED, "Dead Red Starfish");
         addBlock(SFBlocks.DEAD_STARFISH_YELLOW, "Dead Yellow Starfish");
 
+        addBlock(SFBlocks.CLAM_SHELL, "Clam Shell");
+        addBlock(SFBlocks.HORN_SHELL, "Horn Shell");
+        addBlock(SFBlocks.SPIKY_SHELL, "Spiky Shell");
+        addBlock(SFBlocks.SPIRAL_SHELL, "Spiral Shell");
+        addBlock(SFBlocks.SWIRL_SHELL, "Swirl Shell");
+
+        addBlock(SFBlocks.CLAM_SHELL_BRICKS, "Clam Shell Bricks");
+        addBlock(SFBlocks.CLAM_SHELL_BRICKS_SLAB, "Clam Shell Brick Slabs");
+        addBlock(SFBlocks.CLAM_SHELL_BRICKS_STAIRS, "Clam Shell Brick Stairs");
+        addBlock(SFBlocks.CLAM_SHELL_PILLAR, "Clam Shell Pillar");
+
+        addBlock(SFBlocks.HORN_SHELL_BRICKS, "Horn Shell Bricks");
+        addBlock(SFBlocks.HORN_SHELL_BRICKS_SLAB, "Horn Shell Brick Slabs");
+        addBlock(SFBlocks.HORN_SHELL_BRICKS_STAIRS, "Horn Shell Brick Stairs");
+        addBlock(SFBlocks.HORN_SHELL_PILLAR, "Horn Shell Pillar");
+
+        addBlock(SFBlocks.SPIKY_SHELL_BRICKS, "Spiky Shell Bricks");
+        addBlock(SFBlocks.SPIKY_SHELL_BRICKS_SLAB, "Spiky Shell Brick Slabs");
+        addBlock(SFBlocks.SPIKY_SHELL_BRICKS_STAIRS, "Spiky Shell Brick Stairs");
+        addBlock(SFBlocks.SPIKY_SHELL_PILLAR, "Spiky Shell Pillar");
+
+        addBlock(SFBlocks.SPIRAL_SHELL_BRICKS, "Spiral Shell Bricks");
+        addBlock(SFBlocks.SPIRAL_SHELL_BRICKS_SLAB, "Spiral Shell Brick Slabs");
+        addBlock(SFBlocks.SPIRAL_SHELL_BRICKS_STAIRS, "Spiral Shell Brick Stairs");
+        addBlock(SFBlocks.SPIRAL_SHELL_PILLAR, "Spiral Shell Pillar");
+
+        addBlock(SFBlocks.SWIRL_SHELL_BRICKS, "Swirl Shell Bricks");
+        addBlock(SFBlocks.SWIRL_SHELL_BRICKS_SLAB, "Swirl Shell Brick Slabs");
+        addBlock(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS, "Swirl Shell Brick Stairs");
+        addBlock(SFBlocks.SWIRL_SHELL_PILLAR, "Swirl Shell Pillar");
+
         addEntityType(SFEntities.SUNFISH, "Sunfish");
         addItem(SFItems.SUNFISH_SPAWN_EGG, "Sunfish Spawn Egg");
 
@@ -132,24 +163,6 @@ public class LanguageGenerator extends LanguageProvider {
 
         addEntityType(SFEntities.MARINE_IGUANA, "Marine Iguana");
         addItem(SFItems.MARINE_IGUANA_SPAWN_EGG, "Marine Iguana Spawn Egg");
-
-        addBlock(SFBlocks.SHELL_BLOCK_PILLAR, "Shell Pillar");
-
-        addBlock(SFBlocks.SHELL_BLOCK_MOSAIC, "Shell Mosaic");
-        addBlock(SFBlocks.SHELL_BLOCK_MOSAIC_STAIRS, "Shell Mosaic Stair");
-        addBlock(SFBlocks.SHELL_BLOCK_MOSAIC_SLAB, "Shell Mosaic Slab");
-
-        addBlock(SFBlocks.SHELL_BLOCK_SHINGLES, "Shell Shingles");
-        addBlock(SFBlocks.SHELL_BLOCK_SHINGLES_STAIRS, "Shell Shingles Stair");
-        addBlock(SFBlocks.SHELL_BLOCK_SHINGLES_SLAB, "Shell Shingles Slab");
-
-        addBlock(SFBlocks.SHELL_BLOCK_CLAMS, "Shell Clams");
-        addBlock(SFBlocks.SHELL_BLOCK_CLAMS_STAIRS, "Shell Clams Stair");
-        addBlock(SFBlocks.SHELL_BLOCK_CLAMS_SLAB, "Shell Clams Slab");
-
-        addBlock(SFBlocks.SHELL_BLOCK_SPIRAL, "Shell Spiral");
-        addBlock(SFBlocks.SHELL_BLOCK_SPIRAL_STAIRS, "Shell Spiral Stair");
-        addBlock(SFBlocks.SHELL_BLOCK_SPIRAL_SLAB, "Shell Spiral Slab");
 
         addBlock(SFBlocks.ALGAE_BLOCK, "Algae Block");
         addBlock(SFBlocks.ALGAE_CARPET, "Algae Carpet");

@@ -1,10 +1,7 @@
 package com.peeko32213.seafarer.core.registry;
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.common.block.AlgaeBlock;
-import com.peeko32213.seafarer.common.block.AlgaePlantBlock;
-import com.peeko32213.seafarer.common.block.SFWallBlock;
-import com.peeko32213.seafarer.common.block.SFFloorLayerBlock;
+import com.peeko32213.seafarer.common.block.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -574,73 +571,6 @@ public class SFBlocks {
                     .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> SHELL_BLOCK_CLAMS = register("shell_block_clams",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.BONE_BLOCK)
-                    .strength(3.0F, 10.0F)
-                    .requiresCorrectToolForDrops()
-            ));
-
-    public static final RegistryObject<SlabBlock> SHELL_BLOCK_CLAMS_SLAB = registerBlock("shell_block_clams_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(SHELL_BLOCK_CLAMS.get())));
-
-    public static final RegistryObject<StairBlock> SHELL_BLOCK_CLAMS_STAIRS = registerBlock("shell_block_clams_stairs",
-            () -> new StairBlock(() -> SHELL_BLOCK_CLAMS.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(SHELL_BLOCK_CLAMS.get())));
-
-
-    public static final RegistryObject<Block> SHELL_BLOCK_MOSAIC = register("shell_block_mosaic",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.BONE_BLOCK)
-                    .strength(3.0F, 10.0F)
-                    .requiresCorrectToolForDrops()
-            ));
-
-    public static final RegistryObject<SlabBlock> SHELL_BLOCK_MOSAIC_SLAB = registerBlock("shell_block_mosaic_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(SHELL_BLOCK_MOSAIC.get())));
-
-    public static final RegistryObject<StairBlock> SHELL_BLOCK_MOSAIC_STAIRS = registerBlock("shell_block_mosaic_stairs",
-            () -> new StairBlock(() -> SHELL_BLOCK_MOSAIC.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(SHELL_BLOCK_MOSAIC.get())));
-
-    public static final RegistryObject<RotatedPillarBlock> SHELL_BLOCK_PILLAR = register("shell_block_pillar",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties
-                    .copy(Blocks.BONE_BLOCK)
-                    .strength(3.0F, 10.0F)
-                    .requiresCorrectToolForDrops()
-            ));
-
-    public static final RegistryObject<Block> SHELL_BLOCK_SHINGLES = register("shell_block_shingles",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.BONE_BLOCK)
-                    .strength(3.0F, 10.0F)
-                    .requiresCorrectToolForDrops()
-            ));
-
-    public static final RegistryObject<SlabBlock> SHELL_BLOCK_SHINGLES_SLAB = registerBlock("shell_block_shingles_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(SHELL_BLOCK_SHINGLES.get())));
-
-    public static final RegistryObject<StairBlock> SHELL_BLOCK_SHINGLES_STAIRS = registerBlock("shell_block_shingles_stairs",
-            () -> new StairBlock(() -> SHELL_BLOCK_SHINGLES.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(SHELL_BLOCK_SHINGLES.get())));
-    public static final RegistryObject<Block> SHELL_BLOCK_SPIRAL = register("shell_block_spiral",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.BONE_BLOCK)
-                    .strength(3.0F, 10.0F)
-                    .requiresCorrectToolForDrops()
-            ));
-
-    public static final RegistryObject<SlabBlock> SHELL_BLOCK_SPIRAL_SLAB = registerBlock("shell_block_spiral_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(SHELL_BLOCK_SPIRAL.get())));
-
-    public static final RegistryObject<StairBlock> SHELL_BLOCK_SPIRAL_STAIRS = registerBlock("shell_block_spiral_stairs",
-            () -> new StairBlock(() -> SHELL_BLOCK_SPIRAL.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(SHELL_BLOCK_SPIRAL.get())));
-
     public static final RegistryObject<Block> ALGAE_BLOCK = register("algae_block",
             () -> new AlgaeBlock(BlockBehaviour.Properties
                     .copy(Blocks.MOSS_BLOCK)
@@ -665,6 +595,145 @@ public class SFBlocks {
                     .instabreak()
                     .sound(SoundType.WET_GRASS)));
 
+    public static final RegistryObject<Block> CLAM_SHELL = registerBlock("clam_shell",
+            () ->  new ShellDecorationBlock(BlockBehaviour.Properties.copy(Blocks.GRAVEL).strength(1.5F).requiresCorrectToolForDrops(),
+                    Block.box(3.25, 0, 5, 12.25, 2, 11),
+                    Block.box(6.25, 0, 11, 9.25, 1, 13)
+            ));
+
+    public static final RegistryObject<Block> HORN_SHELL = registerBlock("horn_shell",
+            () ->  new ShellDecorationBlock(BlockBehaviour.Properties.copy(Blocks.GRAVEL).strength(1.5F).requiresCorrectToolForDrops(),
+                    Block.box(5, 0, 4, 9, 3, 10),
+                    Block.box(6, 0, 10, 12, 2, 12)
+            ));
+
+    public static final RegistryObject<Block> SPIKY_SHELL = registerBlock("spiky_shell",
+            () ->  new ShellDecorationBlock(BlockBehaviour.Properties.copy(Blocks.GRAVEL).strength(1.5F).requiresCorrectToolForDrops(),
+                    Block.box(5, 0, 4, 10, 3, 10),
+                    Block.box(5, 0, 10, 7, 2, 14)
+            ));
+
+    public static final RegistryObject<Block> SPIRAL_SHELL = registerBlock("spiral_shell",
+            () ->  new ShellDecorationBlock(BlockBehaviour.Properties.copy(Blocks.GRAVEL).strength(1.5F).requiresCorrectToolForDrops(),
+                    Block.box(5.75, 0, 3.5, 10.75, 3, 9.5),
+                    Block.box(6.75, 0, 9.5, 8.75, 2, 13.5)
+            ));
+
+    public static final RegistryObject<Block> SWIRL_SHELL = registerBlock("swirl_shell",
+            () ->  new ShellDecorationBlock(BlockBehaviour.Properties.copy(Blocks.GRAVEL).strength(1.5F).requiresCorrectToolForDrops(),
+                    Block.box(4, 0, 5, 11, 3, 12),
+                    Block.box(4, -0.5, 4, 6, 3.5, 8)
+            ));
+
+    // NEW SHELL BLOCKS
+
+    public static final RegistryObject<Block> CLAM_SHELL_BRICKS = register("clam_shell_bricks",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.BONE_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<SlabBlock> CLAM_SHELL_BRICKS_SLAB = registerBlock("clam_shell_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties
+                    .copy(CLAM_SHELL_BRICKS.get())));
+
+    public static final RegistryObject<StairBlock> CLAM_SHELL_BRICKS_STAIRS = registerBlock("clam_shell_bricks_stairs",
+            () -> new StairBlock(() -> CLAM_SHELL_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
+                    .copy(CLAM_SHELL_BRICKS.get())));
+
+    public static final RegistryObject<RotatedPillarBlock> CLAM_SHELL_PILLAR = register("clam_shell_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties
+                    .copy(SFBlocks.CLAM_SHELL_BRICKS.get())
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> HORN_SHELL_BRICKS = register("horn_shell_bricks",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.BONE_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<SlabBlock> HORN_SHELL_BRICKS_SLAB = registerBlock("horn_shell_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties
+                    .copy(HORN_SHELL_BRICKS.get())));
+
+    public static final RegistryObject<StairBlock> HORN_SHELL_BRICKS_STAIRS = registerBlock("horn_shell_bricks_stairs",
+            () -> new StairBlock(() -> HORN_SHELL_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
+                    .copy(HORN_SHELL_BRICKS.get())));
+
+    public static final RegistryObject<RotatedPillarBlock> HORN_SHELL_PILLAR = register("horn_shell_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties
+                    .copy(SFBlocks.HORN_SHELL_BRICKS.get())
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<Block> SPIKY_SHELL_BRICKS = register("spiky_shell_bricks",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.BONE_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<SlabBlock> SPIKY_SHELL_BRICKS_SLAB = registerBlock("spiky_shell_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties
+                    .copy(SPIKY_SHELL_BRICKS.get())));
+
+    public static final RegistryObject<StairBlock> SPIKY_SHELL_BRICKS_STAIRS = registerBlock("spiky_shell_bricks_stairs",
+            () -> new StairBlock(() -> SPIKY_SHELL_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
+                    .copy(SPIKY_SHELL_BRICKS.get())));
+
+    public static final RegistryObject<RotatedPillarBlock> SPIKY_SHELL_PILLAR = register("spiky_shell_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties
+                    .copy(SFBlocks.SPIKY_SHELL_BRICKS.get())
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<Block> SPIRAL_SHELL_BRICKS = register("spiral_shell_bricks",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.BONE_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<SlabBlock> SPIRAL_SHELL_BRICKS_SLAB = registerBlock("spiral_shell_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties
+                    .copy(SPIRAL_SHELL_BRICKS.get())));
+
+    public static final RegistryObject<StairBlock> SPIRAL_SHELL_BRICKS_STAIRS = registerBlock("spiral_shell_bricks_stairs",
+            () -> new StairBlock(() -> SPIRAL_SHELL_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
+                    .copy(SPIRAL_SHELL_BRICKS.get())));
+
+    public static final RegistryObject<RotatedPillarBlock> SPIRAL_SHELL_PILLAR = register("spiral_shell_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties
+                    .copy(SFBlocks.SPIRAL_SHELL_BRICKS.get())
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<Block> SWIRL_SHELL_BRICKS = register("swirl_shell_bricks",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.BONE_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<SlabBlock> SWIRL_SHELL_BRICKS_SLAB = registerBlock("swirl_shell_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties
+                    .copy(SWIRL_SHELL_BRICKS.get())));
+
+    public static final RegistryObject<StairBlock> SWIRL_SHELL_BRICKS_STAIRS = registerBlock("swirl_shell_bricks_stairs",
+            () -> new StairBlock(() -> SWIRL_SHELL_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
+                    .copy(SWIRL_SHELL_BRICKS.get())));
+
+    public static final RegistryObject<RotatedPillarBlock> SWIRL_SHELL_PILLAR = register("swirl_shell_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties
+                    .copy(SFBlocks.SWIRL_SHELL_BRICKS.get())
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
 
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<Block> block) {
         RegistryObject<? extends Block> ret = BLOCKS.register(name, block);

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "seafarer:block/shell_block_mosaic",
-    "side": "seafarer:block/shell_block_mosaic",
-    "top": "seafarer:block/shell_block_mosaic"
-  }
-}

@@ -62,21 +62,6 @@ public class BlockstateGenerator extends BlockStateProvider {
         //fenceGateBlock(UPBlocks.PETRIFIED_WOOD_FENCE_GATE.get(), new ResourceLocation(UnusualPrehistory.MODID, "block/petrified_planks"));
         //signBlock((StandingSignBlock) UPBlocks.PETRIFIED_WOOD_SIGN.get(), (WallSignBlock) UPBlocks.PETRIFIED_WOOD_WALL_SIGN.get(), new ResourceLocation(UnusualPrehistory.MODID, "block/petrified_wood_sign"));
 
-        logBlock(SFBlocks.SHELL_BLOCK_PILLAR.get());
-        simpleBlockItem(SFBlocks.SHELL_BLOCK_PILLAR.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_PILLAR.get()))));
-
-        simpleBlock(SFBlocks.SHELL_BLOCK_CLAMS.get());
-        simpleBlockItem(SFBlocks.SHELL_BLOCK_CLAMS.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_CLAMS.get()))));
-
-        simpleBlock(SFBlocks.SHELL_BLOCK_MOSAIC.get());
-        simpleBlockItem(SFBlocks.SHELL_BLOCK_MOSAIC.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_MOSAIC.get()))));
-
-        simpleBlock(SFBlocks.SHELL_BLOCK_SHINGLES.get());
-        simpleBlockItem(SFBlocks.SHELL_BLOCK_SHINGLES.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_SHINGLES.get()))));
-
-        simpleBlock(SFBlocks.SHELL_BLOCK_SPIRAL.get());
-        simpleBlockItem(SFBlocks.SHELL_BLOCK_SPIRAL.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_SPIRAL.get()))));
-
         simpleBlock(SFBlocks.ALGAE_BLOCK.get());
         simpleBlockItem(SFBlocks.ALGAE_BLOCK.get(), existingModel((getName(SFBlocks.ALGAE_BLOCK.get()))));
 
@@ -226,33 +211,77 @@ public class BlockstateGenerator extends BlockStateProvider {
         stairsBlock(SFBlocks.YELLOW_SEAGLASS_TILES_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/yellow_seaglass_tiles"));
         simpleBlockItem(SFBlocks.YELLOW_SEAGLASS_TILES_STAIRS.get(), existingModel((getName(SFBlocks.YELLOW_SEAGLASS_TILES_STAIRS.get()))));
 
-        // Shells
+        //NEW SHELL BLOCKS
 
-        slabBlock(SFBlocks.SHELL_BLOCK_CLAMS_SLAB.get(), resourceBlock(getName(SFBlocks.SHELL_BLOCK_CLAMS_SLAB.get())), new ResourceLocation(SeaFarer.MODID, "block/shell_block_clams"));
-        simpleBlockItem(SFBlocks.SHELL_BLOCK_CLAMS_SLAB.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_CLAMS_SLAB.get()))));
+        //Clam
 
-        stairsBlock(SFBlocks.SHELL_BLOCK_CLAMS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/shell_block_clams"));
-        simpleBlockItem(SFBlocks.SHELL_BLOCK_CLAMS_STAIRS.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_CLAMS_STAIRS.get()))));
+        logBlock(SFBlocks.CLAM_SHELL_PILLAR.get());
+        simpleBlockItem(SFBlocks.CLAM_SHELL_PILLAR.get(), existingModel((getName(SFBlocks.CLAM_SHELL_PILLAR.get()))));
 
+        simpleBlock(SFBlocks.CLAM_SHELL_BRICKS.get());
+        simpleBlockItem(SFBlocks.CLAM_SHELL_BRICKS.get(), existingModel((getName(SFBlocks.CLAM_SHELL_BRICKS.get()))));
 
-        slabBlock(SFBlocks.SHELL_BLOCK_MOSAIC_SLAB.get(), resourceBlock(getName(SFBlocks.SHELL_BLOCK_MOSAIC_SLAB.get())), new ResourceLocation(SeaFarer.MODID, "block/shell_block_mosaic"));
-        simpleBlockItem(SFBlocks.SHELL_BLOCK_MOSAIC_SLAB.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_MOSAIC_SLAB.get()))));
+        slabBlock(SFBlocks.CLAM_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SFBlocks.CLAM_SHELL_BRICKS_SLAB.get())), new ResourceLocation(SeaFarer.MODID, "block/clam_shell_bricks"));
+        simpleBlockItem(SFBlocks.CLAM_SHELL_BRICKS_SLAB.get(), existingModel((getName(SFBlocks.CLAM_SHELL_BRICKS_SLAB.get()))));
 
-        stairsBlock(SFBlocks.SHELL_BLOCK_MOSAIC_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/shell_block_mosaic"));
-        simpleBlockItem(SFBlocks.SHELL_BLOCK_MOSAIC_STAIRS.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_MOSAIC_STAIRS.get()))));
+        stairsBlock(SFBlocks.CLAM_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/clam_shell_bricks"));
+        simpleBlockItem(SFBlocks.CLAM_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SFBlocks.CLAM_SHELL_BRICKS_STAIRS.get()))));
 
+        //Horn
 
-        slabBlock(SFBlocks.SHELL_BLOCK_SHINGLES_SLAB.get(), resourceBlock(getName(SFBlocks.SHELL_BLOCK_SHINGLES_SLAB.get())), new ResourceLocation(SeaFarer.MODID, "block/shell_block_shingles"));
-        simpleBlockItem(SFBlocks.SHELL_BLOCK_SHINGLES_SLAB.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_SHINGLES_SLAB.get()))));
+        logBlock(SFBlocks.HORN_SHELL_PILLAR.get());
+        simpleBlockItem(SFBlocks.HORN_SHELL_PILLAR.get(), existingModel((getName(SFBlocks.HORN_SHELL_PILLAR.get()))));
 
-        stairsBlock(SFBlocks.SHELL_BLOCK_SHINGLES_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/shell_block_shingles"));
-        simpleBlockItem(SFBlocks.SHELL_BLOCK_SHINGLES_STAIRS.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_SHINGLES_STAIRS.get()))));
+        simpleBlock(SFBlocks.HORN_SHELL_BRICKS.get());
+        simpleBlockItem(SFBlocks.HORN_SHELL_BRICKS.get(), existingModel((getName(SFBlocks.HORN_SHELL_BRICKS.get()))));
 
-        slabBlock(SFBlocks.SHELL_BLOCK_SPIRAL_SLAB.get(), resourceBlock(getName(SFBlocks.SHELL_BLOCK_SPIRAL_SLAB.get())), new ResourceLocation(SeaFarer.MODID, "block/shell_block_spiral"));
-        simpleBlockItem(SFBlocks.SHELL_BLOCK_SPIRAL_SLAB.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_SPIRAL_SLAB.get()))));
+        slabBlock(SFBlocks.HORN_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SFBlocks.HORN_SHELL_BRICKS_SLAB.get())), new ResourceLocation(SeaFarer.MODID, "block/horn_shell_bricks"));
+        simpleBlockItem(SFBlocks.HORN_SHELL_BRICKS_SLAB.get(), existingModel((getName(SFBlocks.HORN_SHELL_BRICKS_SLAB.get()))));
 
-        stairsBlock(SFBlocks.SHELL_BLOCK_SPIRAL_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/shell_block_spiral"));
-        simpleBlockItem(SFBlocks.SHELL_BLOCK_SPIRAL_STAIRS.get(), existingModel((getName(SFBlocks.SHELL_BLOCK_SPIRAL_STAIRS.get()))));
+        stairsBlock(SFBlocks.HORN_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/horn_shell_bricks"));
+        simpleBlockItem(SFBlocks.HORN_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SFBlocks.HORN_SHELL_BRICKS_STAIRS.get()))));
+
+        //Horn
+
+        logBlock(SFBlocks.SPIKY_SHELL_PILLAR.get());
+        simpleBlockItem(SFBlocks.SPIKY_SHELL_PILLAR.get(), existingModel((getName(SFBlocks.SPIKY_SHELL_PILLAR.get()))));
+
+        simpleBlock(SFBlocks.SPIKY_SHELL_BRICKS.get());
+        simpleBlockItem(SFBlocks.SPIKY_SHELL_BRICKS.get(), existingModel((getName(SFBlocks.SPIKY_SHELL_BRICKS.get()))));
+
+        slabBlock(SFBlocks.SPIKY_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SFBlocks.SPIKY_SHELL_BRICKS_SLAB.get())), new ResourceLocation(SeaFarer.MODID, "block/spiky_shell_bricks"));
+        simpleBlockItem(SFBlocks.SPIKY_SHELL_BRICKS_SLAB.get(), existingModel((getName(SFBlocks.SPIKY_SHELL_BRICKS_SLAB.get()))));
+
+        stairsBlock(SFBlocks.SPIKY_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/spiky_shell_bricks"));
+        simpleBlockItem(SFBlocks.SPIKY_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SFBlocks.SPIKY_SHELL_BRICKS_STAIRS.get()))));
+
+        //Spiral
+
+        logBlock(SFBlocks.SPIRAL_SHELL_PILLAR.get());
+        simpleBlockItem(SFBlocks.SPIRAL_SHELL_PILLAR.get(), existingModel((getName(SFBlocks.SPIRAL_SHELL_PILLAR.get()))));
+
+        simpleBlock(SFBlocks.SPIRAL_SHELL_BRICKS.get());
+        simpleBlockItem(SFBlocks.SPIRAL_SHELL_BRICKS.get(), existingModel((getName(SFBlocks.SPIRAL_SHELL_BRICKS.get()))));
+
+        slabBlock(SFBlocks.SPIRAL_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SFBlocks.SPIRAL_SHELL_BRICKS_SLAB.get())), new ResourceLocation(SeaFarer.MODID, "block/spiral_shell_bricks"));
+        simpleBlockItem(SFBlocks.SPIRAL_SHELL_BRICKS_SLAB.get(), existingModel((getName(SFBlocks.SPIRAL_SHELL_BRICKS_SLAB.get()))));
+
+        stairsBlock(SFBlocks.SPIRAL_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/spiral_shell_bricks"));
+        simpleBlockItem(SFBlocks.SPIRAL_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SFBlocks.SPIRAL_SHELL_BRICKS_STAIRS.get()))));
+
+        //Spiral
+
+        logBlock(SFBlocks.SWIRL_SHELL_PILLAR.get());
+        simpleBlockItem(SFBlocks.SWIRL_SHELL_PILLAR.get(), existingModel((getName(SFBlocks.SWIRL_SHELL_PILLAR.get()))));
+
+        simpleBlock(SFBlocks.SWIRL_SHELL_BRICKS.get());
+        simpleBlockItem(SFBlocks.SWIRL_SHELL_BRICKS.get(), existingModel((getName(SFBlocks.SWIRL_SHELL_BRICKS.get()))));
+
+        slabBlock(SFBlocks.SWIRL_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SFBlocks.SWIRL_SHELL_BRICKS_SLAB.get())), new ResourceLocation(SeaFarer.MODID, "block/swirl_shell_bricks"));
+        simpleBlockItem(SFBlocks.SWIRL_SHELL_BRICKS_SLAB.get(), existingModel((getName(SFBlocks.SWIRL_SHELL_BRICKS_SLAB.get()))));
+
+        stairsBlock(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/swirl_shell_bricks"));
+        simpleBlockItem(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS.get()))));
     }
 
     @Override

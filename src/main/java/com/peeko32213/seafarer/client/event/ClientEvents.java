@@ -54,6 +54,12 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_STARFISH_RED.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_STARFISH_YELLOW.get(), RenderType.translucent());
 
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.CLAM_SHELL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.HORN_SHELL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.SPIKY_SHELL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.SPIRAL_SHELL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.SWIRL_SHELL.get(), RenderType.cutout());
+
 
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.FISHING_NET.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.ALGAE_PLANT.get(), RenderType.cutout());
