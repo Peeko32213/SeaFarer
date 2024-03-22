@@ -1,19 +1,21 @@
 {
   "variants": {
-    "facing=east": {
-      "model": "seafarer:block/spiky_shell",
-      "y": 90
-    },
-    "facing=north": {
-      "model": "seafarer:block/spiky_shell"
-    },
-    "facing=south": {
-      "model": "seafarer:block/spiky_shell",
-      "y": 180
-    },
-    "facing=west": {
-      "model": "seafarer:block/spiky_shell",
-      "y": 270
-    }
+    "": [
+      {
+        "model": "seafarer:block/spiky_shell"
+      },
+      {
+        "model": "seafarer:block/spiky_shell",
+        "y": 90
+      },
+      {
+        "model": "seafarer:block/spiky_shell",
+        "y": 180
+      },
+      {
+        "model": "seafarer:block/spiky_shell",
+        "y": 270
+      }
+    ]
   }
 }

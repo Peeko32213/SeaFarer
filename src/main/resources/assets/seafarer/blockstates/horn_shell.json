@@ -1,19 +1,21 @@
 {
   "variants": {
-    "facing=east": {
-      "model": "seafarer:block/horn_shell",
-      "y": 90
-    },
-    "facing=north": {
-      "model": "seafarer:block/horn_shell"
-    },
-    "facing=south": {
-      "model": "seafarer:block/horn_shell",
-      "y": 180
-    },
-    "facing=west": {
-      "model": "seafarer:block/horn_shell",
-      "y": 270
-    }
+    "": [
+      {
+        "model": "seafarer:block/horn_shell"
+      },
+      {
+        "model": "seafarer:block/horn_shell",
+        "y": 90
+      },
+      {
+        "model": "seafarer:block/horn_shell",
+        "y": 180
+      },
+      {
+        "model": "seafarer:block/horn_shell",
+        "y": 270
+      }
+    ]
   }
 }

@@ -1,4 +1,4 @@
-// 1.20.1	2024-03-19T20:42:07.1465394	Block States: seafarer
+// 1.20.1	2024-03-20T09:52:55.3856785	Block States: seafarer
 852ae8f625a40bf1f7e1caeefc4663f334e46f8f assets/seafarer/blockstates/algae_block.json
 400fef21863ea97a537534892488191fc7124ff7 assets/seafarer/blockstates/blue_seaglass_bricks_slab.json
 d2ee7317ee3f676aaddb4f6ed9e2370efca36674 assets/seafarer/blockstates/blue_seaglass_bricks_stairs.json
@@ -203,6 +203,7 @@ f725a90ac941e43103cf0148d0299d0c47cd9c2f assets/seafarer/models/item/blue_seagla
 36574ef17d9193d22fece700cef8d15944ad74e6 assets/seafarer/models/item/blue_seaglass_tiles_stairs.json
 29490e6c978f136ce71c08fedee18f3f123abafe assets/seafarer/models/item/brown_seaglass_bricks_slab.json
 10e07097e4d7b107500bfa07000a4fe2ed4b37aa assets/seafarer/models/item/brown_seaglass_bricks_stairs.json
+9af939fad0bdbd76657f25d23a00d5f11e9a00e7 assets/seafarer/models/item/brown_seaglass_tiles.json
 2b925a16ae36c965d7276720983483c54790b6d5 assets/seafarer/models/item/brown_seaglass_tiles_slab.json
 6af7c1b955ccc9962515484737961923dcf6d703 assets/seafarer/models/item/brown_seaglass_tiles_stairs.json
 e0a7f48abcefefcacfabf17e48c7fb481ea8910a assets/seafarer/models/item/clam_shell_bricks.json

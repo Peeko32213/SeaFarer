@@ -85,7 +85,7 @@ public class BlockstateGenerator extends BlockStateProvider {
         // Brown Seaglass
 
         simpleBlock(SFBlocks.BROWN_SEAGLASS_TILES.get());
-        simpleBlockItem(SFBlocks.BLUE_SEAGLASS_TILES.get(), existingModel((getName(SFBlocks.BLUE_SEAGLASS_TILES.get()))));
+        simpleBlockItem(SFBlocks.BROWN_SEAGLASS_TILES.get(), existingModel((getName(SFBlocks.BROWN_SEAGLASS_TILES.get()))));
 
         slabBlock(SFBlocks.BROWN_SEAGLASS_BRICKS_SLAB.get(), resourceBlock(getName(SFBlocks.BROWN_SEAGLASS_BRICKS.get())), new ResourceLocation(SeaFarer.MODID, "block/brown_seaglass_bricks"));
         simpleBlockItem(SFBlocks.BROWN_SEAGLASS_BRICKS_SLAB.get(), existingModel((getName(SFBlocks.BROWN_SEAGLASS_BRICKS_SLAB.get()))));
@@ -282,6 +282,9 @@ public class BlockstateGenerator extends BlockStateProvider {
 
         stairsBlock(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/swirl_shell_bricks"));
         simpleBlockItem(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS.get()))));
+
+
+
     }
 
     @Override

@@ -64,6 +64,12 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.FISHING_NET.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.ALGAE_PLANT.get(), RenderType.cutout());
 
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.SEA_HOLLY.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.SEA_THRIFT.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.BEACHGRASS.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.BEACHGRASS_FAN.get(), RenderType.cutout());
+
+
     }
 
     @SubscribeEvent

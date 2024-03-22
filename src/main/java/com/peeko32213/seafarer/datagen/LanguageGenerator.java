@@ -152,6 +152,11 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS, "Swirl Shell Brick Stairs");
         addBlock(SFBlocks.SWIRL_SHELL_PILLAR, "Swirl Shell Pillar");
 
+        addBlock(SFBlocks.BEACHGRASS, "Beach Grass");
+        addBlock(SFBlocks.BEACHGRASS_FAN, "Fanny Beach Grass");
+        addBlock(SFBlocks.SEA_HOLLY, "Sea Holly");
+        addBlock(SFBlocks.SEA_THRIFT, "Sea Thrift");
+
         addEntityType(SFEntities.SUNFISH, "Sunfish");
         addItem(SFItems.SUNFISH_SPAWN_EGG, "Sunfish Spawn Egg");
 

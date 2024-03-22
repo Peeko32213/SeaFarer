@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.pathfinder.PathComputationType;
@@ -24,15 +25,22 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-public class SFWetFloorLayerBlock extends BushBlock implements SimpleWaterloggedBlock {
-    public static final VoxelShape SHAPE = Block.box(4, 0, 5, 11, 3, 12);
+public class SFShellDecorationBlock extends BushBlock implements SimpleWaterloggedBlock {
+
+    protected  final VoxelShape Z_AXIS_AABB;
+    protected  final VoxelShape X_AXIS_AABB;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
+
+    private final Block deadBlock;
 
 
-
-    public SFWetFloorLayerBlock(Properties properties) {
+    public SFShellDecorationBlock(Properties properties, VoxelShape z_axis_aabb, VoxelShape x_axis_aabb, Block pDeadBlock) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, Boolean.valueOf(true)));
+        this.Z_AXIS_AABB = z_axis_aabb;
+        this.X_AXIS_AABB = x_axis_aabb;
+        this.deadBlock = pDeadBlock;
+        this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, Boolean.valueOf(false)));
     }
 
     @Nullable
@@ -45,6 +53,13 @@ public class SFWetFloorLayerBlock extends BushBlock implements SimpleWaterlogged
             boolean flag = fluidstate.getType() == Fluids.WATER;
             return super.getStateForPlacement(p_56089_).setValue(WATERLOGGED, Boolean.valueOf(flag));
         }
+    }
+
+    public void tick(BlockState pState, ServerLevel pLevel, BlockPos pPos, RandomSource pRandom) {
+        if (!this.scanForWater(pLevel, pPos)) {
+            pLevel.setBlock(pPos, this.deadBlock.defaultBlockState(), 2);
+        }
+
     }
 
     protected boolean scanForWater(BlockGetter pLevel, BlockPos pPos) {
@@ -60,8 +75,8 @@ public class SFWetFloorLayerBlock extends BushBlock implements SimpleWaterlogged
     }
 
     @Override
-    public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+        return pState.getValue(FACING).getAxis() == Direction.Axis.X ? X_AXIS_AABB : Z_AXIS_AABB;
     }
 
     public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pNeighborPos) {

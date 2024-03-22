@@ -6,6 +6,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -595,35 +596,92 @@ public class SFBlocks {
                     .instabreak()
                     .sound(SoundType.WET_GRASS)));
 
-    public static final RegistryObject<Block> CLAM_SHELL = registerBlock("clam_shell",
-            () ->  new ShellDecorationBlock(BlockBehaviour.Properties.copy(Blocks.GRAVEL).strength(1.5F).requiresCorrectToolForDrops(),
-                    Block.box(3.25, 0, 5, 12.25, 2, 11),
-                    Block.box(6.25, 0, 11, 9.25, 1, 13)
-            ));
+    public static final RegistryObject<Block> CLAM_SHELL = register("clam_shell",
+            () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.STONE)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> HORN_SHELL = registerBlock("horn_shell",
-            () ->  new ShellDecorationBlock(BlockBehaviour.Properties.copy(Blocks.GRAVEL).strength(1.5F).requiresCorrectToolForDrops(),
-                    Block.box(5, 0, 4, 9, 3, 10),
-                    Block.box(6, 0, 10, 12, 2, 12)
-            ));
+    public static final RegistryObject<Block> HORN_SHELL = register("horn_shell",
+            () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.STONE)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> SPIKY_SHELL = registerBlock("spiky_shell",
-            () ->  new ShellDecorationBlock(BlockBehaviour.Properties.copy(Blocks.GRAVEL).strength(1.5F).requiresCorrectToolForDrops(),
-                    Block.box(5, 0, 4, 10, 3, 10),
-                    Block.box(5, 0, 10, 7, 2, 14)
-            ));
+    public static final RegistryObject<Block> SPIKY_SHELL = register("spiky_shell",
+            () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.STONE)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> SPIRAL_SHELL = registerBlock("spiral_shell",
-            () ->  new ShellDecorationBlock(BlockBehaviour.Properties.copy(Blocks.GRAVEL).strength(1.5F).requiresCorrectToolForDrops(),
-                    Block.box(5.75, 0, 3.5, 10.75, 3, 9.5),
-                    Block.box(6.75, 0, 9.5, 8.75, 2, 13.5)
-            ));
+    public static final RegistryObject<Block> SPIRAL_SHELL = register("spiral_shell",
+            () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.STONE)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> SWIRL_SHELL = registerBlock("swirl_shell",
-            () ->  new ShellDecorationBlock(BlockBehaviour.Properties.copy(Blocks.GRAVEL).strength(1.5F).requiresCorrectToolForDrops(),
-                    Block.box(4, 0, 5, 11, 3, 12),
-                    Block.box(4, -0.5, 4, 6, 3.5, 8)
-            ));
+    public static final RegistryObject<Block> SWIRL_SHELL = register("swirl_shell",
+            () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.STONE)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> BEACHGRASS_FAN = register("beachgrass_fan",
+            () -> new SFLandFanBlock(BlockBehaviour.Properties
+                    .of()
+                    .mapColor(MapColor.TERRACOTTA_YELLOW)
+                    .noCollission().instabreak()
+                    .sound(SoundType.GRASS)
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> BEACHGRASS = register("beachgrass", () ->
+            new SFSandPlantBlock(BlockBehaviour.Properties
+                    .of().mapColor(MapColor.TERRACOTTA_YELLOW)
+                    .replaceable().noCollission()
+                    .instabreak()
+                    .sound(SoundType.GRASS)
+                    .ignitedByLava()
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> SEA_THRIFT = register("sea_thrift", () ->
+            new SFCropLikePlantBlock(BlockBehaviour.Properties
+                    .of().mapColor(MapColor.COLOR_PURPLE)
+                    .replaceable().noCollission()
+                    .instabreak()
+                    .sound(SoundType.GRASS)
+                    .ignitedByLava()
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> SEA_HOLLY = register("sea_holly", () ->
+            new SFSandPlantBlock(BlockBehaviour.Properties
+                    .of().mapColor(MapColor.TERRACOTTA_YELLOW)
+                    .replaceable().noCollission()
+                    .instabreak()
+                    .sound(SoundType.GRASS)
+                    .ignitedByLava()
+                    .pushReaction(PushReaction.DESTROY)));
+
+
 
     // NEW SHELL BLOCKS
 
