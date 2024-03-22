@@ -41,6 +41,8 @@ public class DataGenerators {
         BlockTagsGenerator blockTagGenerator = generator.addProvider(evt.includeServer(),
                 new BlockTagsGenerator(packOutput, lookupProvider, helper));
         generator.addProvider(evt.includeServer(), new ItemTagsGenerator(packOutput, lookupProvider, blockTagGenerator.contentsGetter(), helper));
+        generator.addProvider(evt.includeServer(), new WorldGenProvider(packOutput, lookupProvider));
+
     }
 
 }
