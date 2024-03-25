@@ -169,6 +169,10 @@ public class LanguageGenerator extends LanguageProvider {
         addEntityType(SFEntities.MARINE_IGUANA, "Marine Iguana");
         addItem(SFItems.MARINE_IGUANA_SPAWN_EGG, "Marine Iguana Spawn Egg");
 
+        addEntityType(SFEntities.SQUIRRELFISH, "Squirrelfish");
+        addItem(SFItems.SQUIRRELFISH_SPAWN_EGG, "Squirrelfish Spawn Egg");
+        addItem(SFItems.SQUIRRELFISH_BUCKET, "Bucket of Squirrelfish");
+
         addBlock(SFBlocks.ALGAE_BLOCK, "Algae Block");
         addBlock(SFBlocks.ALGAE_CARPET, "Algae Carpet");
         addBlock(SFBlocks.ALGAE_PLANT, "Algae Growth");

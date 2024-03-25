@@ -1,10 +1,7 @@
 package com.peeko32213.seafarer.client.event;
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.client.model.ModelCrab;
-import com.peeko32213.seafarer.client.model.ModelHorseshoeCrab;
-import com.peeko32213.seafarer.client.model.ModelMarineIguana;
-import com.peeko32213.seafarer.client.model.ModelSunfish;
+import com.peeko32213.seafarer.client.model.*;
 import com.peeko32213.seafarer.client.render.LivingEntityRenderer;
 import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFEntities;
@@ -78,6 +75,7 @@ public final class ClientEvents {
         event.registerEntityRenderer(SFEntities.CRAB.get(), e -> new LivingEntityRenderer<>(e, new ModelCrab()));
         event.registerEntityRenderer(SFEntities.HORSESHOE_CRAB.get(), e -> new LivingEntityRenderer<>(e, new ModelHorseshoeCrab()));
         event.registerEntityRenderer(SFEntities.MARINE_IGUANA.get(), e -> new LivingEntityRenderer<>(e, new ModelMarineIguana()));
+        event.registerEntityRenderer(SFEntities.SQUIRRELFISH.get(), e -> new LivingEntityRenderer<>(e, new ModelSquirrelfish()));
 
     }
 

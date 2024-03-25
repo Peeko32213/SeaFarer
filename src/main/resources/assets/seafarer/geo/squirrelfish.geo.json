@@ -1,0 +1,99 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.squirrelfish",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0.5, 3, 0]
+				},
+				{
+					"name": "Body",
+					"parent": "root",
+					"pivot": [0.5, 3, 0],
+					"cubes": [
+						{"origin": [-2.5, 2, -5], "size": [5, 4, 4], "uv": [0, 0]},
+						{"origin": [-1.5, 0, -6], "size": [3, 2, 5], "uv": [11, 8]},
+						{"origin": [-1.5, 0, -1], "size": [3, 6, 4], "uv": [0, 11]}
+					]
+				},
+				{
+					"name": "SideFin1",
+					"parent": "Body",
+					"pivot": [1.5, 2, -1],
+					"rotation": [13.30938, 24.7489, 2.3719],
+					"cubes": [
+						{"origin": [1.5, 0, -1], "size": [0, 2, 3], "uv": [10, 8]}
+					]
+				},
+				{
+					"name": "SideFin2",
+					"parent": "Body",
+					"pivot": [-1.5, 2, -1],
+					"rotation": [13.30938, -24.7489, -2.3719],
+					"cubes": [
+						{"origin": [-1.5, 0, -1], "size": [0, 2, 3], "uv": [10, 8], "mirror": true}
+					]
+				},
+				{
+					"name": "TailPart1",
+					"parent": "Body",
+					"pivot": [0, 3.5, 3],
+					"cubes": [
+						{"origin": [0, 3, 3], "size": [0, 1, 2], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "Tail",
+					"parent": "TailPart1",
+					"pivot": [0, 3.5, 5],
+					"cubes": [
+						{"origin": [0, 2, 5], "size": [0, 3, 3], "uv": [0, 18]}
+					]
+				},
+				{
+					"name": "Topfin",
+					"parent": "Body",
+					"pivot": [0, 6, -1],
+					"cubes": [
+						{"origin": [0, 5, -1], "size": [0, 3, 8], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "BottomFin",
+					"parent": "Body",
+					"pivot": [0, 0, 2],
+					"cubes": [
+						{"origin": [0, -1, 2], "size": [0, 3, 5], "uv": [14, 10]}
+					]
+				},
+				{
+					"name": "LowerFin1",
+					"parent": "Body",
+					"pivot": [0.5, 0, -1],
+					"rotation": [21.80633, 5.68422, -13.9042],
+					"cubes": [
+						{"origin": [0.5, -4, -2], "size": [0, 4, 3], "uv": [14, 15]}
+					]
+				},
+				{
+					"name": "LowerFin2",
+					"parent": "Body",
+					"pivot": [-0.5, 0, -1],
+					"rotation": [21.80633, -5.68422, 13.9042],
+					"cubes": [
+						{"origin": [-0.5, -4, -2], "size": [0, 4, 3], "uv": [14, 15], "mirror": true}
+					]
+				}
+			]
+		}
+	]
+}
