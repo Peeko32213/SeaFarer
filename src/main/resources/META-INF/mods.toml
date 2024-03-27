@@ -5,7 +5,7 @@ license="MIT"
 [[mods]]
 modId="seafarer" #mandatory
 version="0.0.1" #mandatory
-displayName="Sea Farer" #mandatory
+displayName="Seafarer" #mandatory
 authors="Peeko32213 and Omaypaty for Block Textures" #optional
 description='''A Mod that expands on minecrafts oceans in a unique way'''
 [[dependencies.seafarer]] #optional

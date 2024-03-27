@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.common.world;
+package com.peeko32213.seafarer.common.world.feature;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;

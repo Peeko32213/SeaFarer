@@ -655,7 +655,7 @@ public class SFBlocks {
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> BEACHGRASS = register("beachgrass", () ->
-            new SFSandPlantBlock(BlockBehaviour.Properties
+            new SFCropLikePlantBlock(BlockBehaviour.Properties
                     .of().mapColor(MapColor.TERRACOTTA_YELLOW)
                     .replaceable().noCollission()
                     .instabreak()

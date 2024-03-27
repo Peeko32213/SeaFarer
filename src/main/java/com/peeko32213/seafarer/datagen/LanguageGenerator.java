@@ -172,6 +172,8 @@ public class LanguageGenerator extends LanguageProvider {
         addEntityType(SFEntities.SQUIRRELFISH, "Squirrelfish");
         addItem(SFItems.SQUIRRELFISH_SPAWN_EGG, "Squirrelfish Spawn Egg");
         addItem(SFItems.SQUIRRELFISH_BUCKET, "Bucket of Squirrelfish");
+        addItem(SFItems.RAW_SQUIRRELFISH, "Raw Squirrelfish");
+        addItem(SFItems.COOKED_SQUIRRELFISH, "Cooked Squirrelfish");
 
         addBlock(SFBlocks.ALGAE_BLOCK, "Algae Block");
         addBlock(SFBlocks.ALGAE_CARPET, "Algae Carpet");

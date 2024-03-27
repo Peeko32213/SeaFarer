@@ -1,6 +1,8 @@
-// 1.20.1	2024-03-24T21:42:21.3749937	Item Models: seafarer
+// 1.20.1	2024-03-25T08:14:52.0716843	Item Models: seafarer
+90815a6686a91c5fb24d48371a8bddd425065d96 assets/seafarer/models/item/cooked_squirrelfish.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/crab_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/horseshoe_crab_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/marine_iguana_spawn_egg.json
+30fbf00cbc3b3cb085dd7ff46ce75062f6e13fe2 assets/seafarer/models/item/raw_squirrelfish.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/squirrelfish_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/sunfish_spawn_egg.json

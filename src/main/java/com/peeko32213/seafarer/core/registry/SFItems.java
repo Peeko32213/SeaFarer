@@ -2,6 +2,7 @@ package com.peeko32213.seafarer.core.registry;
 
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.common.item.ItemModFishBucket;
+import com.peeko32213.seafarer.common.item.SFModFood;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.item.Item;
@@ -38,6 +39,11 @@ public class SFItems {
             () -> new ItemModFishBucket(SFEntities.SQUIRRELFISH, () -> Fluids.WATER, Items.BUCKET, false,
                     new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> RAW_SQUIRRELFISH = ITEMS.register("raw_squirrelfish",
+            () -> new Item(new Item.Properties().food(SFModFood.RAW_SQUIRRELFISH)));
+
+    public static final RegistryObject<Item> COOKED_SQUIRRELFISH = ITEMS.register("cooked_squirrelfish",
+            () -> new Item(new Item.Properties().food(SFModFood.COOKED_SQUIRRELFISH)));
 
     private static RegistryObject<ForgeSpawnEggItem> registerSpawnEggs(String name, Supplier<? extends EntityType<? extends Mob>> type, int backgroundColor, int highlightColor) {
         return ITEMS.register(name, () -> new ForgeSpawnEggItem(type, backgroundColor, highlightColor,new Item.Properties()));

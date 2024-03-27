@@ -3,6 +3,7 @@ package com.peeko32213.seafarer.datagen;
 
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.core.registry.SFBlocks;
+import com.peeko32213.seafarer.core.registry.SFItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -28,6 +29,8 @@ public class ItemModelGenerator extends ItemModelProvider {
                         .parent(getExistingFile(new ResourceLocation("item/template_spawn_egg")));
             }
         }
+        singleTex(SFItems.COOKED_SQUIRRELFISH);
+        singleTex(SFItems.RAW_SQUIRRELFISH);
 
     }
 

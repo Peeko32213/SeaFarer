@@ -120,9 +120,12 @@
   "entity.seafarer.marine_iguana": "Marine Iguana",
   "entity.seafarer.squirrelfish": "Squirrelfish",
   "entity.seafarer.sunfish": "Sunfish",
+  "item.seafarer.cooked_squirrelfish": "Cooked Squirrelfish",
   "item.seafarer.crab_spawn_egg": "Crab Spawn Egg",
   "item.seafarer.horseshoe_crab_spawn_egg": "Horseshoe Crab Spawn Egg",
   "item.seafarer.marine_iguana_spawn_egg": "Marine Iguana Spawn Egg",
+  "item.seafarer.raw_squirrelfish": "Raw Squirrelfish",
+  "item.seafarer.squirrelfish_bucket": "Bucket of Squirrelfish",
   "item.seafarer.squirrelfish_spawn_egg": "Squirrelfish Spawn Egg",
   "item.seafarer.sunfish_spawn_egg": "Sunfish Spawn Egg",
   "itemGroup.seafarer": "Seafarer"

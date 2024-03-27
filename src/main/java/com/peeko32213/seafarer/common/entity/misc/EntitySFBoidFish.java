@@ -86,10 +86,6 @@ public abstract class EntitySFBoidFish extends AbstractFish {
         return this.hasFollowers() && this.ownSchool.size() < this.getMaxSchoolSize();
     }
 
-    @Override
-    public void tick() {
-        super.tick();
-    }
 
     public boolean hasFollowers() {
         return this.ownSchool.size() > 1;
