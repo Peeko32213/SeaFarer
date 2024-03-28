@@ -1,3 +1,14 @@
-// 1.20.1	2024-03-22T21:00:59.369534	Registries
+// 1.20.1	2024-03-27T15:44:15.6031204	Registries
+815181e75bd04124d41861744b32a97300ed80ba data/seafarer/forge/biome_modifier/add_beachgrass.json
+809510c656a7e95fe13ee4deb3826c86adda669f data/seafarer/forge/biome_modifier/add_sea_holly.json
+52c1c001136209835482d47a6bd320ffd02e1118 data/seafarer/forge/biome_modifier/add_sea_thrift.json
 0ed3e91dd6f73355e5835e5c1cbc91087a15d318 data/seafarer/worldgen/configured_feature/algae_patch_bonemeal.json
 3935efdde5bf1df259f956625f878546d76effe0 data/seafarer/worldgen/configured_feature/algae_patch_plants.json
+04a9572810a80d23445033e9a901e2269b255a1c data/seafarer/worldgen/configured_feature/beachgrass.json
+295a3cf2f395a8ccfa60149e288e7906a94635e4 data/seafarer/worldgen/configured_feature/beachgrass_fan.json
+964bd4f7b892ca75686338b4b94d02236aaa5f49 data/seafarer/worldgen/configured_feature/sea_holly.json
+2c32778491dea7943ddd76899a2b1b7f79a88bb3 data/seafarer/worldgen/configured_feature/sea_thrift.json
+514e180a9f2b64b982f39a4675b8081f802b5771 data/seafarer/worldgen/placed_feature/beachgrass_fan_placed.json
+ff00f3fc53c7553a8d5d4419a63a4e58b92bcc65 data/seafarer/worldgen/placed_feature/beachgrass_placed.json
+736c0bc57b81865c2113cc4861b1b7294332800b data/seafarer/worldgen/placed_feature/sea_holly.json
+bc8c58051fb3f53d38cb73d475ceba6e8da1fffd data/seafarer/worldgen/placed_feature/sea_thrift.json

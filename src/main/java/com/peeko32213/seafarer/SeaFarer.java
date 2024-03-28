@@ -1,7 +1,6 @@
 package com.peeko32213.seafarer;
 
 import com.peeko32213.seafarer.client.event.ClientEvents;
-import com.peeko32213.seafarer.common.world.BeachPlantsGeneration;
 import com.peeko32213.seafarer.core.registry.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -38,8 +37,6 @@ public class SeaFarer{
         SFItems.ITEMS.register(modEventBus);
         SFCreativeTabs.DEF_REG.register(modEventBus);
         SFEntities.ENTITIES.register(modEventBus);
-        SFFeatures.FEATURES.register(modEventBus);
-        SFBiomeFeatures.BIOME_MODIFIER_SERIALIZERS.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

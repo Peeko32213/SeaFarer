@@ -31,6 +31,8 @@ public class ItemModelGenerator extends ItemModelProvider {
         }
         singleTex(SFItems.COOKED_SQUIRRELFISH);
         singleTex(SFItems.RAW_SQUIRRELFISH);
+        singleTex(SFItems.RAW_SHORE_CRAB);
+        singleTex(SFItems.COOKED_SHORE_CRAB);
 
     }
 

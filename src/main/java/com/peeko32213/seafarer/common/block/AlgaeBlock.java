@@ -1,6 +1,5 @@
 package com.peeko32213.seafarer.common.block;
 
-import com.peeko32213.seafarer.core.registry.SFFeatures;
 import com.peeko32213.seafarer.world.SConfiguredFeatures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;

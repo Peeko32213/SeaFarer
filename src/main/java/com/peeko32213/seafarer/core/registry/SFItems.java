@@ -45,6 +45,16 @@ public class SFItems {
     public static final RegistryObject<Item> COOKED_SQUIRRELFISH = ITEMS.register("cooked_squirrelfish",
             () -> new Item(new Item.Properties().food(SFModFood.COOKED_SQUIRRELFISH)));
 
+    public static final RegistryObject<Item> RAW_SHORE_CRAB = ITEMS.register("shore_crab_leg",
+            () -> new Item(new Item.Properties().food(SFModFood.RAW_SHORE_CRAB)));
+
+    public static final RegistryObject<Item> COOKED_SHORE_CRAB = ITEMS.register("cooked_shore_crab_leg",
+            () -> new Item(new Item.Properties().food(SFModFood.COOKED_SHORE_CRAB)));
+
+    public static final RegistryObject<Item> SHORE_CRAB_BUCKET = ITEMS.register("shore_crab_bucket",
+            () -> new ItemModFishBucket(SFEntities.CRAB, () -> Fluids.EMPTY, Items.BUCKET, false,
+                    new Item.Properties().stacksTo(1)));
+
     private static RegistryObject<ForgeSpawnEggItem> registerSpawnEggs(String name, Supplier<? extends EntityType<? extends Mob>> type, int backgroundColor, int highlightColor) {
         return ITEMS.register(name, () -> new ForgeSpawnEggItem(type, backgroundColor, highlightColor,new Item.Properties()));
     }

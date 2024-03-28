@@ -162,6 +162,9 @@ public class LanguageGenerator extends LanguageProvider {
 
         addEntityType(SFEntities.CRAB, "Crab");
         addItem(SFItems.CRAB_SPAWN_EGG, "Crab Spawn Egg");
+        addItem(SFItems.SHORE_CRAB_BUCKET, "Bucket of Crab");
+        addItem(SFItems.RAW_SHORE_CRAB, "Raw Crab Leg");
+        addItem(SFItems.COOKED_SHORE_CRAB, "Cooked Crab Leg");
 
         addEntityType(SFEntities.HORSESHOE_CRAB, "Horseshoe Crab");
         addItem(SFItems.HORSESHOE_CRAB_SPAWN_EGG, "Horseshoe Crab Spawn Egg");
