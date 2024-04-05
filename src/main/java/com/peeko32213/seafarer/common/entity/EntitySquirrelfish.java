@@ -2,6 +2,7 @@ package com.peeko32213.seafarer.common.entity;
 
 import com.peeko32213.seafarer.common.entity.misc.EntitySFBoidFish;
 import com.peeko32213.seafarer.core.registry.SFItems;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -9,6 +10,8 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.FluidTags;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -18,12 +21,17 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingMoveControl;
+import net.minecraft.world.entity.animal.AbstractSchoolingFish;
 import net.minecraft.world.entity.animal.Bucketable;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.ServerLevelAccessor;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.dimension.DimensionType;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -33,6 +41,7 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class EntitySquirrelfish extends EntitySFBoidFish implements Bucketable, GeoAnimatable{
     
@@ -43,6 +52,7 @@ public class EntitySquirrelfish extends EntitySFBoidFish implements Bucketable, 
     private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(EntitySquirrelfish.class, EntityDataSerializers.BOOLEAN);
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+    private boolean isSchool = true;
 
 
     public EntitySquirrelfish(EntityType<? extends EntitySFBoidFish> entityType, Level level) {
@@ -153,11 +163,6 @@ public class EntitySquirrelfish extends EntitySFBoidFish implements Bucketable, 
         this.entityData.set(FROM_BUCKET, p_203706_1_);
     }
 
-    @Nullable
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
-        return super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
-    }
-
 
     protected <E extends EntitySquirrelfish> PlayState Controller(final software.bernie.geckolib.core.animation.AnimationState<E> event) {
         if (!(event.getLimbSwingAmount() > -0.06F && event.getLimbSwingAmount() < 0.06F) && this.isInWater()) {
@@ -189,4 +194,50 @@ public class EntitySquirrelfish extends EntitySFBoidFish implements Bucketable, 
     public double getTick(Object o) {
         return tickCount;
     }
+
+    public static boolean isDarkEnoughToSpawn(ServerLevelAccessor pLevel, BlockPos pPos, RandomSource pRandom) {
+        if (pLevel.getBrightness(LightLayer.SKY, pPos) > pRandom.nextInt(32)) {
+            return false;
+        } else {
+            DimensionType dimensiontype = pLevel.dimensionType();
+            int i = dimensiontype.monsterSpawnBlockLightLimit();
+            if (i < 15 && pLevel.getBrightness(LightLayer.BLOCK, pPos) > i) {
+                return false;
+            } else {
+                int j = pLevel.getLevel().isThundering() ? pLevel.getMaxLocalRawBrightness(pPos, 10) : pLevel.getMaxLocalRawBrightness(pPos);
+                return j <= dimensiontype.monsterSpawnLightTest().sample(pRandom);
+            }
+        }
+    }
+
+    public int getMaxSpawnClusterSize() {
+        return 10;
+    }
+
+    public boolean isMaxGroupSizeReached(int p_30035_) {
+        return !this.isSchool;
+    }
+
+
+
+    @javax.annotation.Nullable
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pReason, @javax.annotation.Nullable SpawnGroupData pSpawnData, @Nullable CompoundTag pDataTag) {
+        super.finalizeSpawn(pLevel, pDifficulty, pReason, pSpawnData, pDataTag);
+        if (pSpawnData == null) {
+            pSpawnData = new EntitySquirrelfish.SchoolSpawnGroupData(this);
+        } else {
+            this.startFollowing(((EntitySquirrelfish.SchoolSpawnGroupData)pSpawnData).leader);
+        }
+
+        return pSpawnData;
+    }
+    public static boolean checkSquirrelfishSpawnRules(EntityType<? extends EntitySquirrelfish> pWaterAnimal, ServerLevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
+        int i = pLevel.getSeaLevel();
+        int j = i - 13;
+        return pPos.getY() >= j && pPos.getY() <= i && pLevel.getFluidState(pPos.below()).is(FluidTags.WATER) && pLevel.getBlockState(pPos.above()).is(Blocks.WATER) && isDarkEnoughToSpawn(pLevel, pPos, pRandom);
+    }
+
+
+
+
 }

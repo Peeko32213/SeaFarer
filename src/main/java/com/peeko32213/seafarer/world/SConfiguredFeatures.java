@@ -1,5 +1,6 @@
 package com.peeko32213.seafarer.world;
 
+import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.core.registry.SFBlocks;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
@@ -16,18 +17,23 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.VegetationPatchConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
 
 import static com.peeko32213.seafarer.datagen.ItemModelGenerator.prefix;
 import static net.minecraft.data.worldgen.features.FeatureUtils.createKey;
 
 public class SConfiguredFeatures {
+    public static final DeferredRegister<ConfiguredFeature<?,?>> CONFIGURED_FEATURES = DeferredRegister.create(Registries.CONFIGURED_FEATURE, SeaFarer.MODID);
+    public static List<String> configuredFeatureList = new ArrayList<>();
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> ALGAE_PATCH_PLANTS = registerKey("algae_patch_plants");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ALGAE_PATCH_BONEMEAL = registerKey("algae_patch_bonemeal");
@@ -38,6 +44,7 @@ public class SConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> SEA_HOLLY = registerKey("sea_holly");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SEA_THRIFT = registerKey("sea_thrift");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ALGAE_BOULDER = registerKey("algae_boulder");
 
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
@@ -64,8 +71,16 @@ public class SConfiguredFeatures {
         register(context, SEA_HOLLY, Feature.RANDOM_PATCH,
                 FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(SFBlocks.SEA_HOLLY.get().defaultBlockState()))));
 
+        register(context, SEA_HOLLY, Feature.RANDOM_PATCH,
+                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(SFBlocks.SEA_HOLLY.get().defaultBlockState()))));
+
+
     }
 
+    public static RegistryObject<ConfiguredFeature<?, ?>> registerConfiguredFeature(String name, Supplier<ConfiguredFeature<?, ?>> feature) {
+        configuredFeatureList.add(name);
+        return CONFIGURED_FEATURES.register(name, feature);
+    }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {
         return ResourceKey.create(Registries.CONFIGURED_FEATURE, prefix(name));

@@ -19,7 +19,15 @@ public class SFTags {
     //public static final TagKey<Block> CLUB_WHITELIST_BLOCKS = registerBlockTag("club_whitelist_blocks");
     //public static final TagKey<Biome> IS_STETHA_BIOME = registerBiomeTag("is_stetha_biome");
 
+
+
     public static final TagKey<Block> BEACH_PLANT_BLOCKS = registerBlockTag("beach_plant_blocks");
+
+    public static final TagKey<Biome> IS_CRAB_BIOME = registerBiomeTag("is_crab_biome");
+    public static final TagKey<Biome> IS_HORSECRAB_BIOME = registerBiomeTag("is_horseshoe_crab_biome");
+    public static final TagKey<Biome> IS_MARINE_IGUANA_BIOME = registerBiomeTag("is_marine_iguana_biome");
+    public static final TagKey<Biome> IS_SUNFISH_BIOME = registerBiomeTag("is_sunfish_biome");
+    public static final TagKey<Biome> IS_SQUIRRELFISH_BIOME = registerBiomeTag("is_squirrelfish_biome");
 
 
     private static TagKey<Item> registerItemTag(String name) {

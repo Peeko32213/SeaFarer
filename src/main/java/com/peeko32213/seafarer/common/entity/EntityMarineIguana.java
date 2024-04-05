@@ -4,11 +4,14 @@ import com.peeko32213.seafarer.common.entity.goal.*;
 import com.peeko32213.seafarer.common.entity.misc.controller.WaterMoveController;
 import com.peeko32213.seafarer.common.entity.misc.interfaces.SemiAquatic;
 import com.peeko32213.seafarer.common.entity.misc.navigator.SemiAquaticPathNavigation;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -19,6 +22,8 @@ import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
@@ -259,4 +264,15 @@ public class EntityMarineIguana extends Animal implements GeoAnimatable, SemiAqu
     public double getTick(Object o) {
         return tickCount;
     }
+
+    @javax.annotation.Nullable
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor levelAccessor, DifficultyInstance difficultyInstance, MobSpawnType spawnType, @javax.annotation.Nullable SpawnGroupData spawnGroupData, @javax.annotation.Nullable CompoundTag tag) {
+        spawnGroupData = super.finalizeSpawn(levelAccessor, difficultyInstance, spawnType, spawnGroupData, tag);
+        return spawnGroupData;
+    }
+
+    public static boolean checkMarineIguanaSpawnRules(EntityType<? extends EntityMarineIguana> dino, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource p_186242_) {
+        return isBrightEnoughToSpawn(level, pos);
+    }
+
 }

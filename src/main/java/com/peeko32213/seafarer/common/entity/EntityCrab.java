@@ -1,6 +1,8 @@
 package com.peeko32213.seafarer.common.entity;
 
+import com.google.common.collect.ImmutableList;
 import com.peeko32213.seafarer.common.entity.goal.GrazeAlgaeGoal;
+import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -10,10 +12,10 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.entity.AgeableMob;
-import net.minecraft.world.entity.EntitySelector;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Mob;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
@@ -24,6 +26,8 @@ import net.minecraft.world.entity.animal.Ocelot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
@@ -35,6 +39,7 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.Nonnull;
+import java.util.EnumSet;
 
 public class EntityCrab extends Animal implements GeoAnimatable, Bucketable {
     private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(EntityCrab.class, EntityDataSerializers.BOOLEAN);
@@ -44,11 +49,17 @@ public class EntityCrab extends Animal implements GeoAnimatable, Bucketable {
     private static final RawAnimation CRAB_SPRINT_1 = RawAnimation.begin().thenLoop("animation.crab.sprint1");
     private static final RawAnimation CRAB_SPRINT_2 = RawAnimation.begin().thenLoop("animation.crab.sprint2");
     private static final RawAnimation CRAB_SWIM = RawAnimation.begin().thenLoop("animation.crab.swim");
+
     private static final RawAnimation CRAB_GRAZE = RawAnimation.begin().thenLoop("animation.crab.graze");
+
+
     private static final RawAnimation CRAB_DANCE = RawAnimation.begin().thenLoop("animation.crab.dance");
     private static final RawAnimation CRAB_BLINK = RawAnimation.begin().thenLoop("animation.crab.blink");
     private static final RawAnimation CRAB_CLAW = RawAnimation.begin().thenLoop("animation.crab.claw");
     private static final RawAnimation CRAB_WAVE = RawAnimation.begin().thenLoop("animation.crab.wave");
+    private static final EntityDataAccessor<Boolean> GRAZE = SynchedEntityData.defineId(EntityCrab.class, EntityDataSerializers.BOOLEAN);
+
+
     private GrazeAlgaeGoal eatBlockGoal;
     private int eatAnimationTick;
     public EntityCrab(EntityType<? extends Animal> pEntityType, Level pLevel) {
@@ -115,6 +126,11 @@ public class EntityCrab extends Animal implements GeoAnimatable, Bucketable {
 
     private boolean isStillEnough() {
         return this.getDeltaMovement().horizontalDistance() < 0.05;
+    }
+
+    public static boolean canDig(LivingEntity entity) {
+        BlockPos pos = entity.getOnPos();
+        return (entity.level().getBlockState(pos).is(SFBlocks.ALGAE_BLOCK.get()));
     }
 
     protected <E extends EntityCrab> PlayState Controller(final software.bernie.geckolib.core.animation.AnimationState<E> event) {
@@ -229,4 +245,17 @@ public class EntityCrab extends Animal implements GeoAnimatable, Bucketable {
     public SoundEvent getPickupSound() {
         return SoundEvents.BUCKET_EMPTY_FISH;
     }
+
+    @javax.annotation.Nullable
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor levelAccessor, DifficultyInstance difficultyInstance, MobSpawnType spawnType, @javax.annotation.Nullable SpawnGroupData spawnGroupData, @javax.annotation.Nullable CompoundTag tag) {
+        spawnGroupData = super.finalizeSpawn(levelAccessor, difficultyInstance, spawnType, spawnGroupData, tag);
+        return spawnGroupData;
+    }
+
+    public static boolean checkCrabSpawnRules(EntityType<? extends EntityCrab> dino, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource p_186242_) {
+        return isBrightEnoughToSpawn(level, pos);
+    }
+
+
+
 }

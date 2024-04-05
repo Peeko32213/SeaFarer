@@ -43,7 +43,9 @@ public class SeaFarer{
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-
+        event.enqueueWork(() -> {
+            SFEntityPlacement.entityPlacement();
+        });
     }
 
     public static ResourceLocation prefix(String name) {
