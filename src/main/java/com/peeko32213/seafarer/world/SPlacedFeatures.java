@@ -58,13 +58,7 @@ public class SPlacedFeatures {
                 BiomeFilter.biome()
         ));
 
-        register(context, SEA_THRIFT_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.SEA_THRIFT), ImmutableList.of(
-                RarityFilter.onAverageOnceEvery(1),
-                InSquarePlacement.spread(),
-                CountPlacement.of(80),
-                PlacementUtils.FULL_RANGE,
-                BiomeFilter.biome()
-        ));
+
 
 //
         //register(context, GARLIC_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.GARLIC), ImmutableList.of(

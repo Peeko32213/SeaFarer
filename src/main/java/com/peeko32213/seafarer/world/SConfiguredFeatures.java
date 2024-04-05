@@ -71,8 +71,6 @@ public class SConfiguredFeatures {
         register(context, SEA_HOLLY, Feature.RANDOM_PATCH,
                 FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(SFBlocks.SEA_HOLLY.get().defaultBlockState()))));
 
-        register(context, SEA_HOLLY, Feature.RANDOM_PATCH,
-                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(SFBlocks.SEA_HOLLY.get().defaultBlockState()))));
 
 
     }

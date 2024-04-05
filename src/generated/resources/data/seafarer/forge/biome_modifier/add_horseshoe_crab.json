@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#seafarer:is_horseshoe_crab_biome",
+  "spawners": {
+    "type": "seafarer:horseshoe_crab",
+    "maxCount": 3,
+    "minCount": 1,
+    "weight": 25
+  }
+}
