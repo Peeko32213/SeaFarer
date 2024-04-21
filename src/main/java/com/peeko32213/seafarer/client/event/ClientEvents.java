@@ -75,8 +75,6 @@ public final class ClientEvents {
         event.registerEntityRenderer(SFEntities.CRAB.get(), e -> new LivingEntityRenderer<>(e, new ModelCrab()));
         event.registerEntityRenderer(SFEntities.HORSESHOE_CRAB.get(), e -> new LivingEntityRenderer<>(e, new ModelHorseshoeCrab()));
         event.registerEntityRenderer(SFEntities.MARINE_IGUANA.get(), e -> new LivingEntityRenderer<>(e, new ModelMarineIguana()));
-        event.registerEntityRenderer(SFEntities.SQUIRRELFISH.get(), e -> new LivingEntityRenderer<>(e, new ModelSquirrelfish()));
-
     }
 
 }

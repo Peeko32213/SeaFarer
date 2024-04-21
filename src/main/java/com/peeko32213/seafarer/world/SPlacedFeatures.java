@@ -11,6 +11,8 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -25,7 +27,7 @@ public class SPlacedFeatures {
     public static List<String> placedFeatureList = new ArrayList<>();
 
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = DeferredRegister.create(Registries.PLACED_FEATURE, SeaFarer.MODID);
-    private static final String ALGAE_BOULDER_FEATURE_NAME_PLACED = "algae_boulder_feature_placed";
+
 
     public static final ResourceKey<PlacedFeature> BEACHGRASS_PLACED = registerKey("beachgrass_placed");
 
@@ -33,19 +35,21 @@ public class SPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> SEA_HOLLY_PLACED = registerKey("sea_holly");
     public static final ResourceKey<PlacedFeature> SEA_THRIFT_PLACED = registerKey("sea_thrift");
+    public static final ResourceKey<PlacedFeature> ALGAE_BOULDER_PLACED = registerKey("algae_boulder_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
         Holder<ConfiguredFeature<?, ?>> beachgrass_placed = configuredFeatures.getOrThrow(SConfiguredFeatures.BEACHGRASS);
         Holder<ConfiguredFeature<?, ?>> beachgrass_fan_placed = configuredFeatures.getOrThrow(SConfiguredFeatures.BEACHGRASS_FAN);
 
-        register(context, BEACHGRASS_PLACED, beachgrass_placed, worldSurfaceSquaredWithCount(40));
-        register(context, BEACHGRASS_FAN_PLACED, beachgrass_fan_placed, worldSurfaceSquaredWithCount(40));
+        register(context, BEACHGRASS_PLACED, beachgrass_placed, worldSurfaceSquaredWithCount(15));
+        register(context, BEACHGRASS_FAN_PLACED, beachgrass_fan_placed, worldSurfaceSquaredWithCount(15));
 
 
         register(context, SEA_HOLLY_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.SEA_HOLLY), ImmutableList.of(
                 RarityFilter.onAverageOnceEvery(1),
                 InSquarePlacement.spread(),
+                CountPlacement.of(15),
                 PlacementUtils.FULL_RANGE,
                 BiomeFilter.biome()
         ));
@@ -53,12 +57,26 @@ public class SPlacedFeatures {
         register(context, SEA_THRIFT_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.SEA_THRIFT), ImmutableList.of(
                 RarityFilter.onAverageOnceEvery(1),
                 InSquarePlacement.spread(),
-                CountPlacement.of(80),
+                CountPlacement.of(15),
                 PlacementUtils.FULL_RANGE,
                 BiomeFilter.biome()
         ));
 
+        register(context, SEA_HOLLY_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.SEA_HOLLY), ImmutableList.of(
+                RarityFilter.onAverageOnceEvery(1),
+                InSquarePlacement.spread(),
+                CountPlacement.of(15),
+                PlacementUtils.FULL_RANGE,
+                BiomeFilter.biome()
+        ));
 
+        register(context, ALGAE_BOULDER_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.ALGAE_BOULDER), ImmutableList.of(
+                RarityFilter.onAverageOnceEvery(1),
+                InSquarePlacement.spread(),
+                CountPlacement.of(3),
+                PlacementUtils.FULL_RANGE,
+                BiomeFilter.biome()
+        ));
 
 //
         //register(context, GARLIC_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.GARLIC), ImmutableList.of(

@@ -15,8 +15,6 @@ public class SFEntityPlacement {
         SpawnPlacements.register(SFEntities.HORSESHOE_CRAB.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityHorseshoeCrab::checkHorseshoeCrabSpawnRules);
         SpawnPlacements.register(SFEntities.MARINE_IGUANA.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntityMarineIguana::checkMarineIguanaSpawnRules);
         SpawnPlacements.register(SFEntities.SUNFISH.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntitySunfish::checkSunfishSpawnRules);
-        SpawnPlacements.register(SFEntities.SQUIRRELFISH.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, EntitySquirrelfish::checkSquirrelfishSpawnRules);
-
     }
 
     public static boolean rollSpawn(int rolls, RandomSource random, MobSpawnType reason){

@@ -29,11 +29,14 @@ public class ItemModelGenerator extends ItemModelProvider {
                         .parent(getExistingFile(new ResourceLocation("item/template_spawn_egg")));
             }
         }
-        singleTex(SFItems.COOKED_SQUIRRELFISH);
-        singleTex(SFItems.RAW_SQUIRRELFISH);
         singleTex(SFItems.RAW_SHORE_CRAB);
         singleTex(SFItems.COOKED_SHORE_CRAB);
-
+        singleTex(SFItems.RAW_HORSESHOE_CRAB);
+        singleTex(SFItems.COOKED_HORSESHOE_CRAB);
+        singleTex(SFItems.MESSAGE_IN_A_BOTTLE);
+        singleTex(SFItems.OLD_BOARD);
+        singleTex(SFItems.OLD_BOOT);
+        singleTex(SFItems.CAN);
     }
 
 

@@ -32,24 +32,30 @@ public class SFItems {
     public static final RegistryObject<ForgeSpawnEggItem> MARINE_IGUANA_SPAWN_EGG = registerSpawnEggs("marine_iguana_spawn_egg",
             SFEntities.MARINE_IGUANA , 0xb43324, 0x4fdecb);
 
-    public static final RegistryObject<ForgeSpawnEggItem> SQUIRRELFISH_SPAWN_EGG = registerSpawnEggs("squirrelfish_spawn_egg",
-            SFEntities.SQUIRRELFISH , 0x820c0a, 0xdcc1bc);
-
-    public static final RegistryObject<Item> SQUIRRELFISH_BUCKET = ITEMS.register("squirrelfish_bucket",
-            () -> new ItemModFishBucket(SFEntities.SQUIRRELFISH, () -> Fluids.WATER, Items.BUCKET, false,
-                    new Item.Properties().stacksTo(1)));
-
-    public static final RegistryObject<Item> RAW_SQUIRRELFISH = ITEMS.register("raw_squirrelfish",
-            () -> new Item(new Item.Properties().food(SFModFood.RAW_SQUIRRELFISH)));
-
-    public static final RegistryObject<Item> COOKED_SQUIRRELFISH = ITEMS.register("cooked_squirrelfish",
-            () -> new Item(new Item.Properties().food(SFModFood.COOKED_SQUIRRELFISH)));
-
     public static final RegistryObject<Item> RAW_SHORE_CRAB = ITEMS.register("shore_crab_leg",
             () -> new Item(new Item.Properties().food(SFModFood.RAW_SHORE_CRAB)));
 
     public static final RegistryObject<Item> COOKED_SHORE_CRAB = ITEMS.register("cooked_shore_crab_leg",
             () -> new Item(new Item.Properties().food(SFModFood.COOKED_SHORE_CRAB)));
+
+
+    public static final RegistryObject<Item> RAW_HORSESHOE_CRAB = ITEMS.register("raw_horseshoe_crab",
+            () -> new Item(new Item.Properties().food(SFModFood.RAW_HORSESHOE_CRAB)));
+
+    public static final RegistryObject<Item> COOKED_HORSESHOE_CRAB = ITEMS.register("cooked_horseshoe_crab",
+            () -> new Item(new Item.Properties().food(SFModFood.COOKED_HORSESHOE_CRAB)));
+
+    public static final RegistryObject<Item> OLD_BOARD = ITEMS.register("old_board",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> OLD_BOOT = ITEMS.register("old_boot",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> CAN = ITEMS.register("can",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> MESSAGE_IN_A_BOTTLE = ITEMS.register("message_in_a_bottle",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> SHORE_CRAB_BUCKET = ITEMS.register("shore_crab_bucket",
             () -> new ItemModFishBucket(SFEntities.CRAB, () -> Fluids.EMPTY, Items.BUCKET, false,

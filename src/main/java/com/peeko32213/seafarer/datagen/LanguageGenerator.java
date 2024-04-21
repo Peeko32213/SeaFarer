@@ -168,19 +168,20 @@ public class LanguageGenerator extends LanguageProvider {
 
         addEntityType(SFEntities.HORSESHOE_CRAB, "Horseshoe Crab");
         addItem(SFItems.HORSESHOE_CRAB_SPAWN_EGG, "Horseshoe Crab Spawn Egg");
+        addItem(SFItems.RAW_HORSESHOE_CRAB, "Raw Horseshoe Crab");
+        addItem(SFItems.COOKED_HORSESHOE_CRAB, "Cooked Horseshoe Crab");
 
         addEntityType(SFEntities.MARINE_IGUANA, "Marine Iguana");
         addItem(SFItems.MARINE_IGUANA_SPAWN_EGG, "Marine Iguana Spawn Egg");
 
-        addEntityType(SFEntities.SQUIRRELFISH, "Squirrelfish");
-        addItem(SFItems.SQUIRRELFISH_SPAWN_EGG, "Squirrelfish Spawn Egg");
-        addItem(SFItems.SQUIRRELFISH_BUCKET, "Bucket of Squirrelfish");
-        addItem(SFItems.RAW_SQUIRRELFISH, "Raw Squirrelfish");
-        addItem(SFItems.COOKED_SQUIRRELFISH, "Cooked Squirrelfish");
-
         addBlock(SFBlocks.ALGAE_BLOCK, "Algae Block");
         addBlock(SFBlocks.ALGAE_CARPET, "Algae Carpet");
         addBlock(SFBlocks.ALGAE_PLANT, "Algae Growth");
+
+        addItem(SFItems.CAN, "Can");
+        addItem(SFItems.MESSAGE_IN_A_BOTTLE, "Message in A Bottle");
+        addItem(SFItems.OLD_BOARD, "Old Boards");
+        addItem(SFItems.OLD_BOOT, "Old Boot");
 
     }
 

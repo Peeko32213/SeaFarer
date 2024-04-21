@@ -220,21 +220,21 @@ public class EntityCrab extends Animal implements GeoAnimatable, Bucketable {
     }
 
     @Override
-    public void saveToBucketTag(@Nonnull ItemStack bucket) {
+    public void saveToBucketTag(ItemStack bucket) {
+        CompoundTag compoundnbt = bucket.getOrCreateTag();
+        Bucketable.saveDefaultDataToBucketTag(this, bucket);
+        compoundnbt.putFloat("Health", this.getHealth());
         if (this.hasCustomName()) {
             bucket.setHoverName(this.getCustomName());
         }
-        Bucketable.saveDefaultDataToBucketTag(this, bucket);
-        CompoundTag compoundnbt = bucket.getOrCreateTag();
     }
-
     public void loadFromBucketTag(CompoundTag pTag) {
         Bucketable.loadDefaultDataFromBucketTag(this, pTag);
     }
 
     @Override
     public ItemStack getBucketItemStack() {
-        ItemStack stack = new ItemStack(SFItems.SQUIRRELFISH_BUCKET.get());
+        ItemStack stack = new ItemStack(SFItems.SHORE_CRAB_BUCKET.get());
         if (this.hasCustomName()) {
             stack.setHoverName(this.getCustomName());
         }

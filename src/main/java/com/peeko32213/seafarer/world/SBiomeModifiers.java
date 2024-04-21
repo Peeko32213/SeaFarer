@@ -21,11 +21,11 @@ public class SBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_BEACHGRASS = registerKey("add_beachgrass");
     public static final ResourceKey<BiomeModifier> ADD_SEA_THRIFT = registerKey("add_sea_thrift");
     public static final ResourceKey<BiomeModifier> ADD_SEA_HOLLY = registerKey("add_sea_holly");
+    public static final ResourceKey<BiomeModifier> ADD_ALGAE_BOULDER = registerKey("add_algae_boulder");
 
     public static final ResourceKey<BiomeModifier> ADD_CRAB = registerKey("add_crab");
     public static final ResourceKey<BiomeModifier> ADD_HORSESHOE_CRAB = registerKey("add_horseshoe_crab");
     public static final ResourceKey<BiomeModifier> ADD_MARINE_IGUANA = registerKey("add_marine_iguana");
-    public static final ResourceKey<BiomeModifier> ADD_SQUIRREL_FISH = registerKey("add_squirrel_fish");
     public static final ResourceKey<BiomeModifier> ADD_SUNFISH = registerKey("add_sunfish");
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
@@ -46,6 +46,11 @@ public class SBiomeModifiers {
                 biomes.getOrThrow(BiomeTags.IS_BEACH),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SEA_HOLLY_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_ALGAE_BOULDER, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_BEACH),
+                HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.ALGAE_BOULDER_PLACED)),
+                GenerationStep.Decoration.SURFACE_STRUCTURES));
 //
         //context.register(ADD_GARLIC, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
         //        biomes.getOrThrow(STags.IS_GARLIC_BIOME),
@@ -73,11 +78,6 @@ public class SBiomeModifiers {
         context.register(ADD_MARINE_IGUANA, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 biomes.getOrThrow(SFTags.IS_MARINE_IGUANA_BIOME),
                 List.of(marine_iguana)));
-
-        MobSpawnSettings.SpawnerData squirrel_fish = new MobSpawnSettings.SpawnerData(SFEntities.SQUIRRELFISH.get(), 25,5, 15);
-        context.register(ADD_SQUIRREL_FISH, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
-                biomes.getOrThrow(SFTags.IS_MARINE_IGUANA_BIOME),
-                List.of(squirrel_fish)));
 
         MobSpawnSettings.SpawnerData sunfish = new MobSpawnSettings.SpawnerData(SFEntities.SUNFISH.get(), 25,1, 2);
         context.register(ADD_SUNFISH, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
