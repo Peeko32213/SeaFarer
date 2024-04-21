@@ -33,8 +33,8 @@ public class SPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> BEACHGRASS_FAN_PLACED = registerKey("beachgrass_fan_placed");
 
-    public static final ResourceKey<PlacedFeature> SEA_HOLLY_PLACED = registerKey("sea_holly");
-    public static final ResourceKey<PlacedFeature> SEA_THRIFT_PLACED = registerKey("sea_thrift");
+    public static final ResourceKey<PlacedFeature> SEA_HOLLY_PLACED = registerKey("sea_holly_placed");
+    public static final ResourceKey<PlacedFeature> SEA_THRIFT_PLACED = registerKey("sea_thrift_placed");
     public static final ResourceKey<PlacedFeature> ALGAE_BOULDER_PLACED = registerKey("algae_boulder_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
@@ -55,14 +55,6 @@ public class SPlacedFeatures {
         ));
 
         register(context, SEA_THRIFT_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.SEA_THRIFT), ImmutableList.of(
-                RarityFilter.onAverageOnceEvery(1),
-                InSquarePlacement.spread(),
-                CountPlacement.of(15),
-                PlacementUtils.FULL_RANGE,
-                BiomeFilter.biome()
-        ));
-
-        register(context, SEA_HOLLY_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.SEA_HOLLY), ImmutableList.of(
                 RarityFilter.onAverageOnceEvery(1),
                 InSquarePlacement.spread(),
                 CountPlacement.of(15),

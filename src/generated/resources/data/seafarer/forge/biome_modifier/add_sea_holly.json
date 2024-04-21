@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "#minecraft:is_beach",
-  "features": "seafarer:sea_holly",
+  "features": "seafarer:sea_holly_placed",
   "step": "vegetal_decoration"
 }

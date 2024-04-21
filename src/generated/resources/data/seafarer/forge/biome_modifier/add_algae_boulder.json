@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_beach",
+  "features": "seafarer:algae_boulder_placed",
+  "step": "surface_structures"
+}
