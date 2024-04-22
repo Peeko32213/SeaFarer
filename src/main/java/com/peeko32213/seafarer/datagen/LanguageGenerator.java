@@ -157,6 +157,15 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.SEA_HOLLY, "Sea Holly");
         addBlock(SFBlocks.SEA_THRIFT, "Sea Thrift");
 
+        addBlock(SFBlocks.BLUE_MIXED_SPRINKLED_SAND, "Blue Mixed Sprinkled Sand");
+        addBlock(SFBlocks.RED_MIXED_SPRINKLED_SAND, "Red Mixed Sprinkled Sand");
+        addBlock(SFBlocks.BLUE_SPRINKLED_SAND, "Blue Sprinkled Sand");
+        addBlock(SFBlocks.PINK_SPRINKLED_SAND, "Pink Sprinkled Sand");
+        addBlock(SFBlocks.PURPLE_SPRINKLED_SAND, "Purple Sprinkled Sand");
+        addBlock(SFBlocks.RED_SPRINKLED_SAND, "Red Sprinkled Sand");
+        addBlock(SFBlocks.GRAVELY_SAND, "Gravely Sand");
+        addBlock(SFBlocks.ROCKY_SAND, "Rocky Sand");
+
         addEntityType(SFEntities.SUNFISH, "Sunfish");
         addItem(SFItems.SUNFISH_SPAWN_EGG, "Sunfish Spawn Egg");
 
@@ -173,6 +182,8 @@ public class LanguageGenerator extends LanguageProvider {
 
         addEntityType(SFEntities.MARINE_IGUANA, "Marine Iguana");
         addItem(SFItems.MARINE_IGUANA_SPAWN_EGG, "Marine Iguana Spawn Egg");
+        addItem(SFItems.RAW_MARINE_IGUANA, "Raw Marine Iguana");
+        addItem(SFItems.COOKED_MARINE_IGUANA, "Cooked Marine Iguana");
 
         addBlock(SFBlocks.ALGAE_BLOCK, "Algae Block");
         addBlock(SFBlocks.ALGAE_CARPET, "Algae Carpet");
@@ -182,6 +193,8 @@ public class LanguageGenerator extends LanguageProvider {
         addItem(SFItems.MESSAGE_IN_A_BOTTLE, "Message in A Bottle");
         addItem(SFItems.OLD_BOARD, "Old Boards");
         addItem(SFItems.OLD_BOOT, "Old Boot");
+
+        addItem(SFItems.SOY_SAUCE, "Soy Sauce");
 
     }
 

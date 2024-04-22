@@ -1,8 +1,9 @@
 package com.peeko32213.seafarer.core.registry;
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.common.item.ItemModFishBucket;
-import com.peeko32213.seafarer.common.item.SFModFood;
+import com.peeko32213.seafarer.common.item.SFDrinkableItem;
+import com.peeko32213.seafarer.common.item.SFFishBucket;
+import com.peeko32213.seafarer.common.item.SFFood;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.item.Item;
@@ -16,6 +17,10 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Supplier;
 
 public class SFItems {
+
+    public static Item.Properties drinkItem() {
+        return new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
+    }
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
             SeaFarer.MODID);
@@ -33,17 +38,23 @@ public class SFItems {
             SFEntities.MARINE_IGUANA , 0xb43324, 0x4fdecb);
 
     public static final RegistryObject<Item> RAW_SHORE_CRAB = ITEMS.register("shore_crab_leg",
-            () -> new Item(new Item.Properties().food(SFModFood.RAW_SHORE_CRAB)));
+            () -> new Item(new Item.Properties().food(SFFood.RAW_SHORE_CRAB)));
 
     public static final RegistryObject<Item> COOKED_SHORE_CRAB = ITEMS.register("cooked_shore_crab_leg",
-            () -> new Item(new Item.Properties().food(SFModFood.COOKED_SHORE_CRAB)));
+            () -> new Item(new Item.Properties().food(SFFood.COOKED_SHORE_CRAB)));
 
 
     public static final RegistryObject<Item> RAW_HORSESHOE_CRAB = ITEMS.register("raw_horseshoe_crab",
-            () -> new Item(new Item.Properties().food(SFModFood.RAW_HORSESHOE_CRAB)));
+            () -> new Item(new Item.Properties().food(SFFood.RAW_HORSESHOE_CRAB)));
 
     public static final RegistryObject<Item> COOKED_HORSESHOE_CRAB = ITEMS.register("cooked_horseshoe_crab",
-            () -> new Item(new Item.Properties().food(SFModFood.COOKED_HORSESHOE_CRAB)));
+            () -> new Item(new Item.Properties().food(SFFood.COOKED_HORSESHOE_CRAB)));
+
+    public static final RegistryObject<Item> RAW_MARINE_IGUANA = ITEMS.register("raw_marine_iguana",
+            () -> new Item(new Item.Properties().food(SFFood.RAW_MARINE_IGUANA)));
+
+    public static final RegistryObject<Item> COOKED_MARINE_IGUANA = ITEMS.register("cooked_marine_iguana",
+            () -> new Item(new Item.Properties().food(SFFood.COOKED_MARINE_IGUANA)));
 
     public static final RegistryObject<Item> OLD_BOARD = ITEMS.register("old_board",
             () -> new Item(new Item.Properties()));
@@ -57,8 +68,14 @@ public class SFItems {
     public static final RegistryObject<Item> MESSAGE_IN_A_BOTTLE = ITEMS.register("message_in_a_bottle",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> SOY_SAUCE = ITEMS.register("soy_sauce",
+            () -> new SFDrinkableItem(drinkItem()
+                    .stacksTo(16)
+                    .food(SFFood.SOY_SAUCE), false, false));
+
+
     public static final RegistryObject<Item> SHORE_CRAB_BUCKET = ITEMS.register("shore_crab_bucket",
-            () -> new ItemModFishBucket(SFEntities.CRAB, () -> Fluids.EMPTY, Items.BUCKET, false,
+            () -> new SFFishBucket(SFEntities.CRAB, () -> Fluids.EMPTY, Items.BUCKET, false,
                     new Item.Properties().stacksTo(1)));
 
     private static RegistryObject<ForgeSpawnEggItem> registerSpawnEggs(String name, Supplier<? extends EntityType<? extends Mob>> type, int backgroundColor, int highlightColor) {

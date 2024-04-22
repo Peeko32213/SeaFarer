@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "unusualprehistory:shore_crab_leg"
+  },
+  "result": "unusualprehistory:cooked_shore_crab_leg",
+  "experience": 0.35,
+  "cookingtime": 100
+}

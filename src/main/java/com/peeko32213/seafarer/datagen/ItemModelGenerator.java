@@ -37,6 +37,9 @@ public class ItemModelGenerator extends ItemModelProvider {
         singleTex(SFItems.OLD_BOARD);
         singleTex(SFItems.OLD_BOOT);
         singleTex(SFItems.CAN);
+        singleTex(SFItems.SOY_SAUCE);
+        singleTex(SFItems.RAW_MARINE_IGUANA);
+        singleTex(SFItems.COOKED_MARINE_IGUANA);
     }
 
 

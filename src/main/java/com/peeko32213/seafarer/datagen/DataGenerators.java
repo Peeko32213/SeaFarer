@@ -37,7 +37,7 @@ public class DataGenerators {
         generator.addProvider(true,new LanguageGenerator(packOutput));
         generator.addProvider(evt.includeServer(), LootGenerator.create(packOutput));
         //generator.addProvider(true,new AdvancementGenerator(generator, helper));
-
+        generator.addProvider(true,new RecipeGenerator(packOutput));
         BlockTagsGenerator blockTagGenerator = generator.addProvider(evt.includeServer(),
                 new BlockTagsGenerator(packOutput, lookupProvider, helper));
         generator.addProvider(evt.includeServer(), new ItemTagsGenerator(packOutput, lookupProvider, blockTagGenerator.contentsGetter(), helper));

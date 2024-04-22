@@ -269,7 +269,7 @@ public class BlockstateGenerator extends BlockStateProvider {
         stairsBlock(SFBlocks.SPIRAL_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/spiral_shell_bricks"));
         simpleBlockItem(SFBlocks.SPIRAL_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SFBlocks.SPIRAL_SHELL_BRICKS_STAIRS.get()))));
 
-        //Spiral
+        //Swirl
 
         logBlock(SFBlocks.SWIRL_SHELL_PILLAR.get());
         simpleBlockItem(SFBlocks.SWIRL_SHELL_PILLAR.get(), existingModel((getName(SFBlocks.SWIRL_SHELL_PILLAR.get()))));
@@ -283,8 +283,31 @@ public class BlockstateGenerator extends BlockStateProvider {
         stairsBlock(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/swirl_shell_bricks"));
         simpleBlockItem(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS.get()))));
 
+        //Sand
 
+        simpleBlock(SFBlocks.BLUE_MIXED_SPRINKLED_SAND.get());
+        simpleBlockItem(SFBlocks.BLUE_MIXED_SPRINKLED_SAND.get(), existingModel((getName(SFBlocks.BLUE_MIXED_SPRINKLED_SAND.get()))));
 
+        simpleBlock(SFBlocks.RED_MIXED_SPRINKLED_SAND.get());
+        simpleBlockItem(SFBlocks.RED_MIXED_SPRINKLED_SAND.get(), existingModel((getName(SFBlocks.RED_MIXED_SPRINKLED_SAND.get()))));
+
+        simpleBlock(SFBlocks.BLUE_SPRINKLED_SAND.get());
+        simpleBlockItem(SFBlocks.BLUE_SPRINKLED_SAND.get(), existingModel((getName(SFBlocks.BLUE_SPRINKLED_SAND.get()))));
+
+        simpleBlock(SFBlocks.PINK_SPRINKLED_SAND.get());
+        simpleBlockItem(SFBlocks.PINK_SPRINKLED_SAND.get(), existingModel((getName(SFBlocks.PINK_SPRINKLED_SAND.get()))));
+
+        simpleBlock(SFBlocks.PURPLE_SPRINKLED_SAND.get());
+        simpleBlockItem(SFBlocks.PURPLE_SPRINKLED_SAND.get(), existingModel((getName(SFBlocks.PURPLE_SPRINKLED_SAND.get()))));
+
+        simpleBlock(SFBlocks.RED_SPRINKLED_SAND.get());
+        simpleBlockItem(SFBlocks.RED_SPRINKLED_SAND.get(), existingModel((getName(SFBlocks.RED_SPRINKLED_SAND.get()))));
+
+        simpleBlock(SFBlocks.GRAVELY_SAND.get());
+        simpleBlockItem(SFBlocks.GRAVELY_SAND.get(), existingModel((getName(SFBlocks.GRAVELY_SAND.get()))));
+
+        simpleBlock(SFBlocks.ROCKY_SAND.get());
+        simpleBlockItem(SFBlocks.ROCKY_SAND.get(), existingModel((getName(SFBlocks.ROCKY_SAND.get()))));
     }
 
     @Override

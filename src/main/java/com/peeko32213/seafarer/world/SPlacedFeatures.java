@@ -30,9 +30,7 @@ public class SPlacedFeatures {
 
 
     public static final ResourceKey<PlacedFeature> BEACHGRASS_PLACED = registerKey("beachgrass_placed");
-
     public static final ResourceKey<PlacedFeature> BEACHGRASS_FAN_PLACED = registerKey("beachgrass_fan_placed");
-
     public static final ResourceKey<PlacedFeature> SEA_HOLLY_PLACED = registerKey("sea_holly_placed");
     public static final ResourceKey<PlacedFeature> SEA_THRIFT_PLACED = registerKey("sea_thrift_placed");
     public static final ResourceKey<PlacedFeature> ALGAE_BOULDER_PLACED = registerKey("algae_boulder_placed");

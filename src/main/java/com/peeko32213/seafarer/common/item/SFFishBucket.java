@@ -13,10 +13,10 @@ import net.minecraftforge.fml.DistExecutor;
 
 import java.util.function.Supplier;
 
-public class ItemModFishBucket extends MobBucketItem {
+public class SFFishBucket extends MobBucketItem {
 
-	public ItemModFishBucket(Supplier<? extends EntityType<?>> entityType, Supplier<? extends Fluid> fluid, Item item,
-                             boolean hasTooltip, Properties builder) {
+	public SFFishBucket(Supplier<? extends EntityType<?>> entityType, Supplier<? extends Fluid> fluid, Item item,
+						boolean hasTooltip, Properties builder) {
 		super(entityType, fluid, () -> SoundEvents.BUCKET_EMPTY_FISH, builder);
 		DistExecutor.unsafeCallWhenOn(Dist.CLIENT, () -> () -> SeaFarer.CALLBACKS.add(() ->
 				ItemProperties.register(this, new ResourceLocation(SeaFarer.MODID, "variant"),
