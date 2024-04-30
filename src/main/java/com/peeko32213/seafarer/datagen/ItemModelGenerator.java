@@ -40,6 +40,11 @@ public class ItemModelGenerator extends ItemModelProvider {
         singleTex(SFItems.SOY_SAUCE);
         singleTex(SFItems.RAW_MARINE_IGUANA);
         singleTex(SFItems.COOKED_MARINE_IGUANA);
+        singleTex(SFItems.SALT);
+        singleTex(SFItems.SALTED_COD);
+        singleTex(SFItems.SALTED_SALMON);
+        singleTex(SFItems.SALTED_TROPICAL_FISH);
+
     }
 
 

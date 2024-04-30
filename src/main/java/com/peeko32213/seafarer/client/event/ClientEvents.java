@@ -28,6 +28,8 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.RED_SEAGLASS_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.YELLOW_SEAGLASS_BLOCK.get(), RenderType.translucent());
 
+
+
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.BLUE_SEAGLASS_PEBBLES.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.BROWN_SEAGLASS_PEBBLES.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.GREEN_SEAGLASS_PEBBLES.get(), RenderType.translucent());
@@ -56,6 +58,7 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.SPIKY_SHELL.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.SPIRAL_SHELL.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.SWIRL_SHELL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.PYRAMID_SHELL.get(), RenderType.cutout());
 
 
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.FISHING_NET.get(), RenderType.translucent());

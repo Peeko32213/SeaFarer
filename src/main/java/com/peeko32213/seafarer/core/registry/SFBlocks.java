@@ -682,6 +682,15 @@ public class SFBlocks {
                     .ignitedByLava()
                     .pushReaction(PushReaction.DESTROY)));
 
+    public static final RegistryObject<Block> PYRAMID_SHELL = register("pyramid_shell",
+            () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.STONE)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
 
 
     // NEW SHELL BLOCKS
@@ -850,6 +859,47 @@ public class SFBlocks {
                     .strength(0.5F)
                     .sound(SoundType.SAND)));
 
+    public static final RegistryObject<Block>  MIXED_SHELLY_SAND = register("mixed_shelly_sand",
+            () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.SAND)
+                    .instrument(NoteBlockInstrument.SNARE)
+                    .strength(0.5F)
+                    .sound(SoundType.SAND)));
+
+    public static final RegistryObject<Block> SCATTERED_SHELLY_SAND = register("scattered_shelly_sand",
+            () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.SAND)
+                    .instrument(NoteBlockInstrument.SNARE)
+                    .strength(0.5F)
+                    .sound(SoundType.SAND)));
+
+    public static final RegistryObject<Block> JUMBLED_SHELLY_SAND = register("jumbled_shelly_sand",
+            () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.SAND)
+                    .instrument(NoteBlockInstrument.SNARE)
+                    .strength(0.5F)
+                    .sound(SoundType.SAND)));
+
+    public static final RegistryObject<Block> PYRAMID_SHELL_BRICKS = register("pyramid_shell_bricks",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.BONE_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<SlabBlock> PYRAMID_SHELL_BRICKS_SLAB = registerBlock("pyramid_shell_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties
+                    .copy(PYRAMID_SHELL_BRICKS.get())));
+
+    public static final RegistryObject<StairBlock> PYRAMID_SHELL_BRICKS_STAIRS = registerBlock("pyramid_shell_bricks_stairs",
+            () -> new StairBlock(() -> PYRAMID_SHELL_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
+                    .copy(PYRAMID_SHELL_BRICKS.get())));
+
+    public static final RegistryObject<RotatedPillarBlock> PYRAMID_SHELL_PILLAR = register("pyramid_shell_pillar",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties
+                    .copy(SFBlocks.PYRAMID_SHELL_BRICKS.get())
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()));
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<Block> block) {
         RegistryObject<? extends Block> ret = BLOCKS.register(name, block);
         SFItems.ITEMS.register(name, () -> new BlockItem(ret.get(), new Item.Properties()));

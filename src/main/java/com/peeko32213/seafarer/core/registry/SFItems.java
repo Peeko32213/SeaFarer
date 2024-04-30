@@ -73,6 +73,17 @@ public class SFItems {
                     .stacksTo(16)
                     .food(SFFood.SOY_SAUCE), false, false));
 
+    public static final RegistryObject<Item> SALT = ITEMS.register("sea_salt",
+            () -> new Item(new Item.Properties().food(SFFood.SALT)));
+
+    public static final RegistryObject<Item> SALTED_COD = ITEMS.register("salted_cod",
+            () -> new Item(new Item.Properties().food(SFFood.SALTED_COD)));
+
+    public static final RegistryObject<Item> SALTED_SALMON = ITEMS.register("salted_salmon",
+            () -> new Item(new Item.Properties().food(SFFood.SALTED_SALMON)));
+
+    public static final RegistryObject<Item> SALTED_TROPICAL_FISH = ITEMS.register("salted_tropical_fish",
+            () -> new Item(new Item.Properties().food(SFFood.SALTED_TROPICAL_FISH)));
 
     public static final RegistryObject<Item> SHORE_CRAB_BUCKET = ITEMS.register("shore_crab_bucket",
             () -> new SFFishBucket(SFEntities.CRAB, () -> Fluids.EMPTY, Items.BUCKET, false,

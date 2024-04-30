@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Locale;
 
 @Mod(SeaFarer.MODID)
-public class SeaFarer{
+public class SeaFarer {
         public static final String MODID = "seafarer";
         private static int packetsRegistered;
         public static final List<Runnable> CALLBACKS = new ArrayList<>();

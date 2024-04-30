@@ -27,6 +27,7 @@ public class LanguageGenerator extends LanguageProvider {
         addTabName(SFCreativeTabs.TAB.get(), "Seafarer");
 
         addBlock(SFBlocks.BLUE_SEAGLASS_BLOCK, "Blue Sea Glass Block");
+
         addBlock(SFBlocks.BLUE_SEAGLASS_BRICKS, "Blue Sea Glass Bricks");
         addBlock(SFBlocks.BLUE_SEAGLASS_PEBBLED, "Pebbled Blue Sea Glass");
         addBlock(SFBlocks.BLUE_SEAGLASS_PEBBLES, "Blue Sea Glass");
@@ -126,6 +127,7 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.SPIKY_SHELL, "Spiky Shell");
         addBlock(SFBlocks.SPIRAL_SHELL, "Spiral Shell");
         addBlock(SFBlocks.SWIRL_SHELL, "Swirl Shell");
+        addBlock(SFBlocks.PYRAMID_SHELL, "Pyramid Shell");
 
         addBlock(SFBlocks.CLAM_SHELL_BRICKS, "Clam Shell Bricks");
         addBlock(SFBlocks.CLAM_SHELL_BRICKS_SLAB, "Clam Shell Brick Slabs");
@@ -152,6 +154,12 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS, "Swirl Shell Brick Stairs");
         addBlock(SFBlocks.SWIRL_SHELL_PILLAR, "Swirl Shell Pillar");
 
+        addBlock(SFBlocks.PYRAMID_SHELL_BRICKS, "Pyramid Shell Bricks");
+        addBlock(SFBlocks.PYRAMID_SHELL_BRICKS_SLAB, "Pyramid Shell Brick Slabs");
+        addBlock(SFBlocks.PYRAMID_SHELL_BRICKS_STAIRS, "Pyramid Shell Brick Stairs");
+        addBlock(SFBlocks.PYRAMID_SHELL_PILLAR, "Pyramid Shell Pillar");
+
+
         addBlock(SFBlocks.BEACHGRASS, "Beach Grass");
         addBlock(SFBlocks.BEACHGRASS_FAN, "Fanny Beach Grass");
         addBlock(SFBlocks.SEA_HOLLY, "Sea Holly");
@@ -165,6 +173,9 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.RED_SPRINKLED_SAND, "Red Sprinkled Sand");
         addBlock(SFBlocks.GRAVELY_SAND, "Gravely Sand");
         addBlock(SFBlocks.ROCKY_SAND, "Rocky Sand");
+        addBlock(SFBlocks.JUMBLED_SHELLY_SAND, "Jumbled Shelly Sand");
+        addBlock(SFBlocks.MIXED_SHELLY_SAND, "Mixed Shelly Sand");
+        addBlock(SFBlocks.SCATTERED_SHELLY_SAND, "Scattered Shelly Sand");
 
         addEntityType(SFEntities.SUNFISH, "Sunfish");
         addItem(SFItems.SUNFISH_SPAWN_EGG, "Sunfish Spawn Egg");
@@ -195,6 +206,11 @@ public class LanguageGenerator extends LanguageProvider {
         addItem(SFItems.OLD_BOOT, "Old Boot");
 
         addItem(SFItems.SOY_SAUCE, "Soy Sauce");
+
+        addItem(SFItems.SALT, "Sea Salt");
+        addItem(SFItems.SALTED_COD, "Salted Cod");
+        addItem(SFItems.SALTED_SALMON, "Salted Salmon");
+        addItem(SFItems.SALTED_TROPICAL_FISH, "Salted Tropical Fish");
 
     }
 

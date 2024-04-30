@@ -82,6 +82,18 @@ public class BlockstateGenerator extends BlockStateProvider {
         stairsBlock(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/blue_seaglass_tiles"));
         simpleBlockItem(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get(), existingModel((getName(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get()))));
 
+        stairsBlock(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/blue_seaglass_tiles"));
+        simpleBlockItem(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get(), existingModel((getName(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get()))));
+
+
+        //    public void paneBlock(IronBarsBlock block, ResourceLocation pane, ResourceLocation edge) {
+        //        paneBlockInternal(block, key(block).toString(), pane, edge);
+        //    }
+        //    public void slabBlock(SlabBlock block, ResourceLocation doubleslab, ResourceLocation texture) {
+        //        slabBlock(block, doubleslab, texture, texture, texture);
+        //    }
+        //
+
         // Brown Seaglass
 
         simpleBlock(SFBlocks.BROWN_SEAGLASS_TILES.get());
@@ -283,6 +295,22 @@ public class BlockstateGenerator extends BlockStateProvider {
         stairsBlock(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/swirl_shell_bricks"));
         simpleBlockItem(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS.get()))));
 
+        //Pyramid
+
+
+        logBlock(SFBlocks.PYRAMID_SHELL_PILLAR.get());
+        simpleBlockItem(SFBlocks.PYRAMID_SHELL_PILLAR.get(), existingModel((getName(SFBlocks.PYRAMID_SHELL_PILLAR.get()))));
+
+        simpleBlock(SFBlocks.PYRAMID_SHELL_BRICKS.get());
+        simpleBlockItem(SFBlocks.PYRAMID_SHELL_BRICKS.get(), existingModel((getName(SFBlocks.PYRAMID_SHELL_BRICKS.get()))));
+
+        slabBlock(SFBlocks.PYRAMID_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SFBlocks.PYRAMID_SHELL_BRICKS_SLAB.get())), new ResourceLocation(SeaFarer.MODID, "block/pyramid_shell_bricks"));
+        simpleBlockItem(SFBlocks.PYRAMID_SHELL_BRICKS_SLAB.get(), existingModel((getName(SFBlocks.PYRAMID_SHELL_BRICKS_SLAB.get()))));
+
+        stairsBlock(SFBlocks.PYRAMID_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/pyramid_shell_bricks"));
+        simpleBlockItem(SFBlocks.PYRAMID_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SFBlocks.PYRAMID_SHELL_BRICKS_STAIRS.get()))));
+
+
         //Sand
 
         simpleBlock(SFBlocks.BLUE_MIXED_SPRINKLED_SAND.get());
@@ -308,6 +336,15 @@ public class BlockstateGenerator extends BlockStateProvider {
 
         simpleBlock(SFBlocks.ROCKY_SAND.get());
         simpleBlockItem(SFBlocks.ROCKY_SAND.get(), existingModel((getName(SFBlocks.ROCKY_SAND.get()))));
+
+        simpleBlock(SFBlocks.MIXED_SHELLY_SAND.get());
+        simpleBlockItem(SFBlocks.MIXED_SHELLY_SAND.get(), existingModel((getName(SFBlocks.MIXED_SHELLY_SAND.get()))));
+
+        simpleBlock(SFBlocks.SCATTERED_SHELLY_SAND.get());
+        simpleBlockItem(SFBlocks.SCATTERED_SHELLY_SAND.get(), existingModel((getName(SFBlocks.SCATTERED_SHELLY_SAND.get()))));
+
+        simpleBlock(SFBlocks.JUMBLED_SHELLY_SAND.get());
+        simpleBlockItem(SFBlocks.JUMBLED_SHELLY_SAND.get(), existingModel((getName(SFBlocks.JUMBLED_SHELLY_SAND.get()))));
     }
 
     @Override

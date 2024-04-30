@@ -1,4 +1,4 @@
-// 1.20.1	2024-04-22T11:25:46.3182723	Item Models: seafarer
+// 1.20.1	2024-04-23T09:50:52.4223984	Item Models: seafarer
 8e281303ddb2abb2a0ae908ee0e45a00615a07b1 assets/seafarer/models/item/can.json
 023ad0ac08249552a1bf59309a271de130255508 assets/seafarer/models/item/cooked_horseshoe_crab.json
 21002d26a0f6e0021149b47febd36f193b6af16e assets/seafarer/models/item/cooked_marine_iguana.json
@@ -11,6 +11,10 @@
 996920eaea952f2da3c56a43f323d6703e720814 assets/seafarer/models/item/old_boot.json
 9e807453b446b7f04b7620e68a078049f30e3de1 assets/seafarer/models/item/raw_horseshoe_crab.json
 820779d70ece7417b1a90b7a2efe846945ce882a assets/seafarer/models/item/raw_marine_iguana.json
+f186fbf60ef9548f14c572869b4d2a6528c31c09 assets/seafarer/models/item/salted_cod.json
+ed4218a74bb9e92a0a36af6ce9478de5c8111be4 assets/seafarer/models/item/salted_salmon.json
+c8e51600be6faddc2f68d7a0296a899d24de3555 assets/seafarer/models/item/salted_tropical_fish.json
+a2052eebceebd2c149288263f3e5e98ae02a67ca assets/seafarer/models/item/sea_salt.json
 bb455655f3aed3c11a5f565a53bb464aeb5c2116 assets/seafarer/models/item/shore_crab_leg.json
 224bb4425248ffa8452110b60073544f72a004cb assets/seafarer/models/item/soy_sauce.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/sunfish_spawn_egg.json
