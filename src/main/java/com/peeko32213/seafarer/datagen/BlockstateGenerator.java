@@ -82,10 +82,6 @@ public class BlockstateGenerator extends BlockStateProvider {
         stairsBlock(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/blue_seaglass_tiles"));
         simpleBlockItem(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get(), existingModel((getName(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get()))));
 
-        stairsBlock(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/blue_seaglass_tiles"));
-        simpleBlockItem(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get(), existingModel((getName(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get()))));
-
-
         //    public void paneBlock(IronBarsBlock block, ResourceLocation pane, ResourceLocation edge) {
         //        paneBlockInternal(block, key(block).toString(), pane, edge);
         //    }
@@ -345,6 +341,24 @@ public class BlockstateGenerator extends BlockStateProvider {
 
         simpleBlock(SFBlocks.JUMBLED_SHELLY_SAND.get());
         simpleBlockItem(SFBlocks.JUMBLED_SHELLY_SAND.get(), existingModel((getName(SFBlocks.JUMBLED_SHELLY_SAND.get()))));
+
+
+        paneBlock(SFBlocks.BLUE_SEAGLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/blue_seaglass_block"), new ResourceLocation(SeaFarer.MODID, "block/blue_seaglass_pane_top"));
+
+        paneBlock(SFBlocks.BROWN_SEAGLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/brown_seaglass_block"), new ResourceLocation(SeaFarer.MODID, "block/brown_seaglass_pane_top"));
+
+        paneBlock(SFBlocks.GREEN_SEAGLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/green_seaglass_block"), new ResourceLocation(SeaFarer.MODID, "block/green_seaglass_pane_top"));
+
+        paneBlock(SFBlocks.ORANGE_SEAGLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/orange_seaglass_block"), new ResourceLocation(SeaFarer.MODID, "block/orange_seaglass_pane_top"));
+
+        paneBlock(SFBlocks.PURPLE_SEAGLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/purple_seaglass_block"), new ResourceLocation(SeaFarer.MODID, "block/purple_seaglass_pane_top"));
+
+        paneBlock(SFBlocks.RED_SEAGLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/red_seaglass_block"), new ResourceLocation(SeaFarer.MODID, "block/red_seaglass_pane_top"));
+
+        paneBlock(SFBlocks.WHITE_SEAGLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/white_seaglass_block"), new ResourceLocation(SeaFarer.MODID, "block/white_seaglass_pane_top"));
+
+        paneBlock(SFBlocks.YELLOW_SEAGLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/yellow_seaglass_block"), new ResourceLocation(SeaFarer.MODID, "block/yellow_seaglass_pane_top"));
+
     }
 
     @Override

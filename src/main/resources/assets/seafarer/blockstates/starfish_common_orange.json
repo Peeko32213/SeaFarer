@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "seafarer:block/starfish_common_orange"
+      },
+      {
+        "model": "seafarer:block/starfish_common_orange",
+        "y": 90
+      },
+      {
+        "model": "seafarer:block/starfish_common_orange",
+        "y": 180
+      },
+      {
+        "model": "seafarer:block/starfish_common_orange",
+        "y": 270
+      }
+    ]
+  }
+}

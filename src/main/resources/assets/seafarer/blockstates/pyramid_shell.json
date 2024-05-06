@@ -2,18 +2,18 @@
   "variants": {
     "": [
       {
-        "model": "seafarer:block/shells/pyramid_shell"
+        "model": "seafarer:block/pyramid_shell"
       },
       {
-        "model": "seafarer:block/shells/pyramid_shell",
+        "model": "seafarer:block/pyramid_shell",
         "y": 90
       },
       {
-        "model": "seafarer:block/shells/pyramid_shell",
+        "model": "seafarer:block/pyramid_shell",
         "y": 180
       },
       {
-        "model": "seafarer:block/shells/pyramid_shell",
+        "model": "seafarer:block/pyramid_shell",
         "y": 270
       }
     ]

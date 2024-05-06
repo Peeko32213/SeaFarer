@@ -1,6 +1,7 @@
 package com.peeko32213.seafarer.datagen;
 
 import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -21,7 +22,17 @@ public class BlockTagsGenerator extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider pProvider) {
 
         tag(SFTags.BEACH_PLANT_BLOCKS)
-                .addTag(BlockTags.DEAD_BUSH_MAY_PLACE_ON);
+                .addTag(BlockTags.DEAD_BUSH_MAY_PLACE_ON)
+                .add(SFBlocks.BLUE_MIXED_SPRINKLED_SAND.get())
+                .add(SFBlocks.PURPLE_SPRINKLED_SAND.get())
+                .add(SFBlocks.RED_MIXED_SPRINKLED_SAND.get())
+                .add(SFBlocks.PINK_SPRINKLED_SAND.get())
+                .add(SFBlocks.BLUE_SPRINKLED_SAND.get())
+                .add(SFBlocks.RED_SPRINKLED_SAND.get())
+                .add(SFBlocks.JUMBLED_SHELLY_SAND.get())
+                .add(SFBlocks.SCATTERED_SHELLY_SAND.get())
+                .add(SFBlocks.MIXED_SHELLY_SAND.get())
+        ;
 
     }
 

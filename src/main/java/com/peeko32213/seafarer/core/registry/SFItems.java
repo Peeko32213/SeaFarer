@@ -56,6 +56,9 @@ public class SFItems {
     public static final RegistryObject<Item> COOKED_MARINE_IGUANA = ITEMS.register("cooked_marine_iguana",
             () -> new Item(new Item.Properties().food(SFFood.COOKED_MARINE_IGUANA)));
 
+    public static final RegistryObject<Item> COOKED_STARFISH = ITEMS.register("cooked_starfish",
+            () -> new Item(new Item.Properties().food(SFFood.COOKED_STARFISH)));
+
     public static final RegistryObject<Item> OLD_BOARD = ITEMS.register("old_board",
             () -> new Item(new Item.Properties()));
 
@@ -84,6 +87,9 @@ public class SFItems {
 
     public static final RegistryObject<Item> SALTED_TROPICAL_FISH = ITEMS.register("salted_tropical_fish",
             () -> new Item(new Item.Properties().food(SFFood.SALTED_TROPICAL_FISH)));
+
+    public static final RegistryObject<Item> SALTED_STARFISH = ITEMS.register("salted_starfish",
+            () -> new Item(new Item.Properties().food(SFFood.SALTED_STARFISH)));
 
     public static final RegistryObject<Item> SHORE_CRAB_BUCKET = ITEMS.register("shore_crab_bucket",
             () -> new SFFishBucket(SFEntities.CRAB, () -> Fluids.EMPTY, Items.BUCKET, false,

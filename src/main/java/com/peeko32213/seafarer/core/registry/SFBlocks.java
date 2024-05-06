@@ -2,6 +2,7 @@ package com.peeko32213.seafarer.core.registry;
 
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.common.block.*;
+import com.peeko32213.seafarer.common.block.starfish.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -27,6 +28,16 @@ public class SFBlocks {
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
             ));
+
+
+    public static final RegistryObject<IronBarsBlock> BLUE_SEAGLASS_PANE = register("blue_seaglass_pane",
+            () -> new IronBarsBlock(BlockBehaviour.Properties
+                    .of()
+                    .instrument(NoteBlockInstrument.HAT)
+                    .strength(0.3F)
+                    .sound(SoundType.GLASS)
+                    .noOcclusion()));
+
 
     public static final RegistryObject<Block> BLUE_SEAGLASS_BRICKS = register("blue_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
@@ -71,6 +82,14 @@ public class SFBlocks {
                     .noOcclusion()
             ));
 
+    public static final RegistryObject<IronBarsBlock> BROWN_SEAGLASS_PANE = register("brown_seaglass_pane",
+            () -> new IronBarsBlock(BlockBehaviour.Properties
+                    .of()
+                    .instrument(NoteBlockInstrument.HAT)
+                    .strength(0.3F)
+                    .sound(SoundType.GLASS)
+                    .noOcclusion()));
+
     public static final RegistryObject<Block> BROWN_SEAGLASS_BRICKS = register("brown_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
@@ -112,6 +131,14 @@ public class SFBlocks {
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
             ));
+
+    public static final RegistryObject<IronBarsBlock> GREEN_SEAGLASS_PANE = register("green_seaglass_pane",
+            () -> new IronBarsBlock(BlockBehaviour.Properties
+                    .of()
+                    .instrument(NoteBlockInstrument.HAT)
+                    .strength(0.3F)
+                    .sound(SoundType.GLASS)
+                    .noOcclusion()));
 
     public static final RegistryObject<Block> GREEN_SEAGLASS_BRICKS = register("green_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
@@ -155,6 +182,13 @@ public class SFBlocks {
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
             ));
+    public static final RegistryObject<IronBarsBlock> ORANGE_SEAGLASS_PANE = register("orange_seaglass_pane",
+            () -> new IronBarsBlock(BlockBehaviour.Properties
+                    .of()
+                    .instrument(NoteBlockInstrument.HAT)
+                    .strength(0.3F)
+                    .sound(SoundType.GLASS)
+                    .noOcclusion()));
 
     public static final RegistryObject<Block> ORANGE_SEAGLASS_BRICKS = register("orange_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
@@ -199,6 +233,14 @@ public class SFBlocks {
                     .noOcclusion()
             ));
 
+    public static final RegistryObject<IronBarsBlock> PURPLE_SEAGLASS_PANE = register("purple_seaglass_pane",
+            () -> new IronBarsBlock(BlockBehaviour.Properties
+                    .of()
+                    .instrument(NoteBlockInstrument.HAT)
+                    .strength(0.3F)
+                    .sound(SoundType.GLASS)
+                    .noOcclusion()));
+
     public static final RegistryObject<Block> PURPLE_SEAGLASS_BRICKS = register("purple_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
@@ -241,6 +283,14 @@ public class SFBlocks {
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
             ));
+
+    public static final RegistryObject<IronBarsBlock> RED_SEAGLASS_PANE = register("red_seaglass_pane",
+            () -> new IronBarsBlock(BlockBehaviour.Properties
+                    .of()
+                    .instrument(NoteBlockInstrument.HAT)
+                    .strength(0.3F)
+                    .sound(SoundType.GLASS)
+                    .noOcclusion()));
 
     public static final RegistryObject<Block> RED_SEAGLASS_BRICKS = register("red_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
@@ -286,6 +336,14 @@ public class SFBlocks {
                     .noOcclusion()
             ));
 
+    public static final RegistryObject<IronBarsBlock> WHITE_SEAGLASS_PANE = register("white_seaglass_pane",
+            () -> new IronBarsBlock(BlockBehaviour.Properties
+                    .of()
+                    .instrument(NoteBlockInstrument.HAT)
+                    .strength(0.3F)
+                    .sound(SoundType.GLASS)
+                    .noOcclusion()));
+
     public static final RegistryObject<Block> WHITE_SEAGLASS_BRICKS = register("white_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
@@ -327,6 +385,14 @@ public class SFBlocks {
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
             ));
+
+    public static final RegistryObject<IronBarsBlock> YELLOW_SEAGLASS_PANE = register("yellow_seaglass_pane",
+            () -> new IronBarsBlock(BlockBehaviour.Properties
+                    .of()
+                    .instrument(NoteBlockInstrument.HAT)
+                    .strength(0.3F)
+                    .sound(SoundType.GLASS)
+                    .noOcclusion()));
 
     public static final RegistryObject<Block> YELLOW_SEAGLASS_BRICKS = register("yellow_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
@@ -453,124 +519,76 @@ public class SFBlocks {
                     .sound(SoundType.LADDER)));
 
 
-    public static final RegistryObject<Block> STARFISH_BLUE = register("starfish_blue",
-            () -> new SFWallBlock(BlockBehaviour.Properties
+    public static final RegistryObject<Block> STARFISH_COMMON_ORANGE = register("starfish_common_orange",
+            () -> new StarfishCommonOrangeBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
                     .sound(SoundType.CORAL_BLOCK)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> STARFISH_GREEN = register("starfish_green",
-            () -> new SFWallBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.CORAL_BLOCK)
-                    .noCollission()
-                    .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> STARFISH_PINK = register("starfish_pink",
-            () -> new SFWallBlock(BlockBehaviour.Properties
+            () -> new StarfishPinkBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
                     .sound(SoundType.CORAL_BLOCK)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> STARFISH_PURPLE = register("starfish_purple",
-            () -> new SFWallBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.CORAL_BLOCK)
-                    .noCollission()
-                    .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> STARFISH_RED = register("starfish_red",
-            () -> new SFWallBlock(BlockBehaviour.Properties
+            () -> new StarfishPinkBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
                     .sound(SoundType.CORAL_BLOCK)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> STARFISH_YELLOW = register("starfish_yellow",
-            () -> new SFWallBlock(BlockBehaviour.Properties
+    public static final RegistryObject<Block> STARFISH_CHOCOLATE_CHIP = register("starfish_chocolate_chip",
+            () -> new StarfishChocolateChipBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
                     .sound(SoundType.CORAL_BLOCK)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> DEAD_STARFISH_BLUE = register("dead_starfish_blue",
-            () -> new SFWallBlock(BlockBehaviour.Properties
+    public static final RegistryObject<Block> STARFISH_BIG_BLUE = register("starfish_big_blue",
+            () -> new StarfishBigBlueBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
                     .sound(SoundType.CORAL_BLOCK)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> DEAD_STARFISH_GREEN = register("dead_starfish_green",
-            () -> new SFWallBlock(BlockBehaviour.Properties
+    public static final RegistryObject<Block> STARFISH_BIG_PURPLE_OCHRE = register("starfish_big_purple_ochre",
+            () -> new StarfishBigPurpleOchreBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
                     .sound(SoundType.CORAL_BLOCK)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> DEAD_STARFISH_PINK = register("dead_starfish_pink",
-            () -> new SFWallBlock(BlockBehaviour.Properties
+    public static final RegistryObject<Block> STARFISH_BIG_ROYAL = register("starfish_big_royal",
+            () -> new StarfishBigRoyalBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
                     .sound(SoundType.CORAL_BLOCK)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> DEAD_STARFISH_PURPLE = register("dead_starfish_purple",
-            () -> new SFWallBlock(BlockBehaviour.Properties
+    public static final RegistryObject<Block> STARFISH_BIG_OCHRE = register("starfish_big_ochre",
+            () -> new StarfishBigOchreBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
                     .sound(SoundType.CORAL_BLOCK)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> DEAD_STARFISH_RED = register("dead_starfish_red",
-            () -> new SFWallBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.CORAL_BLOCK)
-                    .noCollission()
-                    .noOcclusion()
-                    .replaceable()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> DEAD_STARFISH_YELLOW = register("dead_starfish_yellow",
-            () -> new SFWallBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.CORAL_BLOCK)
-                    .noCollission()
-                    .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> ALGAE_BLOCK = register("algae_block",
@@ -604,7 +622,6 @@ public class SFBlocks {
                     .sound(SoundType.STONE)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> HORN_SHELL = register("horn_shell",
@@ -614,7 +631,6 @@ public class SFBlocks {
                     .sound(SoundType.STONE)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SPIKY_SHELL = register("spiky_shell",
@@ -624,7 +640,6 @@ public class SFBlocks {
                     .sound(SoundType.STONE)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SPIRAL_SHELL = register("spiral_shell",
@@ -634,7 +649,6 @@ public class SFBlocks {
                     .sound(SoundType.STONE)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SWIRL_SHELL = register("swirl_shell",
@@ -644,7 +658,6 @@ public class SFBlocks {
                     .sound(SoundType.STONE)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> BEACHGRASS_FAN = register("beachgrass_fan",
@@ -689,7 +702,6 @@ public class SFBlocks {
                     .sound(SoundType.STONE)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
 

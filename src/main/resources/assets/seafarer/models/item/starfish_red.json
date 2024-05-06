@@ -1,6 +1,6 @@
 {
   "parent" : "item/generated",
   "textures" : {
-    "layer0" : "seafarer:block/starfish_red"
+    "layer0" : "seafarer:item/starfish_red_item"
   }
 }

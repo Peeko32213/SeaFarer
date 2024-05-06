@@ -20,11 +20,15 @@ public class SFFood {
 
     public static final FoodProperties SALTED_TROPICAL_FISH = (new FoodProperties.Builder()).nutrition(1).saturationMod(1.2F).meat().fast().build();
 
+    public static final FoodProperties SALTED_STARFISH = (new FoodProperties.Builder()).nutrition(1).saturationMod(0.1F).meat().build();
+
 
     //Cooked Basic
     public static final FoodProperties COOKED_SHORE_CRAB = (new FoodProperties.Builder()).nutrition(6).saturationMod(1.2F).meat().build();
     public static final FoodProperties COOKED_HORSESHOE_CRAB = (new FoodProperties.Builder()).nutrition(3).saturationMod(0.8F).meat().build();
     public static final FoodProperties COOKED_MARINE_IGUANA = (new FoodProperties.Builder()).nutrition(6).saturationMod(1.5F).meat().build();
+
+    public static final FoodProperties COOKED_STARFISH = (new FoodProperties.Builder()).nutrition(2).saturationMod(0.5F).meat().build();
 
     //Condiment
     public static final FoodProperties SOY_SAUCE = (new FoodProperties.Builder()).nutrition(1).saturationMod(0).build();

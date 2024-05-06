@@ -44,6 +44,8 @@ public class ItemModelGenerator extends ItemModelProvider {
         singleTex(SFItems.SALTED_COD);
         singleTex(SFItems.SALTED_SALMON);
         singleTex(SFItems.SALTED_TROPICAL_FISH);
+        singleTex(SFItems.SALTED_STARFISH);
+        singleTex(SFItems.COOKED_STARFISH);
 
     }
 

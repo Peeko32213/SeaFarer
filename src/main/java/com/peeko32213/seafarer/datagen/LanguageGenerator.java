@@ -36,6 +36,7 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.BLUE_SEAGLASS_TILES_SLAB, "Blue Sea Glass Tile Slabs");
         addBlock(SFBlocks.BLUE_SEAGLASS_BRICKS_SLAB, "Blue Sea Glass Brick Slabs");
         addBlock(SFBlocks.BLUE_SEAGLASS_BRICKS_STAIRS, "Blue Sea Glass Brick Stairs");
+        addBlock(SFBlocks.BLUE_SEAGLASS_PANE, "Blue Sea Glass Pane");
 
         addBlock(SFBlocks.BROWN_SEAGLASS_BLOCK, "Brown Sea Glass Block");
         addBlock(SFBlocks.BROWN_SEAGLASS_BRICKS, "Brown Sea Glass Bricks");
@@ -46,6 +47,7 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.BROWN_SEAGLASS_TILES_SLAB, "Brown Sea Glass Tile Slabs");
         addBlock(SFBlocks.BROWN_SEAGLASS_BRICKS_SLAB, "Brown Sea Glass Brick Slabs");
         addBlock(SFBlocks.BROWN_SEAGLASS_BRICKS_STAIRS, "Brown Sea Glass Brick Stairs");
+        addBlock(SFBlocks.BROWN_SEAGLASS_PANE, "Brown Sea Glass Pane");
 
         addBlock(SFBlocks.GREEN_SEAGLASS_BLOCK, "Green Sea Glass Block");
         addBlock(SFBlocks.GREEN_SEAGLASS_BRICKS, "Green Sea Glass Bricks");
@@ -56,6 +58,7 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.GREEN_SEAGLASS_TILES_SLAB, "Green Sea Glass Tile Slabs");
         addBlock(SFBlocks.GREEN_SEAGLASS_BRICKS_SLAB, "Green Sea Glass Brick Slabs");
         addBlock(SFBlocks.GREEN_SEAGLASS_BRICKS_STAIRS, "Green Sea Glass Brick Stairs");
+        addBlock(SFBlocks.GREEN_SEAGLASS_PANE, "Green Sea Glass Pane");
 
         addBlock(SFBlocks.ORANGE_SEAGLASS_BLOCK, "Orange Sea Glass Block");
         addBlock(SFBlocks.ORANGE_SEAGLASS_BRICKS, "Orange Sea Glass Bricks");
@@ -66,6 +69,7 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.ORANGE_SEAGLASS_TILES_SLAB, "Orange Sea Glass Tile Slabs");
         addBlock(SFBlocks.ORANGE_SEAGLASS_BRICKS_SLAB, "Orange Sea Glass Brick Slabs");
         addBlock(SFBlocks.ORANGE_SEAGLASS_BRICKS_STAIRS, "Orange Sea Glass Brick Stairs");
+        addBlock(SFBlocks.ORANGE_SEAGLASS_PANE, "Orange Sea Glass Pane");
 
         addBlock(SFBlocks.PURPLE_SEAGLASS_BLOCK, "Purple Sea Glass Block");
         addBlock(SFBlocks.PURPLE_SEAGLASS_BRICKS, "Purple Sea Glass Bricks");
@@ -76,6 +80,7 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.PURPLE_SEAGLASS_TILES_SLAB, "Purple Sea Glass Tile Slabs");
         addBlock(SFBlocks.PURPLE_SEAGLASS_BRICKS_SLAB, "Purple Sea Glass Brick Slabs");
         addBlock(SFBlocks.PURPLE_SEAGLASS_BRICKS_STAIRS, "Purple Sea Glass Brick Stairs");
+        addBlock(SFBlocks.PURPLE_SEAGLASS_PANE, "Purple Sea Glass Pane");
 
         addBlock(SFBlocks.RED_SEAGLASS_BLOCK, "Red Sea Glass Block");
         addBlock(SFBlocks.RED_SEAGLASS_BRICKS, "Red Sea Glass Bricks");
@@ -86,6 +91,7 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.RED_SEAGLASS_TILES_SLAB, "Red Sea Glass Tile Slabs");
         addBlock(SFBlocks.RED_SEAGLASS_BRICKS_SLAB, "Red Sea Glass Brick Slabs");
         addBlock(SFBlocks.RED_SEAGLASS_BRICKS_STAIRS, "Red Sea Glass Brick Stairs");
+        addBlock(SFBlocks.RED_SEAGLASS_PANE, "Red Sea Glass Pane");
 
         addBlock(SFBlocks.YELLOW_SEAGLASS_BLOCK, "Yellow Sea Glass Block");
         addBlock(SFBlocks.YELLOW_SEAGLASS_BRICKS, "Yellow Sea Glass Bricks");
@@ -96,6 +102,7 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.YELLOW_SEAGLASS_TILES_SLAB, "Yellow Sea Glass Tile Slabs");
         addBlock(SFBlocks.YELLOW_SEAGLASS_BRICKS_SLAB, "Yellow Sea Glass Brick Slabs");
         addBlock(SFBlocks.YELLOW_SEAGLASS_BRICKS_STAIRS, "Yellow Sea Glass Brick Stairs");
+        addBlock(SFBlocks.YELLOW_SEAGLASS_PANE, "Yellow Sea Glass Pane");
 
         addBlock(SFBlocks.WHITE_SEAGLASS_BLOCK, "White Sea Glass Block");
         addBlock(SFBlocks.WHITE_SEAGLASS_BRICKS, "White Sea Glass Bricks");
@@ -105,22 +112,21 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.WHITE_SEAGLASS_TILES_SLAB, "White Sea Glass Tile Slabs");
         addBlock(SFBlocks.WHITE_SEAGLASS_BRICKS_SLAB, "White Sea Glass Brick Slabs");
         addBlock(SFBlocks.WHITE_SEAGLASS_BRICKS_STAIRS, "White Sea Glass Brick Stairs");
+        addBlock(SFBlocks.WHITE_SEAGLASS_PANE, "White Sea Glass Pane");
 
         addBlock(SFBlocks.FISHING_NET, "Fishing Net");
 
-        addBlock(SFBlocks.STARFISH_BLUE, "Blue Starfish");
-        addBlock(SFBlocks.STARFISH_GREEN, "Green Starfish");
-        addBlock(SFBlocks.STARFISH_PINK, "Pink Starfish");
-        addBlock(SFBlocks.STARFISH_PURPLE, "Purple Starfish");
-        addBlock(SFBlocks.STARFISH_RED, "Red Starfish");
-        addBlock(SFBlocks.STARFISH_YELLOW, "Yellow Starfish");
+        addBlock(SFBlocks.STARFISH_COMMON_ORANGE, "Starfish");
+        addBlock(SFBlocks.STARFISH_RED, "Starfish");
+        addBlock(SFBlocks.STARFISH_PINK, "Starfish");
+        addBlock(SFBlocks.STARFISH_CHOCOLATE_CHIP, "Starfish");
 
-        addBlock(SFBlocks.DEAD_STARFISH_BLUE, "Dead Blue Starfish");
-        addBlock(SFBlocks.DEAD_STARFISH_GREEN, "Dead Green Starfish");
-        addBlock(SFBlocks.DEAD_STARFISH_PINK, "Dead Pink Starfish");
-        addBlock(SFBlocks.DEAD_STARFISH_PURPLE, "Dead Purple Starfish");
-        addBlock(SFBlocks.DEAD_STARFISH_RED, "Dead Red Starfish");
-        addBlock(SFBlocks.DEAD_STARFISH_YELLOW, "Dead Yellow Starfish");
+        addBlock(SFBlocks.STARFISH_BIG_BLUE, "Big Starfish");
+        addBlock(SFBlocks.STARFISH_BIG_PURPLE_OCHRE, "Big Starfish");
+        addBlock(SFBlocks.STARFISH_BIG_ROYAL, "Big Starfish");
+        addBlock(SFBlocks.STARFISH_BIG_OCHRE, "Big Starfish");
+
+        addItem(SFItems.COOKED_STARFISH, "Cooked Starfish");
 
         addBlock(SFBlocks.CLAM_SHELL, "Clam Shell");
         addBlock(SFBlocks.HORN_SHELL, "Horn Shell");
@@ -211,7 +217,16 @@ public class LanguageGenerator extends LanguageProvider {
         addItem(SFItems.SALTED_COD, "Salted Cod");
         addItem(SFItems.SALTED_SALMON, "Salted Salmon");
         addItem(SFItems.SALTED_TROPICAL_FISH, "Salted Tropical Fish");
+        addItem(SFItems.SALTED_STARFISH, "Salted Starfish");
 
+        add("seafarer.starfish_common_orange", "Common Orange");
+        add("seafarer.starfish_pink", "Pink");
+        add("seafarer.starfish_red", "Red");
+        add("seafarer.starfish_chocolate_chip", "Chocolate Chip");
+        add("seafarer.starfish_big_blue", "Blue");
+        add("seafarer.starfish_big_purple_ochre", "Purple Ochre");
+        add("seafarer.starfish_big_ochre", "Ochre");
+        add("seafarer.starfish_big_royal", "Big Royal");
     }
 
     @Override
