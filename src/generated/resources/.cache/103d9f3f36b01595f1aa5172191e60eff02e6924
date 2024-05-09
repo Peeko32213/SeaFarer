@@ -1,12 +1,12 @@
-// 1.20.1	2024-05-09T12:30:20.2515732	Registries
+// 1.20.1	2024-05-09T21:45:21.3808425	Registries
 e4a3e73c33822e55a28fb2a711ca27ad289d8c4a data/seafarer/forge/biome_modifier/add_algae_boulder.json
 815181e75bd04124d41861744b32a97300ed80ba data/seafarer/forge/biome_modifier/add_beachgrass.json
 8a18c34e112c68da68de26f07bc55c52643b90e1 data/seafarer/forge/biome_modifier/add_crab.json
 cf47b863feb7e526c5702d7ce801abd74ab404b1 data/seafarer/forge/biome_modifier/add_horseshoe_crab.json
-810ab5a0e9f10b415937c0737b14cbcddbc54c62 data/seafarer/forge/biome_modifier/add_land_seastar.json
+0190c34aa2a7f55518441e9e9363b3437cde319c data/seafarer/forge/biome_modifier/add_land_seastar.json
 810ab5a0e9f10b415937c0737b14cbcddbc54c62 data/seafarer/forge/biome_modifier/add_land_sea_shells.json
 16c7089ef15378536760030ae549a6a27b3c72c8 data/seafarer/forge/biome_modifier/add_marine_iguana.json
-810ab5a0e9f10b415937c0737b14cbcddbc54c62 data/seafarer/forge/biome_modifier/add_seaglass.json
+9ca8758781f17300eb5485fdb762a482fac4562f data/seafarer/forge/biome_modifier/add_seaglass.json
 6bfaccbedbd0dc4416819d610cc35766d9069ad8 data/seafarer/forge/biome_modifier/add_sea_holly.json
 1882b6fa5b19af8e7fa8d120750fbe7edd509d94 data/seafarer/forge/biome_modifier/add_sea_thrift.json
 530c2c5fe7988d220c869c257f2172de75d0a833 data/seafarer/forge/biome_modifier/add_sunfish.json

@@ -64,12 +64,12 @@ public class SBiomeModifiers {
 
         context.register(ADD_SEAGLASS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_BEACH),
-                HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SEA_SHELL_LAND)),
+                HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SEA_GLASS)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_LAND_SEASTAR, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_BEACH),
-                HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SEA_SHELL_LAND)),
+                HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SEA_STAR_LAND)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
 
