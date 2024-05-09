@@ -171,6 +171,8 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.SEA_HOLLY, "Sea Holly");
         addBlock(SFBlocks.SEA_THRIFT, "Sea Thrift");
 
+        addBlock(SFBlocks.PLANK_BLOCK, "Plank Path");
+
         addBlock(SFBlocks.BLUE_MIXED_SPRINKLED_SAND, "Blue Mixed Sprinkled Sand");
         addBlock(SFBlocks.RED_MIXED_SPRINKLED_SAND, "Red Mixed Sprinkled Sand");
         addBlock(SFBlocks.BLUE_SPRINKLED_SAND, "Blue Sprinkled Sand");

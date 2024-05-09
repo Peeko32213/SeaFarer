@@ -3,6 +3,7 @@ package com.peeko32213.seafarer.world;
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.common.world.feature.AlgaeBoulderFeature;
 import com.peeko32213.seafarer.core.registry.SFBlocks;
+import com.peeko32213.seafarer.core.registry.SFFeatures;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -17,6 +18,7 @@ import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
@@ -46,6 +48,10 @@ public class SConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> SEA_THRIFT = registerKey("sea_thrift");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ALGAE_BOULDER = registerKey("algae_boulder");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SEA_SHELLS = registerKey("sea_shells");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SEA_GLASS = registerKey("sea_glass");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SEA_STARS = registerKey("sea_stars");
+
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -59,10 +65,10 @@ public class SConfiguredFeatures {
         register(context, ALGAE_PATCH_BONEMEAL, Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(SFBlocks.ALGAE_BLOCK.get()), PlacementUtils.inlinePlaced(ALGAE_PATCH_PLANT), CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.4F, UniformInt.of(1, 2), 0.75F));
 
 
-        FeatureUtils.register(context, BEACHGRASS, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(SFBlocks.BEACHGRASS.get().defaultBlockState()), 32));
+        FeatureUtils.register(context, BEACHGRASS, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(SFBlocks.BEACHGRASS.get().defaultBlockState()), 16));
 
 
-        FeatureUtils.register(context, BEACHGRASS_FAN, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(SFBlocks.BEACHGRASS_FAN.get().defaultBlockState()), 32));
+        FeatureUtils.register(context, BEACHGRASS_FAN, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(SFBlocks.BEACHGRASS_FAN.get().defaultBlockState()), 16));
 
 
         register(context, SEA_THRIFT, Feature.RANDOM_PATCH,
@@ -74,6 +80,41 @@ public class SConfiguredFeatures {
 
         register(context, ALGAE_BOULDER, Feature.FOREST_ROCK,
                 new BlockStateConfiguration(SFBlocks.ALGAE_BLOCK.get().defaultBlockState()));
+
+        register(context, SEA_SHELLS, Feature.RANDOM_PATCH,
+                FeatureUtils.simpleRandomPatchConfiguration(2, PlacementUtils.filtered(SFFeatures.WATERLOGGABLE_BLOCK.get(),
+                        new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                                .add(SFBlocks.CLAM_SHELL.get().defaultBlockState(), 20)
+                                .add(SFBlocks.SPIKY_SHELL.get().defaultBlockState(), 20)
+                                .add(SFBlocks.SPIRAL_SHELL.get().defaultBlockState(), 15)
+                                .add(SFBlocks.SWIRL_SHELL.get().defaultBlockState(), 15)
+                                .add(SFBlocks.PYRAMID_SHELL.get().defaultBlockState(), 8))), BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE)));
+
+        register(context, SEA_GLASS, Feature.RANDOM_PATCH,
+                FeatureUtils.simpleRandomPatchConfiguration(4, PlacementUtils.filtered(SFFeatures.WATERLOGGABLE_BLOCK.get(),
+                        new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                                .add(SFBlocks.WHITE_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
+                                .add(SFBlocks.YELLOW_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
+                                .add(SFBlocks.RED_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
+                                .add(SFBlocks.PURPLE_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
+                                .add(SFBlocks.ORANGE_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
+                                .add(SFBlocks.GREEN_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
+                                .add(SFBlocks.BROWN_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
+                                .add(SFBlocks.BLUE_SEAGLASS_PEBBLES.get().defaultBlockState(), 20))),
+                        BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE)));
+
+        register(context, SEA_STARS, Feature.RANDOM_PATCH,
+                FeatureUtils.simpleRandomPatchConfiguration(1, PlacementUtils.filtered(SFFeatures.WATERLOGGABLE_BLOCK.get(),
+                        new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                                .add(SFBlocks.STARFISH_RED.get().defaultBlockState(), 15)
+                                .add(SFBlocks.STARFISH_PINK.get().defaultBlockState(), 15)
+                                .add(SFBlocks.STARFISH_COMMON_ORANGE.get().defaultBlockState(), 20)
+                                .add(SFBlocks.STARFISH_CHOCOLATE_CHIP.get().defaultBlockState(), 5)
+                                .add(SFBlocks.STARFISH_BIG_BLUE.get().defaultBlockState(), 20)
+                                .add(SFBlocks.STARFISH_BIG_OCHRE.get().defaultBlockState(), 15)
+                                .add(SFBlocks.STARFISH_BIG_PURPLE_OCHRE.get().defaultBlockState(), 10)
+                                .add(SFBlocks.STARFISH_BIG_ROYAL.get().defaultBlockState(), 5))),
+                        BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE)));
 
 
     }

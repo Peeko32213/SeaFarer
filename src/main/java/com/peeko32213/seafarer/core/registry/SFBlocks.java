@@ -660,6 +660,15 @@ public class SFBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
+    public static final RegistryObject<Block> PLANK_BLOCK = register("plank_block",
+            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.WOOD)
+                    .noCollission()
+                    .noOcclusion()
+                    .pushReaction(PushReaction.DESTROY)));
+
     public static final RegistryObject<Block> BEACHGRASS_FAN = register("beachgrass_fan",
             () -> new SFLandFanBlock(BlockBehaviour.Properties
                     .of()

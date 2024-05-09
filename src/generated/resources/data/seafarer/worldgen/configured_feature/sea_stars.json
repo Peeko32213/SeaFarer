@@ -1,0 +1,104 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "seafarer:waterloggable_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "seafarer:starfish_red",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 15
+              },
+              {
+                "data": {
+                  "Name": "seafarer:starfish_pink",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 15
+              },
+              {
+                "data": {
+                  "Name": "seafarer:starfish_common_orange",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 20
+              },
+              {
+                "data": {
+                  "Name": "seafarer:starfish_chocolate_chip",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 5
+              },
+              {
+                "data": {
+                  "Name": "seafarer:starfish_big_blue",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 20
+              },
+              {
+                "data": {
+                  "Name": "seafarer:starfish_big_ochre",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 15
+              },
+              {
+                "data": {
+                  "Name": "seafarer:starfish_big_purple_ochre",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 10
+              },
+              {
+                "data": {
+                  "Name": "seafarer:starfish_big_royal",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 5
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "minecraft:air",
+              "minecraft:water"
+            ]
+          }
+        }
+      ]
+    },
+    "tries": 1,
+    "xz_spread": 7,
+    "y_spread": 3
+  }
+}

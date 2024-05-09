@@ -27,6 +27,11 @@ public class SBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_HORSESHOE_CRAB = registerKey("add_horseshoe_crab");
     public static final ResourceKey<BiomeModifier> ADD_MARINE_IGUANA = registerKey("add_marine_iguana");
     public static final ResourceKey<BiomeModifier> ADD_SUNFISH = registerKey("add_sunfish");
+    private static final ResourceKey<BiomeModifier> ADD_LAND_SEA_SHELLS = registerKey("add_land_sea_shells");
+    private static final ResourceKey<BiomeModifier> ADD_WATER_SEA_SHELLS = registerKey("add_water_sea_shells");
+    private static final ResourceKey<BiomeModifier> ADD_SEAGLASS = registerKey("add_seaglass");
+    private static final ResourceKey<BiomeModifier> ADD_LAND_SEASTAR = registerKey("add_land_seastar");
+    private static final ResourceKey<BiomeModifier> ADD_WATER_SEASTAR = registerKey("add_water_seastar");
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -51,6 +56,27 @@ public class SBiomeModifiers {
                 biomes.getOrThrow(BiomeTags.IS_BEACH),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.ALGAE_BOULDER_PLACED)),
                 GenerationStep.Decoration.SURFACE_STRUCTURES));
+
+        context.register(ADD_LAND_SEA_SHELLS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_BEACH),
+                HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SEA_SHELL_LAND)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_SEAGLASS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_BEACH),
+                HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SEA_SHELL_LAND)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_LAND_SEASTAR, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_BEACH),
+                HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SEA_SHELL_LAND)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+
+        //  context.register(ADD_WATER_SEA_SHELLS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+      //          biomes.getOrThrow(BiomeTags.IS_OCEAN),
+       //         HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.ALGAE_BOULDER_PLACED)),
+       //         GenerationStep.Decoration.VEGETAL_DECORATION));
 //
         //context.register(ADD_GARLIC, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
         //        biomes.getOrThrow(STags.IS_GARLIC_BIOME),

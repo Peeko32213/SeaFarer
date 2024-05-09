@@ -1,9 +1,9 @@
 {
-  "feature": "seafarer:beachgrass_fan",
+  "feature": "seafarer:sea_shells",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 8
+      "count": 2
     },
     {
       "type": "minecraft:in_square"

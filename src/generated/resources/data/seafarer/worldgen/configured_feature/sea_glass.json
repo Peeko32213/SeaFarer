@@ -1,0 +1,104 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "seafarer:waterloggable_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "seafarer:white_seaglass_pebbles",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 20
+              },
+              {
+                "data": {
+                  "Name": "seafarer:yellow_seaglass_pebbles",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 20
+              },
+              {
+                "data": {
+                  "Name": "seafarer:red_seaglass_pebbles",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 20
+              },
+              {
+                "data": {
+                  "Name": "seafarer:purple_seaglass_pebbles",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 20
+              },
+              {
+                "data": {
+                  "Name": "seafarer:orange_seaglass_pebbles",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 20
+              },
+              {
+                "data": {
+                  "Name": "seafarer:green_seaglass_pebbles",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 20
+              },
+              {
+                "data": {
+                  "Name": "seafarer:brown_seaglass_pebbles",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 20
+              },
+              {
+                "data": {
+                  "Name": "seafarer:blue_seaglass_pebbles",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 20
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "minecraft:air",
+              "minecraft:water"
+            ]
+          }
+        }
+      ]
+    },
+    "tries": 4,
+    "xz_spread": 7,
+    "y_spread": 3
+  }
+}

@@ -37,6 +37,7 @@ public class SeaFarer {
         SFItems.ITEMS.register(modEventBus);
         SFCreativeTabs.DEF_REG.register(modEventBus);
         SFEntities.ENTITIES.register(modEventBus);
+        SFFeatures.FEATURES.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "seafarer:block/plank_block"
+      },
+      {
+        "model": "seafarer:block/plank_block",
+        "y": 90
+      },
+      {
+        "model": "seafarer:block/plank_block",
+        "y": 180
+      },
+      {
+        "model": "seafarer:block/plank_block",
+        "y": 270
+      }
+      ]
+  }
+}
