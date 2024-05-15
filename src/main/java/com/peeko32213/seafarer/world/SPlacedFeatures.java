@@ -45,17 +45,28 @@ public class SPlacedFeatures {
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
-        Holder<ConfiguredFeature<?, ?>> beachgrass_placed = configuredFeatures.getOrThrow(SConfiguredFeatures.BEACHGRASS);
-        Holder<ConfiguredFeature<?, ?>> beachgrass_fan_placed = configuredFeatures.getOrThrow(SConfiguredFeatures.BEACHGRASS_FAN);
 
-        register(context, BEACHGRASS_PLACED, beachgrass_placed, worldSurfaceSquaredWithCount(8));
-        register(context, BEACHGRASS_FAN_PLACED, beachgrass_fan_placed, worldSurfaceSquaredWithCount(8));
 
+        register(context, BEACHGRASS_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.BEACHGRASS), ImmutableList.of(
+                RarityFilter.onAverageOnceEvery(1),
+                InSquarePlacement.spread(),
+                CountPlacement.of(16),
+                PlacementUtils.FULL_RANGE,
+                BiomeFilter.biome()
+        ));
+
+        register(context, BEACHGRASS_FAN_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.BEACHGRASS_FAN), ImmutableList.of(
+                RarityFilter.onAverageOnceEvery(1),
+                InSquarePlacement.spread(),
+                CountPlacement.of(16),
+                PlacementUtils.FULL_RANGE,
+                BiomeFilter.biome()
+        ));
 
         register(context, SEA_HOLLY_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.SEA_HOLLY), ImmutableList.of(
                 RarityFilter.onAverageOnceEvery(1),
                 InSquarePlacement.spread(),
-                CountPlacement.of(8),
+                CountPlacement.of(6),
                 PlacementUtils.FULL_RANGE,
                 BiomeFilter.biome()
         ));
@@ -63,7 +74,7 @@ public class SPlacedFeatures {
         register(context, SEA_THRIFT_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.SEA_THRIFT), ImmutableList.of(
                 RarityFilter.onAverageOnceEvery(1),
                 InSquarePlacement.spread(),
-                CountPlacement.of(8),
+                CountPlacement.of(6),
                 PlacementUtils.FULL_RANGE,
                 BiomeFilter.biome()
         ));
@@ -83,7 +94,7 @@ public class SPlacedFeatures {
        //         CountPlacement.of(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BiomeFilter.biome());
 
         register(context, SEA_GLASS,  configuredFeatures.getOrThrow(SConfiguredFeatures.SEA_GLASS),
-                VegetationPlacements.worldSurfaceSquaredWithCount(4));
+                VegetationPlacements.worldSurfaceSquaredWithCount(2));
 
         register(context, SEA_STAR_LAND,  configuredFeatures.getOrThrow(SConfiguredFeatures.SEA_STARS),
                 VegetationPlacements.worldSurfaceSquaredWithCount(1));

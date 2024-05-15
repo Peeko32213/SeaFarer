@@ -74,6 +74,15 @@ public abstract class SFRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(blockIn.get()).getPath(), has(blockIn.get()));
     }
 
+    public ShapedRecipeBuilder makCarpet(Supplier<? extends Block> stairsOut, Supplier<? extends Block> blockIn) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,stairsOut.get(), 4)
+                .pattern("   ")
+                .pattern("   ")
+                .pattern("MMM")
+                .define('M', blockIn.get())
+                .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(blockIn.get()).getPath(), has(blockIn.get()));
+    }
+
     public ShapedRecipeBuilder makeSlab(Supplier<? extends Block> slabOut, Supplier<? extends Block> blockIn) {
         return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,slabOut.get(), 6)
                 .pattern("MMM")
@@ -115,6 +124,14 @@ public abstract class SFRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(blockIn.get()).getPath(), has(blockIn.get()));
     }
 
+    public ShapedRecipeBuilder makeSeaGlass(Supplier<? extends Block> bricksOut, Supplier<? extends Block> blockIn) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,bricksOut.get(), 8)
+                .pattern("MM")
+                .pattern("MM")
+                .define('M', blockIn.get())
+                .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(blockIn.get()).getPath(), has(blockIn.get()));
+    }
+
     public ShapedRecipeBuilder makeChiseledBricks(Supplier<? extends Block> bricksOut, Supplier<? extends Block> blockIn) {
         return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,bricksOut.get())
                 .pattern("M")
@@ -138,6 +155,15 @@ public abstract class SFRecipeProvider extends RecipeProvider {
                 .pattern("###")
                 .define('#', ingotIn.get())
                 .unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(ingotIn.get()).getPath(), has(ingotIn.get()));
+    }
+
+    public ShapedRecipeBuilder makeCondensedToBlock(Supplier<? extends Block> blockOut, Supplier<? extends Block> logIn) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,blockOut.get())
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', logIn.get())
+                .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(logIn.get()).getPath(), has(logIn.get()));
     }
 
     public ShapelessRecipeBuilder makeBlockToIngot(Supplier<? extends Item> ingotOut, Supplier<? extends Block> blockIn) {

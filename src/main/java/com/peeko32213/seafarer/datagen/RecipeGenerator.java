@@ -2,6 +2,7 @@ package com.peeko32213.seafarer.datagen;
 
 import com.peeko32213.seafarer.SeaFarer;
 
+import com.peeko32213.seafarer.core.registry.SFBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -24,27 +25,141 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
 
-        // Foxxi
-        // makePlanks(UPBlocks.FOXXI_PLANKS, UPTags.FOXXI).save(consumer);
-        // makeWood(UPBlocks.FOXXI_WOOD, UPBlocks.FOXXI_LOG).save(consumer);
-        // makeStairs(UPBlocks.FOXXI_STAIRS, UPBlocks.FOXXI_PLANKS).save(consumer);
+        // Blue Sea Glass
+        makeSeaGlass(SFBlocks.BLUE_SEAGLASS_BLOCK, SFBlocks.BLUE_SEAGLASS_PEBBLES).save(consumer);
+        makeBricks(SFBlocks.BLUE_SEAGLASS_BRICKS, SFBlocks.BLUE_SEAGLASS_BLOCK).save(consumer);
+        makeStairs(SFBlocks.BLUE_SEAGLASS_BRICKS_STAIRS, SFBlocks.BLUE_SEAGLASS_BRICKS).save(consumer);
+        makeSlab(SFBlocks.BLUE_SEAGLASS_BRICKS_SLAB, SFBlocks.BLUE_SEAGLASS_BRICKS).save(consumer);
 
-        // makeSlab(UPBlocks.FOXXI_SLAB, UPBlocks.FOXXI_PLANKS).save(consumer);
+        makeCondensedToBlock(SFBlocks.BLUE_SEAGLASS_PEBBLED, SFBlocks.BLUE_SEAGLASS_PEBBLES).save(consumer);
 
-        //  makeFence(UPBlocks.FOXXI_FENCE, UPBlocks.FOXXI_PLANKS).save(consumer);
+        makeBricks(SFBlocks.BLUE_SEAGLASS_TILES, SFBlocks.BLUE_SEAGLASS_BRICKS).save(consumer);
+        makeStairs(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS, SFBlocks.BLUE_SEAGLASS_TILES).save(consumer);
+        makeSlab(SFBlocks.BLUE_SEAGLASS_TILES_SLAB, SFBlocks.BLUE_SEAGLASS_TILES).save(consumer);
 
-        // makeFenceGate(UPBlocks.FOXXI_FENCE_GATE, UPBlocks.FOXXI_PLANKS).save(consumer);
+        // Brown Sea Glass
+        makeSeaGlass(SFBlocks.BROWN_SEAGLASS_BLOCK, SFBlocks.BROWN_SEAGLASS_PEBBLES).save(consumer);
+        makeBricks(SFBlocks.BROWN_SEAGLASS_BRICKS, SFBlocks.BROWN_SEAGLASS_BLOCK).save(consumer);
+        makeStairs(SFBlocks.BROWN_SEAGLASS_BRICKS_STAIRS, SFBlocks.BROWN_SEAGLASS_BRICKS).save(consumer);
+        makeSlab(SFBlocks.BROWN_SEAGLASS_BRICKS_SLAB, SFBlocks.BROWN_SEAGLASS_BRICKS).save(consumer);
 
-        // makeDoor(UPBlocks.FOXXI_DOOR, UPBlocks.FOXXI_PLANKS).save(consumer);
+        makeCondensedToBlock(SFBlocks.BROWN_SEAGLASS_PEBBLED, SFBlocks.BROWN_SEAGLASS_PEBBLES).save(consumer);
 
-        // makeTrapdoor(UPBlocks.FOXXI_TRAPDOOR, UPBlocks.FOXXI_PLANKS).save(consumer);
+        makeBricks(SFBlocks.BROWN_SEAGLASS_TILES, SFBlocks.BROWN_SEAGLASS_BRICKS).save(consumer);
+        makeStairs(SFBlocks.BROWN_SEAGLASS_TILES_STAIRS, SFBlocks.BROWN_SEAGLASS_TILES).save(consumer);
+        makeSlab(SFBlocks.BROWN_SEAGLASS_TILES_SLAB, SFBlocks.BROWN_SEAGLASS_TILES).save(consumer);
 
-        // makeButton(UPBlocks.FOXXI_BUTTON, UPBlocks.FOXXI_PLANKS).save(consumer);
+        // Green Sea Glass
+        makeSeaGlass(SFBlocks.GREEN_SEAGLASS_BLOCK, SFBlocks.GREEN_SEAGLASS_PEBBLES).save(consumer);
+        makeBricks(SFBlocks.GREEN_SEAGLASS_BRICKS, SFBlocks.GREEN_SEAGLASS_BLOCK).save(consumer);
+        makeStairs(SFBlocks.GREEN_SEAGLASS_BRICKS_STAIRS, SFBlocks.GREEN_SEAGLASS_BRICKS).save(consumer);
+        makeSlab(SFBlocks.GREEN_SEAGLASS_BRICKS_SLAB, SFBlocks.GREEN_SEAGLASS_BRICKS).save(consumer);
 
-        // makePressurePlate(UPBlocks.FOXXI_PRESSURE_PLATE, UPBlocks.FOXXI_PLANKS).save(consumer);
+        makeCondensedToBlock(SFBlocks.GREEN_SEAGLASS_PEBBLED, SFBlocks.GREEN_SEAGLASS_PEBBLES).save(consumer);
 
-        // makeSign(UPBlocks.FOXXI_SIGN, UPBlocks.FOXXI_PLANKS).save(consumer);
+        makeBricks(SFBlocks.GREEN_SEAGLASS_TILES, SFBlocks.GREEN_SEAGLASS_BRICKS).save(consumer);
+        makeStairs(SFBlocks.GREEN_SEAGLASS_TILES_STAIRS, SFBlocks.GREEN_SEAGLASS_TILES).save(consumer);
+        makeSlab(SFBlocks.GREEN_SEAGLASS_TILES_SLAB, SFBlocks.GREEN_SEAGLASS_TILES).save(consumer);
 
+        // Orange Sea Glass
+        makeSeaGlass(SFBlocks.ORANGE_SEAGLASS_BLOCK, SFBlocks.ORANGE_SEAGLASS_PEBBLES).save(consumer);
+        makeBricks(SFBlocks.ORANGE_SEAGLASS_BRICKS, SFBlocks.ORANGE_SEAGLASS_BLOCK).save(consumer);
+        makeStairs(SFBlocks.ORANGE_SEAGLASS_BRICKS_STAIRS, SFBlocks.ORANGE_SEAGLASS_BRICKS).save(consumer);
+        makeSlab(SFBlocks.ORANGE_SEAGLASS_BRICKS_SLAB, SFBlocks.ORANGE_SEAGLASS_BRICKS).save(consumer);
+
+        makeCondensedToBlock(SFBlocks.ORANGE_SEAGLASS_PEBBLED, SFBlocks.ORANGE_SEAGLASS_PEBBLES).save(consumer);
+
+        makeBricks(SFBlocks.ORANGE_SEAGLASS_TILES, SFBlocks.ORANGE_SEAGLASS_BRICKS).save(consumer);
+        makeStairs(SFBlocks.ORANGE_SEAGLASS_TILES_STAIRS, SFBlocks.ORANGE_SEAGLASS_TILES).save(consumer);
+        makeSlab(SFBlocks.ORANGE_SEAGLASS_TILES_SLAB, SFBlocks.ORANGE_SEAGLASS_TILES).save(consumer);
+
+        // Purple Sea Glass
+        makeSeaGlass(SFBlocks.PURPLE_SEAGLASS_BLOCK, SFBlocks.PURPLE_SEAGLASS_PEBBLES).save(consumer);
+        makeBricks(SFBlocks.PURPLE_SEAGLASS_BRICKS, SFBlocks.PURPLE_SEAGLASS_BLOCK).save(consumer);
+        makeStairs(SFBlocks.PURPLE_SEAGLASS_BRICKS_STAIRS, SFBlocks.PURPLE_SEAGLASS_BRICKS).save(consumer);
+        makeSlab(SFBlocks.PURPLE_SEAGLASS_BRICKS_SLAB, SFBlocks.PURPLE_SEAGLASS_BRICKS).save(consumer);
+
+        makeCondensedToBlock(SFBlocks.PURPLE_SEAGLASS_PEBBLED, SFBlocks.PURPLE_SEAGLASS_PEBBLES).save(consumer);
+
+        makeBricks(SFBlocks.PURPLE_SEAGLASS_TILES, SFBlocks.PURPLE_SEAGLASS_BRICKS).save(consumer);
+        makeStairs(SFBlocks.PURPLE_SEAGLASS_TILES_STAIRS, SFBlocks.PURPLE_SEAGLASS_TILES).save(consumer);
+        makeSlab(SFBlocks.PURPLE_SEAGLASS_TILES_SLAB, SFBlocks.PURPLE_SEAGLASS_TILES).save(consumer);
+
+        // Red Sea Glass
+        makeSeaGlass(SFBlocks.RED_SEAGLASS_BLOCK, SFBlocks.RED_SEAGLASS_PEBBLES).save(consumer);
+        makeBricks(SFBlocks.RED_SEAGLASS_BRICKS, SFBlocks.RED_SEAGLASS_BLOCK).save(consumer);
+        makeStairs(SFBlocks.RED_SEAGLASS_BRICKS_STAIRS, SFBlocks.RED_SEAGLASS_BRICKS).save(consumer);
+        makeSlab(SFBlocks.RED_SEAGLASS_BRICKS_SLAB, SFBlocks.RED_SEAGLASS_BRICKS).save(consumer);
+
+        makeCondensedToBlock(SFBlocks.RED_SEAGLASS_PEBBLED, SFBlocks.RED_SEAGLASS_PEBBLES).save(consumer);
+
+        makeBricks(SFBlocks.RED_SEAGLASS_TILES, SFBlocks.RED_SEAGLASS_BRICKS).save(consumer);
+        makeStairs(SFBlocks.RED_SEAGLASS_TILES_STAIRS, SFBlocks.RED_SEAGLASS_TILES).save(consumer);
+        makeSlab(SFBlocks.RED_SEAGLASS_TILES_SLAB, SFBlocks.RED_SEAGLASS_TILES).save(consumer);
+
+        // White Sea Glass
+        makeSeaGlass(SFBlocks.WHITE_SEAGLASS_BLOCK, SFBlocks.WHITE_SEAGLASS_PEBBLES).save(consumer);
+        makeBricks(SFBlocks.WHITE_SEAGLASS_BRICKS, SFBlocks.WHITE_SEAGLASS_BLOCK).save(consumer);
+        makeStairs(SFBlocks.WHITE_SEAGLASS_BRICKS_STAIRS, SFBlocks.WHITE_SEAGLASS_BRICKS).save(consumer);
+        makeSlab(SFBlocks.WHITE_SEAGLASS_BRICKS_SLAB, SFBlocks.WHITE_SEAGLASS_BRICKS).save(consumer);
+
+        makeCondensedToBlock(SFBlocks.WHITE_SEAGLASS_PEBBLED, SFBlocks.WHITE_SEAGLASS_PEBBLES).save(consumer);
+
+        makeBricks(SFBlocks.WHITE_SEAGLASS_TILES, SFBlocks.WHITE_SEAGLASS_BRICKS).save(consumer);
+        makeStairs(SFBlocks.WHITE_SEAGLASS_TILES_STAIRS, SFBlocks.WHITE_SEAGLASS_TILES).save(consumer);
+        makeSlab(SFBlocks.WHITE_SEAGLASS_TILES_SLAB, SFBlocks.WHITE_SEAGLASS_TILES).save(consumer);
+
+        // Yellow Sea Glass
+        makeSeaGlass(SFBlocks.YELLOW_SEAGLASS_BLOCK, SFBlocks.YELLOW_SEAGLASS_PEBBLES).save(consumer);
+        makeBricks(SFBlocks.YELLOW_SEAGLASS_BRICKS, SFBlocks.YELLOW_SEAGLASS_BLOCK).save(consumer);
+        makeStairs(SFBlocks.YELLOW_SEAGLASS_BRICKS_STAIRS, SFBlocks.YELLOW_SEAGLASS_BRICKS).save(consumer);
+        makeSlab(SFBlocks.YELLOW_SEAGLASS_BRICKS_SLAB, SFBlocks.YELLOW_SEAGLASS_BRICKS).save(consumer);
+
+        makeCondensedToBlock(SFBlocks.YELLOW_SEAGLASS_PEBBLED, SFBlocks.YELLOW_SEAGLASS_PEBBLES).save(consumer);
+
+        makeBricks(SFBlocks.YELLOW_SEAGLASS_TILES, SFBlocks.YELLOW_SEAGLASS_BRICKS).save(consumer);
+        makeStairs(SFBlocks.YELLOW_SEAGLASS_TILES_STAIRS, SFBlocks.YELLOW_SEAGLASS_TILES).save(consumer);
+        makeSlab(SFBlocks.YELLOW_SEAGLASS_TILES_SLAB, SFBlocks.YELLOW_SEAGLASS_TILES).save(consumer);
+
+        // Algae Block
+        makeBricks(SFBlocks.ALGAE_BLOCK, SFBlocks.ALGAE_PLANT).save(consumer);
+        makCarpet(SFBlocks.ALGAE_CARPET, SFBlocks.ALGAE_PLANT).save(consumer);
+
+        // Clam Blockset
+        makeSeaGlass(SFBlocks.CLAM_SHELL_BRICKS, SFBlocks.CLAM_SHELL).save(consumer);
+        makeBricks(SFBlocks.CLAM_SHELL_PILLAR, SFBlocks.CLAM_SHELL_BRICKS).save(consumer);
+        makeStairs(SFBlocks.CLAM_SHELL_BRICKS_STAIRS, SFBlocks.CLAM_SHELL_BRICKS).save(consumer);
+        makeSlab(SFBlocks.CLAM_SHELL_BRICKS_SLAB, SFBlocks.CLAM_SHELL_BRICKS).save(consumer);
+
+        // Horn Blockset
+        makeSeaGlass(SFBlocks.HORN_SHELL_BRICKS, SFBlocks.HORN_SHELL).save(consumer);
+        makeBricks(SFBlocks.HORN_SHELL_PILLAR, SFBlocks.HORN_SHELL_BRICKS).save(consumer);
+        makeStairs(SFBlocks.HORN_SHELL_BRICKS_STAIRS, SFBlocks.HORN_SHELL_BRICKS).save(consumer);
+        makeSlab(SFBlocks.HORN_SHELL_BRICKS_SLAB, SFBlocks.HORN_SHELL_BRICKS).save(consumer);
+
+        // Spiky Blockset
+        makeSeaGlass(SFBlocks.SPIKY_SHELL_BRICKS, SFBlocks.SPIKY_SHELL).save(consumer);
+        makeBricks(SFBlocks.SPIKY_SHELL_PILLAR, SFBlocks.SPIKY_SHELL_BRICKS).save(consumer);
+        makeStairs(SFBlocks.SPIKY_SHELL_BRICKS_STAIRS, SFBlocks.SPIKY_SHELL_BRICKS).save(consumer);
+        makeSlab(SFBlocks.SPIKY_SHELL_BRICKS_SLAB, SFBlocks.SPIKY_SHELL_BRICKS).save(consumer);
+
+        // Spiral Blockset
+        makeSeaGlass(SFBlocks.SPIRAL_SHELL_BRICKS, SFBlocks.SPIRAL_SHELL).save(consumer);
+        makeBricks(SFBlocks.SPIRAL_SHELL_PILLAR, SFBlocks.SPIRAL_SHELL_BRICKS).save(consumer);
+        makeStairs(SFBlocks.SPIRAL_SHELL_BRICKS_STAIRS, SFBlocks.SPIRAL_SHELL_BRICKS).save(consumer);
+        makeSlab(SFBlocks.SPIRAL_SHELL_BRICKS_SLAB, SFBlocks.SPIRAL_SHELL_BRICKS).save(consumer);
+
+        // Swirl Blockset
+        makeSeaGlass(SFBlocks.SWIRL_SHELL_BRICKS, SFBlocks.SWIRL_SHELL).save(consumer);
+        makeBricks(SFBlocks.SWIRL_SHELL_PILLAR, SFBlocks.SWIRL_SHELL_BRICKS).save(consumer);
+        makeStairs(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS, SFBlocks.SWIRL_SHELL_BRICKS).save(consumer);
+        makeSlab(SFBlocks.SWIRL_SHELL_BRICKS_SLAB, SFBlocks.SWIRL_SHELL_BRICKS).save(consumer);
+
+        // Pyramid Blockset
+        makeSeaGlass(SFBlocks.PYRAMID_SHELL_BRICKS, SFBlocks.PYRAMID_SHELL).save(consumer);
+        makeBricks(SFBlocks.PYRAMID_SHELL_PILLAR, SFBlocks.PYRAMID_SHELL_BRICKS).save(consumer);
+        makeStairs(SFBlocks.PYRAMID_SHELL_BRICKS_STAIRS, SFBlocks.PYRAMID_SHELL_BRICKS).save(consumer);
+        makeSlab(SFBlocks.PYRAMID_SHELL_BRICKS_SLAB, SFBlocks.PYRAMID_SHELL_BRICKS).save(consumer);
     }
 
     //Wrappers for conditionals

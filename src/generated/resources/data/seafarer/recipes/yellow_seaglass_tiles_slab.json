@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "M": {
+      "item": "seafarer:yellow_seaglass_tiles"
+    }
+  },
+  "pattern": [
+    "MMM"
+  ],
+  "result": {
+    "count": 6,
+    "item": "seafarer:yellow_seaglass_tiles_slab"
+  },
+  "show_notification": true
+}

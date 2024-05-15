@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "M": {
+      "item": "seafarer:orange_seaglass_pebbles"
+    }
+  },
+  "pattern": [
+    "MM",
+    "MM"
+  ],
+  "result": {
+    "count": 8,
+    "item": "seafarer:orange_seaglass_block"
+  },
+  "show_notification": true
+}

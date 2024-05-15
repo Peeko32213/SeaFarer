@@ -64,11 +64,13 @@ public class SConfiguredFeatures {
 
         register(context, ALGAE_PATCH_BONEMEAL, Feature.VEGETATION_PATCH, new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE, BlockStateProvider.simple(SFBlocks.ALGAE_BLOCK.get()), PlacementUtils.inlinePlaced(ALGAE_PATCH_PLANT), CaveSurface.FLOOR, ConstantInt.of(1), 0.0F, 5, 0.4F, UniformInt.of(1, 2), 0.75F));
 
+        register(context, BEACHGRASS, Feature.RANDOM_PATCH,
+                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(SFBlocks.BEACHGRASS.get().defaultBlockState()))));
 
-        FeatureUtils.register(context, BEACHGRASS, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(SFBlocks.BEACHGRASS.get().defaultBlockState()), 16));
 
+        register(context, BEACHGRASS_FAN, Feature.RANDOM_PATCH,
+                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(SFBlocks.BEACHGRASS_FAN.get().defaultBlockState()))));
 
-        FeatureUtils.register(context, BEACHGRASS_FAN, Feature.RANDOM_PATCH, grassPatch(BlockStateProvider.simple(SFBlocks.BEACHGRASS_FAN.get().defaultBlockState()), 16));
 
 
         register(context, SEA_THRIFT, Feature.RANDOM_PATCH,
