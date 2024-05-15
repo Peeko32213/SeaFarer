@@ -6,8 +6,7 @@ import com.peeko32213.seafarer.common.item.SFFishBucket;
 import com.peeko32213.seafarer.common.item.SFFood;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
@@ -94,6 +93,21 @@ public class SFItems {
     public static final RegistryObject<Item> SHORE_CRAB_BUCKET = ITEMS.register("shore_crab_bucket",
             () -> new SFFishBucket(SFEntities.CRAB, () -> Fluids.EMPTY, Items.BUCKET, false,
                     new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> CLAM_SHOVEL = ITEMS.register("clam_shovel",
+            () -> new ShovelItem(SFTiers.SHELL,  1.5F, -3.0F, new Item.Properties()));
+
+    public static final RegistryObject<Item> HORN_PICKAXE = ITEMS.register("horn_pickaxe",
+            () -> new PickaxeItem(SFTiers.SHELL,  1, -2.8F, new Item.Properties()));
+
+    public static final RegistryObject<Item> SPIKY_SWORD = ITEMS.register("spiky_sword",
+            () -> new SwordItem(SFTiers.SHELL,  3, -2.4F, new Item.Properties()));
+
+    public static final RegistryObject<Item> SPIRAL_HOE = ITEMS.register("spiral_hoe",
+            () -> new HoeItem(SFTiers.SHELL,  0, -3.0F, new Item.Properties()));
+
+    public static final RegistryObject<Item> SWIRL_AXE = ITEMS.register("swirl_axe",
+            () -> new AxeItem(SFTiers.SHELL,  6.0F, -3.2F, new Item.Properties()));
 
     private static RegistryObject<ForgeSpawnEggItem> registerSpawnEggs(String name, Supplier<? extends EntityType<? extends Mob>> type, int backgroundColor, int highlightColor) {
         return ITEMS.register(name, () -> new ForgeSpawnEggItem(type, backgroundColor, highlightColor,new Item.Properties()));

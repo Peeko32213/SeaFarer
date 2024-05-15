@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "M": {
+      "item": "seafarer:yellow_seaglass_block"
+    }
+  },
+  "pattern": [
+    "   ",
+    "MMM",
+    "MMM"
+  ],
+  "result": {
+    "count": 16,
+    "item": "seafarer:yellow_seaglass_pane"
+  },
+  "show_notification": true
+}

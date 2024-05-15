@@ -221,6 +221,12 @@ public class LanguageGenerator extends LanguageProvider {
         addItem(SFItems.SALTED_TROPICAL_FISH, "Salted Tropical Fish");
         addItem(SFItems.SALTED_STARFISH, "Salted Starfish");
 
+        addItem(SFItems.CLAM_SHOVEL, "Clam Shovel");
+        addItem(SFItems.HORN_PICKAXE, "Horn Pickaxe");
+        addItem(SFItems.SPIKY_SWORD, "Spiky Sword");
+        addItem(SFItems.SPIRAL_HOE, "Spiral Hoe");
+        addItem(SFItems.SWIRL_AXE, "Swirl Axe");
+
         add("seafarer.starfish_common_orange", "Common Orange");
         add("seafarer.starfish_pink", "Pink");
         add("seafarer.starfish_red", "Red");

@@ -83,6 +83,15 @@ public abstract class SFRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(blockIn.get()).getPath(), has(blockIn.get()));
     }
 
+    public ShapedRecipeBuilder makePanes(Supplier<? extends Block> stairsOut, Supplier<? extends Block> blockIn) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,stairsOut.get(), 16)
+                .pattern("   ")
+                .pattern("MMM")
+                .pattern("MMM")
+                .define('M', blockIn.get())
+                .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(blockIn.get()).getPath(), has(blockIn.get()));
+    }
+
     public ShapedRecipeBuilder makeSlab(Supplier<? extends Block> slabOut, Supplier<? extends Block> blockIn) {
         return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,slabOut.get(), 6)
                 .pattern("MMM")
@@ -147,6 +156,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
                 .define('M', logIn.get())
                 .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(logIn.get()).getPath(), has(logIn.get()));
     }
+
 
     public ShapedRecipeBuilder makeIngotToBlock(Supplier<? extends Block> blockOut, Supplier<? extends Item> ingotIn) {
         return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,blockOut.get())

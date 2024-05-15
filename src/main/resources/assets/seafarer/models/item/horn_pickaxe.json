@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "seafarer:item/horn_pickaxe"
+  }
+}

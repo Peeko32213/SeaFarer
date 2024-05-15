@@ -36,6 +36,7 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
         makeBricks(SFBlocks.BLUE_SEAGLASS_TILES, SFBlocks.BLUE_SEAGLASS_BRICKS).save(consumer);
         makeStairs(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS, SFBlocks.BLUE_SEAGLASS_TILES).save(consumer);
         makeSlab(SFBlocks.BLUE_SEAGLASS_TILES_SLAB, SFBlocks.BLUE_SEAGLASS_TILES).save(consumer);
+        makePanes(SFBlocks.BLUE_SEAGLASS_PANE, SFBlocks.BLUE_SEAGLASS_BLOCK).save(consumer);
 
         // Brown Sea Glass
         makeSeaGlass(SFBlocks.BROWN_SEAGLASS_BLOCK, SFBlocks.BROWN_SEAGLASS_PEBBLES).save(consumer);
@@ -48,6 +49,7 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
         makeBricks(SFBlocks.BROWN_SEAGLASS_TILES, SFBlocks.BROWN_SEAGLASS_BRICKS).save(consumer);
         makeStairs(SFBlocks.BROWN_SEAGLASS_TILES_STAIRS, SFBlocks.BROWN_SEAGLASS_TILES).save(consumer);
         makeSlab(SFBlocks.BROWN_SEAGLASS_TILES_SLAB, SFBlocks.BROWN_SEAGLASS_TILES).save(consumer);
+        makePanes(SFBlocks.BROWN_SEAGLASS_PANE, SFBlocks.BROWN_SEAGLASS_BLOCK).save(consumer);
 
         // Green Sea Glass
         makeSeaGlass(SFBlocks.GREEN_SEAGLASS_BLOCK, SFBlocks.GREEN_SEAGLASS_PEBBLES).save(consumer);
@@ -60,6 +62,7 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
         makeBricks(SFBlocks.GREEN_SEAGLASS_TILES, SFBlocks.GREEN_SEAGLASS_BRICKS).save(consumer);
         makeStairs(SFBlocks.GREEN_SEAGLASS_TILES_STAIRS, SFBlocks.GREEN_SEAGLASS_TILES).save(consumer);
         makeSlab(SFBlocks.GREEN_SEAGLASS_TILES_SLAB, SFBlocks.GREEN_SEAGLASS_TILES).save(consumer);
+        makePanes(SFBlocks.GREEN_SEAGLASS_PANE, SFBlocks.GREEN_SEAGLASS_BLOCK).save(consumer);
 
         // Orange Sea Glass
         makeSeaGlass(SFBlocks.ORANGE_SEAGLASS_BLOCK, SFBlocks.ORANGE_SEAGLASS_PEBBLES).save(consumer);
@@ -72,6 +75,7 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
         makeBricks(SFBlocks.ORANGE_SEAGLASS_TILES, SFBlocks.ORANGE_SEAGLASS_BRICKS).save(consumer);
         makeStairs(SFBlocks.ORANGE_SEAGLASS_TILES_STAIRS, SFBlocks.ORANGE_SEAGLASS_TILES).save(consumer);
         makeSlab(SFBlocks.ORANGE_SEAGLASS_TILES_SLAB, SFBlocks.ORANGE_SEAGLASS_TILES).save(consumer);
+        makePanes(SFBlocks.ORANGE_SEAGLASS_PANE, SFBlocks.ORANGE_SEAGLASS_BLOCK).save(consumer);
 
         // Purple Sea Glass
         makeSeaGlass(SFBlocks.PURPLE_SEAGLASS_BLOCK, SFBlocks.PURPLE_SEAGLASS_PEBBLES).save(consumer);
@@ -84,6 +88,7 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
         makeBricks(SFBlocks.PURPLE_SEAGLASS_TILES, SFBlocks.PURPLE_SEAGLASS_BRICKS).save(consumer);
         makeStairs(SFBlocks.PURPLE_SEAGLASS_TILES_STAIRS, SFBlocks.PURPLE_SEAGLASS_TILES).save(consumer);
         makeSlab(SFBlocks.PURPLE_SEAGLASS_TILES_SLAB, SFBlocks.PURPLE_SEAGLASS_TILES).save(consumer);
+        makePanes(SFBlocks.PURPLE_SEAGLASS_PANE, SFBlocks.PURPLE_SEAGLASS_BLOCK).save(consumer);
 
         // Red Sea Glass
         makeSeaGlass(SFBlocks.RED_SEAGLASS_BLOCK, SFBlocks.RED_SEAGLASS_PEBBLES).save(consumer);
@@ -96,6 +101,7 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
         makeBricks(SFBlocks.RED_SEAGLASS_TILES, SFBlocks.RED_SEAGLASS_BRICKS).save(consumer);
         makeStairs(SFBlocks.RED_SEAGLASS_TILES_STAIRS, SFBlocks.RED_SEAGLASS_TILES).save(consumer);
         makeSlab(SFBlocks.RED_SEAGLASS_TILES_SLAB, SFBlocks.RED_SEAGLASS_TILES).save(consumer);
+        makePanes(SFBlocks.RED_SEAGLASS_PANE, SFBlocks.RED_SEAGLASS_BLOCK).save(consumer);
 
         // White Sea Glass
         makeSeaGlass(SFBlocks.WHITE_SEAGLASS_BLOCK, SFBlocks.WHITE_SEAGLASS_PEBBLES).save(consumer);
@@ -108,6 +114,7 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
         makeBricks(SFBlocks.WHITE_SEAGLASS_TILES, SFBlocks.WHITE_SEAGLASS_BRICKS).save(consumer);
         makeStairs(SFBlocks.WHITE_SEAGLASS_TILES_STAIRS, SFBlocks.WHITE_SEAGLASS_TILES).save(consumer);
         makeSlab(SFBlocks.WHITE_SEAGLASS_TILES_SLAB, SFBlocks.WHITE_SEAGLASS_TILES).save(consumer);
+        makePanes(SFBlocks.WHITE_SEAGLASS_PANE, SFBlocks.WHITE_SEAGLASS_BLOCK).save(consumer);
 
         // Yellow Sea Glass
         makeSeaGlass(SFBlocks.YELLOW_SEAGLASS_BLOCK, SFBlocks.YELLOW_SEAGLASS_PEBBLES).save(consumer);
@@ -120,6 +127,7 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
         makeBricks(SFBlocks.YELLOW_SEAGLASS_TILES, SFBlocks.YELLOW_SEAGLASS_BRICKS).save(consumer);
         makeStairs(SFBlocks.YELLOW_SEAGLASS_TILES_STAIRS, SFBlocks.YELLOW_SEAGLASS_TILES).save(consumer);
         makeSlab(SFBlocks.YELLOW_SEAGLASS_TILES_SLAB, SFBlocks.YELLOW_SEAGLASS_TILES).save(consumer);
+        makePanes(SFBlocks.YELLOW_SEAGLASS_PANE, SFBlocks.YELLOW_SEAGLASS_BLOCK).save(consumer);
 
         // Algae Block
         makeBricks(SFBlocks.ALGAE_BLOCK, SFBlocks.ALGAE_PLANT).save(consumer);

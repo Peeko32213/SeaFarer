@@ -37,8 +37,8 @@ public class BlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropSelf(SFBlocks.BLUE_SEAGLASS_BLOCK.get());
-        dropSelf(SFBlocks.BLUE_SEAGLASS_PANE.get());
+        dropWhenSilkTouch(SFBlocks.BLUE_SEAGLASS_BLOCK.get());
+        dropWhenSilkTouch(SFBlocks.BLUE_SEAGLASS_PANE.get());
         dropSelf(SFBlocks.BLUE_SEAGLASS_BRICKS.get());
         dropSelf(SFBlocks.BLUE_SEAGLASS_BRICKS_SLAB.get());
         dropSelf(SFBlocks.BLUE_SEAGLASS_BRICKS_STAIRS.get());
@@ -48,8 +48,8 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get());
         dropSelf(SFBlocks.BLUE_SEAGLASS_PEBBLES.get());
 
-        dropSelf(SFBlocks.BROWN_SEAGLASS_BLOCK.get());
-        dropSelf(SFBlocks.BROWN_SEAGLASS_PANE.get());
+        dropWhenSilkTouch(SFBlocks.BROWN_SEAGLASS_BLOCK.get());
+        dropWhenSilkTouch(SFBlocks.BROWN_SEAGLASS_PANE.get());
         dropSelf(SFBlocks.BROWN_SEAGLASS_BRICKS.get());
         dropSelf(SFBlocks.BROWN_SEAGLASS_BRICKS_SLAB.get());
         dropSelf(SFBlocks.BROWN_SEAGLASS_BRICKS_STAIRS.get());
@@ -59,8 +59,8 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(SFBlocks.BROWN_SEAGLASS_TILES_STAIRS.get());
         dropSelf(SFBlocks.BROWN_SEAGLASS_PEBBLES.get());
 
-        dropSelf(SFBlocks.GREEN_SEAGLASS_BLOCK.get());
-        dropSelf(SFBlocks.GREEN_SEAGLASS_PANE.get());
+        dropWhenSilkTouch(SFBlocks.GREEN_SEAGLASS_BLOCK.get());
+        dropWhenSilkTouch(SFBlocks.GREEN_SEAGLASS_PANE.get());
         dropSelf(SFBlocks.GREEN_SEAGLASS_BRICKS.get());
         dropSelf(SFBlocks.GREEN_SEAGLASS_BRICKS_SLAB.get());
         dropSelf(SFBlocks.GREEN_SEAGLASS_BRICKS_STAIRS.get());
@@ -70,8 +70,8 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(SFBlocks.GREEN_SEAGLASS_TILES_STAIRS.get());
         dropSelf(SFBlocks.GREEN_SEAGLASS_PEBBLES.get());
 
-        dropSelf(SFBlocks.ORANGE_SEAGLASS_BLOCK.get());
-        dropSelf(SFBlocks.ORANGE_SEAGLASS_PANE.get());
+        dropWhenSilkTouch(SFBlocks.ORANGE_SEAGLASS_BLOCK.get());
+        dropWhenSilkTouch(SFBlocks.ORANGE_SEAGLASS_PANE.get());
         dropSelf(SFBlocks.ORANGE_SEAGLASS_BRICKS.get());
         dropSelf(SFBlocks.ORANGE_SEAGLASS_BRICKS_SLAB.get());
         dropSelf(SFBlocks.ORANGE_SEAGLASS_BRICKS_STAIRS.get());
@@ -81,8 +81,8 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(SFBlocks.ORANGE_SEAGLASS_TILES_STAIRS.get());
         dropSelf(SFBlocks.ORANGE_SEAGLASS_PEBBLES.get());
 
-        dropSelf(SFBlocks.PURPLE_SEAGLASS_BLOCK.get());
-        dropSelf(SFBlocks.PURPLE_SEAGLASS_PANE.get());
+        dropWhenSilkTouch(SFBlocks.PURPLE_SEAGLASS_BLOCK.get());
+        dropWhenSilkTouch(SFBlocks.PURPLE_SEAGLASS_PANE.get());
         dropSelf(SFBlocks.PURPLE_SEAGLASS_BRICKS.get());
         dropSelf(SFBlocks.PURPLE_SEAGLASS_BRICKS_SLAB.get());
         dropSelf(SFBlocks.PURPLE_SEAGLASS_BRICKS_STAIRS.get());
@@ -92,8 +92,8 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(SFBlocks.PURPLE_SEAGLASS_TILES_STAIRS.get());
         dropSelf(SFBlocks.PURPLE_SEAGLASS_PEBBLES.get());
 
-        dropSelf(SFBlocks.RED_SEAGLASS_BLOCK.get());
-        dropSelf(SFBlocks.RED_SEAGLASS_PANE.get());
+        dropWhenSilkTouch(SFBlocks.RED_SEAGLASS_BLOCK.get());
+        dropWhenSilkTouch(SFBlocks.RED_SEAGLASS_PANE.get());
         dropSelf(SFBlocks.RED_SEAGLASS_BRICKS.get());
         dropSelf(SFBlocks.RED_SEAGLASS_BRICKS_SLAB.get());
         dropSelf(SFBlocks.RED_SEAGLASS_BRICKS_STAIRS.get());
@@ -103,8 +103,8 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(SFBlocks.RED_SEAGLASS_TILES_STAIRS.get());
         dropSelf(SFBlocks.RED_SEAGLASS_PEBBLES.get());
 
-        dropSelf(SFBlocks.WHITE_SEAGLASS_BLOCK.get());
-        dropSelf(SFBlocks.WHITE_SEAGLASS_PANE.get());
+        dropWhenSilkTouch(SFBlocks.WHITE_SEAGLASS_BLOCK.get());
+        dropWhenSilkTouch(SFBlocks.WHITE_SEAGLASS_PANE.get());
         dropSelf(SFBlocks.WHITE_SEAGLASS_BRICKS.get());
         dropSelf(SFBlocks.WHITE_SEAGLASS_BRICKS_SLAB.get());
         dropSelf(SFBlocks.WHITE_SEAGLASS_BRICKS_STAIRS.get());
@@ -114,8 +114,8 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(SFBlocks.WHITE_SEAGLASS_TILES_STAIRS.get());
         dropSelf(SFBlocks.WHITE_SEAGLASS_PEBBLES.get());
 
-        dropSelf(SFBlocks.YELLOW_SEAGLASS_BLOCK.get());
-        dropSelf(SFBlocks.YELLOW_SEAGLASS_PANE.get());
+        dropWhenSilkTouch(SFBlocks.YELLOW_SEAGLASS_BLOCK.get());
+        dropWhenSilkTouch(SFBlocks.YELLOW_SEAGLASS_PANE.get());
         dropSelf(SFBlocks.YELLOW_SEAGLASS_BRICKS.get());
         dropSelf(SFBlocks.YELLOW_SEAGLASS_BRICKS_SLAB.get());
         dropSelf(SFBlocks.YELLOW_SEAGLASS_BRICKS_STAIRS.get());
@@ -193,11 +193,11 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(SFBlocks.PURPLE_SPRINKLED_SAND.get());
         dropSelf(SFBlocks.RED_SPRINKLED_SAND.get());
 
-        //TODO
-        // Mixed Shelly Sands need their own datagen, as they drop themselves when silk touched however normally will have a 50/50 shot of dropping a different shell
-        // Mixed Shelly Sand = Spiral + Swirl
-        // Scattered Shelly Sand = Clam + Horn
-        // Scattered Shelly Sand = Pyramid + Spiky
+        createMultipleBlockDrops(SFBlocks.MIXED_SHELLY_SAND.get(), SFBlocks.SPIRAL_SHELL.get(), SFBlocks.SWIRL_SHELL.get());
+        createMultipleBlockDrops(SFBlocks.SCATTERED_SHELLY_SAND.get(), SFBlocks.CLAM_SHELL.get(), SFBlocks.HORN_SHELL.get());
+        createMultipleBlockDrops(SFBlocks.JUMBLED_SHELLY_SAND.get(), SFBlocks.PYRAMID_SHELL.get(), SFBlocks.SPIKY_SHELL.get());
+
+
 
     }
 
@@ -215,6 +215,17 @@ public class BlockLootTables extends BlockLootSubProvider {
                         LootItem.lootTableItem(item1)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F)))
                                 .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)))
+                        .then(LootItem.lootTableItem(item2)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                                .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));
+    }
+
+    protected LootTable.Builder createMultipleBlockDrops(Block pBlock, Block item1, Block item2) {
+        return createSilkTouchDispatchTable(pBlock,
+                this.applyExplosionDecay(pBlock,
+                                LootItem.lootTableItem(item1)
+                                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F)))
+                                        .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE)))
                         .then(LootItem.lootTableItem(item2)
                                 .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
                                 .apply(ApplyBonusCount.addOreBonusCount(Enchantments.BLOCK_FORTUNE))));

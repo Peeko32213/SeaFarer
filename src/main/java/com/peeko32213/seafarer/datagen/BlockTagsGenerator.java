@@ -34,6 +34,14 @@ public class BlockTagsGenerator extends BlockTagsProvider {
                 .add(SFBlocks.MIXED_SHELLY_SAND.get())
         ;
 
+        tag(SFTags.SHELLS)
+                .add(SFBlocks.CLAM_SHELL.get())
+                .add(SFBlocks.SWIRL_SHELL.get())
+                .add(SFBlocks.HORN_SHELL.get())
+                .add(SFBlocks.PYRAMID_SHELL.get())
+                .add(SFBlocks.SPIKY_SHELL.get())
+        ;
+
     }
 
 
