@@ -125,6 +125,28 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(SFBlocks.YELLOW_SEAGLASS_TILES_STAIRS.get());
         dropSelf(SFBlocks.YELLOW_SEAGLASS_PEBBLES.get());
 
+        dropWhenSilkTouch(SFBlocks.PINK_SEAGLASS_BLOCK.get());
+        dropWhenSilkTouch(SFBlocks.PINK_SEAGLASS_PANE.get());
+        dropSelf(SFBlocks.PINK_SEAGLASS_BRICKS.get());
+        dropSelf(SFBlocks.PINK_SEAGLASS_BRICKS_SLAB.get());
+        dropSelf(SFBlocks.PINK_SEAGLASS_BRICKS_STAIRS.get());
+        dropSelf(SFBlocks.PINK_SEAGLASS_PEBBLED.get());
+        dropSelf(SFBlocks.PINK_SEAGLASS_TILES.get());
+        dropSelf(SFBlocks.PINK_SEAGLASS_TILES_SLAB.get());
+        dropSelf(SFBlocks.PINK_SEAGLASS_TILES_STAIRS.get());
+        dropSelf(SFBlocks.PINK_SEAGLASS_PEBBLES.get());
+
+        dropWhenSilkTouch(SFBlocks.LIME_SEAGLASS_BLOCK.get());
+        dropWhenSilkTouch(SFBlocks.LIME_SEAGLASS_PANE.get());
+        dropSelf(SFBlocks.LIME_SEAGLASS_BRICKS.get());
+        dropSelf(SFBlocks.LIME_SEAGLASS_BRICKS_SLAB.get());
+        dropSelf(SFBlocks.LIME_SEAGLASS_BRICKS_STAIRS.get());
+        dropSelf(SFBlocks.LIME_SEAGLASS_PEBBLED.get());
+        dropSelf(SFBlocks.LIME_SEAGLASS_TILES.get());
+        dropSelf(SFBlocks.LIME_SEAGLASS_TILES_SLAB.get());
+        dropSelf(SFBlocks.LIME_SEAGLASS_TILES_STAIRS.get());
+        dropSelf(SFBlocks.LIME_SEAGLASS_PEBBLES.get());
+
         dropSelf(SFBlocks.FISHING_NET.get());
 
         dropSelf(SFBlocks.STARFISH_COMMON_ORANGE.get());

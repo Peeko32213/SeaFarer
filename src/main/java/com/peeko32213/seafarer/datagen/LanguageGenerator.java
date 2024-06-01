@@ -27,7 +27,6 @@ public class LanguageGenerator extends LanguageProvider {
         addTabName(SFCreativeTabs.TAB.get(), "Seafarer");
 
         addBlock(SFBlocks.BLUE_SEAGLASS_BLOCK, "Blue Sea Glass Block");
-
         addBlock(SFBlocks.BLUE_SEAGLASS_BRICKS, "Blue Sea Glass Bricks");
         addBlock(SFBlocks.BLUE_SEAGLASS_PEBBLED, "Pebbled Blue Sea Glass");
         addBlock(SFBlocks.BLUE_SEAGLASS_PEBBLES, "Blue Sea Glass");
@@ -107,12 +106,35 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.WHITE_SEAGLASS_BLOCK, "White Sea Glass Block");
         addBlock(SFBlocks.WHITE_SEAGLASS_BRICKS, "White Sea Glass Bricks");
         addBlock(SFBlocks.WHITE_SEAGLASS_PEBBLED, "Pebbled White Sea Glass");
+        addBlock(SFBlocks.WHITE_SEAGLASS_PEBBLES, "White Sea Glass");
         addBlock(SFBlocks.WHITE_SEAGLASS_TILES, "White Sea Glass Tiles");
         addBlock(SFBlocks.WHITE_SEAGLASS_TILES_STAIRS, "White Sea Glass Tile Stairs");
         addBlock(SFBlocks.WHITE_SEAGLASS_TILES_SLAB, "White Sea Glass Tile Slabs");
         addBlock(SFBlocks.WHITE_SEAGLASS_BRICKS_SLAB, "White Sea Glass Brick Slabs");
         addBlock(SFBlocks.WHITE_SEAGLASS_BRICKS_STAIRS, "White Sea Glass Brick Stairs");
         addBlock(SFBlocks.WHITE_SEAGLASS_PANE, "White Sea Glass Pane");
+
+        addBlock(SFBlocks.PINK_SEAGLASS_BLOCK, "Pink Sea Glass Block");
+        addBlock(SFBlocks.PINK_SEAGLASS_BRICKS, "Pink Sea Glass Bricks");
+        addBlock(SFBlocks.PINK_SEAGLASS_PEBBLED, "Pebbled Pink Sea Glass");
+        addBlock(SFBlocks.PINK_SEAGLASS_PEBBLES, "Pink Sea Glass");
+        addBlock(SFBlocks.PINK_SEAGLASS_TILES, "Pink Sea Glass Tiles");
+        addBlock(SFBlocks.PINK_SEAGLASS_TILES_STAIRS, "Pink Sea Glass Tile Stairs");
+        addBlock(SFBlocks.PINK_SEAGLASS_TILES_SLAB, "Pink Sea Glass Tile Slabs");
+        addBlock(SFBlocks.PINK_SEAGLASS_BRICKS_SLAB, "Pink Sea Glass Brick Slabs");
+        addBlock(SFBlocks.PINK_SEAGLASS_BRICKS_STAIRS, "Pink Sea Glass Brick Stairs");
+        addBlock(SFBlocks.PINK_SEAGLASS_PANE, "Pink Sea Glass Pane");
+
+        addBlock(SFBlocks.LIME_SEAGLASS_BLOCK, "Lime Sea Glass Block");
+        addBlock(SFBlocks.LIME_SEAGLASS_BRICKS, "Lime Sea Glass Bricks");
+        addBlock(SFBlocks.LIME_SEAGLASS_PEBBLED, "Pebbled Lime Sea Glass");
+        addBlock(SFBlocks.LIME_SEAGLASS_PEBBLES, "Lime Sea Glass");
+        addBlock(SFBlocks.LIME_SEAGLASS_TILES, "Lime Sea Glass Tiles");
+        addBlock(SFBlocks.LIME_SEAGLASS_TILES_STAIRS, "Lime Sea Glass Tile Stairs");
+        addBlock(SFBlocks.LIME_SEAGLASS_TILES_SLAB, "Lime Sea Glass Tile Slabs");
+        addBlock(SFBlocks.LIME_SEAGLASS_BRICKS_SLAB, "Lime Sea Glass Brick Slabs");
+        addBlock(SFBlocks.LIME_SEAGLASS_BRICKS_STAIRS, "Lime Sea Glass Brick Stairs");
+        addBlock(SFBlocks.LIME_SEAGLASS_PANE, "Lime Sea Glass Pane");
 
         addBlock(SFBlocks.FISHING_NET, "Fishing Net");
 

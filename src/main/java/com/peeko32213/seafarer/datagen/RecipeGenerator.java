@@ -129,6 +129,34 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
         makeSlab(SFBlocks.YELLOW_SEAGLASS_TILES_SLAB, SFBlocks.YELLOW_SEAGLASS_TILES).save(consumer);
         makePanes(SFBlocks.YELLOW_SEAGLASS_PANE, SFBlocks.YELLOW_SEAGLASS_BLOCK).save(consumer);
 
+
+        // Pink Sea Glass
+        makeSeaGlass(SFBlocks.PINK_SEAGLASS_BLOCK, SFBlocks.PINK_SEAGLASS_PEBBLES).save(consumer);
+        makeBricks(SFBlocks.PINK_SEAGLASS_BRICKS, SFBlocks.PINK_SEAGLASS_BLOCK).save(consumer);
+        makeStairs(SFBlocks.PINK_SEAGLASS_BRICKS_STAIRS, SFBlocks.PINK_SEAGLASS_BRICKS).save(consumer);
+        makeSlab(SFBlocks.PINK_SEAGLASS_BRICKS_SLAB, SFBlocks.PINK_SEAGLASS_BRICKS).save(consumer);
+
+        makeCondensedToBlock(SFBlocks.PINK_SEAGLASS_PEBBLED, SFBlocks.PINK_SEAGLASS_PEBBLES).save(consumer);
+
+        makeBricks(SFBlocks.PINK_SEAGLASS_TILES, SFBlocks.PINK_SEAGLASS_BRICKS).save(consumer);
+        makeStairs(SFBlocks.PINK_SEAGLASS_TILES_STAIRS, SFBlocks.PINK_SEAGLASS_TILES).save(consumer);
+        makeSlab(SFBlocks.PINK_SEAGLASS_TILES_SLAB, SFBlocks.PINK_SEAGLASS_TILES).save(consumer);
+        makePanes(SFBlocks.PINK_SEAGLASS_PANE, SFBlocks.PINK_SEAGLASS_BLOCK).save(consumer);
+
+        // Lime Sea Glass
+        makeSeaGlass(SFBlocks.LIME_SEAGLASS_BLOCK, SFBlocks.LIME_SEAGLASS_PEBBLES).save(consumer);
+        makeBricks(SFBlocks.LIME_SEAGLASS_BRICKS, SFBlocks.LIME_SEAGLASS_BLOCK).save(consumer);
+        makeStairs(SFBlocks.LIME_SEAGLASS_BRICKS_STAIRS, SFBlocks.LIME_SEAGLASS_BRICKS).save(consumer);
+        makeSlab(SFBlocks.LIME_SEAGLASS_BRICKS_SLAB, SFBlocks.LIME_SEAGLASS_BRICKS).save(consumer);
+
+        makeCondensedToBlock(SFBlocks.LIME_SEAGLASS_PEBBLED, SFBlocks.LIME_SEAGLASS_PEBBLES).save(consumer);
+
+        makeBricks(SFBlocks.LIME_SEAGLASS_TILES, SFBlocks.LIME_SEAGLASS_BRICKS).save(consumer);
+        makeStairs(SFBlocks.LIME_SEAGLASS_TILES_STAIRS, SFBlocks.LIME_SEAGLASS_TILES).save(consumer);
+        makeSlab(SFBlocks.LIME_SEAGLASS_TILES_SLAB, SFBlocks.LIME_SEAGLASS_TILES).save(consumer);
+        makePanes(SFBlocks.LIME_SEAGLASS_PANE, SFBlocks.LIME_SEAGLASS_BLOCK).save(consumer);
+
+
         // Algae Block
         makeBricks(SFBlocks.ALGAE_BLOCK, SFBlocks.ALGAE_PLANT).save(consumer);
         makCarpet(SFBlocks.ALGAE_CARPET, SFBlocks.ALGAE_PLANT).save(consumer);

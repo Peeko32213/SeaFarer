@@ -219,6 +219,63 @@ public class BlockstateGenerator extends BlockStateProvider {
         stairsBlock(SFBlocks.YELLOW_SEAGLASS_TILES_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/yellow_seaglass_tiles"));
         simpleBlockItem(SFBlocks.YELLOW_SEAGLASS_TILES_STAIRS.get(), existingModel((getName(SFBlocks.YELLOW_SEAGLASS_TILES_STAIRS.get()))));
 
+        // Pink Seaglass
+
+        simpleBlock(SFBlocks.PINK_SEAGLASS_BLOCK.get());
+        simpleBlockItem(SFBlocks.PINK_SEAGLASS_BLOCK.get(), existingModel((getName(SFBlocks.PINK_SEAGLASS_BLOCK.get()))));
+
+        simpleBlock(SFBlocks.PINK_SEAGLASS_BRICKS.get());
+        simpleBlockItem(SFBlocks.PINK_SEAGLASS_BRICKS.get(), existingModel((getName(SFBlocks.PINK_SEAGLASS_BRICKS.get()))));
+
+        simpleBlock(SFBlocks.PINK_SEAGLASS_PEBBLED.get());
+        simpleBlockItem(SFBlocks.PINK_SEAGLASS_PEBBLED.get(), existingModel((getName(SFBlocks.PINK_SEAGLASS_PEBBLED.get()))));
+
+        simpleBlock(SFBlocks.PINK_SEAGLASS_TILES.get());
+        simpleBlockItem(SFBlocks.PINK_SEAGLASS_TILES.get(), existingModel((getName(SFBlocks.PINK_SEAGLASS_TILES.get()))));
+
+        slabBlock(SFBlocks.PINK_SEAGLASS_BRICKS_SLAB.get(), resourceBlock(getName(SFBlocks.PINK_SEAGLASS_BRICKS.get())), new ResourceLocation(SeaFarer.MODID, "block/pink_seaglass_bricks"));
+        simpleBlockItem(SFBlocks.PINK_SEAGLASS_BRICKS_SLAB.get(), existingModel((getName(SFBlocks.PINK_SEAGLASS_BRICKS_SLAB.get()))));
+
+        stairsBlock(SFBlocks.PINK_SEAGLASS_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/pink_seaglass_bricks"));
+        simpleBlockItem(SFBlocks.PINK_SEAGLASS_BRICKS_STAIRS.get(), existingModel((getName(SFBlocks.PINK_SEAGLASS_BRICKS_STAIRS.get()))));
+
+        slabBlock(SFBlocks.PINK_SEAGLASS_TILES_SLAB.get(), resourceBlock(getName(SFBlocks.PINK_SEAGLASS_TILES.get())), new ResourceLocation(SeaFarer.MODID, "block/pink_seaglass_tiles"));
+        simpleBlockItem(SFBlocks.PINK_SEAGLASS_TILES_SLAB.get(), existingModel((getName(SFBlocks.PINK_SEAGLASS_TILES_SLAB.get()))));
+
+        stairsBlock(SFBlocks.PINK_SEAGLASS_TILES_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/pink_seaglass_tiles"));
+        simpleBlockItem(SFBlocks.PINK_SEAGLASS_TILES_STAIRS.get(), existingModel((getName(SFBlocks.PINK_SEAGLASS_TILES_STAIRS.get()))));
+
+        paneBlock(SFBlocks.PINK_SEAGLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/pink_seaglass_block"), new ResourceLocation(SeaFarer.MODID, "block/pink_seaglass_pane_top"));
+
+        // Lime Seaglass
+
+        simpleBlock(SFBlocks.LIME_SEAGLASS_BLOCK.get());
+        simpleBlockItem(SFBlocks.LIME_SEAGLASS_BLOCK.get(), existingModel((getName(SFBlocks.LIME_SEAGLASS_BLOCK.get()))));
+
+        simpleBlock(SFBlocks.LIME_SEAGLASS_BRICKS.get());
+        simpleBlockItem(SFBlocks.LIME_SEAGLASS_BRICKS.get(), existingModel((getName(SFBlocks.LIME_SEAGLASS_BRICKS.get()))));
+
+        simpleBlock(SFBlocks.LIME_SEAGLASS_PEBBLED.get());
+        simpleBlockItem(SFBlocks.LIME_SEAGLASS_PEBBLED.get(), existingModel((getName(SFBlocks.LIME_SEAGLASS_PEBBLED.get()))));
+
+        simpleBlock(SFBlocks.LIME_SEAGLASS_TILES.get());
+        simpleBlockItem(SFBlocks.LIME_SEAGLASS_TILES.get(), existingModel((getName(SFBlocks.LIME_SEAGLASS_TILES.get()))));
+
+        slabBlock(SFBlocks.LIME_SEAGLASS_BRICKS_SLAB.get(), resourceBlock(getName(SFBlocks.LIME_SEAGLASS_BRICKS.get())), new ResourceLocation(SeaFarer.MODID, "block/lime_seaglass_bricks"));
+        simpleBlockItem(SFBlocks.LIME_SEAGLASS_BRICKS_SLAB.get(), existingModel((getName(SFBlocks.LIME_SEAGLASS_BRICKS_SLAB.get()))));
+
+        stairsBlock(SFBlocks.LIME_SEAGLASS_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/lime_seaglass_bricks"));
+        simpleBlockItem(SFBlocks.LIME_SEAGLASS_BRICKS_STAIRS.get(), existingModel((getName(SFBlocks.LIME_SEAGLASS_BRICKS_STAIRS.get()))));
+
+        slabBlock(SFBlocks.LIME_SEAGLASS_TILES_SLAB.get(), resourceBlock(getName(SFBlocks.LIME_SEAGLASS_TILES.get())), new ResourceLocation(SeaFarer.MODID, "block/lime_seaglass_tiles"));
+        simpleBlockItem(SFBlocks.LIME_SEAGLASS_TILES_SLAB.get(), existingModel((getName(SFBlocks.LIME_SEAGLASS_TILES_SLAB.get()))));
+
+        stairsBlock(SFBlocks.LIME_SEAGLASS_TILES_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/lime_seaglass_tiles"));
+        simpleBlockItem(SFBlocks.LIME_SEAGLASS_TILES_STAIRS.get(), existingModel((getName(SFBlocks.LIME_SEAGLASS_TILES_STAIRS.get()))));
+
+        paneBlock(SFBlocks.LIME_SEAGLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/lime_seaglass_block"), new ResourceLocation(SeaFarer.MODID, "block/lime_seaglass_pane_top"));
+
+
         //NEW SHELL BLOCKS
 
         //Clam

@@ -429,6 +429,132 @@ public class SFBlocks {
             () -> new StairBlock(() -> YELLOW_SEAGLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties
                     .copy(YELLOW_SEAGLASS_TILES.get())));
 
+    public static final RegistryObject<Block> PINK_SEAGLASS_BLOCK = register("pink_seaglass_block",
+            () -> new GlassBlock(BlockBehaviour.Properties
+                    .copy(Blocks.GLASS)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+                    .noOcclusion()
+            ));
+
+
+    public static final RegistryObject<IronBarsBlock> PINK_SEAGLASS_PANE = register("pink_seaglass_pane",
+            () -> new IronBarsBlock(BlockBehaviour.Properties
+                    .of()
+                    .instrument(NoteBlockInstrument.HAT)
+                    .strength(0.3F)
+                    .sound(SoundType.GLASS)
+                    .noOcclusion()));
+
+
+    public static final RegistryObject<Block> PINK_SEAGLASS_BRICKS = register("pink_seaglass_bricks",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.AMETHYST_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<SlabBlock> PINK_SEAGLASS_BRICKS_SLAB = registerBlock("pink_seaglass_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties
+                    .copy(PINK_SEAGLASS_BRICKS.get())));
+
+    public static final RegistryObject<StairBlock> PINK_SEAGLASS_BRICKS_STAIRS = registerBlock("pink_seaglass_bricks_stairs",
+            () -> new StairBlock(() -> PINK_SEAGLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
+                    .copy(PINK_SEAGLASS_BRICKS.get())));
+
+    public static final RegistryObject<Block> PINK_SEAGLASS_PEBBLED = register("pink_seaglass_pebbled",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.AMETHYST_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> PINK_SEAGLASS_TILES = register("pink_seaglass_tiles",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.AMETHYST_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()));
+
+
+    public static final RegistryObject<SlabBlock> PINK_SEAGLASS_TILES_SLAB = registerBlock("pink_seaglass_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties
+                    .copy(PINK_SEAGLASS_TILES.get())));
+
+    public static final RegistryObject<StairBlock> PINK_SEAGLASS_TILES_STAIRS = registerBlock("pink_seaglass_tiles_stairs",
+            () -> new StairBlock(() -> PINK_SEAGLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties
+                    .copy(PINK_SEAGLASS_TILES.get())));
+
+    public static final RegistryObject<Block> PINK_SEAGLASS_PEBBLES = register("pink_seaglass_pebbles",
+            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.STONE)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> LIME_SEAGLASS_BLOCK = register("lime_seaglass_block",
+            () -> new GlassBlock(BlockBehaviour.Properties
+                    .copy(Blocks.GLASS)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+                    .noOcclusion()
+            ));
+
+
+    public static final RegistryObject<IronBarsBlock> LIME_SEAGLASS_PANE = register("lime_seaglass_pane",
+            () -> new IronBarsBlock(BlockBehaviour.Properties
+                    .of()
+                    .instrument(NoteBlockInstrument.HAT)
+                    .strength(0.3F)
+                    .sound(SoundType.GLASS)
+                    .noOcclusion()));
+
+
+    public static final RegistryObject<Block> LIME_SEAGLASS_BRICKS = register("lime_seaglass_bricks",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.AMETHYST_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<SlabBlock> LIME_SEAGLASS_BRICKS_SLAB = registerBlock("lime_seaglass_bricks_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties
+                    .copy(LIME_SEAGLASS_BRICKS.get())));
+
+    public static final RegistryObject<StairBlock> LIME_SEAGLASS_BRICKS_STAIRS = registerBlock("lime_seaglass_bricks_stairs",
+            () -> new StairBlock(() -> LIME_SEAGLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
+                    .copy(LIME_SEAGLASS_BRICKS.get())));
+
+    public static final RegistryObject<Block> LIME_SEAGLASS_PEBBLED = register("lime_seaglass_pebbled",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.AMETHYST_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()));
+
+    public static final RegistryObject<Block> LIME_SEAGLASS_TILES = register("lime_seaglass_tiles",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.AMETHYST_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()));
+
+
+    public static final RegistryObject<SlabBlock> LIME_SEAGLASS_TILES_SLAB = registerBlock("lime_seaglass_tiles_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties
+                    .copy(LIME_SEAGLASS_TILES.get())));
+
+    public static final RegistryObject<StairBlock> LIME_SEAGLASS_TILES_STAIRS = registerBlock("lime_seaglass_tiles_stairs",
+            () -> new StairBlock(() -> LIME_SEAGLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties
+                    .copy(LIME_SEAGLASS_TILES.get())));
+
+    public static final RegistryObject<Block> LIME_SEAGLASS_PEBBLES = register("lime_seaglass_pebbles",
+            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.STONE)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
+
     public static final RegistryObject<Block> BLUE_SEAGLASS_PEBBLES = register("blue_seaglass_pebbles",
             () -> new SFFloorLayerBlock(BlockBehaviour.Properties
                     .of()

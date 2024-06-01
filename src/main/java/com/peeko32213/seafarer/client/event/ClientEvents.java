@@ -27,6 +27,8 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.PURPLE_SEAGLASS_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.RED_SEAGLASS_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.YELLOW_SEAGLASS_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.PINK_SEAGLASS_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.LIME_SEAGLASS_BLOCK.get(), RenderType.translucent());
 
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.BLUE_SEAGLASS_PANE.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.BROWN_SEAGLASS_PANE.get(), RenderType.translucent());
@@ -35,6 +37,8 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.PURPLE_SEAGLASS_PANE.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.RED_SEAGLASS_PANE.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.YELLOW_SEAGLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.PINK_SEAGLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.LIME_SEAGLASS_PANE.get(), RenderType.translucent());
 
 
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.BLUE_SEAGLASS_PEBBLES.get(), RenderType.translucent());
@@ -45,6 +49,8 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.RED_SEAGLASS_PEBBLES.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.YELLOW_SEAGLASS_PEBBLES.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.WHITE_SEAGLASS_PEBBLES.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.PINK_SEAGLASS_PEBBLES.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.LIME_SEAGLASS_PEBBLES.get(), RenderType.translucent());
 
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.STARFISH_COMMON_ORANGE.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.STARFISH_PINK.get(), RenderType.translucent());
