@@ -1,8 +1,4 @@
 {
-  "type": "minecraft:forest_rock",
-  "config": {
-    "state": {
-      "Name": "seafarer:algae_block"
-    }
-  }
+  "type": "seafarer:algea_boulder",
+  "config": {}
 }

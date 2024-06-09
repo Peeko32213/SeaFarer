@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.world;
 
+import com.google.common.collect.ImmutableList;
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.common.world.feature.AlgaeBoulderFeature;
 import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFFeatures;
 import net.minecraft.core.Holder;
@@ -15,8 +15,6 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -25,7 +23,6 @@ import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
-import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -80,8 +77,7 @@ public class SConfiguredFeatures {
         register(context, SEA_HOLLY, Feature.RANDOM_PATCH,
                 FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(SFBlocks.SEA_HOLLY.get().defaultBlockState()))));
 
-        register(context, ALGAE_BOULDER, Feature.FOREST_ROCK,
-                new BlockStateConfiguration(SFBlocks.ALGAE_BLOCK.get().defaultBlockState()));
+        register(context, ALGAE_BOULDER, SFFeatures.ALGEA_BOULDER.get(), new NoneFeatureConfiguration());
 
         register(context, SEA_SHELLS, Feature.RANDOM_PATCH,
                 FeatureUtils.simpleRandomPatchConfiguration(2, PlacementUtils.filtered(SFFeatures.WATERLOGGABLE_BLOCK.get(),

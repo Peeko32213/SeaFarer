@@ -1,6 +1,7 @@
 package com.peeko32213.seafarer.core.registry;
 
 import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.common.world.feature.AlgaeBoulderFeature;
 import com.peeko32213.seafarer.common.world.feature.WaterloggableBlockFeature;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -18,6 +19,6 @@ public class SFFeatures {
     public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(ForgeRegistries.FEATURES, SeaFarer.MODID);
 
     public static final RegistryObject<Feature<SimpleBlockConfiguration>> WATERLOGGABLE_BLOCK = FEATURES.register("waterloggable_block", () -> new WaterloggableBlockFeature(SimpleBlockConfiguration.CODEC));
-
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> ALGEA_BOULDER = FEATURES.register("algea_boulder", () -> new AlgaeBoulderFeature(NoneFeatureConfiguration.CODEC));
 
 }

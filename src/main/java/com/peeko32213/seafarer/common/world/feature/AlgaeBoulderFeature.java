@@ -2,6 +2,7 @@ package com.peeko32213.seafarer.common.world.feature;
 
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.Codec;
+import com.peeko32213.seafarer.common.block.SFWallBlock;
 import com.peeko32213.seafarer.common.world.feature.util.FastNoiseLite;
 import com.peeko32213.seafarer.core.registry.SFBlocks;
 import net.minecraft.core.BlockPos;
@@ -13,11 +14,15 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
+import net.minecraft.world.level.material.Fluids;
 import org.slf4j.Logger;
+
+import static net.minecraft.world.level.block.MultifaceBlock.getFaceProperty;
 
 public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
     private static final Logger LOGGER = LogUtils.getLogger();
@@ -37,12 +42,14 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
         WorldGenLevel worldgenlevel = context.level();
         BlockPos blockpos = context.origin();
         RandomSource random = context.random();
-        FastNoiseLite noise = createNoise(worldgenlevel.getSeed() + random.nextLong(), random.nextFloat());
-        int randomNr = random.nextInt(0, 50);
-        boolean placeFeature = randomNr < 5;
-        if(!placeFeature){
-           return false;
-        }
+        FastNoiseLite noise = createNoise(worldgenlevel.getSeed(), 0.05F);
+        FastNoiseLite noise2 = createNoise(worldgenlevel.getSeed(), 0.4F);
+        FastNoiseLite noise3 = createNoise(worldgenlevel.getSeed(), 0.5F);
+        //int randomNr = random.nextInt(0, 50);
+        //boolean placeFeature = randomNr < 5;
+        //if(!placeFeature){
+        //   return false;
+        //}
 
 
         double middleBlockZ = worldgenlevel.getChunk(blockpos.getX() >> 4, blockpos.getZ() >> 4).getPos().getMiddleBlockZ();
@@ -54,10 +61,10 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
         BlockPos blockPosMid =  BlockPos.containing(middleBlockX, worldgenlevel.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, (int) middleBlockX, (int) middleBlockZ), middleBlockZ);
         BlockPos blockPosCorner =  BlockPos.containing(cornerBlockX, worldgenlevel.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, (int) cornerBlockX, (int) cornerBlockZ), cornerBlockZ);
 
-        int radius = random.nextInt(5, 25);
-
-        addBushes(worldgenlevel, random, blockPosMid, noise, radius);
+        int radius = random.nextInt(5, 10);
+        changeTerrain(worldgenlevel, random, blockPosMid, noise2 ,radius);
         createSphere(worldgenlevel, random, blockPosMid, noise);
+        addBushes(worldgenlevel, random, blockPosMid, noise3, radius);
         return true;
     }
 
@@ -67,7 +74,9 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
         int radius = height;
         BlockState block = Blocks.MOSSY_COBBLESTONE.defaultBlockState();
         BlockState block2 = SFBlocks.ALGAE_BLOCK.get().defaultBlockState();
-        origin = origin.offset(0,(-radius/2)-1,0);
+        //BlockState block3 = SFBlocks.GRAVELY_SAND.get().defaultBlockState();
+        BlockState block4 = Blocks.SAND.defaultBlockState();
+        origin = origin.offset(0,0,0);
 
         for (int x = -radius; x < radius; x++) {
             for (int y = 0; y < height; y++) {
@@ -77,12 +86,20 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
                     double distance = distance(x, y, z, radius, height, radius);
                     float f = noise.GetNoise(x, y, z);
                     if (distance < 1) {
-                        if (f < 0.5) {
+                        if (f < 0.3 && f >= -0.5) {
                             worldgenlevel.setBlock(pos, block, 3);
                             worldgenlevel.setBlock(pos2, block, 3);
-                        } else if( f > 0.6 &&  f < 0.8){
+                        } else if( f >= 0.3 &&  f < 0.5){
                             worldgenlevel.setBlock(pos, block2, 3);
                             worldgenlevel.setBlock(pos2, block2, 3);
+                        }
+                        else if( f >= 0.5 &&  f < 0.7){
+                            //worldgenlevel.setBlock(pos, block3, 3);
+                            //worldgenlevel.setBlock(pos2, block3, 3);
+                        }
+                        else if( f >= 0.7 &&  f < 0.9){
+                            worldgenlevel.setBlock(pos, block4, 3);
+                            worldgenlevel.setBlock(pos2, block4, 3);
                         }
                     }
                 }
@@ -92,6 +109,8 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
 
     public static void addBushes(WorldGenLevel worldgenlevel, RandomSource rand, BlockPos origin, FastNoiseLite noise, int radius) {
         BlockState block = SFBlocks.ALGAE_PLANT.get().defaultBlockState();
+        BlockState block2 = SFBlocks.ALGAE_CARPET.get().defaultBlockState().setValue(getFaceProperty(Direction.DOWN), Boolean.valueOf(true));
+
         for (int x = -radius; x < radius; x++) {
             for (int z = -radius; z < radius; z++) {
                 BlockPos pos = origin.offset(x, 0, z);
@@ -100,15 +119,39 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
                 double distance = distance(x, 0, z, radius, 1, radius);
                 float f = noise.GetNoise(x, (float) yHeight, z);
                 if (distance < 1) {
-                    boolean isCorrectBlock = worldgenlevel.getBlockState(pos2).is(Blocks.AIR);
-                    if (f > 0 && f < 0.05 && isCorrectBlock) {
+                    boolean isCorrectBlock = worldgenlevel.getBlockState(pos2).is(Blocks.AIR) || !worldgenlevel.getFluidState(pos2).isEmpty() || worldgenlevel.getBlockState(pos2.below()).is(BlockTags.BASE_STONE_OVERWORLD) || worldgenlevel.getBlockState(pos2.below()).is(Blocks.MOSSY_COBBLESTONE);
+                    if (f > 0 && f < 0.5 && isCorrectBlock) {
                         worldgenlevel.setBlock(pos2, block, 3);
+                    }
+                    if (f >= 0.5 && f < 1 && isCorrectBlock) {
+                        block2 = block2.setValue(BlockStateProperties.WATERLOGGED, worldgenlevel.getFluidState(pos2).is(Fluids.WATER));
+                        worldgenlevel.setBlock(pos2, block2, 3);
                     }
                 }
             }
         }
     }
 
+    public static void changeTerrain(WorldGenLevel worldgenlevel, RandomSource rand, BlockPos origin, FastNoiseLite noise, int radius) {
+        BlockState block = SFBlocks.GRAVELY_SAND.get().defaultBlockState();
+        BlockState block2 = Blocks.DIRT.defaultBlockState();
+        BlockState block3 = Blocks.COARSE_DIRT.defaultBlockState();
+        for (int x = -radius; x < radius; x++) {
+            for (int z = -radius; z < radius; z++) {
+                BlockPos pos = origin.offset(x, 0, z);
+                double yHeight = worldgenlevel.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, (int) pos.getX(), (int) pos.getZ()) - 1;
+                BlockPos pos2 =  BlockPos.containing(pos.getX(), yHeight, pos.getZ());
+                double distance = distance(x, 0, z, radius, 1, radius);
+                float f = noise.GetNoise(x, (float) yHeight, z);
+                if (distance < 1) {
+                    boolean isCorrectBlock = worldgenlevel.getBlockState(pos2).is(BlockTags.DIRT) || worldgenlevel.getBlockState(pos2).is(BlockTags.SAND) ||  worldgenlevel.getBlockState(pos2).is(Blocks.GRAVEL);
+                    if (f < 0 && f >= -0.4 && isCorrectBlock) {
+                        worldgenlevel.setBlock(pos2, block, 3);
+                    }
+                }
+            }
+        }
+    }
 
     public static double distance(double x, double y, double z, double xRadius, double yRadius, double zRadius) {
         return Mth.square((double) x / (xRadius)) + Mth.square((double) y / (yRadius)) + Mth.square((double) z / (zRadius));
