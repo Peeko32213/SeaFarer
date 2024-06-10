@@ -175,6 +175,10 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(SFBlocks.BEACHGRASS.get());
         dropSelf(SFBlocks.SEA_THRIFT.get());
         dropSelf(SFBlocks.SEA_HOLLY.get());
+        dropSelf(SFBlocks.COASTAL_LAVENDER.get());
+        dropSelf(SFBlocks.COASTAL_WILDFLOWER.get());
+
+        dropSelf(SFBlocks.SALT_BLOCK.get());
 
         dropSelf(SFBlocks.CLAM_SHELL_BRICKS.get());
         dropSelf(SFBlocks.CLAM_SHELL_PILLAR.get());

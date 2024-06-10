@@ -19,6 +19,6 @@ public class SFFeatures {
     public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(ForgeRegistries.FEATURES, SeaFarer.MODID);
 
     public static final RegistryObject<Feature<SimpleBlockConfiguration>> WATERLOGGABLE_BLOCK = FEATURES.register("waterloggable_block", () -> new WaterloggableBlockFeature(SimpleBlockConfiguration.CODEC));
-    public static final RegistryObject<Feature<NoneFeatureConfiguration>> ALGEA_BOULDER = FEATURES.register("algea_boulder", () -> new AlgaeBoulderFeature(NoneFeatureConfiguration.CODEC));
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> ALGAE_BOULDER = FEATURES.register("algae_boulder", () -> new AlgaeBoulderFeature(NoneFeatureConfiguration.CODEC));
 
 }

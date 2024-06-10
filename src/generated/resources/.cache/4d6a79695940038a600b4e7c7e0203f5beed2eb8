@@ -1,4 +1,4 @@
-// 1.20.1	2024-06-01T09:19:54.4872311	Block States: seafarer
+// 1.20.1	2024-06-07T18:20:15.8804353	Block States: seafarer
 852ae8f625a40bf1f7e1caeefc4663f334e46f8f assets/seafarer/blockstates/algae_block.json
 a6c52dfeefa9ade1ce431123d5f0c35f9c23e10e assets/seafarer/blockstates/blue_mixed_sprinkled_sand.json
 400fef21863ea97a537534892488191fc7124ff7 assets/seafarer/blockstates/blue_seaglass_bricks_slab.json
@@ -76,6 +76,7 @@ cea16cb050cc83588ca67994ab11b9d4ee2bd912 assets/seafarer/blockstates/red_seaglas
 7086b71af2efb004e546c37b6db183997b0eb47d assets/seafarer/blockstates/red_seaglass_tiles_stairs.json
 41509e360abb98207d71a36f4dd5a94d5a419fc3 assets/seafarer/blockstates/red_sprinkled_sand.json
 6074fa1d8aed8a05391c6d8d1c5d632ba663253d assets/seafarer/blockstates/rocky_sand.json
+06628e371a5dbb0a8d00391215b893da73c5f8e5 assets/seafarer/blockstates/salt_block.json
 cf7d534cab0bec3cf029e85ee12f160549df3641 assets/seafarer/blockstates/scattered_shelly_sand.json
 cf12a2e9569ce928a4cb6c999662c8cc13376ab4 assets/seafarer/blockstates/spiky_shell_bricks.json
 70f832c9b040d53410ddbbeebffd01e29ec18afb assets/seafarer/blockstates/spiky_shell_bricks_slab.json
@@ -273,6 +274,7 @@ bc81fbf633f6bcc73043af4e1acd0d4e798e4abb assets/seafarer/models/block/red_seagla
 1dec9e1238a1f715cc889afe6a5a449bd0150fd3 assets/seafarer/models/block/red_seaglass_tiles_stairs_outer.json
 d6ddcd41155907b66f09312140a270b146e242e2 assets/seafarer/models/block/red_sprinkled_sand.json
 83626b00a4b3d28542bf40b1b14d52bd949d8c3e assets/seafarer/models/block/rocky_sand.json
+d370e800d1ce387c16709ed8128fda41aad61920 assets/seafarer/models/block/salt_block.json
 7518df1e35469b0d810fc180d4784385cdb912fc assets/seafarer/models/block/scattered_shelly_sand.json
 4c613d185b94d5f8dfb69ba7ccc17316c5555e57 assets/seafarer/models/block/spiky_shell_bricks.json
 90435b68def2d8babe9e5d68a46dfc958acfb2ef assets/seafarer/models/block/spiky_shell_bricks_slab.json
@@ -402,6 +404,7 @@ d1cf8e567577ce6380bf657a831631112bfd6206 assets/seafarer/models/item/red_seaglas
 ac9c5b4133d505da3f91aa9aa442827f0765002b assets/seafarer/models/item/red_seaglass_tiles_stairs.json
 1c7a2b2553b12dd3c8697e86a2d5753d97a8b52e assets/seafarer/models/item/red_sprinkled_sand.json
 e931fb2bd7682a2fc1b0cab4c78acfb2eb31dd7d assets/seafarer/models/item/rocky_sand.json
+e22a13779fb1c6167c9e14083537b5c7f4c8fb78 assets/seafarer/models/item/salt_block.json
 7c085f92980d2edb108b1face8342ab06cc24f66 assets/seafarer/models/item/scattered_shelly_sand.json
 3036a3b832540dbb6bd5f375314c976d4cc19cba assets/seafarer/models/item/spiky_shell_bricks.json
 39875466bc9a0b9e3fe896acdc71a95b929d171f assets/seafarer/models/item/spiky_shell_bricks_slab.json

@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#minecraft:is_beach",
+  "biomes": "#seafarer:is_beach_biome",
   "features": "seafarer:sea_glass",
   "step": "vegetal_decoration"
 }

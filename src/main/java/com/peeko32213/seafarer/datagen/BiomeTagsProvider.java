@@ -28,5 +28,7 @@ public class BiomeTagsProvider extends net.minecraft.data.tags.BiomeTagsProvider
         tag(SFTags.IS_MARINE_IGUANA_BIOME).add(Biomes.STONY_SHORE);
         tag(SFTags.IS_SUNFISH_BIOME).add(Biomes.OCEAN).add(Biomes.LUKEWARM_OCEAN).add(Biomes.COLD_OCEAN);
 
+        tag(SFTags.IS_BEACH_BIOME).add(Biomes.BEACH).add(Biomes.STONY_SHORE);
+
     }
 }

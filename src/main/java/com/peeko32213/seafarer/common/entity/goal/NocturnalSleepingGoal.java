@@ -63,7 +63,7 @@ public class NocturnalSleepingGoal extends Goal {
                 stop();
             }
         }
-        if (world.getDayTime() % 24000 >= 12000 && world.getDayTime() % 24000 <= 24000 || entity.getLastHurtByMob() != null || entity.getTarget() != null || entity.isInWater() || entity.isInLava()) {
+        if (world.getDayTime() % 24000 >= 12000 && world.getDayTime() % 24000 <= 24000 || entity.getTarget() != null || entity.isInWater() || entity.isInLava()) {
             stop();
         }
     }

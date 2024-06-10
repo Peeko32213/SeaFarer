@@ -36,6 +36,8 @@ public class SPlacedFeatures {
     public static final ResourceKey<PlacedFeature> BEACHGRASS_FAN_PLACED = registerKey("beachgrass_fan_placed");
     public static final ResourceKey<PlacedFeature> SEA_HOLLY_PLACED = registerKey("sea_holly_placed");
     public static final ResourceKey<PlacedFeature> SEA_THRIFT_PLACED = registerKey("sea_thrift_placed");
+    public static final ResourceKey<PlacedFeature> COASTAL_LAVENDER_PLACED = registerKey("coastal_lavender_placed");
+    public static final ResourceKey<PlacedFeature> COASTAL_WILDFLOWER_PLACED = registerKey("coastal_wildflower_placed");
     public static final ResourceKey<PlacedFeature> ALGAE_BOULDER_PLACED = registerKey("algae_boulder_placed");
     public static final ResourceKey<PlacedFeature> SEA_SHELL_LAND = registerKey("sea_shell_land");
     public static final ResourceKey<PlacedFeature> SEA_SHELL_WATER = registerKey("sea_shell_water");
@@ -79,10 +81,26 @@ public class SPlacedFeatures {
                 BiomeFilter.biome()
         ));
 
-        register(context, ALGAE_BOULDER_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.ALGAE_BOULDER), ImmutableList.of(
+        register(context, COASTAL_LAVENDER_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.COASTAL_LAVENDER), ImmutableList.of(
                 RarityFilter.onAverageOnceEvery(1),
                 InSquarePlacement.spread(),
-                CountPlacement.of(3),
+                CountPlacement.of(6),
+                PlacementUtils.FULL_RANGE,
+                BiomeFilter.biome()
+        ));
+
+        register(context, COASTAL_WILDFLOWER_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.COASTAL_WILDFLOWER), ImmutableList.of(
+                RarityFilter.onAverageOnceEvery(1),
+                InSquarePlacement.spread(),
+                CountPlacement.of(6),
+                PlacementUtils.FULL_RANGE,
+                BiomeFilter.biome()
+        ));
+
+        register(context, ALGAE_BOULDER_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.ALGAE_BOULDER), ImmutableList.of(
+                RarityFilter.onAverageOnceEvery(2),
+                InSquarePlacement.spread(),
+                CountPlacement.of(1),
                 PlacementUtils.FULL_RANGE,
                 BiomeFilter.biome()
         ));
