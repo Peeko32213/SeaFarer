@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " W ",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "W": {
+      "item": "seafarer:clam_shell"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "seafarer:clam_shovel"
+  }
+}

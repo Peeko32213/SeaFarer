@@ -21,6 +21,8 @@ public class SBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_BEACHGRASS = registerKey("add_beachgrass");
     public static final ResourceKey<BiomeModifier> ADD_SEA_THRIFT = registerKey("add_sea_thrift");
     public static final ResourceKey<BiomeModifier> ADD_SEA_HOLLY = registerKey("add_sea_holly");
+    public static final ResourceKey<BiomeModifier> ADD_COASTAL_LAVENDER = registerKey("add_coastal_lavender");
+    public static final ResourceKey<BiomeModifier> ADD_COASTAL_WILDFLOWER = registerKey("add_coastal_wildflower");
     public static final ResourceKey<BiomeModifier> ADD_ALGAE_BOULDER = registerKey("add_algae_boulder");
 
     public static final ResourceKey<BiomeModifier> ADD_CRAB = registerKey("add_crab");
@@ -38,37 +40,47 @@ public class SBiomeModifiers {
         var biomes = context.lookup(Registries.BIOME);
 
         context.register(ADD_BEACHGRASS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_BEACH),
+                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.BEACHGRASS_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_SEA_THRIFT, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_BEACH),
+                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SEA_THRIFT_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_SEA_HOLLY, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_BEACH),
+                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SEA_HOLLY_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
+        context.register(ADD_COASTAL_LAVENDER, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
+                HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.COASTAL_LAVENDER_PLACED)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_COASTAL_WILDFLOWER, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
+                HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.COASTAL_WILDFLOWER_PLACED)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
         context.register(ADD_ALGAE_BOULDER, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_BEACH),
+                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.ALGAE_BOULDER_PLACED)),
                 GenerationStep.Decoration.SURFACE_STRUCTURES));
 
         context.register(ADD_LAND_SEA_SHELLS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_BEACH),
+                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SEA_SHELL_LAND)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_SEAGLASS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_BEACH),
+                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SEA_GLASS)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_LAND_SEASTAR, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(BiomeTags.IS_BEACH),
+                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SEA_STAR_LAND)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 

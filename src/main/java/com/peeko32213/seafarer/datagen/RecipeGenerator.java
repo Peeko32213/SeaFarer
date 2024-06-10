@@ -3,6 +3,7 @@ package com.peeko32213.seafarer.datagen;
 import com.peeko32213.seafarer.SeaFarer;
 
 import com.peeko32213.seafarer.core.registry.SFBlocks;
+import com.peeko32213.seafarer.core.registry.SFItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -196,6 +197,10 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
         makeBricks(SFBlocks.PYRAMID_SHELL_PILLAR, SFBlocks.PYRAMID_SHELL_BRICKS).save(consumer);
         makeStairs(SFBlocks.PYRAMID_SHELL_BRICKS_STAIRS, SFBlocks.PYRAMID_SHELL_BRICKS).save(consumer);
         makeSlab(SFBlocks.PYRAMID_SHELL_BRICKS_SLAB, SFBlocks.PYRAMID_SHELL_BRICKS).save(consumer);
+
+        makeIngotToBlock(SFBlocks.SALT_BLOCK, SFItems.SALT).save(consumer);
+
+
     }
 
     //Wrappers for conditionals

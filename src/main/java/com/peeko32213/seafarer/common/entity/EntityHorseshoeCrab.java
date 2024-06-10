@@ -9,14 +9,17 @@ import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -24,7 +27,9 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Fox;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Shulker;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShovelItem;
@@ -88,7 +93,7 @@ public class EntityHorseshoeCrab extends AbstractSleepingAnimal implements GeoAn
         super.aiStep();
     }
 
-    protected <E extends EntityHorseshoeCrab> PlayState Controller(final software.bernie.geckolib.core.animation.AnimationState<E> event) {
+        protected <E extends EntityHorseshoeCrab> PlayState Controller(final software.bernie.geckolib.core.animation.AnimationState<E> event) {
         if (!(event.getLimbSwingAmount() > -0.06F && event.getLimbSwingAmount() < 0.06F && !this.isAsleep())) {
             event.setAndContinue(HORSESHOE_CRAB_WALK);
             return PlayState.CONTINUE;
@@ -99,6 +104,19 @@ public class EntityHorseshoeCrab extends AbstractSleepingAnimal implements GeoAn
         return PlayState.CONTINUE;
     }
 
+    public boolean hurt(DamageSource pSource, float pAmount) {
+        if (this.isAsleep()) {
+            Entity entity = pSource.getDirectEntity();
+            if (entity instanceof AbstractArrow) {
+                return false;
+            }
+        }
+        return super.hurt(pSource, pAmount);
+    }
+
+    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
+        return this.isAsleep() ? SoundEvents.SHIELD_BLOCK : SoundEvents.SHIELD_BREAK;
+    }
 
 
     protected <E extends EntityHorseshoeCrab> PlayState digController(final software.bernie.geckolib.core.animation.AnimationState<E> event) {

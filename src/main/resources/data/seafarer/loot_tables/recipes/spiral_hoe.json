@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WW ",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "W": {
+      "item": "seafarer:spiral_shell"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "seafarer:spiral_hoe"
+  }
+}

@@ -36,7 +36,7 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
      * During world generation, features are provided with a 3x3 region of chunks, centered on the chunk being generated,
      * that they can safely generate into.
      *
-     * @param pContext A context object with a reference to the level and the position the feature is being placed at
+     * @param //pContext A context object with a reference to the level and the position the feature is being placed at
      */
     public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
         WorldGenLevel worldgenlevel = context.level();
@@ -74,6 +74,7 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
         int radius = height;
         BlockState block = Blocks.MOSSY_COBBLESTONE.defaultBlockState();
         BlockState block2 = SFBlocks.ALGAE_BLOCK.get().defaultBlockState();
+        BlockState block3 = Blocks.COBBLESTONE.defaultBlockState();
         //BlockState block3 = SFBlocks.GRAVELY_SAND.get().defaultBlockState();
         BlockState block4 = Blocks.SAND.defaultBlockState();
         origin = origin.offset(0,0,0);
@@ -93,9 +94,9 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
                             worldgenlevel.setBlock(pos, block2, 3);
                             worldgenlevel.setBlock(pos2, block2, 3);
                         }
-                        else if( f >= 0.5 &&  f < 0.7){
-                            //worldgenlevel.setBlock(pos, block3, 3);
-                            //worldgenlevel.setBlock(pos2, block3, 3);
+                        else if( f >= 0.2 &&  f < 0.4){
+                            worldgenlevel.setBlock(pos, block3, 3);
+                            worldgenlevel.setBlock(pos2, block3, 3);
                         }
                         else if( f >= 0.7 &&  f < 0.9){
                             worldgenlevel.setBlock(pos, block4, 3);

@@ -4,14 +4,19 @@ import com.peeko32213.seafarer.common.entity.goal.*;
 import com.peeko32213.seafarer.common.entity.misc.controller.WaterMoveController;
 import com.peeko32213.seafarer.common.entity.misc.interfaces.SemiAquatic;
 import com.peeko32213.seafarer.common.entity.misc.navigator.SemiAquaticPathNavigation;
+import com.peeko32213.seafarer.core.registry.SFItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -21,11 +26,16 @@ import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUtils;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -35,9 +45,11 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class EntityMarineIguana extends Animal implements GeoAnimatable, SemiAquatic {
-    private static final EntityDataAccessor<Integer> PREENING_TIME = SynchedEntityData.defineId(EntityMarineIguana.class, EntityDataSerializers.INT);
-    private static final EntityDataAccessor<Boolean> PREENING = SynchedEntityData.defineId(EntityMarineIguana.class, EntityDataSerializers.BOOLEAN);
+import javax.annotation.Nonnull;
+import java.util.Collections;
+
+public class EntityMarineIguana extends Animal implements GeoAnimatable, SemiAquatic, Shearable, net.minecraftforge.common.IForgeShearable {
+    private static final EntityDataAccessor<Integer> SALT = SynchedEntityData.defineId(EntityMarineIguana.class, EntityDataSerializers.INT);
     private static final RawAnimation MARINE_IGUANA_WALK = RawAnimation.begin().thenLoop("animation.marineiguana.walk");
     private static final RawAnimation MARINE_IGUANA_RUN = RawAnimation.begin().thenLoop("animation.marineiguana.run");
     private static final RawAnimation MARINE_IGUANA_IDLE = RawAnimation.begin().thenLoop("animation.marineiguana.idle");
@@ -55,6 +67,7 @@ public class EntityMarineIguana extends Animal implements GeoAnimatable, SemiAqu
     private boolean isLandNavigator;
     private GrazeAlgaeGoal eatBlockGoal;
     private int eatAnimationTick;
+    private int SaltTime = 0;
 
     public EntityMarineIguana(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -95,6 +108,16 @@ public class EntityMarineIguana extends Animal implements GeoAnimatable, SemiAqu
         }
     }
 
+    @Override
+    @Nonnull
+    public InteractionResult mobInteract(@Nonnull Player player, @Nonnull InteractionHand hand) {
+        ItemStack itemstack = player.getItemInHand(hand);
+        if (this.readyForShearing() && itemstack.is(Items.BRUSH)) {
+            shear(SoundSource.PLAYERS);
+        }
+        return super.mobInteract(player, hand);
+    }
+
     public void tick() {
         super.tick();
         this.prevSwimProgress = swimProgress;
@@ -119,6 +142,11 @@ public class EntityMarineIguana extends Animal implements GeoAnimatable, SemiAqu
             } else {
                 swimTimer--;
             }
+        }
+        SaltTime++;
+        if (this.isAlive() && SaltTime > 2000) {
+            SaltTime = 0;
+            this.setSalt(Math.min(10, this.getSalt() + 1));
         }
     }
 
@@ -161,16 +189,27 @@ public class EntityMarineIguana extends Animal implements GeoAnimatable, SemiAqu
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
+        this.entityData.define(SALT, 0);
     }
 
     public void addAdditionalSaveData(CompoundTag compound) {
         super.addAdditionalSaveData(compound);
         compound.putInt("SwimTimer", this.swimTimer);
+        compound.putInt("SaltTime", this.SaltTime);
     }
 
     public void readAdditionalSaveData(CompoundTag compound) {
         super.readAdditionalSaveData(compound);
         this.swimTimer = compound.getInt("SwimTimer");
+        this.SaltTime = compound.getInt("SaltTime");
+    }
+
+    public int getSalt() {
+        return this.entityData.get(SALT);
+    }
+
+    public void setSalt(int Salt) {
+        this.entityData.set(SALT, Salt);
     }
 
     public boolean canBreatheUnderwater() {
@@ -275,4 +314,31 @@ public class EntityMarineIguana extends Animal implements GeoAnimatable, SemiAqu
         return isBrightEnoughToSpawn(level, pos);
     }
 
+    @Override
+    public void shear(SoundSource category) {
+        this.level().playSound(null, this, SoundEvents.BRUSH_GENERIC, category, 1.0F, 1.0F);
+        this.gameEvent(GameEvent.ENTITY_INTERACT);
+        if (!this.level().isClientSide()) {
+            this.spawnAtLocation(SFItems.SALT.get());
+            }
+            this.setSalt(0);
+        }
+
+    @javax.annotation.Nonnull
+    @Override
+    public java.util.List<ItemStack> onSheared(@javax.annotation.Nullable Player player, @javax.annotation.Nonnull ItemStack item, Level world, BlockPos pos, int fortune) {
+        world.playSound(null, this, SoundEvents.BRUSH_GENERIC, player == null ? SoundSource.BLOCKS : SoundSource.PLAYERS, 1.0F, 1.0F);
+        this.gameEvent(GameEvent.ENTITY_INTERACT);
+        if (!world.isClientSide()) {
+            if (random.nextFloat() < this.getSalt() * 0.05F) {
+                return Collections.singletonList(new ItemStack(SFItems.SALT.get()));
+            }
+        }
+        return java.util.Collections.emptyList();
+    }
+
+    @Override
+    public boolean readyForShearing() {
+        return this.isAlive() && this.getSalt() > 0;
+    }
 }

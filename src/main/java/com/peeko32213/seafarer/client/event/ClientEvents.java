@@ -79,7 +79,8 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.SEA_THRIFT.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.BEACHGRASS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.BEACHGRASS_FAN.get(), RenderType.cutout());
-
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.COASTAL_WILDFLOWER.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.COASTAL_LAVENDER.get(), RenderType.cutout());
 
     }
 

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " W ",
+    " W ",
+    " S "
+  ],
+  "key": {
+    "W": {
+      "item": "seafarer:spiky_shell"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "seafarer:spiky_sword"
+  }
+}

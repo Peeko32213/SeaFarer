@@ -830,6 +830,26 @@ public class SFBlocks {
                     .ignitedByLava()
                     .pushReaction(PushReaction.DESTROY)));
 
+    public static final RegistryObject<Block> COASTAL_LAVENDER = register("coastal_lavender", () ->
+            new SFSandPlantBlock(BlockBehaviour.Properties
+                    .of().mapColor(MapColor.COLOR_PURPLE)
+                    .replaceable().noCollission()
+                    .instabreak()
+                    .sound(SoundType.GRASS)
+                    .ignitedByLava()
+                    .pushReaction(PushReaction.DESTROY)));
+
+
+    public static final RegistryObject<Block> COASTAL_WILDFLOWER = register("coastal_wildflower", () ->
+            new SFSandPlantBlock(BlockBehaviour.Properties
+                    .of().mapColor(MapColor.TERRACOTTA_YELLOW)
+                    .replaceable().noCollission()
+                    .instabreak()
+                    .sound(SoundType.GRASS)
+                    .ignitedByLava()
+                    .pushReaction(PushReaction.DESTROY)));
+
+
     public static final RegistryObject<Block> PYRAMID_SHELL = register("pyramid_shell",
             () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
                     .of()
@@ -839,6 +859,12 @@ public class SFBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
+    public static final RegistryObject<Block> SALT_BLOCK = register("salt_block",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.BONE_BLOCK)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
 
     // NEW SHELL BLOCKS
 

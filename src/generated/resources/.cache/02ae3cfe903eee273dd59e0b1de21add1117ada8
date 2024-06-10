@@ -1,4 +1,5 @@
-// 1.20.1	2024-04-21T17:46:55.1855352	Tags for minecraft:worldgen/biome mod id seafarer
+// 1.20.1	2024-06-09T20:06:38.3118222	Tags for minecraft:worldgen/biome mod id seafarer
+10dae9b42630d6d18935669604c94a69d6d28eb8 data/seafarer/tags/worldgen/biome/is_beach_biome.json
 10dae9b42630d6d18935669604c94a69d6d28eb8 data/seafarer/tags/worldgen/biome/is_crab_biome.json
 208ad58db65540373e309e41d4444b16f2e8a713 data/seafarer/tags/worldgen/biome/is_horseshoe_crab_biome.json
 7631830440d86728f20bedb90ae3c06fd0d0fe8a data/seafarer/tags/worldgen/biome/is_marine_iguana_biome.json

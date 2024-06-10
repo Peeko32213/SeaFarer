@@ -33,6 +33,8 @@ public class SFTags {
     public static final TagKey<Biome> IS_MARINE_IGUANA_BIOME = registerBiomeTag("is_marine_iguana_biome");
     public static final TagKey<Biome> IS_SUNFISH_BIOME = registerBiomeTag("is_sunfish_biome");
 
+    public static final TagKey<Biome> IS_BEACH_BIOME = registerBiomeTag("is_beach_biome");
+
 
     private static TagKey<Item> registerItemTag(String name) {
         return TagKey.create(Registries.ITEM, new ResourceLocation(SeaFarer.MODID, name));

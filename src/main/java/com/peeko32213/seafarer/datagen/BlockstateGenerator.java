@@ -416,6 +416,10 @@ public class BlockstateGenerator extends BlockStateProvider {
 
         paneBlock(SFBlocks.YELLOW_SEAGLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/yellow_seaglass_block"), new ResourceLocation(SeaFarer.MODID, "block/yellow_seaglass_pane_top"));
 
+        simpleBlock(SFBlocks.SALT_BLOCK.get());
+        simpleBlockItem(SFBlocks.SALT_BLOCK.get(), existingModel((getName(SFBlocks.SALT_BLOCK.get()))));
+
+
     }
 
     @Override

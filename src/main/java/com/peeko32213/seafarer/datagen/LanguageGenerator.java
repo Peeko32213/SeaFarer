@@ -192,8 +192,13 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.BEACHGRASS_FAN, "Fanny Beach Grass");
         addBlock(SFBlocks.SEA_HOLLY, "Sea Holly");
         addBlock(SFBlocks.SEA_THRIFT, "Sea Thrift");
+        addBlock(SFBlocks.COASTAL_LAVENDER, "Coastal Lavender");
+        addBlock(SFBlocks.COASTAL_WILDFLOWER, "Coastal Wildflower");
 
         addBlock(SFBlocks.PLANK_BLOCK, "Plank Path");
+
+        addBlock(SFBlocks.SALT_BLOCK, "Block of Salt");
+
 
         addBlock(SFBlocks.BLUE_MIXED_SPRINKLED_SAND, "Blue Mixed Sprinkled Sand");
         addBlock(SFBlocks.RED_MIXED_SPRINKLED_SAND, "Red Mixed Sprinkled Sand");
