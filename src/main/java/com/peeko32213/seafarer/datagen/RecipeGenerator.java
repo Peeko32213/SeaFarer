@@ -200,6 +200,17 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
 
         makeIngotToBlock(SFBlocks.SALT_BLOCK, SFItems.SALT).save(consumer);
 
+        makeBlockPickaxe(SFItems.HORN_PICKAXE, SFBlocks.HORN_SHELL).save(consumer);
+        makeBlockShovel(SFItems.CLAM_SHOVEL, SFBlocks.CLAM_SHELL).save(consumer);
+        makeBlockSword(SFItems.SPIKY_SWORD, SFBlocks.SPIKY_SHELL).save(consumer);
+        makeBlockHoe(SFItems.SPIRAL_HOE, SFBlocks.SPIKY_SHELL).save(consumer);
+        makeBlockAxe(SFItems.SWIRL_AXE, SFBlocks.SWIRL_SHELL).save(consumer);
+
+        smeltingRecipe(SFItems.COOKED_SHORE_CRAB.get(), SFItems.RAW_SHORE_CRAB.get(), 10, 1).save(consumer);
+
+        smeltingRecipe(SFItems.COOKED_HORSESHOE_CRAB.get(), SFItems.RAW_HORSESHOE_CRAB.get(), 10, 1).save(consumer);
+
+        smeltingRecipe(SFItems.COOKED_MARINE_IGUANA.get(), SFItems.RAW_MARINE_IGUANA.get(), 10, 1).save(consumer);
 
     }
 

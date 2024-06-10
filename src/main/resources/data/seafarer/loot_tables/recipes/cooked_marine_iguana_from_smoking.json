@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smoking",
   "ingredient": {
-    "item": "unusualprehistory:raw_marine_iguana"
+    "item": "seafarer:raw_marine_iguana"
   },
-  "result": "unusualprehistory:cooked_marine_iguana",
+  "result": "seafarer:cooked_marine_iguana",
   "experience": 0.35,
   "cookingtime": 100
 }

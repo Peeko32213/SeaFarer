@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "group": "purple_dye",
   "ingredients": [
     {
       "item": "seafarer:coastal_lavender"

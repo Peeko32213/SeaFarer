@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 10.0,
+  "ingredient": {
+    "item": "seafarer:raw_horseshoe_crab"
+  },
+  "result": "seafarer:cooked_horseshoe_crab"
+}

@@ -247,6 +247,56 @@ public abstract class SFRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(materialIn.get()).getPath(), has(materialIn.get()));
     }
 
+    public ShapedRecipeBuilder makeBlockSword(Supplier<? extends Item> swordOut, Supplier<? extends Block> materialIn) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT,swordOut.get())
+                .pattern("#")
+                .pattern("#")
+                .pattern("/")
+                .define('#', materialIn.get())
+                .define('/', Tags.Items.RODS_WOODEN)
+                .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(materialIn.get()).getPath(), has(materialIn.get()));
+    }
+
+    public ShapedRecipeBuilder makeBlockPickaxe(Supplier<? extends Item> pickaxeOut, Supplier<? extends Block> materialIn) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,pickaxeOut.get())
+                .pattern("###")
+                .pattern(" / ")
+                .pattern(" / ")
+                .define('#', materialIn.get())
+                .define('/', Tags.Items.RODS_WOODEN)
+                .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(materialIn.get()).getPath(), has(materialIn.get()));
+    }
+
+    public ShapedRecipeBuilder makeBlockAxe(Supplier<? extends Item> axeOut, Supplier<? extends Block> materialIn) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,axeOut.get())
+                .pattern("##")
+                .pattern("#/")
+                .pattern(" /")
+                .define('#', materialIn.get())
+                .define('/', Tags.Items.RODS_WOODEN)
+                .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(materialIn.get()).getPath(), has(materialIn.get()));
+    }
+
+    public ShapedRecipeBuilder makeBlockShovel(Supplier<? extends Item> shovelOut, Supplier<? extends Block> materialIn) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,shovelOut.get())
+                .pattern("#")
+                .pattern("/")
+                .pattern("/")
+                .define('#', materialIn.get())
+                .define('/', Tags.Items.RODS_WOODEN)
+                .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(materialIn.get()).getPath(), has(materialIn.get()));
+    }
+
+    public ShapedRecipeBuilder makeBlockHoe(Supplier<? extends Item> hoeOut, Supplier<? extends Block> materialIn) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,hoeOut.get())
+                .pattern("##")
+                .pattern(" /")
+                .pattern(" /")
+                .define('#', materialIn.get())
+                .define('/', Tags.Items.RODS_WOODEN)
+                .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(materialIn.get()).getPath(), has(materialIn.get()));
+    }
+
     public ShapedRecipeBuilder makeHelmet(Supplier<? extends Item> helmetOut, Supplier<? extends Item> materialIn) {
         return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT,helmetOut.get())
                 .pattern("MMM")

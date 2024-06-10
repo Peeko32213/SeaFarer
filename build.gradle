@@ -22,7 +22,7 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
 
-version = 'beta-1.0'
+version = '0.0.1'
 group = 'com.peeko32213.seafarer'
 archivesBaseName = 'seafarer'
 
@@ -136,7 +136,7 @@ tasks.named('jar', Jar).configure {
         attributes([
                 'Specification-Title'     : "seafarer",
                 'Specification-Vendor'    : "Peeko32213",
-                'Specification-Version'   : 'beta-1.0', // We are version beta-1.0 of ourselves
+                'Specification-Version'   : '0.0.1', // We are version beta-1.0 of ourselves
                 'Implementation-Title'    : project.name,
                 'Implementation-Version'  : project.jar.archiveVersion,
                 'Implementation-Vendor'   : "seafarer",

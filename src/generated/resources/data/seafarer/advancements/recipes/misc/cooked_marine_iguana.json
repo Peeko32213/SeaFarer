@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_seafarer:raw_marine_iguana": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "seafarer:raw_marine_iguana"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "seafarer:cooked_marine_iguana"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_seafarer:raw_marine_iguana",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "seafarer:cooked_marine_iguana"
+    ]
+  },
+  "sends_telemetry_event": false
+}
