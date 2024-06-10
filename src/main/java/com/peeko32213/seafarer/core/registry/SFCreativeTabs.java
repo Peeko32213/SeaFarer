@@ -15,7 +15,7 @@ public class SFCreativeTabs {
     public static final RegistryObject<CreativeModeTab> TAB = DEF_REG.register(SeaFarer.MODID, () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup." + SeaFarer.MODID))
             .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
-            .icon(() -> new ItemStack(Items.NAUTILUS_SHELL))
+            .icon(() -> new ItemStack(SFBlocks.CLAM_SHELL.get()))
             .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
             .displayItems((enabledFeatures, output) -> {
                 for(RegistryObject<Item> item : SFItems.ITEMS.getEntries()){
