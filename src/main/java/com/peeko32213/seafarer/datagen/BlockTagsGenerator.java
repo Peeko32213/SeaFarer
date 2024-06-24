@@ -42,6 +42,28 @@ public class BlockTagsGenerator extends BlockTagsProvider {
                 .add(SFBlocks.SPIKY_SHELL.get())
         ;
 
+        tag(SFTags.STARFISH)
+                .add(SFBlocks.STARFISH_BIG_ROYAL.get())
+                .add(SFBlocks.STARFISH_BIG_PURPLE_OCHRE.get())
+                .add(SFBlocks.STARFISH_BIG_BLUE.get())
+                .add(SFBlocks.STARFISH_BIG_OCHRE.get())
+                .add(SFBlocks.STARFISH_RED.get())
+                .add(SFBlocks.STARFISH_PINK.get())
+                .add(SFBlocks.STARFISH_COMMON_ORANGE.get())
+                .add(SFBlocks.STARFISH_CHOCOLATE_CHIP.get())
+        ;
+
+        tag(SFTags.STARFISH)
+                .add(SFBlocks.STARFISH_BIG_ROYAL.get())
+                .add(SFBlocks.STARFISH_BIG_PURPLE_OCHRE.get())
+                .add(SFBlocks.STARFISH_BIG_BLUE.get())
+                .add(SFBlocks.STARFISH_BIG_OCHRE.get())
+                .add(SFBlocks.STARFISH_RED.get())
+                .add(SFBlocks.STARFISH_PINK.get())
+                .add(SFBlocks.STARFISH_COMMON_ORANGE.get())
+                .add(SFBlocks.STARFISH_CHOCOLATE_CHIP.get())
+        ;
+
     }
 
 

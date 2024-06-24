@@ -1,12 +1,16 @@
 package com.peeko32213.seafarer.common.block.starfish;
 
+import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.common.block.SFWallBlock;
 import com.peeko32213.seafarer.common.block.SFWetFloorLayerBlock;
 import net.minecraft.ChatFormatting;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,12 +22,10 @@ public class StarfishBigBlueBlock extends SFWetFloorLayerBlock {
         super(pProperties);
     }
 
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        //pTooltipComponents.clear();
-        MutableComponent mutableComponent = Component.translatable("seafarer.starfish_big_blue").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC);
-        MutableComponent mutableComponent2 = Component.literal("");
-        pTooltipComponents.add(mutableComponent);
-        pTooltipComponents.add(mutableComponent2);
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable BlockGetter level, List<Component> components, TooltipFlag flag) {
+        super.appendHoverText(stack, level, components, flag);
+        components.add(Component.translatable("seafarer.starfish_big_blue").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.ITALIC));
     }
 
 }

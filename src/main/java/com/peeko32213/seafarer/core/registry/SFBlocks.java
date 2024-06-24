@@ -664,7 +664,7 @@ public class SFBlocks {
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> STARFISH_RED = register("starfish_red",
-            () -> new StarfishPinkBlock(BlockBehaviour.Properties
+            () -> new StarfishRedBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
                     .sound(SoundType.CORAL_BLOCK)

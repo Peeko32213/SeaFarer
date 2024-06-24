@@ -4,11 +4,13 @@ import com.peeko32213.seafarer.SeaFarer;
 
 import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFItems;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -211,6 +213,11 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
         smeltingRecipe(SFItems.COOKED_HORSESHOE_CRAB.get(), SFItems.RAW_HORSESHOE_CRAB.get(), 10, 1).save(consumer);
 
         smeltingRecipe(SFItems.COOKED_MARINE_IGUANA.get(), SFItems.RAW_MARINE_IGUANA.get(), 10, 1).save(consumer);
+
+        makeDye(Items.YELLOW_DYE, SFBlocks.COASTAL_WILDFLOWER.get()).save(consumer);
+        makeDye(Items.PURPLE_DYE, SFBlocks.COASTAL_LAVENDER.get()).save(consumer);
+        makeDye(Items.BLUE_DYE, SFBlocks.SEA_HOLLY.get()).save(consumer);
+        makeDye(Items.PINK_DYE, SFBlocks.SEA_THRIFT.get()).save(consumer);
 
     }
 

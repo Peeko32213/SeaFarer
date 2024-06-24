@@ -35,6 +35,11 @@ public abstract class SFRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_log", has(logIn));
     }
 
+    public ShapelessRecipeBuilder makeDye(Item plankOut, Block logIn) {
+        return ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,plankOut, 4)
+                .unlockedBy("has_needed_dye", has(logIn));
+    }
+
     public ShapedRecipeBuilder makeDoor(Supplier<? extends Block> doorOut, Supplier<? extends Block> plankIn) {
         return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,doorOut.get(), 3)
                 .pattern("PP")

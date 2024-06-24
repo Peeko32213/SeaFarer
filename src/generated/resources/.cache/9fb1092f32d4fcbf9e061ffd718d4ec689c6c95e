@@ -1,4 +1,12 @@
-// 1.20.1	2024-06-09T22:46:59.9762064	Recipes
+// 1.20.1	2024-06-17T16:09:41.8030686	Recipes
+b8f423b34aca9cdfe2e39e4c417b83e85d6e0166 data/minecraft/advancements/recipes/misc/blue_dye.json
+5579acf614d2b43f87cf843fe162b490bfab0428 data/minecraft/advancements/recipes/misc/pink_dye.json
+218b3ef33ea422debbd1cf34aafb6f67962725b9 data/minecraft/advancements/recipes/misc/purple_dye.json
+bacce793d8ed48c6d0c266bdcb2aca06f73925a9 data/minecraft/advancements/recipes/misc/yellow_dye.json
+e993d347473d310e52b650b90cb4b9806a53630a data/minecraft/recipes/blue_dye.json
+d3d50ecd666f7209812dfd689e431a459cd8141e data/minecraft/recipes/pink_dye.json
+31aff49122be1750e660f32d485a82ab72007291 data/minecraft/recipes/purple_dye.json
+5d5bf1e7c6a98b527052c1ad1b6282eec6d974d3 data/minecraft/recipes/yellow_dye.json
 1905df905c5ddeb52b29c481359099d9f783ba29 data/seafarer/advancements/recipes/building_blocks/algae_block.json
 829aa477e55fa4340aad878a7edcac4929e50c09 data/seafarer/advancements/recipes/building_blocks/algae_carpet.json
 801fe7e29946cf3a4325e27251257f8f91d01f1f data/seafarer/advancements/recipes/building_blocks/blue_seaglass_block.json

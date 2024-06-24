@@ -4,7 +4,7 @@
 	"texture_size": [32, 32],
 	"textures": {
 		"0": "seafarer:block/starfish/starfish/starfish_pink",
-		"particle": "seafarer:block/starfish/starfish/pink"
+		"particle": "seafarer:block/starfish/starfish/starfish_pink"
 	},
 	"elements": [
 		{
