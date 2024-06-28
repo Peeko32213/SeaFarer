@@ -3,16 +3,20 @@ package com.peeko32213.seafarer.datagen;
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFItems;
+import com.peeko32213.seafarer.core.registry.SFTags;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Consumer;
 
@@ -21,9 +25,11 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
     public RecipeGenerator(PackOutput pGenerator) {
         super(pGenerator);
     }
-    public static final int FAST_COOKING = 100;		// 5 seconds
-    public static final int NORMAL_COOKING = 200;	// 10 seconds
-    public static final int SLOW_COOKING = 400;		// 20 seconds
+
+    public static final int FAST_COOKING = 100;        // 5 seconds
+    public static final int NORMAL_COOKING = 200;    // 10 seconds
+    public static final int SLOW_COOKING = 400;        // 20 seconds
+
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
 
@@ -213,11 +219,64 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
 
         smeltingRecipe(SFItems.COOKED_MARINE_IGUANA.get(), SFItems.RAW_MARINE_IGUANA.get(), 10, 1).save(consumer);
 
-        makeDye(Items.YELLOW_DYE, SFBlocks.COASTAL_WILDFLOWER.get()).save(consumer);
-        makeDye(Items.PURPLE_DYE, SFBlocks.COASTAL_LAVENDER.get()).save(consumer);
-        makeDye(Items.BLUE_DYE, SFBlocks.SEA_HOLLY.get()).save(consumer);
-        makeDye(Items.PINK_DYE, SFBlocks.SEA_THRIFT.get()).save(consumer);
+        makeDye(consumer, Items.YELLOW_DYE, SFBlocks.COASTAL_WILDFLOWER.get());
+        makeDye(consumer, Items.PURPLE_DYE, SFBlocks.COASTAL_LAVENDER.get());
+        makeDye(consumer, Items.BLUE_DYE, SFBlocks.SEA_HOLLY.get());
+        makeDye(consumer, Items.PINK_DYE, SFBlocks.SEA_THRIFT.get());
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, SFItems.SALTED_SALMON.get())
+                .define('s', SFItems.SALT.get())
+                .define('l', Items.SALMON)
+                .pattern(" s ")
+                .pattern("sls")
+                .pattern(" s ")
+                .unlockedBy(getHasName(Items.SALMON.asItem()), has(Items.SALMON))
+                .unlockedBy(getHasName(SFItems.SALT.get().asItem()), has(SFItems.SALT.get().asItem()))
+                .save(consumer, key(SFItems.SALTED_SALMON.get()));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, SFItems.SALTED_COD.get())
+                .define('s', SFItems.SALT.get())
+                .define('l', Items.COD)
+                .pattern(" s ")
+                .pattern("sls")
+                .pattern(" s ")
+                .unlockedBy(getHasName(Items.COD.asItem()), has(Items.COD))
+                .unlockedBy(getHasName(SFItems.SALT.get().asItem()), has(SFItems.SALT.get().asItem()))
+                .save(consumer, key(SFItems.SALTED_COD.get()));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, SFItems.SALTED_STARFISH.get())
+                .define('s', SFItems.SALT.get())
+                .define('l', SFTags.STARFISH_ITEM)
+                .pattern(" s ")
+                .pattern("sls")
+                .pattern(" s ")
+                .unlockedBy(getHasName(SFItems.SALT.get().asItem()), has(SFItems.SALT.get().asItem()))
+                .save(consumer, key(SFItems.SALTED_STARFISH.get()));
+
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, SFItems.SALTED_TROPICAL_FISH.get())
+                .define('s', SFItems.SALT.get())
+                .define('l', SFItems.SALTED_TROPICAL_FISH.get())
+                .pattern(" s ")
+                .pattern("sls")
+                .pattern(" s ")
+                .unlockedBy(getHasName(SFItems.SALT.get().asItem()), has(SFItems.SALT.get().asItem()))
+                .unlockedBy(getHasName(SFItems.SALTED_TROPICAL_FISH.get().asItem()), has(SFItems.SALTED_TROPICAL_FISH.get().asItem()))
+                .save(consumer, key(SFItems.SALTED_TROPICAL_FISH.get()));
+
+        smeltingRecipes(consumer);
+    }
+
+
+    private void smeltingRecipes(Consumer<FinishedRecipe> consumer) {
+        foodSmeltingRecipes(key(SFBlocks.STARFISH_BIG_BLUE.get()).getPath(),SFBlocks.STARFISH_BIG_BLUE.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SFBlocks.STARFISH_BIG_OCHRE.get()).getPath(),SFBlocks.STARFISH_BIG_OCHRE.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SFBlocks.STARFISH_BIG_PURPLE_OCHRE.get()).getPath(),SFBlocks.STARFISH_BIG_PURPLE_OCHRE.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SFBlocks.STARFISH_PINK.get()).getPath(),SFBlocks.STARFISH_PINK.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SFBlocks.STARFISH_RED.get()).getPath(),SFBlocks.STARFISH_RED.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SFBlocks.STARFISH_BIG_ROYAL.get()).getPath(),SFBlocks.STARFISH_BIG_ROYAL.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SFBlocks.STARFISH_CHOCOLATE_CHIP.get()).getPath(),SFBlocks.STARFISH_CHOCOLATE_CHIP.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SFBlocks.STARFISH_COMMON_ORANGE.get()).getPath(),SFBlocks.STARFISH_COMMON_ORANGE.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
     }
 
     //Wrappers for conditionals
@@ -228,6 +287,7 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
     protected static String getEntityName(EntityType<?> pItemLike) {
         return BuiltInRegistries.ENTITY_TYPE.getKey(pItemLike).getPath();
     }
+
     private ResourceLocation name(String name) {
         return new ResourceLocation(SeaFarer.MODID, name);
     }
@@ -248,4 +308,7 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
                 .generateAdvancement()
                 .build(consumer, loc);
     }
+
+
 }
+

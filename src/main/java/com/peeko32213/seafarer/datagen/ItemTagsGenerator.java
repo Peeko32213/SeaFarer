@@ -1,6 +1,7 @@
 package com.peeko32213.seafarer.datagen;
 
 import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.core.registry.SFTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -18,7 +19,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-
+        this.copy(SFTags.STARFISH, SFTags.STARFISH_ITEM);
     }
 
 

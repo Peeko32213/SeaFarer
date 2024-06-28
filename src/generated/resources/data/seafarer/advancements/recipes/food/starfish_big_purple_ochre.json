@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "seafarer:starfish_big_purple_ochre"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "starfish_big_purple_ochre": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "seafarer:starfish_big_purple_ochre"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "starfish_big_purple_ochre",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "seafarer:starfish_big_purple_ochre"
+    ]
+  },
+  "sends_telemetry_event": false
+}

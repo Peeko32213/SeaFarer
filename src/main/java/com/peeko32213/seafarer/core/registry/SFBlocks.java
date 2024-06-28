@@ -828,6 +828,7 @@ public class SFBlocks {
                     .instabreak()
                     .sound(SoundType.GRASS)
                     .ignitedByLava()
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> COASTAL_LAVENDER = register("coastal_lavender", () ->
@@ -837,6 +838,7 @@ public class SFBlocks {
                     .instabreak()
                     .sound(SoundType.GRASS)
                     .ignitedByLava()
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)));
 
 
@@ -847,6 +849,7 @@ public class SFBlocks {
                     .instabreak()
                     .sound(SoundType.GRASS)
                     .ignitedByLava()
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)));
 
 

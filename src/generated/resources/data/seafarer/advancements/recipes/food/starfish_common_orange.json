@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "seafarer:starfish_common_orange"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "starfish_common_orange": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "seafarer:starfish_common_orange"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "starfish_common_orange",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "seafarer:starfish_common_orange"
+    ]
+  },
+  "sends_telemetry_event": false
+}

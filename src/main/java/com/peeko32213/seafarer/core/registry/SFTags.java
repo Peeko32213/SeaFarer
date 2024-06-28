@@ -26,7 +26,7 @@ public class SFTags {
     public static final TagKey<Block> SHELLS = registerBlockTag("shells");
     public static final TagKey<Block> STARFISH = registerBlockTag("starfish");
     public static final TagKey<Block> BEACH_GLASS = registerBlockTag("beach_glass");
-
+    public static final TagKey<Item> STARFISH_ITEM = registerItemTag("starfish");
 
 
     // Spawn Biomes

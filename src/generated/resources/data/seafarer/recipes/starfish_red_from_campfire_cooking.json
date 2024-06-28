@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 250.0,
+  "ingredient": {
+    "item": "seafarer:starfish_red"
+  },
+  "result": "seafarer:cooked_starfish"
+}

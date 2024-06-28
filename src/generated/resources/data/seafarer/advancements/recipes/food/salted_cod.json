@@ -1,12 +1,24 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_needed_dye": {
+    "has_cod": {
       "conditions": {
         "items": [
           {
             "items": [
-              "seafarer:coastal_lavender"
+              "minecraft:cod"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_sea_salt": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "seafarer:sea_salt"
             ]
           }
         ]
@@ -15,20 +27,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:purple_dye"
+        "recipe": "seafarer:salted_cod"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_needed_dye",
+      "has_cod",
+      "has_sea_salt",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:purple_dye"
+      "seafarer:salted_cod"
     ]
   },
   "sends_telemetry_event": false

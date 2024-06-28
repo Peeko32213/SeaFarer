@@ -1,6 +1,10 @@
 package com.peeko32213.seafarer.datagen;
 
 import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.core.registry.SFItems;
+import com.peeko32213.seafarer.core.registry.SFTags;
+import net.minecraft.core.HolderSet;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
@@ -18,8 +22,12 @@ import net.minecraftforge.common.Tags;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
+
+import static com.peeko32213.seafarer.SeaFarer.prefix;
+import static net.minecraft.advancements.critereon.InventoryChangeTrigger.TriggerInstance.hasItems;
 
 public abstract class SFRecipeProvider extends RecipeProvider {
 
@@ -29,19 +37,26 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapelessRecipeBuilder makePlanks(Supplier<? extends Block> plankOut, TagKey<Item> logIn) {
-        return ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS,plankOut.get(), 4)
+        return ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, plankOut.get(), 4)
                 .requires(logIn)
                 .group("planks")
                 .unlockedBy("has_log", has(logIn));
     }
 
-    public ShapelessRecipeBuilder makeDye(Item plankOut, Block logIn) {
-        return ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,plankOut, 4)
-                .unlockedBy("has_needed_dye", has(logIn));
+    public void makeDye(Consumer<FinishedRecipe> c, Item plankOut, Block logIn) {
+
+        ResourceLocation rl = key(plankOut);
+        ResourceLocation rl2 = key(logIn);
+
+        String name = rl.getPath() + "_from_" + rl2.getPath();
+
+         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, plankOut, 4)
+                .unlockedBy("has_flower", has(logIn))
+                .save(c, prefix(name));
     }
 
     public ShapedRecipeBuilder makeDoor(Supplier<? extends Block> doorOut, Supplier<? extends Block> plankIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,doorOut.get(), 3)
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, doorOut.get(), 3)
                 .pattern("PP")
                 .pattern("PP")
                 .pattern("PP")
@@ -50,7 +65,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeTrapdoor(Supplier<? extends Block> trapdoorOut, Supplier<? extends Block> plankIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,trapdoorOut.get(), 2)
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, trapdoorOut.get(), 2)
                 .pattern("PPP")
                 .pattern("PPP")
                 .define('P', plankIn.get())
@@ -58,20 +73,20 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapelessRecipeBuilder makeButton(Supplier<? extends Block> buttonOut, Supplier<? extends Block> blockIn) {
-        return ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS,buttonOut.get())
+        return ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, buttonOut.get())
                 .requires(blockIn.get())
                 .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(blockIn.get()).getPath(), has(blockIn.get()));
     }
 
     public ShapedRecipeBuilder makePressurePlate(Supplier<? extends Block> pressurePlateOut, Supplier<? extends Block> blockIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,pressurePlateOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, pressurePlateOut.get())
                 .pattern("BB")
                 .define('B', blockIn.get())
                 .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(blockIn.get()).getPath(), has(blockIn.get()));
     }
 
     public ShapedRecipeBuilder makeStairs(Supplier<? extends Block> stairsOut, Supplier<? extends Block> blockIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,stairsOut.get(), 4)
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, stairsOut.get(), 4)
                 .pattern("M  ")
                 .pattern("MM ")
                 .pattern("MMM")
@@ -80,7 +95,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makCarpet(Supplier<? extends Block> stairsOut, Supplier<? extends Block> blockIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,stairsOut.get(), 4)
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, stairsOut.get(), 4)
                 .pattern("   ")
                 .pattern("   ")
                 .pattern("MMM")
@@ -89,7 +104,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makePanes(Supplier<? extends Block> stairsOut, Supplier<? extends Block> blockIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,stairsOut.get(), 16)
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, stairsOut.get(), 16)
                 .pattern("   ")
                 .pattern("MMM")
                 .pattern("MMM")
@@ -98,14 +113,14 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeSlab(Supplier<? extends Block> slabOut, Supplier<? extends Block> blockIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,slabOut.get(), 6)
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, slabOut.get(), 6)
                 .pattern("MMM")
                 .define('M', blockIn.get())
                 .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(blockIn.get()).getPath(), has(blockIn.get()));
     }
 
     public ShapedRecipeBuilder makeWall(Supplier<? extends Block> wallOut, Supplier<? extends Block> blockIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,wallOut.get(), 6)
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, wallOut.get(), 6)
                 .pattern("MMM")
                 .pattern("MMM")
                 .define('M', blockIn.get())
@@ -113,7 +128,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeFence(Supplier<? extends Block> fenceOut, Supplier<? extends Block> blockIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,fenceOut.get(), 6)
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, fenceOut.get(), 6)
                 .pattern("M/M")
                 .pattern("M/M")
                 .define('M', blockIn.get())
@@ -122,7 +137,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeFenceGate(Supplier<? extends Block> fenceGateOut, Supplier<? extends Block> blockIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,fenceGateOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, fenceGateOut.get())
                 .pattern("/M/")
                 .pattern("/M/")
                 .define('M', blockIn.get())
@@ -131,7 +146,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeBricks(Supplier<? extends Block> bricksOut, Supplier<? extends Block> blockIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,bricksOut.get(), 4)
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, bricksOut.get(), 4)
                 .pattern("MM")
                 .pattern("MM")
                 .define('M', blockIn.get())
@@ -139,7 +154,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeSeaGlass(Supplier<? extends Block> bricksOut, Supplier<? extends Block> blockIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,bricksOut.get(), 8)
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, bricksOut.get(), 8)
                 .pattern("MM")
                 .pattern("MM")
                 .define('M', blockIn.get())
@@ -147,7 +162,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeChiseledBricks(Supplier<? extends Block> bricksOut, Supplier<? extends Block> blockIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,bricksOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, bricksOut.get())
                 .pattern("M")
                 .pattern("M")
                 .define('M', blockIn.get())
@@ -155,7 +170,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeWood(Supplier<? extends Block> woodOut, Supplier<? extends Block> logIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,woodOut.get(), 3)
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, woodOut.get(), 3)
                 .pattern("MM")
                 .pattern("MM")
                 .define('M', logIn.get())
@@ -164,7 +179,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
 
 
     public ShapedRecipeBuilder makeIngotToBlock(Supplier<? extends Block> blockOut, Supplier<? extends Item> ingotIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,blockOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, blockOut.get())
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
@@ -173,7 +188,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeCondensedToBlock(Supplier<? extends Block> blockOut, Supplier<? extends Block> logIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,blockOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, blockOut.get())
                 .pattern("###")
                 .pattern("###")
                 .pattern("###")
@@ -182,13 +197,13 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapelessRecipeBuilder makeBlockToIngot(Supplier<? extends Item> ingotOut, Supplier<? extends Block> blockIn) {
-        return ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS,ingotOut.get(), 9)
+        return ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, ingotOut.get(), 9)
                 .requires(blockIn.get())
                 .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(blockIn.get()).getPath(), has(blockIn.get()));
     }
 
     public ShapedRecipeBuilder makeNuggetToIngot(Supplier<? extends Item> ingotOut, Supplier<? extends Item> nuggetIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,ingotOut.get(), 1)
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ingotOut.get(), 1)
                 .pattern("NNN")
                 .pattern("NNN")
                 .pattern("NNN")
@@ -197,13 +212,13 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapelessRecipeBuilder makeIngotToNugget(Supplier<? extends Item> nuggetOut, Supplier<? extends Item> ingotIn) {
-        return ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS,nuggetOut.get(), 9)
+        return ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, nuggetOut.get(), 9)
                 .requires(ingotIn.get())
                 .unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(ingotIn.get()).getPath(), has(ingotIn.get()));
     }
 
     public ShapedRecipeBuilder makeSword(Supplier<? extends Item> swordOut, Supplier<? extends Item> materialIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT,swordOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, swordOut.get())
                 .pattern("#")
                 .pattern("#")
                 .pattern("/")
@@ -213,7 +228,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makePickaxe(Supplier<? extends Item> pickaxeOut, Supplier<? extends Item> materialIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,pickaxeOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, pickaxeOut.get())
                 .pattern("###")
                 .pattern(" / ")
                 .pattern(" / ")
@@ -223,7 +238,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeAxe(Supplier<? extends Item> axeOut, Supplier<? extends Item> materialIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,axeOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, axeOut.get())
                 .pattern("##")
                 .pattern("#/")
                 .pattern(" /")
@@ -233,7 +248,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeShovel(Supplier<? extends Item> shovelOut, Supplier<? extends Item> materialIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,shovelOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, shovelOut.get())
                 .pattern("#")
                 .pattern("/")
                 .pattern("/")
@@ -243,7 +258,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeHoe(Supplier<? extends Item> hoeOut, Supplier<? extends Item> materialIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,hoeOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, hoeOut.get())
                 .pattern("##")
                 .pattern(" /")
                 .pattern(" /")
@@ -253,7 +268,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeBlockSword(Supplier<? extends Item> swordOut, Supplier<? extends Block> materialIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT,swordOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, swordOut.get())
                 .pattern("#")
                 .pattern("#")
                 .pattern("/")
@@ -263,7 +278,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeBlockPickaxe(Supplier<? extends Item> pickaxeOut, Supplier<? extends Block> materialIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,pickaxeOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, pickaxeOut.get())
                 .pattern("###")
                 .pattern(" / ")
                 .pattern(" / ")
@@ -273,7 +288,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeBlockAxe(Supplier<? extends Item> axeOut, Supplier<? extends Block> materialIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,axeOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, axeOut.get())
                 .pattern("##")
                 .pattern("#/")
                 .pattern(" /")
@@ -283,7 +298,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeBlockShovel(Supplier<? extends Item> shovelOut, Supplier<? extends Block> materialIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,shovelOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, shovelOut.get())
                 .pattern("#")
                 .pattern("/")
                 .pattern("/")
@@ -293,7 +308,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeBlockHoe(Supplier<? extends Item> hoeOut, Supplier<? extends Block> materialIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS,hoeOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, hoeOut.get())
                 .pattern("##")
                 .pattern(" /")
                 .pattern(" /")
@@ -303,7 +318,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeHelmet(Supplier<? extends Item> helmetOut, Supplier<? extends Item> materialIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT,helmetOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, helmetOut.get())
                 .pattern("MMM")
                 .pattern("M M")
                 .define('M', materialIn.get())
@@ -311,7 +326,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeChestplate(Supplier<? extends Item> helmetOut, Supplier<? extends Item> materialIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT,helmetOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, helmetOut.get())
                 .pattern("M M")
                 .pattern("MMM")
                 .pattern("MMM")
@@ -320,7 +335,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeLeggings(Supplier<? extends Item> helmetOut, Supplier<? extends Item> materialIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT,helmetOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, helmetOut.get())
                 .pattern("MMM")
                 .pattern("M M")
                 .pattern("M M")
@@ -329,7 +344,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeBoots(Supplier<? extends Item> helmetOut, Supplier<? extends Item> materialIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT,helmetOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, helmetOut.get())
                 .pattern("M M")
                 .pattern("M M")
                 .define('M', materialIn.get())
@@ -337,14 +352,14 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapelessRecipeBuilder makeStew(Supplier<? extends Item> stewOut, Supplier<? extends Block> mushroomIn) {
-        return ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD,stewOut.get())
+        return ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, stewOut.get())
                 .requires(Items.BOWL)
                 .requires(mushroomIn.get(), 3)
                 .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(mushroomIn.get()).getPath(), has(mushroomIn.get()));
     }
 
     public ShapedRecipeBuilder makeBoat(Supplier<? extends Item> boatOut, Supplier<? extends Block> planksIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.TRANSPORTATION,boatOut.get())
+        return ShapedRecipeBuilder.shaped(RecipeCategory.TRANSPORTATION, boatOut.get())
                 .pattern("P P")
                 .pattern("PPP")
                 .define('P', planksIn.get())
@@ -353,7 +368,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapelessRecipeBuilder makeChestBoat(Supplier<? extends Item> chestBoatOut, Supplier<? extends Block> boatIn) {
-        return ShapelessRecipeBuilder.shapeless(RecipeCategory.TRANSPORTATION,chestBoatOut.get())
+        return ShapelessRecipeBuilder.shapeless(RecipeCategory.TRANSPORTATION, chestBoatOut.get())
                 .requires(boatIn.get())
                 .requires(Tags.Items.CHESTS_WOODEN)
                 .group("chest_boat")
@@ -361,7 +376,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public ShapedRecipeBuilder makeSign(Supplier<? extends SignBlock> signOut, Supplier<? extends Block> planksIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS,signOut.get(), 3)
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, signOut.get(), 3)
                 .pattern("PPP")
                 .pattern("PPP")
                 .pattern(" / ")
@@ -380,13 +395,13 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     private void oreSmeltingRecipe(ItemLike result, List<ItemLike> ingredients, float xp, String group, Consumer<FinishedRecipe> consumer) {
-        for(ItemLike ingredient : ingredients) {
+        for (ItemLike ingredient : ingredients) {
             smeltingRecipe(result, ingredient, xp, 1).group(group).save(consumer, new ResourceLocation(SeaFarer.MODID, "smelt_" + ForgeRegistries.ITEMS.getKey(ingredient.asItem()).getPath()));
         }
     }
 
     public SimpleCookingRecipeBuilder smeltingRecipe(ItemLike result, ItemLike ingredient, float exp, int count) {
-        return SimpleCookingRecipeBuilder.smelting(Ingredient.of(new ItemStack(ingredient, count)),RecipeCategory.MISC, result, exp, 200)
+        return SimpleCookingRecipeBuilder.smelting(Ingredient.of(new ItemStack(ingredient, count)), RecipeCategory.MISC, result, exp, 200)
                 .unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(ingredient.asItem()), has(ingredient));
     }
 
@@ -395,7 +410,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public SimpleCookingRecipeBuilder smeltingRecipeTag(ItemLike result, TagKey<Item> ingredient, float exp, int count) {
-        return SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient) ,RecipeCategory.MISC, result, exp, 200)
+        return SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), RecipeCategory.MISC, result, exp, 200)
                 .unlockedBy("has_" + ingredient, has(ingredient));
     }
 
@@ -404,13 +419,13 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     private void oreBlastingRecipe(ItemLike result, List<ItemLike> ingredients, float xp, String group, Consumer<FinishedRecipe> consumer) {
-        for(ItemLike ingredient : ingredients) {
+        for (ItemLike ingredient : ingredients) {
             blastingRecipe(result, ingredient, xp, 1).group(group).save(consumer, new ResourceLocation(SeaFarer.MODID, "blast_" + ForgeRegistries.ITEMS.getKey(ingredient.asItem()).getPath()));
         }
     }
 
     public SimpleCookingRecipeBuilder blastingRecipe(ItemLike result, ItemLike ingredient, float exp, int count) {
-        return SimpleCookingRecipeBuilder.blasting(Ingredient.of(new ItemStack(ingredient, count)),RecipeCategory.MISC, result, exp, 100)
+        return SimpleCookingRecipeBuilder.blasting(Ingredient.of(new ItemStack(ingredient, count)), RecipeCategory.MISC, result, exp, 100)
                 .unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(ingredient.asItem()), has(ingredient));
     }
 
@@ -419,7 +434,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public SimpleCookingRecipeBuilder blastingRecipeTag(ItemLike result, TagKey<Item> ingredient, float exp, int count) {
-        return SimpleCookingRecipeBuilder.blasting(Ingredient.of(ingredient), RecipeCategory.MISC,result, exp, 100)
+        return SimpleCookingRecipeBuilder.blasting(Ingredient.of(ingredient), RecipeCategory.MISC, result, exp, 100)
                 .unlockedBy("has_" + ingredient, has(ingredient));
     }
 
@@ -428,9 +443,10 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 
     public SimpleCookingRecipeBuilder smokingRecipe(ItemLike result, ItemLike ingredient, float exp, int count) {
-        return SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(new ItemStack(ingredient, count)),RecipeCategory.BUILDING_BLOCKS, result, exp, 100)
+        return SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(new ItemStack(ingredient, count)), RecipeCategory.BUILDING_BLOCKS, result, exp, 100)
                 .unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(ingredient.asItem()), has(ingredient));
     }
+
     /*
     public UpgradeRecipeBuilder smithingRecipe(Supplier<Item> input, Supplier<Item> upgradeItem, Supplier<Item> result) {
         return Smit.smithing(Ingredient.of(input.get()), Ingredient.of(upgradeItem.get()), result.get())
@@ -438,14 +454,32 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     }
 */
     public SingleItemRecipeBuilder stonecutting(Supplier<Block> input, ItemLike result) {
-        return SingleItemRecipeBuilder.stonecutting(Ingredient.of(input.get()),RecipeCategory.BUILDING_BLOCKS, result)
+        return SingleItemRecipeBuilder.stonecutting(Ingredient.of(input.get()), RecipeCategory.BUILDING_BLOCKS, result)
                 .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(input.get()), has(input.get()));
     }
 
     public SingleItemRecipeBuilder stonecutting(Supplier<Block> input, ItemLike result, int resultAmount) {
-        return SingleItemRecipeBuilder.stonecutting(Ingredient.of(input.get()),RecipeCategory.BUILDING_BLOCKS, result, resultAmount)
+        return SingleItemRecipeBuilder.stonecutting(Ingredient.of(input.get()), RecipeCategory.BUILDING_BLOCKS, result, resultAmount)
                 .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(input.get()), has(input.get()));
     }
 
 
+    public void foodSmeltingRecipes(String name, ItemLike ingredient, ItemLike result, float experience, Consumer<FinishedRecipe> consumer) {
+        String namePrefix = new ResourceLocation(SeaFarer.MODID, name).toString();
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 200)
+                .unlockedBy(name, hasItems(ingredient)).save(consumer, prefix(name));
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 600)
+                .unlockedBy(name, hasItems(ingredient))
+                .save(consumer, prefix(name + "_from_campfire_cooking"));
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 100)
+                .unlockedBy(name, hasItems(ingredient))
+                .save(consumer, prefix(name + "_from_smoking"));
+    }
+
+    public ResourceLocation key(Item item) {
+        return BuiltInRegistries.ITEM.getKey(item);
+    }
+    public ResourceLocation key(Block item) {
+        return BuiltInRegistries.BLOCK.getKey(item);
+    }
 }

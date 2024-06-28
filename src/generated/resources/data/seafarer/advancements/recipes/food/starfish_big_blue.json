@@ -1,34 +1,34 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_needed_dye": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "seafarer:starfish_big_blue"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "starfish_big_blue": {
       "conditions": {
         "items": [
           {
             "items": [
-              "seafarer:sea_holly"
+              "seafarer:starfish_big_blue"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "minecraft:blue_dye"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_needed_dye",
+      "starfish_big_blue",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:blue_dye"
+      "seafarer:starfish_big_blue"
     ]
   },
   "sends_telemetry_event": false

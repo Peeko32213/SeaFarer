@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "seafarer:starfish_big_royal_from_smoking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "starfish_big_royal": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "seafarer:starfish_big_royal"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "starfish_big_royal",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "seafarer:starfish_big_royal_from_smoking"
+    ]
+  },
+  "sends_telemetry_event": false
+}

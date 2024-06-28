@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "seafarer:starfish_chocolate_chip"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "starfish_chocolate_chip": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "seafarer:starfish_chocolate_chip"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "starfish_chocolate_chip",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "seafarer:starfish_chocolate_chip"
+    ]
+  },
+  "sends_telemetry_event": false
+}

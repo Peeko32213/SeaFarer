@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "l": {
+      "tag": "seafarer:starfish"
+    },
+    "s": {
+      "item": "seafarer:sea_salt"
+    }
+  },
+  "pattern": [
+    " s ",
+    "sls",
+    " s "
+  ],
+  "result": {
+    "item": "seafarer:salted_starfish"
+  },
+  "show_notification": true
+}

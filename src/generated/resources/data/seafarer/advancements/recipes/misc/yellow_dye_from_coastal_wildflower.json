@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_needed_dye": {
+    "has_flower": {
       "conditions": {
         "items": [
           {
             "items": [
-              "seafarer:sea_thrift"
+              "seafarer:coastal_wildflower"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pink_dye"
+        "recipe": "seafarer:yellow_dye_from_coastal_wildflower"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_needed_dye",
+      "has_flower",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pink_dye"
+      "seafarer:yellow_dye_from_coastal_wildflower"
     ]
   },
   "sends_telemetry_event": false

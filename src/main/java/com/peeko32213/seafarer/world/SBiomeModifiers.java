@@ -18,6 +18,8 @@ import static com.peeko32213.seafarer.datagen.ItemModelGenerator.prefix;
 
 public class SBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_BEACHGRASS = registerKey("add_beachgrass");
+    public static final ResourceKey<BiomeModifier> ADD_BEACHGRASS_FAN = registerKey("add_beachgrass_fan");
+
     public static final ResourceKey<BiomeModifier> ADD_SEA_THRIFT = registerKey("add_sea_thrift");
     public static final ResourceKey<BiomeModifier> ADD_SEA_HOLLY = registerKey("add_sea_holly");
     public static final ResourceKey<BiomeModifier> ADD_COASTAL_LAVENDER = registerKey("add_coastal_lavender");
@@ -41,6 +43,11 @@ public class SBiomeModifiers {
         context.register(ADD_BEACHGRASS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.BEACHGRASS_PLACED)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_BEACHGRASS_FAN, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
+                HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.BEACHGRASS_FAN_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_SEA_THRIFT, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(

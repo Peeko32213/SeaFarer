@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 250.0,
+  "ingredient": {
+    "item": "seafarer:starfish_big_purple_ochre"
+  },
+  "result": "seafarer:cooked_starfish"
+}
