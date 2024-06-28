@@ -239,6 +239,10 @@ public class EntityCrab extends StatedAnimal implements GeoAnimatable, Bucketabl
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(FROM_BUCKET, false);
+        this.entityData.define(CRAB_BLINKING, false);
+        this.entityData.define(CRAB_CLAWING, false);
+        this.entityData.define(WAVING, false);
+
     }
 
     public void addAdditionalSaveData(CompoundTag compound) {

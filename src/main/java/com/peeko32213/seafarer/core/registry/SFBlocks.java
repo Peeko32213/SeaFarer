@@ -787,7 +787,7 @@ public class SFBlocks {
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> PLANK_BLOCK = register("plank_block",
-            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
+            () -> new SFPlankBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
                     .sound(SoundType.WOOD)

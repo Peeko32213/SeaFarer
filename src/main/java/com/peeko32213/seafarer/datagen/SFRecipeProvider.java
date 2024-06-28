@@ -51,6 +51,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
         String name = rl.getPath() + "_from_" + rl2.getPath();
 
          ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, plankOut, 4)
+                 .requires(logIn)
                 .unlockedBy("has_flower", has(logIn))
                 .save(c, prefix(name));
     }

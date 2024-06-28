@@ -120,6 +120,7 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
                 if (distance < 1) {
                     boolean isCorrectBlock = worldgenlevel.getBlockState(pos2).is(Blocks.AIR) || !worldgenlevel.getFluidState(pos2).isEmpty() || worldgenlevel.getBlockState(pos2.below()).is(BlockTags.BASE_STONE_OVERWORLD) || worldgenlevel.getBlockState(pos2.below()).is(Blocks.MOSSY_COBBLESTONE);
                     if (f > 0 && f < 0.5 && isCorrectBlock) {
+                        block = block.setValue(BlockStateProperties.WATERLOGGED, worldgenlevel.getFluidState(pos2).is(Fluids.WATER));
                         worldgenlevel.setBlock(pos2, block, 3);
                     }
                     if (f >= 0.5 && f < 1 && isCorrectBlock) {

@@ -240,6 +240,10 @@ public class EntityMarineIguana extends StatedAnimal implements GeoAnimatable, S
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(SALT, 0);
+        this.entityData.define(SIT_1, false);
+        this.entityData.define(SIT_2, false);
+        this.entityData.define(SIT_3, false);
+
     }
 
     public void addAdditionalSaveData(CompoundTag compound) {

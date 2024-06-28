@@ -20,7 +20,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class AlgaePlantBlock extends BushBlock implements net.minecraftforge.common.IForgeShearable, SimpleWaterloggedBlock {
     protected static final float AABB_OFFSET = 6.0F;
-    protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
+    protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 6.0D, 14.0D);
     private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
     public AlgaePlantBlock(BlockBehaviour.Properties p_154496_) {

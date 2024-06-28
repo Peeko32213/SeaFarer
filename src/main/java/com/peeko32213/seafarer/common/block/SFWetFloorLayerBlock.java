@@ -25,12 +25,16 @@ import javax.annotation.Nullable;
 public class SFWetFloorLayerBlock extends BushBlock implements SimpleWaterloggedBlock {
     public static final VoxelShape SHAPE = Block.box(4, 0, 5, 11, 3, 12);
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-
-
+    public final VoxelShape shellShape;
 
     public SFWetFloorLayerBlock(Properties properties) {
+        this(properties, Block.box(4, 0, 5, 11, 3, 12));
+    }
+
+    public SFWetFloorLayerBlock(Properties properties, VoxelShape shellShape) {
         super(properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, Boolean.valueOf(true)));
+        this.shellShape = shellShape;
     }
 
     @Nullable
@@ -59,7 +63,7 @@ public class SFWetFloorLayerBlock extends BushBlock implements SimpleWaterlogged
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-        return SHAPE;
+        return shellShape;
     }
 
     public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pNeighborPos) {
