@@ -1,9 +1,15 @@
 package com.peeko32213.seafarer.common.entity;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.peeko32213.seafarer.common.entity.goal.*;
 import com.peeko32213.seafarer.common.entity.misc.controller.WaterMoveController;
 import com.peeko32213.seafarer.common.entity.misc.interfaces.SemiAquatic;
 import com.peeko32213.seafarer.common.entity.misc.navigator.SemiAquaticPathNavigation;
+import com.peeko32213.seafarer.common.entity.misc.state.EntityAction;
+import com.peeko32213.seafarer.common.entity.misc.state.RandomStateGoal;
+import com.peeko32213.seafarer.common.entity.misc.state.StateHelper;
+import com.peeko32213.seafarer.common.entity.misc.state.WeightedState;
 import com.peeko32213.seafarer.core.registry.SFItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -21,13 +27,13 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.MoveControl;
+import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
@@ -35,7 +41,6 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.common.Tags;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -47,8 +52,10 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.Nonnull;
 import java.util.Collections;
+import java.util.EnumSet;
+import java.util.List;
 
-public class EntityMarineIguana extends Animal implements GeoAnimatable, SemiAquatic, Shearable, net.minecraftforge.common.IForgeShearable {
+public class EntityMarineIguana extends StatedAnimal implements GeoAnimatable, SemiAquatic, Shearable, net.minecraftforge.common.IForgeShearable {
     private static final EntityDataAccessor<Integer> SALT = SynchedEntityData.defineId(EntityMarineIguana.class, EntityDataSerializers.INT);
     private static final RawAnimation MARINE_IGUANA_WALK = RawAnimation.begin().thenLoop("animation.marineiguana.walk");
     private static final RawAnimation MARINE_IGUANA_RUN = RawAnimation.begin().thenLoop("animation.marineiguana.run");
@@ -68,6 +75,48 @@ public class EntityMarineIguana extends Animal implements GeoAnimatable, SemiAqu
     private GrazeAlgaeGoal eatBlockGoal;
     private int eatAnimationTick;
     private int SaltTime = 0;
+
+
+    private static final EntityDataAccessor<Boolean> SIT_1 = SynchedEntityData.defineId(EntityMarineIguana.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> SIT_2 = SynchedEntityData.defineId(EntityMarineIguana.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> SIT_3 = SynchedEntityData.defineId(EntityMarineIguana.class, EntityDataSerializers.BOOLEAN);
+
+    private static final EntityAction IGUANA_SIT_1_ACTION = new EntityAction(0, (e) -> { return; } ,1);
+
+    private static final StateHelper IGUANA_SIT_1_STATE =
+            StateHelper.Builder.state(SIT_1, "iguana_sit_1")
+                    .playTime(70)
+                    .stopTime(100)
+                    .affectsAI(true)
+                    .affectedFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK))
+                    .entityAction(IGUANA_SIT_1_ACTION)
+                    .build();
+
+    private static final EntityAction IGUANA_SIT_2_ACTION = new EntityAction(0, (e) -> { return; } ,1);
+
+    private static final StateHelper IGUANA_SIT_2_STATE =
+            StateHelper.Builder.state(SIT_2, "iguana_sit_2")
+                    .playTime(70)
+                    .stopTime(100)
+                    .affectsAI(true)
+                    .affectedFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK))
+                    .entityAction(IGUANA_SIT_2_ACTION)
+                    .build();
+
+    private static final EntityAction IGUANA_SIT_3_ACTION = new EntityAction(0, (e) -> { return; } ,1);
+
+
+    private static final StateHelper IGUANA_SIT_3_STATE =
+            StateHelper.Builder.state(SIT_3, "iguana_sit_3")
+                    .playTime(70)
+                    .stopTime(100)
+                    .affectsAI(true)
+                    .affectedFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK))
+                    .entityAction(IGUANA_SIT_3_ACTION)
+                    .build();
+
+
+
 
     public EntityMarineIguana(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -94,6 +143,7 @@ public class EntityMarineIguana extends Animal implements GeoAnimatable, SemiAqu
         this.goalSelector.addGoal(3, new CustomRandomStrollGoal(this, 30, 1.0D, 100, 34));
         this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 6.0F));
+        this.goalSelector.addGoal(3, new RandomStateGoal<>(this));
     }
 
     private void switchNavigator(boolean onLand) {
@@ -246,6 +296,10 @@ public class EntityMarineIguana extends Animal implements GeoAnimatable, SemiAqu
     }
 
     protected <E extends EntityMarineIguana> PlayState Controller(final software.bernie.geckolib.core.animation.AnimationState<E> event) {
+
+
+
+
         if (!(event.getLimbSwingAmount() > -0.06F && event.getLimbSwingAmount() < 0.06F) && !this.isInWater()) {
             if (this.isSprinting()) {
                 event.setAndContinue(MARINE_IGUANA_RUN);
@@ -264,28 +318,28 @@ public class EntityMarineIguana extends Animal implements GeoAnimatable, SemiAqu
             event.getController().setAnimationSpeed(1.0F);
             return PlayState.CONTINUE;
         }
-        else if (random.nextInt(500) == 0){
-            float rand = random.nextFloat();
-            if (rand < 0.10F) {
-                return event.setAndContinue(MARINE_IGUANA_SIT3);
-            }
-            if (rand < 0.15F) {
-                return event.setAndContinue(MARINE_IGUANA_SIT2);
-            }
-            if (rand < 0.77F) {
-                return event.setAndContinue(MARINE_IGUANA_SIT1);
-            }
-            if (rand < 0.9F) {
-                event.setAndContinue(MARINE_IGUANA_IDLE);
-            }
-            event.getController().forceAnimationReset();
+
+
+        if (getBooleanState(SIT_1)) {
+            return event.setAndContinue(MARINE_IGUANA_SIT1);
         }
+
+        if(getBooleanState(SIT_2)) {
+            return event.setAndContinue(MARINE_IGUANA_SIT2);
+        }
+
+        if(getBooleanState(SIT_3)) {
+            return event.setAndContinue(MARINE_IGUANA_SIT3);
+        }
+
+
         if (this.isEating()) {
             event.setAndContinue(MARINE_IGUANA_GRAZE);
             return PlayState.CONTINUE;
         }
 
-        return PlayState.CONTINUE;
+
+        return event.setAndContinue(MARINE_IGUANA_IDLE);
     }
 
 
@@ -341,4 +395,25 @@ public class EntityMarineIguana extends Animal implements GeoAnimatable, SemiAqu
     public boolean readyForShearing() {
         return this.isAlive() && this.getSalt() > 0;
     }
+
+    @Override
+    public ImmutableMap<String, StateHelper> getStates() {
+        return ImmutableMap.of(
+                IGUANA_SIT_1_STATE.getName(), IGUANA_SIT_1_STATE,
+                IGUANA_SIT_2_STATE.getName(), IGUANA_SIT_2_STATE,
+                IGUANA_SIT_3_STATE.getName(), IGUANA_SIT_3_STATE
+        );
+    }
+
+    @Override
+    public List<WeightedState<StateHelper>> getWeightedStatesToPerform() {
+        return ImmutableList.of(
+                WeightedState.of(IGUANA_SIT_1_STATE, 77),
+                WeightedState.of(IGUANA_SIT_2_STATE, 15),
+                WeightedState.of(IGUANA_SIT_3_STATE, 10)
+        );
+    }
+
+
+
 }

@@ -1,5 +1,6 @@
 package com.peeko32213.seafarer.common.entity.misc;
 
+import com.peeko32213.seafarer.common.entity.StatedAnimal;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -11,7 +12,7 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
-public class AbstractSleepingAnimal extends Animal {
+public abstract class AbstractSleepingAnimal extends StatedAnimal {
 
     private static final EntityDataAccessor<Boolean> ASLEEP = SynchedEntityData.defineId(AbstractSleepingAnimal.class, EntityDataSerializers.BOOLEAN);
     public int alertTicks = 0;

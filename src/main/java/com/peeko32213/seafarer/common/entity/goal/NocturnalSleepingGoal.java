@@ -1,12 +1,9 @@
 package com.peeko32213.seafarer.common.entity.goal;
 
 import com.peeko32213.seafarer.common.entity.misc.AbstractSleepingAnimal;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.EndRodBlock;
-import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 
 public class NocturnalSleepingGoal extends Goal {
 

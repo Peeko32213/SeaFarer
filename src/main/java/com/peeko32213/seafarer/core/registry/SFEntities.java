@@ -1,7 +1,10 @@
 package com.peeko32213.seafarer.core.registry;
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.common.entity.*;
+import com.peeko32213.seafarer.common.entity.EntityCrab;
+import com.peeko32213.seafarer.common.entity.EntityHorseshoeCrab;
+import com.peeko32213.seafarer.common.entity.EntityMarineIguana;
+import com.peeko32213.seafarer.common.entity.EntitySunfish;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;

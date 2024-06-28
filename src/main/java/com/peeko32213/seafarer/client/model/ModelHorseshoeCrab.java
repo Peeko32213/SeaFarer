@@ -2,7 +2,6 @@ package com.peeko32213.seafarer.client.model;
 
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.common.entity.EntityCrab;
 import com.peeko32213.seafarer.common.entity.EntityHorseshoeCrab;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.GeoModel;

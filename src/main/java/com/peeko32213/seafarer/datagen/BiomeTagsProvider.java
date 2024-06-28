@@ -4,9 +4,7 @@ import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.core.registry.SFTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import java.util.concurrent.CompletableFuture;

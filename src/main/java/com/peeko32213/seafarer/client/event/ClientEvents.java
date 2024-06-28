@@ -1,7 +1,10 @@
 package com.peeko32213.seafarer.client.event;
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.client.model.*;
+import com.peeko32213.seafarer.client.model.ModelCrab;
+import com.peeko32213.seafarer.client.model.ModelHorseshoeCrab;
+import com.peeko32213.seafarer.client.model.ModelMarineIguana;
+import com.peeko32213.seafarer.client.model.ModelSunfish;
 import com.peeko32213.seafarer.client.render.LivingEntityRenderer;
 import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFEntities;

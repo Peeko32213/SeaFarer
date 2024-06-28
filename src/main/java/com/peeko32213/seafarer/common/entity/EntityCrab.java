@@ -1,7 +1,9 @@
 package com.peeko32213.seafarer.common.entity;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.peeko32213.seafarer.common.entity.goal.GrazeAlgaeGoal;
+import com.peeko32213.seafarer.common.entity.misc.state.*;
 import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFItems;
 import net.minecraft.core.BlockPos;
@@ -12,7 +14,6 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
@@ -21,10 +22,8 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.animal.AbstractFish;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Bucketable;
-import net.minecraft.world.entity.animal.Ocelot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -40,10 +39,10 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-import javax.annotation.Nonnull;
 import java.util.EnumSet;
+import java.util.List;
 
-public class EntityCrab extends Animal implements GeoAnimatable, Bucketable {
+public class EntityCrab extends StatedAnimal implements GeoAnimatable, Bucketable {
     private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(EntityCrab.class, EntityDataSerializers.BOOLEAN);
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private static final RawAnimation CRAB_IDLE = RawAnimation.begin().thenLoop("animation.crab.idle");
@@ -60,6 +59,43 @@ public class EntityCrab extends Animal implements GeoAnimatable, Bucketable {
     private static final RawAnimation CRAB_CLAW = RawAnimation.begin().thenLoop("animation.crab.claw");
     private static final RawAnimation CRAB_WAVE = RawAnimation.begin().thenLoop("animation.crab.wave");
     private static final EntityDataAccessor<Boolean> GRAZE = SynchedEntityData.defineId(EntityCrab.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> WAVING = SynchedEntityData.defineId(EntityCrab.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> CRAB_CLAWING = SynchedEntityData.defineId(EntityCrab.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> CRAB_BLINKING = SynchedEntityData.defineId(EntityCrab.class, EntityDataSerializers.BOOLEAN);
+
+    private static final EntityAction CRAB_WAVE_ACTION = new EntityAction(0, (e) -> { return; } ,1);
+
+    private static final StateHelper CRAB_WAVE_STATE =
+            StateHelper.Builder.state(WAVING, "crab_waving")
+                    .playTime(60)
+                    .stopTime(100)
+                    .affectsAI(true)
+                    .affectedFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK))
+                    .entityAction(CRAB_WAVE_ACTION)
+                    .build();
+
+    private static final EntityAction CRAB_CLAW_ACTION = new EntityAction(0, (e) -> { return; } ,1);
+
+    private static final StateHelper CRAB_CLAW_STATE =
+            StateHelper.Builder.state(CRAB_CLAWING, "crab_clawing")
+                    .playTime(60)
+                    .stopTime(100)
+                    .affectsAI(true)
+                    .entityAction(CRAB_CLAW_ACTION)
+                    .build();
+
+    private static final EntityAction CRAB_BLINK_ACTION = new EntityAction(0, (e) -> { return; } ,1);
+
+
+    private static final StateHelper CRAB_BLINK_STATE =
+            StateHelper.Builder.state(CRAB_BLINKING, "crab_blinking")
+                    .playTime(60)
+                    .stopTime(100)
+                    .affectsAI(true)
+                    .affectedFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK))
+                    .entityAction(CRAB_BLINK_ACTION)
+                    .build();
+
 
 
     private GrazeAlgaeGoal eatBlockGoal;
@@ -87,6 +123,8 @@ public class EntityCrab extends Animal implements GeoAnimatable, Bucketable {
         this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, 5.0F, 2.5D, 2.7D, EntitySelector.NO_SPECTATORS::test));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(3, new RandomStateGoal<>(this));
+
     }
 
     protected void playStepSound(BlockPos p_28301_, BlockState p_28302_) {
@@ -116,6 +154,9 @@ public class EntityCrab extends Animal implements GeoAnimatable, Bucketable {
     public InteractionResult mobInteract(Player p_27477_, InteractionHand p_27478_) {
         return Bucketable.bucketMobPickup(p_27477_, p_27478_, this).orElse(super.mobInteract(p_27477_, p_27478_));
     }
+
+
+
 
     @Override
     public void handleEntityEvent(byte pId) {
@@ -153,23 +194,19 @@ public class EntityCrab extends Animal implements GeoAnimatable, Bucketable {
             event.getController().setAnimationSpeed(1.0F);
             return PlayState.CONTINUE;
         }
-        else if (random.nextInt(500) == 0){
-            float rand = random.nextFloat();
-            if (rand < 0.10F) {
-                return event.setAndContinue(CRAB_WAVE);
-            }
-            if (rand < 0.15F) {
-                return event.setAndContinue(CRAB_CLAW);
-            }
-            if (rand < 0.77F) {
-                return event.setAndContinue(CRAB_BLINK);
-            }
-            if (rand < 0.9F) {
-                event.setAndContinue(CRAB_IDLE);
-            }
-            event.getController().forceAnimationReset();
+
+        if(getBooleanState(CRAB_BLINKING)) {
+            return event.setAndContinue(CRAB_BLINK);
         }
-        return PlayState.CONTINUE;
+        if(getBooleanState(CRAB_CLAWING)) {
+            return event.setAndContinue(CRAB_CLAW);
+        }
+        if(getBooleanState(WAVING)) {
+            return event.setAndContinue(CRAB_WAVE);
+        }
+
+
+        return event.setAndContinue(CRAB_IDLE);
     }
 
     protected <E extends EntityCrab> PlayState eatController(final software.bernie.geckolib.core.animation.AnimationState<E> event) {
@@ -264,4 +301,22 @@ public class EntityCrab extends Animal implements GeoAnimatable, Bucketable {
 
 
 
+
+    @Override
+    public ImmutableMap<String, StateHelper> getStates() {
+        return ImmutableMap.of(
+                CRAB_BLINK_STATE.getName(), CRAB_BLINK_STATE,
+                CRAB_CLAW_STATE.getName(), CRAB_CLAW_STATE,
+                CRAB_WAVE_STATE.getName(), CRAB_WAVE_STATE
+        );
+    }
+
+    @Override
+    public List<WeightedState<StateHelper>> getWeightedStatesToPerform() {
+        return ImmutableList.of(
+                WeightedState.of(CRAB_BLINK_STATE, 77),
+                WeightedState.of(CRAB_CLAW_STATE, 15),
+                WeightedState.of(CRAB_WAVE_STATE, 10)
+        );
+    }
 }
