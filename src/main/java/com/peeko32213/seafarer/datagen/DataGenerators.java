@@ -43,7 +43,7 @@ public class DataGenerators {
         generator.addProvider(evt.includeServer(), new ItemTagsGenerator(packOutput, lookupProvider, blockTagGenerator.contentsGetter(), helper));
         generator.addProvider(true,new BiomeTagsProvider(packOutput, lookupProvider, helper));
         generator.addProvider(evt.includeServer(), new WorldGenProvider(packOutput, lookupProvider));
-
+        generator.addProvider(evt.includeServer(), new GoalGenerator(packOutput));
     }
 
 }

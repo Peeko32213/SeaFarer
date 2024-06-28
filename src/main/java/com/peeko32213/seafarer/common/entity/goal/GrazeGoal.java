@@ -1,6 +1,8 @@
 package com.peeko32213.seafarer.common.entity.goal;
 
 import com.peeko32213.seafarer.core.registry.SFBlocks;
+import com.scouter.goalsmith.data.PredicateCodec;
+import com.scouter.goalsmith.data.predicates.TruePredicate;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -13,19 +15,31 @@ import net.minecraft.world.level.block.state.predicate.BlockStatePredicate;
 import java.util.EnumSet;
 import java.util.function.Predicate;
 
-public class GrazeAlgaeGoal extends Goal {
+public class GrazeGoal extends Goal {
     private static final int EAT_ANIMATION_TICKS = 40;
-    private static final Predicate<BlockState> IS_TALL_GRASS = BlockStatePredicate.forBlock(Blocks.GRASS);
     /** The entity owner of this AITask */
     private final Mob mob;
     /** The world the grass eater entity is eating from */
     private final Level level;
     /** Number of ticks since the entity started to eat grass */
     private int eatAnimationTick;
+    private final Block canUse;
+    private final Block otherBlock;
+    private final Block otherBlockReplacement;
+    private final PredicateCodec<BlockState> blockState;
+    //public Predicate<BlockState> blockState
 
-    public GrazeAlgaeGoal(Mob pMob) {
+    public GrazeGoal(Mob pMob) {
+        this(pMob, SFBlocks.ALGAE_BLOCK.get(), Blocks.GRASS_BLOCK, Blocks.DIRT, new TruePredicate<>());
+    }
+
+    public GrazeGoal(Mob pMob, Block canUse, Block otherBlock, Block otherBlockReplacement, PredicateCodec<BlockState> blockState) {
         this.mob = pMob;
         this.level = pMob.level();
+        this.canUse = canUse;
+        this.otherBlock = otherBlock;
+        this.blockState =blockState;
+        this.otherBlockReplacement = otherBlockReplacement;
         this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK, Goal.Flag.JUMP));
     }
 
@@ -36,7 +50,7 @@ public class GrazeAlgaeGoal extends Goal {
     public boolean canUse() {
         if (this.mob.getRandom().nextInt(100) == 0) {
             BlockPos blockpos = this.mob.blockPosition();
-            return this.level.getBlockState(blockpos.below()).is(SFBlocks.ALGAE_BLOCK.get());
+            return this.level.getBlockState(blockpos.below()).is(canUse);
         } else {
             return false;
         }
@@ -79,7 +93,7 @@ public class GrazeAlgaeGoal extends Goal {
         this.eatAnimationTick = Math.max(0, this.eatAnimationTick - 1);
         if (this.eatAnimationTick == this.adjustedTickDelay(4)) {
             BlockPos blockpos = this.mob.blockPosition();
-            if (IS_TALL_GRASS.test(this.level.getBlockState(blockpos))) {
+            if (blockState.getPredicate().test(this.level.getBlockState(blockpos))) {
                 if (net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.level, this.mob)) {
                     this.level.destroyBlock(blockpos, false);
                 }
@@ -87,10 +101,10 @@ public class GrazeAlgaeGoal extends Goal {
                 this.mob.ate();
             } else {
                 BlockPos blockpos1 = blockpos.below();
-                if (this.level.getBlockState(blockpos1).is(Blocks.GRASS_BLOCK)) {
+                if (this.level.getBlockState(blockpos1).is(otherBlock)) {
                     if (net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.level, this.mob)) {
-                        this.level.levelEvent(2001, blockpos1, Block.getId(Blocks.GRASS_BLOCK.defaultBlockState()));
-                        this.level.setBlock(blockpos1, Blocks.DIRT.defaultBlockState(), 2);
+                        this.level.levelEvent(2001, blockpos1, Block.getId(otherBlock.defaultBlockState()));
+                        this.level.setBlock(blockpos1, otherBlockReplacement.defaultBlockState(), 2);
                     }
 
                     this.mob.ate();

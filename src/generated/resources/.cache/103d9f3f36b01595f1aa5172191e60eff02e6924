@@ -1,6 +1,7 @@
-// 1.20.1	2024-06-09T20:06:38.312832	Registries
+// 1.20.1	2024-06-28T22:21:51.8538655	Registries
 4b71de4148e5dfb459c5553b90d5ed7efafcd530 data/seafarer/forge/biome_modifier/add_algae_boulder.json
 f6eab64839d7d3cb3bb9ad7ce5cc932f31f70ba4 data/seafarer/forge/biome_modifier/add_beachgrass.json
+7cecd4856f1f73f55a070fe082e739761c23acdd data/seafarer/forge/biome_modifier/add_beachgrass_fan.json
 b2d4824c069ead46751543821239b38b0f77f0b4 data/seafarer/forge/biome_modifier/add_coastal_lavender.json
 3671c80022cce36891871d629cf0cce4ca5583d9 data/seafarer/forge/biome_modifier/add_coastal_wildflower.json
 8a18c34e112c68da68de26f07bc55c52643b90e1 data/seafarer/forge/biome_modifier/add_crab.json

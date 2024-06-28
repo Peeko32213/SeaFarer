@@ -33,6 +33,7 @@ public class SeaFarer {
 
         SFBlocks.BLOCKS.register(modEventBus);
         SFItems.ITEMS.register(modEventBus);
+        SFGoals.GOAL_TYPE_SERIALIZER.register(modEventBus);
         SFCreativeTabs.DEF_REG.register(modEventBus);
         SFEntities.ENTITIES.register(modEventBus);
         SFFeatures.FEATURES.register(modEventBus);

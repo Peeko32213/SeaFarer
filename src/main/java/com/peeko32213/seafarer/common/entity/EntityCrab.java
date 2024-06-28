@@ -2,7 +2,7 @@ package com.peeko32213.seafarer.common.entity;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.peeko32213.seafarer.common.entity.goal.GrazeAlgaeGoal;
+import com.peeko32213.seafarer.common.entity.goal.GrazeGoal;
 import com.peeko32213.seafarer.common.entity.misc.state.*;
 import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFItems;
@@ -98,7 +98,7 @@ public class EntityCrab extends StatedAnimal implements GeoAnimatable, Bucketabl
 
 
 
-    private GrazeAlgaeGoal eatBlockGoal;
+    private GrazeGoal eatBlockGoal;
     private int eatAnimationTick;
     public EntityCrab(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -115,14 +115,14 @@ public class EntityCrab extends StatedAnimal implements GeoAnimatable, Bucketabl
 
     @Override
     protected void registerGoals() {
-        this.eatBlockGoal = new GrazeAlgaeGoal(this);
-        this.goalSelector.addGoal(2, this.eatBlockGoal);
-        this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new PanicGoal(this, 1.25D));
-        this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1.0D));
-        this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 6.0F));
-        this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, 5.0F, 2.5D, 2.7D, EntitySelector.NO_SPECTATORS::test));
-        this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
+        //this.eatBlockGoal = new GrazeGoal(this);
+        //this.goalSelector.addGoal(2, this.eatBlockGoal);
+        //this.goalSelector.addGoal(0, new FloatGoal(this));
+        //this.goalSelector.addGoal(1, new PanicGoal(this, 1.25D));
+        //this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1.0D));
+        //this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 6.0F));
+        //this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, 5.0F, 2.5D, 2.7D, EntitySelector.NO_SPECTATORS::test));
+        //this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(3, new RandomStateGoal<>(this));
 
     }
@@ -298,9 +298,6 @@ public class EntityCrab extends StatedAnimal implements GeoAnimatable, Bucketabl
     public static boolean checkCrabSpawnRules(EntityType<? extends EntityCrab> dino, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource p_186242_) {
         return isBrightEnoughToSpawn(level, pos);
     }
-
-
-
 
     @Override
     public ImmutableMap<String, StateHelper> getStates() {

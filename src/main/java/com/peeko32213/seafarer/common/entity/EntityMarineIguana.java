@@ -72,7 +72,7 @@ public class EntityMarineIguana extends StatedAnimal implements GeoAnimatable, S
     public float swimProgress;
     private int swimTimer = -1000;
     private boolean isLandNavigator;
-    private GrazeAlgaeGoal eatBlockGoal;
+    //private GrazeGoal eatBlockGoal;
     private int eatAnimationTick;
     private int SaltTime = 0;
 
@@ -135,14 +135,14 @@ public class EntityMarineIguana extends StatedAnimal implements GeoAnimatable, S
     }
 
     protected void registerGoals() {
-        this.eatBlockGoal = new GrazeAlgaeGoal(this);
-        this.goalSelector.addGoal(2, this.eatBlockGoal);
-        this.goalSelector.addGoal(7, new FindWaterGoal(this));
-        this.goalSelector.addGoal(7, new LeaveWaterGoal(this));
-        this.goalSelector.addGoal(9, new SemiAquaticSwimmingGoal(this, 1.0D, 10));
-        this.goalSelector.addGoal(3, new CustomRandomStrollGoal(this, 30, 1.0D, 100, 34));
-        this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 6.0F));
+        //this.eatBlockGoal = new GrazeGoal(this);
+        //this.goalSelector.addGoal(2, this.eatBlockGoal);
+        //this.goalSelector.addGoal(7, new FindWaterGoal(this));
+        //this.goalSelector.addGoal(7, new LeaveWaterGoal(this));
+        //this.goalSelector.addGoal(9, new SemiAquaticSwimmingGoal(this, 1.0D, 10));
+        //this.goalSelector.addGoal(3, new CustomRandomStrollGoal(this, 30, 1.0D, 100, 34));
+        //this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+        //this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(3, new RandomStateGoal<>(this));
     }
 

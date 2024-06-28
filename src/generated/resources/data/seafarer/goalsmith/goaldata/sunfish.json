@@ -1,0 +1,34 @@
+{
+  "attributes_additions": [],
+  "goal_operations": [
+    {
+      "type": "goalsmith:add_goal_operation",
+      "goal": [
+        {
+          "type": "goalsmith:random_look_around_goal",
+          "goal_priority": 4
+        },
+        {
+          "type": "goalsmith:look_at_entity_goal",
+          "goal_priority": 5,
+          "look_at_type": "goalsmith:player",
+          "look_distance": 6.0,
+          "only_horizontal": false,
+          "probability": 0.02
+        },
+        {
+          "type": "goalsmith:try_find_water_goal",
+          "goal_priority": 0
+        },
+        {
+          "type": "goalsmith:random_swimming_goal",
+          "goal_priority": 4,
+          "interval": 40,
+          "speed_modifier": 0.6
+        }
+      ]
+    }
+  ],
+  "target_entity": "seafarer:sunfish",
+  "target_goal_operations": []
+}

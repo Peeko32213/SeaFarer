@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 
 public class SemiAquaticSwimmingGoal extends RandomStrollGoal {
 
-    public SemiAquaticSwimmingGoal(Animal creature, double speed, int chance) {
+    public SemiAquaticSwimmingGoal(PathfinderMob creature, double speed, int chance) {
         super(creature, speed, chance, false);
     }
 
