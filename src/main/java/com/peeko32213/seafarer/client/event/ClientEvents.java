@@ -1,11 +1,13 @@
 package com.peeko32213.seafarer.client.event;
 
 import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.client.block.FishingNetEntityRenderer;
 import com.peeko32213.seafarer.client.model.ModelCrab;
 import com.peeko32213.seafarer.client.model.ModelHorseshoeCrab;
 import com.peeko32213.seafarer.client.model.ModelMarineIguana;
 import com.peeko32213.seafarer.client.model.ModelSunfish;
 import com.peeko32213.seafarer.client.render.LivingEntityRenderer;
+import com.peeko32213.seafarer.core.registry.SFBlockEntities;
 import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFEntities;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -93,6 +95,8 @@ public final class ClientEvents {
         event.registerEntityRenderer(SFEntities.CRAB.get(), e -> new LivingEntityRenderer<>(e, new ModelCrab()));
         event.registerEntityRenderer(SFEntities.HORSESHOE_CRAB.get(), e -> new LivingEntityRenderer<>(e, new ModelHorseshoeCrab()));
         event.registerEntityRenderer(SFEntities.MARINE_IGUANA.get(), e -> new LivingEntityRenderer<>(e, new ModelMarineIguana()));
+        event.registerBlockEntityRenderer(SFBlockEntities.NET_BLOCK_ENTITY.get(), FishingNetEntityRenderer::new);
+
     }
 
 }

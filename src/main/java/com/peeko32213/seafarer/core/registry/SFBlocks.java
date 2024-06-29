@@ -5,6 +5,7 @@ import com.peeko32213.seafarer.common.block.*;
 import com.peeko32213.seafarer.common.block.starfish.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.PlaceOnWaterBlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -637,10 +638,10 @@ public class SFBlocks {
                     .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> FISHING_NET = registerBlock("fishing_net",
-            () -> new SFWallBlock(BlockBehaviour.Properties
+    public static final RegistryObject<Block> FISHING_NET = registerPlaceOnWaterBlockItem("fishing_net",
+            () -> new SFNetBlock(BlockBehaviour.Properties
                     .copy(Blocks.STONE)
-                    .noCollission()
+                    .noOcclusion()
                     .strength(0.2F)
                     .sound(SoundType.LADDER)));
 
@@ -1104,6 +1105,12 @@ public class SFBlocks {
     public static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {
         RegistryObject<B> block = BLOCKS.register(name, supplier);
         SFItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        return block;
+    }
+
+    public static <B extends Block> RegistryObject<B> registerPlaceOnWaterBlockItem(String name, Supplier<? extends B> supplier) {
+        RegistryObject<B> block = BLOCKS.register(name, supplier);
+        SFItems.ITEMS.register(name, () -> new PlaceOnWaterBlockItem(block.get(), new Item.Properties()));
         return block;
     }
 
