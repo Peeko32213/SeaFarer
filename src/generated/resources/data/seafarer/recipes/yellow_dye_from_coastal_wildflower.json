@@ -1,7 +1,11 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
-  "ingredients": [],
+  "ingredients": [
+    {
+      "item": "seafarer:coastal_wildflower"
+    }
+  ],
   "result": {
     "count": 4,
     "item": "minecraft:yellow_dye"

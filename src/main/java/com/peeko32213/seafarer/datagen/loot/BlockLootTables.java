@@ -9,13 +9,17 @@ import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.HashSet;
@@ -223,9 +227,22 @@ public class BlockLootTables extends BlockLootSubProvider {
         createMultipleBlockDrops(SFBlocks.SCATTERED_SHELLY_SAND.get(), SFBlocks.CLAM_SHELL.get(), SFBlocks.HORN_SHELL.get());
         createMultipleBlockDrops(SFBlocks.JUMBLED_SHELLY_SAND.get(), SFBlocks.PYRAMID_SHELL.get(), SFBlocks.SPIKY_SHELL.get());
 
-
+        createPotFlowerItemTable(SFBlocks.POTTED_COASTAL_LAVENDER.get(),SFBlocks.COASTAL_LAVENDER.get());
+        createPotFlowerItemTable(SFBlocks.POTTED_SEA_HOLLY.get(),SFBlocks.SEA_HOLLY.get());
+        createPotFlowerItemTable(SFBlocks.POTTED_SEA_THRIFT.get(),SFBlocks.SEA_THRIFT.get());
+        createPotFlowerItemTable(SFBlocks.POTTED_COASTAL_WILDFLOWER.get(),SFBlocks.COASTAL_WILDFLOWER.get());
 
     }
+    protected void createPotFlowerItemTable(Block flowerpotBlock, ItemLike pItem) {
+        add(flowerpotBlock ,LootTable.lootTable()
+                .withPool(this.applyExplosionCondition(Blocks.FLOWER_POT, LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(Blocks.FLOWER_POT))))
+                .withPool(this.applyExplosionCondition(pItem, LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(pItem)))));
+    }
+
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {
         return createSilkTouchDispatchTable(pBlock,

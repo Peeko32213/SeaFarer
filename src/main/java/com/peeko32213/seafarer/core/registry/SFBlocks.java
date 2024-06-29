@@ -821,6 +821,13 @@ public class SFBlocks {
                     .ignitedByLava()
                     .pushReaction(PushReaction.DESTROY)));
 
+
+    public static final RegistryObject<Block> POTTED_SEA_THRIFT = registerBlockNoItem("potted_sea_thrift",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SFBlocks.SEA_THRIFT, BlockBehaviour
+                    .Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
+
+
+
     public static final RegistryObject<Block> SEA_HOLLY = register("sea_holly", () ->
             new SFSandPlantBlock(BlockBehaviour.Properties
                     .of().mapColor(MapColor.TERRACOTTA_YELLOW)
@@ -831,6 +838,11 @@ public class SFBlocks {
                     .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)));
 
+
+    public static final RegistryObject<Block> POTTED_SEA_HOLLY = registerBlockNoItem("potted_sea_holly",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SFBlocks.SEA_HOLLY, BlockBehaviour
+                    .Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
+
     public static final RegistryObject<Block> COASTAL_LAVENDER = register("coastal_lavender", () ->
             new SFSandPlantBlock(BlockBehaviour.Properties
                     .of().mapColor(MapColor.COLOR_PURPLE)
@@ -840,6 +852,10 @@ public class SFBlocks {
                     .ignitedByLava()
                     .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> POTTED_COASTAL_LAVENDER = registerBlockNoItem("potted_coastal_lavender",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SFBlocks.COASTAL_LAVENDER, BlockBehaviour
+                    .Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
 
 
     public static final RegistryObject<Block> COASTAL_WILDFLOWER = register("coastal_wildflower", () ->
@@ -852,6 +868,9 @@ public class SFBlocks {
                     .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)));
 
+    public static final RegistryObject<Block> POTTED_COASTAL_WILDFLOWER = registerBlockNoItem("potted_coastal_wildflower",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SFBlocks.COASTAL_WILDFLOWER, BlockBehaviour
+                    .Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
 
     public static final RegistryObject<Block> PYRAMID_SHELL = register("pyramid_shell",
             () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
@@ -1085,6 +1104,11 @@ public class SFBlocks {
     public static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {
         RegistryObject<B> block = BLOCKS.register(name, supplier);
         SFItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        return block;
+    }
+
+    public static <B extends Block> RegistryObject<B> registerBlockNoItem(String name, Supplier<? extends B> supplier) {
+        RegistryObject<B> block = BLOCKS.register(name, supplier);
         return block;
     }
 }
