@@ -6,8 +6,12 @@ import com.peeko32213.seafarer.common.entity.goal.NocturnalSleepingGoal;
 import com.peeko32213.seafarer.common.entity.misc.AbstractSleepingAnimal;
 import com.peeko32213.seafarer.common.entity.misc.state.StateHelper;
 import com.peeko32213.seafarer.common.entity.misc.state.WeightedState;
+import com.peeko32213.seafarer.core.registry.SFItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -19,8 +23,10 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Bucketable;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
@@ -35,7 +41,8 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.List;
 
-public class EntityHorseshoeCrab extends AbstractSleepingAnimal implements GeoAnimatable {
+public class EntityHorseshoeCrab extends AbstractSleepingAnimal implements GeoAnimatable, Bucketable {
+    private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(EntityHorseshoeCrab.class, EntityDataSerializers.BOOLEAN);
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     private static final RawAnimation HORSESHOE_CRAB_WALK = RawAnimation.begin().thenLoop("animation.horseshoecrab.walk");
@@ -149,5 +156,59 @@ public class EntityHorseshoeCrab extends AbstractSleepingAnimal implements GeoAn
     @Override
     public List<WeightedState<StateHelper>> getWeightedStatesToPerform() {
         return ImmutableList.of();
+    }
+
+    @Override
+    protected void defineSynchedData() {
+        super.defineSynchedData();
+        this.entityData.define(FROM_BUCKET, false);
+
+    }
+
+    public void addAdditionalSaveData(CompoundTag compound) {
+        super.addAdditionalSaveData(compound);
+        compound.putBoolean("FromBucket", this.fromBucket());
+    }
+
+    public void readAdditionalSaveData(CompoundTag compound) {
+        super.readAdditionalSaveData(compound);
+        this.setFromBucket(compound.getBoolean("FromBucket"));
+    }
+
+    @Override
+    public boolean fromBucket() {
+        return this.entityData.get(FROM_BUCKET);
+    }
+
+    @Override
+    public void setFromBucket(boolean p_203706_1_) {
+        this.entityData.set(FROM_BUCKET, p_203706_1_);
+    }
+
+    @Override
+    public void saveToBucketTag(ItemStack bucket) {
+        CompoundTag compoundnbt = bucket.getOrCreateTag();
+        Bucketable.saveDefaultDataToBucketTag(this, bucket);
+        compoundnbt.putFloat("Health", this.getHealth());
+        if (this.hasCustomName()) {
+            bucket.setHoverName(this.getCustomName());
+        }
+    }
+    public void loadFromBucketTag(CompoundTag pTag) {
+        Bucketable.loadDefaultDataFromBucketTag(this, pTag);
+    }
+
+    @Override
+    public ItemStack getBucketItemStack() {
+        ItemStack stack = new ItemStack(SFItems.HORSESHOE_CRAB_BUCKET.get());
+        if (this.hasCustomName()) {
+            stack.setHoverName(this.getCustomName());
+        }
+        return stack;
+    }
+
+    @Override
+    public SoundEvent getPickupSound() {
+        return SoundEvents.BUCKET_EMPTY_FISH;
     }
 }

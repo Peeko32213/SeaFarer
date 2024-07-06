@@ -94,6 +94,10 @@ public class SFItems {
             () -> new SFFishBucket(SFEntities.CRAB, () -> Fluids.EMPTY, Items.BUCKET, false,
                     new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> HORSESHOE_CRAB_BUCKET = ITEMS.register("horseshoe_crab_bucket",
+            () -> new SFFishBucket(SFEntities.HORSESHOE_CRAB, () -> Fluids.EMPTY, Items.BUCKET, false,
+                    new Item.Properties().stacksTo(1)));
+
     public static final RegistryObject<Item> CLAM_SHOVEL = ITEMS.register("clam_shovel",
             () -> new ShovelItem(SFTiers.SHELL,  1.5F, -3.0F, new Item.Properties()));
 
