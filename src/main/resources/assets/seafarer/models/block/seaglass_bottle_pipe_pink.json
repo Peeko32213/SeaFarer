@@ -3,8 +3,8 @@
 	"ambientocclusion": false,
 	"texture_size": [32, 32],
 	"textures": {
-		"1": "seaglass_bottle_pipe_pink",
-		"particle": "seaglass_bottle_pipe_yellow"
+		"1": "seafarer:block/seaglass_bottles/seaglass_bottle_pipe_pink",
+		"particle": "seafarer:block/seaglass_bottles/seaglass_bottle_pipe_pink"
 	},
 	"elements": [
 		{

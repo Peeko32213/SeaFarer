@@ -255,6 +255,18 @@ public class LanguageGenerator extends LanguageProvider {
         addItem(SFItems.SPIRAL_HOE, "Spiral Hoe");
         addItem(SFItems.SWIRL_AXE, "Swirl Axe");
 
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_BUST_BLUE, "Sea Glass Blue Bust Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_BUST_BROWN, "Sea Glass Brown Bust Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_PIPE_PINK, "Sea Glass Pink Pipe Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_PIPE_YELLOW, "Sea Glass Yellow Pipe Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_CURVY_LIME, "Sea Glass Lime Curvy Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_CURVY_ORANGE, "Sea Glass Orange Curvy Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_FISHBOWL_PURPLE, "Sea Glass Purple Fishbowl Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_FISHBOWL_WHITE, "Sea Glass White Fishbowl Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_THIN_GREEN, "Sea Glass Green Thin Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_THIN_RED, "Sea Glass Red Thin Bottle");
+
+
         add("seafarer.starfish_common_orange", "Common Orange");
         add("seafarer.starfish_pink", "Pink");
         add("seafarer.starfish_red", "Red");

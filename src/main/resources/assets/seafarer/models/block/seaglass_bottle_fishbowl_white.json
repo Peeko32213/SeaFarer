@@ -3,8 +3,8 @@
 	"ambientocclusion": false,
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "seaglass_bottle_fishbowl_white",
-		"particle": "seaglass_bottle_fishbowl_white"
+		"0": "seafarer:block/seaglass_bottles/seaglass_bottle_fishbowl_white",
+		"particle": "seafarer:block/seaglass_bottles/seaglass_bottle_fishbowl_white"
 	},
 	"elements": [
 		{
