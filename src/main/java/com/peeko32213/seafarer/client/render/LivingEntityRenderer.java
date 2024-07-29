@@ -18,10 +18,9 @@ public class LivingEntityRenderer<T extends LivingEntity & GeoAnimatable> extend
         super(context, model);
     }
 
-    public RenderType getRenderType(T animatable, float partialTick, PoseStack poseStack, @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer, int packedLight, ResourceLocation texture) {
+
+    @Override
+    public RenderType getRenderType(T animatable, ResourceLocation texture, @Nullable MultiBufferSource bufferSource, float partialTick) {
         return RenderType.entityCutout(getTextureLocation(animatable));
     }
-
-
-
 }

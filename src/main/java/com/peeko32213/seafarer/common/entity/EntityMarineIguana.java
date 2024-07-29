@@ -308,8 +308,9 @@ public class EntityMarineIguana extends StatedAnimal implements GeoAnimatable, S
             if (this.isSprinting()) {
                 event.setAndContinue(MARINE_IGUANA_RUN);
                 event.getController().setAnimationSpeed(2.0F);
+                return PlayState.CONTINUE;
             } else {
-                event.setAndContinue(MARINE_IGUANA_WALK);
+                return event.setAndContinue(MARINE_IGUANA_WALK);
             }
         }
         if (!(event.getLimbSwingAmount() > -0.06F && event.getLimbSwingAmount() < 0.06F) && this.isInWater()) {
