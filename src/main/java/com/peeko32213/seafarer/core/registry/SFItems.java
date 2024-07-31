@@ -1,13 +1,16 @@
 package com.peeko32213.seafarer.core.registry;
 
 import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.common.item.MessageInABottleItem;
 import com.peeko32213.seafarer.common.item.SFDrinkableItem;
 import com.peeko32213.seafarer.common.item.SFFishBucket;
 import com.peeko32213.seafarer.common.item.SFFood;
+import net.minecraft.tags.StructureTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.level.saveddata.maps.MapDecoration;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -68,7 +71,7 @@ public class SFItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> MESSAGE_IN_A_BOTTLE = ITEMS.register("message_in_a_bottle",
-            () -> new Item(new Item.Properties()));
+            () -> new MessageInABottleItem(StructureTags.ON_TREASURE_MAPS, "seafarer.message_in_bottle", MapDecoration.Type.MONUMENT,new Item.Properties()));
 
     public static final RegistryObject<Item> SOY_SAUCE = ITEMS.register("soy_sauce",
             () -> new SFDrinkableItem(drinkItem()
@@ -91,11 +94,11 @@ public class SFItems {
             () -> new Item(new Item.Properties().food(SFFood.SALTED_STARFISH)));
 
     public static final RegistryObject<Item> SHORE_CRAB_BUCKET = ITEMS.register("shore_crab_bucket",
-            () -> new SFFishBucket(SFEntities.CRAB, () -> Fluids.EMPTY, Items.BUCKET, false,
+            () -> new SFFishBucket(SFEntities.CRAB, () -> Fluids.EMPTY, false,
                     new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> HORSESHOE_CRAB_BUCKET = ITEMS.register("horseshoe_crab_bucket",
-            () -> new SFFishBucket(SFEntities.HORSESHOE_CRAB, () -> Fluids.EMPTY, Items.BUCKET, false,
+            () -> new SFFishBucket(SFEntities.HORSESHOE_CRAB, () -> Fluids.EMPTY, false,
                     new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> CLAM_SHOVEL = ITEMS.register("clam_shovel",

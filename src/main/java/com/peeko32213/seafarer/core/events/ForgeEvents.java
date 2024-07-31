@@ -2,6 +2,7 @@ package com.peeko32213.seafarer.core.events;
 
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.common.block.entity.SFNetBlockEntity;
+import com.peeko32213.seafarer.common.util.AsyncLocator;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.BlockParticleOption;
@@ -27,6 +28,8 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
+import net.minecraftforge.event.server.ServerAboutToStartEvent;
+import net.minecraftforge.event.server.ServerStoppingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
@@ -34,7 +37,15 @@ import org.jetbrains.annotations.Nullable;
 @Mod.EventBusSubscriber(modid = SeaFarer.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ForgeEvents {
     private static final double MAX_BRUSH_DISTANCE = Math.sqrt(ServerGamePacketListenerImpl.MAX_INTERACTION_DISTANCE) - 1.0D;
+    @SubscribeEvent
+    public static void serverAboutToStart(final ServerAboutToStartEvent event) {
+        AsyncLocator.handleServerAboutToStartEvent();
+    }
 
+    @SubscribeEvent
+    public static void onServerStopping(final ServerStoppingEvent event) {
+        AsyncLocator.handleServerStoppingEvent();
+    }
 
     @SubscribeEvent
     public static void brushBlockOrEntity(LivingEntityUseItemEvent.Tick event) {
