@@ -38,6 +38,7 @@ public class SPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SEA_GLASS = registerKey("sea_glass");
     public static final ResourceKey<PlacedFeature> SEA_STAR_LAND = registerKey("sea_star_land");
     public static final ResourceKey<PlacedFeature> SEA_STAR_WATER = registerKey("sea_star_water");
+    public static final ResourceKey<PlacedFeature> JUMBLED_SHELLY_SAND_PATCH = registerKey("jumbled_shelly_sand_patch");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -111,7 +112,11 @@ public class SPlacedFeatures {
         register(context, SEA_STAR_LAND,  configuredFeatures.getOrThrow(SConfiguredFeatures.SEA_STARS),
                 VegetationPlacements.worldSurfaceSquaredWithCount(1));
 
-
+        register(context, JUMBLED_SHELLY_SAND_PATCH,  configuredFeatures.getOrThrow(SConfiguredFeatures.JUMBLED_SHELLY_SAND_PATCH),
+                ImmutableList.of(
+                        RarityFilter.onAverageOnceEvery(300),
+                        BiomeFilter.biome()
+                        ));
 
 //
         //register(context, GARLIC_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.GARLIC), ImmutableList.of(

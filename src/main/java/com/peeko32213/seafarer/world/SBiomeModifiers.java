@@ -35,6 +35,7 @@ public class SBiomeModifiers {
     private static final ResourceKey<BiomeModifier> ADD_SEAGLASS = registerKey("add_seaglass");
     private static final ResourceKey<BiomeModifier> ADD_LAND_SEASTAR = registerKey("add_land_seastar");
     private static final ResourceKey<BiomeModifier> ADD_WATER_SEASTAR = registerKey("add_water_seastar");
+    private static final ResourceKey<BiomeModifier> ADD_JUMBLED_SHELLY_SAND_PATCH = registerKey("add_jumbled_shelly_sand_patch");
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -90,8 +91,12 @@ public class SBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SEA_STAR_LAND)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
-
-        //  context.register(ADD_WATER_SEA_SHELLS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+        context.register(ADD_JUMBLED_SHELLY_SAND_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
+                HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.JUMBLED_SHELLY_SAND_PATCH)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+        //  context.register(ADD_WATER_SEA_SHELLS, new ForgeBiomeModif
+        //  iers.AddFeaturesBiomeModifier(
       //          biomes.getOrThrow(BiomeTags.IS_OCEAN),
        //         HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.ALGAE_BOULDER_PLACED)),
        //         GenerationStep.Decoration.VEGETAL_DECORATION));

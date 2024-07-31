@@ -14,12 +14,14 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.RuleBasedBlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraftforge.registries.DeferredRegister;
@@ -50,6 +52,7 @@ public class SConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> SEA_GLASS = registerKey("sea_glass");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SEA_STARS = registerKey("sea_stars");
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> JUMBLED_SHELLY_SAND_PATCH = registerKey("jumbled_shelly_sand_patch");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -125,7 +128,10 @@ public class SConfiguredFeatures {
                                 .add(SFBlocks.STARFISH_BIG_ROYAL.get().defaultBlockState(), 5))),
                         BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE)));
 
-
+        register(context, JUMBLED_SHELLY_SAND_PATCH, Feature.DISK, new DiskConfiguration(
+               RuleBasedBlockStateProvider.simple(SFBlocks.JUMBLED_SHELLY_SAND.get()),
+                BlockPredicate.matchesBlocks(List.of(Blocks.SAND)),
+                UniformInt.of(2, 3), 1));
     }
 
     public static RegistryObject<ConfiguredFeature<?, ?>> registerConfiguredFeature(String name, Supplier<ConfiguredFeature<?, ?>> feature) {
