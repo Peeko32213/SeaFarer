@@ -10,14 +10,19 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class SFSeaGlassBottleBlock extends Block {
 
     public static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 10.0D, 10.0D, 10.0D);
+    private final VoxelShape bottleHitbox;
 
+    public SFSeaGlassBottleBlock(Properties properties) {
+        this(SHAPE, properties);
+    }
 
-    public SFSeaGlassBottleBlock(Properties pProperties) {
+    public SFSeaGlassBottleBlock(VoxelShape bottleHitbox,Properties pProperties) {
         super(pProperties);
+        this.bottleHitbox  =bottleHitbox;
     }
 
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        return SHAPE;
+        return bottleHitbox;
     }
 
 }

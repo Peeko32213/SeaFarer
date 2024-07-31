@@ -1104,7 +1104,6 @@ public class SFBlocks {
                     .sound(SoundType.GLASS)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_BUST_BROWN = register("seaglass_bottle_bust_brown",
@@ -1114,7 +1113,6 @@ public class SFBlocks {
                     .sound(SoundType.GLASS)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_CURVY_LIME = register("seaglass_bottle_curvy_lime",
@@ -1124,7 +1122,6 @@ public class SFBlocks {
                     .sound(SoundType.GLASS)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_CURVY_ORANGE = register("seaglass_bottle_curvy_orange",
@@ -1134,7 +1131,6 @@ public class SFBlocks {
                     .sound(SoundType.GLASS)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
 
@@ -1145,7 +1141,6 @@ public class SFBlocks {
                     .sound(SoundType.GLASS)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_FISHBOWL_PURPLE = register("seaglass_bottle_fishbowl_purple",
@@ -1155,7 +1150,6 @@ public class SFBlocks {
                     .sound(SoundType.GLASS)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_PIPE_YELLOW = register("seaglass_bottle_pipe_yellow",
@@ -1165,7 +1159,6 @@ public class SFBlocks {
                     .sound(SoundType.GLASS)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_PIPE_PINK = register("seaglass_bottle_pipe_pink",
@@ -1175,7 +1168,6 @@ public class SFBlocks {
                     .sound(SoundType.GLASS)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
 
@@ -1186,7 +1178,6 @@ public class SFBlocks {
                     .sound(SoundType.GLASS)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_THIN_RED = register("seaglass_bottle_thin_red",
@@ -1196,7 +1187,6 @@ public class SFBlocks {
                     .sound(SoundType.GLASS)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<Block> block) {
         RegistryObject<? extends Block> ret = BLOCKS.register(name, block);
