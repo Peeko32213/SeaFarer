@@ -1,6 +1,7 @@
 package com.peeko32213.seafarer.client.event;
 
 import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.client.SFItemProperties;
 import com.peeko32213.seafarer.client.block.FishingNetEntityRenderer;
 import com.peeko32213.seafarer.client.model.ModelCrab;
 import com.peeko32213.seafarer.client.model.ModelHorseshoeCrab;
@@ -22,7 +23,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public final class ClientEvents {
 
     public static void init(FMLClientSetupEvent event) {
+        event.enqueueWork(SFItemProperties::addItemProperties);
     }
+
     @SubscribeEvent
     public static void onClientSetup(final FMLClientSetupEvent event) {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.BLUE_SEAGLASS_BLOCK.get(), RenderType.translucent());
