@@ -275,6 +275,10 @@ public class LanguageGenerator extends LanguageProvider {
         add("seafarer.starfish_big_purple_ochre", "Purple Ochre");
         add("seafarer.starfish_big_ochre", "Ochre");
         add("seafarer.starfish_big_royal", "Big Royal");
+        add("seafarer.message_in_a_bottle", "Message in a bottle");
+        add("seafarer.message.structure_not_found", "Structure was not found!");
+        add("seafarer.message.structure_search_failed", "Structure was not found!");
+
     }
 
     @Override

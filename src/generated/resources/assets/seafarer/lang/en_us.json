@@ -203,6 +203,8 @@
   "item.seafarer.sunfish_spawn_egg": "Sunfish Spawn Egg",
   "item.seafarer.swirl_axe": "Swirl Axe",
   "itemGroup.seafarer": "Seafarer",
+  "seafarer.message.structure_search_failed": "Structure was not found!",
+  "seafarer.message_in_a_bottle": "Message in a bottle",
   "seafarer.starfish_big_blue": "Blue",
   "seafarer.starfish_big_ochre": "Ochre",
   "seafarer.starfish_big_purple_ochre": "Purple Ochre",
@@ -210,5 +212,6 @@
   "seafarer.starfish_chocolate_chip": "Chocolate Chip",
   "seafarer.starfish_common_orange": "Common Orange",
   "seafarer.starfish_pink": "Pink",
-  "seafarer.starfish_red": "Red"
+  "seafarer.starfish_red": "Red",
+  "seafarer.message.structure_not_found": "Structure was not found!"
 }
