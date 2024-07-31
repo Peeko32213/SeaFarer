@@ -27,7 +27,6 @@ import java.util.function.Supplier;
 public class SeaFarer {
         public static final String MODID = "seafarer";
         private static int packetsRegistered;
-        public static final List<Runnable> CALLBACKS = new ArrayList<>();
         public static final Logger LOGGER = LogManager.getLogger();
 
 

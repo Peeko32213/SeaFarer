@@ -15,12 +15,9 @@ import java.util.function.Supplier;
 
 public class SFFishBucket extends MobBucketItem {
 
-	public SFFishBucket(Supplier<? extends EntityType<?>> entityType, Supplier<? extends Fluid> fluid, Item item,
+	public SFFishBucket(Supplier<? extends EntityType<?>> entityType, Supplier<? extends Fluid> fluid,
 						boolean hasTooltip, Properties builder) {
 		super(entityType, fluid, () -> SoundEvents.BUCKET_EMPTY_FISH, builder);
-		DistExecutor.unsafeCallWhenOn(Dist.CLIENT, () -> () -> SeaFarer.CALLBACKS.add(() ->
-				ItemProperties.register(this, new ResourceLocation(SeaFarer.MODID, "variant"),
-						(stack, world, player, i) -> stack.hasTag() ? stack.getTag().getInt("Variant") : 0)));
 	}
 
 }
