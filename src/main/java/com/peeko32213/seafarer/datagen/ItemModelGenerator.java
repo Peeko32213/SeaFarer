@@ -2,6 +2,7 @@ package com.peeko32213.seafarer.datagen;
 
 
 import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -45,6 +46,7 @@ public class ItemModelGenerator extends ItemModelProvider {
         singleTex(SFItems.SALTED_TROPICAL_FISH);
         singleTex(SFItems.SALTED_STARFISH);
         singleTex(SFItems.COOKED_STARFISH);
+        //singleTex(SFBlocks.SEAGLASS_BOTTLE_PIPE_PINK.get().asItem());
     }
 
 
@@ -58,6 +60,9 @@ public class ItemModelGenerator extends ItemModelProvider {
 
     private void toBlockModel(RegistryObject<Block> b, ResourceLocation model) {
         withExistingParent(b.getId().getPath(), model);
+    }
+    private ItemModelBuilder singleTex(Item item) {
+        return generated(key(item).getPath(), prefix("item/" + key(item).getPath()));
     }
 
     private ItemModelBuilder singleTex(RegistryObject<Item> item) {
@@ -74,5 +79,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 
     public static ResourceLocation prefix(String name){
         return new ResourceLocation(SeaFarer.MODID, name);
+    }
+    public static ResourceLocation key(Item item) {
+        return BuiltInRegistries.ITEM.getKey(item);
     }
 }
