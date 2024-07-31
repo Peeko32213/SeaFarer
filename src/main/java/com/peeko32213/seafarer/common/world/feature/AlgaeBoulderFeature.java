@@ -134,7 +134,7 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
 
     public static void changeTerrain(WorldGenLevel worldgenlevel, RandomSource rand, BlockPos origin, FastNoiseLite noise, int radius) {
         BlockState block = SFBlocks.GRAVELY_SAND.get().defaultBlockState();
-        BlockState block2 = Blocks.DIRT.defaultBlockState();
+        BlockState block2 = SFBlocks.ROCKY_SAND.get().defaultBlockState();
         BlockState block3 = Blocks.COARSE_DIRT.defaultBlockState();
         for (int x = -radius; x < radius; x++) {
             for (int z = -radius; z < radius; z++) {
@@ -147,6 +147,8 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
                     boolean isCorrectBlock = worldgenlevel.getBlockState(pos2).is(BlockTags.DIRT) || worldgenlevel.getBlockState(pos2).is(BlockTags.SAND) ||  worldgenlevel.getBlockState(pos2).is(Blocks.GRAVEL);
                     if (f < 0 && f >= -0.4 && isCorrectBlock) {
                         worldgenlevel.setBlock(pos2, block, 3);
+                    } else if(f > 0 && f < 0.2 && isCorrectBlock) {
+                        worldgenlevel.setBlock(pos2, block2, 3);
                     }
                 }
             }
