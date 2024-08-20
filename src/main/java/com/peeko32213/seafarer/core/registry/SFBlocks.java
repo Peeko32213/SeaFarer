@@ -1100,36 +1100,28 @@ public class SFBlocks {
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_BUST_BLUE = register("seaglass_bottle_bust_blue",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .instabreak()
                     .sound(SoundType.GLASS)
-                    .noCollission()
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_BUST_BROWN = register("seaglass_bottle_bust_brown",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .instabreak()
                     .sound(SoundType.GLASS)
-                    .noCollission()
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_CURVY_LIME = register("seaglass_bottle_curvy_lime",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .instabreak()
                     .sound(SoundType.GLASS)
-                    .noCollission()
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_CURVY_ORANGE = register("seaglass_bottle_curvy_orange",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .instabreak()
                     .sound(SoundType.GLASS)
-                    .noCollission()
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
@@ -1137,36 +1129,28 @@ public class SFBlocks {
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_FISHBOWL_WHITE = register("seaglass_bottle_fishbowl_white",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .instabreak()
                     .sound(SoundType.GLASS)
-                    .noCollission()
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_FISHBOWL_PURPLE = register("seaglass_bottle_fishbowl_purple",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .instabreak()
                     .sound(SoundType.GLASS)
-                    .noCollission()
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_PIPE_YELLOW = register("seaglass_bottle_pipe_yellow",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .instabreak()
                     .sound(SoundType.GLASS)
-                    .noCollission()
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_PIPE_PINK = register("seaglass_bottle_pipe_pink",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .instabreak()
                     .sound(SoundType.GLASS)
-                    .noCollission()
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
@@ -1174,19 +1158,25 @@ public class SFBlocks {
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_THIN_GREEN = register("seaglass_bottle_thin_green",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .instabreak()
                     .sound(SoundType.GLASS)
-                    .noCollission()
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_THIN_RED = register("seaglass_bottle_thin_red",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .instabreak()
                     .sound(SoundType.GLASS)
+                    .noOcclusion()
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> FLOATSOME = register("floatsome",
+            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.STONE)
                     .noCollission()
                     .noOcclusion()
+                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<Block> block) {
         RegistryObject<? extends Block> ret = BLOCKS.register(name, block);

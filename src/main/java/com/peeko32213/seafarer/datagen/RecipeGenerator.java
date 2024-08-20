@@ -265,6 +265,19 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
                 .save(consumer, key(SFItems.SALTED_TROPICAL_FISH.get()));
 
         smeltingRecipes(consumer);
+
+        //Sea Glass Bottles
+        makeGlasstoBottle(SFBlocks.SEAGLASS_BOTTLE_BUST_BLUE, SFBlocks.BLUE_SEAGLASS_BLOCK).save(consumer);
+        makeGlasstoBottle(SFBlocks.SEAGLASS_BOTTLE_BUST_BROWN, SFBlocks.BROWN_SEAGLASS_BLOCK).save(consumer);
+        makeGlasstoBottle(SFBlocks.SEAGLASS_BOTTLE_CURVY_LIME, SFBlocks.LIME_SEAGLASS_BLOCK).save(consumer);
+        makeGlasstoBottle(SFBlocks.SEAGLASS_BOTTLE_CURVY_ORANGE, SFBlocks.ORANGE_SEAGLASS_BLOCK).save(consumer);
+        makeGlasstoBottle(SFBlocks.SEAGLASS_BOTTLE_FISHBOWL_PURPLE, SFBlocks.PURPLE_SEAGLASS_BLOCK).save(consumer);
+        makeGlasstoBottle(SFBlocks.SEAGLASS_BOTTLE_FISHBOWL_WHITE, SFBlocks.WHITE_SEAGLASS_BLOCK).save(consumer);
+        makeGlasstoBottle(SFBlocks.SEAGLASS_BOTTLE_PIPE_PINK, SFBlocks.PINK_SEAGLASS_BLOCK).save(consumer);
+        makeGlasstoBottle(SFBlocks.SEAGLASS_BOTTLE_THIN_RED, SFBlocks.RED_SEAGLASS_BLOCK).save(consumer);
+        makeGlasstoBottle(SFBlocks.SEAGLASS_BOTTLE_THIN_GREEN, SFBlocks.GREEN_SEAGLASS_BLOCK).save(consumer);
+        makeGlasstoBottle(SFBlocks.SEAGLASS_BOTTLE_PIPE_YELLOW, SFBlocks.YELLOW_SEAGLASS_BLOCK).save(consumer);
+
     }
 
 

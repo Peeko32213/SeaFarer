@@ -266,6 +266,8 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.SEAGLASS_BOTTLE_THIN_GREEN, "Sea Glass Green Thin Bottle");
         addBlock(SFBlocks.SEAGLASS_BOTTLE_THIN_RED, "Sea Glass Red Thin Bottle");
 
+        addBlock(SFBlocks.FLOATSOME, "Floatsome");
+
 
         add("seafarer.starfish_common_orange", "Common Orange");
         add("seafarer.starfish_pink", "Pink");

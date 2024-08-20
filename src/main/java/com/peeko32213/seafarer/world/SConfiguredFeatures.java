@@ -53,6 +53,7 @@ public class SConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> SEA_STARS = registerKey("sea_stars");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> JUMBLED_SHELLY_SAND_PATCH = registerKey("jumbled_shelly_sand_patch");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FLOATSOME = registerKey("floatsome");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -132,6 +133,12 @@ public class SConfiguredFeatures {
                RuleBasedBlockStateProvider.simple(SFBlocks.JUMBLED_SHELLY_SAND.get()),
                 BlockPredicate.matchesBlocks(List.of(Blocks.SAND)),
                 UniformInt.of(2, 3), 1));
+
+        register(context, FLOATSOME, Feature.RANDOM_PATCH,
+                FeatureUtils.simpleRandomPatchConfiguration(1, PlacementUtils.filtered(SFFeatures.WATERLOGGABLE_BLOCK.get(),
+                        new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                                .add(SFBlocks.FLOATSOME.get().defaultBlockState(), 8))),
+                        BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE)));
     }
 
     public static RegistryObject<ConfiguredFeature<?, ?>> registerConfiguredFeature(String name, Supplier<ConfiguredFeature<?, ?>> feature) {

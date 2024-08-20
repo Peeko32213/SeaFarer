@@ -9,7 +9,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class SFSeaGlassBottleBlock extends Block {
 
-    public static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 10.0D, 10.0D, 10.0D);
+    public static final VoxelShape SHAPE = Block.box(4, 0, 4, 12, 15, 12);
     private final VoxelShape bottleHitbox;
 
     public SFSeaGlassBottleBlock(Properties properties) {

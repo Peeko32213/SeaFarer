@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "seafarer:green_seaglass_block"
+    }
+  },
+  "pattern": [
+    "   ",
+    "# #",
+    " # "
+  ],
+  "result": {
+    "item": "seafarer:seaglass_bottle_thin_green"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "seafarer:block/floatsome"
+      },
+      {
+        "model": "seafarer:block/floatsome",
+        "y": 90
+      },
+      {
+        "model": "seafarer:block/floatsome",
+        "y": 180
+      },
+      {
+        "model": "seafarer:block/floatsome",
+        "y": 270
+      }
+    ]
+  }
+}

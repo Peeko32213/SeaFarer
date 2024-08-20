@@ -82,7 +82,6 @@
 					"name": "BigLeg1",
 					"parent": "root",
 					"pivot": [3, 3, -2],
-					"rotation": [0, 0, 0],
 					"cubes": [
 						{"origin": [3, 0, -2], "size": [5, 6, 0], "pivot": [3, 3, -2], "rotation": [-22.5, 32.5, 0], "uv": [0, 10]}
 					]
@@ -91,7 +90,6 @@
 					"name": "BigLeg2",
 					"parent": "root",
 					"pivot": [-3, 3, -2],
-					"rotation": [0, 0, 0],
 					"cubes": [
 						{"origin": [-8, 0, -2], "size": [5, 6, 0], "pivot": [-3, 3, -2], "rotation": [-22.5, -32.5, 0], "uv": [0, 10], "mirror": true}
 					]
@@ -100,7 +98,6 @@
 					"name": "BigLeg3",
 					"parent": "root",
 					"pivot": [3, 3, -1.5],
-					"rotation": [0, 0, 0],
 					"cubes": [
 						{"origin": [3, 0, -1.5], "size": [5, 6, 0], "pivot": [3, 3, -1.5], "rotation": [-20, -15, 0], "uv": [0, 10]}
 					]
@@ -109,7 +106,6 @@
 					"name": "BigLeg4",
 					"parent": "root",
 					"pivot": [-3, 3, -1.5],
-					"rotation": [0, 0, 0],
 					"cubes": [
 						{"origin": [-8, 0, -1.5], "size": [5, 6, 0], "pivot": [-3, 3, -1.5], "rotation": [-20, 15, 0], "uv": [0, 10], "mirror": true}
 					]
@@ -118,7 +114,6 @@
 					"name": "SmallLeg1",
 					"parent": "root",
 					"pivot": [3.5, 3, 0.35],
-					"rotation": [0, 0, 0],
 					"cubes": [
 						{"origin": [3, 0, 0.35], "size": [4, 5, 0], "pivot": [3.5, 3, 0.35], "rotation": [25, -27.5, 0], "uv": [10, 10]}
 					]
@@ -127,7 +122,6 @@
 					"name": "SmallLeg2",
 					"parent": "root",
 					"pivot": [-3.5, 3, 0.35],
-					"rotation": [0, 0, 0],
 					"cubes": [
 						{"origin": [-7, 0, 0.35], "size": [4, 5, 0], "pivot": [-3.5, 3, 0.35], "rotation": [25, 27.5, 0], "uv": [10, 10], "mirror": true}
 					]

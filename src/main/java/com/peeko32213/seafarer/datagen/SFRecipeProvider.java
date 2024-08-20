@@ -170,12 +170,12 @@ public abstract class SFRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(blockIn.get()).getPath(), has(blockIn.get()));
     }
 
-    public ShapedRecipeBuilder makeWood(Supplier<? extends Block> woodOut, Supplier<? extends Block> logIn) {
-        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, woodOut.get(), 3)
+    public ShapedRecipeBuilder makeWood(Supplier<? extends Block> woodOut, Supplier<? extends Item> logIn) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, woodOut.get(), 4)
                 .pattern("MM")
                 .pattern("MM")
                 .define('M', logIn.get())
-                .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(logIn.get()).getPath(), has(logIn.get()));
+                .unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(logIn.get()).getPath(), has(logIn.get()));
     }
 
 
@@ -186,6 +186,15 @@ public abstract class SFRecipeProvider extends RecipeProvider {
                 .pattern("###")
                 .define('#', ingotIn.get())
                 .unlockedBy("has_" + ForgeRegistries.ITEMS.getKey(ingotIn.get()).getPath(), has(ingotIn.get()));
+    }
+
+    public ShapedRecipeBuilder makeGlasstoBottle(Supplier<? extends Block> blockOut, Supplier<? extends Block> ingotIn) {
+        return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, blockOut.get())
+                .pattern("   ")
+                .pattern("# #")
+                .pattern(" # ")
+                .define('#', ingotIn.get())
+                .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(ingotIn.get()).getPath(), has(ingotIn.get()));
     }
 
     public ShapedRecipeBuilder makeCondensedToBlock(Supplier<? extends Block> blockOut, Supplier<? extends Block> logIn) {
