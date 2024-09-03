@@ -60,7 +60,6 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
         BlockPos blockPosCorner =  BlockPos.containing(cornerBlockX, worldgenlevel.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, (int) cornerBlockX, (int) cornerBlockZ), cornerBlockZ);
 
         int radius = random.nextInt(5, 10);
-        changeTerrain(worldgenlevel, random, blockPosMid, noise2 ,radius);
         createSphere(worldgenlevel, random, blockPosMid, noise);
         addBushes(worldgenlevel, random, blockPosMid, noise3, radius);
         return true;

@@ -54,6 +54,16 @@ public class SConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> JUMBLED_SHELLY_SAND_PATCH = registerKey("jumbled_shelly_sand_patch");
     public static final ResourceKey<ConfiguredFeature<?, ?>> FLOATSOME = registerKey("floatsome");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SCATTERED_SHELLY_SAND_PATCH = registerKey("scattered_shelly_sand_patch");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> MIXED_SHELLY_SAND_PATCH = registerKey("mixed_shelly_sand_patch");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> GRAVELY_SAND_PATCH = registerKey("gravely_sand_patch");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ROCKY_SAND_PATCH = registerKey("rocky_sand_patch");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> RED_SPRINKLED_SAND_PATCH = registerKey("red_sprinkled_sand_patch");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PURPLE_SPRINKLED_SAND_PATCH = registerKey("purple_sprinkled_sand_patch");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PINK_SPRINKLED_SAND_PATCH = registerKey("pink_sprinkled_sand_patch");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BLUE_SPRINKLED_SAND_PATCH = registerKey("blue_sprinkled_sand_patch");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BLUE_MIXED_SPRINKLED_SAND_PATCH = registerKey("blue_mixed_sprinkled_sand_patch");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> RED_MIXED_SPRINKLED_SAND_PATCH = registerKey("red_mixed_sprinkled_sand_patch");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -131,6 +141,64 @@ public class SConfiguredFeatures {
 
         register(context, JUMBLED_SHELLY_SAND_PATCH, Feature.DISK, new DiskConfiguration(
                RuleBasedBlockStateProvider.simple(SFBlocks.JUMBLED_SHELLY_SAND.get()),
+                BlockPredicate.matchesBlocks(List.of(Blocks.SAND)),
+                UniformInt.of(2, 3), 1));
+
+        register(context, SCATTERED_SHELLY_SAND_PATCH, Feature.DISK, new DiskConfiguration(
+                RuleBasedBlockStateProvider.simple(SFBlocks.SCATTERED_SHELLY_SAND.get()),
+                BlockPredicate.matchesBlocks(List.of(Blocks.SAND)),
+                UniformInt.of(2, 3), 1));
+
+
+        register(context, MIXED_SHELLY_SAND_PATCH, Feature.DISK, new DiskConfiguration(
+                RuleBasedBlockStateProvider.simple(SFBlocks.MIXED_SHELLY_SAND.get()),
+                BlockPredicate.matchesBlocks(List.of(Blocks.SAND)),
+                UniformInt.of(2, 3), 1));
+
+
+        register(context, ROCKY_SAND_PATCH, Feature.DISK, new DiskConfiguration(
+                RuleBasedBlockStateProvider.simple(SFBlocks.ROCKY_SAND.get()),
+                BlockPredicate.matchesBlocks(List.of(Blocks.SAND)),
+                UniformInt.of(2, 3), 1));
+
+
+        register(context, GRAVELY_SAND_PATCH, Feature.DISK, new DiskConfiguration(
+                RuleBasedBlockStateProvider.simple(SFBlocks.GRAVELY_SAND.get()),
+                BlockPredicate.matchesBlocks(List.of(Blocks.SAND)),
+                UniformInt.of(2, 3), 1));
+
+        register(context, RED_SPRINKLED_SAND_PATCH, Feature.DISK, new DiskConfiguration(
+                RuleBasedBlockStateProvider.simple(SFBlocks.RED_SPRINKLED_SAND.get()),
+                BlockPredicate.matchesBlocks(List.of(Blocks.SAND)),
+                UniformInt.of(2, 3), 1));
+
+
+        register(context, PURPLE_SPRINKLED_SAND_PATCH, Feature.DISK, new DiskConfiguration(
+                RuleBasedBlockStateProvider.simple(SFBlocks.PURPLE_SPRINKLED_SAND.get()),
+                BlockPredicate.matchesBlocks(List.of(Blocks.SAND)),
+                UniformInt.of(2, 3), 1));
+
+
+        register(context, PINK_SPRINKLED_SAND_PATCH, Feature.DISK, new DiskConfiguration(
+                RuleBasedBlockStateProvider.simple(SFBlocks.PINK_SPRINKLED_SAND.get()),
+                BlockPredicate.matchesBlocks(List.of(Blocks.SAND)),
+                UniformInt.of(2, 3), 1));
+
+
+        register(context, BLUE_SPRINKLED_SAND_PATCH, Feature.DISK, new DiskConfiguration(
+                RuleBasedBlockStateProvider.simple(SFBlocks.BLUE_SPRINKLED_SAND.get()),
+                BlockPredicate.matchesBlocks(List.of(Blocks.SAND)),
+                UniformInt.of(2, 3), 1));
+
+
+        register(context, RED_MIXED_SPRINKLED_SAND_PATCH, Feature.DISK, new DiskConfiguration(
+                RuleBasedBlockStateProvider.simple(SFBlocks.RED_MIXED_SPRINKLED_SAND.get()),
+                BlockPredicate.matchesBlocks(List.of(Blocks.SAND)),
+                UniformInt.of(2, 3), 1));
+
+
+        register(context, BLUE_MIXED_SPRINKLED_SAND_PATCH, Feature.DISK, new DiskConfiguration(
+                RuleBasedBlockStateProvider.simple(SFBlocks.BLUE_MIXED_SPRINKLED_SAND.get()),
                 BlockPredicate.matchesBlocks(List.of(Blocks.SAND)),
                 UniformInt.of(2, 3), 1));
 

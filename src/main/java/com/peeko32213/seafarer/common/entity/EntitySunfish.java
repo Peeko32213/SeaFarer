@@ -148,6 +148,7 @@ public class EntitySunfish extends WaterAnimal implements GeoAnimatable {
 
     protected <E extends EntitySunfish> PlayState Controller(final software.bernie.geckolib.core.animation.AnimationState<E> event) {
         if (!(event.getLimbSwingAmount() > -0.06F && event.getLimbSwingAmount() < 0.06F)) {
+            event.setAndContinue(SUNFISH_SWIM);
             return PlayState.CONTINUE;
         }
         if (!this.isInWater()) {

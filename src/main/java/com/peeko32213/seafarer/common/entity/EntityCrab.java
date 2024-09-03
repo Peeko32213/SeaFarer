@@ -185,8 +185,10 @@ public class EntityCrab extends StatedAnimal implements GeoAnimatable, Bucketabl
             if (this.isSprinting()) {
                 event.setAndContinue(CRAB_SPRINT_1);
                 event.getController().setAnimationSpeed(2.0F);
-            } else {
+                return PlayState.CONTINUE;
+            } else  {
                 event.setAndContinue(CRAB_WALK);
+                return PlayState.CONTINUE;
             }
         }
         if (this.isInWater()) {

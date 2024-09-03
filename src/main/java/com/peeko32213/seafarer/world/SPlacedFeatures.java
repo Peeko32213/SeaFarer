@@ -38,9 +38,18 @@ public class SPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SEA_GLASS = registerKey("sea_glass");
     public static final ResourceKey<PlacedFeature> SEA_STAR_LAND = registerKey("sea_star_land");
     public static final ResourceKey<PlacedFeature> SEA_STAR_WATER = registerKey("sea_star_water");
-    public static final ResourceKey<PlacedFeature> JUMBLED_SHELLY_SAND_PATCH = registerKey("jumbled_shelly_sand_patch");
+    public static final ResourceKey<PlacedFeature> JUMBLED_SHELLY_SAND_PATCH = registerKey("jumbled_shelly_sand_patch_placed");
     public static final ResourceKey<PlacedFeature> FLOATSOME = registerKey("floatsome");
-
+    public static final ResourceKey<PlacedFeature> SCATTERED_SHELLY_SAND_PATCH_PLACED = registerKey("scattered_shelly_sand_patch_placed");
+    public static final ResourceKey<PlacedFeature> MIXED_SHELLY_SAND_PATCH_PLACED = registerKey("mixed_shelly_sand_patch_placed");
+    public static final ResourceKey<PlacedFeature> GRAVELY_SAND_PATCH_PLACED = registerKey("gravely_sand_patch_placed");
+    public static final ResourceKey<PlacedFeature> ROCKY_SAND_PATCH_PLACED = registerKey("rocky_sand_patch_placed");
+    public static final ResourceKey<PlacedFeature> RED_SPRINKLED_SAND_PATCH_PLACED = registerKey("red_sprinkled_sand_patch_placed");
+    public static final ResourceKey<PlacedFeature> PURPLE_SPRINKLED_SAND_PATCH_PLACED = registerKey("purple_sprinkled_sand_patch_placed");
+    public static final ResourceKey<PlacedFeature> PINK_SPRINKLED_SAND_PATCH_PLACED = registerKey("pink_sprinkled_sand_patch_placed");
+    public static final ResourceKey<PlacedFeature> BLUE_SPRINKLED_SAND_PATCH_PLACED = registerKey("blue_sprinkled_sand_patch_placed");
+    public static final ResourceKey<PlacedFeature> BLUE_MIXED_SPRINKLED_SAND_PATCH_PLACED = registerKey("blue_mixed_sprinkled_sand_patch_placed");
+    public static final ResourceKey<PlacedFeature> RED_MIXED_SPRINKLED_SAND_PATCH_PLACED = registerKey("red_mixed_sprinkled_sand_patch_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -95,7 +104,7 @@ public class SPlacedFeatures {
         ));
 
         register(context, ALGAE_BOULDER_PLACED, configuredFeatures.getOrThrow(SConfiguredFeatures.ALGAE_BOULDER), ImmutableList.of(
-                RarityFilter.onAverageOnceEvery(2),
+                RarityFilter.onAverageOnceEvery(8),
                 InSquarePlacement.spread(),
                 CountPlacement.of(1),
                 PlacementUtils.FULL_RANGE,
@@ -117,8 +126,71 @@ public class SPlacedFeatures {
         register(context, JUMBLED_SHELLY_SAND_PATCH,  configuredFeatures.getOrThrow(SConfiguredFeatures.JUMBLED_SHELLY_SAND_PATCH),
                 ImmutableList.of(
                         RarityFilter.onAverageOnceEvery(300),
+                        PlacementUtils.HEIGHTMAP,
                         BiomeFilter.biome()
                         ));
+        register(context, SCATTERED_SHELLY_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.SCATTERED_SHELLY_SAND_PATCH),
+                ImmutableList.of(
+                        RarityFilter.onAverageOnceEvery(300),
+                        PlacementUtils.HEIGHTMAP,
+                        BiomeFilter.biome()
+                ));
+        register(context, MIXED_SHELLY_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.MIXED_SHELLY_SAND_PATCH),
+                ImmutableList.of(
+                        RarityFilter.onAverageOnceEvery(300),
+                        PlacementUtils.HEIGHTMAP,
+                        BiomeFilter.biome()
+                ));
+        register(context, GRAVELY_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.GRAVELY_SAND_PATCH),
+                ImmutableList.of(
+                        RarityFilter.onAverageOnceEvery(300),
+                        PlacementUtils.HEIGHTMAP,
+                        BiomeFilter.biome()
+                ));
+        register(context, ROCKY_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.ROCKY_SAND_PATCH),
+                ImmutableList.of(
+                        RarityFilter.onAverageOnceEvery(300),
+                        PlacementUtils.HEIGHTMAP,
+                        BiomeFilter.biome()
+                ));
+        register(context, RED_SPRINKLED_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.RED_SPRINKLED_SAND_PATCH),
+                ImmutableList.of(
+                        RarityFilter.onAverageOnceEvery(300),
+                        PlacementUtils.HEIGHTMAP,
+                        BiomeFilter.biome()
+                ));
+        register(context, PURPLE_SPRINKLED_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.PURPLE_SPRINKLED_SAND_PATCH),
+                ImmutableList.of(
+                        RarityFilter.onAverageOnceEvery(300),
+                        PlacementUtils.HEIGHTMAP,
+                        BiomeFilter.biome()
+                ));
+        register(context, PINK_SPRINKLED_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.PINK_SPRINKLED_SAND_PATCH),
+                ImmutableList.of(
+                        RarityFilter.onAverageOnceEvery(300),
+                        PlacementUtils.HEIGHTMAP,
+                        BiomeFilter.biome()
+                ));
+        register(context, BLUE_SPRINKLED_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.BLUE_SPRINKLED_SAND_PATCH),
+                ImmutableList.of(
+                        RarityFilter.onAverageOnceEvery(300),
+                        PlacementUtils.HEIGHTMAP,
+                        BiomeFilter.biome()
+                ));
+        register(context, BLUE_MIXED_SPRINKLED_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.BLUE_MIXED_SPRINKLED_SAND_PATCH),
+                ImmutableList.of(
+                        RarityFilter.onAverageOnceEvery(300),
+                        PlacementUtils.HEIGHTMAP,
+                        BiomeFilter.biome()
+                ));
+
+        register(context, RED_MIXED_SPRINKLED_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.RED_MIXED_SPRINKLED_SAND_PATCH),
+                ImmutableList.of(
+                        RarityFilter.onAverageOnceEvery(300),
+                        PlacementUtils.HEIGHTMAP,
+                        BiomeFilter.biome()
+                ));
+
 
         register(context, FLOATSOME,  configuredFeatures.getOrThrow(SConfiguredFeatures.FLOATSOME),
                 VegetationPlacements.worldSurfaceSquaredWithCount(1));

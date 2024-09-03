@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
   "biomes": "#seafarer:is_beach_biome",
-  "features": "seafarer:jumbled_shelly_sand_patch_placed",
+  "features": "seafarer:red_mixed_sprinkled_sand_patch_placed",
   "step": "vegetal_decoration"
 }

@@ -1,0 +1,16 @@
+{
+  "feature": "seafarer:red_mixed_sprinkled_sand_patch",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 300
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "MOTION_BLOCKING"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

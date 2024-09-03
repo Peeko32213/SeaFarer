@@ -36,6 +36,8 @@ public class SFTags {
     public static final TagKey<Biome> IS_SUNFISH_BIOME = registerBiomeTag("is_sunfish_biome");
 
     public static final TagKey<Biome> IS_BEACH_BIOME = registerBiomeTag("is_beach_biome");
+    public static final TagKey<Biome> IS_SANDY_BEACH_BIOME = registerBiomeTag("is_sandy_beach_biome");
+    public static final TagKey<Biome> IS_ALGAE_BOULDER_BIOME = registerBiomeTag("is_algae_boulder_biome");
 
 
     private static TagKey<Item> registerItemTag(String name) {
