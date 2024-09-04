@@ -1,0 +1,12 @@
+{
+  "type": "seafarer:tag_feature",
+  "config": {
+    "feature_fom": "minecraft:patch_form",
+    "offset": [
+      0,
+      -1,
+      0
+    ],
+    "tag": "seafarer:sprinkled_sand"
+  }
+}

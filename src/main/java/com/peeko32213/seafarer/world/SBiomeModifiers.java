@@ -49,6 +49,7 @@ public class SBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_BLUE_SPRINKLED_SAND_PATCH = registerKey("add_blue_sprinkled_sand_patch");
     public static final ResourceKey<BiomeModifier> ADD_BLUE_MIXED_SPRINKLED_SAND_PATCH = registerKey("add_blue_mixed_sprinkled_sand_patch");
     public static final ResourceKey<BiomeModifier> ADD_RED_MIXED_SPRINKLED_SAND_PATCH = registerKey("add_red_mixed_sprinkled_sand_patch");
+    public static final ResourceKey<BiomeModifier> ADD_SAND_TAG_PATCH = registerKey("add_sand_tag_patch");
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -164,7 +165,10 @@ public class SBiomeModifiers {
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.RED_MIXED_SPRINKLED_SAND_PATCH_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
-
+        context.register(ADD_SAND_TAG_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
+                HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SAND_TAG_PATCH_PLACED)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
         //  context.register(ADD_WATER_SEA_SHELLS, new ForgeBiomeModif
         //  iers.AddFeaturesBiomeModifier(
       //          biomes.getOrThrow(BiomeTags.IS_OCEAN),

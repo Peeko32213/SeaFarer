@@ -3,6 +3,11 @@ package com.peeko32213.seafarer.world;
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFFeatures;
+import com.peeko32213.seafarer.core.registry.SFTags;
+import com.peeko32213.seafarer.world.config.PatchFeatureForm;
+import com.peeko32213.seafarer.world.config.SFFeatureForms;
+import com.peeko32213.seafarer.world.config.TagBasedRandomFeatureConfig;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -29,6 +34,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Supplier;
 
 import static com.peeko32213.seafarer.datagen.ItemModelGenerator.prefix;
@@ -64,6 +70,7 @@ public class SConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> BLUE_SPRINKLED_SAND_PATCH = registerKey("blue_sprinkled_sand_patch");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BLUE_MIXED_SPRINKLED_SAND_PATCH = registerKey("blue_mixed_sprinkled_sand_patch");
     public static final ResourceKey<ConfiguredFeature<?, ?>> RED_MIXED_SPRINKLED_SAND_PATCH = registerKey("red_mixed_sprinkled_sand_patch");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SAND_TAG_PATCH = registerKey("sand_tag_patch");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 
@@ -202,12 +209,23 @@ public class SConfiguredFeatures {
                 BlockPredicate.matchesBlocks(List.of(Blocks.SAND)),
                 UniformInt.of(2, 3), 1));
 
+
         register(context, FLOATSOME, Feature.RANDOM_PATCH,
                 FeatureUtils.simpleRandomPatchConfiguration(1, PlacementUtils.filtered(SFFeatures.WATERLOGGABLE_BLOCK.get(),
                         new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
                                 .add(SFBlocks.FLOATSOME.get().defaultBlockState(), 8))),
                         BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE)));
+
+
+        register(context, SAND_TAG_PATCH, SFFeatures.TAG_FEATURE.get(), new TagBasedRandomFeatureConfig(
+                SFTags.SPRINKLED_SAND,
+                Optional.empty(),
+                Optional.of(new BlockPos(0,-1,0)),
+                SFFeatureForms.PATCH_FEATURE_FORM));
+
+
     }
+
 
     public static RegistryObject<ConfiguredFeature<?, ?>> registerConfiguredFeature(String name, Supplier<ConfiguredFeature<?, ?>> feature) {
         configuredFeatureList.add(name);

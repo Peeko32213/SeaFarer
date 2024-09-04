@@ -50,6 +50,7 @@ public class SPlacedFeatures {
     public static final ResourceKey<PlacedFeature> BLUE_SPRINKLED_SAND_PATCH_PLACED = registerKey("blue_sprinkled_sand_patch_placed");
     public static final ResourceKey<PlacedFeature> BLUE_MIXED_SPRINKLED_SAND_PATCH_PLACED = registerKey("blue_mixed_sprinkled_sand_patch_placed");
     public static final ResourceKey<PlacedFeature> RED_MIXED_SPRINKLED_SAND_PATCH_PLACED = registerKey("red_mixed_sprinkled_sand_patch_placed");
+    public static final ResourceKey<PlacedFeature> SAND_TAG_PATCH_PLACED = registerKey("sand_tag_patch_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -187,6 +188,14 @@ public class SPlacedFeatures {
         register(context, RED_MIXED_SPRINKLED_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.RED_MIXED_SPRINKLED_SAND_PATCH),
                 ImmutableList.of(
                         RarityFilter.onAverageOnceEvery(300),
+                        PlacementUtils.HEIGHTMAP,
+                        BiomeFilter.biome()
+                ));
+
+
+        register(context, SAND_TAG_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.SAND_TAG_PATCH),
+                ImmutableList.of(
+                        RarityFilter.onAverageOnceEvery(50),
                         PlacementUtils.HEIGHTMAP,
                         BiomeFilter.biome()
                 ));

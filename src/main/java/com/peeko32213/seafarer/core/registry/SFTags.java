@@ -26,6 +26,9 @@ public class SFTags {
     public static final TagKey<Block> SHELLS = registerBlockTag("shells");
     public static final TagKey<Block> STARFISH = registerBlockTag("starfish");
     public static final TagKey<Block> BEACH_GLASS = registerBlockTag("beach_glass");
+    public static final TagKey<Block> SPRINKLED_SAND = registerBlockTag("sprinkled_sand");
+
+
     public static final TagKey<Item> STARFISH_ITEM = registerItemTag("starfish");
 
 
