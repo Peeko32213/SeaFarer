@@ -4,7 +4,7 @@ loaderVersion="${loader_version_range}"
 license="MIT"
 [[mods]]
 modId="seafarer" #mandatory
-version="0.0.3" #mandatory
+version="1.0.0" #mandatory
 displayName="Seafarer" #mandatory
 authors="Peeko32213 and Omaypaty for Block Textures and Scouter for Additional Coding Help!" #optional
 description='''A Mod that expands on minecrafts oceans in a unique way'''

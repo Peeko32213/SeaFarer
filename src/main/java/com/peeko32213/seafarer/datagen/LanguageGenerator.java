@@ -136,6 +136,10 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.LIME_SEAGLASS_BRICKS_STAIRS, "Lime Sea Glass Brick Stairs");
         addBlock(SFBlocks.LIME_SEAGLASS_PANE, "Lime Sea Glass Pane");
 
+        addBlock(SFBlocks.ALGAE_COBBLESTONE, "Algal Cobblestone");
+        addBlock(SFBlocks.ALGAE_COBBLESTONE_SLAB, "Algal Cobblestone Slabs");
+        addBlock(SFBlocks.ALGAE_COBBLESTONE_STAIRS, "Algal Cobblestone Stairs");
+
         addBlock(SFBlocks.FISHING_NET, "Fishing Net");
 
         addBlock(SFBlocks.STARFISH_COMMON_ORANGE, "Starfish");
@@ -255,16 +259,16 @@ public class LanguageGenerator extends LanguageProvider {
         addItem(SFItems.SPIRAL_HOE, "Spiral Hoe");
         addItem(SFItems.SWIRL_AXE, "Swirl Axe");
 
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_BUST_BLUE, "Sea Glass Blue Bust Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_BUST_BROWN, "Sea Glass Brown Bust Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_PIPE_PINK, "Sea Glass Pink Pipe Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_PIPE_YELLOW, "Sea Glass Yellow Pipe Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_CURVY_LIME, "Sea Glass Lime Curvy Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_CURVY_ORANGE, "Sea Glass Orange Curvy Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_FISHBOWL_PURPLE, "Sea Glass Purple Fishbowl Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_FISHBOWL_WHITE, "Sea Glass White Fishbowl Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_THIN_GREEN, "Sea Glass Green Thin Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_THIN_RED, "Sea Glass Red Thin Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_BUST_BLUE, "Blue Sea Glass Bust Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_BUST_BROWN, "Brown Sea Glass Bust Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_PIPE_PINK, "Pink Sea Glass Pipe Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_PIPE_YELLOW, "Yellow Sea Glass Pipe Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_CURVY_LIME, "Lime Sea Glass Curvy Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_CURVY_ORANGE, "Orange Sea Glass Curvy Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_FISHBOWL_PURPLE, "Purple Sea Glass Fishbowl Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_FISHBOWL_WHITE, "White Sea Glass Fishbowl Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_THIN_GREEN, "Green Sea Glass Thin Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_THIN_RED, "Red Sea Glass Thin Bottle");
 
         addBlock(SFBlocks.FLOATSOME, "Floatsome");
 

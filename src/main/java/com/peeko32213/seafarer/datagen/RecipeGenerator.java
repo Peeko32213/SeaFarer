@@ -12,6 +12,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -168,6 +169,12 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
         // Algae Block
         makeBricks(SFBlocks.ALGAE_BLOCK, SFBlocks.ALGAE_PLANT).save(consumer);
         makCarpet(SFBlocks.ALGAE_CARPET, SFBlocks.ALGAE_PLANT).save(consumer);
+
+        makeStairs(SFBlocks.ALGAE_COBBLESTONE_STAIRS, SFBlocks.ALGAE_COBBLESTONE).save(consumer);
+        makeSlab(SFBlocks.ALGAE_COBBLESTONE_SLAB, SFBlocks.ALGAE_COBBLESTONE).save(consumer);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, SFBlocks.ALGAE_COBBLESTONE.get()).requires(Blocks.COBBLESTONE).requires(SFBlocks.ALGAE_PLANT.get()).group("mossy_cobblestone").unlockedBy("has_vine", has(Blocks.VINE));
+
 
         // Clam Blockset
         makeSeaGlass(SFBlocks.CLAM_SHELL_BRICKS, SFBlocks.CLAM_SHELL).save(consumer);

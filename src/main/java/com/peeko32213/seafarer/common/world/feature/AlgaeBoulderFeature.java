@@ -69,7 +69,7 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
     public static void createSphere(WorldGenLevel worldgenlevel, RandomSource rand, BlockPos origin, FastNoiseLite noise) {
         int height = rand.nextInt(2, 4);
         int radius = height;
-        BlockState block = Blocks.MOSSY_COBBLESTONE.defaultBlockState();
+        BlockState block = SFBlocks.ALGAE_COBBLESTONE.get().defaultBlockState();
         BlockState block2 = SFBlocks.ALGAE_BLOCK.get().defaultBlockState();
         BlockState block3 = Blocks.COBBLESTONE.defaultBlockState();
         //BlockState block3 = SFBlocks.GRAVELY_SAND.get().defaultBlockState();
@@ -117,7 +117,7 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
                 double distance = distance(x, 0, z, radius, 1, radius);
                 float f = noise.GetNoise(x, (float) yHeight, z);
                 if (distance < 1) {
-                    boolean isCorrectBlock = worldgenlevel.getBlockState(pos2).is(Blocks.AIR) || !worldgenlevel.getFluidState(pos2).isEmpty() || worldgenlevel.getBlockState(pos2.below()).is(BlockTags.BASE_STONE_OVERWORLD) || worldgenlevel.getBlockState(pos2.below()).is(Blocks.MOSSY_COBBLESTONE);
+                    boolean isCorrectBlock = worldgenlevel.getBlockState(pos2).is(Blocks.AIR) || !worldgenlevel.getFluidState(pos2).isEmpty() || worldgenlevel.getBlockState(pos2.below()).is(BlockTags.BASE_STONE_OVERWORLD) || worldgenlevel.getBlockState(pos2.below()).is(SFBlocks.ALGAE_COBBLESTONE.get());
                     if (f > 0 && f < 0.5 && isCorrectBlock) {
                         block = block.setValue(BlockStateProperties.WATERLOGGED, worldgenlevel.getFluidState(pos2).is(Fluids.WATER));
                         worldgenlevel.setBlock(pos2, block, 3);

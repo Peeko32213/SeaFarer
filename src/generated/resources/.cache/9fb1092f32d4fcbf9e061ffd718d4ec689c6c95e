@@ -1,6 +1,8 @@
-// 1.20.1	2024-08-19T20:19:08.8029404	Recipes
+// 1.20.1	2024-09-06T16:31:57.7354805	Recipes
 1905df905c5ddeb52b29c481359099d9f783ba29 data/seafarer/advancements/recipes/building_blocks/algae_block.json
 829aa477e55fa4340aad878a7edcac4929e50c09 data/seafarer/advancements/recipes/building_blocks/algae_carpet.json
+2b915200b7c69137987c52801f0adb04b76b139c data/seafarer/advancements/recipes/building_blocks/algae_cobblestone_slab.json
+1bb960a7d8b156644bec2c5e724c720ce75cddd9 data/seafarer/advancements/recipes/building_blocks/algae_cobblestone_stairs.json
 801fe7e29946cf3a4325e27251257f8f91d01f1f data/seafarer/advancements/recipes/building_blocks/blue_seaglass_block.json
 c0024b75a4874bfd7197c264cda30b5023e9ac71 data/seafarer/advancements/recipes/building_blocks/blue_seaglass_bricks.json
 f39743e69673688e1f5c85eef342e4b2459b1587 data/seafarer/advancements/recipes/building_blocks/blue_seaglass_bricks_slab.json
@@ -168,6 +170,8 @@ de3344699a8734e7c0d516b7bce05e1046ad1917 data/seafarer/advancements/recipes/misc
 f266b4adfe299a54b00a6ad989d13aa05b394c6f data/seafarer/advancements/recipes/tools/swirl_axe.json
 82c7977b1d9378f6de61801755b4080131540e3f data/seafarer/recipes/algae_block.json
 b8824a169f7063f682112d6bdb3262d956727207 data/seafarer/recipes/algae_carpet.json
+2e58cc32cf08fd8c0225130fab00fa483a111667 data/seafarer/recipes/algae_cobblestone_slab.json
+e5aed4e5dff039685cd5a5efae15fbc9cfeedff5 data/seafarer/recipes/algae_cobblestone_stairs.json
 5136fc2b209a499f2ddcdfbd4c9f1913ee328a2f data/seafarer/recipes/blue_dye_from_sea_holly.json
 f57b1f1de1f2ee0f81b51372dbe3d3a9656ca093 data/seafarer/recipes/blue_seaglass_block.json
 d7327313e48d0ee182974e68dbe99100df0ccdd0 data/seafarer/recipes/blue_seaglass_bricks.json

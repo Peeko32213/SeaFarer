@@ -429,6 +429,14 @@ public class BlockstateGenerator extends BlockStateProvider {
         createPottedPlant(SFBlocks.COASTAL_WILDFLOWER, SFBlocks.POTTED_COASTAL_WILDFLOWER, "cutout");
 
 
+        simpleBlock(SFBlocks.ALGAE_COBBLESTONE.get());
+        simpleBlockItem(SFBlocks.ALGAE_COBBLESTONE.get(), existingModel((getName(SFBlocks.ALGAE_COBBLESTONE.get()))));
+
+        slabBlock(SFBlocks.ALGAE_COBBLESTONE_SLAB.get(), resourceBlock(getName(SFBlocks.ALGAE_COBBLESTONE.get())), new ResourceLocation(SeaFarer.MODID, "block/algae_cobblestone"));
+        simpleBlockItem(SFBlocks.ALGAE_COBBLESTONE_SLAB.get(), existingModel((getName(SFBlocks.ALGAE_COBBLESTONE_SLAB.get()))));
+
+        stairsBlock(SFBlocks.ALGAE_COBBLESTONE_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/algae_cobblestone"));
+        simpleBlockItem(SFBlocks.ALGAE_COBBLESTONE_STAIRS.get(), existingModel((getName(SFBlocks.ALGAE_COBBLESTONE_STAIRS.get()))));
 
     }
 

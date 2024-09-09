@@ -25,6 +25,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> BLUE_SEAGLASS_BLOCK = register("blue_seaglass_block",
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .strength(3.0F, 10.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
@@ -37,6 +38,7 @@ public class SFBlocks {
                     .instrument(NoteBlockInstrument.HAT)
                     .strength(0.3F)
                     .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()));
 
 
@@ -78,6 +80,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> BROWN_SEAGLASS_BLOCK = register("brown_seaglass_block",
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .strength(3.0F, 10.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
@@ -88,7 +91,7 @@ public class SFBlocks {
                     .of()
                     .instrument(NoteBlockInstrument.HAT)
                     .strength(0.3F)
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()));
 
     public static final RegistryObject<Block> BROWN_SEAGLASS_BRICKS = register("brown_seaglass_bricks",
@@ -128,6 +131,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> GREEN_SEAGLASS_BLOCK = register("green_seaglass_block",
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .strength(3.0F, 10.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
@@ -138,7 +142,7 @@ public class SFBlocks {
                     .of()
                     .instrument(NoteBlockInstrument.HAT)
                     .strength(0.3F)
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()));
 
     public static final RegistryObject<Block> GREEN_SEAGLASS_BRICKS = register("green_seaglass_bricks",
@@ -179,6 +183,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> ORANGE_SEAGLASS_BLOCK = register("orange_seaglass_block",
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .strength(3.0F, 10.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
@@ -188,7 +193,7 @@ public class SFBlocks {
                     .of()
                     .instrument(NoteBlockInstrument.HAT)
                     .strength(0.3F)
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()));
 
     public static final RegistryObject<Block> ORANGE_SEAGLASS_BRICKS = register("orange_seaglass_bricks",
@@ -229,6 +234,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> PURPLE_SEAGLASS_BLOCK = register("purple_seaglass_block",
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .strength(3.0F, 10.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
@@ -239,7 +245,7 @@ public class SFBlocks {
                     .of()
                     .instrument(NoteBlockInstrument.HAT)
                     .strength(0.3F)
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()));
 
     public static final RegistryObject<Block> PURPLE_SEAGLASS_BRICKS = register("purple_seaglass_bricks",
@@ -280,6 +286,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> RED_SEAGLASS_BLOCK = register("red_seaglass_block",
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .strength(3.0F, 10.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
@@ -290,7 +297,7 @@ public class SFBlocks {
                     .of()
                     .instrument(NoteBlockInstrument.HAT)
                     .strength(0.3F)
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()));
 
     public static final RegistryObject<Block> RED_SEAGLASS_BRICKS = register("red_seaglass_bricks",
@@ -332,6 +339,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> WHITE_SEAGLASS_BLOCK = register("white_seaglass_block",
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .strength(3.0F, 10.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
@@ -342,7 +350,7 @@ public class SFBlocks {
                     .of()
                     .instrument(NoteBlockInstrument.HAT)
                     .strength(0.3F)
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()));
 
     public static final RegistryObject<Block> WHITE_SEAGLASS_BRICKS = register("white_seaglass_bricks",
@@ -382,6 +390,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> YELLOW_SEAGLASS_BLOCK = register("yellow_seaglass_block",
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .strength(3.0F, 10.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
@@ -393,6 +402,7 @@ public class SFBlocks {
                     .instrument(NoteBlockInstrument.HAT)
                     .strength(0.3F)
                     .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()));
 
     public static final RegistryObject<Block> YELLOW_SEAGLASS_BRICKS = register("yellow_seaglass_bricks",
@@ -433,6 +443,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> PINK_SEAGLASS_BLOCK = register("pink_seaglass_block",
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .strength(3.0F, 10.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
@@ -444,7 +455,7 @@ public class SFBlocks {
                     .of()
                     .instrument(NoteBlockInstrument.HAT)
                     .strength(0.3F)
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()));
 
 
@@ -487,7 +498,7 @@ public class SFBlocks {
             () -> new SFFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
-                    .sound(SoundType.STONE)
+                    .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
                     .replaceable()
@@ -496,6 +507,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> LIME_SEAGLASS_BLOCK = register("lime_seaglass_block",
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .strength(3.0F, 10.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
@@ -507,7 +519,7 @@ public class SFBlocks {
                     .of()
                     .instrument(NoteBlockInstrument.HAT)
                     .strength(0.3F)
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()));
 
 
@@ -550,7 +562,7 @@ public class SFBlocks {
             () -> new SFFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
-                    .sound(SoundType.STONE)
+                    .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
                     .replaceable()
@@ -560,7 +572,7 @@ public class SFBlocks {
             () -> new SFFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
-                    .sound(SoundType.STONE)
+                    .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
                     .replaceable()
@@ -570,7 +582,7 @@ public class SFBlocks {
             () -> new SFFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
-                    .sound(SoundType.STONE)
+                    .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
                     .replaceable()
@@ -580,7 +592,7 @@ public class SFBlocks {
             () -> new SFFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
-                    .sound(SoundType.STONE)
+                    .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
                     .replaceable()
@@ -590,7 +602,7 @@ public class SFBlocks {
             () -> new SFFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
-                    .sound(SoundType.STONE)
+                    .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
                     .replaceable()
@@ -600,7 +612,7 @@ public class SFBlocks {
             () -> new SFFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
-                    .sound(SoundType.STONE)
+                    .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
                     .replaceable()
@@ -611,7 +623,7 @@ public class SFBlocks {
             () -> new SFFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
-                    .sound(SoundType.STONE)
+                    .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
                     .replaceable()
@@ -622,7 +634,7 @@ public class SFBlocks {
             () -> new SFFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
-                    .sound(SoundType.STONE)
+                    .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
                     .replaceable()
@@ -632,7 +644,7 @@ public class SFBlocks {
             () -> new SFFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
-                    .sound(SoundType.STONE)
+                    .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
                     .replaceable()
@@ -1100,28 +1112,28 @@ public class SFBlocks {
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_BUST_BLUE = register("seaglass_bottle_bust_blue",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_BUST_BROWN = register("seaglass_bottle_bust_brown",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_CURVY_LIME = register("seaglass_bottle_curvy_lime",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_CURVY_ORANGE = register("seaglass_bottle_curvy_orange",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
@@ -1129,28 +1141,28 @@ public class SFBlocks {
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_FISHBOWL_WHITE = register("seaglass_bottle_fishbowl_white",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_FISHBOWL_PURPLE = register("seaglass_bottle_fishbowl_purple",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_PIPE_YELLOW = register("seaglass_bottle_pipe_yellow",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_PIPE_PINK = register("seaglass_bottle_pipe_pink",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
@@ -1158,14 +1170,14 @@ public class SFBlocks {
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_THIN_GREEN = register("seaglass_bottle_thin_green",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_THIN_RED = register("seaglass_bottle_thin_red",
             () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
                     .of()
-                    .sound(SoundType.GLASS)
+                    .sound(SoundType.AMETHYST)
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
@@ -1178,6 +1190,23 @@ public class SFBlocks {
                     .noOcclusion()
                     .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> ALGAE_COBBLESTONE = register("algae_cobblestone",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.COBBLESTONE)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<SlabBlock> ALGAE_COBBLESTONE_SLAB = registerBlock("algae_cobblestone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties
+                    .copy(ALGAE_COBBLESTONE.get())));
+
+    public static final RegistryObject<StairBlock> ALGAE_COBBLESTONE_STAIRS = registerBlock("algae_cobblestone_stairs",
+            () -> new StairBlock(() -> ALGAE_COBBLESTONE.get().defaultBlockState(), BlockBehaviour.Properties
+                    .copy(ALGAE_COBBLESTONE.get())));
+
+
+
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<Block> block) {
         RegistryObject<? extends Block> ret = BLOCKS.register(name, block);
         SFItems.ITEMS.register(name, () -> new BlockItem(ret.get(), new Item.Properties()));

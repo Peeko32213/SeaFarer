@@ -195,7 +195,7 @@ public class SPlacedFeatures {
 
         register(context, SAND_TAG_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.SAND_TAG_PATCH),
                 ImmutableList.of(
-                        RarityFilter.onAverageOnceEvery(50),
+                        RarityFilter.onAverageOnceEvery(1),
                         PlacementUtils.HEIGHTMAP,
                         BiomeFilter.biome()
                 ));

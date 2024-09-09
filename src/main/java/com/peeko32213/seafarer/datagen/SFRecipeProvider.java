@@ -120,6 +120,10 @@ public abstract class SFRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_" + ForgeRegistries.BLOCKS.getKey(blockIn.get()).getPath(), has(blockIn.get()));
     }
 
+    public static ShapelessRecipeBuilder shapeless(RecipeCategory pCategory, ItemLike pResult) {
+        return new ShapelessRecipeBuilder(pCategory, pResult, 1);
+    }
+
     public ShapedRecipeBuilder makeWall(Supplier<? extends Block> wallOut, Supplier<? extends Block> blockIn) {
         return ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, wallOut.get(), 6)
                 .pattern("MMM")

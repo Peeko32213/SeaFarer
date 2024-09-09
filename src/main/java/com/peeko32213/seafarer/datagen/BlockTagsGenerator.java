@@ -59,6 +59,20 @@ public class BlockTagsGenerator extends BlockTagsProvider {
                 .add(SFBlocks.SEA_THRIFT.get())
         ;
 
+        tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(SFBlocks.BLUE_MIXED_SPRINKLED_SAND.get())
+                .add(SFBlocks.RED_MIXED_SPRINKLED_SAND.get())
+                .add(SFBlocks.BLUE_SPRINKLED_SAND.get())
+                .add(SFBlocks.PINK_SPRINKLED_SAND.get())
+                .add(SFBlocks.PURPLE_SPRINKLED_SAND.get())
+                .add(SFBlocks.RED_SPRINKLED_SAND.get())
+                .add(SFBlocks.GRAVELY_SAND.get())
+                .add(SFBlocks.ROCKY_SAND.get())
+                .add(SFBlocks.MIXED_SHELLY_SAND.get())
+                .add(SFBlocks.SCATTERED_SHELLY_SAND.get())
+                .add(SFBlocks.JUMBLED_SHELLY_SAND.get())
+        ;
+
         tag(SFTags.SPRINKLED_SAND)
                 .add(SFBlocks.BLUE_MIXED_SPRINKLED_SAND.get())
                 .add(SFBlocks.BLUE_SPRINKLED_SAND.get())

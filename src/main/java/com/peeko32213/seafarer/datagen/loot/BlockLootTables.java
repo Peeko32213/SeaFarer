@@ -163,8 +163,11 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(SFBlocks.STARFISH_BIG_OCHRE.get());
 
         dropSelf(SFBlocks.ALGAE_BLOCK.get());
-        dropSelf(SFBlocks.ALGAE_CARPET.get());
-        dropSelf(SFBlocks.ALGAE_PLANT.get());
+        dropWhenSilkTouch(SFBlocks.ALGAE_CARPET.get());
+        dropWhenSilkTouch(SFBlocks.ALGAE_PLANT.get());
+        dropSelf(SFBlocks.ALGAE_COBBLESTONE.get());
+        dropSelf(SFBlocks.ALGAE_COBBLESTONE_STAIRS.get());
+        dropSelf(SFBlocks.ALGAE_COBBLESTONE_SLAB.get());
 
         dropSelf(SFBlocks.CLAM_SHELL.get());
         dropSelf(SFBlocks.HORN_SHELL.get());
@@ -231,6 +234,21 @@ public class BlockLootTables extends BlockLootSubProvider {
         createPotFlowerItemTable(SFBlocks.POTTED_SEA_HOLLY.get(),SFBlocks.SEA_HOLLY.get());
         createPotFlowerItemTable(SFBlocks.POTTED_SEA_THRIFT.get(),SFBlocks.SEA_THRIFT.get());
         createPotFlowerItemTable(SFBlocks.POTTED_COASTAL_WILDFLOWER.get(),SFBlocks.COASTAL_WILDFLOWER.get());
+
+        dropSelf(SFBlocks.ALGAE_COBBLESTONE.get());
+        dropSelf(SFBlocks.ALGAE_COBBLESTONE_SLAB.get());
+        dropSelf(SFBlocks.ALGAE_COBBLESTONE_STAIRS.get());
+
+        dropSelf(SFBlocks.SEAGLASS_BOTTLE_BUST_BLUE.get());
+        dropSelf(SFBlocks.SEAGLASS_BOTTLE_BUST_BROWN.get());
+        dropSelf(SFBlocks.SEAGLASS_BOTTLE_CURVY_LIME.get());
+        dropSelf(SFBlocks.SEAGLASS_BOTTLE_CURVY_ORANGE.get());
+        dropSelf(SFBlocks.SEAGLASS_BOTTLE_FISHBOWL_WHITE.get());
+        dropSelf(SFBlocks.SEAGLASS_BOTTLE_FISHBOWL_PURPLE.get());
+        dropSelf(SFBlocks.SEAGLASS_BOTTLE_PIPE_YELLOW.get());
+        dropSelf(SFBlocks.SEAGLASS_BOTTLE_PIPE_PINK.get());
+        dropSelf(SFBlocks.SEAGLASS_BOTTLE_THIN_GREEN.get());
+        dropSelf(SFBlocks.SEAGLASS_BOTTLE_THIN_RED.get());
 
     }
     protected void createPotFlowerItemTable(Block flowerpotBlock, ItemLike pItem) {

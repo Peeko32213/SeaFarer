@@ -116,57 +116,57 @@ public class SBiomeModifiers {
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_SCATTERED_SHELLY_SAND_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
+                biomes.getOrThrow(SFTags.IS_SANDY_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SCATTERED_SHELLY_SAND_PATCH_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_MIXED_SHELLY_SAND_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
+                biomes.getOrThrow(SFTags.IS_SANDY_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.MIXED_SHELLY_SAND_PATCH_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_GRAVELY_SAND_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
+                biomes.getOrThrow(SFTags.IS_SANDY_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.GRAVELY_SAND_PATCH_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_ROCKY_SAND_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
+                biomes.getOrThrow(SFTags.IS_SANDY_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.ROCKY_SAND_PATCH_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_RED_SPRINKLED_SAND_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
+                biomes.getOrThrow(SFTags.IS_SANDY_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.RED_SPRINKLED_SAND_PATCH_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_PURPLE_SPRINKLED_SAND_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
+                biomes.getOrThrow(SFTags.IS_SANDY_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.PURPLE_SPRINKLED_SAND_PATCH_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_PINK_SPRINKLED_SAND_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
+                biomes.getOrThrow(SFTags.IS_SANDY_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.PINK_SPRINKLED_SAND_PATCH_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_BLUE_SPRINKLED_SAND_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
+                biomes.getOrThrow(SFTags.IS_SANDY_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.BLUE_SPRINKLED_SAND_PATCH_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_BLUE_MIXED_SPRINKLED_SAND_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
+                biomes.getOrThrow(SFTags.IS_SANDY_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.BLUE_MIXED_SPRINKLED_SAND_PATCH_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_RED_MIXED_SPRINKLED_SAND_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
+                biomes.getOrThrow(SFTags.IS_SANDY_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.RED_MIXED_SPRINKLED_SAND_PATCH_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
         context.register(ADD_SAND_TAG_PATCH, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
-                biomes.getOrThrow(SFTags.IS_BEACH_BIOME),
+                biomes.getOrThrow(SFTags.IS_SANDY_BEACH_BIOME),
                 HolderSet.direct(placedFeatures.getOrThrow(SPlacedFeatures.SAND_TAG_PATCH_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
         //  context.register(ADD_WATER_SEA_SHELLS, new ForgeBiomeModif
