@@ -12,6 +12,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public interface Brushable {
+
+    void startBrusing();
+    void endBrushing();
+
     default boolean isBrushable(Player player, @NotNull ItemStack item, Level level, BlockPos pos)
     {
         return true;

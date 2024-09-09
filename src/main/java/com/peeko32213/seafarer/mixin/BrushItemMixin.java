@@ -69,16 +69,17 @@ public class BrushItemMixin extends Item {
             HitResult hitresult = ForgeEvents.calculateHitResult(player);
             if (hitresult instanceof EntityHitResult entityHitResult) {
                 if (hitresult.getType() == HitResult.Type.ENTITY) {
-                    int i = stack.getUseDuration() - pRemainingUseDuration + 1;
-                    boolean flag = i % 10 == 5;
-                    if (flag) {
-                        net.minecraft.world.entity.Entity targetEntity = entityHitResult.getEntity();
-                        BlockPos pos = targetEntity.blockPosition();
+                    net.minecraft.world.entity.Entity targetEntity = entityHitResult.getEntity();
+                    if (targetEntity instanceof Brushable brushable) {
+                        brushable.startBrusing();
+                        int i = stack.getUseDuration() - pRemainingUseDuration + 1;
+                        boolean flag = i % 10 == 5;
+                        if (flag) {
+                            BlockPos pos = targetEntity.blockPosition();
 
-                        BrushingEvent.Entity brushingEvent = new BrushingEvent.Entity(level, stack, player, entityHitResult, targetEntity, pos);
-                        MinecraftForge.EVENT_BUS.post(brushingEvent);
-                        if (!brushingEvent.isCanceled()) {
-                            if (targetEntity instanceof Brushable brushable) {
+                            BrushingEvent.Entity brushingEvent = new BrushingEvent.Entity(level, stack, player, entityHitResult, targetEntity, pos);
+                            MinecraftForge.EVENT_BUS.post(brushingEvent);
+                            if (!brushingEvent.isCanceled()) {
                                 if (brushable.isBrushable(player, stack, level, pos)) {
                                     if (brushable.brushSound() != null) {
                                         level.playSound(null, pos, brushable.brushSound(), player == null ? SoundSource.BLOCKS : SoundSource.PLAYERS);
@@ -91,6 +92,7 @@ public class BrushItemMixin extends Item {
                                         ent.setDeltaMovement(ent.getDeltaMovement().add((double) ((rand.nextFloat() - rand.nextFloat()) * 0.1F), (double) (rand.nextFloat() * 0.05F), (double) ((rand.nextFloat() - rand.nextFloat()) * 0.1F)));
                                     });
                                     stack.hurtAndBreak(1, player, e -> e.broadcastBreakEvent(player.getUsedItemHand()));
+                                    brushable.endBrushing();
                                 }
                             }
                         }

@@ -369,6 +369,16 @@ public class EntityMarineIguana extends StatedAnimal implements GeoAnimatable, S
 
 
     @Override
+    public void startBrusing() {
+
+    }
+
+    @Override
+    public void endBrushing() {
+
+    }
+
+    @Override
     public boolean isBrushable(Player player, @NotNull ItemStack item, Level level, BlockPos pos) {
         return canBeBrushed();
     }
