@@ -12,11 +12,13 @@ import com.peeko32213.seafarer.common.entity.misc.state.StateHelper;
 import com.peeko32213.seafarer.common.entity.misc.state.WeightedState;
 import com.peeko32213.seafarer.core.registry.SFItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -41,6 +43,7 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
@@ -55,7 +58,7 @@ import java.util.Collections;
 import java.util.EnumSet;
 import java.util.List;
 
-public class EntityMarineIguana extends StatedAnimal implements GeoAnimatable, SemiAquatic, Shearable, net.minecraftforge.common.IForgeShearable {
+public class EntityMarineIguana extends StatedAnimal implements GeoAnimatable, SemiAquatic, Brushable, net.minecraftforge.common.IForgeShearable {
     private static final EntityDataAccessor<Integer> SALT = SynchedEntityData.defineId(EntityMarineIguana.class, EntityDataSerializers.INT);
     private static final RawAnimation MARINE_IGUANA_WALK = RawAnimation.begin().thenLoop("animation.marineiguana.walk");
     private static final RawAnimation MARINE_IGUANA_RUN = RawAnimation.begin().thenLoop("animation.marineiguana.run");
@@ -158,15 +161,6 @@ public class EntityMarineIguana extends StatedAnimal implements GeoAnimatable, S
         }
     }
 
-    @Override
-    @Nonnull
-    public InteractionResult mobInteract(@Nonnull Player player, @Nonnull InteractionHand hand) {
-        ItemStack itemstack = player.getItemInHand(hand);
-        if (this.readyForShearing() && itemstack.is(Items.BRUSH)) {
-            shear(SoundSource.PLAYERS);
-        }
-        return super.mobInteract(player, hand);
-    }
 
     public void tick() {
         super.tick();
@@ -373,33 +367,40 @@ public class EntityMarineIguana extends StatedAnimal implements GeoAnimatable, S
         return isBrightEnoughToSpawn(level, pos);
     }
 
-    @Override
-    public void shear(SoundSource category) {
-        this.level().playSound(null, this, SoundEvents.BRUSH_GENERIC, category, 1.0F, 1.0F);
-        this.gameEvent(GameEvent.ENTITY_INTERACT);
-        if (!this.level().isClientSide()) {
-            this.spawnAtLocation(SFItems.SALT.get());
-            }
-            this.setSalt(0);
-        }
 
-    @javax.annotation.Nonnull
     @Override
-    public java.util.List<ItemStack> onSheared(@javax.annotation.Nullable Player player, @javax.annotation.Nonnull ItemStack item, Level world, BlockPos pos, int fortune) {
-        world.playSound(null, this, SoundEvents.BRUSH_GENERIC, player == null ? SoundSource.BLOCKS : SoundSource.PLAYERS, 1.0F, 1.0F);
+    public boolean isBrushable(Player player, @NotNull ItemStack item, Level level, BlockPos pos) {
+        return canBeBrushed();
+    }
+
+    public boolean canBeBrushed() {
+        return this.isAlive() && this.getSalt() > 0;
+    }
+
+    @Override
+    public List<ItemStack> brush(long gameTime, Player player, Direction direction, ItemStack stack, Level level, BlockPos pos, int fortune) {
+        level.playSound(null, this, SoundEvents.BRUSH_GENERIC, player == null ? SoundSource.BLOCKS : SoundSource.PLAYERS, 1.0F, 1.0F);
         this.gameEvent(GameEvent.ENTITY_INTERACT);
-        if (!world.isClientSide()) {
+        if (!level.isClientSide()) {
             if (random.nextFloat() < this.getSalt() * 0.05F) {
-                return Collections.singletonList(new ItemStack(SFItems.SALT.get()));
+
+                ItemStack stack1 = SFItems.SALT.get().getDefaultInstance();
+                stack1.setCount(getSalt());
+                return Collections.singletonList(stack1);
             }
         }
+        setSalt(0);
         return java.util.Collections.emptyList();
     }
 
     @Override
-    public boolean readyForShearing() {
-        return this.isAlive() && this.getSalt() > 0;
+    public SoundEvent brushSound() {
+        return SoundEvents.BRUSH_GENERIC;
     }
+
+
+
+
 
     @Override
     public ImmutableMap<String, StateHelper> getStates() {

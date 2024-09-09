@@ -220,6 +220,7 @@ public class SConfiguredFeatures {
         register(context, SAND_TAG_PATCH, SFFeatures.TAG_FEATURE.get(), new TagBasedRandomFeatureConfig(
                 SFTags.SPRINKLED_SAND,
                 Optional.empty(),
+                Optional.of(Blocks.SAND),
                 Optional.of(new BlockPos(0,-1,0)),
                 SFFeatureForms.PATCH_FEATURE_FORM));
 

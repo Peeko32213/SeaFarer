@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
+import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Optional;
@@ -33,7 +34,8 @@ public class TagBasedRandomFeature <T extends TagBasedRandomFeatureConfig> exten
         Optional<Block> block = ForgeRegistries.BLOCKS.tags().getTag(blockTagKey).getRandomElement(randomSource);
         Block placementBlock = block.orElse(fallback);
         FeatureForm featureForm = config.featureForm();
-        featureForm.placeForm(level, chunkGenerator, origin, offSet, placementBlock.defaultBlockState(),  randomSource);
+        Block filter = config.filter().orElse(Blocks.AIR);
+        featureForm.placeForm(level, chunkGenerator, origin, offSet, placementBlock.defaultBlockState(), filter.defaultBlockState(),  randomSource);
         return true;
     }
 }

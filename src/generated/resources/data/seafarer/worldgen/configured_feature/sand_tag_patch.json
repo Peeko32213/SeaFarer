@@ -2,6 +2,7 @@
   "type": "seafarer:tag_feature",
   "config": {
     "feature_fom": "minecraft:patch_form",
+    "filter": "minecraft:sand",
     "offset": [
       0,
       -1,

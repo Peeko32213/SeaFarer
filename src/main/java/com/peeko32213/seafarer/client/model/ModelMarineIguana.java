@@ -18,7 +18,7 @@ public class ModelMarineIguana extends GeoModel<EntityMarineIguana>
     @Override
     public ResourceLocation getTextureResource(EntityMarineIguana object)
     {
-        if (object.readyForShearing()) {
+        if (object.canBeBrushed()) {
             return new ResourceLocation(SeaFarer.MODID, "textures/entity/marineiguana_salted.png");
         }
         else {

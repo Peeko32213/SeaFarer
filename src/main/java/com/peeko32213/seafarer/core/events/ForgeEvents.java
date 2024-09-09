@@ -2,6 +2,8 @@ package com.peeko32213.seafarer.core.events;
 
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.common.block.entity.SFNetBlockEntity;
+import com.peeko32213.seafarer.common.entity.Brushable;
+import com.peeko32213.seafarer.common.entity.EntityMarineIguana;
 import com.peeko32213.seafarer.common.util.AsyncLocator;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -11,6 +13,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.network.ServerGamePacketListenerImpl;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.entity.LivingEntity;
@@ -47,50 +50,6 @@ public class ForgeEvents {
         AsyncLocator.handleServerStoppingEvent();
     }
 
-    @SubscribeEvent
-    public static void brushBlockOrEntity(LivingEntityUseItemEvent.Tick event) {
-        if (event.getItem().is(Items.BRUSH)) {
-            int duration = event.getDuration();
-            ItemStack stack = event.getItem();
-            LivingEntity entity = event.getEntity();
-            Level level = event.getEntity().level();
-            if (duration >= 0 && entity instanceof Player player) {
-                HitResult hitresult = calculateHitResult(player);
-                if (hitresult instanceof BlockHitResult blockhitresult) {
-                    if (hitresult.getType() == HitResult.Type.BLOCK) {
-                        int i = stack.getUseDuration() - duration + 1;
-                        boolean flag = i % 10 == 5;
-                        if (flag) {
-                            BlockPos blockpos = blockhitresult.getBlockPos();
-                            BrushingEvent.Block brushingEvent = new BrushingEvent.Block(level, stack, player, blockhitresult, blockpos);
-                            MinecraftForge.EVENT_BUS.post(brushingEvent);
-                            //if (!brushingEvent.isCanceled()) {
-                            //    BlockState blockstate = level.getBlockState(blockpos);
-                            //    addCustomBlockBrushHandling(level, stack, blockstate, player, blockhitresult, blockpos);
-                            //}
-                        }
-                    }
-                }
-
-                if (hitresult instanceof EntityHitResult entityHitResult) {
-                    if (hitresult.getType() == HitResult.Type.ENTITY) {
-                        int i = stack.getUseDuration() - duration + 1;
-                        boolean flag = i % 10 == 5;
-                        if (flag) {
-                            net.minecraft.world.entity.Entity targetEntity = entityHitResult.getEntity();
-                            BlockPos pos = targetEntity.blockPosition();
-                            BrushingEvent.Entity brushingEvent = new BrushingEvent.Entity(level, stack, player, entityHitResult, targetEntity, pos);
-                            MinecraftForge.EVENT_BUS.post(brushingEvent);
-                            //if (!brushingEvent.isCanceled()) {
-                            //    addCustomEntityBrushHandling(level, stack, player, entityHitResult, pos);
-                            //}
-                        }
-                    }
-                }
-            }
-        }
-    }
-
 
     @SubscribeEvent
     public static void brushSaltFromBlock(BrushingEvent.Block event) {
@@ -117,8 +76,8 @@ public class ForgeEvents {
                 }
             }
         }
-
     }
+
 
 
     private static void spawnEntityParticles(@Nullable ParticleOptions options, Level level, EntityHitResult hitResult, Vec3 vec, HumanoidArm arm) {
@@ -155,7 +114,7 @@ public class ForgeEvents {
 
 
 
-    private static HitResult calculateHitResult(LivingEntity entity) {
+    public static HitResult calculateHitResult(LivingEntity entity) {
         return ProjectileUtil.getHitResultOnViewVector(entity, (p_281111_) -> {
             return !p_281111_.isSpectator() && p_281111_.isPickable();
         }, MAX_BRUSH_DISTANCE);

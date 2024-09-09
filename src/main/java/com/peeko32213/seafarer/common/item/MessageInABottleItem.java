@@ -36,9 +36,10 @@ public class MessageInABottleItem extends Item {
     public InteractionResultHolder<ItemStack> use(Level level, Player pPlayer, InteractionHand pUsedHand) {
         ItemStack stack = pPlayer.getItemInHand(pUsedHand);
         if (level instanceof ServerLevel serverlevel) {
-
-            ItemStack bottleStack = Items.GLASS_BOTTLE.getDefaultInstance();
-            ItemStack itemstack2 = ItemUtils.createFilledResult(stack, pPlayer, bottleStack);
+            if(!pPlayer.isCreative()) {
+                ItemStack bottleStack = Items.GLASS_BOTTLE.getDefaultInstance();
+                ItemStack itemstack2 = ItemUtils.createFilledResult(stack, pPlayer, bottleStack);
+            }
             serverlevel.playSound(null, pPlayer.blockPosition(), SoundEvents.BOOK_PAGE_TURN, SoundSource.PLAYERS, 1, 1);
             boolean findUnexplored = false;
             pPlayer.getCooldowns().addCooldown(this, 4800);
