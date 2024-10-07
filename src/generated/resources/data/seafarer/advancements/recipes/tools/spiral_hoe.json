@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_spiky_shell": {
+    "has_spiral_shell": {
       "conditions": {
         "items": [
           {
             "items": [
-              "seafarer:spiky_shell"
+              "seafarer:spiral_shell"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_spiky_shell",
+      "has_spiral_shell",
       "has_the_recipe"
     ]
   ],

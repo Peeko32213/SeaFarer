@@ -494,16 +494,6 @@ public class SFBlocks {
             () -> new StairBlock(() -> PINK_SEAGLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties
                     .copy(PINK_SEAGLASS_TILES.get())));
 
-    public static final RegistryObject<Block> PINK_SEAGLASS_PEBBLES = register("pink_seaglass_pebbles",
-            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.AMETHYST)
-                    .noCollission()
-                    .noOcclusion()
-                    .replaceable()
-                    .pushReaction(PushReaction.DESTROY)));
-
     public static final RegistryObject<Block> LIME_SEAGLASS_BLOCK = register("lime_seaglass_block",
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
@@ -557,16 +547,6 @@ public class SFBlocks {
     public static final RegistryObject<StairBlock> LIME_SEAGLASS_TILES_STAIRS = registerBlock("lime_seaglass_tiles_stairs",
             () -> new StairBlock(() -> LIME_SEAGLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties
                     .copy(LIME_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<Block> LIME_SEAGLASS_PEBBLES = register("lime_seaglass_pebbles",
-            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.AMETHYST)
-                    .noCollission()
-                    .noOcclusion()
-                    .replaceable()
-                    .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> BLUE_SEAGLASS_PEBBLES = register("blue_seaglass_pebbles",
             () -> new SFFloorLayerBlock(BlockBehaviour.Properties
@@ -629,6 +609,15 @@ public class SFBlocks {
                     .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
+    public static final RegistryObject<Block> WHITE_SEAGLASS_PEBBLES = register("white_seaglass_pebbles",
+            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.AMETHYST)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> YELLOW_SEAGLASS_PEBBLES = register("yellow_seaglass_pebbles",
             () -> new SFFloorLayerBlock(BlockBehaviour.Properties
@@ -640,7 +629,7 @@ public class SFBlocks {
                     .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> WHITE_SEAGLASS_PEBBLES = register("white_seaglass_pebbles",
+    public static final RegistryObject<Block> PINK_SEAGLASS_PEBBLES = register("pink_seaglass_pebbles",
             () -> new SFFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
@@ -649,6 +638,18 @@ public class SFBlocks {
                     .noOcclusion()
                     .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
+
+
+    public static final RegistryObject<Block> LIME_SEAGLASS_PEBBLES = register("lime_seaglass_pebbles",
+            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
+                    .of()
+                    .instabreak()
+                    .sound(SoundType.AMETHYST)
+                    .noCollission()
+                    .noOcclusion()
+                    .replaceable()
+                    .pushReaction(PushReaction.DESTROY)));
+
 
     public static final RegistryObject<Block> FISHING_NET = registerPlaceOnWaterBlockItem("fishing_net",
             () -> new SFNetBlock(BlockBehaviour.Properties

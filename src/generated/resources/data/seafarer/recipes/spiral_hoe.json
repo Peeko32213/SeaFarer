@@ -3,7 +3,7 @@
   "category": "equipment",
   "key": {
     "#": {
-      "item": "seafarer:spiky_shell"
+      "item": "seafarer:spiral_shell"
     },
     "/": {
       "tag": "forge:rods/wooden"

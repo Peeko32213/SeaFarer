@@ -2,18 +2,48 @@
   "variants": {
     "": [
       {
-        "model": "seafarer:block/floatsome"
+        "model": "seafarer:block/floatsome_1"
       },
       {
-        "model": "seafarer:block/floatsome",
+        "model": "seafarer:block/floatsome_1",
         "y": 90
       },
       {
-        "model": "seafarer:block/floatsome",
+        "model": "seafarer:block/floatsome_1",
         "y": 180
       },
       {
-        "model": "seafarer:block/floatsome",
+        "model": "seafarer:block/floatsome_1",
+        "y": 270
+      },
+      {
+        "model": "seafarer:block/floatsome_2"
+      },
+      {
+        "model": "seafarer:block/floatsome_2",
+        "y": 90
+      },
+      {
+        "model": "seafarer:block/floatsome_2",
+        "y": 180
+      },
+      {
+        "model": "seafarer:block/floatsome_2",
+        "y": 270
+      },
+      {
+        "model": "seafarer:block/floatsome_3"
+      },
+      {
+        "model": "seafarer:block/floatsome_3",
+        "y": 90
+      },
+      {
+        "model": "seafarer:block/floatsome_3",
+        "y": 180
+      },
+      {
+        "model": "seafarer:block/floatsome_3",
         "y": 270
       }
     ]

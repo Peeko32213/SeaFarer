@@ -2,13 +2,17 @@ package com.peeko32213.seafarer.world;
 
 import com.google.common.collect.ImmutableList;
 import com.peeko32213.seafarer.SeaFarer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
+import net.minecraft.core.Vec3i;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraftforge.registries.DeferredRegister;
@@ -128,68 +132,79 @@ public class SPlacedFeatures {
                 ImmutableList.of(
                         RarityFilter.onAverageOnceEvery(300),
                         PlacementUtils.HEIGHTMAP,
-                        BiomeFilter.biome()
+                        BiomeFilter.biome(),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0), Blocks.SAND)))
                         ));
         register(context, SCATTERED_SHELLY_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.SCATTERED_SHELLY_SAND_PATCH),
                 ImmutableList.of(
                         RarityFilter.onAverageOnceEvery(300),
                         PlacementUtils.HEIGHTMAP,
-                        BiomeFilter.biome()
+                        BiomeFilter.biome(),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0), Blocks.SAND)))
                 ));
         register(context, MIXED_SHELLY_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.MIXED_SHELLY_SAND_PATCH),
                 ImmutableList.of(
                         RarityFilter.onAverageOnceEvery(300),
                         PlacementUtils.HEIGHTMAP,
-                        BiomeFilter.biome()
+                        BiomeFilter.biome(),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0), Blocks.SAND)))
                 ));
         register(context, GRAVELY_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.GRAVELY_SAND_PATCH),
                 ImmutableList.of(
                         RarityFilter.onAverageOnceEvery(300),
                         PlacementUtils.HEIGHTMAP,
-                        BiomeFilter.biome()
+                        BiomeFilter.biome(),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0), Blocks.SAND)))
                 ));
         register(context, ROCKY_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.ROCKY_SAND_PATCH),
                 ImmutableList.of(
                         RarityFilter.onAverageOnceEvery(300),
                         PlacementUtils.HEIGHTMAP,
-                        BiomeFilter.biome()
+                        BiomeFilter.biome(),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0), Blocks.SAND)))
                 ));
         register(context, RED_SPRINKLED_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.RED_SPRINKLED_SAND_PATCH),
                 ImmutableList.of(
                         RarityFilter.onAverageOnceEvery(300),
                         PlacementUtils.HEIGHTMAP,
-                        BiomeFilter.biome()
+                        BiomeFilter.biome(),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0), Blocks.SAND)))
                 ));
         register(context, PURPLE_SPRINKLED_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.PURPLE_SPRINKLED_SAND_PATCH),
                 ImmutableList.of(
                         RarityFilter.onAverageOnceEvery(300),
                         PlacementUtils.HEIGHTMAP,
-                        BiomeFilter.biome()
+                        BiomeFilter.biome(),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0), Blocks.SAND)))
                 ));
         register(context, PINK_SPRINKLED_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.PINK_SPRINKLED_SAND_PATCH),
                 ImmutableList.of(
                         RarityFilter.onAverageOnceEvery(300),
                         PlacementUtils.HEIGHTMAP,
-                        BiomeFilter.biome()
-                ));
+                        BiomeFilter.biome(),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0), Blocks.SAND)))
+                        ));
         register(context, BLUE_SPRINKLED_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.BLUE_SPRINKLED_SAND_PATCH),
                 ImmutableList.of(
                         RarityFilter.onAverageOnceEvery(300),
                         PlacementUtils.HEIGHTMAP,
-                        BiomeFilter.biome()
+                        BiomeFilter.biome(),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0), Blocks.SAND)))
                 ));
         register(context, BLUE_MIXED_SPRINKLED_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.BLUE_MIXED_SPRINKLED_SAND_PATCH),
                 ImmutableList.of(
                         RarityFilter.onAverageOnceEvery(300),
                         PlacementUtils.HEIGHTMAP,
-                        BiomeFilter.biome()
+                        BiomeFilter.biome(),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0), Blocks.SAND)))
                 ));
 
         register(context, RED_MIXED_SPRINKLED_SAND_PATCH_PLACED,  configuredFeatures.getOrThrow(SConfiguredFeatures.RED_MIXED_SPRINKLED_SAND_PATCH),
                 ImmutableList.of(
                         RarityFilter.onAverageOnceEvery(300),
                         PlacementUtils.HEIGHTMAP,
-                        BiomeFilter.biome()
+                        BiomeFilter.biome(),
+                        BlockPredicateFilter.forPredicate(BlockPredicate.allOf(BlockPredicate.matchesBlocks(new Vec3i(0, -1, 0), Blocks.SAND)))
                 ));
 
 
