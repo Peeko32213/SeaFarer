@@ -1,5 +1,6 @@
 {
   "parent": "minecraft:block/template_glass_pane_side",
+  "render_type": "minecraft:translucent",
   "textures": {
     "edge": "seafarer:block/white_seaglass_pane_top",
     "pane": "seafarer:block/white_seaglass_block"

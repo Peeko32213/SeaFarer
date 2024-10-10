@@ -753,6 +753,7 @@ public class SFBlocks {
                     copy(Blocks.LILY_PAD)
                     .noCollission()
                     .instabreak()
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
                     .sound(SoundType.WET_GRASS)));
 
     public static final RegistryObject<Block> CLAM_SHELL = register("clam_shell",
@@ -824,6 +825,7 @@ public class SFBlocks {
                     .instabreak()
                     .sound(SoundType.GRASS)
                     .ignitedByLava()
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> SEA_THRIFT = register("sea_thrift", () ->
