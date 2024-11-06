@@ -44,6 +44,9 @@ public class ModelSunfish extends GeoModel<EntitySunfish>
         if (!animatable.isInWater()) {
             body.setRotZ(1.5708f);
         }
+        else {
+            body.setRotZ(1.5708f);
+        }
         AnimatableManager<GeoAnimatable> manager = animatable.getAnimatableInstanceCache().getManagerForId(instanceId);
         int unpausedMultiplier = !Minecraft.getInstance().isPaused() || manager.isFirstTick() ? 1 : 0;
         tail.setRotY(tail.getRotY() + extraDataOfType.netHeadYaw() * ((float) Math.PI / 270F) * unpausedMultiplier);
