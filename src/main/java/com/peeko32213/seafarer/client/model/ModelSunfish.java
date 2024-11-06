@@ -45,7 +45,7 @@ public class ModelSunfish extends GeoModel<EntitySunfish>
             body.setRotZ(1.5708f);
         }
         else {
-            body.setRotZ(1.5708f);
+            body.setRotZ(0.0F);
         }
         AnimatableManager<GeoAnimatable> manager = animatable.getAnimatableInstanceCache().getManagerForId(instanceId);
         int unpausedMultiplier = !Minecraft.getInstance().isPaused() || manager.isFirstTick() ? 1 : 0;
