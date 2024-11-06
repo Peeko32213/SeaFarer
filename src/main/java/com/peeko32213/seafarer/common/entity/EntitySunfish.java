@@ -39,7 +39,7 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 
 public class EntitySunfish extends WaterAnimal implements GeoAnimatable {
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-    private static final RawAnimation SUNFISH_SWIM = RawAnimation.begin().thenLoop("animation.sunfish.swim2");
+    private static final RawAnimation SUNFISH_SWIM = RawAnimation.begin().thenLoop("animation.sunfish.swim");
     private static final RawAnimation SUNFISH_BEACHED = RawAnimation.begin().thenLoop("animation.sunfish.beached");
 
 
