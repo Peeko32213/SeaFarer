@@ -94,11 +94,11 @@ public class SFItems {
             () -> new Item(new Item.Properties().food(SFFood.SALTED_STARFISH)));
 
     public static final RegistryObject<Item> SHORE_CRAB_BUCKET = ITEMS.register("shore_crab_bucket",
-            () -> new SFFishBucket(SFEntities.CRAB, () -> Fluids.EMPTY, false,
+            () -> new SFFishBucket(SFEntities.CRAB, () -> Fluids.FLOWING_WATER, false,
                     new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> HORSESHOE_CRAB_BUCKET = ITEMS.register("horseshoe_crab_bucket",
-            () -> new SFFishBucket(SFEntities.HORSESHOE_CRAB, () -> Fluids.EMPTY, false,
+            () -> new SFFishBucket(SFEntities.HORSESHOE_CRAB, () -> Fluids.FLOWING_WATER, false,
                     new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> CLAM_SHOVEL = ITEMS.register("clam_shovel",

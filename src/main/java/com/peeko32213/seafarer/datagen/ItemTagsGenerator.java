@@ -5,7 +5,9 @@ import com.peeko32213.seafarer.core.registry.SFTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nullable;
@@ -19,8 +21,7 @@ public class ItemTagsGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        this.copy(SFTags.STARFISH, SFTags.STARFISH_ITEM);
-    }
+        this.copy(SFTags.STARFISH, SFTags.STARFISH_ITEM);}
 
 
 

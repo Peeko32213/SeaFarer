@@ -263,12 +263,11 @@ public class RecipeGenerator extends SFRecipeProvider implements IConditionBuild
 
         ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, SFItems.SALTED_TROPICAL_FISH.get())
                 .define('s', SFItems.SALT.get())
-                .define('l', SFItems.SALTED_TROPICAL_FISH.get())
+                .define('l', Items.TROPICAL_FISH)
                 .pattern(" s ")
                 .pattern("sls")
                 .pattern(" s ")
                 .unlockedBy(getHasName(SFItems.SALT.get().asItem()), has(SFItems.SALT.get().asItem()))
-                .unlockedBy(getHasName(SFItems.SALTED_TROPICAL_FISH.get().asItem()), has(SFItems.SALTED_TROPICAL_FISH.get().asItem()))
                 .save(consumer, key(SFItems.SALTED_TROPICAL_FISH.get()));
 
         smeltingRecipes(consumer);

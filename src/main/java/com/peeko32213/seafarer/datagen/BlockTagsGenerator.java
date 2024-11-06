@@ -6,6 +6,7 @@ import com.peeko32213.seafarer.core.registry.SFTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -83,6 +84,134 @@ public class BlockTagsGenerator extends BlockTagsProvider {
                 .add(SFBlocks.RED_SPRINKLED_SAND.get())
                 .add(SFBlocks.MIXED_SHELLY_SAND.get())
 
+        ;
+
+        tag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .add(SFBlocks.BLUE_SEAGLASS_BLOCK.get())
+                .add(SFBlocks.BLUE_SEAGLASS_PANE.get())
+                .add(SFBlocks.BLUE_SEAGLASS_BRICKS.get())
+                .add(SFBlocks.BLUE_SEAGLASS_BRICKS_SLAB.get())
+                .add(SFBlocks.BLUE_SEAGLASS_BRICKS_STAIRS.get())
+                .add(SFBlocks.BLUE_SEAGLASS_TILES.get())
+                .add(SFBlocks.BLUE_SEAGLASS_TILES_SLAB.get())
+                .add(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get())
+
+                .add(SFBlocks.BROWN_SEAGLASS_BLOCK.get())
+                .add(SFBlocks.BROWN_SEAGLASS_PANE.get())
+                .add(SFBlocks.BROWN_SEAGLASS_BRICKS.get())
+                .add(SFBlocks.BROWN_SEAGLASS_BRICKS_SLAB.get())
+                .add(SFBlocks.BROWN_SEAGLASS_BRICKS_STAIRS.get())
+                .add(SFBlocks.BROWN_SEAGLASS_TILES.get())
+                .add(SFBlocks.BROWN_SEAGLASS_TILES_SLAB.get())
+                .add(SFBlocks.BROWN_SEAGLASS_TILES_STAIRS.get())
+
+                .add(SFBlocks.GREEN_SEAGLASS_BLOCK.get())
+                .add(SFBlocks.GREEN_SEAGLASS_PANE.get())
+                .add(SFBlocks.GREEN_SEAGLASS_BRICKS.get())
+                .add(SFBlocks.GREEN_SEAGLASS_BRICKS_SLAB.get())
+                .add(SFBlocks.GREEN_SEAGLASS_BRICKS_STAIRS.get())
+                .add(SFBlocks.GREEN_SEAGLASS_TILES.get())
+                .add(SFBlocks.GREEN_SEAGLASS_TILES_SLAB.get())
+                .add(SFBlocks.GREEN_SEAGLASS_TILES_STAIRS.get())
+
+                .add(SFBlocks.ORANGE_SEAGLASS_BLOCK.get())
+                .add(SFBlocks.ORANGE_SEAGLASS_PANE.get())
+                .add(SFBlocks.ORANGE_SEAGLASS_BRICKS.get())
+                .add(SFBlocks.ORANGE_SEAGLASS_BRICKS_SLAB.get())
+                .add(SFBlocks.ORANGE_SEAGLASS_BRICKS_STAIRS.get())
+                .add(SFBlocks.ORANGE_SEAGLASS_TILES.get())
+                .add(SFBlocks.ORANGE_SEAGLASS_TILES_SLAB.get())
+                .add(SFBlocks.ORANGE_SEAGLASS_TILES_STAIRS.get())
+
+                .add(SFBlocks.PURPLE_SEAGLASS_BLOCK.get())
+                .add(SFBlocks.PURPLE_SEAGLASS_PANE.get())
+                .add(SFBlocks.PURPLE_SEAGLASS_BRICKS.get())
+                .add(SFBlocks.PURPLE_SEAGLASS_BRICKS_SLAB.get())
+                .add(SFBlocks.PURPLE_SEAGLASS_BRICKS_STAIRS.get())
+                .add(SFBlocks.PURPLE_SEAGLASS_TILES.get())
+                .add(SFBlocks.PURPLE_SEAGLASS_TILES_SLAB.get())
+                .add(SFBlocks.PURPLE_SEAGLASS_TILES_STAIRS.get())
+
+                .add(SFBlocks.RED_SEAGLASS_BLOCK.get())
+                .add(SFBlocks.RED_SEAGLASS_PANE.get())
+                .add(SFBlocks.RED_SEAGLASS_BRICKS.get())
+                .add(SFBlocks.RED_SEAGLASS_BRICKS_SLAB.get())
+                .add(SFBlocks.RED_SEAGLASS_BRICKS_STAIRS.get())
+                .add(SFBlocks.RED_SEAGLASS_TILES.get())
+                .add(SFBlocks.RED_SEAGLASS_TILES_SLAB.get())
+                .add(SFBlocks.RED_SEAGLASS_TILES_STAIRS.get())
+
+                .add(SFBlocks.WHITE_SEAGLASS_BLOCK.get())
+                .add(SFBlocks.WHITE_SEAGLASS_PANE.get())
+                .add(SFBlocks.WHITE_SEAGLASS_BRICKS.get())
+                .add(SFBlocks.WHITE_SEAGLASS_BRICKS_SLAB.get())
+                .add(SFBlocks.WHITE_SEAGLASS_BRICKS_STAIRS.get())
+                .add(SFBlocks.WHITE_SEAGLASS_TILES.get())
+                .add(SFBlocks.WHITE_SEAGLASS_TILES_SLAB.get())
+                .add(SFBlocks.WHITE_SEAGLASS_TILES_STAIRS.get())
+
+                .add(SFBlocks.YELLOW_SEAGLASS_BLOCK.get())
+                .add(SFBlocks.YELLOW_SEAGLASS_PANE.get())
+                .add(SFBlocks.YELLOW_SEAGLASS_BRICKS.get())
+                .add(SFBlocks.YELLOW_SEAGLASS_BRICKS_SLAB.get())
+                .add(SFBlocks.YELLOW_SEAGLASS_BRICKS_STAIRS.get())
+                .add(SFBlocks.YELLOW_SEAGLASS_TILES.get())
+                .add(SFBlocks.YELLOW_SEAGLASS_TILES_SLAB.get())
+                .add(SFBlocks.YELLOW_SEAGLASS_TILES_STAIRS.get())
+
+                .add(SFBlocks.PINK_SEAGLASS_BLOCK.get())
+                .add(SFBlocks.PINK_SEAGLASS_PANE.get())
+                .add(SFBlocks.PINK_SEAGLASS_BRICKS.get())
+                .add(SFBlocks.PINK_SEAGLASS_BRICKS_SLAB.get())
+                .add(SFBlocks.PINK_SEAGLASS_BRICKS_STAIRS.get())
+                .add(SFBlocks.PINK_SEAGLASS_TILES.get())
+                .add(SFBlocks.PINK_SEAGLASS_TILES_SLAB.get())
+                .add(SFBlocks.PINK_SEAGLASS_TILES_STAIRS.get())
+
+                .add(SFBlocks.LIME_SEAGLASS_BLOCK.get())
+                .add(SFBlocks.LIME_SEAGLASS_PANE.get())
+                .add(SFBlocks.LIME_SEAGLASS_BRICKS.get())
+                .add(SFBlocks.LIME_SEAGLASS_BRICKS_SLAB.get())
+                .add(SFBlocks.LIME_SEAGLASS_BRICKS_STAIRS.get())
+                .add(SFBlocks.LIME_SEAGLASS_TILES.get())
+                .add(SFBlocks.LIME_SEAGLASS_TILES_SLAB.get())
+                .add(SFBlocks.LIME_SEAGLASS_TILES_STAIRS.get())
+
+                .add(SFBlocks.SALT_BLOCK.get())
+
+                .add(SFBlocks.CLAM_SHELL_BRICKS.get())
+                .add(SFBlocks.CLAM_SHELL_BRICKS_SLAB.get())
+                .add(SFBlocks.CLAM_SHELL_BRICKS_STAIRS.get())
+                .add(SFBlocks.CLAM_SHELL_PILLAR.get())
+
+                .add(SFBlocks.HORN_SHELL_BRICKS.get())
+                .add(SFBlocks.HORN_SHELL_BRICKS_SLAB.get())
+                .add(SFBlocks.HORN_SHELL_BRICKS_STAIRS.get())
+                .add(SFBlocks.HORN_SHELL_PILLAR.get())
+
+                .add(SFBlocks.SPIKY_SHELL_BRICKS.get())
+                .add(SFBlocks.SPIKY_SHELL_BRICKS_SLAB.get())
+                .add(SFBlocks.SPIKY_SHELL_BRICKS_STAIRS.get())
+                .add(SFBlocks.SPIKY_SHELL_PILLAR.get())
+
+                .add(SFBlocks.SPIRAL_SHELL_BRICKS.get())
+                .add(SFBlocks.SPIRAL_SHELL_BRICKS_SLAB.get())
+                .add(SFBlocks.SPIRAL_SHELL_BRICKS_STAIRS.get())
+                .add(SFBlocks.SPIRAL_SHELL_PILLAR.get())
+
+                .add(SFBlocks.SWIRL_SHELL_BRICKS.get())
+                .add(SFBlocks.SWIRL_SHELL_BRICKS_SLAB.get())
+                .add(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS.get())
+                .add(SFBlocks.SWIRL_SHELL_PILLAR.get())
+
+                .add(SFBlocks.PYRAMID_SHELL_BRICKS.get())
+                .add(SFBlocks.PYRAMID_SHELL_BRICKS_SLAB.get())
+                .add(SFBlocks.PYRAMID_SHELL_BRICKS_STAIRS.get())
+                .add(SFBlocks.PYRAMID_SHELL_PILLAR.get())
+
+                .add(SFBlocks.ALGAE_COBBLESTONE.get())
+                .add(SFBlocks.ALGAE_COBBLESTONE_SLAB.get())
+                .add(SFBlocks.ALGAE_COBBLESTONE_STAIRS.get())
         ;
 
     }
