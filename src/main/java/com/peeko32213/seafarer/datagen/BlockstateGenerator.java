@@ -438,6 +438,37 @@ public class BlockstateGenerator extends BlockStateProvider {
         stairsBlock(SFBlocks.ALGAE_COBBLESTONE_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/algae_cobblestone"));
         simpleBlockItem(SFBlocks.ALGAE_COBBLESTONE_STAIRS.get(), existingModel((getName(SFBlocks.ALGAE_COBBLESTONE_STAIRS.get()))));
 
+        //CORAL
+        simpleBlock(SFBlocks.DEAD_AMBER_CORAL_BLOCK.get());
+        simpleBlockItem(SFBlocks.DEAD_AMBER_CORAL_BLOCK.get(), existingModel((getName(SFBlocks.DEAD_AMBER_CORAL_BLOCK.get()))));
+        simpleBlock(SFBlocks.AMBER_CORAL_BLOCK.get());
+        simpleBlockItem(SFBlocks.AMBER_CORAL_BLOCK.get(), existingModel((getName(SFBlocks.AMBER_CORAL_BLOCK.get()))));
+
+        simpleBlock(SFBlocks.DEAD_CERULEAN_CORAL_BLOCK.get());
+        simpleBlockItem(SFBlocks.DEAD_CERULEAN_CORAL_BLOCK.get(), existingModel((getName(SFBlocks.DEAD_CERULEAN_CORAL_BLOCK.get()))));
+        simpleBlock(SFBlocks.CERULEAN_CORAL_BLOCK.get());
+        simpleBlockItem(SFBlocks.CERULEAN_CORAL_BLOCK.get(), existingModel((getName(SFBlocks.CERULEAN_CORAL_BLOCK.get()))));
+
+        simpleBlock(SFBlocks.DEAD_MAROON_CORAL_BLOCK.get());
+        simpleBlockItem(SFBlocks.DEAD_MAROON_CORAL_BLOCK.get(), existingModel((getName(SFBlocks.DEAD_MAROON_CORAL_BLOCK.get()))));
+        simpleBlock(SFBlocks.MAROON_CORAL_BLOCK.get());
+        simpleBlockItem(SFBlocks.MAROON_CORAL_BLOCK.get(), existingModel((getName(SFBlocks.MAROON_CORAL_BLOCK.get()))));
+
+        simpleBlock(SFBlocks.DEAD_OLIVE_CORAL_BLOCK.get());
+        simpleBlockItem(SFBlocks.DEAD_OLIVE_CORAL_BLOCK.get(), existingModel((getName(SFBlocks.DEAD_OLIVE_CORAL_BLOCK.get()))));
+        simpleBlock(SFBlocks.OLIVE_CORAL_BLOCK.get());
+        simpleBlockItem(SFBlocks.OLIVE_CORAL_BLOCK.get(), existingModel((getName(SFBlocks.OLIVE_CORAL_BLOCK.get()))));
+
+        simpleBlock(SFBlocks.DEAD_TURQUOISE_CORAL_BLOCK.get());
+        simpleBlockItem(SFBlocks.DEAD_TURQUOISE_CORAL_BLOCK.get(), existingModel((getName(SFBlocks.DEAD_TURQUOISE_CORAL_BLOCK.get()))));
+        simpleBlock(SFBlocks.TURQUOISE_CORAL_BLOCK.get());
+        simpleBlockItem(SFBlocks.TURQUOISE_CORAL_BLOCK.get(), existingModel((getName(SFBlocks.TURQUOISE_CORAL_BLOCK.get()))));
+
+        simpleBlock(SFBlocks.DEAD_VERDANT_CORAL_BLOCK.get());
+        simpleBlockItem(SFBlocks.DEAD_VERDANT_CORAL_BLOCK.get(), existingModel((getName(SFBlocks.DEAD_VERDANT_CORAL_BLOCK.get()))));
+        simpleBlock(SFBlocks.VERDANT_CORAL_BLOCK.get());
+        simpleBlockItem(SFBlocks.VERDANT_CORAL_BLOCK.get(), existingModel((getName(SFBlocks.VERDANT_CORAL_BLOCK.get()))));
+
     }
 
 

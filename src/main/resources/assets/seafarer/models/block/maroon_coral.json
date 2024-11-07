@@ -1,0 +1,6 @@
+{
+	"parent": "block/cross",
+	"textures": {
+		"cross": "seafarer:block/maroon_coral"
+	}
+}

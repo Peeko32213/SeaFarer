@@ -1,0 +1,6 @@
+{
+  "parent": "block/coral_fan",
+  "textures": {
+    "fan": "seafarer:block/cerulean_coral_fan"
+  }
+}

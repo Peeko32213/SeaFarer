@@ -100,6 +100,52 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.COASTAL_WILDFLOWER.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.COASTAL_LAVENDER.get(), RenderType.cutout());
 
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_AMBER_CORAL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.AMBER_CORAL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.AMBER_CORAL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.AMBER_CORAL_WALL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_AMBER_CORAL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_AMBER_CORAL_WALL_FAN.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_CERULEAN_CORAL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.CERULEAN_CORAL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.CERULEAN_CORAL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.CERULEAN_CORAL_WALL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_CERULEAN_CORAL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_CERULEAN_CORAL_WALL_FAN.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_MAROON_CORAL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.MAROON_CORAL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.MAROON_CORAL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.MAROON_CORAL_WALL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_MAROON_CORAL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_MAROON_CORAL_WALL_FAN.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_OLIVE_CORAL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.OLIVE_CORAL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.OLIVE_CORAL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.OLIVE_CORAL_WALL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_OLIVE_CORAL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_OLIVE_CORAL_WALL_FAN.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_TURQUOISE_CORAL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.TURQUOISE_CORAL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.TURQUOISE_CORAL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.TURQUOISE_CORAL_WALL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_TURQUOISE_CORAL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_TURQUOISE_CORAL_WALL_FAN.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_VERDANT_CORAL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.VERDANT_CORAL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.VERDANT_CORAL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.VERDANT_CORAL_WALL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_VERDANT_CORAL_FAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.DEAD_VERDANT_CORAL_WALL_FAN.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.CYAN_ZOA.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.ORANGE_ZOA.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.RED_ZOA.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.PURPLE_ZOA.get(), RenderType.cutout());
     }
 
     @SubscribeEvent

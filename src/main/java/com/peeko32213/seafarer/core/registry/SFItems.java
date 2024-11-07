@@ -5,6 +5,7 @@ import com.peeko32213.seafarer.common.item.MessageInABottleItem;
 import com.peeko32213.seafarer.common.item.SFDrinkableItem;
 import com.peeko32213.seafarer.common.item.SFFishBucket;
 import com.peeko32213.seafarer.common.item.SFFood;
+import net.minecraft.core.Direction;
 import net.minecraft.tags.StructureTags;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -115,6 +116,50 @@ public class SFItems {
 
     public static final RegistryObject<Item> SWIRL_AXE = ITEMS.register("swirl_axe",
             () -> new AxeItem(SFTiers.SHELL,  6.0F, -3.2F, new Item.Properties()));
+
+    public static final RegistryObject<Item> AMBER_CORAL_FAN = ITEMS.register("amber_coral_fan",
+            () -> new StandingAndWallBlockItem(SFBlocks.AMBER_CORAL_FAN.get(), SFBlocks.AMBER_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+
+    public static final RegistryObject<Item> DEAD_AMBER_CORAL_FAN = ITEMS.register("dead_amber_coral_fan",
+            () -> new StandingAndWallBlockItem(SFBlocks.DEAD_AMBER_CORAL_FAN.get(), SFBlocks.DEAD_AMBER_CORAL_WALL_FAN.get(),
+                    new Item.Properties(), Direction.DOWN));
+
+    public static final RegistryObject<Item> CERULEAN_CORAL_FAN = ITEMS.register("cerulean_coral_fan",
+            () -> new StandingAndWallBlockItem(SFBlocks.CERULEAN_CORAL_FAN.get(), SFBlocks.CERULEAN_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+
+    public static final RegistryObject<Item> DEAD_CERULEAN_CORAL_FAN = ITEMS.register("dead_cerulean_coral_fan",
+            () -> new StandingAndWallBlockItem(SFBlocks.DEAD_CERULEAN_CORAL_FAN.get(), SFBlocks.DEAD_CERULEAN_CORAL_WALL_FAN.get(),
+                    new Item.Properties(), Direction.DOWN));
+
+    public static final RegistryObject<Item> MAROON_CORAL_FAN = ITEMS.register("maroon_coral_fan",
+            () -> new StandingAndWallBlockItem(SFBlocks.MAROON_CORAL_FAN.get(), SFBlocks.MAROON_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+
+    public static final RegistryObject<Item> DEAD_MAROON_CORAL_FAN = ITEMS.register("dead_maroon_coral_fan",
+            () -> new StandingAndWallBlockItem(SFBlocks.DEAD_MAROON_CORAL_FAN.get(), SFBlocks.DEAD_MAROON_CORAL_WALL_FAN.get(),
+                    new Item.Properties(), Direction.DOWN));
+
+    public static final RegistryObject<Item> OLIVE_CORAL_FAN = ITEMS.register("olive_coral_fan",
+            () -> new StandingAndWallBlockItem(SFBlocks.OLIVE_CORAL_FAN.get(), SFBlocks.OLIVE_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+
+    public static final RegistryObject<Item> DEAD_OLIVE_CORAL_FAN = ITEMS.register("dead_olive_coral_fan",
+            () -> new StandingAndWallBlockItem(SFBlocks.DEAD_OLIVE_CORAL_FAN.get(), SFBlocks.DEAD_OLIVE_CORAL_WALL_FAN.get(),
+                    new Item.Properties(), Direction.DOWN));
+
+    public static final RegistryObject<Item> TURQUOISE_CORAL_FAN = ITEMS.register("turquoise_coral_fan",
+            () -> new StandingAndWallBlockItem(SFBlocks.TURQUOISE_CORAL_FAN.get(), SFBlocks.TURQUOISE_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+
+    public static final RegistryObject<Item> DEAD_TURQUOISE_CORAL_FAN = ITEMS.register("dead_turquoise_coral_fan",
+            () -> new StandingAndWallBlockItem(SFBlocks.DEAD_TURQUOISE_CORAL_FAN.get(), SFBlocks.DEAD_TURQUOISE_CORAL_WALL_FAN.get(),
+                    new Item.Properties(), Direction.DOWN));
+
+    public static final RegistryObject<Item> VERDANT_CORAL_FAN = ITEMS.register("verdant_coral_fan",
+            () -> new StandingAndWallBlockItem(SFBlocks.VERDANT_CORAL_FAN.get(), SFBlocks.VERDANT_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+
+    public static final RegistryObject<Item> DEAD_VERDANT_CORAL_FAN = ITEMS.register("dead_verdant_coral_fan",
+            () -> new StandingAndWallBlockItem(SFBlocks.DEAD_VERDANT_CORAL_FAN.get(), SFBlocks.DEAD_VERDANT_CORAL_WALL_FAN.get(),
+                    new Item.Properties(), Direction.DOWN));
+
+
 
     private static RegistryObject<ForgeSpawnEggItem> registerSpawnEggs(String name, Supplier<? extends EntityType<? extends Mob>> type, int backgroundColor, int highlightColor) {
         return ITEMS.register(name, () -> new ForgeSpawnEggItem(type, backgroundColor, highlightColor,new Item.Properties()));

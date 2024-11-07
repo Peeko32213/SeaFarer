@@ -272,6 +272,52 @@ public class LanguageGenerator extends LanguageProvider {
 
         addBlock(SFBlocks.FLOATSOME, "Floatsome");
 
+        addBlock(SFBlocks.DEAD_AMBER_CORAL, "Dead Amber Coral");
+        addBlock(SFBlocks.AMBER_CORAL, "Amber Coral");
+        addBlock(SFBlocks.DEAD_AMBER_CORAL_BLOCK, "Dead Amber Block");
+        addBlock(SFBlocks.AMBER_CORAL_BLOCK, "Amber Coral Block");
+        addItem(SFItems.AMBER_CORAL_FAN, "Amber Coral Fan");
+        addItem(SFItems.DEAD_AMBER_CORAL_FAN, "Dead Amber Coral Fan");
+
+        addBlock(SFBlocks.DEAD_CERULEAN_CORAL, "Dead Cerulean Coral");
+        addBlock(SFBlocks.CERULEAN_CORAL, "Cerulean Coral");
+        addBlock(SFBlocks.DEAD_CERULEAN_CORAL_BLOCK, "Dead Cerulean Block");
+        addBlock(SFBlocks.CERULEAN_CORAL_BLOCK, "Cerulean Coral Block");
+        addItem(SFItems.CERULEAN_CORAL_FAN, "Cerulean Coral Fan");
+        addItem(SFItems.DEAD_CERULEAN_CORAL_FAN, "Dead Cerulean Coral Fan");
+
+        addBlock(SFBlocks.DEAD_MAROON_CORAL, "Dead Maroon Coral");
+        addBlock(SFBlocks.MAROON_CORAL, "Maroon Coral");
+        addBlock(SFBlocks.DEAD_MAROON_CORAL_BLOCK, "Dead Maroon Block");
+        addBlock(SFBlocks.MAROON_CORAL_BLOCK, "Maroon Coral Block");
+        addItem(SFItems.MAROON_CORAL_FAN, "Maroon Coral Fan");
+        addItem(SFItems.DEAD_MAROON_CORAL_FAN, "Dead Maroon Coral Fan");
+
+        addBlock(SFBlocks.DEAD_OLIVE_CORAL, "Dead Olive Coral");
+        addBlock(SFBlocks.OLIVE_CORAL, "Olive Coral");
+        addBlock(SFBlocks.DEAD_OLIVE_CORAL_BLOCK, "Dead Olive Block");
+        addBlock(SFBlocks.OLIVE_CORAL_BLOCK, "Olive Coral Block");
+        addItem(SFItems.OLIVE_CORAL_FAN, "Olive Coral Fan");
+        addItem(SFItems.DEAD_OLIVE_CORAL_FAN, "Dead Olive Coral Fan");
+
+        addBlock(SFBlocks.DEAD_TURQUOISE_CORAL, "Dead Turquoise Coral");
+        addBlock(SFBlocks.TURQUOISE_CORAL, "Turquoise Coral");
+        addBlock(SFBlocks.DEAD_TURQUOISE_CORAL_BLOCK, "Dead Turquoise Block");
+        addBlock(SFBlocks.TURQUOISE_CORAL_BLOCK, "Turquoise Coral Block");
+        addItem(SFItems.TURQUOISE_CORAL_FAN, "Turquoise Coral Fan");
+        addItem(SFItems.DEAD_TURQUOISE_CORAL_FAN, "Dead Turquoise Coral Fan");
+
+        addBlock(SFBlocks.DEAD_VERDANT_CORAL, "Dead Verdant Coral");
+        addBlock(SFBlocks.VERDANT_CORAL, "Verdant Coral");
+        addBlock(SFBlocks.DEAD_VERDANT_CORAL_BLOCK, "Dead Verdant Block");
+        addBlock(SFBlocks.VERDANT_CORAL_BLOCK, "Verdant Coral Block");
+        addItem(SFItems.VERDANT_CORAL_FAN, "Verdant Coral Fan");
+        addItem(SFItems.DEAD_VERDANT_CORAL_FAN, "Dead Verdant Coral Fan");
+
+        addBlock(SFBlocks.CYAN_ZOA, "Cyan Zoanthids");
+        addBlock(SFBlocks.ORANGE_ZOA, "Orange Zoanthids");
+        addBlock(SFBlocks.RED_ZOA, "Red Zoanthids");
+        addBlock(SFBlocks.PURPLE_ZOA, "Purple Zoanthid");
 
         add("seafarer.starfish_common_orange", "Common Orange");
         add("seafarer.starfish_pink", "Pink");
