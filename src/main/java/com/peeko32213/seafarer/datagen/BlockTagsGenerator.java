@@ -32,6 +32,7 @@ public class BlockTagsGenerator extends BlockTagsProvider {
                 .add(SFBlocks.JUMBLED_SHELLY_SAND.get())
                 .add(SFBlocks.SCATTERED_SHELLY_SAND.get())
                 .add(SFBlocks.MIXED_SHELLY_SAND.get())
+                .add(SFBlocks.CORAL_SAND.get())
         ;
 
         tag(SFTags.SHELLS)
@@ -72,6 +73,7 @@ public class BlockTagsGenerator extends BlockTagsProvider {
                 .add(SFBlocks.MIXED_SHELLY_SAND.get())
                 .add(SFBlocks.SCATTERED_SHELLY_SAND.get())
                 .add(SFBlocks.JUMBLED_SHELLY_SAND.get())
+                .add(SFBlocks.CORAL_SAND.get())
         ;
 
         tag(SFTags.SPRINKLED_SAND)

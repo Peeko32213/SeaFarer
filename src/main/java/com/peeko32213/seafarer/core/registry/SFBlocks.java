@@ -1667,6 +1667,14 @@ public class SFBlocks {
                     .sound(SoundType.WET_GRASS)
                     .pushReaction(PushReaction.DESTROY)));
 
+    public static final RegistryObject<Block> CORAL_SAND = register("coraline_sand",
+            () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.SAND)
+                    .instrument(NoteBlockInstrument.SNARE)
+                    .strength(0.5F)
+                    .sound(SoundType.SAND)));
+
+
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<Block> block) {
         RegistryObject<? extends Block> ret = BLOCKS.register(name, block);
         SFItems.ITEMS.register(name, () -> new BlockItem(ret.get(), new Item.Properties()));

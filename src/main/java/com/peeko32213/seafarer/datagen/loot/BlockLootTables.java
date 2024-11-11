@@ -225,6 +225,7 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(SFBlocks.PINK_SPRINKLED_SAND.get());
         dropSelf(SFBlocks.PURPLE_SPRINKLED_SAND.get());
         dropSelf(SFBlocks.RED_SPRINKLED_SAND.get());
+        dropSelf(SFBlocks.CORAL_SAND.get());
 
         createMultipleDrops(SFBlocks.MIXED_SHELLY_SAND.get(), SFBlocks.SPIRAL_SHELL.get().asItem(), SFBlocks.SWIRL_SHELL.get().asItem());
         createMultipleDrops(SFBlocks.SCATTERED_SHELLY_SAND.get(), SFBlocks.CLAM_SHELL.get().asItem(), SFBlocks.HORN_SHELL.get().asItem());

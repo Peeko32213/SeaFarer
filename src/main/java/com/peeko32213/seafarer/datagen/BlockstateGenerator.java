@@ -403,6 +403,8 @@ public class BlockstateGenerator extends BlockStateProvider {
         simpleBlock(SFBlocks.JUMBLED_SHELLY_SAND.get());
         simpleBlockItem(SFBlocks.JUMBLED_SHELLY_SAND.get(), existingModel((getName(SFBlocks.JUMBLED_SHELLY_SAND.get()))));
 
+        simpleBlock(SFBlocks.CORAL_SAND.get());
+        simpleBlockItem(SFBlocks.CORAL_SAND.get(), existingModel((getName(SFBlocks.CORAL_SAND.get()))));
 
         paneBlock(SFBlocks.BLUE_SEAGLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/blue_seaglass_block"), new ResourceLocation(SeaFarer.MODID, "block/blue_seaglass_pane_top"));
 

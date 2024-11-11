@@ -67,14 +67,8 @@ public class EntitySexyShrimp extends WaterAnimal implements GeoAnimatable {
         if (this.isEffectiveAi() && this.isInWater()) {
             this.moveRelative(this.getSpeed(), travelVector);
             this.move(MoverType.SELF, this.getDeltaMovement());
-            if(this.jumping){
-                this.setDeltaMovement(this.getDeltaMovement().scale(1.4D));
-                this.setDeltaMovement(this.getDeltaMovement().add(0.0D, 0.72D, 0.0D));
-            }else{
-                this.setDeltaMovement(this.getDeltaMovement().scale(0.4D));
-                this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.08D, 0.0D));
-            }
-
+            this.setDeltaMovement(this.getDeltaMovement().scale(0.4D));
+            this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.08D, 0.0D));
         } else {
             super.travel(travelVector);
         }

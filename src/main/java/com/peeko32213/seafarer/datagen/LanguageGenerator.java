@@ -215,6 +215,7 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.JUMBLED_SHELLY_SAND, "Jumbled Shelly Sand");
         addBlock(SFBlocks.MIXED_SHELLY_SAND, "Mixed Shelly Sand");
         addBlock(SFBlocks.SCATTERED_SHELLY_SAND, "Scattered Shelly Sand");
+        addBlock(SFBlocks.CORAL_SAND, "Coraline Sand");
 
         addEntityType(SFEntities.SUNFISH, "Sunfish");
         addItem(SFItems.SUNFISH_SPAWN_EGG, "Sunfish Spawn Egg");

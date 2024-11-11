@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-06T09:01:48.3630484	Block States: seafarer
+// 1.20.1	2024-11-10T21:39:26.5338458	Block States: seafarer
 852ae8f625a40bf1f7e1caeefc4663f334e46f8f assets/seafarer/blockstates/algae_block.json
 c45406dba9b060b30fc4157007915f4255ff4aad assets/seafarer/blockstates/algae_cobblestone.json
 6b707f40b8758800e3c3092c2f98b529fa117ccf assets/seafarer/blockstates/algae_cobblestone_slab.json
@@ -23,6 +23,7 @@ a0a72b082c8e11b357a21adec9f39d8b820e49e3 assets/seafarer/blockstates/brown_seagl
 1dcf44fbbf0ccd2cf090857269d03f0e6ed75115 assets/seafarer/blockstates/clam_shell_bricks_slab.json
 3f8cefb7a95cf3c77f0e6218c1730286550a7c2a assets/seafarer/blockstates/clam_shell_bricks_stairs.json
 37f41ee2cee86d1fdeccfe03ee992be6be8237f8 assets/seafarer/blockstates/clam_shell_pillar.json
+3cee1e40662793294fee8458ba074143c2bb1726 assets/seafarer/blockstates/coraline_sand.json
 2c96867551c16b82d3636cdb336acbc34ef66f5a assets/seafarer/blockstates/dead_amber_coral_block.json
 ba9708808658e6b0fa7a02821ffe7ca700dec8cc assets/seafarer/blockstates/dead_cerulean_coral_block.json
 e346b6f11619197f020d5bfcfa98581e3b62562e assets/seafarer/blockstates/dead_maroon_coral_block.json
@@ -175,6 +176,7 @@ c53c3641a7cbbc5c32088202ee1096adc6d41489 assets/seafarer/models/block/cerulean_c
 0c944a521a6b5c1e1b0043621ea82bbda0c0bf2d assets/seafarer/models/block/clam_shell_bricks_stairs_outer.json
 dfeb7fa9507411f40b56b1fc06b23eac2d6fb821 assets/seafarer/models/block/clam_shell_pillar.json
 e1e3f65475141b3988d20171cac024dcd6c72ab5 assets/seafarer/models/block/clam_shell_pillar_horizontal.json
+49208fe0b0df2fbcc4393a76c2bd353f9215f0da assets/seafarer/models/block/coraline_sand.json
 e420204e590c4dfe5bf09aec20f0b1fc7d5f49c3 assets/seafarer/models/block/dead_amber_coral_block.json
 aec90442978f80abd1f2d6261da6cf97781c7134 assets/seafarer/models/block/dead_cerulean_coral_block.json
 cc46c93f4abf0ff41b99dd196545359f3a10f0e2 assets/seafarer/models/block/dead_maroon_coral_block.json
@@ -398,6 +400,7 @@ e0a7f48abcefefcacfabf17e48c7fb481ea8910a assets/seafarer/models/item/clam_shell_
 399c5511b319cfee94900b0b0095b0884bbce6cf assets/seafarer/models/item/clam_shell_bricks_slab.json
 10d48eed797365fb834d26f94c2d7455fc5aef00 assets/seafarer/models/item/clam_shell_bricks_stairs.json
 8c1fef50cd9f525270d57c80a12c4a36ca55e28d assets/seafarer/models/item/clam_shell_pillar.json
+f1119b10a8c975d54a64b3f7102dad6d962851d1 assets/seafarer/models/item/coraline_sand.json
 39db2bd903dccd4d73382923803a12c07c5a1f56 assets/seafarer/models/item/dead_amber_coral_block.json
 d18cc7aa33121c8d8cb9323ab72f0f38002f032b assets/seafarer/models/item/dead_cerulean_coral_block.json
 16541b30d7ddf467eb893bd01107e198c2517deb assets/seafarer/models/item/dead_maroon_coral_block.json

@@ -1,4 +1,4 @@
-// 1.20.1	2024-09-07T20:40:06.7640848	Loot Tables
+// 1.20.1	2024-11-10T21:39:26.5408629	Loot Tables
 36713e43689ef0458ebc53f949bdd923d2162fd4 data/seafarer/loot_tables/blocks/algae_block.json
 9e3aff10eb6b4e737ad115d3c5cec5341ceb7a5f data/seafarer/loot_tables/blocks/algae_carpet.json
 d20d205c81d1f68bff1128d4c135c1fccf6bae2d data/seafarer/loot_tables/blocks/algae_cobblestone.json
@@ -36,6 +36,7 @@ f76c960b4fb0706af46f0f59d962266dbf78fbd1 data/seafarer/loot_tables/blocks/clam_s
 6bcc195e7d7cbfdd8938af814b843cce69243ac2 data/seafarer/loot_tables/blocks/clam_shell_pillar.json
 52964f0a4edb38822ce00d8e0ce634ce6d6a8d59 data/seafarer/loot_tables/blocks/coastal_lavender.json
 31447a4dfeb7f1d2c7fa70c9aa3caccc6af8cbf7 data/seafarer/loot_tables/blocks/coastal_wildflower.json
+464a98d8d4385557381e5e58f87167815bc7ac6e data/seafarer/loot_tables/blocks/coraline_sand.json
 d7dbfee6d79e644f509209cece5e125e6fa1c928 data/seafarer/loot_tables/blocks/fishing_net.json
 fa4389c0d677c84bfea50899674d811cd726d319 data/seafarer/loot_tables/blocks/gravely_sand.json
 7069bfb870182f02ca6a93ca56bbcd51489a31bb data/seafarer/loot_tables/blocks/green_seaglass_block.json
