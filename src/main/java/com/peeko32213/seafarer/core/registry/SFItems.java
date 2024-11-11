@@ -40,6 +40,18 @@ public class SFItems {
     public static final RegistryObject<ForgeSpawnEggItem> MARINE_IGUANA_SPAWN_EGG = registerSpawnEggs("marine_iguana_spawn_egg",
             SFEntities.MARINE_IGUANA , 0xb43324, 0x4fdecb);
 
+    public static final RegistryObject<ForgeSpawnEggItem> GARDEN_EEL_SPAWN_EGG = registerSpawnEggs("garden_eel_spawn_egg",
+            SFEntities.GARDEN_EEL , 0xdcdccc, 0x1c1604);
+
+    public static final RegistryObject<ForgeSpawnEggItem> MANDARIN_GOBY_SPAWN_EGG = registerSpawnEggs("mandarin_goby_spawn_egg",
+            SFEntities.MANDARIN_GOBY , 0x07186f, 0xee7c1e);
+
+    public static final RegistryObject<ForgeSpawnEggItem> SEXY_SHRIMP_SPAWN_EGG = registerSpawnEggs("sexy_shrimp_spawn_egg",
+            SFEntities.SEXY_SHRIMP , 0x380604, 0xf6eef5);
+
+    public static final RegistryObject<ForgeSpawnEggItem> FROG_FISH_SPAWN_EGG = registerSpawnEggs("frog_fish_spawn_egg",
+            SFEntities.FROG_FISH , 0xd8bebe, 0xbf3535);
+
     public static final RegistryObject<Item> RAW_SHORE_CRAB = ITEMS.register("shore_crab_leg",
             () -> new Item(new Item.Properties().food(SFFood.RAW_SHORE_CRAB)));
 

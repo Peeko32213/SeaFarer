@@ -3,10 +3,9 @@ package com.peeko32213.seafarer.client.event;
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.client.SFItemProperties;
 import com.peeko32213.seafarer.client.block.FishingNetEntityRenderer;
-import com.peeko32213.seafarer.client.model.ModelCrab;
-import com.peeko32213.seafarer.client.model.ModelHorseshoeCrab;
-import com.peeko32213.seafarer.client.model.ModelMarineIguana;
-import com.peeko32213.seafarer.client.model.ModelSunfish;
+import com.peeko32213.seafarer.client.model.*;
+import com.peeko32213.seafarer.client.render.FrogFishEntityRenderer;
+import com.peeko32213.seafarer.client.render.GardenEelRenderer;
 import com.peeko32213.seafarer.client.render.LivingEntityRenderer;
 import com.peeko32213.seafarer.core.registry.SFBlockEntities;
 import com.peeko32213.seafarer.core.registry.SFBlocks;
@@ -146,6 +145,15 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.ORANGE_ZOA.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.RED_ZOA.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.PURPLE_ZOA.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.ANTLER_GORGONIAN.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.TOWERING_GORGONIAN.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.BLUE_CHRISTMAS_TREE_WORM.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.BLACK_CHRISTMAS_TREE_WORM.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.RED_CHRISTMAS_TREE_WORM.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.YELLOW_CHRISTMAS_TREE_WORM.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.WHITE_CHRISTMAS_TREE_WORM.get(), RenderType.cutout());
     }
 
     @SubscribeEvent
@@ -155,7 +163,10 @@ public final class ClientEvents {
         event.registerEntityRenderer(SFEntities.HORSESHOE_CRAB.get(), e -> new LivingEntityRenderer<>(e, new ModelHorseshoeCrab()));
         event.registerEntityRenderer(SFEntities.MARINE_IGUANA.get(), e -> new LivingEntityRenderer<>(e, new ModelMarineIguana()));
         event.registerBlockEntityRenderer(SFBlockEntities.NET_BLOCK_ENTITY.get(), FishingNetEntityRenderer::new);
-
+        event.registerEntityRenderer(SFEntities.GARDEN_EEL.get(), GardenEelRenderer::new);
+        event.registerEntityRenderer(SFEntities.MANDARIN_GOBY.get(), e -> new LivingEntityRenderer<>(e, new ModelMandarinGoby()));
+        event.registerEntityRenderer(SFEntities.SEXY_SHRIMP.get(), e -> new LivingEntityRenderer<>(e, new ModelSexyShrimp()));
+        event.registerEntityRenderer(SFEntities.FROG_FISH.get(), e -> new FrogFishEntityRenderer<>(e, new ModelFrogFish()));
     }
 
 }

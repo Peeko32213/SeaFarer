@@ -1,10 +1,7 @@
 package com.peeko32213.seafarer.core.registry;
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.common.entity.EntityCrab;
-import com.peeko32213.seafarer.common.entity.EntityHorseshoeCrab;
-import com.peeko32213.seafarer.common.entity.EntityMarineIguana;
-import com.peeko32213.seafarer.common.entity.EntitySunfish;
+import com.peeko32213.seafarer.common.entity.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -33,4 +30,20 @@ public class SFEntities {
     public static final RegistryObject<EntityType<EntityMarineIguana>> MARINE_IGUANA = ENTITIES.register("marine_iguana",
             () -> EntityType.Builder.of(EntityMarineIguana::new, MobCategory.CREATURE).sized(0.7F, 0.5F)
                     .build(new ResourceLocation(SeaFarer.MODID, "marine_iguana").toString()));
+
+    public static final RegistryObject<EntityType<EntityGardenEel>> GARDEN_EEL = ENTITIES.register("garden_eel",
+            () -> EntityType.Builder.of(EntityGardenEel::new, MobCategory.WATER_AMBIENT).sized(0.7F, 0.5F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "garden_eel").toString()));
+
+    public static final RegistryObject<EntityType<EntityMandarinGoby>> MANDARIN_GOBY = ENTITIES.register("mandarin_goby",
+            () -> EntityType.Builder.of(EntityMandarinGoby::new, MobCategory.WATER_AMBIENT).sized(0.5F, 0.5F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "mandarin_goby").toString()));
+
+    public static final RegistryObject<EntityType<EntitySexyShrimp>> SEXY_SHRIMP = ENTITIES.register("sexy_shrimp",
+            () -> EntityType.Builder.of(EntitySexyShrimp::new, MobCategory.WATER_AMBIENT).sized(0.5F, 0.5F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "sexy_shrimp").toString()));
+
+    public static final RegistryObject<EntityType<EntityFrogfish>> FROG_FISH = ENTITIES.register("frogfish",
+            () -> EntityType.Builder.of(EntityFrogfish::new, MobCategory.WATER_AMBIENT).sized(0.5F, 0.5F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "frogfish").toString()));
 }

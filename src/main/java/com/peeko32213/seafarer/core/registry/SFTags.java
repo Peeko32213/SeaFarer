@@ -42,6 +42,8 @@ public class SFTags {
     public static final TagKey<Biome> IS_SANDY_BEACH_BIOME = registerBiomeTag("is_sandy_beach_biome");
     public static final TagKey<Biome> IS_ALGAE_BOULDER_BIOME = registerBiomeTag("is_algae_boulder_biome");
 
+    public static final TagKey<EntityType<?>> FROGFISH_TARGETS = registerEntityTag("frogfish_targets");
+
 
     private static TagKey<Item> registerItemTag(String name) {
         return TagKey.create(Registries.ITEM, new ResourceLocation(SeaFarer.MODID, name));

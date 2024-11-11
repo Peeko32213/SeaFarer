@@ -236,6 +236,18 @@ public class LanguageGenerator extends LanguageProvider {
         addItem(SFItems.RAW_MARINE_IGUANA, "Raw Marine Iguana");
         addItem(SFItems.COOKED_MARINE_IGUANA, "Cooked Marine Iguana");
 
+        addEntityType(SFEntities.GARDEN_EEL, "Garden Eel");
+        addItem(SFItems.GARDEN_EEL_SPAWN_EGG, "Garden Eel Spawn Egg");
+
+        addEntityType(SFEntities.MANDARIN_GOBY, "Mandarin Goby");
+        addItem(SFItems.MANDARIN_GOBY_SPAWN_EGG, "Mandarin Goby Spawn Egg");
+
+        addEntityType(SFEntities.SEXY_SHRIMP, "Sexy Shrimp");
+        addItem(SFItems.SEXY_SHRIMP_SPAWN_EGG, "Sexy Shrimp Spawn Egg");
+
+        addEntityType(SFEntities.FROG_FISH, "Frog Fish");
+        addItem(SFItems.FROG_FISH_SPAWN_EGG, "Frog Fish Spawn Egg");
+
         addBlock(SFBlocks.ALGAE_BLOCK, "Algae Block");
         addBlock(SFBlocks.ALGAE_CARPET, "Algae Carpet");
         addBlock(SFBlocks.ALGAE_PLANT, "Algae Growth");
@@ -318,6 +330,15 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.ORANGE_ZOA, "Orange Zoanthids");
         addBlock(SFBlocks.RED_ZOA, "Red Zoanthids");
         addBlock(SFBlocks.PURPLE_ZOA, "Purple Zoanthid");
+
+        addBlock(SFBlocks.ANTLER_GORGONIAN, "Antler Gorgonian");
+        addBlock(SFBlocks.TOWERING_GORGONIAN, "Towering Gorgonian");
+
+        addBlock(SFBlocks.BLUE_CHRISTMAS_TREE_WORM, "Blue Christmas Tree Worm");
+        addBlock(SFBlocks.BLACK_CHRISTMAS_TREE_WORM, "Black Christmas Tree Worm");
+        addBlock(SFBlocks.RED_CHRISTMAS_TREE_WORM, "Red Christmas Tree Worm");
+        addBlock(SFBlocks.YELLOW_CHRISTMAS_TREE_WORM, "Yellow Christmas Tree Worm");
+        addBlock(SFBlocks.WHITE_CHRISTMAS_TREE_WORM, "White Christmas Tree Worm");
 
         add("seafarer.starfish_common_orange", "Common Orange");
         add("seafarer.starfish_pink", "Pink");

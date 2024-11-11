@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "seafarer:block/antler_gorgonian"
+      },
+      {
+        "model": "seafarer:block/antler_gorgonian",
+        "y": 90
+      },
+      {
+        "model": "seafarer:block/antler_gorgonian",
+        "y": 180
+      },
+      {
+        "model": "seafarer:block/antler_gorgonian",
+        "y": 270
+      }
+    ]
+  }
+}

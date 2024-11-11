@@ -1,6 +1,5 @@
 package com.peeko32213.seafarer.common.entity.misc;
 
-import com.peeko32213.seafarer.common.entity.StatedAnimal;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;

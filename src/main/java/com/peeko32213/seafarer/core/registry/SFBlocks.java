@@ -1575,7 +1575,7 @@ public class SFBlocks {
                     .dropsLike(VERDANT_CORAL_FAN.get())));
 
     public static final RegistryObject<Block> CYAN_ZOA = registerBlock("cyan_zoa",() ->
-            new ZoaCoralBlock(BlockBehaviour.Properties.of()
+            new FloweryCoralBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_CYAN)
                     .noCollission()
                     .instabreak()
@@ -1583,7 +1583,7 @@ public class SFBlocks {
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> ORANGE_ZOA = registerBlock("orange_zoa",() ->
-            new ZoaCoralBlock(BlockBehaviour.Properties.of()
+            new FloweryCoralBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_ORANGE)
                     .noCollission()
                     .instabreak()
@@ -1591,7 +1591,7 @@ public class SFBlocks {
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> RED_ZOA = registerBlock("red_zoa",() ->
-            new ZoaCoralBlock(BlockBehaviour.Properties.of()
+            new FloweryCoralBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_RED)
                     .noCollission()
                     .instabreak()
@@ -1600,7 +1600,23 @@ public class SFBlocks {
 
 
     public static final RegistryObject<Block> PURPLE_ZOA = registerBlock("purple_zoa",() ->
-            new ZoaCoralBlock(BlockBehaviour.Properties.of()
+            new FloweryCoralBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_PURPLE)
+                    .noCollission()
+                    .instabreak()
+                    .sound(SoundType.WET_GRASS)
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> ANTLER_GORGONIAN = registerBlock("antler_gorgonian",() ->
+            new LargeCoralPlantBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_ORANGE)
+                    .noCollission()
+                    .instabreak()
+                    .sound(SoundType.WET_GRASS)
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> TOWERING_GORGONIAN = registerBlock("towering_gorgonian",() ->
+            new LargeCoralPlantBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_PURPLE)
                     .noCollission()
                     .instabreak()
@@ -1608,7 +1624,48 @@ public class SFBlocks {
                     .pushReaction(PushReaction.DESTROY)));
 
 
+    public static final RegistryObject<Block> BLUE_CHRISTMAS_TREE_WORM = registerBlock("blue_christmas_tree_worm",() ->
+            new FloweryCoralBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BLUE)
+                    .noCollission()
+                    .instabreak()
+                    .sound(SoundType.WET_GRASS)
+                    .pushReaction(PushReaction.DESTROY)));
 
+
+    public static final RegistryObject<Block> BLACK_CHRISTMAS_TREE_WORM = registerBlock("black_christmas_tree_worm",() ->
+            new FloweryCoralBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BLACK)
+                    .noCollission()
+                    .instabreak()
+                    .sound(SoundType.WET_GRASS)
+                    .pushReaction(PushReaction.DESTROY)));
+
+
+    public static final RegistryObject<Block> RED_CHRISTMAS_TREE_WORM = registerBlock("red_christmas_tree_worm",() ->
+            new FloweryCoralBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .noCollission()
+                    .instabreak()
+                    .sound(SoundType.WET_GRASS)
+                    .pushReaction(PushReaction.DESTROY)));
+
+
+    public static final RegistryObject<Block> YELLOW_CHRISTMAS_TREE_WORM = registerBlock("yellow_christmas_tree_worm",() ->
+            new FloweryCoralBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.TERRACOTTA_YELLOW)
+                    .noCollission()
+                    .instabreak()
+                    .sound(SoundType.WET_GRASS)
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> WHITE_CHRISTMAS_TREE_WORM = registerBlock("white_christmas_tree_worm",() ->
+            new FloweryCoralBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.TERRACOTTA_YELLOW)
+                    .noCollission()
+                    .instabreak()
+                    .sound(SoundType.WET_GRASS)
+                    .pushReaction(PushReaction.DESTROY)));
 
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<Block> block) {
         RegistryObject<? extends Block> ret = BLOCKS.register(name, block);

@@ -1,0 +1,82 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.mandarin_goby.swim": {
+			"loop": true,
+			"bones": {
+				"Body": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*-22.5)*-5", 0]
+					},
+					"position": {
+						"vector": ["math.sin(query.anim_time*180+120)*-0.5", "math.sin(query.anim_time*-22.5)*-0.5", 0]
+					}
+				},
+				"BigFin1Root": {
+					"rotation": {
+						"vector": [0, "math.cos(query.anim_time*1440)*25", "math.cos(query.anim_time*1440-90)*10"]
+					}
+				},
+				"BigFin2Root": {
+					"rotation": {
+						"vector": [0, "math.cos(query.anim_time*1440)*-25", "math.cos(query.anim_time*1440-90)*-10"]
+					}
+				},
+				"SmallFin1Root": {
+					"rotation": {
+						"vector": [0, "math.cos(query.anim_time*90)*30", 0]
+					}
+				},
+				"SmallFin2Root": {
+					"rotation": {
+						"vector": [0, "math.cos(query.anim_time*90)*-30", 0]
+					}
+				},
+				"MidTail": {
+					"rotation": {
+						"vector": [0, "math.cos(query.anim_time*360-90)*30", 0]
+					}
+				},
+				"Tail": {
+					"rotation": {
+						"vector": [0, "math.cos(query.anim_time*360-90)*15", 0]
+					}
+				}
+			}
+		},
+		"animation.mandarin_goby.idle": {
+			"loop": true,
+			"bones": {
+				"Body": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*-22.5)*-1", 0]
+					},
+					"position": {
+						"vector": [0, "math.sin(query.anim_time*-22.5)*-0.3", 0]
+					}
+				},
+				"BigFin1Root": {
+					"rotation": {
+						"vector": [0, "math.cos(query.anim_time*1440)*15", "math.cos(query.anim_time*1440-90)*5"]
+					}
+				},
+				"BigFin2Root": {
+					"rotation": {
+						"vector": [0, "math.cos(query.anim_time*1440)*-15", "math.cos(query.anim_time*1440-90)*-5"]
+					}
+				},
+				"SmallFin1Root": {
+					"rotation": {
+						"vector": [0, "math.cos(query.anim_time*90)*15", 0]
+					}
+				},
+				"Eyes": {
+					"rotation": {
+						"vector": ["math.sin(query.anim_time*-90)*-5", "math.sin(query.anim_time*-45)*-5", 0]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

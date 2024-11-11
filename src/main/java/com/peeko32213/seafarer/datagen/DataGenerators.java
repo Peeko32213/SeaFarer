@@ -33,6 +33,7 @@ public class DataGenerators {
         Consumer<BlockStateGenerator> consumer = set::add;
         CompletableFuture<HolderLookup.Provider> lookupProvider = evt.getLookupProvider();
         generator.addProvider(true,new BlockstateGenerator(packOutput, helper));
+        generator.addProvider(true,new EntityTagsGenerator(packOutput, lookupProvider, helper));
         generator.addProvider(true,new ItemModelGenerator(packOutput, helper));
         generator.addProvider(true,new LanguageGenerator(packOutput));
         generator.addProvider(evt.includeServer(), LootGenerator.create(packOutput));

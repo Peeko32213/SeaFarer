@@ -1,0 +1,35 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.garden_eel.active": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"Body": {
+					"rotation": {
+						"vector": [0, "math.cos(query.anim_time*360)*5", "math.cos(query.anim_time*180)*5"]
+					},
+					"position": {
+						"vector": [0, 0, 0]
+					}
+				},
+				"Mouth": {
+					"rotation": {
+						"vector": ["20+math.cos(query.anim_time*360)*15", 0, 0]
+					}
+				}
+			}
+		},
+		"animation.garden_eel.burrowed": {
+			"loop": true,
+			"bones": {
+				"Body": {
+					"position": {
+						"vector": [0, -15, 0]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

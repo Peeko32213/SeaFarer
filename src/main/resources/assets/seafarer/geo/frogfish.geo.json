@@ -1,0 +1,110 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "Frogfish",
+					"pivot": [-2, 2, 0]
+				},
+				{
+					"name": "FootBase1",
+					"parent": "Frogfish",
+					"pivot": [1.25, 3, 2],
+					"rotation": [0, 37.5, 0]
+				},
+				{
+					"name": "Foot1",
+					"parent": "FootBase1",
+					"pivot": [1.25, 3, 2],
+					"rotation": [0, 0, -17.5],
+					"cubes": [
+						{"origin": [1.25, 3, 1], "size": [3, 0, 1], "uv": [-1, 22]}
+					]
+				},
+				{
+					"name": "Toes1",
+					"parent": "Foot1",
+					"pivot": [4.25, 3, 2],
+					"rotation": [0, 0, 17.5],
+					"cubes": [
+						{"origin": [3.25, -1, 2], "size": [2, 0, 2], "uv": [0, 0]},
+						{"origin": [4.25, -1, 0.5], "size": [2, 0, 1], "uv": [0, 2]},
+						{"origin": [4.25, -1, 1], "size": [0, 4, 2], "uv": [10, 13]}
+					]
+				},
+				{
+					"name": "FootBase2",
+					"parent": "Frogfish",
+					"pivot": [-1.25, 3, 2],
+					"rotation": [0, -37.5, 0]
+				},
+				{
+					"name": "Foot2",
+					"parent": "FootBase2",
+					"pivot": [-1.25, 3, 2],
+					"rotation": [0, 0, 17.5],
+					"cubes": [
+						{"origin": [-4.25, 3, 1], "size": [3, 0, 1], "uv": [-1, 22], "mirror": true}
+					]
+				},
+				{
+					"name": "Toes2",
+					"parent": "Foot2",
+					"pivot": [-4.25, 3, 2],
+					"rotation": [0, 0, -17.5],
+					"cubes": [
+						{"origin": [-5.25, -1, 2], "size": [2, 0, 2], "uv": [0, 0], "mirror": true},
+						{"origin": [-6.25, -1, 0.5], "size": [2, 0, 1], "uv": [0, 2], "mirror": true},
+						{"origin": [-4.25, -1, 1], "size": [0, 4, 2], "uv": [10, 13], "mirror": true}
+					]
+				},
+				{
+					"name": "Body",
+					"parent": "Frogfish",
+					"pivot": [0, 2, 0],
+					"rotation": [-2.5, 0, 0],
+					"cubes": [
+						{"origin": [-2, 2, -1], "size": [4, 5, 7], "uv": [0, 0]},
+						{"origin": [0, 7, -1], "size": [0, 3, 8], "uv": [0, 4]},
+						{"origin": [0, 1, 5], "size": [0, 2, 2], "uv": [15, 2]},
+						{"origin": [1, 0, 1], "size": [0, 2, 2], "uv": [15, 0]},
+						{"origin": [-1, 0, 1], "size": [0, 2, 2], "uv": [15, 0], "mirror": true}
+					]
+				},
+				{
+					"name": "Mouth",
+					"parent": "Body",
+					"pivot": [0, 2, -1],
+					"cubes": [
+						{"origin": [-2, 2, -2], "size": [4, 4, 1], "uv": [0, 15]}
+					]
+				},
+				{
+					"name": "Lure",
+					"parent": "Body",
+					"pivot": [0, 7, -1],
+					"cubes": [
+						{"origin": [0, 7, -2], "size": [0, 4, 2], "uv": [14, 13]}
+					]
+				},
+				{
+					"name": "Tail",
+					"parent": "Body",
+					"pivot": [0, 4.5, 6],
+					"cubes": [
+						{"origin": [0, 3, 6], "size": [0, 3, 3], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}
