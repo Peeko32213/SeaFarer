@@ -2,9 +2,8 @@ package com.peeko32213.seafarer.common.entity;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.peeko32213.seafarer.common.entity.goal.BottomWalkerFindWaterGoal;
-import com.peeko32213.seafarer.common.entity.goal.BottomWalkerPathfinder;
-import com.peeko32213.seafarer.common.entity.goal.BottomWalkingGoal;
+import com.peeko32213.seafarer.common.entity.misc.goal.BottomWalkerFindWaterGoal;
+import com.peeko32213.seafarer.common.entity.misc.goal.BottomWalkerPathfinder;
 import com.peeko32213.seafarer.common.entity.misc.StatedWaterAnimal;
 import com.peeko32213.seafarer.common.entity.misc.state.EntityAction;
 import com.peeko32213.seafarer.common.entity.misc.state.StateHelper;
@@ -24,12 +23,12 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
@@ -42,7 +41,6 @@ import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
-import java.util.Comparator;
 import java.util.EnumSet;
 import java.util.List;
 
@@ -86,7 +84,7 @@ public class EntityFrogfish extends StatedWaterAnimal implements GeoAnimatable {
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new BottomWalkerFindWaterGoal(this));
-        this.goalSelector.addGoal(5, new BottomWalkingGoal(this, 1.0D, 10, 50));
+        this.goalSelector.addGoal(1, new RandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(2, new EntityFrogfish.EatFoodGoal(this));
@@ -107,14 +105,8 @@ public class EntityFrogfish extends StatedWaterAnimal implements GeoAnimatable {
         if (this.isEffectiveAi() && this.isInWater()) {
             this.moveRelative(this.getSpeed(), travelVector);
             this.move(MoverType.SELF, this.getDeltaMovement());
-            if(this.jumping){
-                this.setDeltaMovement(this.getDeltaMovement().scale(0.8D));
-                this.setDeltaMovement(this.getDeltaMovement().add(0.0D, 0.72D, 0.0D));
-            }else{
-                this.setDeltaMovement(this.getDeltaMovement().scale(0.4D));
-                this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.08D, 0.0D));
-            }
-
+            this.setDeltaMovement(this.getDeltaMovement().scale(0.4D));
+            this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.08D, 0.0D));
         } else {
             super.travel(travelVector);
         }

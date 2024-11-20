@@ -1,8 +1,7 @@
 package com.peeko32213.seafarer.common.entity;
 
-import com.peeko32213.seafarer.common.entity.goal.BottomSwimmingGoal;
+import com.peeko32213.seafarer.common.entity.misc.goal.BottomSwimmingGoal;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -13,11 +12,9 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.control.LookControl;
 import net.minecraft.world.entity.ai.control.MoveControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
 import net.minecraft.world.entity.ai.goal.*;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
 import net.minecraft.world.entity.animal.WaterAnimal;
@@ -35,7 +32,6 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
-import java.util.EnumSet;
 
 public class EntityMandarinGoby extends WaterAnimal implements GeoAnimatable {
     private static final EntityDataAccessor<Boolean> DATA_ID_MOVING = SynchedEntityData.defineId(EntityMandarinGoby.class, EntityDataSerializers.BOOLEAN);

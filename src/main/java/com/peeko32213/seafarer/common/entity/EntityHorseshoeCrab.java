@@ -2,7 +2,7 @@ package com.peeko32213.seafarer.common.entity;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.peeko32213.seafarer.common.entity.goal.NocturnalSleepingGoal;
+import com.peeko32213.seafarer.common.entity.misc.goal.NocturnalSleepingGoal;
 import com.peeko32213.seafarer.common.entity.misc.AbstractSleepingAnimal;
 import com.peeko32213.seafarer.common.entity.misc.state.StateHelper;
 import com.peeko32213.seafarer.common.entity.misc.state.WeightedState;

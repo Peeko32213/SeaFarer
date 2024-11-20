@@ -1,0 +1,65 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.copperband_butterfly.swim": {
+			"loop": true,
+			"animation_length": 5.625,
+			"bones": {
+				"Body": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, "math.cos(query.anim_time*180)*-4", "math.cos(query.anim_time*180)*-4"]
+						},
+						"5.625": {
+							"vector": [0, 0, 0]
+						}
+					},
+					"position": {
+						"vector": [0, "math.sin(query.anim_time*180)*-0.3", 0]
+					}
+				},
+				"TailMid": {
+					"rotation": {
+						"vector": ["math.cos(query.anim_time*720+120)*-5", "math.sin(query.anim_time*720+120)*-5", 0]
+					}
+				},
+				"Tail": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*720+120)*-15", 0]
+					}
+				},
+				"Fin1": {
+					"rotation": {
+						"vector": [22.5, "22.5+math.cos(query.anim_time*720)*30", "math.cos(query.anim_time*360)*10"]
+					}
+				},
+				"FinRoot1": {
+					"rotation": {
+						"vector": [0, 15, 0]
+					}
+				},
+				"FinRoot2": {
+					"rotation": {
+						"vector": [0, -15, 0]
+					}
+				},
+				"Fin2": {
+					"rotation": {
+						"vector": [22.5, "-22.5+math.cos(query.anim_time*720)*-30", "math.cos(query.anim_time*360)*-10"]
+					}
+				},
+				"TopFin": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*180)*-5"]
+					}
+				},
+				"BottomFin": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*180)*-5"]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

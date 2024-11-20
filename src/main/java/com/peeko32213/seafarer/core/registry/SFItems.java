@@ -52,6 +52,13 @@ public class SFItems {
     public static final RegistryObject<ForgeSpawnEggItem> FROG_FISH_SPAWN_EGG = registerSpawnEggs("frog_fish_spawn_egg",
             SFEntities.FROG_FISH , 0xd8bebe, 0xbf3535);
 
+    public static final RegistryObject<ForgeSpawnEggItem> BLUE_TANG_SPAWN_EGG = registerSpawnEggs("blue_tang_spawn_egg",
+            SFEntities.BLUE_TANG , 0x3688bf, 0x0d0b39);
+
+
+    public static final RegistryObject<ForgeSpawnEggItem> COPPERBAND_BUTTERFLY_SPAWN_EGG = registerSpawnEggs("copperband_butterfly_spawn_egg",
+            SFEntities.COPPERBAND_BUTTERFLY , 0xb15d24, 0xeae1d8);
+
     public static final RegistryObject<Item> RAW_SHORE_CRAB = ITEMS.register("shore_crab_leg",
             () -> new Item(new Item.Properties().food(SFFood.RAW_SHORE_CRAB)));
 

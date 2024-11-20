@@ -216,6 +216,53 @@ public class BlockTagsGenerator extends BlockTagsProvider {
                 .add(SFBlocks.ALGAE_COBBLESTONE_STAIRS.get())
         ;
 
+        tag(BlockTags.CORAL_BLOCKS)
+                .add(SFBlocks.AMBER_CORAL_BLOCK.get())
+                .add(SFBlocks.CERULEAN_CORAL_BLOCK.get())
+                .add(SFBlocks.MAROON_CORAL_BLOCK.get())
+                .add(SFBlocks.OLIVE_CORAL_BLOCK.get())
+                .add(SFBlocks.TURQUOISE_CORAL_BLOCK.get())
+                .add(SFBlocks.VERDANT_CORAL_BLOCK.get())
+        ;
+
+        tag(BlockTags.CORAL_PLANTS)
+                .add(SFBlocks.AMBER_CORAL.get())
+                .add(SFBlocks.CERULEAN_CORAL.get())
+                .add(SFBlocks.MAROON_CORAL.get())
+                .add(SFBlocks.OLIVE_CORAL.get())
+                .add(SFBlocks.TURQUOISE_CORAL.get())
+                .add(SFBlocks.VERDANT_CORAL.get())
+                .add(SFBlocks.CYAN_ZOA.get())
+                .add(SFBlocks.ORANGE_ZOA.get())
+                .add(SFBlocks.PURPLE_ZOA.get())
+                .add(SFBlocks.RED_ZOA.get())
+                .add(SFBlocks.ANTLER_GORGONIAN.get())
+                .add(SFBlocks.TOWERING_GORGONIAN.get())
+                .add(SFBlocks.BLUE_CHRISTMAS_TREE_WORM.get())
+                .add(SFBlocks.BLACK_CHRISTMAS_TREE_WORM.get())
+                .add(SFBlocks.RED_CHRISTMAS_TREE_WORM.get())
+                .add(SFBlocks.YELLOW_CHRISTMAS_TREE_WORM.get())
+                .add(SFBlocks.WHITE_CHRISTMAS_TREE_WORM.get())
+        ;
+
+        tag(BlockTags.CORALS)
+                .add(SFBlocks.AMBER_CORAL_FAN.get())
+                .add(SFBlocks.CERULEAN_CORAL_FAN.get())
+                .add(SFBlocks.MAROON_CORAL_FAN.get())
+                .add(SFBlocks.OLIVE_CORAL_FAN.get())
+                .add(SFBlocks.TURQUOISE_CORAL_FAN.get())
+                .add(SFBlocks.VERDANT_CORAL_FAN.get())
+        ;
+
+        tag(BlockTags.WALL_CORALS)
+                .add(SFBlocks.AMBER_CORAL_WALL_FAN.get())
+                .add(SFBlocks.CERULEAN_CORAL_WALL_FAN.get())
+                .add(SFBlocks.MAROON_CORAL_WALL_FAN.get())
+                .add(SFBlocks.OLIVE_CORAL_WALL_FAN.get())
+                .add(SFBlocks.TURQUOISE_CORAL_WALL_FAN.get())
+                .add(SFBlocks.VERDANT_CORAL_WALL_FAN.get())
+        ;
+
     }
 
 

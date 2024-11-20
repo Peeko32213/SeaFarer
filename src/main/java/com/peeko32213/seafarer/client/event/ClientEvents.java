@@ -167,6 +167,9 @@ public final class ClientEvents {
         event.registerEntityRenderer(SFEntities.MANDARIN_GOBY.get(), e -> new LivingEntityRenderer<>(e, new ModelMandarinGoby()));
         event.registerEntityRenderer(SFEntities.SEXY_SHRIMP.get(), e -> new LivingEntityRenderer<>(e, new ModelSexyShrimp()));
         event.registerEntityRenderer(SFEntities.FROG_FISH.get(), e -> new FrogFishEntityRenderer<>(e, new ModelFrogFish()));
+        event.registerEntityRenderer(SFEntities.BLUE_TANG.get(), e -> new LivingEntityRenderer<>(e, new ModelBlueTang()));
+        event.registerEntityRenderer(SFEntities.COPPERBAND_BUTTERFLY.get(), e -> new LivingEntityRenderer<>(e, new ModelCopperbandButterfly()));
+
     }
 
 }

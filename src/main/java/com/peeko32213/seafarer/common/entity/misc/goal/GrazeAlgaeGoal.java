@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.common.entity.goal;
+package com.peeko32213.seafarer.common.entity.misc.goal;
 
 import com.peeko32213.seafarer.core.registry.SFBlocks;
 import net.minecraft.core.BlockPos;

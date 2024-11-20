@@ -2,9 +2,9 @@ package com.peeko32213.seafarer.common.entity;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.peeko32213.seafarer.common.entity.goal.*;
 import com.peeko32213.seafarer.common.entity.misc.StatedAnimal;
 import com.peeko32213.seafarer.common.entity.misc.controller.WaterMoveController;
+import com.peeko32213.seafarer.common.entity.misc.goal.*;
 import com.peeko32213.seafarer.common.entity.misc.interfaces.SemiAquatic;
 import com.peeko32213.seafarer.common.entity.misc.navigator.SemiAquaticPathNavigation;
 import com.peeko32213.seafarer.common.entity.misc.state.EntityAction;

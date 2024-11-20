@@ -249,6 +249,12 @@ public class LanguageGenerator extends LanguageProvider {
         addEntityType(SFEntities.FROG_FISH, "Frog Fish");
         addItem(SFItems.FROG_FISH_SPAWN_EGG, "Frog Fish Spawn Egg");
 
+        addEntityType(SFEntities.BLUE_TANG, "Blue Tang");
+        addItem(SFItems.BLUE_TANG_SPAWN_EGG, "Blue Tang Spawn Egg");
+
+        addEntityType(SFEntities.COPPERBAND_BUTTERFLY, "Copperband Butterfly Fish");
+        addItem(SFItems.COPPERBAND_BUTTERFLY_SPAWN_EGG, "Copperband Butterfly Fish Spawn Egg");
+
         addBlock(SFBlocks.ALGAE_BLOCK, "Algae Block");
         addBlock(SFBlocks.ALGAE_CARPET, "Algae Carpet");
         addBlock(SFBlocks.ALGAE_PLANT, "Algae Growth");

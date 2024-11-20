@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.common.entity.goal;
+package com.peeko32213.seafarer.common.entity.misc.goal;
 
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;

@@ -2,7 +2,7 @@ package com.peeko32213.seafarer.common.entity;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.peeko32213.seafarer.common.entity.goal.GrazeAlgaeGoal;
+import com.peeko32213.seafarer.common.entity.misc.goal.GrazeAlgaeGoal;
 import com.peeko32213.seafarer.common.entity.misc.StatedAnimal;
 import com.peeko32213.seafarer.common.entity.misc.state.*;
 import com.peeko32213.seafarer.core.registry.SFBlocks;

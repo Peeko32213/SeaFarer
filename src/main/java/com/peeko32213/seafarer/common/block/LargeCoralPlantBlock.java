@@ -40,8 +40,15 @@ public class LargeCoralPlantBlock extends BushBlock implements BonemealableBlock
 
     @Nullable
     public BlockState getStateForPlacement(BlockPlaceContext p_154503_) {
-        FluidState fluidstate = p_154503_.getLevel().getFluidState(p_154503_.getClickedPos());
-        return fluidstate.is(FluidTags.WATER) && fluidstate.getAmount() == 8 ? super.getStateForPlacement(p_154503_) : null;
+        BlockState blockstate = super.getStateForPlacement(p_154503_);
+        if (blockstate != null) {
+            FluidState fluidstate = p_154503_.getLevel().getFluidState(p_154503_.getClickedPos().above());
+            if (fluidstate.is(FluidTags.WATER) && fluidstate.getAmount() == 8) {
+                return blockstate;
+            }
+        }
+
+        return null;
     }
 
     /**

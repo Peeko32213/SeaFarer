@@ -46,4 +46,12 @@ public class SFEntities {
     public static final RegistryObject<EntityType<EntityFrogfish>> FROG_FISH = ENTITIES.register("frogfish",
             () -> EntityType.Builder.of(EntityFrogfish::new, MobCategory.WATER_AMBIENT).sized(0.5F, 0.5F)
                     .build(new ResourceLocation(SeaFarer.MODID, "frogfish").toString()));
+
+    public static final RegistryObject<EntityType<EntityBlueTang>> BLUE_TANG = ENTITIES.register("blue_tang",
+            () -> EntityType.Builder.of(EntityBlueTang::new, MobCategory.WATER_AMBIENT).sized(0.5F, 0.5F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "blue_tang").toString()));
+
+    public static final RegistryObject<EntityType<EntityCopperbandButterfly>> COPPERBAND_BUTTERFLY = ENTITIES.register("copperband_butterfly",
+            () -> EntityType.Builder.of(EntityCopperbandButterfly::new, MobCategory.WATER_AMBIENT).sized(0.5F, 0.5F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "copperband_butterfly").toString()));
 }
