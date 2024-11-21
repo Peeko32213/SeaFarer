@@ -54,4 +54,8 @@ public class SFEntities {
     public static final RegistryObject<EntityType<EntityCopperbandButterfly>> COPPERBAND_BUTTERFLY = ENTITIES.register("copperband_butterfly",
             () -> EntityType.Builder.of(EntityCopperbandButterfly::new, MobCategory.WATER_AMBIENT).sized(0.5F, 0.5F)
                     .build(new ResourceLocation(SeaFarer.MODID, "copperband_butterfly").toString()));
+
+    public static final RegistryObject<EntityType<EntityMantisShrimp>> MANTIS_SHRIMP = ENTITIES.register("mantis_shrimp",
+            () -> EntityType.Builder.of(EntityMantisShrimp::new, MobCategory.WATER_CREATURE).sized(1.0F, 0.8F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "mantis_shrimp").toString()));
 }

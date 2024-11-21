@@ -43,6 +43,7 @@ public class SFTags {
     public static final TagKey<Biome> IS_ALGAE_BOULDER_BIOME = registerBiomeTag("is_algae_boulder_biome");
 
     public static final TagKey<EntityType<?>> FROGFISH_TARGETS = registerEntityTag("frogfish_targets");
+    public static final TagKey<EntityType<?>> MANTIS_SHRIMP_TARGETS = registerEntityTag("mantis_shrimp_targets");
 
 
     private static TagKey<Item> registerItemTag(String name) {

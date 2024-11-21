@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-19T14:51:38.8099947	Item Models: seafarer
+// 1.20.1	2024-11-20T18:31:03.4315227	Item Models: seafarer
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/blue_tang_spawn_egg.json
 8e281303ddb2abb2a0ae908ee0e45a00615a07b1 assets/seafarer/models/item/can.json
 023ad0ac08249552a1bf59309a271de130255508 assets/seafarer/models/item/cooked_horseshoe_crab.json
@@ -11,6 +11,7 @@
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/garden_eel_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/horseshoe_crab_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/mandarin_goby_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/mantis_shrimp_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/marine_iguana_spawn_egg.json
 236f6e5ad884df80b6b00f4f67d9b0980a7ed1a9 assets/seafarer/models/item/message_in_a_bottle.json
 8dadc5c747860134b208e2b5d825b41c1efee5b7 assets/seafarer/models/item/old_board.json

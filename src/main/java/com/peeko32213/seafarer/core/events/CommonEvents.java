@@ -24,6 +24,7 @@ public class CommonEvents {
         event.put(SFEntities.FROG_FISH.get(), EntityFrogfish.createAttributes().build());
         event.put(SFEntities.BLUE_TANG.get(), EntityBlueTang.createAttributes());
         event.put(SFEntities.COPPERBAND_BUTTERFLY.get(), EntityCopperbandButterfly.createAttributes());
+        event.put(SFEntities.MANTIS_SHRIMP.get(), EntityMantisShrimp.createAttributes().build());
     }
 
 }

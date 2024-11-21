@@ -32,6 +32,10 @@ public class EntityTagsGenerator extends EntityTypeTagsProvider {
                 .add(EntityType.COD)
                 .add(EntityType.SALMON)
                 .add(EntityType.TROPICAL_FISH);
+
+        tag(SFTags.MANTIS_SHRIMP_TARGETS)
+                .add(SFEntities.SEXY_SHRIMP.get())
+                .add(SFEntities.CRAB.get());
     }
 
     @Override
