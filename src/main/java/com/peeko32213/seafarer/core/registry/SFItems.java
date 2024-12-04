@@ -61,6 +61,12 @@ public class SFItems {
     public static final RegistryObject<ForgeSpawnEggItem> MANTIS_SHRIMP_SPAWN_EGG = registerSpawnEggs("mantis_shrimp_spawn_egg",
             SFEntities.MANTIS_SHRIMP , 0x176416, 0xcb3a52);
 
+    public static final RegistryObject<ForgeSpawnEggItem> MANTA_RAY_SPAWN_EGG = registerSpawnEggs("manta_ray_spawn_egg",
+            SFEntities.MANTA_RAY , 0x070708, 0x303638);
+
+    public static final RegistryObject<ForgeSpawnEggItem> PARROTFISH_SPAWN_EGG = registerSpawnEggs("parrotfish_spawn_egg",
+            SFEntities.PARROTFISH , 0x2ac9e5, 0xfbb1ea);
+
     public static final RegistryObject<Item> RAW_SHORE_CRAB = ITEMS.register("shore_crab_leg",
             () -> new Item(new Item.Properties().food(SFFood.RAW_SHORE_CRAB)));
 
@@ -180,7 +186,14 @@ public class SFItems {
             () -> new StandingAndWallBlockItem(SFBlocks.DEAD_VERDANT_CORAL_FAN.get(), SFBlocks.DEAD_VERDANT_CORAL_WALL_FAN.get(),
                     new Item.Properties(), Direction.DOWN));
 
+    public static final RegistryObject<Item> SEA_GRAPES = ITEMS.register("sea_grapes",
+            () -> new ItemNameBlockItem(SFBlocks.SEA_GRAPES_CROP.get(), new Item.Properties().food(SFFood.SALTED_COD)));
 
+    public static final RegistryObject<Item> WAKAME = ITEMS.register("wakame",
+            () -> new ItemNameBlockItem(SFBlocks.WAKAME.get(), new Item.Properties().food(SFFood.SALTED_COD)));
+
+    public static final RegistryObject<Item> SEA_URCHIN = ITEMS.register("sea_urchin",
+            () -> new ItemNameBlockItem(SFBlocks.SEA_URCHIN.get(), new Item.Properties().food(SFFood.SALTED_COD)));
 
     private static RegistryObject<ForgeSpawnEggItem> registerSpawnEggs(String name, Supplier<? extends EntityType<? extends Mob>> type, int backgroundColor, int highlightColor) {
         return ITEMS.register(name, () -> new ForgeSpawnEggItem(type, backgroundColor, highlightColor,new Item.Properties()));

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "seafarer:block/cut_coraline_sandstone",
+    "side": "seafarer:block/cut_coraline_sandstone",
+    "top": "seafarer:block/coraline_sandstone_top"
+  }
+}

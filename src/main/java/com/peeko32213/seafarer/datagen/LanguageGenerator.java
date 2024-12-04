@@ -258,6 +258,13 @@ public class LanguageGenerator extends LanguageProvider {
         addEntityType(SFEntities.MANTIS_SHRIMP, "Mantis Shrimp");
         addItem(SFItems.MANTIS_SHRIMP_SPAWN_EGG, "Mantis Shrimp Spawn Egg");
 
+        addEntityType(SFEntities.MANTA_RAY, "Manta Ray");
+        addItem(SFItems.MANTA_RAY_SPAWN_EGG, "Manta Ray Spawn Egg");
+
+        addEntityType(SFEntities.PARROTFISH, "Parrot Fish");
+        addItem(SFItems.PARROTFISH_SPAWN_EGG, "Parrot Fish Spawn Egg");
+
+
         addBlock(SFBlocks.ALGAE_BLOCK, "Algae Block");
         addBlock(SFBlocks.ALGAE_CARPET, "Algae Carpet");
         addBlock(SFBlocks.ALGAE_PLANT, "Algae Growth");
@@ -349,6 +356,30 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.RED_CHRISTMAS_TREE_WORM, "Red Christmas Tree Worm");
         addBlock(SFBlocks.YELLOW_CHRISTMAS_TREE_WORM, "Yellow Christmas Tree Worm");
         addBlock(SFBlocks.WHITE_CHRISTMAS_TREE_WORM, "White Christmas Tree Worm");
+
+        addBlock(SFBlocks.CORALINE_SANDSTONE, "Coraline Sandstone");
+        addBlock(SFBlocks.CORALINE_SANDSTONE_SLAB, "Coraline Sandstone Slab");
+        addBlock(SFBlocks.CORALINE_SANDSTONE_STAIRS, "Coraline Sandstone Stairs");
+
+        addBlock(SFBlocks.CUT_CORALINE_SANDSTONE, "Cut Coraline Sandstone");
+        addBlock(SFBlocks.CUT_CORALINE_SANDSTONE_SLAB, "Cut Coraline Sandstone Slab");
+        addBlock(SFBlocks.CUT_CORALINE_SANDSTONE_STAIRS, "Cut Coraline Sandstone Stairs");
+
+        addBlock(SFBlocks.CHISELED_CORALINE_SANDSTONE, "Chiseled Coraline Sandstone");
+
+        addBlock(SFBlocks.SMOOTH_CORALINE_SANDSTONE, "Smooth Coraline Sandstone");
+        addBlock(SFBlocks.SMOOTH_CORALINE_SANDSTONE_SLAB, "Smooth Coraline Sandstone Slab");
+        addBlock(SFBlocks.SMOOTH_CORALINE_SANDSTONE_STAIRS, "Smooth Coraline Sandstone Stairs");
+
+        addItem(SFItems.SEA_GRAPES, "Sea Grapes");
+        addBlock(SFBlocks.SEA_GRAPES_CROP, "Sea Grapes Crop");
+
+        addBlock(SFBlocks.WAKAME, "Wakame Block");
+        addBlock(SFBlocks.WAKAME_PLANT, "Wakame Plant");
+        addItem(SFItems.WAKAME, "Wakame");
+
+        addBlock(SFBlocks.SEA_URCHIN, "Sea Urchin Block");
+        addItem(SFItems.SEA_URCHIN, "Sea Urchin");
 
         add("seafarer.starfish_common_orange", "Common Orange");
         add("seafarer.starfish_pink", "Pink");

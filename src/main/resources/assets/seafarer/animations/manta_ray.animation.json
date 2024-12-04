@@ -1,0 +1,79 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.manta_ray.swim": {
+			"loop": true,
+			"bones": {
+				"Wing1": {
+					"rotation": {
+						"vector": [0, 0, "math.cos(query.anim_time*180)*-30"]
+					}
+				},
+				"WingTip1": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*180)*-30"]
+					}
+				},
+				"Wing2": {
+					"rotation": {
+						"vector": [0, 0, "math.cos(query.anim_time*180)*30"]
+					}
+				},
+				"WingTip2": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*180)*45"]
+					}
+				},
+				"Body": {
+					"rotation": {
+						"vector": ["math.cos(query.anim_time*180+120)*8", 0, 0]
+					},
+					"position": {
+						"vector": ["math.cos(query.anim_time*180+120)*-0.5", "1+math.sin(query.anim_time*180)*-5", 0]
+					}
+				},
+				"Tail": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*180)*5", 0]
+					}
+				}
+			}
+		},
+		"animation.manta_ray.beached": {
+			"loop": true,
+			"bones": {
+				"Wing1": {
+					"rotation": {
+						"vector": [0, 0, "math.cos(query.anim_time*720)*-30"]
+					}
+				},
+				"WingTip1": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*720)*-45"]
+					}
+				},
+				"Wing2": {
+					"rotation": {
+						"vector": [0, 0, "math.cos(query.anim_time*720)*30"]
+					}
+				},
+				"WingTip2": {
+					"rotation": {
+						"vector": [0, 0, "math.sin(query.anim_time*720)*45"]
+					}
+				},
+				"Body": {
+					"position": {
+						"vector": [0, "5 + math.cos(query.anim_time*720)*-5", 0]
+					}
+				},
+				"Tail": {
+					"rotation": {
+						"vector": [0, "math.sin(query.anim_time*720)*30", 0]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

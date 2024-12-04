@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "seafarer:block/coraline_sandstone_top",
+    "side": "seafarer:block/cut_coraline_sandstone"
+  }
+}

@@ -46,6 +46,9 @@ public class ItemModelGenerator extends ItemModelProvider {
         singleTex(SFItems.SALTED_TROPICAL_FISH);
         singleTex(SFItems.SALTED_STARFISH);
         singleTex(SFItems.COOKED_STARFISH);
+        singleTex(SFItems.SEA_GRAPES);
+        singleTex(SFItems.WAKAME);
+        singleTex(SFItems.SEA_URCHIN);
 
         //singleTex(SFBlocks.SEAGLASS_BOTTLE_PIPE_PINK.get().asItem());
     }

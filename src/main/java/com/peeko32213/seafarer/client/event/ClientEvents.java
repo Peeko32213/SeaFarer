@@ -7,6 +7,7 @@ import com.peeko32213.seafarer.client.model.*;
 import com.peeko32213.seafarer.client.render.FrogFishEntityRenderer;
 import com.peeko32213.seafarer.client.render.GardenEelRenderer;
 import com.peeko32213.seafarer.client.render.LivingEntityRenderer;
+import com.peeko32213.seafarer.client.render.MantaRayEntityRenderer;
 import com.peeko32213.seafarer.core.registry.SFBlockEntities;
 import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFEntities;
@@ -154,6 +155,13 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.RED_CHRISTMAS_TREE_WORM.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.YELLOW_CHRISTMAS_TREE_WORM.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.WHITE_CHRISTMAS_TREE_WORM.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.SEA_GRAPES_CROP.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.WAKAME.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.WAKAME_PLANT.get(), RenderType.cutout());
+
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.SEA_URCHIN.get(), RenderType.cutout());
+
     }
 
     @SubscribeEvent
@@ -170,6 +178,8 @@ public final class ClientEvents {
         event.registerEntityRenderer(SFEntities.BLUE_TANG.get(), e -> new LivingEntityRenderer<>(e, new ModelBlueTang()));
         event.registerEntityRenderer(SFEntities.COPPERBAND_BUTTERFLY.get(), e -> new LivingEntityRenderer<>(e, new ModelCopperbandButterfly()));
         event.registerEntityRenderer(SFEntities.MANTIS_SHRIMP.get(), e -> new LivingEntityRenderer<>(e, new ModelMantisShrimp()));
+        event.registerEntityRenderer(SFEntities.MANTA_RAY.get(), e -> new MantaRayEntityRenderer<>(e, new ModelMantaRay()));
+        event.registerEntityRenderer(SFEntities.PARROTFISH.get(), e -> new LivingEntityRenderer<>(e, new ModelParrotfish()));
 
     }
 

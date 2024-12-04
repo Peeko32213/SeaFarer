@@ -71,7 +71,8 @@ public class EntitySunfish extends WaterAnimal implements GeoAnimatable {
             if (this.getTarget() == null) {
                 this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.005D, 0.0D));
             }
-        } else {
+        }
+        else {
             super.travel(travelVector);
         }
 

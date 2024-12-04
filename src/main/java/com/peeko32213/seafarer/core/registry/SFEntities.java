@@ -58,4 +58,13 @@ public class SFEntities {
     public static final RegistryObject<EntityType<EntityMantisShrimp>> MANTIS_SHRIMP = ENTITIES.register("mantis_shrimp",
             () -> EntityType.Builder.of(EntityMantisShrimp::new, MobCategory.WATER_CREATURE).sized(1.0F, 0.8F)
                     .build(new ResourceLocation(SeaFarer.MODID, "mantis_shrimp").toString()));
+
+    public static final RegistryObject<EntityType<EntityMantaRay>> MANTA_RAY = ENTITIES.register("manta_ray",
+            () -> EntityType.Builder.of(EntityMantaRay::new, MobCategory.WATER_CREATURE).sized(5.5F, 1.0F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "manta_ray").toString()));
+
+    public static final RegistryObject<EntityType<EntityParrotfish>> PARROTFISH = ENTITIES.register("parrotfish",
+            () -> EntityType.Builder.of(EntityParrotfish::new, MobCategory.WATER_AMBIENT).sized(0.5F, 0.5F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "parrotfish").toString()));
+
 }

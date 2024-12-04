@@ -1674,6 +1674,74 @@ public class SFBlocks {
                     .strength(0.5F)
                     .sound(SoundType.SAND)));
 
+    public static final RegistryObject<Block> CORALINE_SANDSTONE = register("coraline_sandstone",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.SANDSTONE)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<SlabBlock> CORALINE_SANDSTONE_SLAB = registerBlock("coraline_sandstone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties
+                    .copy(CORALINE_SANDSTONE.get())));
+
+    public static final RegistryObject<StairBlock> CORALINE_SANDSTONE_STAIRS = registerBlock("coraline_sandstone_stairs",
+            () -> new StairBlock(() -> CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties
+                    .copy(CORALINE_SANDSTONE.get())));
+
+    public static final RegistryObject<Block> CUT_CORALINE_SANDSTONE = register("cut_coraline_sandstone",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.SANDSTONE)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<SlabBlock> CUT_CORALINE_SANDSTONE_SLAB = registerBlock("cut_coraline_sandstone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties
+                    .copy(CUT_CORALINE_SANDSTONE.get())));
+
+    public static final RegistryObject<StairBlock> CUT_CORALINE_SANDSTONE_STAIRS = registerBlock("cut_coraline_sandstone_stairs",
+            () -> new StairBlock(() -> CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties
+                    .copy(CUT_CORALINE_SANDSTONE.get())));
+
+    public static final RegistryObject<Block> CHISELED_CORALINE_SANDSTONE = register("chiseled_coraline_sandstone",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.SANDSTONE)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<Block> SMOOTH_CORALINE_SANDSTONE = register("smooth_coraline_sandstone",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.SANDSTONE)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
+
+    public static final RegistryObject<SlabBlock> SMOOTH_CORALINE_SANDSTONE_SLAB = registerBlock("smooth_coraline_sandstone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties
+                    .copy(SMOOTH_CORALINE_SANDSTONE.get())));
+
+    public static final RegistryObject<StairBlock> SMOOTH_CORALINE_SANDSTONE_STAIRS = registerBlock("smooth_coraline_sandstone_stairs",
+            () -> new StairBlock(() -> CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties
+                    .copy(SMOOTH_CORALINE_SANDSTONE.get())));
+
+    public static final RegistryObject<Block> SEA_GRAPES_CROP = BLOCKS.register("sea_grapes_crop",
+            () -> new SeaGrapesCropBlock(Block.Properties.copy(Blocks.CARROTS).strength(0.2F)));
+
+
+    public static final RegistryObject<KelpBlock> WAKAME = BLOCKS.register("wakame_block",
+            () -> new WakameBlock(BlockBehaviour.Properties.copy(Blocks.KELP)));
+
+    public static final RegistryObject<KelpPlantBlock> WAKAME_PLANT = BLOCKS.register("wakame_plant",
+            () -> new WakamePlantBlock(BlockBehaviour.Properties.copy(Blocks.KELP_PLANT)));
+
+    public static final RegistryObject<Block> SEA_URCHIN = register("sea_urchin_block",
+            () -> new SeaUrchinBlock(BlockBehaviour.Properties
+                    .copy(Blocks.BRAIN_CORAL)
+                    .strength(3.0F, 10.0F)
+                    .requiresCorrectToolForDrops()
+            ));
 
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<Block> block) {
         RegistryObject<? extends Block> ret = BLOCKS.register(name, block);

@@ -471,6 +471,24 @@ public class BlockstateGenerator extends BlockStateProvider {
         simpleBlock(SFBlocks.VERDANT_CORAL_BLOCK.get());
         simpleBlockItem(SFBlocks.VERDANT_CORAL_BLOCK.get(), existingModel((getName(SFBlocks.VERDANT_CORAL_BLOCK.get()))));
 
+        simpleBlock(SFBlocks.SMOOTH_CORALINE_SANDSTONE.get());
+        simpleBlockItem(SFBlocks.CUT_CORALINE_SANDSTONE.get(), existingModel((getName(SFBlocks.CUT_CORALINE_SANDSTONE.get()))));
+        simpleBlockItem(SFBlocks.CHISELED_CORALINE_SANDSTONE.get(), existingModel((getName(SFBlocks.CHISELED_CORALINE_SANDSTONE.get()))));
+        simpleBlockItem(SFBlocks.SMOOTH_CORALINE_SANDSTONE.get(), existingModel((getName(SFBlocks.SMOOTH_CORALINE_SANDSTONE.get()))));
+        simpleBlockItem(SFBlocks.CORALINE_SANDSTONE.get(), existingModel((getName(SFBlocks.CORALINE_SANDSTONE.get()))));
+
+        simpleBlockItem(SFBlocks.CORALINE_SANDSTONE_SLAB.get(), existingModel((getName(SFBlocks.CORALINE_SANDSTONE_SLAB.get()))));
+
+        simpleBlockItem(SFBlocks.CORALINE_SANDSTONE_STAIRS.get(), existingModel((getName(SFBlocks.CORALINE_SANDSTONE_STAIRS.get()))));
+
+        simpleBlockItem(SFBlocks.CUT_CORALINE_SANDSTONE_SLAB.get(), existingModel((getName(SFBlocks.CUT_CORALINE_SANDSTONE_SLAB.get()))));
+
+        simpleBlockItem(SFBlocks.CUT_CORALINE_SANDSTONE_STAIRS.get(), existingModel((getName(SFBlocks.CUT_CORALINE_SANDSTONE_STAIRS.get()))));
+
+        simpleBlockItem(SFBlocks.SMOOTH_CORALINE_SANDSTONE_SLAB.get(), existingModel((getName(SFBlocks.SMOOTH_CORALINE_SANDSTONE_SLAB.get()))));
+
+        simpleBlockItem(SFBlocks.SMOOTH_CORALINE_SANDSTONE_STAIRS.get(), existingModel((getName(SFBlocks.SMOOTH_CORALINE_SANDSTONE_STAIRS.get()))));
+
     }
 
 
