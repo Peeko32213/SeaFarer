@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/crop",
+  "parent": "minecraft:block/cross",
   "textures": {
-    "crop": "seafarer:block/sea_thrift"
+    "cross": "seafarer:block/sea_thrift"
   }
 }
