@@ -555,7 +555,6 @@ public class SFBlocks {
                     .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> BROWN_SEAGLASS_PEBBLES = register("brown_seaglass_pebbles",
@@ -565,7 +564,6 @@ public class SFBlocks {
                     .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> GREEN_SEAGLASS_PEBBLES = register("green_seaglass_pebbles",
@@ -575,7 +573,6 @@ public class SFBlocks {
                     .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> ORANGE_SEAGLASS_PEBBLES = register("orange_seaglass_pebbles",
@@ -585,7 +582,6 @@ public class SFBlocks {
                     .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> PURPLE_SEAGLASS_PEBBLES = register("purple_seaglass_pebbles",
@@ -595,7 +591,6 @@ public class SFBlocks {
                     .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
 
@@ -606,7 +601,6 @@ public class SFBlocks {
                     .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> WHITE_SEAGLASS_PEBBLES = register("white_seaglass_pebbles",
@@ -616,7 +610,6 @@ public class SFBlocks {
                     .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> YELLOW_SEAGLASS_PEBBLES = register("yellow_seaglass_pebbles",
@@ -626,7 +619,6 @@ public class SFBlocks {
                     .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> PINK_SEAGLASS_PEBBLES = register("pink_seaglass_pebbles",
@@ -636,7 +628,6 @@ public class SFBlocks {
                     .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
 
@@ -647,7 +638,6 @@ public class SFBlocks {
                     .sound(SoundType.AMETHYST)
                     .noCollission()
                     .noOcclusion()
-                    .replaceable()
                     .pushReaction(PushReaction.DESTROY)));
 
 
@@ -830,11 +820,12 @@ public class SFBlocks {
 
     public static final RegistryObject<Block> SEA_THRIFT = register("sea_thrift", () ->
             new SFCropLikePlantBlock(BlockBehaviour.Properties
-                    .of().mapColor(MapColor.COLOR_PURPLE)
-                    .replaceable().noCollission()
+                    .of().mapColor(MapColor.COLOR_PINK)
+                    .noCollission()
                     .instabreak()
                     .sound(SoundType.GRASS)
                     .ignitedByLava()
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)));
 
 
@@ -847,7 +838,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> SEA_HOLLY = register("sea_holly", () ->
             new SFSandPlantBlock(BlockBehaviour.Properties
                     .of().mapColor(MapColor.TERRACOTTA_YELLOW)
-                    .replaceable().noCollission()
+                    .noCollission()
                     .instabreak()
                     .sound(SoundType.GRASS)
                     .ignitedByLava()
@@ -862,7 +853,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> COASTAL_LAVENDER = register("coastal_lavender", () ->
             new SFSandPlantBlock(BlockBehaviour.Properties
                     .of().mapColor(MapColor.COLOR_PURPLE)
-                    .replaceable().noCollission()
+                    .noCollission()
                     .instabreak()
                     .sound(SoundType.GRASS)
                     .ignitedByLava()
@@ -877,7 +868,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> COASTAL_WILDFLOWER = register("coastal_wildflower", () ->
             new SFSandPlantBlock(BlockBehaviour.Properties
                     .of().mapColor(MapColor.TERRACOTTA_YELLOW)
-                    .replaceable().noCollission()
+                    .noCollission()
                     .instabreak()
                     .sound(SoundType.GRASS)
                     .ignitedByLava()
@@ -1630,6 +1621,7 @@ public class SFBlocks {
                     .noCollission()
                     .instabreak()
                     .sound(SoundType.WET_GRASS)
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)));
 
 
@@ -1639,6 +1631,7 @@ public class SFBlocks {
                     .noCollission()
                     .instabreak()
                     .sound(SoundType.WET_GRASS)
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)));
 
 
@@ -1648,6 +1641,7 @@ public class SFBlocks {
                     .noCollission()
                     .instabreak()
                     .sound(SoundType.WET_GRASS)
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)));
 
 
@@ -1665,6 +1659,7 @@ public class SFBlocks {
                     .noCollission()
                     .instabreak()
                     .sound(SoundType.WET_GRASS)
+                    .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> CORAL_SAND = register("coraline_sand",
