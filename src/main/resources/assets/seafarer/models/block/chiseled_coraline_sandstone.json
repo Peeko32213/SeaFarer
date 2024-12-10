@@ -2,6 +2,8 @@
   "parent": "minecraft:block/cube_column",
   "textures": {
     "end": "seafarer:block/coraline_sandstone_top",
-    "side": "seafarer:block/chiseled_coraline_sandstone"
+    "side": "seafarer:block/chiseled_coraline_sandstone",
+    "top": "seafarer:block/coraline_sandstone_top"
+
   }
 }
