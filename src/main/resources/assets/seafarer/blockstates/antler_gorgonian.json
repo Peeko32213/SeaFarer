@@ -1,21 +1,28 @@
 {
   "variants": {
-    "": [
-      {
-        "model": "seafarer:block/antler_gorgonian"
-      },
-      {
-        "model": "seafarer:block/antler_gorgonian",
-        "y": 90
-      },
-      {
-        "model": "seafarer:block/antler_gorgonian",
-        "y": 180
-      },
-      {
-        "model": "seafarer:block/antler_gorgonian",
-        "y": 270
-      }
-    ]
+    "facing=east": {
+      "model": "seafarer:block/antler_gorgonian",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "seafarer:block/antler_gorgonian"
+    },
+    "facing=south": {
+      "model": "seafarer:block/antler_gorgonian",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "seafarer:block/antler_gorgonian",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "seafarer:block/antler_gorgonian",
+      "y": 270
+    },
+    "facing=down": {
+      "model": "seafarer:block/antler_gorgonian",
+      "y": 270
+    }
   }
 }
+
