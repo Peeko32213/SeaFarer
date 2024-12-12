@@ -2,6 +2,8 @@ package com.peeko32213.seafarer.common.entity;
 
 import com.peeko32213.seafarer.common.entity.misc.goal.MantaJumpGoal;
 import com.peeko32213.seafarer.common.entity.misc.navigator.AquaticJumperNavigation;
+import com.peeko32213.seafarer.common.entity.navigation.ExtendedWaterBoundPathNavigation;
+import com.peeko32213.seafarer.core.registry.SFEntities;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
@@ -60,7 +62,7 @@ public class EntityMantaRay extends WaterAnimal implements GeoAnimatable {
     }
 
     protected PathNavigation createNavigation(Level worldIn) {
-        return new WaterBoundPathNavigation(this, worldIn);
+        return new ExtendedWaterBoundPathNavigation(this, worldIn, SFEntities.MANTA_RAY.get());
     }
 
 
