@@ -67,4 +67,23 @@ public class SFEntities {
             () -> EntityType.Builder.of(EntityParrotfish::new, MobCategory.WATER_AMBIENT).sized(0.5F, 0.5F)
                     .build(new ResourceLocation(SeaFarer.MODID, "parrotfish").toString()));
 
+    public static final RegistryObject<EntityType<EntityFileFish>> FILEFISH = ENTITIES.register("filefish",
+            () -> EntityType.Builder.of(EntityFileFish::new, MobCategory.WATER_AMBIENT).sized(0.3F, 0.3F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "filefish").toString()));
+
+    public static final RegistryObject<EntityType<EntityLeafyScorpionFish>> LEAFY_SCORPIONFISH = ENTITIES.register("leafy_scorpionfish",
+            () -> EntityType.Builder.of(EntityLeafyScorpionFish::new, MobCategory.WATER_AMBIENT).sized(0.5F, 0.5F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "leafy_scorpionfish").toString()));
+
+    public static final RegistryObject<EntityType<EntityZebraShark>> ZEBRA_SHARK = ENTITIES.register("zebrashark",
+            () -> EntityType.Builder.of(EntityZebraShark::new, MobCategory.WATER_AMBIENT).sized(3.0F, 1.3F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "zebrashark").toString()));
+
+    public static final RegistryObject<EntityType<EntityChimaera>> CHIMAERA = ENTITIES.register("chimaera",
+            () -> EntityType.Builder.of(EntityChimaera::new, MobCategory.WATER_AMBIENT).sized(2.0F, 1.0F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "chimaera").toString()));
+
+    public static final RegistryObject<EntityType<EntitySpiderCrab>> SPIDER_CRAB = ENTITIES.register("spider_crab",
+            () -> EntityType.Builder.of(EntitySpiderCrab::new, MobCategory.WATER_AMBIENT).sized(3.0F, 2.0F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "spider_crab").toString()));
 }

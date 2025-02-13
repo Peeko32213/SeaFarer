@@ -27,6 +27,12 @@ public class CommonEvents {
         event.put(SFEntities.MANTIS_SHRIMP.get(), EntityMantisShrimp.createAttributes().build());
         event.put(SFEntities.MANTA_RAY.get(), EntityMantaRay.createAttributes().build());
         event.put(SFEntities.PARROTFISH.get(), EntityParrotfish.createAttributes());
+        event.put(SFEntities.FILEFISH.get(), EntityFileFish.createAttributes().build());
+        event.put(SFEntities.LEAFY_SCORPIONFISH.get(), EntityLeafyScorpionFish.createAttributes().build());
+        event.put(SFEntities.ZEBRA_SHARK.get(), EntityFileFish.createAttributes().build());
+        event.put(SFEntities.CHIMAERA.get(), EntityChimaera.createAttributes().build());
+        event.put(SFEntities.SPIDER_CRAB.get(), EntitySpiderCrab.createAttributes().build());
+
     }
 
 }

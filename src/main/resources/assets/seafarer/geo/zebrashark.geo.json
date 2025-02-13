@@ -1,0 +1,98 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.zebrashark",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 8,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "Body",
+					"parent": "root",
+					"pivot": [0, 11, 0],
+					"cubes": [
+						{"origin": [-10.5, 0, -16], "size": [21, 23, 27], "uv": [0, 0]},
+						{"origin": [-5.5, 0, -25], "size": [11, 11, 9], "uv": [38, 50]},
+						{"origin": [-0.5, 17, 11], "size": [1, 6, 8], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "BackBody",
+					"parent": "Body",
+					"pivot": [0, 11, 11],
+					"cubes": [
+						{"origin": [-4, 4, 11], "size": [8, 8, 10], "uv": [68, 60]},
+						{"origin": [-0.5, 12, 12], "size": [1, 4, 5], "uv": [20, 50]},
+						{"origin": [-0.5, 1, 13], "size": [1, 4, 6], "uv": [12, 8]}
+					]
+				},
+				{
+					"name": "Tail",
+					"parent": "BackBody",
+					"pivot": [0.5, 10, 21]
+				},
+				{
+					"name": "TailPartTop",
+					"parent": "Tail",
+					"pivot": [0.5, 7, 21],
+					"cubes": [
+						{"origin": [-1, 7, 21], "size": [2, 7, 34], "uv": [0, 50]}
+					]
+				},
+				{
+					"name": "TailPartBottom",
+					"parent": "Tail",
+					"pivot": [0.5, 8, 21],
+					"cubes": [
+						{"origin": [-0.5, 3, 21], "size": [1, 5, 8], "uv": [0, 14]}
+					]
+				},
+				{
+					"name": "FrontFin1",
+					"parent": "Body",
+					"pivot": [10.5, 2, -10],
+					"rotation": [0, 0, 42.5],
+					"cubes": [
+						{"origin": [10.5, 1, -10], "size": [12, 1, 7], "uv": [69, 0]}
+					]
+				},
+				{
+					"name": "FrontFin2",
+					"parent": "Body",
+					"pivot": [-10.5, 2, -10],
+					"rotation": [0, 0, -42.5],
+					"cubes": [
+						{"origin": [-22.5, 1, -10], "size": [12, 1, 7], "uv": [69, 0], "mirror": true}
+					]
+				},
+				{
+					"name": "BackFin1",
+					"parent": "Body",
+					"pivot": [10, 2, 7],
+					"rotation": [0, 0, 30],
+					"cubes": [
+						{"origin": [9.5, 1, 6], "size": [5, 1, 10], "uv": [0, 50]}
+					]
+				},
+				{
+					"name": "BackFin2",
+					"parent": "Body",
+					"pivot": [-10, 2, 7],
+					"rotation": [0, 0, -30],
+					"cubes": [
+						{"origin": [-14.5, 1, 6], "size": [5, 1, 10], "uv": [0, 50], "mirror": true}
+					]
+				}
+			]
+		}
+	]
+}

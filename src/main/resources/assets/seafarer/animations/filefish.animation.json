@@ -1,0 +1,99 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.filefish.swim": {
+			"loop": true,
+			"bones": {
+				"Root": {
+					"position": {
+						"vector": [0, 2.5, "2.5+math.sin(query.anim_time*360)*-0.1"]
+					}
+				},
+				"TopFin": {
+					"rotation": {
+						"vector": [0, 0, "Math.sin((query.anim_time-0.2)*720)*15"]
+					}
+				},
+				"BottomFin": {
+					"rotation": {
+						"vector": [0, 0, "Math.sin((query.anim_time-0.2)*720)*-15"]
+					}
+				},
+				"Fin1": {
+					"rotation": {
+						"vector": [17.5, "22.5+math.cos(query.anim_time*720)*30", "math.cos(query.anim_time*360)*10"]
+					}
+				},
+				"Fin2": {
+					"rotation": {
+						"vector": [17.5, "-22.5+math.cos(query.anim_time*720)*-30", "math.cos(query.anim_time*360)*-10"]
+					}
+				},
+				"FinRoot2": {
+					"rotation": {
+						"vector": [0, -20, 0]
+					}
+				},
+				"FinRoot1": {
+					"rotation": {
+						"vector": [0, 20, 0]
+					}
+				},
+				"TopThing1": {
+					"rotation": {
+						"vector": [-20, 0, 0]
+					}
+				},
+				"BottomThing1": {
+					"rotation": {
+						"vector": [20, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.filefish.idle": {
+			"loop": true,
+			"bones": {
+				"Root": {
+					"rotation": {
+						"vector": [25, "((query.anim_time - 0.1) * 11.25) * 1", 0]
+					},
+					"position": {
+						"vector": [0, "1+math.sin(query.anim_time*360)*-0.1", 0]
+					}
+				},
+				"TopFin": {
+					"rotation": {
+						"vector": [0, 0, "Math.sin((query.anim_time-0.2)*360)*15"]
+					}
+				},
+				"BottomFin": {
+					"rotation": {
+						"vector": [0, 0, "Math.sin((query.anim_time-0.2)*720)*-15"]
+					}
+				},
+				"FinRoot1": {
+					"rotation": {
+						"vector": [0, 20, 0]
+					}
+				},
+				"Fin1": {
+					"rotation": {
+						"vector": [17.5, "22.5+math.cos(query.anim_time*720)*30", "math.cos(query.anim_time*360)*10"]
+					}
+				},
+				"FinRoot2": {
+					"rotation": {
+						"vector": [0, -20, 0]
+					}
+				},
+				"Fin2": {
+					"rotation": {
+						"vector": [17.5, "-22.5+math.cos(query.anim_time*720)*-30", "math.cos(query.anim_time*360)*-10"]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

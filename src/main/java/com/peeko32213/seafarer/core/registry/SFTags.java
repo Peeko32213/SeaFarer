@@ -44,6 +44,7 @@ public class SFTags {
 
     public static final TagKey<EntityType<?>> FROGFISH_TARGETS = registerEntityTag("frogfish_targets");
     public static final TagKey<EntityType<?>> MANTIS_SHRIMP_TARGETS = registerEntityTag("mantis_shrimp_targets");
+    public static final TagKey<EntityType<?>> SPIDER_CRAB_TARGETS = registerEntityTag("spider_crab_targets");
 
 
     private static TagKey<Item> registerItemTag(String name) {

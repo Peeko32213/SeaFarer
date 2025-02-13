@@ -180,7 +180,11 @@ public final class ClientEvents {
         event.registerEntityRenderer(SFEntities.MANTIS_SHRIMP.get(), e -> new LivingEntityRenderer<>(e, new ModelMantisShrimp()));
         event.registerEntityRenderer(SFEntities.MANTA_RAY.get(), e -> new MantaRayEntityRenderer<>(e, new ModelMantaRay()));
         event.registerEntityRenderer(SFEntities.PARROTFISH.get(), e -> new LivingEntityRenderer<>(e, new ModelParrotfish()));
-
+        event.registerEntityRenderer(SFEntities.FILEFISH.get(), e -> new LivingEntityRenderer<>(e, new ModelFilefish()));
+        event.registerEntityRenderer(SFEntities.LEAFY_SCORPIONFISH.get(), e -> new LivingEntityRenderer<>(e, new ModelLeafyScorpionfish()));
+        event.registerEntityRenderer(SFEntities.ZEBRA_SHARK.get(), e -> new LivingEntityRenderer<>(e, new ModelZebraShark()));
+        event.registerEntityRenderer(SFEntities.CHIMAERA.get(), e -> new LivingEntityRenderer<>(e, new ModelChimaera()));
+        event.registerEntityRenderer(SFEntities.SPIDER_CRAB.get(), e -> new LivingEntityRenderer<>(e, new ModelSpiderCrab()));
     }
 
 }

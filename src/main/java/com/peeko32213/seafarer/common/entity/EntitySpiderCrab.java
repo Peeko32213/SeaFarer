@@ -24,6 +24,7 @@ import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.util.DefaultRandomPos;
 import net.minecraft.world.entity.animal.WaterAnimal;
+import net.minecraft.world.entity.monster.Ravager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
@@ -40,45 +41,28 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 import java.util.EnumSet;
 import java.util.List;
 
-public class EntityMantisShrimp extends StatedWaterAnimal implements GeoAnimatable, GeoEntity {
+public class EntitySpiderCrab extends StatedWaterAnimal implements GeoAnimatable, GeoEntity {
 
-    private static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.mantis_shrimp.idle");
-    private static final RawAnimation IDLE_SHAKE = RawAnimation.begin().thenLoop("animation.mantis_shrimp.idle_shake");
-    private static final RawAnimation IDLE_MOVE_EYES = RawAnimation.begin().thenLoop("animation.mantis_shrimp.idle_move_eyes");
-    private static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.mantis_shrimp.walk");
-    private static final RawAnimation SWIM = RawAnimation.begin().thenLoop("animation.mantis_shrimp.swim");
-    private static final RawAnimation RUN = RawAnimation.begin().thenLoop("animation.mantis_shrimp.run");
-    private static final RawAnimation BOOST = RawAnimation.begin().thenLoop("animation.mantis_shrimp.boost");
-    private static final RawAnimation PUNCH = RawAnimation.begin().thenPlay("animation.mantis_shrimp.punch");
+    private static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.spider_crab.idle1");
+    private static final RawAnimation GRAZING = RawAnimation.begin().thenLoop("animation.spider_crab.grazing");
+    private static final RawAnimation WALK = RawAnimation.begin().thenLoop("animation.spider_crab.walk");
+    private static final RawAnimation PUNCH = RawAnimation.begin().thenPlay("animation.spider_crab.attack");
 
-    private static final EntityDataAccessor<Boolean> MANTIS_IDLE_SHAKE = SynchedEntityData.defineId(EntityMantisShrimp.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> MANTIS_IDLE_MOVE_EYES = SynchedEntityData.defineId(EntityMantisShrimp.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> SPIDER_CRAB_GRAZE = SynchedEntityData.defineId(EntitySpiderCrab.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityAction SPIDER_CRAB_GRAZING_ACTION = new EntityAction(0, (e) -> { return; } ,1);
 
-    private static final EntityAction MANTIS_IDLE_SHAKE_ACTION = new EntityAction(0, (e) -> { return; } ,1);
-
-    private static final StateHelper MANTIS_IDLE_SHAKE_STATE =
-            StateHelper.Builder.state(MANTIS_IDLE_SHAKE, "idle_shake")
+    private static final StateHelper SPIDER_CRAB_SHAKE_STATE =
+            StateHelper.Builder.state(SPIDER_CRAB_GRAZE, "grazing")
                     .playTime(60)
                     .stopTime(100)
                     .affectsAI(true)
                     .affectedFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK))
-                    .entityAction(MANTIS_IDLE_SHAKE_ACTION)
-                    .build();
-
-    private static final EntityAction MANTIS_IDLE_MOVE_EYES_ACTION = new EntityAction(0, (e) -> { return; } ,1);
-
-    private static final StateHelper MANTIS_IDLE_MOVE_EYES_STATE =
-            StateHelper.Builder.state(MANTIS_IDLE_MOVE_EYES, "idle_shake")
-                    .playTime(60)
-                    .stopTime(100)
-                    .affectsAI(true)
-                    .affectedFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK))
-                    .entityAction(MANTIS_IDLE_MOVE_EYES_ACTION)
+                    .entityAction(SPIDER_CRAB_GRAZING_ACTION)
                     .build();
 
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    public EntityMantisShrimp(EntityType<? extends WaterAnimal> pEntityType, Level pLevel) {
+    public EntitySpiderCrab(EntityType<? extends WaterAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
         this.setPathfindingMalus(BlockPathTypes.WATER_BORDER, 0.0F);
@@ -86,22 +70,22 @@ public class EntityMantisShrimp extends StatedWaterAnimal implements GeoAnimatab
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 20.0D)
-                .add(Attributes.MOVEMENT_SPEED, (double)0.16F)
-                .add(Attributes.ATTACK_DAMAGE, 300.0D)
-                .add(Attributes.ATTACK_KNOCKBACK, 5.0)
-                .add(Attributes.ARMOR, 1.0D)
+                .add(Attributes.MAX_HEALTH, 45.0D)
+                .add(Attributes.MOVEMENT_SPEED, (double)0.2F)
+                .add(Attributes.ATTACK_DAMAGE, 15.0D)
+                .add(Attributes.ATTACK_KNOCKBACK, 1.0)
+                .add(Attributes.ARMOR, 10.0D)
                 ;
 
     }
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(1, new EntityMantisShrimp.WanderGoal());
+        this.goalSelector.addGoal(1, new WanderGoal());
+        this.goalSelector.addGoal(4, new EntitySpiderCrab.SpiderCrabMeleeAttackGoal());
         this.goalSelector.addGoal(1, new RandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 6.0F));
-        this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.0, false));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, false, false, entity -> entity.getType().is(getTargetTag())));
 
     }
@@ -114,8 +98,7 @@ public class EntityMantisShrimp extends StatedWaterAnimal implements GeoAnimatab
     @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
-        this.entityData.define(MANTIS_IDLE_SHAKE, false);
-        this.entityData.define(MANTIS_IDLE_MOVE_EYES, false);
+        this.entityData.define(SPIDER_CRAB_GRAZE, false);
     }
 
     protected PathNavigation createNavigation(Level worldIn) {
@@ -139,33 +122,34 @@ public class EntityMantisShrimp extends StatedWaterAnimal implements GeoAnimatab
 
     }
 
+    class SpiderCrabMeleeAttackGoal extends MeleeAttackGoal {
+        public SpiderCrabMeleeAttackGoal() {
+            super(EntitySpiderCrab.this, 1.0D, true);
+        }
+
+        protected double getAttackReachSqr(LivingEntity pAttackTarget) {
+            float f = EntitySpiderCrab.this.getBbWidth() - 0.1F;
+            return (double)(f * 2.0F * f * 2.0F + pAttackTarget.getBbWidth());
+        }
+    }
+
     protected TagKey<EntityType<?>> getTargetTag() {
         return SFTags.MANTIS_SHRIMP_TARGETS;
     }
 
-    protected <E extends EntityMantisShrimp> PlayState controller(final software.bernie.geckolib.core.animation.AnimationState<E> event) {
-        if (this.getDeltaMovement().horizontalDistanceSqr() > 1.0E-6) {
-            if (this.isSprinting()) {
-                event.setAndContinue(RUN);
-                event.getController().setAnimationSpeed(2.0D);
-                return PlayState.CONTINUE;
-            } else if (event.isMoving()) {
-                event.setAndContinue(WALK);
-                event.getController().setAnimationSpeed(1.0D);
-                return PlayState.CONTINUE;
-            }
+    protected <E extends EntitySpiderCrab> PlayState controller(final software.bernie.geckolib.core.animation.AnimationState<E> event) {
+        if (!(event.getLimbSwingAmount() > -0.06F && event.getLimbSwingAmount() < 0.06F)) {
+            event.setAndContinue(WALK);
+            return PlayState.CONTINUE;
         }
-        if(getBooleanState(MANTIS_IDLE_MOVE_EYES)) {
-            return event.setAndContinue(IDLE_MOVE_EYES);
-        }
-        if(getBooleanState(MANTIS_IDLE_SHAKE)) {
-            return event.setAndContinue(IDLE_SHAKE);
+        if(getBooleanState(SPIDER_CRAB_GRAZE)) {
+            return event.setAndContinue(GRAZING);
         }
 
         return event.setAndContinue(IDLE);
     }
 
-    protected <E extends EntityMantisShrimp> PlayState attackController(final software.bernie.geckolib.core.animation.AnimationState<E> event) {
+    protected <E extends EntitySpiderCrab> PlayState attackController(final software.bernie.geckolib.core.animation.AnimationState<E> event) {
         if (this.swinging) {
             event.setAndContinue(PUNCH);
             return PlayState.CONTINUE;
@@ -197,16 +181,14 @@ public class EntityMantisShrimp extends StatedWaterAnimal implements GeoAnimatab
     @Override
     public ImmutableMap<String, StateHelper> getStates() {
         return ImmutableMap.of(
-                MANTIS_IDLE_SHAKE_STATE.getName(), MANTIS_IDLE_SHAKE_STATE,
-                MANTIS_IDLE_MOVE_EYES_STATE.getName(), MANTIS_IDLE_MOVE_EYES_STATE
+                SPIDER_CRAB_SHAKE_STATE.getName(), SPIDER_CRAB_SHAKE_STATE
         );
     }
 
     @Override
     public List<WeightedState<StateHelper>> getWeightedStatesToPerform() {
         return ImmutableList.of(
-                WeightedState.of(MANTIS_IDLE_MOVE_EYES_STATE, 77),
-                WeightedState.of(MANTIS_IDLE_SHAKE_STATE, 15)
+                WeightedState.of(SPIDER_CRAB_SHAKE_STATE, 77)
         );
     }
 
@@ -221,7 +203,7 @@ public class EntityMantisShrimp extends StatedWaterAnimal implements GeoAnimatab
         }
 
         public boolean canUse() {
-            if (EntityMantisShrimp.this.getRandom().nextInt(50) != 0) {
+            if (EntitySpiderCrab.this.getRandom().nextInt(50) != 0) {
                 return false;
             }
             Vec3 target = this.getPosition();
@@ -236,21 +218,21 @@ public class EntityMantisShrimp extends StatedWaterAnimal implements GeoAnimatab
         }
 
         public boolean canContinueToUse() {
-            double dist = EntityMantisShrimp.this.distanceToSqr(x, y, z);
+            double dist = EntitySpiderCrab.this.distanceToSqr(x, y, z);
             return dist > 4F;
         }
 
         public void tick() {
-            EntityMantisShrimp.this.getNavigation().moveTo(this.x, this.y, this.z, 1F);
+            EntitySpiderCrab.this.getNavigation().moveTo(this.x, this.y, this.z, 1F);
         }
 
         public BlockPos findWaterBlock() {
             BlockPos result = null;
-            RandomSource random = EntityMantisShrimp.this.getRandom();
+            RandomSource random = EntitySpiderCrab.this.getRandom();
             int range = 10;
             for (int i = 0; i < 15; i++) {
-                BlockPos blockPos = EntityMantisShrimp.this.blockPosition().offset(random.nextInt(range) - range / 2, random.nextInt(range) - range / 2, random.nextInt(range) - range / 2);
-                if (EntityMantisShrimp.this.level().getFluidState(blockPos).is(FluidTags.WATER) && blockPos.getY() > level().getMinBuildHeight() + 1) {
+                BlockPos blockPos = EntitySpiderCrab.this.blockPosition().offset(random.nextInt(range) - range / 2, random.nextInt(range) - range / 2, random.nextInt(range) - range / 2);
+                if (EntitySpiderCrab.this.level().getFluidState(blockPos).is(FluidTags.WATER) && blockPos.getY() > level().getMinBuildHeight() + 1) {
                     result = blockPos;
                 }
             }
@@ -260,21 +242,20 @@ public class EntityMantisShrimp extends StatedWaterAnimal implements GeoAnimatab
         @javax.annotation.Nullable
         protected Vec3 getPosition() {
             BlockPos water = findWaterBlock();
-            if (EntityMantisShrimp.this.isInWaterOrBubble()) {
+            if (EntitySpiderCrab.this.isInWaterOrBubble()) {
                 if (water == null) {
                     return null;
                 }
-                while (EntityMantisShrimp.this.level().getFluidState(water.below()).is(FluidTags.WATER) && water.getY() > level().getMinBuildHeight() + 1) {
+                while (EntitySpiderCrab.this.level().getFluidState(water.below()).is(FluidTags.WATER) && water.getY() > level().getMinBuildHeight() + 1) {
                     water = water.below();
                 }
                 water = water.above();
                 return Vec3.atCenterOf(water);
             } else {
-                return water == null ? DefaultRandomPos.getPos(EntityMantisShrimp.this, 7, 3) : Vec3.atCenterOf(water);
+                return water == null ? DefaultRandomPos.getPos(EntitySpiderCrab.this, 7, 3) : Vec3.atCenterOf(water);
 
             }
         }
     }
-    
 }
 

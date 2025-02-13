@@ -1,4 +1,4 @@
-// 1.20.1	2024-11-10T21:39:26.5408629	Loot Tables
+// 1.20.1	2025-02-11T13:44:42.963543	Loot Tables
 36713e43689ef0458ebc53f949bdd923d2162fd4 data/seafarer/loot_tables/blocks/algae_block.json
 9e3aff10eb6b4e737ad115d3c5cec5341ceb7a5f data/seafarer/loot_tables/blocks/algae_carpet.json
 d20d205c81d1f68bff1128d4c135c1fccf6bae2d data/seafarer/loot_tables/blocks/algae_cobblestone.json
@@ -155,6 +155,7 @@ ba0eba60b15be15c5c41910880a4dd27aaedce82 data/seafarer/loot_tables/blocks/swirl_
 48639e75e772d62f5162085f88441ddccda75de1 data/seafarer/loot_tables/blocks/swirl_shell_bricks_slab.json
 2e35a06f4c67cbf0f1bcdd96aca8405a7eac905f data/seafarer/loot_tables/blocks/swirl_shell_bricks_stairs.json
 96e33cd35a4668d3a1ebe4fe92b22b1aff033d6c data/seafarer/loot_tables/blocks/swirl_shell_pillar.json
+99d8a9504cc6141508e61f5ace2fc53c36f49835 data/seafarer/loot_tables/blocks/wakame_block.json
 04bc49d886183299c97b22d871fea4b05e008a8c data/seafarer/loot_tables/blocks/white_seaglass_block.json
 8aa760d55eaf72bfbe4a316acfb529d5744d2578 data/seafarer/loot_tables/blocks/white_seaglass_bricks.json
 b189b384acdaddec4f6f2ca8ddedf8da6c4d6c91 data/seafarer/loot_tables/blocks/white_seaglass_bricks_slab.json

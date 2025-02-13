@@ -251,6 +251,9 @@ public class BlockLootTables extends BlockLootSubProvider {
         dropSelf(SFBlocks.SEAGLASS_BOTTLE_THIN_GREEN.get());
         dropSelf(SFBlocks.SEAGLASS_BOTTLE_THIN_RED.get());
 
+        dropSelf(SFBlocks.WAKAME.get());
+
+
     }
     protected void createPotFlowerItemTable(Block flowerpotBlock, ItemLike pItem) {
         add(flowerpotBlock ,LootTable.lootTable()

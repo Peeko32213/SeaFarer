@@ -264,6 +264,20 @@ public class LanguageGenerator extends LanguageProvider {
         addEntityType(SFEntities.PARROTFISH, "Parrot Fish");
         addItem(SFItems.PARROTFISH_SPAWN_EGG, "Parrot Fish Spawn Egg");
 
+        addEntityType(SFEntities.FILEFISH, "File Fish");
+        addItem(SFItems.FILEFISH_SPAWN_EGG, "File Fish Spawn Egg");
+
+        addEntityType(SFEntities.LEAFY_SCORPIONFISH, "Leafy Scorpion Fish");
+        addItem(SFItems.LEAFY_SCORPIONFISH_SPAWN_EGG, "Leafy Scorpion Spawn Egg");
+
+        addEntityType(SFEntities.ZEBRA_SHARK, "Zebra Shark");
+        addItem(SFItems.ZEBRA_SHARK_SPAWN_EGG, "Zebra Shark Spawn Egg");
+
+        addEntityType(SFEntities.CHIMAERA, "Chimaera");
+        addItem(SFItems.CHIMAERA_SPAWN_EGG, "Chimaera Spawn Egg");
+
+        addEntityType(SFEntities.SPIDER_CRAB, "Spider Crab");
+        addItem(SFItems.SPIDER_CRAB_SPAWN_EGG, "Spider Crab Spawn Egg");
 
         addBlock(SFBlocks.ALGAE_BLOCK, "Algae Block");
         addBlock(SFBlocks.ALGAE_CARPET, "Algae Carpet");
