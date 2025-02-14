@@ -1738,6 +1738,33 @@ public class SFBlocks {
                     .requiresCorrectToolForDrops()
             ));
 
+    public static final RegistryObject<Block> GHOUL_CORAL = registerBlock("ghoul_coral", () ->
+            new BaseCoralPlantBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_GRAY)
+                    .forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .noCollission()
+                    .instabreak()));
+
+    public static final RegistryObject<Block> PALE_SPONGE = registerBlock("pale_sponge", () ->
+            new BaseCoralPlantBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_GRAY)
+                    .forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .noCollission()
+                    .instabreak()));
+
+    public static final RegistryObject<Block> TUBE_WORMS = registerBlock("tube_worms", () ->
+            new BaseCoralPlantBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_GRAY)
+                    .forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .noCollission()
+                    .instabreak()));
+
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<Block> block) {
         RegistryObject<? extends Block> ret = BLOCKS.register(name, block);
         SFItems.ITEMS.register(name, () -> new BlockItem(ret.get(), new Item.Properties()));

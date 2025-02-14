@@ -162,6 +162,10 @@ public final class ClientEvents {
 
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.SEA_URCHIN.get(), RenderType.cutout());
 
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.GHOUL_CORAL.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.PALE_SPONGE.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.TUBE_WORMS.get(), RenderType.cutout());
+
     }
 
     @SubscribeEvent

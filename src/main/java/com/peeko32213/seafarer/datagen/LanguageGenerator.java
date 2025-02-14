@@ -395,6 +395,12 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.SEA_URCHIN, "Sea Urchin Block");
         addItem(SFItems.SEA_URCHIN, "Sea Urchin");
 
+        addBlock(SFBlocks.GHOUL_CORAL, "Ghoul Coral");
+        addBlock(SFBlocks.PALE_SPONGE, "Pale Sponge");
+        addBlock(SFBlocks.TUBE_WORMS, "Tube Worms");
+
+
+
         add("seafarer.starfish_common_orange", "Common Orange");
         add("seafarer.starfish_pink", "Pink");
         add("seafarer.starfish_red", "Red");
