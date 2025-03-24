@@ -26,7 +26,7 @@ public class SFBlocks {
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
                     .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
             ));
@@ -45,7 +45,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> BLUE_SEAGLASS_BRICKS = register("blue_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> BLUE_SEAGLASS_BRICKS_SLAB = registerBlock("blue_seaglass_bricks_slab",
@@ -59,13 +59,13 @@ public class SFBlocks {
     public static final RegistryObject<Block> BLUE_SEAGLASS_PEBBLED = register("blue_seaglass_pebbled",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> BLUE_SEAGLASS_TILES = register("blue_seaglass_tiles",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
 
@@ -81,7 +81,7 @@ public class SFBlocks {
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
                     .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
             ));
@@ -97,7 +97,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> BROWN_SEAGLASS_BRICKS = register("brown_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> BROWN_SEAGLASS_BRICKS_SLAB = registerBlock("brown_seaglass_bricks_slab",
@@ -111,13 +111,13 @@ public class SFBlocks {
     public static final RegistryObject<Block> BROWN_SEAGLASS_PEBBLED = register("brown_seaglass_pebbled",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> BROWN_SEAGLASS_TILES = register("brown_seaglass_tiles",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> BROWN_SEAGLASS_TILES_SLAB = registerBlock("brown_seaglass_tiles_slab",
@@ -132,7 +132,7 @@ public class SFBlocks {
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
                     .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
             ));
@@ -148,7 +148,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> GREEN_SEAGLASS_BRICKS = register("green_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> GREEN_SEAGLASS_BRICKS_SLAB = registerBlock("green_seaglass_bricks_slab",
@@ -162,14 +162,14 @@ public class SFBlocks {
     public static final RegistryObject<Block> GREEN_SEAGLASS_PEBBLED = register("green_seaglass_pebbled",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
 
     public static final RegistryObject<Block> GREEN_SEAGLASS_TILES = register("green_seaglass_tiles",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> GREEN_SEAGLASS_TILES_SLAB = registerBlock("green_seaglass_tiles_slab",
@@ -184,7 +184,7 @@ public class SFBlocks {
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
                     .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
             ));
@@ -199,7 +199,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> ORANGE_SEAGLASS_BRICKS = register("orange_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> ORANGE_SEAGLASS_BRICKS_SLAB = registerBlock("orange_seaglass_bricks_slab",
@@ -213,14 +213,14 @@ public class SFBlocks {
     public static final RegistryObject<Block> ORANGE_SEAGLASS_PEBBLED = register("orange_seaglass_pebbled",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
 
     public static final RegistryObject<Block> ORANGE_SEAGLASS_TILES = register("orange_seaglass_tiles",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> ORANGE_SEAGLASS_TILES_SLAB = registerBlock("orange_seaglass_tiles_slab",
@@ -235,7 +235,7 @@ public class SFBlocks {
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
                     .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
             ));
@@ -251,7 +251,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> PURPLE_SEAGLASS_BRICKS = register("purple_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> PURPLE_SEAGLASS_BRICKS_SLAB = registerBlock("purple_seaglass_bricks_slab",
@@ -265,14 +265,14 @@ public class SFBlocks {
     public static final RegistryObject<Block> PURPLE_SEAGLASS_PEBBLED = register("purple_seaglass_pebbled",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
 
     public static final RegistryObject<Block> PURPLE_SEAGLASS_TILES = register("purple_seaglass_tiles",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> PURPLE_SEAGLASS_TILES_SLAB = registerBlock("purple_seaglass_tiles_slab",
@@ -287,7 +287,7 @@ public class SFBlocks {
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
                     .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
             ));
@@ -303,7 +303,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> RED_SEAGLASS_BRICKS = register("red_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> RED_SEAGLASS_BRICKS_SLAB = registerBlock("red_seaglass_bricks_slab",
@@ -318,14 +318,14 @@ public class SFBlocks {
     public static final RegistryObject<Block> RED_SEAGLASS_PEBBLED = register("red_seaglass_pebbled",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
 
     public static final RegistryObject<Block> RED_SEAGLASS_TILES = register("red_seaglass_tiles",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> RED_SEAGLASS_TILES_SLAB = registerBlock("red_seaglass_tiles_slab",
@@ -340,7 +340,7 @@ public class SFBlocks {
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
                     .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
             ));
@@ -356,7 +356,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> WHITE_SEAGLASS_BRICKS = register("white_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> WHITE_SEAGLASS_BRICKS_SLAB = registerBlock("white_seaglass_bricks_slab",
@@ -370,13 +370,13 @@ public class SFBlocks {
     public static final RegistryObject<Block> WHITE_SEAGLASS_PEBBLED = register("white_seaglass_pebbled",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> WHITE_SEAGLASS_TILES = register("white_seaglass_tiles",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> WHITE_SEAGLASS_TILES_SLAB = registerBlock("white_seaglass_tiles_slab",
@@ -391,7 +391,7 @@ public class SFBlocks {
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
                     .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
             ));
@@ -408,7 +408,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> YELLOW_SEAGLASS_BRICKS = register("yellow_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> YELLOW_SEAGLASS_BRICKS_SLAB = registerBlock("yellow_seaglass_bricks_slab",
@@ -422,13 +422,13 @@ public class SFBlocks {
     public static final RegistryObject<Block> YELLOW_SEAGLASS_PEBBLED = register("yellow_seaglass_pebbled",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> YELLOW_SEAGLASS_TILES = register("yellow_seaglass_tiles",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
 
@@ -444,7 +444,7 @@ public class SFBlocks {
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
                     .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
             ));
@@ -462,7 +462,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> PINK_SEAGLASS_BRICKS = register("pink_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> PINK_SEAGLASS_BRICKS_SLAB = registerBlock("pink_seaglass_bricks_slab",
@@ -476,13 +476,13 @@ public class SFBlocks {
     public static final RegistryObject<Block> PINK_SEAGLASS_PEBBLED = register("pink_seaglass_pebbled",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> PINK_SEAGLASS_TILES = register("pink_seaglass_tiles",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
 
@@ -498,7 +498,7 @@ public class SFBlocks {
             () -> new GlassBlock(BlockBehaviour.Properties
                     .copy(Blocks.GLASS)
                     .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()
             ));
@@ -516,7 +516,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> LIME_SEAGLASS_BRICKS = register("lime_seaglass_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> LIME_SEAGLASS_BRICKS_SLAB = registerBlock("lime_seaglass_bricks_slab",
@@ -530,13 +530,13 @@ public class SFBlocks {
     public static final RegistryObject<Block> LIME_SEAGLASS_PEBBLED = register("lime_seaglass_pebbled",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> LIME_SEAGLASS_TILES = register("lime_seaglass_tiles",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()));
 
 
@@ -724,7 +724,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> ALGAE_BLOCK = register("algae_block",
             () -> new AlgaeBlock(BlockBehaviour.Properties
                     .copy(Blocks.MOSS_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()
             ));
 
@@ -891,7 +891,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> SALT_BLOCK = register("salt_block",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.BONE_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()
             ));
 
@@ -900,7 +900,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> CLAM_SHELL_BRICKS = register("clam_shell_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.BONE_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()
             ));
 
@@ -915,13 +915,13 @@ public class SFBlocks {
     public static final RegistryObject<RotatedPillarBlock> CLAM_SHELL_PILLAR = register("clam_shell_pillar",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties
                     .copy(SFBlocks.CLAM_SHELL_BRICKS.get())
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> HORN_SHELL_BRICKS = register("horn_shell_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.BONE_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<SlabBlock> HORN_SHELL_BRICKS_SLAB = registerBlock("horn_shell_bricks_slab",
@@ -935,14 +935,14 @@ public class SFBlocks {
     public static final RegistryObject<RotatedPillarBlock> HORN_SHELL_PILLAR = register("horn_shell_pillar",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties
                     .copy(SFBlocks.HORN_SHELL_BRICKS.get())
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()
             ));
 
     public static final RegistryObject<Block> SPIKY_SHELL_BRICKS = register("spiky_shell_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.BONE_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()
             ));
 
@@ -957,14 +957,14 @@ public class SFBlocks {
     public static final RegistryObject<RotatedPillarBlock> SPIKY_SHELL_PILLAR = register("spiky_shell_pillar",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties
                     .copy(SFBlocks.SPIKY_SHELL_BRICKS.get())
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()
             ));
 
     public static final RegistryObject<Block> SPIRAL_SHELL_BRICKS = register("spiral_shell_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.BONE_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()
             ));
 
@@ -979,14 +979,14 @@ public class SFBlocks {
     public static final RegistryObject<RotatedPillarBlock> SPIRAL_SHELL_PILLAR = register("spiral_shell_pillar",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties
                     .copy(SFBlocks.SPIRAL_SHELL_BRICKS.get())
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()
             ));
 
     public static final RegistryObject<Block> SWIRL_SHELL_BRICKS = register("swirl_shell_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.BONE_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()
             ));
 
@@ -1001,7 +1001,7 @@ public class SFBlocks {
     public static final RegistryObject<RotatedPillarBlock> SWIRL_SHELL_PILLAR = register("swirl_shell_pillar",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties
                     .copy(SFBlocks.SWIRL_SHELL_BRICKS.get())
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()
             ));
 
@@ -1085,7 +1085,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> PYRAMID_SHELL_BRICKS = register("pyramid_shell_bricks",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.BONE_BLOCK)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()
             ));
 
@@ -1100,7 +1100,7 @@ public class SFBlocks {
     public static final RegistryObject<RotatedPillarBlock> PYRAMID_SHELL_PILLAR = register("pyramid_shell_pillar",
             () -> new RotatedPillarBlock(BlockBehaviour.Properties
                     .copy(SFBlocks.PYRAMID_SHELL_BRICKS.get())
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> SEAGLASS_BOTTLE_BUST_BLUE = register("seaglass_bottle_bust_blue",
@@ -1221,14 +1221,14 @@ public class SFBlocks {
                     .forceSolidOn()
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
-                    .strength(1.5F, 6.0F)));
+                    .strength(1.5F, 1.0F)));
 
     public static final RegistryObject<Block> AMBER_CORAL_BLOCK = register("amber_coral_block",
             () -> new CoralBlock(DEAD_AMBER_CORAL_BLOCK.get(), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_ORANGE)
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
-                    .strength(1.5F, 6.0F)
+                    .strength(1.5F, 1.0F)
                     .sound(SoundType.CORAL_BLOCK)));
 
     public static final RegistryObject<Block> DEAD_AMBER_CORAL_FAN = BLOCKS.register("dead_amber_coral_fan", () ->
@@ -1282,14 +1282,14 @@ public class SFBlocks {
                     .forceSolidOn()
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
-                    .strength(1.5F, 6.0F)));
+                    .strength(1.5F, 1.0F)));
 
     public static final RegistryObject<Block> CERULEAN_CORAL_BLOCK = register("cerulean_coral_block",
             () -> new CoralBlock(DEAD_CERULEAN_CORAL_BLOCK.get(), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_CYAN)
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
-                    .strength(1.5F, 6.0F)
+                    .strength(1.5F, 1.0F)
                     .sound(SoundType.CORAL_BLOCK)));
 
     public static final RegistryObject<Block> DEAD_CERULEAN_CORAL_FAN = BLOCKS.register("dead_cerulean_coral_fan", () ->
@@ -1343,14 +1343,14 @@ public class SFBlocks {
                     .forceSolidOn()
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
-                    .strength(1.5F, 6.0F)));
+                    .strength(1.5F, 1.0F)));
 
     public static final RegistryObject<Block> MAROON_CORAL_BLOCK = register("maroon_coral_block",
             () -> new CoralBlock(DEAD_MAROON_CORAL_BLOCK.get(), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_RED)
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
-                    .strength(1.5F, 6.0F)
+                    .strength(1.5F, 1.0F)
                     .sound(SoundType.CORAL_BLOCK)));
 
     public static final RegistryObject<Block> DEAD_MAROON_CORAL_FAN = BLOCKS.register("dead_maroon_coral_fan", () ->
@@ -1404,14 +1404,14 @@ public class SFBlocks {
                     .forceSolidOn()
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
-                    .strength(1.5F, 6.0F)));
+                    .strength(1.5F, 1.0F)));
 
     public static final RegistryObject<Block> OLIVE_CORAL_BLOCK = register("olive_coral_block",
             () -> new CoralBlock(DEAD_OLIVE_CORAL_BLOCK.get(), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_LIGHT_GREEN)
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
-                    .strength(1.5F, 6.0F)
+                    .strength(1.5F, 1.0F)
                     .sound(SoundType.CORAL_BLOCK)));
 
     public static final RegistryObject<Block> DEAD_OLIVE_CORAL_FAN = BLOCKS.register("dead_olive_coral_fan", () ->
@@ -1465,14 +1465,14 @@ public class SFBlocks {
                     .forceSolidOn()
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
-                    .strength(1.5F, 6.0F)));
+                    .strength(1.5F, 1.0F)));
 
     public static final RegistryObject<Block> TURQUOISE_CORAL_BLOCK = register("turquoise_coral_block",
             () -> new CoralBlock(DEAD_TURQUOISE_CORAL_BLOCK.get(), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_CYAN)
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
-                    .strength(1.5F, 6.0F)
+                    .strength(1.5F, 1.0F)
                     .sound(SoundType.CORAL_BLOCK)));
 
     public static final RegistryObject<Block> DEAD_TURQUOISE_CORAL_FAN = BLOCKS.register("dead_turquoise_coral_fan", () ->
@@ -1526,14 +1526,14 @@ public class SFBlocks {
                     .forceSolidOn()
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
-                    .strength(1.5F, 6.0F)));
+                    .strength(1.5F, 1.0F)));
 
     public static final RegistryObject<Block> VERDANT_CORAL_BLOCK = register("verdant_coral_block",
             () -> new CoralBlock(DEAD_VERDANT_CORAL_BLOCK.get(), BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_GREEN)
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
-                    .strength(1.5F, 6.0F)
+                    .strength(1.5F, 1.0F)
                     .sound(SoundType.CORAL_BLOCK)));
 
     public static final RegistryObject<Block> DEAD_VERDANT_CORAL_FAN = BLOCKS.register("dead_verdant_coral_fan", () ->
@@ -1672,7 +1672,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> CORALINE_SANDSTONE = register("coraline_sandstone",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.SANDSTONE)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()
             ));
 
@@ -1687,7 +1687,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> CUT_CORALINE_SANDSTONE = register("cut_coraline_sandstone",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.SANDSTONE)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()
             ));
 
@@ -1702,14 +1702,14 @@ public class SFBlocks {
     public static final RegistryObject<Block> CHISELED_CORALINE_SANDSTONE = register("chiseled_coraline_sandstone",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.SANDSTONE)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()
             ));
 
     public static final RegistryObject<Block> SMOOTH_CORALINE_SANDSTONE = register("smooth_coraline_sandstone",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.SANDSTONE)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()
             ));
 
@@ -1734,7 +1734,7 @@ public class SFBlocks {
     public static final RegistryObject<Block> SEA_URCHIN = register("sea_urchin_block",
             () -> new SeaUrchinBlock(BlockBehaviour.Properties
                     .copy(Blocks.BRAIN_CORAL)
-                    .strength(3.0F, 10.0F)
+                    .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()
             ));
 
