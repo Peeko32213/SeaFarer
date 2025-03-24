@@ -1,7 +1,7 @@
-package com.peeko32213.seafarer.datagen.loot;
+package com.peeko32213.seafarer.data.server.loot;
 
 
-import com.peeko32213.seafarer.core.registry.SFBlocks;
+import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.MinMaxBounds;

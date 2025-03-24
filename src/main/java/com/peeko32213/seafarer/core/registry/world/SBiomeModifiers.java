@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.world;
+package com.peeko32213.seafarer.core.registry.world;
 
 import com.peeko32213.seafarer.core.registry.SFEntities;
 import com.peeko32213.seafarer.core.registry.SFTags;
@@ -8,14 +8,13 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ForgeBiomeModifiers;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.List;
 
-import static com.peeko32213.seafarer.datagen.ItemModelGenerator.prefix;
+import static com.peeko32213.seafarer.data.client.ItemModelGenerator.prefix;
 
 public class SBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_BEACHGRASS = registerKey("add_beachgrass");

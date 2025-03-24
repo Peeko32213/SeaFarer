@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.core.registry;
+package com.peeko32213.seafarer.core.registry.blocks;
 
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.common.block.entity.SFNetBlockEntity;

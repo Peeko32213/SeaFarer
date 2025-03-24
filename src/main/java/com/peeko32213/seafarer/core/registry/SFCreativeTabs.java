@@ -2,6 +2,7 @@ package com.peeko32213.seafarer.core.registry;
 
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.common.item.SFTabBehavior;
+import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;

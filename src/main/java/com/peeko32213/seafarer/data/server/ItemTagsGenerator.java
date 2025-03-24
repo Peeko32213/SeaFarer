@@ -1,13 +1,11 @@
-package com.peeko32213.seafarer.datagen;
+package com.peeko32213.seafarer.data.server;
 
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.core.registry.SFTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 import javax.annotation.Nullable;

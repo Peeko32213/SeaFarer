@@ -1,19 +1,23 @@
-package com.peeko32213.seafarer.datagen;
+package com.peeko32213.seafarer.data.client;
 
 import com.mojang.logging.LogUtils;
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.core.registry.SFBlocks;
+import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFCreativeTabs;
 import com.peeko32213.seafarer.core.registry.SFEntities;
 import com.peeko32213.seafarer.core.registry.SFItems;
+import com.peeko32213.seafarer.core.registry.util.SFTextUtils;
 import net.minecraft.data.PackOutput;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
+import java.util.Objects;
 import java.util.function.Supplier;
 
 public class LanguageGenerator extends LanguageProvider {
@@ -25,6 +29,9 @@ public class LanguageGenerator extends LanguageProvider {
     protected void addTranslations(){
 
         addTabName(SFCreativeTabs.TAB.get(), "Seafarer");
+
+        // Blocks
+        SFBlocks.AUTO_TRANSLATE.forEach(this::forBlock);
 
         addBlock(SFBlocks.BLUE_SEAGLASS_BLOCK, "Blue Sea Glass Block");
         addBlock(SFBlocks.BLUE_SEAGLASS_BRICKS, "Blue Sea Glass Bricks");
@@ -302,16 +309,16 @@ public class LanguageGenerator extends LanguageProvider {
         addItem(SFItems.SPIRAL_HOE, "Spiral Hoe");
         addItem(SFItems.SWIRL_AXE, "Swirl Axe");
 
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_BUST_BLUE, "Blue Sea Glass Bust Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_BUST_BROWN, "Brown Sea Glass Bust Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_PIPE_PINK, "Pink Sea Glass Pipe Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_PIPE_YELLOW, "Yellow Sea Glass Pipe Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_CURVY_LIME, "Lime Sea Glass Curvy Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_CURVY_ORANGE, "Orange Sea Glass Curvy Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_FISHBOWL_PURPLE, "Purple Sea Glass Fishbowl Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_FISHBOWL_WHITE, "White Sea Glass Fishbowl Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_THIN_GREEN, "Green Sea Glass Thin Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_THIN_RED, "Red Sea Glass Thin Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_BUST_BLUE, "Blue Sea Glass Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_BUST_BROWN, "Brown Sea Glass Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_PIPE_PINK, "Pink Sea Glass Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_PIPE_YELLOW, "Yellow Sea Glass Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_CURVY_LIME, "Lime Sea Glass Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_CURVY_ORANGE, "Orange Sea Glass Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_FISHBOWL_PURPLE, "Purple Sea Glass Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_FISHBOWL_WHITE, "White Sea Glass Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_THIN_GREEN, "Green Sea Glass Bottle");
+        addBlock(SFBlocks.SEAGLASS_BOTTLE_THIN_RED, "Red Sea Glass Bottle");
 
         addBlock(SFBlocks.FLOATSOME, "Floatsome");
 
@@ -399,8 +406,6 @@ public class LanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.PALE_SPONGE, "Pale Sponge");
         addBlock(SFBlocks.TUBE_WORMS, "Tube Worms");
 
-
-
         add("seafarer.starfish_common_orange", "Common Orange");
         add("seafarer.starfish_pink", "Pink");
         add("seafarer.starfish_red", "Red");
@@ -424,15 +429,9 @@ public class LanguageGenerator extends LanguageProvider {
         add(SeaFarer.MODID + ".blockentity." + beName, name);
     }
 
-
-
-
-
-
     public void addSound(Supplier<? extends SoundEvent> key, String name){
         add(SeaFarer.MODID + ".sound.subtitle." + key.get().getLocation().getPath(), name);
     }
-
 
     public void addTabName(CreativeModeTab key, String name){
         add(key.getDisplayName().getString(), name);
@@ -454,5 +453,9 @@ public class LanguageGenerator extends LanguageProvider {
         add("item.minecraft.potion.effect." + regName, name);
         add("item.minecraft.splash_potion.effect." + regName, "Splash " + name);
         add("item.minecraft.lingering_potion.effect." + regName, "Lingering " + name);
+    }
+
+    protected void forBlock(Supplier<? extends Block> block) {
+        addBlock(block, SFTextUtils.createTranslation(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block.get())).getPath()));
     }
 }

@@ -1,9 +1,9 @@
-package com.peeko32213.seafarer.datagen;
+package com.peeko32213.seafarer.data.server;
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.world.SBiomeModifiers;
-import com.peeko32213.seafarer.world.SConfiguredFeatures;
-import com.peeko32213.seafarer.world.SPlacedFeatures;
+import com.peeko32213.seafarer.core.registry.world.SBiomeModifiers;
+import com.peeko32213.seafarer.core.registry.world.SConfiguredFeatures;
+import com.peeko32213.seafarer.core.registry.world.SPlacedFeatures;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;

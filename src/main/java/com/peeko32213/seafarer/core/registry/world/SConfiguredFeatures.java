@@ -1,12 +1,11 @@
-package com.peeko32213.seafarer.world;
+package com.peeko32213.seafarer.core.registry.world;
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.core.registry.SFBlocks;
+import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFFeatures;
 import com.peeko32213.seafarer.core.registry.SFTags;
-import com.peeko32213.seafarer.world.config.PatchFeatureForm;
-import com.peeko32213.seafarer.world.config.SFFeatureForms;
-import com.peeko32213.seafarer.world.config.TagBasedRandomFeatureConfig;
+import com.peeko32213.seafarer.core.registry.world.config.SFFeatureForms;
+import com.peeko32213.seafarer.core.registry.world.config.TagBasedRandomFeatureConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
@@ -37,7 +36,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Supplier;
 
-import static com.peeko32213.seafarer.datagen.ItemModelGenerator.prefix;
+import static com.peeko32213.seafarer.data.client.ItemModelGenerator.prefix;
 
 public class SConfiguredFeatures {
     public static final DeferredRegister<ConfiguredFeature<?,?>> CONFIGURED_FEATURES = DeferredRegister.create(Registries.CONFIGURED_FEATURE, SeaFarer.MODID);

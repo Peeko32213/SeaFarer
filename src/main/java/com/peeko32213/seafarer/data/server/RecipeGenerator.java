@@ -1,7 +1,7 @@
-package com.peeko32213.seafarer.datagen;
+package com.peeko32213.seafarer.data.server;
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.core.registry.SFBlocks;
+import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFItems;
 import com.peeko32213.seafarer.core.registry.SFTags;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -9,15 +9,11 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Consumer;
 

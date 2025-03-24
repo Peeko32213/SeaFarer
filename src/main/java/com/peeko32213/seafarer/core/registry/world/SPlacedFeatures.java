@@ -1,8 +1,7 @@
-package com.peeko32213.seafarer.world;
+package com.peeko32213.seafarer.core.registry.world;
 
 import com.google.common.collect.ImmutableList;
 import com.peeko32213.seafarer.SeaFarer;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.Vec3i;
@@ -22,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
 
-import static com.peeko32213.seafarer.datagen.ItemModelGenerator.prefix;
+import static com.peeko32213.seafarer.data.client.ItemModelGenerator.prefix;
 
 public class SPlacedFeatures {
     public static List<String> placedFeatureList = new ArrayList<>();

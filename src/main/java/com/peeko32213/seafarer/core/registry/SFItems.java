@@ -5,6 +5,7 @@ import com.peeko32213.seafarer.common.item.MessageInABottleItem;
 import com.peeko32213.seafarer.common.item.SFDrinkableItem;
 import com.peeko32213.seafarer.common.item.SFFishBucket;
 import com.peeko32213.seafarer.common.item.SFFood;
+import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.StructureTags;
 import net.minecraft.world.entity.EntityType;

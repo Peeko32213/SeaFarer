@@ -3,7 +3,7 @@ package com.peeko32213.seafarer.common.world.feature;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.Codec;
 import com.peeko32213.seafarer.common.world.feature.util.FastNoiseLite;
-import com.peeko32213.seafarer.core.registry.SFBlocks;
+import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;

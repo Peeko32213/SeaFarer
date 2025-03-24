@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.datagen;
+package com.peeko32213.seafarer.data.server;
 
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.core.registry.SFTags;

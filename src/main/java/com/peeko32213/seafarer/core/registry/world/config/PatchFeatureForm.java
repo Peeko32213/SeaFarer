@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.world.config;
+package com.peeko32213.seafarer.core.registry.world.config;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
@@ -7,7 +7,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 
 public class PatchFeatureForm implements FeatureForm {
     @Override

@@ -1,6 +1,11 @@
-package com.peeko32213.seafarer.datagen;
+package com.peeko32213.seafarer.data;
 
 import com.google.common.collect.Sets;
+import com.peeko32213.seafarer.data.client.BlockstateGenerator;
+import com.peeko32213.seafarer.data.client.ItemModelGenerator;
+import com.peeko32213.seafarer.data.client.LanguageGenerator;
+import com.peeko32213.seafarer.data.server.loot.LootGenerator;
+import com.peeko32213.seafarer.data.server.*;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;

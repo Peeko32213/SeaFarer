@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.world.config;
+package com.peeko32213.seafarer.core.registry.world.config;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;

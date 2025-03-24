@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.world.config;
+package com.peeko32213.seafarer.core.registry.world.config;
 
 import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;

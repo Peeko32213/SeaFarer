@@ -1,8 +1,9 @@
-package com.peeko32213.seafarer.core.registry;
+package com.peeko32213.seafarer.core.registry.blocks;
 
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.common.block.*;
 import com.peeko32213.seafarer.common.block.starfish.*;
+import com.peeko32213.seafarer.core.registry.SFItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PlaceOnWaterBlockItem;
@@ -15,12 +16,14 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Supplier;
 
 public class SFBlocks {
 
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
-            SeaFarer.MODID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, SeaFarer.MODID);
+    public static List<RegistryObject<? extends Block>> AUTO_TRANSLATE = new ArrayList<>();
 
     public static final RegistryObject<Block> BLUE_SEAGLASS_BLOCK = register("blue_seaglass_block",
             () -> new GlassBlock(BlockBehaviour.Properties
@@ -1764,6 +1767,19 @@ public class SFBlocks {
                     .requiresCorrectToolForDrops()
                     .noCollission()
                     .instabreak()));
+
+    private static <B extends Block> RegistryObject<B> createBlockNoLang(String name, Supplier<? extends B> supplier) {
+        RegistryObject<B> block = BLOCKS.register(name, supplier);
+        SFItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        return block;
+    }
+
+    private static <B extends Block> RegistryObject<B> createBlock(String name, Supplier<? extends B> supplier) {
+        RegistryObject<B> block = BLOCKS.register(name, supplier);
+        SFItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
+        AUTO_TRANSLATE.add(block);
+        return block;
+    }
 
     public static <T extends Block> RegistryObject<T> register(String name, Supplier<Block> block) {
         RegistryObject<? extends Block> ret = BLOCKS.register(name, block);

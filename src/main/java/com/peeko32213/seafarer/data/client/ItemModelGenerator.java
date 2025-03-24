@@ -1,8 +1,7 @@
-package com.peeko32213.seafarer.datagen;
+package com.peeko32213.seafarer.data.client;
 
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;

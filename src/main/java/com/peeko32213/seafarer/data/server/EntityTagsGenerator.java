@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.datagen;
+package com.peeko32213.seafarer.data.server;
 
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.core.registry.SFEntities;
@@ -6,7 +6,6 @@ import com.peeko32213.seafarer.core.registry.SFTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;

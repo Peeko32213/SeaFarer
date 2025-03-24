@@ -291,7 +291,7 @@
 [02Nov2023 20:51:56.388] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.peeko32213.seafarer.Config to MOD
 [02Nov2023 20:51:56.392] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.peeko32213.seafarer.core.events.CommonEvents to MOD
 [02Nov2023 20:51:56.395] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.peeko32213.seafarer.core.registry.SFEntities to MOD
-[02Nov2023 20:51:56.395] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.peeko32213.seafarer.datagen.DataGenerators to MOD
+[02Nov2023 20:51:56.395] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.peeko32213.seafarer.data.DataGenerators to MOD
 [02Nov2023 20:51:56.417] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent0/]: -Dio.netty.noUnsafe: false
 [02Nov2023 20:51:56.417] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent0/]: Java version: 17
 [02Nov2023 20:51:56.418] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent0/]: sun.misc.Unsafe.theUnsafe: available

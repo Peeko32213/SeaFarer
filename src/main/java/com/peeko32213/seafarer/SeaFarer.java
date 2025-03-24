@@ -2,6 +2,8 @@ package com.peeko32213.seafarer;
 
 import com.peeko32213.seafarer.client.event.ClientEvents;
 import com.peeko32213.seafarer.core.registry.*;
+import com.peeko32213.seafarer.core.registry.blocks.SFBlockEntities;
+import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -18,8 +20,6 @@ import net.minecraftforge.registries.RegistryObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 import java.util.function.Supplier;
 
