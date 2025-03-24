@@ -4,10 +4,10 @@ loaderVersion="${loader_version_range}"
 license="MIT"
 [[mods]]
 modId="seafarer" #mandatory
-version="1.1.0.3" #mandatory
+version="1.2.0" #mandatory
 displayName="Seafarer" #mandatory
-authors="Peeko32213 and Omaypaty for Block Textures and Scouter and Codyy for Additional Coding Help!" #optional
-description='''A Mod that expands on minecrafts oceans in a unique way'''
+authors="Unusual Modding!" #optional
+description='''A Mod that expands on minecrafts oceans in a unique way!'''
 [[dependencies.seafarer]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
@@ -21,8 +21,8 @@ description='''A Mod that expands on minecrafts oceans in a unique way'''
     ordering="NONE"
     side="BOTH"
 [[dependencies.geckolib]]
-modId="geckolib"
-mandatory=true
-versionRange="[4.2,)"
-ordering="BEFORE"
-side="BOTH"
+    modId="geckolib"
+    mandatory=true
+    versionRange="[4.2,)"
+    ordering="BEFORE"
+    side="BOTH"
