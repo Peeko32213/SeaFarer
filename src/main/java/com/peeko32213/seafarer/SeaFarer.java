@@ -4,6 +4,16 @@ import com.peeko32213.seafarer.client.event.ClientEvents;
 import com.peeko32213.seafarer.core.registry.*;
 import com.peeko32213.seafarer.core.registry.blocks.SFBlockEntities;
 import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
+import com.peeko32213.seafarer.data.SFDatapackBuiltinEntriesProvider;
+import com.peeko32213.seafarer.data.client.SFBlockstateGenerator;
+import com.peeko32213.seafarer.data.client.SFItemModelGenerator;
+import com.peeko32213.seafarer.data.client.SFLanguageGenerator;
+import com.peeko32213.seafarer.data.server.*;
+import com.peeko32213.seafarer.data.server.loot.SFLootGenerator;
+import com.peeko32213.seafarer.data.server.modifiers.SFChunkGeneratorModifierProvider;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -11,6 +21,8 @@ import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
@@ -21,6 +33,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Locale;
+import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 
 @Mod(SeaFarer.MODID)
@@ -30,12 +43,11 @@ public class SeaFarer {
         public static final Logger LOGGER = LogManager.getLogger();
 
 
-    public SeaFarer()
-    {
+    public SeaFarer() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> modEventBus.addListener(ClientEvents::init));
-
+        modEventBus.addListener(this::dataSetup);
         SFBlocks.BLOCKS.register(modEventBus);
         SFItems.ITEMS.register(modEventBus);
         SFCreativeTabs.DEF_REG.register(modEventBus);
@@ -44,10 +56,10 @@ public class SeaFarer {
         SFBlockEntities.BLOCK_ENTITIES.register(modEventBus);
         SFLootModifiers.LOOT_MODIFIERS.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
+
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             SFEntityPlacement.entityPlacement();
             addToFlowerPot(SFBlocks.COASTAL_LAVENDER, SFBlocks.POTTED_COASTAL_LAVENDER);
@@ -61,6 +73,35 @@ public class SeaFarer {
             addToComposter(SFBlocks.SEA_HOLLY, 0.6F);
 
         });
+    }
+
+    private void dataSetup(GatherDataEvent event) {
+        DataGenerator generator = event.getGenerator();
+        PackOutput output = generator.getPackOutput();
+        CompletableFuture<HolderLookup.Provider> provider = event.getLookupProvider();
+        ExistingFileHelper helper = event.getExistingFileHelper();
+
+        boolean server = event.includeServer();
+        boolean client = event.includeClient();
+
+        SFDatapackBuiltinEntriesProvider datapackEntries = new SFDatapackBuiltinEntriesProvider(output, provider);
+        generator.addProvider(server, datapackEntries);
+        provider = datapackEntries.getRegistryProvider();
+
+        // Server generators
+        SFBlockTagsGenerator blockTags = new SFBlockTagsGenerator(output, provider, helper);
+        generator.addProvider(server, blockTags);
+        generator.addProvider(server, new SFItemTagsGenerator(output, provider, blockTags.contentsGetter(), helper));
+        generator.addProvider(server, new SFEntityTagsGenerator(output, provider, helper));
+        generator.addProvider(server, new SFBiomeTagsProvider(output, provider, helper));
+        generator.addProvider(server, new SFRecipeGenerator(output));
+        generator.addProvider(server, SFLootGenerator.create(output));
+        generator.addProvider(server, new SFChunkGeneratorModifierProvider(output, provider));
+
+        // Client generators
+        generator.addProvider(client, new SFBlockstateGenerator(output, helper));
+        generator.addProvider(client, new SFItemModelGenerator(output, helper));
+        generator.addProvider(client, new SFLanguageGenerator(output));
     }
 
     public static void addToFlowerPot(RegistryObject<Block> plantBlockLoc, Supplier<? extends Block> pottedPlantBlock){

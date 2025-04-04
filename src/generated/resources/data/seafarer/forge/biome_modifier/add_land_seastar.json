@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#seafarer:is_beach_biome",
-  "features": "seafarer:sea_star_land",
-  "step": "vegetal_decoration"
-}

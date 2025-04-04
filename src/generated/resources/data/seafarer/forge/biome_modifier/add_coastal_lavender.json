@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#seafarer:is_beach_biome",
-  "features": "seafarer:coastal_lavender_placed",
-  "step": "vegetal_decoration"
-}
