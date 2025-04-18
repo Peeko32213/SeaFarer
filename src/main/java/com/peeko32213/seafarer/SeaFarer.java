@@ -10,7 +10,6 @@ import com.peeko32213.seafarer.data.client.SFItemModelGenerator;
 import com.peeko32213.seafarer.data.client.SFLanguageGenerator;
 import com.peeko32213.seafarer.data.server.*;
 import com.peeko32213.seafarer.data.server.loot.SFLootGenerator;
-import com.peeko32213.seafarer.data.server.modifiers.SFChunkGeneratorModifierProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -38,9 +37,9 @@ import java.util.function.Supplier;
 
 @Mod(SeaFarer.MODID)
 public class SeaFarer {
-        public static final String MODID = "seafarer";
-        private static int packetsRegistered;
-        public static final Logger LOGGER = LogManager.getLogger();
+    public static final String MODID = "seafarer";
+    private static int packetsRegistered;
+    public static final Logger LOGGER = LogManager.getLogger();
 
 
     public SeaFarer() {
@@ -96,7 +95,6 @@ public class SeaFarer {
         generator.addProvider(server, new SFBiomeTagsProvider(output, provider, helper));
         generator.addProvider(server, new SFRecipeGenerator(output));
         generator.addProvider(server, SFLootGenerator.create(output));
-        generator.addProvider(server, new SFChunkGeneratorModifierProvider(output, provider));
 
         // Client generators
         generator.addProvider(client, new SFBlockstateGenerator(output, helper));
@@ -114,5 +112,4 @@ public class SeaFarer {
     public static ResourceLocation prefix(String name) {
         return new ResourceLocation(MODID, name.toLowerCase(Locale.ROOT));
     }
-
 }

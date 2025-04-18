@@ -13,8 +13,6 @@ public enum SFTiers implements Tier {
     // Make Ingredients be decided by the Shell Tag rather than just one item
     SHELL(0, 65, 3.0F, 0.0F, 22, () -> Ingredient.of(SFBlocks.CLAM_SHELL.get())),
 
-
-
     ;
 
     private final int level;

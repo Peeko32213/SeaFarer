@@ -48,8 +48,6 @@ public class SFItemModelGenerator extends ItemModelProvider {
         singleTex(SFItems.SEA_GRAPES);
         singleTex(SFItems.WAKAME);
         singleTex(SFItems.SEA_URCHIN);
-
-        //singleTex(SFBlocks.SEAGLASS_BOTTLE_PIPE_PINK.get().asItem());
     }
 
 

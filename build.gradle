@@ -55,7 +55,7 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', "${mod_id}", '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', "${blueprint_id}"
+            args '--mod', "${mod_id}", '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod'
 
             mods {
                 seafarer {
@@ -80,9 +80,6 @@ repositories {
         url = "https://maven.blamejared.com/"
     }
     maven {
-        url = "https://maven.jaackson.me"
-    }
-    maven {
         url = 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
     }
     flatDir {
@@ -97,7 +94,6 @@ configurations {
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.20.1:${geckolib_version}")
-    implementation fg.deobf("com.teamabnormals:${blueprint_id}:1.20.1-${blueprint_version}")
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")

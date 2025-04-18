@@ -20,10 +20,6 @@ public class SFEntityTagsGenerator extends EntityTypeTagsProvider {
     }
 
     protected void addTags(HolderLookup.Provider pProvider) {
-
-        /**Example**/
-        //tag(UPTags.ANURO_TARGETS).add(UPEntities.BABY_BRACHI.get());
-
         tag(SFTags.FROGFISH_TARGETS)
                 .add(SFEntities.SEXY_SHRIMP.get())
                 .add(SFEntities.GARDEN_EEL.get())

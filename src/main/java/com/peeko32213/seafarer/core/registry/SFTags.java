@@ -11,16 +11,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 
 public class SFTags {
-
-
-    //public static final TagKey<Instrument> OCARINA_WHISTLE = registerInstrument("ocarina_whistle");
-    //public static final TagKey<EntityType<?>> ANURO_EGG_TRAMPLERS = registerEntityTag("anuro_egg_tramplers");
-    //public static final TagKey<Item> ALLOWED_FRIDGE_ITEMS = registerItemTag("allowed_fridge_items");
-    //public static final TagKey<Block> CLUB_WHITELIST_BLOCKS = registerBlockTag("club_whitelist_blocks");
-    //public static final TagKey<Biome> IS_STETHA_BIOME = registerBiomeTag("is_stetha_biome");
-
-
-// Blocks
+    // Blocks
     public static final TagKey<Block> BEACH_PLANT_BLOCKS = registerBlockTag("beach_plant_blocks");
 
     public static final TagKey<Block> SHELLS = registerBlockTag("shells");

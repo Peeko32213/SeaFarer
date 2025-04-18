@@ -20,7 +20,6 @@ public class SFBiomeTagsProvider extends net.minecraft.data.tags.BiomeTagsProvid
     }
 
     protected void addTags() {
-        //tag(UPTags.IS_PETRIFIED_WOOD_FOREST_BIOME).add(Biomes.BADLANDS).add(Biomes.WOODED_BADLANDS).add(Biomes.ERODED_BADLANDS).add(Biomes.DESERT);
         tag(SFTags.IS_CRAB_BIOME).add(Biomes.BEACH).add(Biomes.STONY_SHORE);
         tag(SFTags.IS_HORSECRAB_BIOME).add(Biomes.BEACH);
         tag(SFTags.IS_MARINE_IGUANA_BIOME).add(Biomes.STONY_SHORE);
