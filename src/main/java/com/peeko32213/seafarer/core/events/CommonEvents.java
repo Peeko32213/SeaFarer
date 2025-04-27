@@ -32,6 +32,7 @@ public class CommonEvents {
         event.put(SFEntities.ZEBRA_SHARK.get(), EntityFileFish.createAttributes().build());
         event.put(SFEntities.CHIMAERA.get(), EntityChimaera.createAttributes().build());
         event.put(SFEntities.SPIDER_CRAB.get(), EntitySpiderCrab.createAttributes().build());
+        event.put(SFEntities.BARRELEYE.get(), EntityBarreleye.createAttributes().build());
 
     }
 

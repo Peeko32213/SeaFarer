@@ -86,4 +86,9 @@ public class SFEntities {
     public static final RegistryObject<EntityType<EntitySpiderCrab>> SPIDER_CRAB = ENTITIES.register("spider_crab",
             () -> EntityType.Builder.of(EntitySpiderCrab::new, MobCategory.WATER_AMBIENT).sized(3.0F, 2.0F)
                     .build(new ResourceLocation(SeaFarer.MODID, "spider_crab").toString()));
+
+    public static final RegistryObject<EntityType<EntityBarreleye>> BARRELEYE = ENTITIES.register("barreleye",
+            () -> EntityType.Builder.of(EntityBarreleye::new, MobCategory.WATER_AMBIENT).sized(0.8F, 0.8F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "barreleye").toString()));
+
 }

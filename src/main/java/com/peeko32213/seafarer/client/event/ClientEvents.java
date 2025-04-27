@@ -4,10 +4,7 @@ import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.client.SFItemProperties;
 import com.peeko32213.seafarer.client.block.FishingNetEntityRenderer;
 import com.peeko32213.seafarer.client.model.*;
-import com.peeko32213.seafarer.client.render.FrogFishEntityRenderer;
-import com.peeko32213.seafarer.client.render.GardenEelRenderer;
-import com.peeko32213.seafarer.client.render.LivingEntityRenderer;
-import com.peeko32213.seafarer.client.render.MantaRayEntityRenderer;
+import com.peeko32213.seafarer.client.render.*;
 import com.peeko32213.seafarer.core.registry.blocks.SFBlockEntities;
 import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFEntities;
@@ -189,6 +186,7 @@ public final class ClientEvents {
         event.registerEntityRenderer(SFEntities.ZEBRA_SHARK.get(), e -> new LivingEntityRenderer<>(e, new ModelZebraShark()));
         event.registerEntityRenderer(SFEntities.CHIMAERA.get(), e -> new LivingEntityRenderer<>(e, new ModelChimaera()));
         event.registerEntityRenderer(SFEntities.SPIDER_CRAB.get(), e -> new LivingEntityRenderer<>(e, new ModelSpiderCrab()));
+        event.registerEntityRenderer(SFEntities.BARRELEYE.get(), e -> new BarreleyeEntityRenderer<>(e, new ModelBarreleye()));
     }
 
 }

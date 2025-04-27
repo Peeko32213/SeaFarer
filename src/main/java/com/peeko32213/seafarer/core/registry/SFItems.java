@@ -82,6 +82,10 @@ public class SFItems {
 
     public static final RegistryObject<ForgeSpawnEggItem> SPIDER_CRAB_SPAWN_EGG = registerSpawnEggs("spider_crab_spawn_egg",
             SFEntities.SPIDER_CRAB , 0xd5a4a4, 0x6e0c0c);
+
+    public static final RegistryObject<ForgeSpawnEggItem> BARRELEYE_SPAWN_EGG = registerSpawnEggs("barreleye_spawn_egg",
+            SFEntities.BARRELEYE , 0x293530, 0x58904a);
+
     public static final RegistryObject<Item> RAW_SHORE_CRAB = ITEMS.register("shore_crab_leg",
             () -> new Item(new Item.Properties().food(SFFood.RAW_SHORE_CRAB)));
 
