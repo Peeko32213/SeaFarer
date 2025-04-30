@@ -41,16 +41,16 @@ public class SFBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropWhenSilkTouch(SFBlocks.BLUE_SEAGLASS_BLOCK.get());
-        dropWhenSilkTouch(SFBlocks.BLUE_SEAGLASS_PANE.get());
-        dropSelf(SFBlocks.BLUE_SEAGLASS_BRICKS.get());
-        dropSelf(SFBlocks.BLUE_SEAGLASS_BRICKS_SLAB.get());
-        dropSelf(SFBlocks.BLUE_SEAGLASS_BRICKS_STAIRS.get());
-        dropSelf(SFBlocks.BLUE_SEAGLASS_PEBBLED.get());
-        dropSelf(SFBlocks.BLUE_SEAGLASS_TILES.get());
-        dropSelf(SFBlocks.BLUE_SEAGLASS_TILES_SLAB.get());
-        dropSelf(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get());
-        dropSelf(SFBlocks.BLUE_SEAGLASS_PEBBLES.get());
+        dropWhenSilkTouch(SFBlocks.AZURE_SEA_GLASS.get());
+        dropWhenSilkTouch(SFBlocks.AZURE_SEA_GLASS_PANE.get());
+        dropSelf(SFBlocks.AZURE_SEA_GLASS_BRICKS.get());
+        dropSelf(SFBlocks.AZURE_SEA_GLASS_BRICK_SLAB.get());
+        dropSelf(SFBlocks.AZURE_SEA_GLASS_BRICK_STAIRS.get());
+        dropSelf(SFBlocks.AZURE_PEBBLED_SEA_GLASS.get());
+        dropSelf(SFBlocks.AZURE_SEA_GLASS_TILES.get());
+        dropSelf(SFBlocks.AZURE_SEA_GLASS_TILE_SLAB.get());
+        dropSelf(SFBlocks.AZURE_SEA_GLASS_TILE_STAIRS.get());
+        dropSelf(SFBlocks.AZURE_SEA_GLASS_PEBBLES.get());
 
         dropWhenSilkTouch(SFBlocks.BROWN_SEAGLASS_BLOCK.get());
         dropWhenSilkTouch(SFBlocks.BROWN_SEAGLASS_PANE.get());
@@ -240,7 +240,7 @@ public class SFBlockLootTables extends BlockLootSubProvider {
         dropSelf(SFBlocks.ALGAE_COBBLESTONE_SLAB.get());
         dropSelf(SFBlocks.ALGAE_COBBLESTONE_STAIRS.get());
 
-        dropSelf(SFBlocks.SEAGLASS_BOTTLE_BUST_BLUE.get());
+        dropSelf(SFBlocks.AZURE_SEA_GLASS_BOTTLE.get());
         dropSelf(SFBlocks.SEAGLASS_BOTTLE_BUST_BROWN.get());
         dropSelf(SFBlocks.SEAGLASS_BOTTLE_CURVY_LIME.get());
         dropSelf(SFBlocks.SEAGLASS_BOTTLE_CURVY_ORANGE.get());

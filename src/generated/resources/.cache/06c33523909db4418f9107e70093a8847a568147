@@ -1,9 +1,9 @@
-// 1.20.1	2025-04-04T12:23:58.8278312	seafarer Block Tags
+// 1.20.1	2025-04-30T12:45:53.5506543	seafarer Block Tags
 e297ce907af9c43578a16003652b2f7ef3f9134a data/minecraft/tags/blocks/bee_growables.json
 352a0b51ff603dde1c4f93e3ca1d7766d8391fd4 data/minecraft/tags/blocks/corals.json
 57e55f1235b197e6e6b3e3e3df6e7365dac98715 data/minecraft/tags/blocks/coral_blocks.json
 f7f3270ec80bf9cedca9eee491552a8388515b3a data/minecraft/tags/blocks/coral_plants.json
-2b50da972607d24d7b87bb7c79a1a3e0ffab2dc1 data/minecraft/tags/blocks/mineable/pickaxe.json
+8ce807eaf3599c6958379d6f6e7b995f7fb76358 data/minecraft/tags/blocks/mineable/pickaxe.json
 894e80c01d321996925b8584aad5e8b5c4e91659 data/minecraft/tags/blocks/mineable/shovel.json
 7eed12e6db96eca299bc160994d90cc0f843cff2 data/minecraft/tags/blocks/wall_corals.json
 50cd9d812873dbdeb2adb7111d16dfe460e7d6e2 data/seafarer/tags/blocks/beach_plant_blocks.json

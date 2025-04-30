@@ -8,6 +8,7 @@ import com.peeko32213.seafarer.data.SFDatapackBuiltinEntriesProvider;
 import com.peeko32213.seafarer.data.client.SFBlockstateGenerator;
 import com.peeko32213.seafarer.data.client.SFItemModelGenerator;
 import com.peeko32213.seafarer.data.client.SFLanguageGenerator;
+import com.peeko32213.seafarer.data.client.SFSoundDefinitionsProvider;
 import com.peeko32213.seafarer.data.server.*;
 import com.peeko32213.seafarer.data.server.loot.SFLootGenerator;
 import net.minecraft.core.HolderLookup;
@@ -41,19 +42,21 @@ public class SeaFarer {
     private static int packetsRegistered;
     public static final Logger LOGGER = LogManager.getLogger();
 
-
     public SeaFarer() {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        modEventBus.addListener(this::commonSetup);
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> modEventBus.addListener(ClientEvents::init));
-        modEventBus.addListener(this::dataSetup);
-        SFBlocks.BLOCKS.register(modEventBus);
-        SFItems.ITEMS.register(modEventBus);
-        SFCreativeTabs.DEF_REG.register(modEventBus);
-        SFEntities.ENTITIES.register(modEventBus);
-        SFFeatures.FEATURES.register(modEventBus);
-        SFBlockEntities.BLOCK_ENTITIES.register(modEventBus);
-        SFLootModifiers.LOOT_MODIFIERS.register(modEventBus);
+        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        bus.addListener(this::commonSetup);
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> bus.addListener(ClientEvents::init));
+        bus.addListener(this::dataSetup);
+
+        SFBlocks.BLOCKS.register(bus);
+        SFItems.ITEMS.register(bus);
+        SFCreativeTabs.DEF_REG.register(bus);
+        SFEntities.ENTITIES.register(bus);
+        SFFeatures.FEATURES.register(bus);
+        SFBlockEntities.BLOCK_ENTITIES.register(bus);
+        SFLootModifiers.LOOT_MODIFIERS.register(bus);
+        SFSounds.DEF_REG.register(bus);
+
         MinecraftForge.EVENT_BUS.register(this);
 
     }
@@ -100,6 +103,7 @@ public class SeaFarer {
         generator.addProvider(client, new SFBlockstateGenerator(output, helper));
         generator.addProvider(client, new SFItemModelGenerator(output, helper));
         generator.addProvider(client, new SFLanguageGenerator(output));
+        generator.addProvider(client, new SFSoundDefinitionsProvider(output, helper));
     }
 
     public static void addToFlowerPot(RegistryObject<Block> plantBlockLoc, Supplier<? extends Block> pottedPlantBlock){
@@ -109,7 +113,7 @@ public class SeaFarer {
         ComposterBlock.COMPOSTABLES.put(item.get().asItem(), amountOfCompost);
     }
 
-    public static ResourceLocation prefix(String name) {
+    public static ResourceLocation modPrefix(String name) {
         return new ResourceLocation(MODID, name.toLowerCase(Locale.ROOT));
     }
 }

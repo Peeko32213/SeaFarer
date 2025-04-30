@@ -29,139 +29,50 @@ public class SFItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
             SeaFarer.MODID);
 
-    public static final RegistryObject<ForgeSpawnEggItem> SUNFISH_SPAWN_EGG = registerSpawnEggs("sunfish_spawn_egg",
-            SFEntities.SUNFISH , 0x628398, 0x33436b);
+    public static final RegistryObject<ForgeSpawnEggItem> BARRELEYE_SPAWN_EGG = registerSpawnEggs("barreleye_spawn_egg", SFEntities.BARRELEYE , 0x293530, 0x58904a);
+    public static final RegistryObject<ForgeSpawnEggItem> BLUE_TANG_SPAWN_EGG = registerSpawnEggs("blue_tang_spawn_egg", SFEntities.BLUE_TANG , 0x3688bf, 0x0d0b39);
+    public static final RegistryObject<ForgeSpawnEggItem> CHIMAERA_SPAWN_EGG = registerSpawnEggs("chimaera_shark_spawn_egg", SFEntities.CHIMAERA , 0x2e2e3a, 0x7b7d86);
+    public static final RegistryObject<ForgeSpawnEggItem> COPPERBAND_BUTTERFLY_SPAWN_EGG = registerSpawnEggs("copperband_butterfly_spawn_egg", SFEntities.COPPERBAND_BUTTERFLY , 0xb15d24, 0xeae1d8);
+    public static final RegistryObject<ForgeSpawnEggItem> CRAB_SPAWN_EGG = registerSpawnEggs("crab_spawn_egg", SFEntities.CRAB , 0xed5515, 0xffdf4f);
+    public static final RegistryObject<ForgeSpawnEggItem> FILEFISH_SPAWN_EGG = registerSpawnEggs("filefish_spawn_egg", SFEntities.FILEFISH , 0x20a8c9, 0xfeec46);
+    public static final RegistryObject<ForgeSpawnEggItem> FROG_FISH_SPAWN_EGG = registerSpawnEggs("frog_fish_spawn_egg", SFEntities.FROG_FISH , 0xd8bebe, 0xbf3535);
+    public static final RegistryObject<ForgeSpawnEggItem> GARDEN_EEL_SPAWN_EGG = registerSpawnEggs("garden_eel_spawn_egg", SFEntities.GARDEN_EEL , 0xdcdccc, 0x1c1604);
+    public static final RegistryObject<ForgeSpawnEggItem> HORSESHOE_CRAB_SPAWN_EGG = registerSpawnEggs("horseshoe_crab_spawn_egg", SFEntities.HORSESHOE_CRAB , 0x2d2219, 0x473d2c);
+    public static final RegistryObject<ForgeSpawnEggItem> LEAFY_SCORPIONFISH_SPAWN_EGG = registerSpawnEggs("leafy_scorpionfish_spawn_egg", SFEntities.LEAFY_SCORPIONFISH , 0xa6801e, 0xb2e44d);
+    public static final RegistryObject<ForgeSpawnEggItem> MANDARIN_GOBY_SPAWN_EGG = registerSpawnEggs("mandarin_goby_spawn_egg", SFEntities.MANDARIN_GOBY , 0x07186f, 0xee7c1e);
+    public static final RegistryObject<ForgeSpawnEggItem> MANTA_RAY_SPAWN_EGG = registerSpawnEggs("manta_ray_spawn_egg", SFEntities.MANTA_RAY , 0x070708, 0x303638);
+    public static final RegistryObject<ForgeSpawnEggItem> MANTIS_SHRIMP_SPAWN_EGG = registerSpawnEggs("mantis_shrimp_spawn_egg", SFEntities.MANTIS_SHRIMP , 0x176416, 0xcb3a52);
+    public static final RegistryObject<ForgeSpawnEggItem> MARINE_IGUANA_SPAWN_EGG = registerSpawnEggs("marine_iguana_spawn_egg", SFEntities.MARINE_IGUANA , 0xb43324, 0x4fdecb);
+    public static final RegistryObject<ForgeSpawnEggItem> PARROTFISH_SPAWN_EGG = registerSpawnEggs("parrotfish_spawn_egg", SFEntities.PARROTFISH , 0x2ac9e5, 0xfbb1ea);
+    public static final RegistryObject<ForgeSpawnEggItem> SEXY_SHRIMP_SPAWN_EGG = registerSpawnEggs("sexy_shrimp_spawn_egg", SFEntities.SEXY_SHRIMP , 0x380604, 0xf6eef5);
+    public static final RegistryObject<ForgeSpawnEggItem> SPIDER_CRAB_SPAWN_EGG = registerSpawnEggs("spider_crab_spawn_egg", SFEntities.SPIDER_CRAB , 0xd5a4a4, 0x6e0c0c);
+    public static final RegistryObject<ForgeSpawnEggItem> SUNFISH_SPAWN_EGG = registerSpawnEggs("sunfish_spawn_egg", SFEntities.SUNFISH , 0x628398, 0x33436b);
+    public static final RegistryObject<ForgeSpawnEggItem> ZEBRA_SHARK_SPAWN_EGG = registerSpawnEggs("zebra_shark_spawn_egg", SFEntities.ZEBRA_SHARK , 0xe1e3c0, 0xab9558);
 
-    public static final RegistryObject<ForgeSpawnEggItem> CRAB_SPAWN_EGG = registerSpawnEggs("crab_spawn_egg",
-            SFEntities.CRAB , 0xed5515, 0xffdf4f);
-
-    public static final RegistryObject<ForgeSpawnEggItem> HORSESHOE_CRAB_SPAWN_EGG = registerSpawnEggs("horseshoe_crab_spawn_egg",
-            SFEntities.HORSESHOE_CRAB , 0x2d2219, 0x473d2c);
-
-    public static final RegistryObject<ForgeSpawnEggItem> MARINE_IGUANA_SPAWN_EGG = registerSpawnEggs("marine_iguana_spawn_egg",
-            SFEntities.MARINE_IGUANA , 0xb43324, 0x4fdecb);
-
-    public static final RegistryObject<ForgeSpawnEggItem> GARDEN_EEL_SPAWN_EGG = registerSpawnEggs("garden_eel_spawn_egg",
-            SFEntities.GARDEN_EEL , 0xdcdccc, 0x1c1604);
-
-    public static final RegistryObject<ForgeSpawnEggItem> MANDARIN_GOBY_SPAWN_EGG = registerSpawnEggs("mandarin_goby_spawn_egg",
-            SFEntities.MANDARIN_GOBY , 0x07186f, 0xee7c1e);
-
-    public static final RegistryObject<ForgeSpawnEggItem> SEXY_SHRIMP_SPAWN_EGG = registerSpawnEggs("sexy_shrimp_spawn_egg",
-            SFEntities.SEXY_SHRIMP , 0x380604, 0xf6eef5);
-
-    public static final RegistryObject<ForgeSpawnEggItem> FROG_FISH_SPAWN_EGG = registerSpawnEggs("frog_fish_spawn_egg",
-            SFEntities.FROG_FISH , 0xd8bebe, 0xbf3535);
-
-    public static final RegistryObject<ForgeSpawnEggItem> BLUE_TANG_SPAWN_EGG = registerSpawnEggs("blue_tang_spawn_egg",
-            SFEntities.BLUE_TANG , 0x3688bf, 0x0d0b39);
-
-    public static final RegistryObject<ForgeSpawnEggItem> COPPERBAND_BUTTERFLY_SPAWN_EGG = registerSpawnEggs("copperband_butterfly_spawn_egg",
-            SFEntities.COPPERBAND_BUTTERFLY , 0xb15d24, 0xeae1d8);
-
-    public static final RegistryObject<ForgeSpawnEggItem> MANTIS_SHRIMP_SPAWN_EGG = registerSpawnEggs("mantis_shrimp_spawn_egg",
-            SFEntities.MANTIS_SHRIMP , 0x176416, 0xcb3a52);
-
-    public static final RegistryObject<ForgeSpawnEggItem> MANTA_RAY_SPAWN_EGG = registerSpawnEggs("manta_ray_spawn_egg",
-            SFEntities.MANTA_RAY , 0x070708, 0x303638);
-
-    public static final RegistryObject<ForgeSpawnEggItem> PARROTFISH_SPAWN_EGG = registerSpawnEggs("parrotfish_spawn_egg",
-            SFEntities.PARROTFISH , 0x2ac9e5, 0xfbb1ea);
-
-    public static final RegistryObject<ForgeSpawnEggItem> FILEFISH_SPAWN_EGG = registerSpawnEggs("filefish_spawn_egg",
-            SFEntities.FILEFISH , 0x20a8c9, 0xfeec46);
-
-    public static final RegistryObject<ForgeSpawnEggItem> LEAFY_SCORPIONFISH_SPAWN_EGG = registerSpawnEggs("leafy_scorpionfish_spawn_egg",
-            SFEntities.LEAFY_SCORPIONFISH , 0xa6801e, 0xb2e44d);
-
-    public static final RegistryObject<ForgeSpawnEggItem> ZEBRA_SHARK_SPAWN_EGG = registerSpawnEggs("zebra_shark_spawn_egg",
-            SFEntities.ZEBRA_SHARK , 0xe1e3c0, 0xab9558);
-
-    public static final RegistryObject<ForgeSpawnEggItem> CHIMAERA_SPAWN_EGG = registerSpawnEggs("chimaera_shark_spawn_egg",
-            SFEntities.CHIMAERA , 0x2e2e3a, 0x7b7d86);
-
-    public static final RegistryObject<ForgeSpawnEggItem> SPIDER_CRAB_SPAWN_EGG = registerSpawnEggs("spider_crab_spawn_egg",
-            SFEntities.SPIDER_CRAB , 0xd5a4a4, 0x6e0c0c);
-
-    public static final RegistryObject<ForgeSpawnEggItem> BARRELEYE_SPAWN_EGG = registerSpawnEggs("barreleye_spawn_egg",
-            SFEntities.BARRELEYE , 0x293530, 0x58904a);
-
-    public static final RegistryObject<Item> RAW_SHORE_CRAB = ITEMS.register("shore_crab_leg",
-            () -> new Item(new Item.Properties().food(SFFood.RAW_SHORE_CRAB)));
-
-    public static final RegistryObject<Item> COOKED_SHORE_CRAB = ITEMS.register("cooked_shore_crab_leg",
-            () -> new Item(new Item.Properties().food(SFFood.COOKED_SHORE_CRAB)));
-
-
-    public static final RegistryObject<Item> RAW_HORSESHOE_CRAB = ITEMS.register("raw_horseshoe_crab",
-            () -> new Item(new Item.Properties().food(SFFood.RAW_HORSESHOE_CRAB)));
-
-    public static final RegistryObject<Item> COOKED_HORSESHOE_CRAB = ITEMS.register("cooked_horseshoe_crab",
-            () -> new Item(new Item.Properties().food(SFFood.COOKED_HORSESHOE_CRAB)));
-
-    public static final RegistryObject<Item> RAW_MARINE_IGUANA = ITEMS.register("raw_marine_iguana",
-            () -> new Item(new Item.Properties().food(SFFood.RAW_MARINE_IGUANA)));
-
-    public static final RegistryObject<Item> COOKED_MARINE_IGUANA = ITEMS.register("cooked_marine_iguana",
-            () -> new Item(new Item.Properties().food(SFFood.COOKED_MARINE_IGUANA)));
-
-    public static final RegistryObject<Item> COOKED_STARFISH = ITEMS.register("cooked_starfish",
-            () -> new Item(new Item.Properties().food(SFFood.COOKED_STARFISH)));
-
-    public static final RegistryObject<Item> OLD_BOARD = ITEMS.register("old_board",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> OLD_BOOT = ITEMS.register("old_boot",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> CAN = ITEMS.register("can",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> MESSAGE_IN_A_BOTTLE = ITEMS.register("message_in_a_bottle",
-            () -> new MessageInABottleItem(StructureTags.ON_TREASURE_MAPS, "seafarer.message_in_bottle", MapDecoration.Type.MONUMENT,new Item.Properties()));
-
-    public static final RegistryObject<Item> SOY_SAUCE = ITEMS.register("soy_sauce",
-            () -> new SFDrinkableItem(drinkItem()
-                    .stacksTo(16)
-                    .food(SFFood.SOY_SAUCE), false, false));
-
-    public static final RegistryObject<Item> SALT = ITEMS.register("sea_salt",
-            () -> new Item(new Item.Properties().food(SFFood.SALT)));
-
-    public static final RegistryObject<Item> SALTED_COD = ITEMS.register("salted_cod",
-            () -> new Item(new Item.Properties().food(SFFood.SALTED_COD)));
-
-    public static final RegistryObject<Item> SALTED_SALMON = ITEMS.register("salted_salmon",
-            () -> new Item(new Item.Properties().food(SFFood.SALTED_SALMON)));
-
-    public static final RegistryObject<Item> SALTED_TROPICAL_FISH = ITEMS.register("salted_tropical_fish",
-            () -> new Item(new Item.Properties().food(SFFood.SALTED_TROPICAL_FISH)));
-
-    public static final RegistryObject<Item> SALTED_STARFISH = ITEMS.register("salted_starfish",
-            () -> new Item(new Item.Properties().food(SFFood.SALTED_STARFISH)));
-
-    public static final RegistryObject<Item> SHORE_CRAB_BUCKET = ITEMS.register("shore_crab_bucket",
-            () -> new SFFishBucket(SFEntities.CRAB, () -> Fluids.FLOWING_WATER, false,
-                    new Item.Properties().stacksTo(1)));
-
-    public static final RegistryObject<Item> HORSESHOE_CRAB_BUCKET = ITEMS.register("horseshoe_crab_bucket",
-            () -> new SFFishBucket(SFEntities.HORSESHOE_CRAB, () -> Fluids.FLOWING_WATER, false,
-                    new Item.Properties().stacksTo(1)));
-
-    public static final RegistryObject<Item> CLAM_SHOVEL = ITEMS.register("clam_shovel",
-            () -> new ShovelItem(SFTiers.SHELL,  1.5F, -3.0F, new Item.Properties()));
-
-    public static final RegistryObject<Item> HORN_PICKAXE = ITEMS.register("horn_pickaxe",
-            () -> new PickaxeItem(SFTiers.SHELL,  1, -2.8F, new Item.Properties()));
-
-    public static final RegistryObject<Item> SPIKY_SWORD = ITEMS.register("spiky_sword",
-            () -> new SwordItem(SFTiers.SHELL,  3, -2.4F, new Item.Properties()));
-
-    public static final RegistryObject<Item> SPIRAL_HOE = ITEMS.register("spiral_hoe",
-            () -> new HoeItem(SFTiers.SHELL,  0, -3.0F, new Item.Properties()));
-
-    public static final RegistryObject<Item> SWIRL_AXE = ITEMS.register("swirl_axe",
-            () -> new AxeItem(SFTiers.SHELL,  6.0F, -3.2F, new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SHORE_CRAB = ITEMS.register("shore_crab_leg", () -> new Item(new Item.Properties().food(SFFood.RAW_SHORE_CRAB)));
+    public static final RegistryObject<Item> COOKED_SHORE_CRAB = ITEMS.register("cooked_shore_crab_leg", () -> new Item(new Item.Properties().food(SFFood.COOKED_SHORE_CRAB)));
+    public static final RegistryObject<Item> RAW_HORSESHOE_CRAB = ITEMS.register("raw_horseshoe_crab", () -> new Item(new Item.Properties().food(SFFood.RAW_HORSESHOE_CRAB)));
+    public static final RegistryObject<Item> COOKED_HORSESHOE_CRAB = ITEMS.register("cooked_horseshoe_crab", () -> new Item(new Item.Properties().food(SFFood.COOKED_HORSESHOE_CRAB)));
+    public static final RegistryObject<Item> RAW_MARINE_IGUANA = ITEMS.register("raw_marine_iguana", () -> new Item(new Item.Properties().food(SFFood.RAW_MARINE_IGUANA)));
+    public static final RegistryObject<Item> COOKED_MARINE_IGUANA = ITEMS.register("cooked_marine_iguana", () -> new Item(new Item.Properties().food(SFFood.COOKED_MARINE_IGUANA)));
+    public static final RegistryObject<Item> COOKED_STARFISH = ITEMS.register("cooked_starfish", () -> new Item(new Item.Properties().food(SFFood.COOKED_STARFISH)));
+    public static final RegistryObject<Item> OLD_BOARD = ITEMS.register("old_board", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> OLD_BOOT = ITEMS.register("old_boot", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CAN = ITEMS.register("can", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MESSAGE_IN_A_BOTTLE = ITEMS.register("message_in_a_bottle", () -> new MessageInABottleItem(StructureTags.ON_TREASURE_MAPS, "seafarer.message_in_bottle", MapDecoration.Type.MONUMENT,new Item.Properties()));
+    public static final RegistryObject<Item> SOY_SAUCE = ITEMS.register("soy_sauce", () -> new SFDrinkableItem(drinkItem().stacksTo(16).food(SFFood.SOY_SAUCE), false, false));
+    public static final RegistryObject<Item> SALT = ITEMS.register("sea_salt", () -> new Item(new Item.Properties().food(SFFood.SALT)));
+    public static final RegistryObject<Item> SALTED_COD = ITEMS.register("salted_cod", () -> new Item(new Item.Properties().food(SFFood.SALTED_COD)));
+    public static final RegistryObject<Item> SALTED_SALMON = ITEMS.register("salted_salmon", () -> new Item(new Item.Properties().food(SFFood.SALTED_SALMON)));
+    public static final RegistryObject<Item> SALTED_TROPICAL_FISH = ITEMS.register("salted_tropical_fish", () -> new Item(new Item.Properties().food(SFFood.SALTED_TROPICAL_FISH)));
+    public static final RegistryObject<Item> SALTED_STARFISH = ITEMS.register("salted_starfish", () -> new Item(new Item.Properties().food(SFFood.SALTED_STARFISH)));
+    public static final RegistryObject<Item> SHORE_CRAB_BUCKET = ITEMS.register("shore_crab_bucket", () -> new SFFishBucket(SFEntities.CRAB, () -> Fluids.FLOWING_WATER, false, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> HORSESHOE_CRAB_BUCKET = ITEMS.register("horseshoe_crab_bucket", () -> new SFFishBucket(SFEntities.HORSESHOE_CRAB, () -> Fluids.FLOWING_WATER, false, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> CLAM_SHOVEL = ITEMS.register("clam_shovel", () -> new ShovelItem(SFTiers.SHELL,  1.5F, -3.0F, new Item.Properties()));
+    public static final RegistryObject<Item> HORN_PICKAXE = ITEMS.register("horn_pickaxe", () -> new PickaxeItem(SFTiers.SHELL,  1, -2.8F, new Item.Properties()));
+    public static final RegistryObject<Item> SPIKY_SWORD = ITEMS.register("spiky_sword", () -> new SwordItem(SFTiers.SHELL,  3, -2.4F, new Item.Properties()));
+    public static final RegistryObject<Item> SPIRAL_HOE = ITEMS.register("spiral_hoe", () -> new HoeItem(SFTiers.SHELL,  0, -3.0F, new Item.Properties()));
+    public static final RegistryObject<Item> SWIRL_AXE = ITEMS.register("swirl_axe", () -> new AxeItem(SFTiers.SHELL,  6.0F, -3.2F, new Item.Properties()));
 
     public static final RegistryObject<Item> AMBER_CORAL_FAN = ITEMS.register("amber_coral_fan",
             () -> new StandingAndWallBlockItem(SFBlocks.AMBER_CORAL_FAN.get(), SFBlocks.AMBER_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));

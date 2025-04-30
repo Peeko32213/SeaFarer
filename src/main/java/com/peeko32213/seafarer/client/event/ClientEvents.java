@@ -25,7 +25,7 @@ public final class ClientEvents {
 
     @SubscribeEvent
     public static void onClientSetup(final FMLClientSetupEvent event) {
-        ItemBlockRenderTypes.setRenderLayer(SFBlocks.BLUE_SEAGLASS_BLOCK.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.AZURE_SEA_GLASS.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.BROWN_SEAGLASS_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.GREEN_SEAGLASS_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.ORANGE_SEAGLASS_BLOCK.get(), RenderType.translucent());
@@ -35,7 +35,7 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.PINK_SEAGLASS_BLOCK.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.LIME_SEAGLASS_BLOCK.get(), RenderType.translucent());
 
-        ItemBlockRenderTypes.setRenderLayer(SFBlocks.BLUE_SEAGLASS_PANE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.AZURE_SEA_GLASS_PANE.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.BROWN_SEAGLASS_PANE.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.GREEN_SEAGLASS_PANE.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.ORANGE_SEAGLASS_PANE.get(), RenderType.translucent());
@@ -46,7 +46,7 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.LIME_SEAGLASS_PANE.get(), RenderType.translucent());
 
 
-        ItemBlockRenderTypes.setRenderLayer(SFBlocks.BLUE_SEAGLASS_PEBBLES.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.AZURE_SEA_GLASS_PEBBLES.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.BROWN_SEAGLASS_PEBBLES.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.GREEN_SEAGLASS_PEBBLES.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.ORANGE_SEAGLASS_PEBBLES.get(), RenderType.translucent());
@@ -66,7 +66,7 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.STARFISH_BIG_OCHRE.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.STARFISH_BIG_ROYAL.get(), RenderType.translucent());
 
-        ItemBlockRenderTypes.setRenderLayer(SFBlocks.SEAGLASS_BOTTLE_BUST_BLUE.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.AZURE_SEA_GLASS_BOTTLE.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.SEAGLASS_BOTTLE_BUST_BROWN.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.SEAGLASS_BOTTLE_CURVY_LIME.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.SEAGLASS_BOTTLE_CURVY_ORANGE.get(), RenderType.translucent());

@@ -1,0 +1,21 @@
+{
+  "seaglass_break": {
+    "sounds": [
+      "seafarer:block/sea_glass_break_0"
+    ],
+    "subtitle": "subtitles.seaglass_break"
+  },
+  "seaglass_place": {
+    "sounds": [
+      "seafarer:block/sea_glass_place_0"
+    ],
+    "subtitle": "subtitles.seaglass_place"
+  },
+  "seaglass_step": {
+    "sounds": [
+      "seafarer:block/sea_glass_step_0",
+      "seafarer:block/sea_glass_step_1"
+    ],
+    "subtitle": "subtitles.seaglass_step"
+  }
+}

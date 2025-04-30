@@ -31,17 +31,17 @@ public class SFRecipeGenerator extends SFRecipeProvider implements IConditionBui
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
 
         // Blue Sea Glass
-        makeSeaGlass(SFBlocks.BLUE_SEAGLASS_BLOCK, SFBlocks.BLUE_SEAGLASS_PEBBLES).save(consumer);
-        makeBricks(SFBlocks.BLUE_SEAGLASS_BRICKS, SFBlocks.BLUE_SEAGLASS_BLOCK).save(consumer);
-        makeStairs(SFBlocks.BLUE_SEAGLASS_BRICKS_STAIRS, SFBlocks.BLUE_SEAGLASS_BRICKS).save(consumer);
-        makeSlab(SFBlocks.BLUE_SEAGLASS_BRICKS_SLAB, SFBlocks.BLUE_SEAGLASS_BRICKS).save(consumer);
+        makeSeaGlass(SFBlocks.AZURE_SEA_GLASS, SFBlocks.AZURE_SEA_GLASS_PEBBLES).save(consumer);
+        makeBricks(SFBlocks.AZURE_SEA_GLASS_BRICKS, SFBlocks.AZURE_SEA_GLASS).save(consumer);
+        makeStairs(SFBlocks.AZURE_SEA_GLASS_BRICK_STAIRS, SFBlocks.AZURE_SEA_GLASS_BRICKS).save(consumer);
+        makeSlab(SFBlocks.AZURE_SEA_GLASS_BRICK_SLAB, SFBlocks.AZURE_SEA_GLASS_BRICKS).save(consumer);
 
-        makeCondensedToBlock(SFBlocks.BLUE_SEAGLASS_PEBBLED, SFBlocks.BLUE_SEAGLASS_PEBBLES).save(consumer);
+        makeCondensedToBlock(SFBlocks.AZURE_PEBBLED_SEA_GLASS, SFBlocks.AZURE_SEA_GLASS_PEBBLES).save(consumer);
 
-        makeBricks(SFBlocks.BLUE_SEAGLASS_TILES, SFBlocks.BLUE_SEAGLASS_BRICKS).save(consumer);
-        makeStairs(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS, SFBlocks.BLUE_SEAGLASS_TILES).save(consumer);
-        makeSlab(SFBlocks.BLUE_SEAGLASS_TILES_SLAB, SFBlocks.BLUE_SEAGLASS_TILES).save(consumer);
-        makePanes(SFBlocks.BLUE_SEAGLASS_PANE, SFBlocks.BLUE_SEAGLASS_BLOCK).save(consumer);
+        makeBricks(SFBlocks.AZURE_SEA_GLASS_TILES, SFBlocks.AZURE_SEA_GLASS_BRICKS).save(consumer);
+        makeStairs(SFBlocks.AZURE_SEA_GLASS_TILE_STAIRS, SFBlocks.AZURE_SEA_GLASS_TILES).save(consumer);
+        makeSlab(SFBlocks.AZURE_SEA_GLASS_TILE_SLAB, SFBlocks.AZURE_SEA_GLASS_TILES).save(consumer);
+        makePanes(SFBlocks.AZURE_SEA_GLASS_PANE, SFBlocks.AZURE_SEA_GLASS).save(consumer);
 
         // Brown Sea Glass
         makeSeaGlass(SFBlocks.BROWN_SEAGLASS_BLOCK, SFBlocks.BROWN_SEAGLASS_PEBBLES).save(consumer);
@@ -269,7 +269,7 @@ public class SFRecipeGenerator extends SFRecipeProvider implements IConditionBui
         smeltingRecipes(consumer);
 
         //Sea Glass Bottles
-        makeGlasstoBottle(SFBlocks.SEAGLASS_BOTTLE_BUST_BLUE, SFBlocks.BLUE_SEAGLASS_BLOCK).save(consumer);
+        makeGlasstoBottle(SFBlocks.AZURE_SEA_GLASS_BOTTLE, SFBlocks.AZURE_SEA_GLASS).save(consumer);
         makeGlasstoBottle(SFBlocks.SEAGLASS_BOTTLE_BUST_BROWN, SFBlocks.BROWN_SEAGLASS_BLOCK).save(consumer);
         makeGlasstoBottle(SFBlocks.SEAGLASS_BOTTLE_CURVY_LIME, SFBlocks.LIME_SEAGLASS_BLOCK).save(consumer);
         makeGlasstoBottle(SFBlocks.SEAGLASS_BOTTLE_CURVY_ORANGE, SFBlocks.ORANGE_SEAGLASS_BLOCK).save(consumer);

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "seafarer:block/azure_sea_glass_tile_slab"
+    },
+    "type=double": {
+      "model": "seafarer:block/azure_sea_glass_tiles"
+    },
+    "type=top": {
+      "model": "seafarer:block/azure_sea_glass_tile_slab_top"
+    }
+  }
+}

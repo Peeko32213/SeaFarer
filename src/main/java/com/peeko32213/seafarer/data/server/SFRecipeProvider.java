@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-import static com.peeko32213.seafarer.SeaFarer.prefix;
+import static com.peeko32213.seafarer.SeaFarer.modPrefix;
 import static net.minecraft.advancements.critereon.InventoryChangeTrigger.TriggerInstance.hasItems;
 
 public abstract class SFRecipeProvider extends RecipeProvider {
@@ -49,7 +49,7 @@ public abstract class SFRecipeProvider extends RecipeProvider {
          ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, plankOut, 4)
                  .requires(logIn)
                 .unlockedBy("has_flower", has(logIn))
-                .save(c, prefix(name));
+                .save(c, modPrefix(name));
     }
 
     public ShapedRecipeBuilder makeDoor(Supplier<? extends Block> doorOut, Supplier<? extends Block> plankIn) {
@@ -477,13 +477,13 @@ public abstract class SFRecipeProvider extends RecipeProvider {
     public void foodSmeltingRecipes(String name, ItemLike ingredient, ItemLike result, float experience, Consumer<FinishedRecipe> consumer) {
         String namePrefix = new ResourceLocation(SeaFarer.MODID, name).toString();
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 200)
-                .unlockedBy(name, hasItems(ingredient)).save(consumer, prefix(name));
+                .unlockedBy(name, hasItems(ingredient)).save(consumer, modPrefix(name));
         SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 600)
                 .unlockedBy(name, hasItems(ingredient))
-                .save(consumer, prefix(name + "_from_campfire_cooking"));
+                .save(consumer, modPrefix(name + "_from_campfire_cooking"));
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 100)
                 .unlockedBy(name, hasItems(ingredient))
-                .save(consumer, prefix(name + "_from_smoking"));
+                .save(consumer, modPrefix(name + "_from_smoking"));
     }
 
     public ResourceLocation key(Item item) {

@@ -16,7 +16,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
-import static com.peeko32213.seafarer.SeaFarer.prefix;
+import static com.peeko32213.seafarer.SeaFarer.modPrefix;
 import static net.minecraftforge.client.model.generators.ModelProvider.BLOCK_FOLDER;
 
 public class SFBlockstateGenerator extends BlockStateProvider {
@@ -55,22 +55,26 @@ public class SFBlockstateGenerator extends BlockStateProvider {
         simpleBlock(SFBlocks.ALGAE_BLOCK.get());
         simpleBlockItem(SFBlocks.ALGAE_BLOCK.get(), existingModel((getName(SFBlocks.ALGAE_BLOCK.get()))));
 
-        // Blue Seaglass
+        // Azure Seaglass
+        simpleBlock(SFBlocks.AZURE_PEBBLED_SEA_GLASS.get());
+        simpleBlockItem(SFBlocks.AZURE_PEBBLED_SEA_GLASS.get(), existingModel((getName(SFBlocks.AZURE_PEBBLED_SEA_GLASS.get()))));
 
-        simpleBlock(SFBlocks.BLUE_SEAGLASS_TILES.get());
-        simpleBlockItem(SFBlocks.BLUE_SEAGLASS_TILES.get(), existingModel((getName(SFBlocks.BLUE_SEAGLASS_TILES.get()))));
+        simpleBlock(SFBlocks.AZURE_SEA_GLASS.get());
+        simpleBlockItem(SFBlocks.AZURE_SEA_GLASS.get(), existingModel((getName(SFBlocks.AZURE_SEA_GLASS.get()))));
 
-        slabBlock(SFBlocks.BLUE_SEAGLASS_BRICKS_SLAB.get(), resourceBlock(getName(SFBlocks.BLUE_SEAGLASS_BRICKS.get())), new ResourceLocation(SeaFarer.MODID, "block/blue_seaglass_bricks"));
-        simpleBlockItem(SFBlocks.BLUE_SEAGLASS_BRICKS_SLAB.get(), existingModel((getName(SFBlocks.BLUE_SEAGLASS_BRICKS_SLAB.get()))));
+        simpleBlock(SFBlocks.AZURE_SEA_GLASS_BRICKS.get());
+        simpleBlockItem(SFBlocks.AZURE_SEA_GLASS_BRICKS.get(), existingModel((getName(SFBlocks.AZURE_SEA_GLASS_BRICKS.get()))));
+        slabBlock(SFBlocks.AZURE_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SFBlocks.AZURE_SEA_GLASS_BRICKS.get())), new ResourceLocation(SeaFarer.MODID, "block/azure_sea_glass_bricks"));
+        simpleBlockItem(SFBlocks.AZURE_SEA_GLASS_BRICK_SLAB.get(), existingModel((getName(SFBlocks.AZURE_SEA_GLASS_BRICK_SLAB.get()))));
+        stairsBlock(SFBlocks.AZURE_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/azure_sea_glass_bricks"));
+        simpleBlockItem(SFBlocks.AZURE_SEA_GLASS_BRICK_STAIRS.get(), existingModel((getName(SFBlocks.AZURE_SEA_GLASS_BRICK_STAIRS.get()))));
 
-        stairsBlock(SFBlocks.BLUE_SEAGLASS_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/blue_seaglass_bricks"));
-        simpleBlockItem(SFBlocks.BLUE_SEAGLASS_BRICKS_STAIRS.get(), existingModel((getName(SFBlocks.BLUE_SEAGLASS_BRICKS_STAIRS.get()))));
-
-        slabBlock(SFBlocks.BLUE_SEAGLASS_TILES_SLAB.get(), resourceBlock(getName(SFBlocks.BLUE_SEAGLASS_TILES.get())), new ResourceLocation(SeaFarer.MODID, "block/blue_seaglass_tiles"));
-        simpleBlockItem(SFBlocks.BLUE_SEAGLASS_TILES_SLAB.get(), existingModel((getName(SFBlocks.BLUE_SEAGLASS_TILES_SLAB.get()))));
-
-        stairsBlock(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/blue_seaglass_tiles"));
-        simpleBlockItem(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get(), existingModel((getName(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get()))));
+        simpleBlock(SFBlocks.AZURE_SEA_GLASS_TILES.get());
+        simpleBlockItem(SFBlocks.AZURE_SEA_GLASS_TILES.get(), existingModel((getName(SFBlocks.AZURE_SEA_GLASS_TILES.get()))));
+        slabBlock(SFBlocks.AZURE_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SFBlocks.AZURE_SEA_GLASS_TILES.get())), new ResourceLocation(SeaFarer.MODID, "block/azure_sea_glass_tiles"));
+        simpleBlockItem(SFBlocks.AZURE_SEA_GLASS_TILE_SLAB.get(), existingModel((getName(SFBlocks.AZURE_SEA_GLASS_TILE_SLAB.get()))));
+        stairsBlock(SFBlocks.AZURE_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/azure_sea_glass_tiles"));
+        simpleBlockItem(SFBlocks.AZURE_SEA_GLASS_TILE_STAIRS.get(), existingModel((getName(SFBlocks.AZURE_SEA_GLASS_TILE_STAIRS.get()))));
 
         //    public void paneBlock(IronBarsBlock block, ResourceLocation pane, ResourceLocation edge) {
         //        paneBlockInternal(block, key(block).toString(), pane, edge);
@@ -392,7 +396,7 @@ public class SFBlockstateGenerator extends BlockStateProvider {
         simpleBlock(SFBlocks.CORAL_SAND.get());
         simpleBlockItem(SFBlocks.CORAL_SAND.get(), existingModel((getName(SFBlocks.CORAL_SAND.get()))));
 
-        paneBlock(SFBlocks.BLUE_SEAGLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/blue_seaglass_block"), new ResourceLocation(SeaFarer.MODID, "block/blue_seaglass_pane_top"));
+        paneBlock(SFBlocks.AZURE_SEA_GLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/azure_sea_glass"), new ResourceLocation(SeaFarer.MODID, "block/azure_sea_glass_pane_top"));
 
         paneBlock(SFBlocks.BROWN_SEAGLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/brown_seaglass_block"), new ResourceLocation(SeaFarer.MODID, "block/brown_seaglass_pane_top"));
 
@@ -516,12 +520,12 @@ public class SFBlockstateGenerator extends BlockStateProvider {
         getVariantBuilder(b.get()).forAllStatesExcept(e -> {
             DoubleBlockHalf val = e.getValue(DoublePlantBlock.HALF);
             String mod = val == DoubleBlockHalf.LOWER ? "bottom" : "top";
-            ResourceLocation texture = prefix("block/" + baseName + "_" + mod);
+            ResourceLocation texture = modPrefix("block/" + baseName + "_" + mod);
             ModelFile text = cross(baseName + "_" + mod, texture, renderType);
             return ConfiguredModel.builder().modelFile(text).build();
         });
 
-        //ModelFile file = models().getExistingFile(prefix(baseName + "_top"));
+        //ModelFile file = models().getExistingFile(modPrefix(baseName + "_top"));
         singleTex(b.get(), baseName + "_top");
     }
 
@@ -578,7 +582,7 @@ public class SFBlockstateGenerator extends BlockStateProvider {
     }
 
     private void blockWithTop(RegistryObject<Block> blockRegistryObject) {
-        horizontalBlock(blockRegistryObject.get(), prefix("block/" + key(blockRegistryObject.get()).getPath()), prefix("block/" + key(blockRegistryObject.get()).getPath()), prefix("block/" + key(blockRegistryObject.get()).getPath() + "_top"));
+        horizontalBlock(blockRegistryObject.get(), modPrefix("block/" + key(blockRegistryObject.get()).getPath()), modPrefix("block/" + key(blockRegistryObject.get()).getPath()), modPrefix("block/" + key(blockRegistryObject.get()).getPath() + "_top"));
         simpleBlockItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
     }
 

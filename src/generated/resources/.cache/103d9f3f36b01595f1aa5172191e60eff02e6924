@@ -1,5 +1,4 @@
-// 1.20.1	2025-04-04T13:05:25.1315574	Registries
-1f1689f28d40237dc84d5b8746ff8dae341efe8a data/seafarer/blueprint/modded_biome_slices/warm_reef.json
+// 1.20.1	2025-04-30T12:45:53.5465641	Registries
 34be4fddea0310061ac1bf7524d82de77493de71 data/seafarer/forge/biome_modifier/add_feature/algae_boulder.json
 01e5e644afacfaa4370948f855ccc161a6601e7f data/seafarer/forge/biome_modifier/add_feature/beachgrass.json
 0243f5a5d1476d3b51cdf78e80d75e74e14cbbc9 data/seafarer/forge/biome_modifier/add_feature/beachgrass_fan.json
@@ -28,7 +27,6 @@ cf47b863feb7e526c5702d7ce801abd74ab404b1 data/seafarer/forge/biome_modifier/add_
 0fb39e3f95054ac764e89ceb94edbc350635ae9d data/seafarer/forge/biome_modifier/add_spawn/marine_iguana.json
 960fa18a55f4e7b52e204794cd442d1ddba868c8 data/seafarer/forge/biome_modifier/add_spawn/sunfish.json
 42e0ee3903b9110610de4689027e71f22df17cff data/seafarer/forge/biome_modifier/remove_feature/remove_coral.json
-7162561c02f6f2d547b0d9d1520b46cb11207580 data/seafarer/worldgen/biome/warm_reef.json
 dd25e52c2251359fdf594ef1fc19234ab017c65a data/seafarer/worldgen/configured_feature/algae_boulder.json
 0ed3e91dd6f73355e5835e5c1cbc91087a15d318 data/seafarer/worldgen/configured_feature/algae_patch_bonemeal.json
 3935efdde5bf1df259f956625f878546d76effe0 data/seafarer/worldgen/configured_feature/algae_patch_plants.json
@@ -49,7 +47,7 @@ b14d9addd03bd149a07d54388dd4ab14e7e43768 data/seafarer/worldgen/configured_featu
 dd0e7a24c7bbdb34ecc88afb5cde3524c4b01420 data/seafarer/worldgen/configured_feature/rocky_sand_patch.json
 46ba87e1da45e6c1271c42bfabe061a9836795b3 data/seafarer/worldgen/configured_feature/sand_tag_patch.json
 7a1b7202a0e0b3999494df9ca620f776172db4f2 data/seafarer/worldgen/configured_feature/scattered_shelly_sand_patch.json
-293e5a40064ab95ce717f579b5a78f7b09ed8e3f data/seafarer/worldgen/configured_feature/sea_glass.json
+237ab185f69e622d75ef4ea67d4e99ba4dfd3bf7 data/seafarer/worldgen/configured_feature/sea_glass.json
 964bd4f7b892ca75686338b4b94d02236aaa5f49 data/seafarer/worldgen/configured_feature/sea_holly.json
 909186fdb34e55b1ba9ed008e5e7d6a5c6497998 data/seafarer/worldgen/configured_feature/sea_shells.json
 ff1b33b44921211d5fc8545a2b4275270e4ca7dc data/seafarer/worldgen/configured_feature/sea_stars.json

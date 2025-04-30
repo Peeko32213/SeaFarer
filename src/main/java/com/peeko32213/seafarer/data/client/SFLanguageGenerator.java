@@ -33,17 +33,6 @@ public class SFLanguageGenerator extends LanguageProvider {
         // Blocks
         SFBlocks.AUTO_TRANSLATE.forEach(this::forBlock);
 
-        addBlock(SFBlocks.BLUE_SEAGLASS_BLOCK, "Blue Sea Glass Block");
-        addBlock(SFBlocks.BLUE_SEAGLASS_BRICKS, "Blue Sea Glass Bricks");
-        addBlock(SFBlocks.BLUE_SEAGLASS_PEBBLED, "Pebbled Blue Sea Glass");
-        addBlock(SFBlocks.BLUE_SEAGLASS_PEBBLES, "Blue Sea Glass");
-        addBlock(SFBlocks.BLUE_SEAGLASS_TILES, "Blue Sea Glass Tiles");
-        addBlock(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS, "Blue Sea Glass Tile Stairs");
-        addBlock(SFBlocks.BLUE_SEAGLASS_TILES_SLAB, "Blue Sea Glass Tile Slabs");
-        addBlock(SFBlocks.BLUE_SEAGLASS_BRICKS_SLAB, "Blue Sea Glass Brick Slabs");
-        addBlock(SFBlocks.BLUE_SEAGLASS_BRICKS_STAIRS, "Blue Sea Glass Brick Stairs");
-        addBlock(SFBlocks.BLUE_SEAGLASS_PANE, "Blue Sea Glass Pane");
-
         addBlock(SFBlocks.BROWN_SEAGLASS_BLOCK, "Brown Sea Glass Block");
         addBlock(SFBlocks.BROWN_SEAGLASS_BRICKS, "Brown Sea Glass Bricks");
         addBlock(SFBlocks.BROWN_SEAGLASS_PEBBLED, "Pebbled Brown Sea Glass");
@@ -309,7 +298,6 @@ public class SFLanguageGenerator extends LanguageProvider {
         addItem(SFItems.SPIRAL_HOE, "Spiral Hoe");
         addItem(SFItems.SWIRL_AXE, "Swirl Axe");
 
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_BUST_BLUE, "Blue Sea Glass Bottle");
         addBlock(SFBlocks.SEAGLASS_BOTTLE_BUST_BROWN, "Brown Sea Glass Bottle");
         addBlock(SFBlocks.SEAGLASS_BOTTLE_PIPE_PINK, "Pink Sea Glass Bottle");
         addBlock(SFBlocks.SEAGLASS_BOTTLE_PIPE_YELLOW, "Yellow Sea Glass Bottle");

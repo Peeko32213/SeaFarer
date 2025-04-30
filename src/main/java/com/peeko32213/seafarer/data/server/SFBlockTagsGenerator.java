@@ -88,14 +88,14 @@ public class SFBlockTagsGenerator extends BlockTagsProvider {
         ;
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(SFBlocks.BLUE_SEAGLASS_BLOCK.get())
-                .add(SFBlocks.BLUE_SEAGLASS_PANE.get())
-                .add(SFBlocks.BLUE_SEAGLASS_BRICKS.get())
-                .add(SFBlocks.BLUE_SEAGLASS_BRICKS_SLAB.get())
-                .add(SFBlocks.BLUE_SEAGLASS_BRICKS_STAIRS.get())
-                .add(SFBlocks.BLUE_SEAGLASS_TILES.get())
-                .add(SFBlocks.BLUE_SEAGLASS_TILES_SLAB.get())
-                .add(SFBlocks.BLUE_SEAGLASS_TILES_STAIRS.get())
+                .add(SFBlocks.AZURE_SEA_GLASS.get())
+                .add(SFBlocks.AZURE_SEA_GLASS_PANE.get())
+                .add(SFBlocks.AZURE_SEA_GLASS_BRICKS.get())
+                .add(SFBlocks.AZURE_SEA_GLASS_BRICK_SLAB.get())
+                .add(SFBlocks.AZURE_SEA_GLASS_BRICK_STAIRS.get())
+                .add(SFBlocks.AZURE_SEA_GLASS_TILES.get())
+                .add(SFBlocks.AZURE_SEA_GLASS_TILE_SLAB.get())
+                .add(SFBlocks.AZURE_SEA_GLASS_TILE_STAIRS.get())
 
                 .add(SFBlocks.BROWN_SEAGLASS_BLOCK.get())
                 .add(SFBlocks.BROWN_SEAGLASS_PANE.get())

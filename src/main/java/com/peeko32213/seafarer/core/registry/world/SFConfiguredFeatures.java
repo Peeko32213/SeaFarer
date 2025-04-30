@@ -107,7 +107,7 @@ public class SFConfiguredFeatures {
                                 .add(SFBlocks.ORANGE_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
                                 .add(SFBlocks.GREEN_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
                                 .add(SFBlocks.BROWN_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
-                                .add(SFBlocks.BLUE_SEAGLASS_PEBBLES.get().defaultBlockState(), 20))),
+                                .add(SFBlocks.AZURE_SEA_GLASS_PEBBLES.get().defaultBlockState(), 20))),
                         BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE)));
 
         register(context, SEA_STARS, Feature.RANDOM_PATCH,
