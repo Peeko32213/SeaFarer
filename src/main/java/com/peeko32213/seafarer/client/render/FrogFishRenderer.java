@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.client.render;
 
-import com.peeko32213.seafarer.common.entity.MantaRayEntity;
+import com.peeko32213.seafarer.common.entity.FrogfishEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -11,16 +11,16 @@ import software.bernie.geckolib.core.animatable.GeoAnimatable;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 
-public class MantaRayEntityRenderer<T extends LivingEntity & GeoAnimatable> extends GeoEntityRenderer<T> {
+public class FrogFishRenderer<T extends LivingEntity & GeoAnimatable> extends GeoEntityRenderer<T> {
 
-    public MantaRayEntityRenderer(EntityRendererProvider.Context context, GeoModel<T> model) {
+    public FrogFishRenderer(EntityRendererProvider.Context context, GeoModel<T> model) {
         super(context, model);
     }
 
 
     @Override
     public RenderType getRenderType(T animatable, ResourceLocation texture, @Nullable MultiBufferSource bufferSource, float partialTick) { // lol.
-        return animatable instanceof MantaRayEntity ? RenderType.entityTranslucent(getTextureLocation(animatable)) : RenderType.entityCutout(getTextureLocation(animatable));
+        return animatable instanceof FrogfishEntity ? RenderType.entityTranslucent(getTextureLocation(animatable)) : RenderType.entityCutout(getTextureLocation(animatable));
 
     }
 }

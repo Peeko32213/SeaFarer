@@ -6,13 +6,23 @@
 				"identifier": "geometry.sunfish",
 				"texture_width": 256,
 				"texture_height": 256,
-				"visible_bounds_width": 4,
+				"visible_bounds_width": 6,
 				"visible_bounds_height": 5,
 				"visible_bounds_offset": [0, 1.5, 0]
 			},
 			"bones": [
 				{
+					"name": "root",
+					"pivot": [0, 16, 0]
+				},
+				{
+					"name": "swim_control",
+					"parent": "root",
+					"pivot": [0, 16, 0]
+				},
+				{
 					"name": "Body",
+					"parent": "swim_control",
 					"pivot": [0, 16, 0],
 					"cubes": [
 						{"origin": [-4.5, 24, -18], "size": [9, 9, 33], "uv": [51, 22]},

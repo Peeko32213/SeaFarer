@@ -16,7 +16,7 @@ public class SFEntities {
             SeaFarer.MODID);
 
     public static final RegistryObject<EntityType<SunfishEntity>> SUNFISH = ENTITIES.register("sunfish",
-            () -> EntityType.Builder.of(SunfishEntity::new, MobCategory.WATER_CREATURE).sized(2.5F, 1.75F)
+            () -> EntityType.Builder.of(SunfishEntity::new, MobCategory.WATER_CREATURE).sized(1.5F, 2.4F)
                     .build(new ResourceLocation(SeaFarer.MODID, "sunfish").toString()));
 
     public static final RegistryObject<EntityType<CrabEntity>> CRAB = ENTITIES.register("crab",
@@ -60,7 +60,7 @@ public class SFEntities {
                     .build(new ResourceLocation(SeaFarer.MODID, "mantis_shrimp").toString()));
 
     public static final RegistryObject<EntityType<MantaRayEntity>> MANTA_RAY = ENTITIES.register("manta_ray",
-            () -> EntityType.Builder.of(MantaRayEntity::new, MobCategory.WATER_CREATURE).sized(5.5F, 1.0F)
+            () -> EntityType.Builder.of(MantaRayEntity::new, MobCategory.WATER_CREATURE).sized(2.5F, 1.5F)
                     .build(new ResourceLocation(SeaFarer.MODID, "manta_ray").toString()));
 
     public static final RegistryObject<EntityType<ParrotfishEntity>> PARROTFISH = ENTITIES.register("parrotfish",

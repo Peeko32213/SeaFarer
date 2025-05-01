@@ -154,7 +154,7 @@ public class SFBlocks {
                     .sound(SoundType.LADDER)));
 
 
-    public static final RegistryObject<Block> STARFISH_COMMON_ORANGE = register("starfish_common_orange",
+    public static final RegistryObject<Block> STARFISH_COMMON_ORANGE = registerBlock("starfish_common_orange",
             () -> new StarfishCommonOrangeBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
@@ -163,7 +163,7 @@ public class SFBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> STARFISH_PINK = register("starfish_pink",
+    public static final RegistryObject<Block> STARFISH_PINK = registerBlock("starfish_pink",
             () -> new StarfishPinkBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
@@ -172,7 +172,7 @@ public class SFBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> STARFISH_RED = register("starfish_red",
+    public static final RegistryObject<Block> STARFISH_RED = registerBlock("starfish_red",
             () -> new StarfishRedBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
@@ -181,7 +181,7 @@ public class SFBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> STARFISH_CHOCOLATE_CHIP = register("starfish_chocolate_chip",
+    public static final RegistryObject<Block> STARFISH_CHOCOLATE_CHIP = registerBlock("starfish_chocolate_chip",
             () -> new StarfishChocolateChipBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
@@ -190,7 +190,7 @@ public class SFBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> STARFISH_BIG_BLUE = register("starfish_big_blue",
+    public static final RegistryObject<Block> STARFISH_BIG_BLUE = registerBlock("starfish_big_blue",
             () -> new StarfishBigBlueBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
@@ -199,7 +199,7 @@ public class SFBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> STARFISH_BIG_PURPLE_OCHRE = register("starfish_big_purple_ochre",
+    public static final RegistryObject<Block> STARFISH_BIG_PURPLE_OCHRE = registerBlock("starfish_big_purple_ochre",
             () -> new StarfishBigPurpleOchreBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
@@ -208,7 +208,7 @@ public class SFBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> STARFISH_BIG_ROYAL = register("starfish_big_royal",
+    public static final RegistryObject<Block> STARFISH_BIG_ROYAL = registerBlock("starfish_big_royal",
             () -> new StarfishBigRoyalBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
@@ -217,7 +217,7 @@ public class SFBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> STARFISH_BIG_OCHRE = register("starfish_big_ochre",
+    public static final RegistryObject<Block> STARFISH_BIG_OCHRE = registerBlock("starfish_big_ochre",
             () -> new StarfishBigOchreBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
@@ -226,14 +226,14 @@ public class SFBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> ALGAE_BLOCK = register("algae_block",
+    public static final RegistryObject<Block> ALGAE_BLOCK = registerBlock("algae_block",
             () -> new AlgaeBlock(BlockBehaviour.Properties
                     .copy(Blocks.MOSS_BLOCK)
                     .strength(3.0F, 1.0F)
                     .requiresCorrectToolForDrops()
             ));
 
-    public static final RegistryObject<Block> ALGAE_CARPET = register("algae_carpet",
+    public static final RegistryObject<Block> ALGAE_CARPET = registerBlock("algae_carpet",
             () -> new SFWallBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
@@ -251,7 +251,7 @@ public class SFBlocks {
                     .offsetType(BlockBehaviour.OffsetType.XZ)
                     .sound(SoundType.WET_GRASS)));
 
-    public static final RegistryObject<Block> CLAM_SHELL = register("clam_shell",
+    public static final RegistryObject<Block> CLAM_SHELL = registerBlock("clam_shell",
             () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
@@ -260,7 +260,7 @@ public class SFBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> HORN_SHELL = register("horn_shell",
+    public static final RegistryObject<Block> HORN_SHELL = registerBlock("horn_shell",
             () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
@@ -269,7 +269,7 @@ public class SFBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> SPIKY_SHELL = register("spiky_shell",
+    public static final RegistryObject<Block> SPIKY_SHELL = registerBlock("spiky_shell",
             () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
@@ -278,7 +278,7 @@ public class SFBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> SPIRAL_SHELL = register("spiral_shell",
+    public static final RegistryObject<Block> SPIRAL_SHELL = registerBlock("spiral_shell",
             () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
@@ -287,7 +287,7 @@ public class SFBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> SWIRL_SHELL = register("swirl_shell",
+    public static final RegistryObject<Block> SWIRL_SHELL = registerBlock("swirl_shell",
             () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
@@ -296,7 +296,7 @@ public class SFBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> PLANK_BLOCK = register("plank_block",
+    public static final RegistryObject<Block> PLANK_BLOCK = registerBlock("plank_block",
             () -> new SFPlankBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
@@ -305,7 +305,7 @@ public class SFBlocks {
                     .noOcclusion()
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> BEACHGRASS_FAN = register("beachgrass_fan",
+    public static final RegistryObject<Block> BEACHGRASS_FAN = registerBlock("beachgrass_fan",
             () -> new SFLandFanBlock(BlockBehaviour.Properties
                     .of()
                     .mapColor(MapColor.TERRACOTTA_YELLOW)
@@ -313,7 +313,7 @@ public class SFBlocks {
                     .sound(SoundType.GRASS)
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> BEACHGRASS = register("beachgrass", () ->
+    public static final RegistryObject<Block> BEACHGRASS = registerBlock("beachgrass", () ->
             new SFCropLikePlantBlock(BlockBehaviour.Properties
                     .of().mapColor(MapColor.TERRACOTTA_YELLOW)
                     .replaceable().noCollission()
@@ -323,7 +323,7 @@ public class SFBlocks {
                     .offsetType(BlockBehaviour.OffsetType.XZ)
                     .pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> SEA_THRIFT = register("sea_thrift", () ->
+    public static final RegistryObject<Block> SEA_THRIFT = registerBlock("sea_thrift", () ->
             new SFCropLikePlantBlock(BlockBehaviour.Properties
                     .of().mapColor(MapColor.COLOR_PINK)
                     .noCollission()
@@ -340,7 +340,7 @@ public class SFBlocks {
 
 
 
-    public static final RegistryObject<Block> SEA_HOLLY = register("sea_holly", () ->
+    public static final RegistryObject<Block> SEA_HOLLY = registerBlock("sea_holly", () ->
             new SFSandPlantBlock(BlockBehaviour.Properties
                     .of().mapColor(MapColor.TERRACOTTA_YELLOW)
                     .noCollission()
@@ -355,7 +355,7 @@ public class SFBlocks {
             () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SFBlocks.SEA_HOLLY, BlockBehaviour
                     .Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
 
-    public static final RegistryObject<Block> COASTAL_LAVENDER = register("coastal_lavender", () ->
+    public static final RegistryObject<Block> COASTAL_LAVENDER = registerBlock("coastal_lavender", () ->
             new SFSandPlantBlock(BlockBehaviour.Properties
                     .of().mapColor(MapColor.COLOR_PURPLE)
                     .noCollission()
@@ -370,7 +370,7 @@ public class SFBlocks {
                     .Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
 
 
-    public static final RegistryObject<Block> COASTAL_WILDFLOWER = register("coastal_wildflower", () ->
+    public static final RegistryObject<Block> COASTAL_WILDFLOWER = registerBlock("coastal_wildflower", () ->
             new SFSandPlantBlock(BlockBehaviour.Properties
                     .of().mapColor(MapColor.TERRACOTTA_YELLOW)
                     .noCollission()
@@ -384,7 +384,7 @@ public class SFBlocks {
             () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SFBlocks.COASTAL_WILDFLOWER, BlockBehaviour
                     .Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
 
-    public static final RegistryObject<Block> PYRAMID_SHELL = register("pyramid_shell",
+    public static final RegistryObject<Block> PYRAMID_SHELL = registerBlock("pyramid_shell",
             () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()

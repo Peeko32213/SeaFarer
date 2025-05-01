@@ -61,7 +61,7 @@ public class SFAquaticLeapGoal extends JumpGoal {
 
     public void start() {
         Direction direction = this.entity.getMotionDirection();
-        this.entity.setDeltaMovement(this.entity.getDeltaMovement().add((double) direction.getStepX() * 2.7, 1.1D, (double) direction.getStepZ() * 0.6D));
+        this.entity.setDeltaMovement(this.entity.getDeltaMovement().add((double) direction.getStepX() * 1.5D, 1.2D, (double) direction.getStepZ() * 1.5D));
         this.entity.getNavigation().stop();
     }
 

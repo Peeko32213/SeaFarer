@@ -39,7 +39,7 @@ public class SFItems {
     public static final RegistryObject<ForgeSpawnEggItem> HORSESHOE_CRAB_SPAWN_EGG = registerSpawnEggs("horseshoe_crab_spawn_egg", SFEntities.HORSESHOE_CRAB , 0x2d2219, 0x473d2c);
     public static final RegistryObject<ForgeSpawnEggItem> LEAFY_SCORPIONFISH_SPAWN_EGG = registerSpawnEggs("leafy_scorpionfish_spawn_egg", SFEntities.LEAFY_SCORPIONFISH , 0xa6801e, 0xb2e44d);
     public static final RegistryObject<ForgeSpawnEggItem> MANDARIN_GOBY_SPAWN_EGG = registerSpawnEggs("mandarin_goby_spawn_egg", SFEntities.MANDARIN_GOBY , 0x07186f, 0xee7c1e);
-    public static final RegistryObject<ForgeSpawnEggItem> MANTA_RAY_SPAWN_EGG = registerSpawnEggs("manta_ray_spawn_egg", SFEntities.MANTA_RAY , 0x070708, 0x303638);
+    public static final RegistryObject<ForgeSpawnEggItem> MANTA_RAY_SPAWN_EGG = registerSpawnEggs("manta_ray_spawn_egg", SFEntities.MANTA_RAY , 0x070708, 0xedf5f5);
     public static final RegistryObject<ForgeSpawnEggItem> MANTIS_SHRIMP_SPAWN_EGG = registerSpawnEggs("mantis_shrimp_spawn_egg", SFEntities.MANTIS_SHRIMP , 0x176416, 0xcb3a52);
     public static final RegistryObject<ForgeSpawnEggItem> MARINE_IGUANA_SPAWN_EGG = registerSpawnEggs("marine_iguana_spawn_egg", SFEntities.MARINE_IGUANA , 0xb43324, 0x4fdecb);
     public static final RegistryObject<ForgeSpawnEggItem> PARROTFISH_SPAWN_EGG = registerSpawnEggs("parrotfish_spawn_egg", SFEntities.PARROTFISH , 0x2ac9e5, 0xfbb1ea);
