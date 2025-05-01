@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "seafarer:block/yellow_seaglass_tiles",
-    "side": "seafarer:block/yellow_seaglass_tiles",
-    "top": "seafarer:block/yellow_seaglass_tiles"
-  }
-}

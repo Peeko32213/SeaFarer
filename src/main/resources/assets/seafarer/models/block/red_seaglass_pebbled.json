@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "seafarer:block/red_seaglass_pebbled"
-  }
-}

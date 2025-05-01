@@ -33,105 +33,6 @@ public class SFLanguageGenerator extends LanguageProvider {
         // Blocks
         SFBlocks.AUTO_TRANSLATE.forEach(this::forBlock);
 
-        addBlock(SFBlocks.BROWN_SEAGLASS_BLOCK, "Brown Sea Glass Block");
-        addBlock(SFBlocks.BROWN_SEAGLASS_BRICKS, "Brown Sea Glass Bricks");
-        addBlock(SFBlocks.BROWN_SEAGLASS_PEBBLED, "Pebbled Brown Sea Glass");
-        addBlock(SFBlocks.BROWN_SEAGLASS_PEBBLES, "Brown Sea Glass");
-        addBlock(SFBlocks.BROWN_SEAGLASS_TILES, "Brown Sea Glass Tiles");
-        addBlock(SFBlocks.BROWN_SEAGLASS_TILES_STAIRS, "Brown Sea Glass Tile Stairs");
-        addBlock(SFBlocks.BROWN_SEAGLASS_TILES_SLAB, "Brown Sea Glass Tile Slabs");
-        addBlock(SFBlocks.BROWN_SEAGLASS_BRICKS_SLAB, "Brown Sea Glass Brick Slabs");
-        addBlock(SFBlocks.BROWN_SEAGLASS_BRICKS_STAIRS, "Brown Sea Glass Brick Stairs");
-        addBlock(SFBlocks.BROWN_SEAGLASS_PANE, "Brown Sea Glass Pane");
-
-        addBlock(SFBlocks.GREEN_SEAGLASS_BLOCK, "Green Sea Glass Block");
-        addBlock(SFBlocks.GREEN_SEAGLASS_BRICKS, "Green Sea Glass Bricks");
-        addBlock(SFBlocks.GREEN_SEAGLASS_PEBBLED, "Pebbled Green Sea Glass");
-        addBlock(SFBlocks.GREEN_SEAGLASS_PEBBLES, "Green Sea Glass");
-        addBlock(SFBlocks.GREEN_SEAGLASS_TILES, "Green Sea Glass Tiles");
-        addBlock(SFBlocks.GREEN_SEAGLASS_TILES_STAIRS, "Green Sea Glass Tile Stairs");
-        addBlock(SFBlocks.GREEN_SEAGLASS_TILES_SLAB, "Green Sea Glass Tile Slabs");
-        addBlock(SFBlocks.GREEN_SEAGLASS_BRICKS_SLAB, "Green Sea Glass Brick Slabs");
-        addBlock(SFBlocks.GREEN_SEAGLASS_BRICKS_STAIRS, "Green Sea Glass Brick Stairs");
-        addBlock(SFBlocks.GREEN_SEAGLASS_PANE, "Green Sea Glass Pane");
-
-        addBlock(SFBlocks.ORANGE_SEAGLASS_BLOCK, "Orange Sea Glass Block");
-        addBlock(SFBlocks.ORANGE_SEAGLASS_BRICKS, "Orange Sea Glass Bricks");
-        addBlock(SFBlocks.ORANGE_SEAGLASS_PEBBLED, "Pebbled Orange Sea Glass");
-        addBlock(SFBlocks.ORANGE_SEAGLASS_PEBBLES, "Orange Sea Glass");
-        addBlock(SFBlocks.ORANGE_SEAGLASS_TILES, "Orange Sea Glass Tiles");
-        addBlock(SFBlocks.ORANGE_SEAGLASS_TILES_STAIRS, "Orange Sea Glass Tile Stairs");
-        addBlock(SFBlocks.ORANGE_SEAGLASS_TILES_SLAB, "Orange Sea Glass Tile Slabs");
-        addBlock(SFBlocks.ORANGE_SEAGLASS_BRICKS_SLAB, "Orange Sea Glass Brick Slabs");
-        addBlock(SFBlocks.ORANGE_SEAGLASS_BRICKS_STAIRS, "Orange Sea Glass Brick Stairs");
-        addBlock(SFBlocks.ORANGE_SEAGLASS_PANE, "Orange Sea Glass Pane");
-
-        addBlock(SFBlocks.PURPLE_SEAGLASS_BLOCK, "Purple Sea Glass Block");
-        addBlock(SFBlocks.PURPLE_SEAGLASS_BRICKS, "Purple Sea Glass Bricks");
-        addBlock(SFBlocks.PURPLE_SEAGLASS_PEBBLED, "Pebbled Purple Sea Glass");
-        addBlock(SFBlocks.PURPLE_SEAGLASS_PEBBLES, "Purple Sea Glass");
-        addBlock(SFBlocks.PURPLE_SEAGLASS_TILES, "Purple Sea Glass Tiles");
-        addBlock(SFBlocks.PURPLE_SEAGLASS_TILES_STAIRS, "Purple Sea Glass Tile Stairs");
-        addBlock(SFBlocks.PURPLE_SEAGLASS_TILES_SLAB, "Purple Sea Glass Tile Slabs");
-        addBlock(SFBlocks.PURPLE_SEAGLASS_BRICKS_SLAB, "Purple Sea Glass Brick Slabs");
-        addBlock(SFBlocks.PURPLE_SEAGLASS_BRICKS_STAIRS, "Purple Sea Glass Brick Stairs");
-        addBlock(SFBlocks.PURPLE_SEAGLASS_PANE, "Purple Sea Glass Pane");
-
-        addBlock(SFBlocks.RED_SEAGLASS_BLOCK, "Red Sea Glass Block");
-        addBlock(SFBlocks.RED_SEAGLASS_BRICKS, "Red Sea Glass Bricks");
-        addBlock(SFBlocks.RED_SEAGLASS_PEBBLED, "Pebbled Red Sea Glass");
-        addBlock(SFBlocks.RED_SEAGLASS_PEBBLES, "Red Sea Glass");
-        addBlock(SFBlocks.RED_SEAGLASS_TILES, "Red Sea Glass Tiles");
-        addBlock(SFBlocks.RED_SEAGLASS_TILES_STAIRS, "Red Sea Glass Tile Stairs");
-        addBlock(SFBlocks.RED_SEAGLASS_TILES_SLAB, "Red Sea Glass Tile Slabs");
-        addBlock(SFBlocks.RED_SEAGLASS_BRICKS_SLAB, "Red Sea Glass Brick Slabs");
-        addBlock(SFBlocks.RED_SEAGLASS_BRICKS_STAIRS, "Red Sea Glass Brick Stairs");
-        addBlock(SFBlocks.RED_SEAGLASS_PANE, "Red Sea Glass Pane");
-
-        addBlock(SFBlocks.YELLOW_SEAGLASS_BLOCK, "Yellow Sea Glass Block");
-        addBlock(SFBlocks.YELLOW_SEAGLASS_BRICKS, "Yellow Sea Glass Bricks");
-        addBlock(SFBlocks.YELLOW_SEAGLASS_PEBBLED, "Pebbled Yellow Sea Glass");
-        addBlock(SFBlocks.YELLOW_SEAGLASS_PEBBLES, "Yellow Sea Glass");
-        addBlock(SFBlocks.YELLOW_SEAGLASS_TILES, "Yellow Sea Glass Tiles");
-        addBlock(SFBlocks.YELLOW_SEAGLASS_TILES_STAIRS, "Yellow Sea Glass Tile Stairs");
-        addBlock(SFBlocks.YELLOW_SEAGLASS_TILES_SLAB, "Yellow Sea Glass Tile Slabs");
-        addBlock(SFBlocks.YELLOW_SEAGLASS_BRICKS_SLAB, "Yellow Sea Glass Brick Slabs");
-        addBlock(SFBlocks.YELLOW_SEAGLASS_BRICKS_STAIRS, "Yellow Sea Glass Brick Stairs");
-        addBlock(SFBlocks.YELLOW_SEAGLASS_PANE, "Yellow Sea Glass Pane");
-
-        addBlock(SFBlocks.WHITE_SEAGLASS_BLOCK, "White Sea Glass Block");
-        addBlock(SFBlocks.WHITE_SEAGLASS_BRICKS, "White Sea Glass Bricks");
-        addBlock(SFBlocks.WHITE_SEAGLASS_PEBBLED, "Pebbled White Sea Glass");
-        addBlock(SFBlocks.WHITE_SEAGLASS_PEBBLES, "White Sea Glass");
-        addBlock(SFBlocks.WHITE_SEAGLASS_TILES, "White Sea Glass Tiles");
-        addBlock(SFBlocks.WHITE_SEAGLASS_TILES_STAIRS, "White Sea Glass Tile Stairs");
-        addBlock(SFBlocks.WHITE_SEAGLASS_TILES_SLAB, "White Sea Glass Tile Slabs");
-        addBlock(SFBlocks.WHITE_SEAGLASS_BRICKS_SLAB, "White Sea Glass Brick Slabs");
-        addBlock(SFBlocks.WHITE_SEAGLASS_BRICKS_STAIRS, "White Sea Glass Brick Stairs");
-        addBlock(SFBlocks.WHITE_SEAGLASS_PANE, "White Sea Glass Pane");
-
-        addBlock(SFBlocks.PINK_SEAGLASS_BLOCK, "Pink Sea Glass Block");
-        addBlock(SFBlocks.PINK_SEAGLASS_BRICKS, "Pink Sea Glass Bricks");
-        addBlock(SFBlocks.PINK_SEAGLASS_PEBBLED, "Pebbled Pink Sea Glass");
-        addBlock(SFBlocks.PINK_SEAGLASS_PEBBLES, "Pink Sea Glass");
-        addBlock(SFBlocks.PINK_SEAGLASS_TILES, "Pink Sea Glass Tiles");
-        addBlock(SFBlocks.PINK_SEAGLASS_TILES_STAIRS, "Pink Sea Glass Tile Stairs");
-        addBlock(SFBlocks.PINK_SEAGLASS_TILES_SLAB, "Pink Sea Glass Tile Slabs");
-        addBlock(SFBlocks.PINK_SEAGLASS_BRICKS_SLAB, "Pink Sea Glass Brick Slabs");
-        addBlock(SFBlocks.PINK_SEAGLASS_BRICKS_STAIRS, "Pink Sea Glass Brick Stairs");
-        addBlock(SFBlocks.PINK_SEAGLASS_PANE, "Pink Sea Glass Pane");
-
-        addBlock(SFBlocks.LIME_SEAGLASS_BLOCK, "Lime Sea Glass Block");
-        addBlock(SFBlocks.LIME_SEAGLASS_BRICKS, "Lime Sea Glass Bricks");
-        addBlock(SFBlocks.LIME_SEAGLASS_PEBBLED, "Pebbled Lime Sea Glass");
-        addBlock(SFBlocks.LIME_SEAGLASS_PEBBLES, "Lime Sea Glass");
-        addBlock(SFBlocks.LIME_SEAGLASS_TILES, "Lime Sea Glass Tiles");
-        addBlock(SFBlocks.LIME_SEAGLASS_TILES_STAIRS, "Lime Sea Glass Tile Stairs");
-        addBlock(SFBlocks.LIME_SEAGLASS_TILES_SLAB, "Lime Sea Glass Tile Slabs");
-        addBlock(SFBlocks.LIME_SEAGLASS_BRICKS_SLAB, "Lime Sea Glass Brick Slabs");
-        addBlock(SFBlocks.LIME_SEAGLASS_BRICKS_STAIRS, "Lime Sea Glass Brick Stairs");
-        addBlock(SFBlocks.LIME_SEAGLASS_PANE, "Lime Sea Glass Pane");
-
         addBlock(SFBlocks.ALGAE_COBBLESTONE, "Algal Cobblestone");
         addBlock(SFBlocks.ALGAE_COBBLESTONE_SLAB, "Algal Cobblestone Slabs");
         addBlock(SFBlocks.ALGAE_COBBLESTONE_STAIRS, "Algal Cobblestone Stairs");
@@ -248,6 +149,9 @@ public class SFLanguageGenerator extends LanguageProvider {
         addEntityType(SFEntities.BLUE_TANG, "Blue Tang");
         addItem(SFItems.BLUE_TANG_SPAWN_EGG, "Blue Tang Spawn Egg");
 
+        addEntityType(SFEntities.BARRELEYE, "Barreleye");
+        addItem(SFItems.BARRELEYE_SPAWN_EGG, "Barreleye Spawn Egg");
+
         addEntityType(SFEntities.COPPERBAND_BUTTERFLY, "Copperband Butterfly Fish");
         addItem(SFItems.COPPERBAND_BUTTERFLY_SPAWN_EGG, "Copperband Butterfly Fish Spawn Egg");
 
@@ -297,16 +201,6 @@ public class SFLanguageGenerator extends LanguageProvider {
         addItem(SFItems.SPIKY_SWORD, "Spiky Sword");
         addItem(SFItems.SPIRAL_HOE, "Spiral Hoe");
         addItem(SFItems.SWIRL_AXE, "Swirl Axe");
-
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_BUST_BROWN, "Brown Sea Glass Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_PIPE_PINK, "Pink Sea Glass Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_PIPE_YELLOW, "Yellow Sea Glass Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_CURVY_LIME, "Lime Sea Glass Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_CURVY_ORANGE, "Orange Sea Glass Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_FISHBOWL_PURPLE, "Purple Sea Glass Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_FISHBOWL_WHITE, "White Sea Glass Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_THIN_GREEN, "Green Sea Glass Bottle");
-        addBlock(SFBlocks.SEAGLASS_BOTTLE_THIN_RED, "Red Sea Glass Bottle");
 
         addBlock(SFBlocks.FLOATSOME, "Floatsome");
 

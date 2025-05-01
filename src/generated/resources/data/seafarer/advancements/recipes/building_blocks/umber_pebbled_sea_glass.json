@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "seafarer:umber_pebbled_sea_glass"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_umber_sea_glass_pebbles": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "seafarer:umber_sea_glass_pebbles"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_umber_sea_glass_pebbles",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "seafarer:umber_pebbled_sea_glass"
+    ]
+  },
+  "sends_telemetry_event": false
+}

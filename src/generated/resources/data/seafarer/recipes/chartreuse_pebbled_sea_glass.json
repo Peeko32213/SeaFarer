@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "seafarer:chartreuse_sea_glass_pebbles"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "seafarer:chartreuse_pebbled_sea_glass"
+  },
+  "show_notification": true
+}

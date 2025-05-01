@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "seafarer:block/umber_sea_glass_bricks"
+  }
+}

@@ -38,562 +38,113 @@ public class SFBlocks {
     public static final RegistryObject<SlabBlock> AZURE_SEA_GLASS_TILE_SLAB = createBlock("azure_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(AZURE_SEA_GLASS_TILES.get())));
     public static final RegistryObject<Block> AZURE_SEA_GLASS_BOTTLE = createBlock("azure_sea_glass_bottle", () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties.of().sound(SFSoundTypes.SEAGLASS).noOcclusion().pushReaction(PushReaction.DESTROY)));
 
-    public static final RegistryObject<Block> BROWN_SEAGLASS_BLOCK = register("brown_seaglass_block",
-            () -> new GlassBlock(BlockBehaviour.Properties
-                    .copy(Blocks.GLASS)
-                    .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()
-                    .noOcclusion()
-            ));
-
-    public static final RegistryObject<IronBarsBlock> BROWN_SEAGLASS_PANE = register("brown_seaglass_pane",
-            () -> new IronBarsBlock(BlockBehaviour.Properties
-                    .of()
-                    .instrument(NoteBlockInstrument.HAT)
-                    .strength(0.3F)
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()));
-
-    public static final RegistryObject<Block> BROWN_SEAGLASS_BRICKS = register("brown_seaglass_bricks",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<SlabBlock> BROWN_SEAGLASS_BRICKS_SLAB = registerBlock("brown_seaglass_bricks_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(BROWN_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<StairBlock> BROWN_SEAGLASS_BRICKS_STAIRS = registerBlock("brown_seaglass_bricks_stairs",
-            () -> new StairBlock(() -> BROWN_SEAGLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(BROWN_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<Block> BROWN_SEAGLASS_PEBBLED = register("brown_seaglass_pebbled",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<Block> BROWN_SEAGLASS_TILES = register("brown_seaglass_tiles",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<SlabBlock> BROWN_SEAGLASS_TILES_SLAB = registerBlock("brown_seaglass_tiles_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(BROWN_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<StairBlock> BROWN_SEAGLASS_TILES_STAIRS = registerBlock("brown_seaglass_tiles_stairs",
-            () -> new StairBlock(() -> BROWN_SEAGLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(BROWN_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<Block> GREEN_SEAGLASS_BLOCK = register("green_seaglass_block",
-            () -> new GlassBlock(BlockBehaviour.Properties
-                    .copy(Blocks.GLASS)
-                    .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()
-                    .noOcclusion()
-            ));
-
-    public static final RegistryObject<IronBarsBlock> GREEN_SEAGLASS_PANE = register("green_seaglass_pane",
-            () -> new IronBarsBlock(BlockBehaviour.Properties
-                    .of()
-                    .instrument(NoteBlockInstrument.HAT)
-                    .strength(0.3F)
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()));
-
-    public static final RegistryObject<Block> GREEN_SEAGLASS_BRICKS = register("green_seaglass_bricks",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<SlabBlock> GREEN_SEAGLASS_BRICKS_SLAB = registerBlock("green_seaglass_bricks_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(GREEN_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<StairBlock> GREEN_SEAGLASS_BRICKS_STAIRS = registerBlock("green_seaglass_bricks_stairs",
-            () -> new StairBlock(() -> GREEN_SEAGLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(GREEN_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<Block> GREEN_SEAGLASS_PEBBLED = register("green_seaglass_pebbled",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-
-    public static final RegistryObject<Block> GREEN_SEAGLASS_TILES = register("green_seaglass_tiles",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<SlabBlock> GREEN_SEAGLASS_TILES_SLAB = registerBlock("green_seaglass_tiles_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(GREEN_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<StairBlock> GREEN_SEAGLASS_TILES_STAIRS = registerBlock("green_seaglass_tiles_stairs",
-            () -> new StairBlock(() -> GREEN_SEAGLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(GREEN_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<Block> ORANGE_SEAGLASS_BLOCK = register("orange_seaglass_block",
-            () -> new GlassBlock(BlockBehaviour.Properties
-                    .copy(Blocks.GLASS)
-                    .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()
-                    .noOcclusion()
-            ));
-    public static final RegistryObject<IronBarsBlock> ORANGE_SEAGLASS_PANE = register("orange_seaglass_pane",
-            () -> new IronBarsBlock(BlockBehaviour.Properties
-                    .of()
-                    .instrument(NoteBlockInstrument.HAT)
-                    .strength(0.3F)
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()));
-
-    public static final RegistryObject<Block> ORANGE_SEAGLASS_BRICKS = register("orange_seaglass_bricks",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<SlabBlock> ORANGE_SEAGLASS_BRICKS_SLAB = registerBlock("orange_seaglass_bricks_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(ORANGE_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<StairBlock> ORANGE_SEAGLASS_BRICKS_STAIRS = registerBlock("orange_seaglass_bricks_stairs",
-            () -> new StairBlock(() -> ORANGE_SEAGLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(ORANGE_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<Block> ORANGE_SEAGLASS_PEBBLED = register("orange_seaglass_pebbled",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-
-    public static final RegistryObject<Block> ORANGE_SEAGLASS_TILES = register("orange_seaglass_tiles",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<SlabBlock> ORANGE_SEAGLASS_TILES_SLAB = registerBlock("orange_seaglass_tiles_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(ORANGE_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<StairBlock> ORANGE_SEAGLASS_TILES_STAIRS = registerBlock("orange_seaglass_tiles_stairs",
-            () -> new StairBlock(() -> ORANGE_SEAGLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(ORANGE_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<Block> PURPLE_SEAGLASS_BLOCK = register("purple_seaglass_block",
-            () -> new GlassBlock(BlockBehaviour.Properties
-                    .copy(Blocks.GLASS)
-                    .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()
-                    .noOcclusion()
-            ));
-
-    public static final RegistryObject<IronBarsBlock> PURPLE_SEAGLASS_PANE = register("purple_seaglass_pane",
-            () -> new IronBarsBlock(BlockBehaviour.Properties
-                    .of()
-                    .instrument(NoteBlockInstrument.HAT)
-                    .strength(0.3F)
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()));
-
-    public static final RegistryObject<Block> PURPLE_SEAGLASS_BRICKS = register("purple_seaglass_bricks",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<SlabBlock> PURPLE_SEAGLASS_BRICKS_SLAB = registerBlock("purple_seaglass_bricks_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(PURPLE_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<StairBlock> PURPLE_SEAGLASS_BRICKS_STAIRS = registerBlock("purple_seaglass_bricks_stairs",
-            () -> new StairBlock(() -> ORANGE_SEAGLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(ORANGE_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<Block> PURPLE_SEAGLASS_PEBBLED = register("purple_seaglass_pebbled",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-
-    public static final RegistryObject<Block> PURPLE_SEAGLASS_TILES = register("purple_seaglass_tiles",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<SlabBlock> PURPLE_SEAGLASS_TILES_SLAB = registerBlock("purple_seaglass_tiles_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(PURPLE_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<StairBlock> PURPLE_SEAGLASS_TILES_STAIRS = registerBlock("purple_seaglass_tiles_stairs",
-            () -> new StairBlock(() -> PURPLE_SEAGLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(PURPLE_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<Block> RED_SEAGLASS_BLOCK = register("red_seaglass_block",
-            () -> new GlassBlock(BlockBehaviour.Properties
-                    .copy(Blocks.GLASS)
-                    .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()
-                    .noOcclusion()
-            ));
-
-    public static final RegistryObject<IronBarsBlock> RED_SEAGLASS_PANE = register("red_seaglass_pane",
-            () -> new IronBarsBlock(BlockBehaviour.Properties
-                    .of()
-                    .instrument(NoteBlockInstrument.HAT)
-                    .strength(0.3F)
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()));
-
-    public static final RegistryObject<Block> RED_SEAGLASS_BRICKS = register("red_seaglass_bricks",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<SlabBlock> RED_SEAGLASS_BRICKS_SLAB = registerBlock("red_seaglass_bricks_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(RED_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<StairBlock> RED_SEAGLASS_BRICKS_STAIRS = registerBlock("red_seaglass_bricks_stairs",
-            () -> new StairBlock(() -> RED_SEAGLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(RED_SEAGLASS_BRICKS.get())));
-
-
-    public static final RegistryObject<Block> RED_SEAGLASS_PEBBLED = register("red_seaglass_pebbled",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-
-    public static final RegistryObject<Block> RED_SEAGLASS_TILES = register("red_seaglass_tiles",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<SlabBlock> RED_SEAGLASS_TILES_SLAB = registerBlock("red_seaglass_tiles_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(RED_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<StairBlock> RED_SEAGLASS_TILES_STAIRS = registerBlock("red_seaglass_tiles_stairs",
-            () -> new StairBlock(() -> RED_SEAGLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(RED_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<Block> WHITE_SEAGLASS_BLOCK = register("white_seaglass_block",
-            () -> new GlassBlock(BlockBehaviour.Properties
-                    .copy(Blocks.GLASS)
-                    .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()
-                    .noOcclusion()
-            ));
-
-    public static final RegistryObject<IronBarsBlock> WHITE_SEAGLASS_PANE = register("white_seaglass_pane",
-            () -> new IronBarsBlock(BlockBehaviour.Properties
-                    .of()
-                    .instrument(NoteBlockInstrument.HAT)
-                    .strength(0.3F)
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()));
-
-    public static final RegistryObject<Block> WHITE_SEAGLASS_BRICKS = register("white_seaglass_bricks",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<SlabBlock> WHITE_SEAGLASS_BRICKS_SLAB = registerBlock("white_seaglass_bricks_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(WHITE_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<StairBlock> WHITE_SEAGLASS_BRICKS_STAIRS = registerBlock("white_seaglass_bricks_stairs",
-            () -> new StairBlock(() -> WHITE_SEAGLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(WHITE_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<Block> WHITE_SEAGLASS_PEBBLED = register("white_seaglass_pebbled",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<Block> WHITE_SEAGLASS_TILES = register("white_seaglass_tiles",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<SlabBlock> WHITE_SEAGLASS_TILES_SLAB = registerBlock("white_seaglass_tiles_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(WHITE_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<StairBlock> WHITE_SEAGLASS_TILES_STAIRS = registerBlock("white_seaglass_tiles_stairs",
-            () -> new StairBlock(() -> WHITE_SEAGLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(WHITE_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<Block> YELLOW_SEAGLASS_BLOCK = register("yellow_seaglass_block",
-            () -> new GlassBlock(BlockBehaviour.Properties
-                    .copy(Blocks.GLASS)
-                    .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()
-                    .noOcclusion()
-            ));
-
-    public static final RegistryObject<IronBarsBlock> YELLOW_SEAGLASS_PANE = register("yellow_seaglass_pane",
-            () -> new IronBarsBlock(BlockBehaviour.Properties
-                    .of()
-                    .instrument(NoteBlockInstrument.HAT)
-                    .strength(0.3F)
-                    .sound(SoundType.GLASS)
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()));
-
-    public static final RegistryObject<Block> YELLOW_SEAGLASS_BRICKS = register("yellow_seaglass_bricks",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<SlabBlock> YELLOW_SEAGLASS_BRICKS_SLAB = registerBlock("yellow_seaglass_bricks_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(YELLOW_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<StairBlock> YELLOW_SEAGLASS_BRICKS_STAIRS = registerBlock("yellow_seaglass_bricks_stairs",
-            () -> new StairBlock(() -> YELLOW_SEAGLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(YELLOW_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<Block> YELLOW_SEAGLASS_PEBBLED = register("yellow_seaglass_pebbled",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<Block> YELLOW_SEAGLASS_TILES = register("yellow_seaglass_tiles",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-
-    public static final RegistryObject<SlabBlock> YELLOW_SEAGLASS_TILES_SLAB = registerBlock("yellow_seaglass_tiles_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(YELLOW_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<StairBlock> YELLOW_SEAGLASS_TILES_STAIRS = registerBlock("yellow_seaglass_tiles_stairs",
-            () -> new StairBlock(() -> YELLOW_SEAGLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(YELLOW_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<Block> PINK_SEAGLASS_BLOCK = register("pink_seaglass_block",
-            () -> new GlassBlock(BlockBehaviour.Properties
-                    .copy(Blocks.GLASS)
-                    .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()
-                    .noOcclusion()
-            ));
-
-
-    public static final RegistryObject<IronBarsBlock> PINK_SEAGLASS_PANE = register("pink_seaglass_pane",
-            () -> new IronBarsBlock(BlockBehaviour.Properties
-                    .of()
-                    .instrument(NoteBlockInstrument.HAT)
-                    .strength(0.3F)
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()));
-
-
-    public static final RegistryObject<Block> PINK_SEAGLASS_BRICKS = register("pink_seaglass_bricks",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<SlabBlock> PINK_SEAGLASS_BRICKS_SLAB = registerBlock("pink_seaglass_bricks_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(PINK_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<StairBlock> PINK_SEAGLASS_BRICKS_STAIRS = registerBlock("pink_seaglass_bricks_stairs",
-            () -> new StairBlock(() -> PINK_SEAGLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(PINK_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<Block> PINK_SEAGLASS_PEBBLED = register("pink_seaglass_pebbled",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<Block> PINK_SEAGLASS_TILES = register("pink_seaglass_tiles",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-
-    public static final RegistryObject<SlabBlock> PINK_SEAGLASS_TILES_SLAB = registerBlock("pink_seaglass_tiles_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(PINK_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<StairBlock> PINK_SEAGLASS_TILES_STAIRS = registerBlock("pink_seaglass_tiles_stairs",
-            () -> new StairBlock(() -> PINK_SEAGLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(PINK_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<Block> LIME_SEAGLASS_BLOCK = register("lime_seaglass_block",
-            () -> new GlassBlock(BlockBehaviour.Properties
-                    .copy(Blocks.GLASS)
-                    .sound(SoundType.AMETHYST)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()
-                    .noOcclusion()
-            ));
-
-
-    public static final RegistryObject<IronBarsBlock> LIME_SEAGLASS_PANE = register("lime_seaglass_pane",
-            () -> new IronBarsBlock(BlockBehaviour.Properties
-                    .of()
-                    .instrument(NoteBlockInstrument.HAT)
-                    .strength(0.3F)
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()));
-
-
-    public static final RegistryObject<Block> LIME_SEAGLASS_BRICKS = register("lime_seaglass_bricks",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<SlabBlock> LIME_SEAGLASS_BRICKS_SLAB = registerBlock("lime_seaglass_bricks_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(LIME_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<StairBlock> LIME_SEAGLASS_BRICKS_STAIRS = registerBlock("lime_seaglass_bricks_stairs",
-            () -> new StairBlock(() -> LIME_SEAGLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(LIME_SEAGLASS_BRICKS.get())));
-
-    public static final RegistryObject<Block> LIME_SEAGLASS_PEBBLED = register("lime_seaglass_pebbled",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-    public static final RegistryObject<Block> LIME_SEAGLASS_TILES = register("lime_seaglass_tiles",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.AMETHYST_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()));
-
-
-    public static final RegistryObject<SlabBlock> LIME_SEAGLASS_TILES_SLAB = registerBlock("lime_seaglass_tiles_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(LIME_SEAGLASS_TILES.get())));
-
-    public static final RegistryObject<StairBlock> LIME_SEAGLASS_TILES_STAIRS = registerBlock("lime_seaglass_tiles_stairs",
-            () -> new StairBlock(() -> LIME_SEAGLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(LIME_SEAGLASS_TILES.get())));
-
-
-
-    public static final RegistryObject<Block> BROWN_SEAGLASS_PEBBLES = register("brown_seaglass_pebbles",
-            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.AMETHYST)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> GREEN_SEAGLASS_PEBBLES = register("green_seaglass_pebbles",
-            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.AMETHYST)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> ORANGE_SEAGLASS_PEBBLES = register("orange_seaglass_pebbles",
-            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.AMETHYST)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> PURPLE_SEAGLASS_PEBBLES = register("purple_seaglass_pebbles",
-            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.AMETHYST)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-
-    public static final RegistryObject<Block> RED_SEAGLASS_PEBBLES = register("red_seaglass_pebbles",
-            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.AMETHYST)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> WHITE_SEAGLASS_PEBBLES = register("white_seaglass_pebbles",
-            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.AMETHYST)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> YELLOW_SEAGLASS_PEBBLES = register("yellow_seaglass_pebbles",
-            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.AMETHYST)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> PINK_SEAGLASS_PEBBLES = register("pink_seaglass_pebbles",
-            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.AMETHYST)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-
-    public static final RegistryObject<Block> LIME_SEAGLASS_PEBBLES = register("lime_seaglass_pebbles",
-            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.AMETHYST)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
+    public static final RegistryObject<Block> ROSE_SEA_GLASS_PEBBLES = createBlock("rose_sea_glass_pebbles", () -> new SFFloorLayerBlock(BlockBehaviour.Properties.of().instabreak().sound(SFSoundTypes.SEAGLASS).noCollission().noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> ROSE_PEBBLED_SEA_GLASS = createBlock("rose_pebbled_sea_glass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<Block> ROSE_SEA_GLASS = createBlock("rose_sea_glass", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F).noOcclusion()));
+    public static final RegistryObject<IronBarsBlock> ROSE_SEA_GLASS_PANE = createBlock("rose_sea_glass_pane", () -> new IronBarsBlock(BlockBehaviour.Properties.of().strength(0.5F).explosionResistance(0.5F).sound(SFSoundTypes.SEAGLASS).noOcclusion()));
+    public static final RegistryObject<Block> ROSE_SEA_GLASS_BRICKS = createBlock("rose_sea_glass_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> ROSE_SEA_GLASS_BRICK_STAIRS = createBlock("rose_sea_glass_brick_stairs", () -> new StairBlock(() -> ROSE_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(ROSE_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<SlabBlock> ROSE_SEA_GLASS_BRICK_SLAB = createBlock("rose_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ROSE_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<Block> ROSE_SEA_GLASS_TILES = createBlock("rose_sea_glass_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> ROSE_SEA_GLASS_TILE_STAIRS = createBlock("rose_sea_glass_tile_stairs", () -> new StairBlock(() -> ROSE_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(ROSE_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<SlabBlock> ROSE_SEA_GLASS_TILE_SLAB = createBlock("rose_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ROSE_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<Block> ROSE_SEA_GLASS_BOTTLE = createBlock("rose_sea_glass_bottle", () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties.of().sound(SFSoundTypes.SEAGLASS).noOcclusion().pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> LILAC_SEA_GLASS_PEBBLES = createBlock("lilac_sea_glass_pebbles", () -> new SFFloorLayerBlock(BlockBehaviour.Properties.of().instabreak().sound(SFSoundTypes.SEAGLASS).noCollission().noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> LILAC_PEBBLED_SEA_GLASS = createBlock("lilac_pebbled_sea_glass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<Block> LILAC_SEA_GLASS = createBlock("lilac_sea_glass", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F).noOcclusion()));
+    public static final RegistryObject<IronBarsBlock> LILAC_SEA_GLASS_PANE = createBlock("lilac_sea_glass_pane", () -> new IronBarsBlock(BlockBehaviour.Properties.of().strength(0.5F).explosionResistance(0.5F).sound(SFSoundTypes.SEAGLASS).noOcclusion()));
+    public static final RegistryObject<Block> LILAC_SEA_GLASS_BRICKS = createBlock("lilac_sea_glass_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> LILAC_SEA_GLASS_BRICK_STAIRS = createBlock("lilac_sea_glass_brick_stairs", () -> new StairBlock(() -> LILAC_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(LILAC_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<SlabBlock> LILAC_SEA_GLASS_BRICK_SLAB = createBlock("lilac_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LILAC_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<Block> LILAC_SEA_GLASS_TILES = createBlock("lilac_sea_glass_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> LILAC_SEA_GLASS_TILE_STAIRS = createBlock("lilac_sea_glass_tile_stairs", () -> new StairBlock(() -> LILAC_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(LILAC_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<SlabBlock> LILAC_SEA_GLASS_TILE_SLAB = createBlock("lilac_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LILAC_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<Block> LILAC_SEA_GLASS_BOTTLE = createBlock("lilac_sea_glass_bottle", () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties.of().sound(SFSoundTypes.SEAGLASS).noOcclusion().pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> SEAFOAM_SEA_GLASS_PEBBLES = createBlock("seafoam_sea_glass_pebbles", () -> new SFFloorLayerBlock(BlockBehaviour.Properties.of().instabreak().sound(SFSoundTypes.SEAGLASS).noCollission().noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> SEAFOAM_PEBBLED_SEA_GLASS = createBlock("seafoam_pebbled_sea_glass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<Block> SEAFOAM_SEA_GLASS = createBlock("seafoam_sea_glass", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F).noOcclusion()));
+    public static final RegistryObject<IronBarsBlock> SEAFOAM_SEA_GLASS_PANE = createBlock("seafoam_sea_glass_pane", () -> new IronBarsBlock(BlockBehaviour.Properties.of().strength(0.5F).explosionResistance(0.5F).sound(SFSoundTypes.SEAGLASS).noOcclusion()));
+    public static final RegistryObject<Block> SEAFOAM_SEA_GLASS_BRICKS = createBlock("seafoam_sea_glass_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> SEAFOAM_SEA_GLASS_BRICK_STAIRS = createBlock("seafoam_sea_glass_brick_stairs", () -> new StairBlock(() -> SEAFOAM_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(SEAFOAM_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<SlabBlock> SEAFOAM_SEA_GLASS_BRICK_SLAB = createBlock("seafoam_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SEAFOAM_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<Block> SEAFOAM_SEA_GLASS_TILES = createBlock("seafoam_sea_glass_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> SEAFOAM_SEA_GLASS_TILE_STAIRS = createBlock("seafoam_sea_glass_tile_stairs", () -> new StairBlock(() -> SEAFOAM_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(SEAFOAM_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<SlabBlock> SEAFOAM_SEA_GLASS_TILE_SLAB = createBlock("seafoam_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SEAFOAM_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<Block> SEAFOAM_SEA_GLASS_BOTTLE = createBlock("seafoam_sea_glass_bottle", () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties.of().sound(SFSoundTypes.SEAGLASS).noOcclusion().pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> CHARTREUSE_SEA_GLASS_PEBBLES = createBlock("chartreuse_sea_glass_pebbles", () -> new SFFloorLayerBlock(BlockBehaviour.Properties.of().instabreak().sound(SFSoundTypes.SEAGLASS).noCollission().noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> CHARTREUSE_PEBBLED_SEA_GLASS = createBlock("chartreuse_pebbled_sea_glass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<Block> CHARTREUSE_SEA_GLASS = createBlock("chartreuse_sea_glass", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F).noOcclusion()));
+    public static final RegistryObject<IronBarsBlock> CHARTREUSE_SEA_GLASS_PANE = createBlock("chartreuse_sea_glass_pane", () -> new IronBarsBlock(BlockBehaviour.Properties.of().strength(0.5F).explosionResistance(0.5F).sound(SFSoundTypes.SEAGLASS).noOcclusion()));
+    public static final RegistryObject<Block> CHARTREUSE_SEA_GLASS_BRICKS = createBlock("chartreuse_sea_glass_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> CHARTREUSE_SEA_GLASS_BRICK_STAIRS = createBlock("chartreuse_sea_glass_brick_stairs", () -> new StairBlock(() -> CHARTREUSE_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(CHARTREUSE_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<SlabBlock> CHARTREUSE_SEA_GLASS_BRICK_SLAB = createBlock("chartreuse_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CHARTREUSE_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<Block> CHARTREUSE_SEA_GLASS_TILES = createBlock("chartreuse_sea_glass_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> CHARTREUSE_SEA_GLASS_TILE_STAIRS = createBlock("chartreuse_sea_glass_tile_stairs", () -> new StairBlock(() -> CHARTREUSE_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(CHARTREUSE_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<SlabBlock> CHARTREUSE_SEA_GLASS_TILE_SLAB = createBlock("chartreuse_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CHARTREUSE_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<Block> CHARTREUSE_SEA_GLASS_BOTTLE = createBlock("chartreuse_sea_glass_bottle", () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties.of().sound(SFSoundTypes.SEAGLASS).noOcclusion().pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> CITRINE_SEA_GLASS_PEBBLES = createBlock("citrine_sea_glass_pebbles", () -> new SFFloorLayerBlock(BlockBehaviour.Properties.of().instabreak().sound(SFSoundTypes.SEAGLASS).noCollission().noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> CITRINE_PEBBLED_SEA_GLASS = createBlock("citrine_pebbled_sea_glass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<Block> CITRINE_SEA_GLASS = createBlock("citrine_sea_glass", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F).noOcclusion()));
+    public static final RegistryObject<IronBarsBlock> CITRINE_SEA_GLASS_PANE = createBlock("citrine_sea_glass_pane", () -> new IronBarsBlock(BlockBehaviour.Properties.of().strength(0.5F).explosionResistance(0.5F).sound(SFSoundTypes.SEAGLASS).noOcclusion()));
+    public static final RegistryObject<Block> CITRINE_SEA_GLASS_BRICKS = createBlock("citrine_sea_glass_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> CITRINE_SEA_GLASS_BRICK_STAIRS = createBlock("citrine_sea_glass_brick_stairs", () -> new StairBlock(() -> CITRINE_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(CITRINE_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<SlabBlock> CITRINE_SEA_GLASS_BRICK_SLAB = createBlock("citrine_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CITRINE_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<Block> CITRINE_SEA_GLASS_TILES = createBlock("citrine_sea_glass_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> CITRINE_SEA_GLASS_TILE_STAIRS = createBlock("citrine_sea_glass_tile_stairs", () -> new StairBlock(() -> CITRINE_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(CITRINE_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<SlabBlock> CITRINE_SEA_GLASS_TILE_SLAB = createBlock("citrine_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CITRINE_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<Block> CITRINE_SEA_GLASS_BOTTLE = createBlock("citrine_sea_glass_bottle", () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties.of().sound(SFSoundTypes.SEAGLASS).noOcclusion().pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> AMBER_SEA_GLASS_PEBBLES = createBlock("amber_sea_glass_pebbles", () -> new SFFloorLayerBlock(BlockBehaviour.Properties.of().instabreak().sound(SFSoundTypes.SEAGLASS).noCollission().noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> AMBER_PEBBLED_SEA_GLASS = createBlock("amber_pebbled_sea_glass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<Block> AMBER_SEA_GLASS = createBlock("amber_sea_glass", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F).noOcclusion()));
+    public static final RegistryObject<IronBarsBlock> AMBER_SEA_GLASS_PANE = createBlock("amber_sea_glass_pane", () -> new IronBarsBlock(BlockBehaviour.Properties.of().strength(0.5F).explosionResistance(0.5F).sound(SFSoundTypes.SEAGLASS).noOcclusion()));
+    public static final RegistryObject<Block> AMBER_SEA_GLASS_BRICKS = createBlock("amber_sea_glass_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> AMBER_SEA_GLASS_BRICK_STAIRS = createBlock("amber_sea_glass_brick_stairs", () -> new StairBlock(() -> AMBER_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(AMBER_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<SlabBlock> AMBER_SEA_GLASS_BRICK_SLAB = createBlock("amber_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(AMBER_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<Block> AMBER_SEA_GLASS_TILES = createBlock("amber_sea_glass_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> AMBER_SEA_GLASS_TILE_STAIRS = createBlock("amber_sea_glass_tile_stairs", () -> new StairBlock(() -> AMBER_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(AMBER_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<SlabBlock> AMBER_SEA_GLASS_TILE_SLAB = createBlock("amber_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(AMBER_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<Block> AMBER_SEA_GLASS_BOTTLE = createBlock("amber_sea_glass_bottle", () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties.of().sound(SFSoundTypes.SEAGLASS).noOcclusion().pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> SCARLET_SEA_GLASS_PEBBLES = createBlock("scarlet_sea_glass_pebbles", () -> new SFFloorLayerBlock(BlockBehaviour.Properties.of().instabreak().sound(SFSoundTypes.SEAGLASS).noCollission().noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> SCARLET_PEBBLED_SEA_GLASS = createBlock("scarlet_pebbled_sea_glass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<Block> SCARLET_SEA_GLASS = createBlock("scarlet_sea_glass", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F).noOcclusion()));
+    public static final RegistryObject<IronBarsBlock> SCARLET_SEA_GLASS_PANE = createBlock("scarlet_sea_glass_pane", () -> new IronBarsBlock(BlockBehaviour.Properties.of().strength(0.5F).explosionResistance(0.5F).sound(SFSoundTypes.SEAGLASS).noOcclusion()));
+    public static final RegistryObject<Block> SCARLET_SEA_GLASS_BRICKS = createBlock("scarlet_sea_glass_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> SCARLET_SEA_GLASS_BRICK_STAIRS = createBlock("scarlet_sea_glass_brick_stairs", () -> new StairBlock(() -> SCARLET_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(SCARLET_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<SlabBlock> SCARLET_SEA_GLASS_BRICK_SLAB = createBlock("scarlet_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SCARLET_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<Block> SCARLET_SEA_GLASS_TILES = createBlock("scarlet_sea_glass_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> SCARLET_SEA_GLASS_TILE_STAIRS = createBlock("scarlet_sea_glass_tile_stairs", () -> new StairBlock(() -> SCARLET_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(SCARLET_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<SlabBlock> SCARLET_SEA_GLASS_TILE_SLAB = createBlock("scarlet_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SCARLET_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<Block> SCARLET_SEA_GLASS_BOTTLE = createBlock("scarlet_sea_glass_bottle", () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties.of().sound(SFSoundTypes.SEAGLASS).noOcclusion().pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> UMBER_SEA_GLASS_PEBBLES = createBlock("umber_sea_glass_pebbles", () -> new SFFloorLayerBlock(BlockBehaviour.Properties.of().instabreak().sound(SFSoundTypes.SEAGLASS).noCollission().noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> UMBER_PEBBLED_SEA_GLASS = createBlock("umber_pebbled_sea_glass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<Block> UMBER_SEA_GLASS = createBlock("umber_sea_glass", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F).noOcclusion()));
+    public static final RegistryObject<IronBarsBlock> UMBER_SEA_GLASS_PANE = createBlock("umber_sea_glass_pane", () -> new IronBarsBlock(BlockBehaviour.Properties.of().strength(0.5F).explosionResistance(0.5F).sound(SFSoundTypes.SEAGLASS).noOcclusion()));
+    public static final RegistryObject<Block> UMBER_SEA_GLASS_BRICKS = createBlock("umber_sea_glass_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> UMBER_SEA_GLASS_BRICK_STAIRS = createBlock("umber_sea_glass_brick_stairs", () -> new StairBlock(() -> UMBER_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(UMBER_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<SlabBlock> UMBER_SEA_GLASS_BRICK_SLAB = createBlock("umber_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(UMBER_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<Block> UMBER_SEA_GLASS_TILES = createBlock("umber_sea_glass_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> UMBER_SEA_GLASS_TILE_STAIRS = createBlock("umber_sea_glass_tile_stairs", () -> new StairBlock(() -> UMBER_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(UMBER_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<SlabBlock> UMBER_SEA_GLASS_TILE_SLAB = createBlock("umber_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(UMBER_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<Block> UMBER_SEA_GLASS_BOTTLE = createBlock("umber_sea_glass_bottle", () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties.of().sound(SFSoundTypes.SEAGLASS).noOcclusion().pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> PEARLY_SEA_GLASS_PEBBLES = createBlock("pearly_sea_glass_pebbles", () -> new SFFloorLayerBlock(BlockBehaviour.Properties.of().instabreak().sound(SFSoundTypes.SEAGLASS).noCollission().noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> PEARLY_PEBBLED_SEA_GLASS = createBlock("pearly_pebbled_sea_glass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<Block> PEARLY_SEA_GLASS = createBlock("pearly_sea_glass", () -> new GlassBlock(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F).noOcclusion()));
+    public static final RegistryObject<IronBarsBlock> PEARLY_SEA_GLASS_PANE = createBlock("pearly_sea_glass_pane", () -> new IronBarsBlock(BlockBehaviour.Properties.of().strength(0.5F).explosionResistance(0.5F).sound(SFSoundTypes.SEAGLASS).noOcclusion()));
+    public static final RegistryObject<Block> PEARLY_SEA_GLASS_BRICKS = createBlock("pearly_sea_glass_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> PEARLY_SEA_GLASS_BRICK_STAIRS = createBlock("pearly_sea_glass_brick_stairs", () -> new StairBlock(() -> PEARLY_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(PEARLY_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<SlabBlock> PEARLY_SEA_GLASS_BRICK_SLAB = createBlock("pearly_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(PEARLY_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<Block> PEARLY_SEA_GLASS_TILES = createBlock("pearly_sea_glass_tiles", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
+    public static final RegistryObject<StairBlock> PEARLY_SEA_GLASS_TILE_STAIRS = createBlock("pearly_sea_glass_tile_stairs", () -> new StairBlock(() -> PEARLY_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(PEARLY_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<SlabBlock> PEARLY_SEA_GLASS_TILE_SLAB = createBlock("pearly_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(PEARLY_SEA_GLASS_TILES.get())));
+    public static final RegistryObject<Block> PEARLY_SEA_GLASS_BOTTLE = createBlock("pearly_sea_glass_bottle", () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties.of().sound(SFSoundTypes.SEAGLASS).noOcclusion().pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> FISHING_NET = registerPlaceOnWaterBlockItem("fishing_net",
             () -> new SFNetBlock(BlockBehaviour.Properties
@@ -1056,73 +607,6 @@ public class SFBlocks {
                     .copy(SFBlocks.PYRAMID_SHELL_BRICKS.get())
                     .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()));
-
-
-
-    public static final RegistryObject<Block> SEAGLASS_BOTTLE_BUST_BROWN = register("seaglass_bottle_bust_brown",
-            () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
-                    .of()
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> SEAGLASS_BOTTLE_CURVY_LIME = register("seaglass_bottle_curvy_lime",
-            () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
-                    .of()
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> SEAGLASS_BOTTLE_CURVY_ORANGE = register("seaglass_bottle_curvy_orange",
-            () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
-                    .of()
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-
-    public static final RegistryObject<Block> SEAGLASS_BOTTLE_FISHBOWL_WHITE = register("seaglass_bottle_fishbowl_white",
-            () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
-                    .of()
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> SEAGLASS_BOTTLE_FISHBOWL_PURPLE = register("seaglass_bottle_fishbowl_purple",
-            () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
-                    .of()
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> SEAGLASS_BOTTLE_PIPE_YELLOW = register("seaglass_bottle_pipe_yellow",
-            () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
-                    .of()
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> SEAGLASS_BOTTLE_PIPE_PINK = register("seaglass_bottle_pipe_pink",
-            () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
-                    .of()
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-
-    public static final RegistryObject<Block> SEAGLASS_BOTTLE_THIN_GREEN = register("seaglass_bottle_thin_green",
-            () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
-                    .of()
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> SEAGLASS_BOTTLE_THIN_RED = register("seaglass_bottle_thin_red",
-            () -> new SFSeaGlassBottleBlock(BlockBehaviour.Properties
-                    .of()
-                    .sound(SoundType.AMETHYST)
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> FLOATSOME = register("floatsome",
             () -> new SFFloorLayerBlock(BlockBehaviour.Properties

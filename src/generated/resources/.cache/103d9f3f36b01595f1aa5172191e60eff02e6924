@@ -1,4 +1,4 @@
-// 1.20.1	2025-04-30T12:45:53.5465641	Registries
+// 1.20.1	2025-04-30T20:27:35.6797603	Registries
 34be4fddea0310061ac1bf7524d82de77493de71 data/seafarer/forge/biome_modifier/add_feature/algae_boulder.json
 01e5e644afacfaa4370948f855ccc161a6601e7f data/seafarer/forge/biome_modifier/add_feature/beachgrass.json
 0243f5a5d1476d3b51cdf78e80d75e74e14cbbc9 data/seafarer/forge/biome_modifier/add_feature/beachgrass_fan.json
@@ -47,7 +47,7 @@ b14d9addd03bd149a07d54388dd4ab14e7e43768 data/seafarer/worldgen/configured_featu
 dd0e7a24c7bbdb34ecc88afb5cde3524c4b01420 data/seafarer/worldgen/configured_feature/rocky_sand_patch.json
 46ba87e1da45e6c1271c42bfabe061a9836795b3 data/seafarer/worldgen/configured_feature/sand_tag_patch.json
 7a1b7202a0e0b3999494df9ca620f776172db4f2 data/seafarer/worldgen/configured_feature/scattered_shelly_sand_patch.json
-237ab185f69e622d75ef4ea67d4e99ba4dfd3bf7 data/seafarer/worldgen/configured_feature/sea_glass.json
+d65beac32bc3e936df93dcecfc7c1a418e3ce364 data/seafarer/worldgen/configured_feature/sea_glass.json
 964bd4f7b892ca75686338b4b94d02236aaa5f49 data/seafarer/worldgen/configured_feature/sea_holly.json
 909186fdb34e55b1ba9ed008e5e7d6a5c6497998 data/seafarer/worldgen/configured_feature/sea_shells.json
 ff1b33b44921211d5fc8545a2b4275270e4ca7dc data/seafarer/worldgen/configured_feature/sea_stars.json

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "seafarer:block/chartreuse_sea_glass_pebbles"
+      },
+      {
+        "model": "seafarer:block/chartreuse_sea_glass_pebbles",
+        "y": 90
+      },
+      {
+        "model": "seafarer:block/chartreuse_sea_glass_pebbles",
+        "y": 180
+      },
+      {
+        "model": "seafarer:block/chartreuse_sea_glass_pebbles",
+        "y": 270
+      }
+      ]
+  }
+}

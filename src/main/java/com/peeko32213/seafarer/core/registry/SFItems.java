@@ -26,8 +26,7 @@ public class SFItems {
         return new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
     }
 
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
-            SeaFarer.MODID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, SeaFarer.MODID);
 
     public static final RegistryObject<ForgeSpawnEggItem> BARRELEYE_SPAWN_EGG = registerSpawnEggs("barreleye_spawn_egg", SFEntities.BARRELEYE , 0x293530, 0x58904a);
     public static final RegistryObject<ForgeSpawnEggItem> BLUE_TANG_SPAWN_EGG = registerSpawnEggs("blue_tang_spawn_egg", SFEntities.BLUE_TANG , 0x3688bf, 0x0d0b39);

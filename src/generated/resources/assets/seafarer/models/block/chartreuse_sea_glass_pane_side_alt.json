@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side_alt",
+  "textures": {
+    "edge": "seafarer:block/chartreuse_sea_glass_pane_top",
+    "pane": "seafarer:block/chartreuse_sea_glass"
+  }
+}

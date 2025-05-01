@@ -100,13 +100,15 @@ public class SFConfiguredFeatures {
         register(context, SEA_GLASS, Feature.RANDOM_PATCH,
                 FeatureUtils.simpleRandomPatchConfiguration(4, PlacementUtils.filtered(SFFeatures.WATERLOGGABLE_BLOCK.get(),
                         new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
-                                .add(SFBlocks.WHITE_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
-                                .add(SFBlocks.YELLOW_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
-                                .add(SFBlocks.RED_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
-                                .add(SFBlocks.PURPLE_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
-                                .add(SFBlocks.ORANGE_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
-                                .add(SFBlocks.GREEN_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
-                                .add(SFBlocks.BROWN_SEAGLASS_PEBBLES.get().defaultBlockState(), 20)
+                                .add(SFBlocks.PEARLY_SEA_GLASS_PEBBLES.get().defaultBlockState(), 20)
+                                .add(SFBlocks.CITRINE_SEA_GLASS_PEBBLES.get().defaultBlockState(), 20)
+                                .add(SFBlocks.SCARLET_SEA_GLASS_PEBBLES.get().defaultBlockState(), 20)
+                                .add(SFBlocks.LILAC_SEA_GLASS_PEBBLES.get().defaultBlockState(), 20)
+                                .add(SFBlocks.AMBER_SEA_GLASS_PEBBLES.get().defaultBlockState(), 20)
+                                .add(SFBlocks.SEAFOAM_SEA_GLASS_PEBBLES.get().defaultBlockState(), 20)
+                                .add(SFBlocks.UMBER_SEA_GLASS_PEBBLES.get().defaultBlockState(), 20)
+                                .add(SFBlocks.ROSE_SEA_GLASS_PEBBLES.get().defaultBlockState(), 20)
+                                .add(SFBlocks.CHARTREUSE_SEA_GLASS_PEBBLES.get().defaultBlockState(), 20)
                                 .add(SFBlocks.AZURE_SEA_GLASS_PEBBLES.get().defaultBlockState(), 20))),
                         BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE)));
 

@@ -10,7 +10,7 @@
             "entries": [
               {
                 "data": {
-                  "Name": "seafarer:white_seaglass_pebbles",
+                  "Name": "seafarer:pearly_sea_glass_pebbles",
                   "Properties": {
                     "waterlogged": "true"
                   }
@@ -19,7 +19,7 @@
               },
               {
                 "data": {
-                  "Name": "seafarer:yellow_seaglass_pebbles",
+                  "Name": "seafarer:citrine_sea_glass_pebbles",
                   "Properties": {
                     "waterlogged": "true"
                   }
@@ -28,7 +28,7 @@
               },
               {
                 "data": {
-                  "Name": "seafarer:red_seaglass_pebbles",
+                  "Name": "seafarer:scarlet_sea_glass_pebbles",
                   "Properties": {
                     "waterlogged": "true"
                   }
@@ -37,7 +37,7 @@
               },
               {
                 "data": {
-                  "Name": "seafarer:purple_seaglass_pebbles",
+                  "Name": "seafarer:lilac_sea_glass_pebbles",
                   "Properties": {
                     "waterlogged": "true"
                   }
@@ -46,7 +46,7 @@
               },
               {
                 "data": {
-                  "Name": "seafarer:orange_seaglass_pebbles",
+                  "Name": "seafarer:amber_sea_glass_pebbles",
                   "Properties": {
                     "waterlogged": "true"
                   }
@@ -55,7 +55,7 @@
               },
               {
                 "data": {
-                  "Name": "seafarer:green_seaglass_pebbles",
+                  "Name": "seafarer:seafoam_sea_glass_pebbles",
                   "Properties": {
                     "waterlogged": "true"
                   }
@@ -64,7 +64,25 @@
               },
               {
                 "data": {
-                  "Name": "seafarer:brown_seaglass_pebbles",
+                  "Name": "seafarer:umber_sea_glass_pebbles",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 20
+              },
+              {
+                "data": {
+                  "Name": "seafarer:rose_sea_glass_pebbles",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 20
+              },
+              {
+                "data": {
+                  "Name": "seafarer:chartreuse_sea_glass_pebbles",
                   "Properties": {
                     "waterlogged": "true"
                   }
