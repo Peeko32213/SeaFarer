@@ -1,7 +1,6 @@
 package com.peeko32213.seafarer.client.render;
 
-import com.peeko32213.seafarer.common.entity.EntityBarreleye;
-import com.peeko32213.seafarer.common.entity.EntityMantaRay;
+import com.peeko32213.seafarer.common.entity.BarreleyeEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -21,7 +20,7 @@ public class BarreleyeEntityRenderer<T extends LivingEntity & GeoAnimatable> ext
 
     @Override
     public RenderType getRenderType(T animatable, ResourceLocation texture, @Nullable MultiBufferSource bufferSource, float partialTick) { // lol.
-        return animatable instanceof EntityBarreleye ? RenderType.entityTranslucent(getTextureLocation(animatable)) : RenderType.entityCutout(getTextureLocation(animatable));
+        return animatable instanceof BarreleyeEntity ? RenderType.entityTranslucent(getTextureLocation(animatable)) : RenderType.entityCutout(getTextureLocation(animatable));
 
     }
 }

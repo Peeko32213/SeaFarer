@@ -166,26 +166,26 @@ public final class ClientEvents {
 
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(SFEntities.SUNFISH.get(), e -> new LivingEntityRenderer<>(e, new ModelSunfish()));
-        event.registerEntityRenderer(SFEntities.CRAB.get(), e -> new LivingEntityRenderer<>(e, new ModelCrab()));
-        event.registerEntityRenderer(SFEntities.HORSESHOE_CRAB.get(), e -> new LivingEntityRenderer<>(e, new ModelHorseshoeCrab()));
-        event.registerEntityRenderer(SFEntities.MARINE_IGUANA.get(), e -> new LivingEntityRenderer<>(e, new ModelMarineIguana()));
+        event.registerEntityRenderer(SFEntities.SUNFISH.get(), e -> new LivingEntityRenderer<>(e, new SunfishModel()));
+        event.registerEntityRenderer(SFEntities.CRAB.get(), e -> new LivingEntityRenderer<>(e, new CrabModel()));
+        event.registerEntityRenderer(SFEntities.HORSESHOE_CRAB.get(), e -> new LivingEntityRenderer<>(e, new HorseshoeCrabModel()));
+        event.registerEntityRenderer(SFEntities.MARINE_IGUANA.get(), e -> new LivingEntityRenderer<>(e, new MarineIguanaModel()));
         event.registerBlockEntityRenderer(SFBlockEntities.NET_BLOCK_ENTITY.get(), FishingNetEntityRenderer::new);
         event.registerEntityRenderer(SFEntities.GARDEN_EEL.get(), GardenEelRenderer::new);
-        event.registerEntityRenderer(SFEntities.MANDARIN_GOBY.get(), e -> new LivingEntityRenderer<>(e, new ModelMandarinGoby()));
-        event.registerEntityRenderer(SFEntities.SEXY_SHRIMP.get(), e -> new LivingEntityRenderer<>(e, new ModelSexyShrimp()));
-        event.registerEntityRenderer(SFEntities.FROG_FISH.get(), e -> new FrogFishEntityRenderer<>(e, new ModelFrogFish()));
-        event.registerEntityRenderer(SFEntities.BLUE_TANG.get(), e -> new LivingEntityRenderer<>(e, new ModelBlueTang()));
-        event.registerEntityRenderer(SFEntities.COPPERBAND_BUTTERFLY.get(), e -> new LivingEntityRenderer<>(e, new ModelCopperbandButterfly()));
-        event.registerEntityRenderer(SFEntities.MANTIS_SHRIMP.get(), e -> new LivingEntityRenderer<>(e, new ModelMantisShrimp()));
-        event.registerEntityRenderer(SFEntities.MANTA_RAY.get(), e -> new MantaRayEntityRenderer<>(e, new ModelMantaRay()));
-        event.registerEntityRenderer(SFEntities.PARROTFISH.get(), e -> new LivingEntityRenderer<>(e, new ModelParrotfish()));
-        event.registerEntityRenderer(SFEntities.FILEFISH.get(), e -> new LivingEntityRenderer<>(e, new ModelFilefish()));
-        event.registerEntityRenderer(SFEntities.LEAFY_SCORPIONFISH.get(), e -> new LivingEntityRenderer<>(e, new ModelLeafyScorpionfish()));
-        event.registerEntityRenderer(SFEntities.ZEBRA_SHARK.get(), e -> new LivingEntityRenderer<>(e, new ModelZebraShark()));
-        event.registerEntityRenderer(SFEntities.CHIMAERA.get(), e -> new LivingEntityRenderer<>(e, new ModelChimaera()));
-        event.registerEntityRenderer(SFEntities.SPIDER_CRAB.get(), e -> new LivingEntityRenderer<>(e, new ModelSpiderCrab()));
-        event.registerEntityRenderer(SFEntities.BARRELEYE.get(), e -> new BarreleyeEntityRenderer<>(e, new ModelBarreleye()));
+        event.registerEntityRenderer(SFEntities.MANDARIN_GOBY.get(), e -> new LivingEntityRenderer<>(e, new MandarinGobyModel()));
+        event.registerEntityRenderer(SFEntities.SEXY_SHRIMP.get(), e -> new LivingEntityRenderer<>(e, new SexyShrimpModel()));
+        event.registerEntityRenderer(SFEntities.FROG_FISH.get(), e -> new FrogFishEntityRenderer<>(e, new FrogFishModel()));
+        event.registerEntityRenderer(SFEntities.BLUE_TANG.get(), e -> new LivingEntityRenderer<>(e, new BlueTangModel()));
+        event.registerEntityRenderer(SFEntities.COPPERBAND_BUTTERFLY.get(), e -> new LivingEntityRenderer<>(e, new CopperbandButterflyModel()));
+        event.registerEntityRenderer(SFEntities.MANTIS_SHRIMP.get(), e -> new LivingEntityRenderer<>(e, new MantisShrimpModel()));
+        event.registerEntityRenderer(SFEntities.MANTA_RAY.get(), e -> new MantaRayEntityRenderer<>(e, new MantaRayModel()));
+        event.registerEntityRenderer(SFEntities.PARROTFISH.get(), e -> new LivingEntityRenderer<>(e, new ParrotfishModel()));
+        event.registerEntityRenderer(SFEntities.FILEFISH.get(), e -> new LivingEntityRenderer<>(e, new FilefishModel()));
+        event.registerEntityRenderer(SFEntities.LEAFY_SCORPIONFISH.get(), e -> new LivingEntityRenderer<>(e, new LeafyScorpionfishModel()));
+        event.registerEntityRenderer(SFEntities.ZEBRA_SHARK.get(), e -> new LivingEntityRenderer<>(e, new ZebraSharkModel()));
+        event.registerEntityRenderer(SFEntities.CHIMAERA.get(), e -> new LivingEntityRenderer<>(e, new ChimaeraModel()));
+        event.registerEntityRenderer(SFEntities.SPIDER_CRAB.get(), e -> new LivingEntityRenderer<>(e, new SpiderCrabModel()));
+        event.registerEntityRenderer(SFEntities.BARRELEYE.get(), e -> new BarreleyeEntityRenderer<>(e, new BarreleyeModel()));
     }
 
 }

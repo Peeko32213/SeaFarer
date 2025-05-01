@@ -1,7 +1,6 @@
 package com.peeko32213.seafarer.client.render;
 
-import com.peeko32213.seafarer.common.entity.EntityFrogfish;
-import com.peeko32213.seafarer.common.entity.EntityMantaRay;
+import com.peeko32213.seafarer.common.entity.MantaRayEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
@@ -21,7 +20,7 @@ public class MantaRayEntityRenderer<T extends LivingEntity & GeoAnimatable> exte
 
     @Override
     public RenderType getRenderType(T animatable, ResourceLocation texture, @Nullable MultiBufferSource bufferSource, float partialTick) { // lol.
-        return animatable instanceof EntityMantaRay ? RenderType.entityTranslucent(getTextureLocation(animatable)) : RenderType.entityCutout(getTextureLocation(animatable));
+        return animatable instanceof MantaRayEntity ? RenderType.entityTranslucent(getTextureLocation(animatable)) : RenderType.entityCutout(getTextureLocation(animatable));
 
     }
 }
