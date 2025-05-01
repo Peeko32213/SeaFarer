@@ -16,7 +16,7 @@ public class SFEntities {
             SeaFarer.MODID);
 
     public static final RegistryObject<EntityType<SunfishEntity>> SUNFISH = ENTITIES.register("sunfish",
-            () -> EntityType.Builder.of(SunfishEntity::new, MobCategory.WATER_CREATURE).sized(1.5F, 2.4F)
+            () -> EntityType.Builder.of(SunfishEntity::new, MobCategory.WATER_CREATURE).sized(1.5F, 2.0F)
                     .build(new ResourceLocation(SeaFarer.MODID, "sunfish").toString()));
 
     public static final RegistryObject<EntityType<CrabEntity>> CRAB = ENTITIES.register("crab",

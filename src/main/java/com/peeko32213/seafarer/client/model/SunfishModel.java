@@ -33,7 +33,6 @@ public class SunfishModel extends GeoModel<SunfishEntity> {
         CoreGeoBone swimControl = this.getAnimationProcessor().getBone("swim_control");
 
         swimControl.setRotX(entityData.headPitch() * (Mth.DEG_TO_RAD));
-//        swimControl.setRotY(animatable.currentRoll);
     }
 }
 

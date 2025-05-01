@@ -33,7 +33,6 @@ public class MantaRayModel extends GeoModel<MantaRayEntity> {
         CoreGeoBone swimControl = this.getAnimationProcessor().getBone("swim_control");
 
         swimControl.setRotX(entityData.headPitch() * (Mth.DEG_TO_RAD));
-//        swimControl.setRotZ(animatable.currentRoll);
     }
 }
 

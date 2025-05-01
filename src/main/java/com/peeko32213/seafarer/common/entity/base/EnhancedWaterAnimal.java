@@ -28,10 +28,6 @@ public class EnhancedWaterAnimal extends WaterAnimal implements GeoEntity, GeoAn
 
     private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
-    public float prevTilt;
-    public float tilt;
-    public float currentRoll = 0.0F;
-
     protected @NotNull PathNavigation createNavigation(@NotNull Level level) {
         return new WaterBoundPathNavigation(this, level);
     }
@@ -39,44 +35,18 @@ public class EnhancedWaterAnimal extends WaterAnimal implements GeoEntity, GeoAn
     protected EnhancedWaterAnimal(EntityType<? extends WaterAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
-        this.moveControl = new SmoothSwimmingMoveControl(this, 60, 10, 0.02F, 0.1F, false);
+        this.moveControl = new SmoothSwimmingMoveControl(this, 60, 2, 0.02F, 0.1F, false);
         this.lookControl = new SmoothSwimmingLookControl(this, 4);
     }
 
-//    @Override
-//    public boolean isNoGravity() {
-//        return this.isInWater();
-//    }
+    @Override
+    public boolean isNoGravity() {
+        return this.isInWater();
+    }
 
     @Override
     public void tick() {
         super.tick();
-
-        // Credit:
-        // Fintastic https://github.com/VoidArkana/Fintastic/tree/master
-        prevTilt = tilt;
-        if (this.isInWater() && !this.onGround()) {
-            final float v = Mth.degreesDifference(this.getYRot(), yRotO);
-            if (Math.abs(v) > 1) {
-                if (Math.abs(tilt) < 25) {
-                    tilt -= Math.signum(v);
-                }
-            } else {
-                if (Math.abs(tilt) > 0) {
-                    final float tiltSign = Math.signum(tilt);
-                    tilt -= tiltSign * 0.85F;
-                    if (tilt * tiltSign < 0) {
-                        tilt = 0;
-                    }
-                }
-            }
-        } else {
-            tilt = 0;
-        }
-        float prevRoll =  this.currentRoll;
-        float targetRoll = Math.max(-0.45F, Math.min(0.45F, (this.getYRot() - this.yRotO) * 0.1F));
-        targetRoll = -targetRoll;
-        this.currentRoll = prevRoll + (targetRoll - prevRoll) * 0.05F;
     }
 
     protected void playStepSound(BlockPos p_28301_, BlockState p_28302_) {

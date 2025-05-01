@@ -19,14 +19,12 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.BodyRotationControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingMoveControl;
-import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
 import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -49,8 +47,8 @@ public class SunfishEntity extends EnhancedWaterAnimal {
 
     public SunfishEntity(EntityType<? extends WaterAnimal> entityType, Level level) {
         super(entityType, level);
-        this.moveControl = new SmoothSwimmingMoveControl(this, 30, 8, 0.02F, 0.1F, true);
-        this.lookControl = new SmoothSwimmingLookControl(this, 4);
+        this.moveControl = new SmoothSwimmingMoveControl(this, 30, 4, 0.02F, 0.1F, false);
+        this.lookControl = new SmoothSwimmingLookControl(this, 2);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -63,27 +61,13 @@ public class SunfishEntity extends EnhancedWaterAnimal {
 
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
-        this.goalSelector.addGoal(0, new RandomSwimmingGoal(this, 1D, 10));
-        this.goalSelector.addGoal(2, new SunfishLeapGoal());
+        this.goalSelector.addGoal(0, new CustomRandomSwimGoal(this, 1.0, 1, 40, 40, 2));
+        this.goalSelector.addGoal(8, new SunfishLeapGoal());
     }
 
     @Override
     protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
         return pSize.height * 0.5F;
-    }
-
-    public void travel(Vec3 pTravelVector) {
-        if (this.isEffectiveAi() && this.isInWater()) {
-            this.moveRelative(this.getSpeed(), pTravelVector);
-            this.move(MoverType.SELF, this.getDeltaMovement());
-            this.setDeltaMovement(this.getDeltaMovement().scale(0.9D));
-            if (this.getTarget() == null) {
-                this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.005D, 0.0D));
-            }
-        }
-        else {
-            super.travel(pTravelVector);
-        }
     }
 
     // Flop
@@ -147,7 +131,7 @@ public class SunfishEntity extends EnhancedWaterAnimal {
     private class SunfishLeapGoal extends SFAquaticLeapGoal {
 
         public SunfishLeapGoal() {
-            super(SunfishEntity.this, 20);
+            super(SunfishEntity.this, 5);
         }
 
         @Override

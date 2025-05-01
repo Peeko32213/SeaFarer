@@ -7,23 +7,19 @@ import com.peeko32213.seafarer.common.entity.misc.util.SmartBodyHelper;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.FluidTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.BodyRotationControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingMoveControl;
-import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
@@ -45,8 +41,8 @@ public class MantaRayEntity extends EnhancedWaterAnimal {
 
     public MantaRayEntity(EntityType<? extends WaterAnimal> entityType, Level level) {
         super(entityType, level);
-        this.moveControl = new SmoothSwimmingMoveControl(this, 20, 8, 0.02F, 0.1F, false);
-        this.lookControl = new SmoothSwimmingLookControl(this, 4);
+        this.moveControl = new SmoothSwimmingMoveControl(this, 20, 4, 0.02F, 0.1F, false);
+        this.lookControl = new SmoothSwimmingLookControl(this, 2);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
@@ -59,33 +55,13 @@ public class MantaRayEntity extends EnhancedWaterAnimal {
 
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
-        this.goalSelector.addGoal(0, new CustomRandomSwimGoal(this, 1.0, 1, 20, 20, 2));
-        this.goalSelector.addGoal(2, new MantaRayLeapGoal());
+        this.goalSelector.addGoal(0, new CustomRandomSwimGoal(this, 1.0, 1, 60, 60, 2));
+        this.goalSelector.addGoal(8, new MantaRayLeapGoal());
     }
 
     @Override
     protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
         return pSize.height * 0.5F;
-    }
-
-    public void travel(Vec3 pTravelVector) {
-        if (this.isEffectiveAi() && this.isInWater()) {
-            this.moveRelative(this.getSpeed(), pTravelVector);
-            this.move(MoverType.SELF, this.getDeltaMovement());
-            this.setDeltaMovement(this.getDeltaMovement().scale(0.9D));
-            if (this.getTarget() == null) {
-                this.setDeltaMovement(this.getDeltaMovement().add(0.0D, 0.0D, 0.0D));
-            }
-        }
-        if (this.isEyeInFluid(FluidTags.WATER) && this.isPathFinding()) {
-            this.setDeltaMovement(this.getDeltaMovement().add(0.0, 0.001, 0.0));
-        }
-        if (!this.isEyeInFluid(FluidTags.WATER) && this.isInWater()) {
-            this.setDeltaMovement(this.getDeltaMovement().add(0.0, -0.002, 0.0));
-        }
-        else {
-            super.travel(pTravelVector);
-        }
     }
 
     // Flop
@@ -137,7 +113,7 @@ public class MantaRayEntity extends EnhancedWaterAnimal {
     private class MantaRayLeapGoal extends SFAquaticLeapGoal {
 
         public MantaRayLeapGoal() {
-            super(MantaRayEntity.this, 20);
+            super(MantaRayEntity.this, 5);
         }
 
         @Override
