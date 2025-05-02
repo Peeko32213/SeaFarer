@@ -26,13 +26,14 @@ public class CommonEvents {
         event.put(SFEntities.COPPERBAND_BUTTERFLY.get(), CopperbandButterflyfishEntity.createAttributes().build());
         event.put(SFEntities.MANTIS_SHRIMP.get(), MantisShrimpEntity.createAttributes().build());
         event.put(SFEntities.MANTA_RAY.get(), MantaRayEntity.createAttributes().build());
-        event.put(SFEntities.PARROTFISH.get(), ParrotfishEntity.createAttributes());
+        event.put(SFEntities.PARROTFISH.get(), ParrotfishEntity.createAttributes().build());
         event.put(SFEntities.FILEFISH.get(), FilefishEntity.createAttributes().build());
         event.put(SFEntities.LEAFY_SCORPIONFISH.get(), LeafyScorpionFishEntity.createAttributes().build());
         event.put(SFEntities.ZEBRA_SHARK.get(), ZebraSharkEntity.createAttributes().build());
         event.put(SFEntities.CHIMAERA.get(), ChimaeraEntity.createAttributes().build());
         event.put(SFEntities.SPIDER_CRAB.get(), SpiderCrabEntity.createAttributes().build());
         event.put(SFEntities.BARRELEYE.get(), BarreleyeEntity.createAttributes().build());
+        event.put(SFEntities.SQUIRRELFISH.get(), SquirrelfishEntity.createAttributes().build());
     }
 
 }

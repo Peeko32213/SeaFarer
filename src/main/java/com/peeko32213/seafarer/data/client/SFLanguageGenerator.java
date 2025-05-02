@@ -179,6 +179,9 @@ public class SFLanguageGenerator extends LanguageProvider {
         addEntityType(SFEntities.SPIDER_CRAB, "Spider Crab");
         addItem(SFItems.SPIDER_CRAB_SPAWN_EGG, "Spider Crab Spawn Egg");
 
+        addEntityType(SFEntities.SQUIRRELFISH, "Squirrelfish");
+        addItem(SFItems.SQUIRRELFISH_SPAWN_EGG, "Squirrelfish Spawn Egg");
+
         addBlock(SFBlocks.ALGAE_BLOCK, "Algae Block");
         addBlock(SFBlocks.ALGAE_CARPET, "Algae Carpet");
         addBlock(SFBlocks.ALGAE_PLANT, "Algae Growth");

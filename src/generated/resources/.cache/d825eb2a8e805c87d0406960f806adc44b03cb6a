@@ -1,4 +1,4 @@
-// 1.20.1	2025-04-30T12:19:28.6090697	Item Models: seafarer
+// 1.20.1	2025-05-02T12:47:11.428327	Item Models: seafarer
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/barreleye_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/blue_tang_spawn_egg.json
 8e281303ddb2abb2a0ae908ee0e45a00615a07b1 assets/seafarer/models/item/can.json
@@ -35,6 +35,7 @@ dfb2d60dea619171f052d8016e24e9ce8606c052 assets/seafarer/models/item/sea_urchin.
 bb455655f3aed3c11a5f565a53bb464aeb5c2116 assets/seafarer/models/item/shore_crab_leg.json
 224bb4425248ffa8452110b60073544f72a004cb assets/seafarer/models/item/soy_sauce.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/spider_crab_spawn_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/squirrelfish_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/sunfish_spawn_egg.json
 c976451f4dd660eaba5036a15c62b8c54b271ca6 assets/seafarer/models/item/wakame.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/zebra_shark_spawn_egg.json

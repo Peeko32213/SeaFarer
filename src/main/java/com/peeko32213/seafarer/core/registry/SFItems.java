@@ -45,6 +45,7 @@ public class SFItems {
     public static final RegistryObject<ForgeSpawnEggItem> PARROTFISH_SPAWN_EGG = registerSpawnEggs("parrotfish_spawn_egg", SFEntities.PARROTFISH , 0x2ac9e5, 0xfbb1ea);
     public static final RegistryObject<ForgeSpawnEggItem> SEXY_SHRIMP_SPAWN_EGG = registerSpawnEggs("sexy_shrimp_spawn_egg", SFEntities.SEXY_SHRIMP , 0x380604, 0xf6eef5);
     public static final RegistryObject<ForgeSpawnEggItem> SPIDER_CRAB_SPAWN_EGG = registerSpawnEggs("spider_crab_spawn_egg", SFEntities.SPIDER_CRAB , 0xd5a4a4, 0x6e0c0c);
+    public static final RegistryObject<ForgeSpawnEggItem> SQUIRRELFISH_SPAWN_EGG = registerSpawnEggs("squirrelfish_spawn_egg", SFEntities.SQUIRRELFISH , 0x9e1a13, 0xe4b416);
     public static final RegistryObject<ForgeSpawnEggItem> SUNFISH_SPAWN_EGG = registerSpawnEggs("sunfish_spawn_egg", SFEntities.SUNFISH , 0x628398, 0x33436b);
     public static final RegistryObject<ForgeSpawnEggItem> ZEBRA_SHARK_SPAWN_EGG = registerSpawnEggs("zebra_shark_spawn_egg", SFEntities.ZEBRA_SHARK , 0xe1e3c0, 0xab9558);
 

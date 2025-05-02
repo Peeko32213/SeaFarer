@@ -17,10 +17,8 @@ public class LivingEntityRenderer<T extends LivingEntity & GeoAnimatable> extend
         super(context, model);
     }
 
-
     @Override
     public RenderType getRenderType(T animatable, ResourceLocation texture, @Nullable MultiBufferSource bufferSource, float partialTick) { // lol.
         return animatable instanceof SexyShrimpEntity ? RenderType.entityTranslucent(getTextureLocation(animatable)) : RenderType.entityCutout(getTextureLocation(animatable));
-
     }
 }

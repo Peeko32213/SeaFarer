@@ -186,6 +186,7 @@ public final class ClientEvents {
         event.registerEntityRenderer(SFEntities.CHIMAERA.get(), e -> new LivingEntityRenderer<>(e, new ChimaeraModel()));
         event.registerEntityRenderer(SFEntities.SPIDER_CRAB.get(), e -> new LivingEntityRenderer<>(e, new SpiderCrabModel()));
         event.registerEntityRenderer(SFEntities.BARRELEYE.get(), e -> new BarreleyeRenderer<>(e, new BarreleyeModel()));
+        event.registerEntityRenderer(SFEntities.SQUIRRELFISH.get(), e -> new LivingEntityRenderer<>(e, new SquirrelfishModel()));
     }
 
 }

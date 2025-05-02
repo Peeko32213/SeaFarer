@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.common.entity;
+package com.peeko32213.seafarer.common.entity.misc.interfaces;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

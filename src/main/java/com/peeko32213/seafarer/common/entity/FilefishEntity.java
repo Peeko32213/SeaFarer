@@ -1,47 +1,27 @@
 package com.peeko32213.seafarer.common.entity;
 
 import com.peeko32213.seafarer.common.entity.base.EnhancedSchoolingWaterAnimal;
-import com.peeko32213.seafarer.common.entity.misc.goal.BottomSwimmingGoal;
 import com.peeko32213.seafarer.common.entity.misc.goal.FollowSchoolLeaderGoal;
 import com.peeko32213.seafarer.common.entity.misc.goal.GroundseekingRandomSwimGoal;
 import com.peeko32213.seafarer.common.entity.misc.util.SmartBodyHelper;
-import net.minecraft.core.BlockPos;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.FluidTags;
-import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.BodyRotationControl;
-import net.minecraft.world.entity.ai.control.MoveControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingMoveControl;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
-import net.minecraft.world.entity.ai.navigation.PathNavigation;
-import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
-import net.minecraft.world.entity.animal.WaterAnimal;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
-import software.bernie.geckolib.core.animatable.GeoAnimatable;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
-import software.bernie.geckolib.util.GeckoLibUtil;
-
-import javax.annotation.Nullable;
 
 public class FilefishEntity extends EnhancedSchoolingWaterAnimal {
 
@@ -61,6 +41,11 @@ public class FilefishEntity extends EnhancedSchoolingWaterAnimal {
         super(pEntityType, pLevel);
         this.moveControl = new SmoothSwimmingMoveControl(this, 180, 6, 0.02F, 0.1F, true);
         this.lookControl = new SmoothSwimmingLookControl(this, 4);
+    }
+
+    @Override
+    public int getMaxSchoolSize() {
+        return 20;
     }
 
     public static AttributeSupplier.Builder createAttributes() {

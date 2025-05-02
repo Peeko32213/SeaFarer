@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.client.model;
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.common.entity.ParrotfishEntity;
+import com.peeko32213.seafarer.common.entity.SquirrelfishEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import software.bernie.geckolib.constant.DataTickets;
@@ -10,24 +10,24 @@ import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.model.data.EntityModelData;
 
-public class ParrotfishModel extends GeoModel<ParrotfishEntity> {
+public class SquirrelfishModel extends GeoModel<SquirrelfishEntity> {
     @Override
-    public ResourceLocation getModelResource(ParrotfishEntity object) {
-        return new ResourceLocation(SeaFarer.MODID, "geo/parrotfish.geo.json");
+    public ResourceLocation getModelResource(SquirrelfishEntity object) {
+        return new ResourceLocation(SeaFarer.MODID, "geo/squirrelfish.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureResource(ParrotfishEntity object) {
-        return new ResourceLocation(SeaFarer.MODID, "textures/entity/parrotfish.png");
+    public ResourceLocation getTextureResource(SquirrelfishEntity object) {
+        return new ResourceLocation(SeaFarer.MODID, "textures/entity/squirrelfish.png");
     }
 
     @Override
-    public ResourceLocation getAnimationResource(ParrotfishEntity object) {
-        return new ResourceLocation(SeaFarer.MODID, "animations/parrotfish.animation.json");
+    public ResourceLocation getAnimationResource(SquirrelfishEntity object) {
+        return new ResourceLocation(SeaFarer.MODID, "animations/squirrelfish.animation.json");
     }
 
     @Override
-    public void setCustomAnimations(ParrotfishEntity entity, long uniqueID, AnimationState<ParrotfishEntity> customPredicate) {
+    public void setCustomAnimations(SquirrelfishEntity entity, long uniqueID, AnimationState<SquirrelfishEntity> customPredicate) {
         super.setCustomAnimations(entity, uniqueID, customPredicate);
 
         CoreGeoBone core = this.getAnimationProcessor().getBone("swim_control");

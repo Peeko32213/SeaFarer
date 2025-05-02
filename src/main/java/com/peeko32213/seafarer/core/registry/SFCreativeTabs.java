@@ -29,6 +29,7 @@ public class SFCreativeTabs {
                         }
                     });
 
+                    // food
                     output.accept(SFItems.RAW_SHORE_CRAB.get());
                     output.accept(SFItems.COOKED_SHORE_CRAB.get());
                     output.accept(SFItems.RAW_HORSESHOE_CRAB.get());
@@ -53,12 +54,18 @@ public class SFCreativeTabs {
                     output.accept(SFItems.SALTED_SALMON.get());
                     output.accept(SFItems.SALTED_TROPICAL_FISH.get());
                     output.accept(SFItems.SALTED_STARFISH.get());
+
+                    // junk
                     output.accept(SFItems.OLD_BOARD.get());
                     output.accept(SFItems.OLD_BOOT.get());
                     output.accept(SFItems.CAN.get());
                     output.accept(SFItems.MESSAGE_IN_A_BOTTLE.get());
+
+                    // buckets
                     output.accept(SFItems.SHORE_CRAB_BUCKET.get());
                     output.accept(SFItems.HORSESHOE_CRAB_BUCKET.get());
+
+                    // shells
                     output.accept(SFBlocks.SPIKY_SHELL.get());
                     output.accept(SFBlocks.CLAM_SHELL.get());
                     output.accept(SFBlocks.HORN_SHELL.get());
@@ -96,6 +103,8 @@ public class SFCreativeTabs {
                     output.accept(SFBlocks.GHOUL_CORAL.get());
                     output.accept(SFBlocks.PALE_SPONGE.get());
                     output.accept(SFBlocks.TUBE_WORMS.get());
+
+                    // corals
                     output.accept(SFBlocks.AMBER_CORAL_BLOCK.get());
                     output.accept(SFBlocks.AMBER_CORAL.get());
                     output.accept(SFBlocks.AMBER_CORAL_FAN.get());
@@ -132,6 +141,8 @@ public class SFCreativeTabs {
                     output.accept(SFBlocks.DEAD_VERDANT_CORAL_BLOCK.get());
                     output.accept(SFBlocks.DEAD_VERDANT_CORAL.get());
                     output.accept(SFBlocks.DEAD_VERDANT_CORAL_FAN.get());
+
+                    // sand
                     output.accept(SFBlocks.GRAVELY_SAND.get());
                     output.accept(SFBlocks.ROCKY_SAND.get());
                     output.accept(SFBlocks.MIXED_SHELLY_SAND.get());
@@ -155,6 +166,8 @@ public class SFCreativeTabs {
                     output.accept(SFBlocks.CUT_CORALINE_SANDSTONE_STAIRS.get());
                     output.accept(SFBlocks.CUT_CORALINE_SANDSTONE_SLAB.get());
                     output.accept(SFBlocks.SALT_BLOCK.get());
+
+                    // shell blocks
                     output.accept(SFBlocks.SPIKY_SHELL_BRICKS.get());
                     output.accept(SFBlocks.SPIKY_SHELL_BRICKS_STAIRS.get());
                     output.accept(SFBlocks.SPIKY_SHELL_BRICKS_SLAB.get());
@@ -182,6 +195,8 @@ public class SFCreativeTabs {
                     output.accept(SFBlocks.ALGAE_COBBLESTONE.get());
                     output.accept(SFBlocks.ALGAE_COBBLESTONE_STAIRS.get());
                     output.accept(SFBlocks.ALGAE_COBBLESTONE_SLAB.get());
+
+                    // sea glass
                     output.accept(SFBlocks.PEARLY_SEA_GLASS_PEBBLES.get());
                     output.accept(SFBlocks.PEARLY_PEBBLED_SEA_GLASS.get());
                     output.accept(SFBlocks.PEARLY_SEA_GLASS.get());

@@ -12,7 +12,17 @@
 			},
 			"bones": [
 				{
+					"name": "real_root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "swim_control",
+					"parent": "real_root",
+					"pivot": [0, 0, 0]
+				},
+				{
 					"name": "Root",
+					"parent": "swim_control",
 					"pivot": [0, 4, 0],
 					"cubes": [
 						{"origin": [-2.5, -1, -6], "size": [5, 10, 11], "uv": [0, 0]},

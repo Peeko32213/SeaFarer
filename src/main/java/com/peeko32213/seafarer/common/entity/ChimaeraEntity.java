@@ -1,219 +1,107 @@
 package com.peeko32213.seafarer.common.entity;
 
-import com.peeko32213.seafarer.common.entity.misc.goal.BottomSwimmingGoal;
-import net.minecraft.core.BlockPos;
-import net.minecraft.network.syncher.EntityDataAccessor;
-import net.minecraft.network.syncher.EntityDataSerializers;
-import net.minecraft.network.syncher.SynchedEntityData;
+import com.peeko32213.seafarer.common.entity.base.EnhancedWaterAnimal;
+import com.peeko32213.seafarer.common.entity.misc.goal.GroundseekingRandomSwimGoal;
+import com.peeko32213.seafarer.common.entity.misc.util.SmartBodyHelper;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.FluidTags;
-import net.minecraft.util.Mth;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.control.MoveControl;
+import net.minecraft.world.entity.ai.control.BodyRotationControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.control.SmoothSwimmingMoveControl;
 import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
-import net.minecraft.world.entity.ai.navigation.PathNavigation;
-import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
-import net.minecraft.world.entity.animal.WaterAnimal;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.Vec3;
-import software.bernie.geckolib.core.animatable.GeoAnimatable;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
-import javax.annotation.Nullable;
+public class ChimaeraEntity extends EnhancedWaterAnimal {
 
-public class ChimaeraEntity extends WaterAnimal implements GeoAnimatable {
-    private static final EntityDataAccessor<Boolean> DATA_ID_MOVING = SynchedEntityData.defineId(ChimaeraEntity.class, EntityDataSerializers.BOOLEAN);
     private static final RawAnimation SWIM = RawAnimation.begin().thenLoop("animation.chimaera.swim");
     private static final RawAnimation IDLE = RawAnimation.begin().thenLoop("animation.chimaera.idle");
     private static final RawAnimation FLOP = RawAnimation.begin().thenLoop("animation.chimaera.flop");
     private static final RawAnimation EAT = RawAnimation.begin().thenLoop("animation.chimaera.attack");
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
-    private boolean clientSideTouchedGround;
-    @Nullable
-    protected BottomSwimmingGoal randomStrollGoal;
 
+    // Body control / navigation
+    @Override
+    protected @NotNull BodyRotationControl createBodyControl() {
+        SmartBodyHelper helper = new SmartBodyHelper(this);
+        helper.bodyLagMoving = 0.45F;
+        helper.bodyLagStill = 0.24F;
+        return helper;
+    }
 
-    public ChimaeraEntity(EntityType<? extends WaterAnimal> pEntityType, Level pLevel) {
+    public ChimaeraEntity(EntityType<? extends EnhancedWaterAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
+        this.moveControl = new SmoothSwimmingMoveControl(this, 40, 10, 0.02F, 0.1F, true);
         this.lookControl = new SmoothSwimmingLookControl(this, 10);
-        this.moveControl = new ChimaeraEntity.FileFishMoveControl(this);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 25.00)
-                .add(Attributes.KNOCKBACK_RESISTANCE, 5.0D)
-                .add(Attributes.MOVEMENT_SPEED, (double)0.1);
+                .add(Attributes.MAX_HEALTH, 20.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.7F);
     }
 
     protected void registerGoals() {
-        this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
-        this.goalSelector.addGoal(4, new BottomSwimmingGoal(this, 0.6D, 40));
-    }
-
-    protected PathNavigation createNavigation(Level pLevel) {
-        return new WaterBoundPathNavigation(this, pLevel);
-    }
-
-    protected void defineSynchedData() {
-        super.defineSynchedData();
-        this.entityData.define(DATA_ID_MOVING, false);
-    }
-
-
-    public MobType getMobType() {
-        return MobType.WATER;
-    }
-
-    public boolean isMoving() {
-        return this.entityData.get(DATA_ID_MOVING);
-    }
-
-    void setMoving(boolean pMoving) {
-        this.entityData.set(DATA_ID_MOVING, pMoving);
+        this.goalSelector.addGoal(4, new GroundseekingRandomSwimGoal(this, 1, 20, 16, 24, 0.01));
     }
 
     protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
         return pSize.height * 0.5F;
     }
 
-    public float getWalkTargetValue(BlockPos pPos, LevelReader pLevel) {
-        return pLevel.getFluidState(pPos).is(FluidTags.WATER) ? 10.0F + pLevel.getPathfindingCostFromLightLevels(pPos) : super.getWalkTargetValue(pPos, pLevel);
-    }
-
-    public void aiStep() {
-        if (this.isAlive()) {
-            if (this.level().isClientSide) {
-                if (!this.isInWater()) {
-                    Vec3 vec3 = this.getDeltaMovement();
-                    if (vec3.y > 0.0D && this.clientSideTouchedGround && !this.isSilent()) {
-                        this.level().playLocalSound(this.getX(), this.getY(), this.getZ(), this.getFlopSound(), this.getSoundSource(), 1.0F, 1.0F, false);
-                    }
-
-                    this.clientSideTouchedGround = vec3.y < 0.0D && this.level().loadedAndEntityCanStandOn(this.blockPosition().below(), this);
-                }
-            }
-
-            if (this.isInWaterOrBubble()) {
-                this.setAirSupply(300);
-            } else if (this.onGround()) {
-                this.setDeltaMovement(this.getDeltaMovement().add((double)((this.random.nextFloat() * 2.0F - 1.0F) * 0.4F), 0.5D, (double)((this.random.nextFloat() * 2.0F - 1.0F) * 0.4F)));
-                this.setYRot(this.random.nextFloat() * 360.0F);
-                this.setOnGround(false);
-                this.hasImpulse = true;
-            }
-        }
-
-        super.aiStep();
-    }
-
-    protected SoundEvent getFlopSound() {
-        return SoundEvents.GUARDIAN_FLOP;
-    }
-
-    public boolean checkSpawnObstruction(LevelReader pLevel) {
-        return pLevel.isUnobstructed(this);
-    }
-
-    public int getMaxHeadXRot() {
-        return 180;
-    }
-
     public void travel(Vec3 pTravelVector) {
-        if (this.isControlledByLocalInstance() && this.isInWater()) {
-            this.moveRelative(0.1F, pTravelVector);
+        if (this.isEffectiveAi() && this.isInWater()) {
+            this.moveRelative(this.getSpeed(), pTravelVector);
             this.move(MoverType.SELF, this.getDeltaMovement());
-            this.setDeltaMovement(this.getDeltaMovement().scale(0.9D));
-            if (!this.isMoving() && this.getTarget() == null) {
-                this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.005D, 0.0D));
+            this.setDeltaMovement(this.getDeltaMovement().scale(0.9));
+            if (this.getTarget() == null) {
+                this.setDeltaMovement(this.getDeltaMovement().add(0.0, -0.005, 0.0));
             }
         } else {
             super.travel(pTravelVector);
         }
-
     }
 
-    static class FileFishMoveControl extends MoveControl {
-        private final ChimaeraEntity guardian;
-
-        public FileFishMoveControl(ChimaeraEntity pGuardian) {
-            super(pGuardian);
-            this.guardian = pGuardian;
+    // Flop
+    @Override
+    public void aiStep() {
+        if (!this.isInWater() && this.onGround() && this.verticalCollision) {
+            this.setDeltaMovement(this.getDeltaMovement().add((this.random.nextFloat() * 2.0F - 1.0F) * 0.05F, 0.4F, (this.random.nextFloat() * 2.0F - 1.0F) * 0.05F));
+            this.setOnGround(false);
+            this.hasImpulse = true;
+            this.playSound(this.getFlopSound(), this.getSoundVolume(), this.getVoicePitch());
         }
-
-        public void tick() {
-            if (this.guardian.isInWater()) {
-                this.guardian.setDeltaMovement(this.guardian.getDeltaMovement().add(0.0D, 0.005D, 0.0D));
-            }
-
-            if (this.operation == Operation.MOVE_TO && !this.guardian.getNavigation().isDone()) {
-                double d0 = this.wantedX - this.guardian.getX();
-                double d1 = this.wantedY - this.guardian.getY();
-                double d2 = this.wantedZ - this.guardian.getZ();
-                double d3 = d0 * d0 + d1 * d1 + d2 * d2;
-                if (d3 < (double) 2.5000003E-7F) {
-                    this.mob.setZza(0.0F);
-                } else {
-                    float f = (float) (Mth.atan2(d2, d0) * (double) (180F / (float) Math.PI)) - 90.0F;
-                    this.guardian.setYRot(this.rotlerp(this.guardian.getYRot(), f, 10.0F));
-                    this.guardian.yBodyRot = this.guardian.getYRot();
-                    this.guardian.yHeadRot = this.guardian.getYRot();
-                    float f1 = (float) (this.speedModifier * this.guardian.getAttributeValue(Attributes.MOVEMENT_SPEED));
-                    if (this.guardian.isInWater()) {
-                        this.guardian.setSpeed(f1 * 0.02F);
-                        float f2 = -((float) (Mth.atan2(d1, Mth.sqrt((float) (d0 * d0 + d2 * d2))) * (double) (180F / (float) Math.PI)));
-                        f2 = Mth.clamp(Mth.wrapDegrees(f2), -85.0F, 85.0F);
-                        this.guardian.setXRot(this.rotlerp(this.guardian.getXRot(), f2, 5.0F));
-                        float f3 = Mth.cos(this.guardian.getXRot() * ((float) Math.PI / 180F));
-                        float f4 = Mth.sin(this.guardian.getXRot() * ((float) Math.PI / 180F));
-                        this.guardian.zza = f3 * f1;
-                        this.guardian.yya = -f4 * f1;
-                    } else {
-                        this.guardian.setSpeed(f1 * 0.1F);
-                    }
-
-                }
-            } else {
-                this.guardian.setSpeed(0.0F);
-                this.guardian.setXxa(0.0F);
-                this.guardian.setYya(0.0F);
-                this.guardian.setZza(0.0F);
-            }
-        }
+        super.aiStep();
     }
 
-    protected <E extends ChimaeraEntity> PlayState controller(final software.bernie.geckolib.core.animation.AnimationState<E> event) {
-        if (!(event.getLimbSwingAmount() > -0.06F && event.getLimbSwingAmount() < 0.06F) && this.isInWater()) {
-            event.setAndContinue(SWIM);
-            return PlayState.CONTINUE;
-        }
-        if (!this.isInWater()) {
-            event.setAndContinue(FLOP);
-            event.getController().setAnimationSpeed(2.0F);
-            return PlayState.CONTINUE;
-        }
-        else if (this.isInWater()){
-            event.setAndContinue(IDLE);
-            return PlayState.CONTINUE;
-        }
-        return PlayState.CONTINUE;
+    protected SoundEvent getAmbientSound() {
+        return SoundEvents.TROPICAL_FISH_AMBIENT;
+    }
+
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.TROPICAL_FISH_DEATH;
+    }
+
+    protected SoundEvent getHurtSound(DamageSource p_28281_) {
+        return SoundEvents.TROPICAL_FISH_HURT;
+    }
+
+    protected SoundEvent getFlopSound() {
+        return SoundEvents.TROPICAL_FISH_FLOP;
+    }
+
+    public boolean checkSpawnObstruction(LevelReader pLevel) {
+        return pLevel.isUnobstructed(this);
     }
 
     @Override
@@ -221,14 +109,22 @@ public class ChimaeraEntity extends WaterAnimal implements GeoAnimatable {
         controllers.add(new AnimationController<>(this, "Normal", 5, this::controller));
     }
 
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
-    }
-
-    @Override
-    public double getTick(Object o) {
-        return tickCount;
+    protected <E extends ChimaeraEntity> PlayState controller(final software.bernie.geckolib.core.animation.AnimationState<E> event) {
+        if (!(event.getLimbSwingAmount() > -0.06F && event.getLimbSwingAmount() < 0.06F) && this.isInWater()) {
+            event.setAndContinue(SWIM);
+            event.getController().setAnimationSpeed(1.0F);
+            return PlayState.CONTINUE;
+        }
+        if (!this.isInWater()) {
+            event.setAndContinue(FLOP);
+            event.getController().setAnimationSpeed(1.0F);
+            return PlayState.CONTINUE;
+        }
+        else if (this.isInWater()){
+            event.setAndContinue(IDLE);
+            event.getController().setAnimationSpeed(1.0F);
+            return PlayState.CONTINUE;
+        }
+        return PlayState.CONTINUE;
     }
 }

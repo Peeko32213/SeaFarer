@@ -6,13 +6,23 @@
 				"identifier": "geometry.chimaera",
 				"texture_width": 128,
 				"texture_height": 128,
-				"visible_bounds_width": 6,
+				"visible_bounds_width": 7,
 				"visible_bounds_height": 2.5,
 				"visible_bounds_offset": [0, 0.75, 0]
 			},
 			"bones": [
 				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "swim_control",
+					"parent": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
 					"name": "Body",
+					"parent": "swim_control",
 					"pivot": [0, 4, 1],
 					"cubes": [
 						{"origin": [-5.5, 0, -9], "size": [11, 11, 13], "uv": [0, 0]},

@@ -64,7 +64,7 @@ public class SFEntities {
                     .build(new ResourceLocation(SeaFarer.MODID, "manta_ray").toString()));
 
     public static final RegistryObject<EntityType<ParrotfishEntity>> PARROTFISH = ENTITIES.register("parrotfish",
-            () -> EntityType.Builder.of(ParrotfishEntity::new, MobCategory.WATER_AMBIENT).sized(0.5F, 0.5F)
+            () -> EntityType.Builder.of(ParrotfishEntity::new, MobCategory.WATER_AMBIENT).sized(0.75F, 0.75F)
                     .build(new ResourceLocation(SeaFarer.MODID, "parrotfish").toString()));
 
     public static final RegistryObject<EntityType<FilefishEntity>> FILEFISH = ENTITIES.register("filefish",
@@ -80,7 +80,7 @@ public class SFEntities {
                     .build(new ResourceLocation(SeaFarer.MODID, "zebra_shark").toString()));
 
     public static final RegistryObject<EntityType<ChimaeraEntity>> CHIMAERA = ENTITIES.register("chimaera",
-            () -> EntityType.Builder.of(ChimaeraEntity::new, MobCategory.WATER_AMBIENT).sized(2.0F, 1.0F)
+            () -> EntityType.Builder.of(ChimaeraEntity::new, MobCategory.WATER_AMBIENT).sized(1.25F, 1.0F)
                     .build(new ResourceLocation(SeaFarer.MODID, "chimaera").toString()));
 
     public static final RegistryObject<EntityType<SpiderCrabEntity>> SPIDER_CRAB = ENTITIES.register("spider_crab",
@@ -90,5 +90,9 @@ public class SFEntities {
     public static final RegistryObject<EntityType<BarreleyeEntity>> BARRELEYE = ENTITIES.register("barreleye",
             () -> EntityType.Builder.of(BarreleyeEntity::new, MobCategory.WATER_AMBIENT).sized(0.8F, 0.8F)
                     .build(new ResourceLocation(SeaFarer.MODID, "barreleye").toString()));
+
+    public static final RegistryObject<EntityType<SquirrelfishEntity>> SQUIRRELFISH = ENTITIES.register("squirrelfish",
+            () -> EntityType.Builder.of(SquirrelfishEntity::new, MobCategory.WATER_AMBIENT).sized(0.5F, 0.5F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "squirrelfish").toString()));
 
 }
