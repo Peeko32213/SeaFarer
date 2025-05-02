@@ -7,6 +7,7 @@ import com.peeko32213.seafarer.common.entity.misc.state.WeightedState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingMoveControl;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
@@ -37,6 +38,10 @@ public class EnhancedWaterAnimal extends WaterAnimal implements GeoEntity, GeoAn
         this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
         this.moveControl = new SmoothSwimmingMoveControl(this, 60, 2, 0.02F, 0.1F, false);
         this.lookControl = new SmoothSwimmingLookControl(this, 4);
+    }
+
+    public MobType getMobType() {
+        return MobType.WATER;
     }
 
     @Override

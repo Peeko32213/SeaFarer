@@ -152,8 +152,8 @@ public class SFLanguageGenerator extends LanguageProvider {
         addEntityType(SFEntities.BARRELEYE, "Barreleye");
         addItem(SFItems.BARRELEYE_SPAWN_EGG, "Barreleye Spawn Egg");
 
-        addEntityType(SFEntities.COPPERBAND_BUTTERFLY, "Copperband Butterfly Fish");
-        addItem(SFItems.COPPERBAND_BUTTERFLY_SPAWN_EGG, "Copperband Butterfly Fish Spawn Egg");
+        addEntityType(SFEntities.COPPERBAND_BUTTERFLY, "Copperband Butterflyfish");
+        addItem(SFItems.COPPERBAND_BUTTERFLY_SPAWN_EGG, "Copperband Butterflyfish Spawn Egg");
 
         addEntityType(SFEntities.MANTIS_SHRIMP, "Mantis Shrimp");
         addItem(SFItems.MANTIS_SHRIMP_SPAWN_EGG, "Mantis Shrimp Spawn Egg");

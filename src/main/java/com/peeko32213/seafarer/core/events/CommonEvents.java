@@ -22,18 +22,17 @@ public class CommonEvents {
         event.put(SFEntities.MANDARIN_GOBY.get(), MandarinGobyEntity.createAttributes().build());
         event.put(SFEntities.SEXY_SHRIMP.get(), SexyShrimpEntity.createAttributes().build());
         event.put(SFEntities.FROG_FISH.get(), FrogfishEntity.createAttributes().build());
-        event.put(SFEntities.BLUE_TANG.get(), BlueTangEntity.createAttributes());
-        event.put(SFEntities.COPPERBAND_BUTTERFLY.get(), CopperbandButterflyEntity.createAttributes());
+        event.put(SFEntities.BLUE_TANG.get(), BlueTangEntity.createAttributes().build());
+        event.put(SFEntities.COPPERBAND_BUTTERFLY.get(), CopperbandButterflyfishEntity.createAttributes().build());
         event.put(SFEntities.MANTIS_SHRIMP.get(), MantisShrimpEntity.createAttributes().build());
         event.put(SFEntities.MANTA_RAY.get(), MantaRayEntity.createAttributes().build());
         event.put(SFEntities.PARROTFISH.get(), ParrotfishEntity.createAttributes());
         event.put(SFEntities.FILEFISH.get(), FilefishEntity.createAttributes().build());
         event.put(SFEntities.LEAFY_SCORPIONFISH.get(), LeafyScorpionFishEntity.createAttributes().build());
-        event.put(SFEntities.ZEBRA_SHARK.get(), FilefishEntity.createAttributes().build());
+        event.put(SFEntities.ZEBRA_SHARK.get(), ZebraSharkEntity.createAttributes().build());
         event.put(SFEntities.CHIMAERA.get(), ChimaeraEntity.createAttributes().build());
         event.put(SFEntities.SPIDER_CRAB.get(), SpiderCrabEntity.createAttributes().build());
         event.put(SFEntities.BARRELEYE.get(), BarreleyeEntity.createAttributes().build());
-
     }
 
 }

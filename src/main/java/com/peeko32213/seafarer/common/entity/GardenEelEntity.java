@@ -1,5 +1,6 @@
 package com.peeko32213.seafarer.common.entity;
 
+import com.peeko32213.seafarer.common.entity.base.EnhancedWaterAnimal;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -17,23 +18,20 @@ import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ServerLevelAccessor;
-import software.bernie.geckolib.core.animatable.GeoAnimatable;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class GardenEelEntity extends WaterAnimal implements GeoAnimatable {
+public class GardenEelEntity extends EnhancedWaterAnimal {
 
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private static final RawAnimation ACTIVE = RawAnimation.begin().thenLoop("animation.garden_eel.active");
     private static final RawAnimation BURROWED = RawAnimation.begin().thenLoop("animation.garden_eel.burrowed");
     private static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(GardenEelEntity.class, EntityDataSerializers.INT);
+
     public static String getVariantName(int variant) {
         return switch (variant) {
             case 1 -> "orange";
@@ -54,15 +52,12 @@ public class GardenEelEntity extends WaterAnimal implements GeoAnimatable {
                 .add(Attributes.MAX_HEALTH, 5.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.0D)
                 .add(Attributes.KNOCKBACK_RESISTANCE, 100.0D);
-
     }
 
     protected void registerGoals() {
         this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, 6.0F));
     }
-
-
 
     @Override
     protected void defineSynchedData() {
@@ -155,16 +150,5 @@ public class GardenEelEntity extends WaterAnimal implements GeoAnimatable {
     @Override
     public void registerControllers(final AnimatableManager.ControllerRegistrar controllers) {
         controllers.add(new AnimationController<>(this, "Normal", 5, this::controller));
-    }
-
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return cache;
-    }
-
-    @Override
-    public double getTick(Object o) {
-        return tickCount;
     }
 }

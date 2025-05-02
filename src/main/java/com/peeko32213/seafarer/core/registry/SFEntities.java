@@ -51,9 +51,9 @@ public class SFEntities {
             () -> EntityType.Builder.of(BlueTangEntity::new, MobCategory.WATER_AMBIENT).sized(0.5F, 0.5F)
                     .build(new ResourceLocation(SeaFarer.MODID, "blue_tang").toString()));
 
-    public static final RegistryObject<EntityType<CopperbandButterflyEntity>> COPPERBAND_BUTTERFLY = ENTITIES.register("copperband_butterfly",
-            () -> EntityType.Builder.of(CopperbandButterflyEntity::new, MobCategory.WATER_AMBIENT).sized(0.5F, 0.5F)
-                    .build(new ResourceLocation(SeaFarer.MODID, "copperband_butterfly").toString()));
+    public static final RegistryObject<EntityType<CopperbandButterflyfishEntity>> COPPERBAND_BUTTERFLY = ENTITIES.register("copperband_butterflyfish",
+            () -> EntityType.Builder.of(CopperbandButterflyfishEntity::new, MobCategory.WATER_AMBIENT).sized(0.5F, 0.5F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "copperband_butterflyfish").toString()));
 
     public static final RegistryObject<EntityType<MantisShrimpEntity>> MANTIS_SHRIMP = ENTITIES.register("mantis_shrimp",
             () -> EntityType.Builder.of(MantisShrimpEntity::new, MobCategory.WATER_CREATURE).sized(1.0F, 0.8F)
@@ -75,9 +75,9 @@ public class SFEntities {
             () -> EntityType.Builder.of(LeafyScorpionFishEntity::new, MobCategory.WATER_AMBIENT).sized(0.5F, 0.5F)
                     .build(new ResourceLocation(SeaFarer.MODID, "leafy_scorpionfish").toString()));
 
-    public static final RegistryObject<EntityType<ZebraSharkEntity>> ZEBRA_SHARK = ENTITIES.register("zebrashark",
-            () -> EntityType.Builder.of(ZebraSharkEntity::new, MobCategory.WATER_AMBIENT).sized(3.0F, 1.3F)
-                    .build(new ResourceLocation(SeaFarer.MODID, "zebrashark").toString()));
+    public static final RegistryObject<EntityType<ZebraSharkEntity>> ZEBRA_SHARK = ENTITIES.register("zebra_shark",
+            () -> EntityType.Builder.of(ZebraSharkEntity::new, MobCategory.WATER_CREATURE).sized(2.0F, 1.35F)
+                    .build(new ResourceLocation(SeaFarer.MODID, "zebra_shark").toString()));
 
     public static final RegistryObject<EntityType<ChimaeraEntity>> CHIMAERA = ENTITIES.register("chimaera",
             () -> EntityType.Builder.of(ChimaeraEntity::new, MobCategory.WATER_AMBIENT).sized(2.0F, 1.0F)

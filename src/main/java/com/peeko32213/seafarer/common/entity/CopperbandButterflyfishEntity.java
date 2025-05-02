@@ -21,13 +21,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
-import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.GeoAnimatable;
-import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.animation.*;
+import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.object.PlayState;
 
-public class BlueTangEntity extends EnhancedSchoolingWaterAnimal implements GeoEntity {
+public class CopperbandButterflyfishEntity extends EnhancedSchoolingWaterAnimal {
 
     // Body control / navigation
     @Override
@@ -38,7 +37,7 @@ public class BlueTangEntity extends EnhancedSchoolingWaterAnimal implements GeoE
         return helper;
     }
 
-    public BlueTangEntity(EntityType<? extends EnhancedSchoolingWaterAnimal> pEntityType, Level pLevel) {
+    public CopperbandButterflyfishEntity(EntityType<? extends EnhancedSchoolingWaterAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.moveControl = new SmoothSwimmingMoveControl(this, 1000, 6, 0.02F, 0.1F, true);
         this.lookControl = new SmoothSwimmingLookControl(this, 4);
@@ -46,14 +45,14 @@ public class BlueTangEntity extends EnhancedSchoolingWaterAnimal implements GeoE
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 4.0D)
-                .add(Attributes.MOVEMENT_SPEED, 1.1F);
+                .add(Attributes.MAX_HEALTH, 5.0D)
+                .add(Attributes.MOVEMENT_SPEED, 1.0F);
     }
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
-        this.goalSelector.addGoal(1, new CustomRandomSwimGoal(this, 1, 1, 20, 20, 3));
+        this.goalSelector.addGoal(1, new CustomRandomSwimGoal(this, 1, 1, 24, 24, 3));
         this.goalSelector.addGoal(6, new FollowSchoolLeaderGoal(this));
     }
 
@@ -63,7 +62,7 @@ public class BlueTangEntity extends EnhancedSchoolingWaterAnimal implements GeoE
 
     @Override
     public int getMaxSchoolSize() {
-        return 24;
+        return 16;
     }
 
     public void travel(Vec3 pTravelVector) {
@@ -113,7 +112,7 @@ public class BlueTangEntity extends EnhancedSchoolingWaterAnimal implements GeoE
     }
 
     private PlayState predicate(AnimationState<GeoAnimatable> geoAnimatableAnimationState) {
-        geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.blue_tang.swim", Animation.LoopType.LOOP));
+        geoAnimatableAnimationState.getController().setAnimation(RawAnimation.begin().then("animation.copperband_butterfly.swim", Animation.LoopType.LOOP));
         return PlayState.CONTINUE;
     }
 

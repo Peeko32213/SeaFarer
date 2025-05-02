@@ -16,8 +16,13 @@
 					"pivot": [0, 4, -1]
 				},
 				{
-					"name": "Body",
+					"name": "swim_control",
 					"parent": "Root",
+					"pivot": [0, 4, -1]
+				},
+				{
+					"name": "Body",
+					"parent": "swim_control",
 					"pivot": [0, 4, -1],
 					"cubes": [
 						{"origin": [0, -2, -3], "size": [0, 11, 7], "uv": [0, 15]},
