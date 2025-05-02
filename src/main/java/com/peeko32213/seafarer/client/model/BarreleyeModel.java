@@ -12,23 +12,19 @@ import software.bernie.geckolib.model.GeoModel;
 import software.bernie.geckolib.model.data.EntityModelData;
 
 
-public class BarreleyeModel extends GeoModel<BarreleyeEntity>
-{
+public class BarreleyeModel extends GeoModel<BarreleyeEntity> {
     @Override
-    public ResourceLocation getModelResource(BarreleyeEntity object)
-    {
+    public ResourceLocation getModelResource(BarreleyeEntity object) {
         return new ResourceLocation(SeaFarer.MODID, "geo/barreleye.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureResource(BarreleyeEntity object)
-    {
+    public ResourceLocation getTextureResource(BarreleyeEntity object) {
         return new ResourceLocation(SeaFarer.MODID, "textures/entity/barreleye.png");
     }
 
     @Override
-    public ResourceLocation getAnimationResource(BarreleyeEntity object)
-    {
+    public ResourceLocation getAnimationResource(BarreleyeEntity object) {
         return new ResourceLocation(SeaFarer.MODID, "animations/barreleye.animation.json");
     }
 
@@ -36,12 +32,10 @@ public class BarreleyeModel extends GeoModel<BarreleyeEntity>
     public void setCustomAnimations(BarreleyeEntity entity, long uniqueID, AnimationState<BarreleyeEntity> customPredicate) {
         super.setCustomAnimations(entity, uniqueID, customPredicate);
 
-        CoreGeoBone core = this.getAnimationProcessor().getBone("Body");
+        CoreGeoBone core = this.getAnimationProcessor().getBone("swim_control");
         EntityModelData extraData = customPredicate.getData(DataTickets.ENTITY_MODEL_DATA);
 
         core.setRotX(extraData.headPitch() * (Mth.DEG_TO_RAD));
     }
-
-
 }
 
