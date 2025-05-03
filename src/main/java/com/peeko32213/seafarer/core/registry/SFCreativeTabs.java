@@ -79,7 +79,7 @@ public class SFCreativeTabs {
                     output.accept(SFItems.SPIRAL_HOE.get());
                     output.accept(SFBlocks.FLOATSOME.get());
                     output.accept(SFBlocks.FISHING_NET.get());
-                    output.accept(SFBlocks.PLANK_BLOCK.get());
+                    output.accept(SFBlocks.PLANK_PATH.get());
                     output.accept(SFBlocks.BEACHGRASS.get());
                     output.accept(SFBlocks.BEACHGRASS_FAN.get());
                     output.accept(SFBlocks.SEA_THRIFT.get());

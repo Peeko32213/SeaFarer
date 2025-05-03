@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.common.entity.misc.controller;
 
-import com.peeko32213.seafarer.common.entity.misc.interfaces.SemiAquatic;
+import com.peeko32213.seafarer.common.entity.misc.interfaces.ISemiAquatic;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -25,7 +25,7 @@ public class WaterMoveController extends MoveControl {
     }
 
     public void tick() {
-        if (entity instanceof SemiAquatic && ((SemiAquatic) entity).shouldStopMoving()) {
+        if (entity instanceof ISemiAquatic && ((ISemiAquatic) entity).shouldStopMoving()) {
             this.entity.setSpeed(0.0F);
             return;
         }

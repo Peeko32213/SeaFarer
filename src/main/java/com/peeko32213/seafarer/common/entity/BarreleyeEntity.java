@@ -1,7 +1,6 @@
 package com.peeko32213.seafarer.common.entity;
 
 import com.peeko32213.seafarer.common.entity.base.EnhancedSchoolingWaterAnimal;
-import com.peeko32213.seafarer.common.entity.misc.goal.BottomSwimmingGoal;
 import com.peeko32213.seafarer.common.entity.misc.goal.GroundseekingRandomSwimGoal;
 import com.peeko32213.seafarer.common.entity.misc.util.SmartBodyHelper;
 import net.minecraft.sounds.SoundEvent;
@@ -14,8 +13,6 @@ import net.minecraft.world.entity.ai.control.BodyRotationControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingMoveControl;
 import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
-import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;

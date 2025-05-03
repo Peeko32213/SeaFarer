@@ -28,7 +28,7 @@ public class SFEntities {
                     .build(new ResourceLocation(SeaFarer.MODID, "horseshoe_crab").toString()));
 
     public static final RegistryObject<EntityType<MarineIguanaEntity>> MARINE_IGUANA = ENTITIES.register("marine_iguana",
-            () -> EntityType.Builder.of(MarineIguanaEntity::new, MobCategory.CREATURE).sized(0.7F, 0.5F)
+            () -> EntityType.Builder.of(MarineIguanaEntity::new, MobCategory.CREATURE).sized(1F, 0.75F)
                     .build(new ResourceLocation(SeaFarer.MODID, "marine_iguana").toString()));
 
     public static final RegistryObject<EntityType<GardenEelEntity>> GARDEN_EEL = ENTITIES.register("garden_eel",

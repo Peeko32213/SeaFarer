@@ -1,21 +1,30 @@
 {
   "variants": {
-    "": [
-      {
-        "model": "seafarer:block/starfish_common_orange"
-      },
-      {
-        "model": "seafarer:block/starfish_common_orange",
-        "y": 90
-      },
-      {
-        "model": "seafarer:block/starfish_common_orange",
-        "y": 180
-      },
-      {
-        "model": "seafarer:block/starfish_common_orange",
-        "y": 270
-      }
-    ]
+    "facing=down": {
+      "model": "seafarer:block/starfish_common_orange",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "seafarer:block/starfish_common_orange",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "seafarer:block/starfish_common_orange",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "seafarer:block/starfish_common_orange",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "seafarer:block/starfish_common_orange"
+    },
+    "facing=west": {
+      "model": "seafarer:block/starfish_common_orange",
+      "x": 90,
+      "y": 270
+    }
   }
 }

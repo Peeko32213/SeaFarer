@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.common.entity.misc.goal;
 
-import com.peeko32213.seafarer.common.entity.misc.interfaces.SemiAquatic;
+import com.peeko32213.seafarer.common.entity.misc.interfaces.ISemiAquatic;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
@@ -30,7 +30,7 @@ public class BottomWalkingGoal extends RandomStrollGoal {
     }
 
     public boolean canUse(){
-        if (mob instanceof SemiAquatic && ((SemiAquatic) mob).shouldStopMoving()) {
+        if (mob instanceof ISemiAquatic && ((ISemiAquatic) mob).shouldStopMoving()) {
             return false;
         }
         interval = mob.isInWater() ? waterChance : landChance;
@@ -38,7 +38,7 @@ public class BottomWalkingGoal extends RandomStrollGoal {
     }
 
     public boolean canContinueToUse() {
-        if (mob instanceof SemiAquatic && ((SemiAquatic) mob).shouldStopMoving())
+        if (mob instanceof ISemiAquatic && ((ISemiAquatic) mob).shouldStopMoving())
             return false;
 
         return super.canContinueToUse();

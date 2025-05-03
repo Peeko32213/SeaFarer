@@ -16,11 +16,12 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 
-public class SFWallBlock extends MultifaceBlock implements SimpleWaterloggedBlock {
+public class AlageCarpetBlock extends MultifaceBlock implements SimpleWaterloggedBlock {
+
     private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
     private final MultifaceSpreader spreader = new MultifaceSpreader(this);
 
-    public SFWallBlock(BlockBehaviour.Properties pProperties) {
+    public AlageCarpetBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(false)));
     }

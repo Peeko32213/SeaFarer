@@ -16,8 +16,13 @@
 					"pivot": [0, 0, 0]
 				},
 				{
-					"name": "Body",
+					"name": "swim_control",
 					"parent": "root",
+					"pivot": [0, 7, -1]
+				},
+				{
+					"name": "Body",
+					"parent": "swim_control",
 					"pivot": [0, 9.1, -5]
 				},
 				{
@@ -78,7 +83,7 @@
 				},
 				{
 					"name": "ArmControl",
-					"parent": "root",
+					"parent": "swim_control",
 					"pivot": [0, 4.1, -5]
 				},
 				{
@@ -115,7 +120,7 @@
 				},
 				{
 					"name": "LegControl",
-					"parent": "root",
+					"parent": "swim_control",
 					"pivot": [0, 5.1, 4]
 				},
 				{

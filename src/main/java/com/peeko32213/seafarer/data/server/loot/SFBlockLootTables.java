@@ -186,7 +186,7 @@ public class SFBlockLootTables extends BlockLootSubProvider {
         dropSelf(SFBlocks.SWIRL_SHELL.get());
         dropSelf(SFBlocks.PYRAMID_SHELL.get());
 
-        dropSelf(SFBlocks.PLANK_BLOCK.get());
+        dropSelf(SFBlocks.PLANK_PATH.get());
 
         dropSelf(SFBlocks.BEACHGRASS_FAN.get());
         dropSelf(SFBlocks.BEACHGRASS.get());

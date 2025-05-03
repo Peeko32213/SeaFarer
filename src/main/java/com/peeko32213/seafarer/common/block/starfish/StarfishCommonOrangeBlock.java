@@ -1,6 +1,5 @@
 package com.peeko32213.seafarer.common.block.starfish;
 
-import com.peeko32213.seafarer.common.block.SFWetFloorLayerBlock;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
@@ -10,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class StarfishCommonOrangeBlock extends SFWetFloorLayerBlock {
+public class StarfishCommonOrangeBlock extends StarfishBlock {
 
     public StarfishCommonOrangeBlock(Properties pProperties) {
         super(pProperties);

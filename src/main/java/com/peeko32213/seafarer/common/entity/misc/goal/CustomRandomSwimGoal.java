@@ -25,9 +25,14 @@ public class CustomRandomSwimGoal extends RandomStrollGoal {
     }
 
     @Override
+    public boolean canUse() {
+        return super.canUse() && this.fish.isInWater();
+    }
+
+    @Override
     public boolean canContinueToUse() {
         wantedPos = new Vec3(this.wantedX, this.wantedY, this.wantedZ);
-        return super.canContinueToUse() && !(this.wantedPos.distanceTo(this.fish.position()) <= this.fish.getBbWidth() * prox);
+        return super.canContinueToUse() && !(this.wantedPos.distanceTo(this.fish.position()) <= this.fish.getBbWidth() * prox) && this.fish.isInWater();
     }
 
     @Nullable

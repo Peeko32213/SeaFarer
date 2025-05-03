@@ -2,6 +2,8 @@ package com.peeko32213.seafarer.core.registry.blocks;
 
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.common.block.*;
+import com.peeko32213.seafarer.common.block.shell.PyramidShellBlock;
+import com.peeko32213.seafarer.common.block.shell.ShellBlock;
 import com.peeko32213.seafarer.common.block.starfish.*;
 import com.peeko32213.seafarer.core.registry.SFItems;
 import com.peeko32213.seafarer.core.registry.SFSoundTypes;
@@ -25,6 +27,9 @@ public class SFBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, SeaFarer.MODID);
     public static List<RegistryObject<? extends Block>> AUTO_TRANSLATE = new ArrayList<>();
+
+    // Properties
+    public static final BlockBehaviour.Properties STARFISH_PROPERTIES = BlockBehaviour.Properties.of().strength(0.5F, 0.5F).sound(SoundType.CORAL_BLOCK).instabreak().noCollission().noOcclusion().pushReaction(PushReaction.DESTROY);
 
     public static final RegistryObject<Block> AZURE_SEA_GLASS_PEBBLES = createBlock("azure_sea_glass_pebbles", () -> new SFFloorLayerBlock(BlockBehaviour.Properties.of().instabreak().sound(SFSoundTypes.SEAGLASS).noCollission().noOcclusion().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> AZURE_PEBBLED_SEA_GLASS = createBlock("azure_pebbled_sea_glass", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).sound(SFSoundTypes.SEAGLASS).strength(0.5F, 0.5F)));
@@ -154,14 +159,8 @@ public class SFBlocks {
                     .sound(SoundType.LADDER)));
 
 
-    public static final RegistryObject<Block> STARFISH_COMMON_ORANGE = registerBlock("starfish_common_orange",
-            () -> new StarfishCommonOrangeBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.CORAL_BLOCK)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> STARFISH_COMMON_ORANGE = registerBlock("starfish_common_orange", () -> new StarfishCommonOrangeBlock(STARFISH_PROPERTIES));
+
 
     public static final RegistryObject<Block> STARFISH_PINK = registerBlock("starfish_pink",
             () -> new StarfishPinkBlock(BlockBehaviour.Properties
@@ -234,7 +233,7 @@ public class SFBlocks {
             ));
 
     public static final RegistryObject<Block> ALGAE_CARPET = registerBlock("algae_carpet",
-            () -> new SFWallBlock(BlockBehaviour.Properties
+            () -> new AlageCarpetBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
                     .sound(SoundType.MOSS_CARPET)
@@ -251,53 +250,8 @@ public class SFBlocks {
                     .offsetType(BlockBehaviour.OffsetType.XZ)
                     .sound(SoundType.WET_GRASS)));
 
-    public static final RegistryObject<Block> CLAM_SHELL = registerBlock("clam_shell",
-            () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.STONE)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> HORN_SHELL = registerBlock("horn_shell",
-            () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.STONE)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> SPIKY_SHELL = registerBlock("spiky_shell",
-            () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.STONE)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> SPIRAL_SHELL = registerBlock("spiral_shell",
-            () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.STONE)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> SWIRL_SHELL = registerBlock("swirl_shell",
-            () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.STONE)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> PLANK_BLOCK = registerBlock("plank_block",
-            () -> new SFPlankBlock(BlockBehaviour.Properties
+    public static final RegistryObject<Block> PLANK_PATH = registerBlock("plank_path",
+            () -> new PlankPathBlock(BlockBehaviour.Properties
                     .of()
                     .instabreak()
                     .sound(SoundType.WOOD)
@@ -384,15 +338,6 @@ public class SFBlocks {
             () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SFBlocks.COASTAL_WILDFLOWER, BlockBehaviour
                     .Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
 
-    public static final RegistryObject<Block> PYRAMID_SHELL = registerBlock("pyramid_shell",
-            () -> new SFWetFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.STONE)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
     public static final RegistryObject<Block> SALT_BLOCK = register("salt_block",
             () -> new Block(BlockBehaviour.Properties
                     .copy(Blocks.BONE_BLOCK)
@@ -400,7 +345,13 @@ public class SFBlocks {
                     .requiresCorrectToolForDrops()
             ));
 
-    // NEW SHELL BLOCKS
+    // Shells
+    public static final RegistryObject<Block> CLAM_SHELL = registerBlock("clam_shell", () -> new ShellBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.STONE).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> HORN_SHELL = registerBlock("horn_shell", () -> new ShellBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.STONE).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> SPIKY_SHELL = registerBlock("spiky_shell", () -> new ShellBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.STONE).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> SPIRAL_SHELL = registerBlock("spiral_shell", () -> new ShellBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.STONE).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> SWIRL_SHELL = registerBlock("swirl_shell", () -> new ShellBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.STONE).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> PYRAMID_SHELL = registerBlock("pyramid_shell", () -> new PyramidShellBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.STONE).noOcclusion().pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> CLAM_SHELL_BRICKS = register("clam_shell_bricks",
             () -> new Block(BlockBehaviour.Properties
@@ -608,15 +559,7 @@ public class SFBlocks {
                     .strength(3.0F, 2.0F)
                     .requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> FLOATSOME = register("floatsome",
-            () -> new SFFloorLayerBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.STONE)
-                    .noCollission()
-                    .noOcclusion()
-                    .replaceable()
-                    .pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> FLOATSOME = register("floatsome", () -> new SFFloorLayerBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.CHERRY_WOOD).noCollission().noOcclusion().replaceable().pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> ALGAE_COBBLESTONE = register("algae_cobblestone",
             () -> new Block(BlockBehaviour.Properties

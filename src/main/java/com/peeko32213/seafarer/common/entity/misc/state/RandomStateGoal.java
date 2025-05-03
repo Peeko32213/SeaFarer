@@ -28,8 +28,8 @@ public class RandomStateGoal<T extends LivingEntity & IStateAction> extends Goal
 
     @Override
     public boolean canUse() {
-        boolean hasConditions = this.helper.getStartingPredicate().test((LivingEntity) this.entity);
-        return playTicks < this.helper.getPlayTime() && cooldownTicks-- < 0 && hasConditions;
+        boolean hasConditions = this.helper.getStartingPredicate().test(this.entity);
+        return playTicks < this.helper.getPlayTime() && cooldownTicks-- < 0 && hasConditions && this.entity.getLastHurtByMob() == null && this.entity.getLastHurtMob() == null;
     }
 
     @Override

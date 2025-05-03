@@ -1,17 +1,12 @@
 package com.peeko32213.seafarer.common.entity.misc.goal;
 
-import com.peeko32213.seafarer.common.entity.misc.interfaces.SemiAquatic;
+import com.peeko32213.seafarer.common.entity.misc.interfaces.ISemiAquatic;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.Goal;
-import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
-import net.minecraft.world.entity.animal.WaterAnimal;
-import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.phys.Vec3;
 
-import javax.annotation.Nullable;
 import java.util.EnumSet;
 
 public class BottomWalkerFindWaterGoal extends Goal {
@@ -26,7 +21,7 @@ public class BottomWalkerFindWaterGoal extends Goal {
 
     public boolean canUse() {
         if (this.creature.onGround() && !this.creature.level().getFluidState(this.creature.blockPosition()).is(FluidTags.WATER)) {
-            if (this.creature instanceof SemiAquatic && ((SemiAquatic) this.creature).shouldEnterWater() && (this.creature.getTarget() != null || this.creature.getRandom().nextInt(executionChance) == 0)) {
+            if (this.creature instanceof ISemiAquatic && ((ISemiAquatic) this.creature).shouldEnterWater() && (this.creature.getTarget() != null || this.creature.getRandom().nextInt(executionChance) == 0)) {
                 targetPos = generateTarget();
                 return targetPos != null;
             }
@@ -47,7 +42,7 @@ public class BottomWalkerFindWaterGoal extends Goal {
     }
 
     public boolean canContinueToUse() {
-        if (this.creature instanceof SemiAquatic && !((SemiAquatic) this.creature).shouldEnterWater()) {
+        if (this.creature instanceof ISemiAquatic && !((ISemiAquatic) this.creature).shouldEnterWater()) {
             this.creature.getNavigation().stop();
             return false;
         }
@@ -57,7 +52,7 @@ public class BottomWalkerFindWaterGoal extends Goal {
     public BlockPos generateTarget() {
         BlockPos blockpos = null;
         final RandomSource random = this.creature.getRandom();
-        final int range = this.creature instanceof SemiAquatic ? ((SemiAquatic) this.creature).getWaterSearchRange() : 14;
+        final int range = this.creature instanceof ISemiAquatic ? ((ISemiAquatic) this.creature).getWaterSearchRange() : 14;
         for(int i = 0; i < 15; i++) {
             BlockPos blockPos = this.creature.blockPosition().offset(random.nextInt(range) - range/2, 3, random.nextInt(range) - range/2);
             while (this.creature.level().isEmptyBlock(blockPos) && blockPos.getY() > 1) {

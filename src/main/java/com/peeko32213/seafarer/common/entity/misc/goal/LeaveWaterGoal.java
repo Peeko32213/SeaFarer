@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.common.entity.misc.goal;
 
-import com.peeko32213.seafarer.common.entity.misc.interfaces.SemiAquatic;
+import com.peeko32213.seafarer.common.entity.misc.interfaces.ISemiAquatic;
 import com.peeko32213.seafarer.common.entity.misc.util.SFBlockPos;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.FluidTags;
@@ -12,7 +12,7 @@ import net.minecraft.world.phys.Vec3;
 
 import java.util.EnumSet;
 
-public class LeaveWaterGoal extends Goal {
+public class LeaveWaterGoal  extends Goal {
     private final PathfinderMob creature;
     private BlockPos targetPos;
     private final int executionChance = 30;
@@ -24,7 +24,7 @@ public class LeaveWaterGoal extends Goal {
 
     public boolean canUse() {
         if (this.creature.level().getFluidState(this.creature.blockPosition()).is(FluidTags.WATER) && (this.creature.getTarget() != null || this.creature.getRandom().nextInt(executionChance) == 0)) {
-            if (this.creature instanceof SemiAquatic && ((SemiAquatic) this.creature).shouldLeaveWater()) {
+            if (this.creature instanceof ISemiAquatic && ((ISemiAquatic) this.creature).shouldLeaveWater()) {
                 targetPos = generateTarget();
                 return targetPos != null;
             }
@@ -50,7 +50,7 @@ public class LeaveWaterGoal extends Goal {
     }
 
     public boolean canContinueToUse() {
-        if (this.creature instanceof SemiAquatic && !((SemiAquatic) this.creature).shouldLeaveWater()) {
+        if (this.creature instanceof ISemiAquatic && !((ISemiAquatic) this.creature).shouldLeaveWater()) {
             this.creature.getNavigation().stop();
             return false;
         }
@@ -58,18 +58,18 @@ public class LeaveWaterGoal extends Goal {
     }
 
     public BlockPos generateTarget() {
-        Vec3 vector3d = LandRandomPos.getPos(this.creature, 23, 7);
+        Vec3 vector3d = LandRandomPos.getPos(this.creature, 24, 12);
         int tries = 0;
-        while (vector3d != null && tries < 8) {
+        while(vector3d != null && tries < 8) {
             boolean waterDetected = false;
-            for (BlockPos blockpos1 : BlockPos.betweenClosed(Mth.floor(vector3d.x - 2.0D), Mth.floor(vector3d.y - 1.0D), Mth.floor(vector3d.z - 2.0D), Mth.floor(vector3d.x + 2.0D), Mth.floor(vector3d.y), Mth.floor(vector3d.z + 2.0D))) {
+            for(BlockPos blockpos1 : BlockPos.betweenClosed(Mth.floor(vector3d.x - 2.0D), Mth.floor(vector3d.y - 1.0D), Mth.floor(vector3d.z - 2.0D), Mth.floor(vector3d.x + 2.0D), Mth.floor(vector3d.y), Mth.floor(vector3d.z + 2.0D))) {
                 if (this.creature.level().getFluidState(blockpos1).is(FluidTags.WATER)) {
                     waterDetected = true;
                     break;
                 }
             }
             if (waterDetected) {
-                vector3d = LandRandomPos.getPos(this.creature, 23, 7);
+                vector3d = LandRandomPos.getPos(this.creature, 24, 12);
             } else {
                 return SFBlockPos.fromVec3(vector3d);
             }

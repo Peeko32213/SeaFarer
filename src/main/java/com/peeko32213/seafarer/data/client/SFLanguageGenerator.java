@@ -96,7 +96,7 @@ public class SFLanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.COASTAL_LAVENDER, "Coastal Lavender");
         addBlock(SFBlocks.COASTAL_WILDFLOWER, "Coastal Wildflower");
 
-        addBlock(SFBlocks.PLANK_BLOCK, "Plank Path");
+        addBlock(SFBlocks.PLANK_PATH, "Plank Path");
 
         addBlock(SFBlocks.SALT_BLOCK, "Block of Salt");
 
