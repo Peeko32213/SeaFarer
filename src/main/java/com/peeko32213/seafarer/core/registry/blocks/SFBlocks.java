@@ -158,72 +158,14 @@ public class SFBlocks {
                     .strength(0.2F)
                     .sound(SoundType.LADDER)));
 
-
-    public static final RegistryObject<Block> STARFISH_COMMON_ORANGE = registerBlock("starfish_common_orange", () -> new StarfishCommonOrangeBlock(STARFISH_PROPERTIES));
-
-
-    public static final RegistryObject<Block> STARFISH_PINK = registerBlock("starfish_pink",
-            () -> new StarfishPinkBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.CORAL_BLOCK)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> STARFISH_RED = registerBlock("starfish_red",
-            () -> new StarfishRedBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.CORAL_BLOCK)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> STARFISH_CHOCOLATE_CHIP = registerBlock("starfish_chocolate_chip",
-            () -> new StarfishChocolateChipBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.CORAL_BLOCK)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> STARFISH_BIG_BLUE = registerBlock("starfish_big_blue",
-            () -> new StarfishBigBlueBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.CORAL_BLOCK)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> STARFISH_BIG_PURPLE_OCHRE = registerBlock("starfish_big_purple_ochre",
-            () -> new StarfishBigPurpleOchreBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.CORAL_BLOCK)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> STARFISH_BIG_ROYAL = registerBlock("starfish_big_royal",
-            () -> new StarfishBigRoyalBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.CORAL_BLOCK)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> STARFISH_BIG_OCHRE = registerBlock("starfish_big_ochre",
-            () -> new StarfishBigOchreBlock(BlockBehaviour.Properties
-                    .of()
-                    .instabreak()
-                    .sound(SoundType.CORAL_BLOCK)
-                    .noCollission()
-                    .noOcclusion()
-                    .pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> COMMON_ORANGE_STARFISH = registerBlock("common_orange_starfish", () -> new CommonOrangeStarfish(STARFISH_PROPERTIES));
+    public static final RegistryObject<Block> PINK_STARFISH = registerBlock("pink_starfish", () -> new PinkStarfish(STARFISH_PROPERTIES));
+    public static final RegistryObject<Block> RED_STARFISH = registerBlock("red_starfish", () -> new RedStarfish(STARFISH_PROPERTIES));
+    public static final RegistryObject<Block> CHOCOLATE_CHIP_STARFISH = registerBlock("chocolate_chip_starfish", () -> new ChocolateChipStarfish(STARFISH_PROPERTIES));
+    public static final RegistryObject<Block> BLUE_STARFISH = registerBlock("blue_starfish", () -> new BlueStarfish(STARFISH_PROPERTIES));
+    public static final RegistryObject<Block> PURPLE_OCHRE_STARFISH = registerBlock("purple_ochre_starfish", () -> new PurpleOchreStarfish(STARFISH_PROPERTIES));
+    public static final RegistryObject<Block> ROYAL_STARFISH = registerBlock("royal_starfish", () -> new RoyalStarfish(STARFISH_PROPERTIES));
+    public static final RegistryObject<Block> OCHRE_STARFISH = registerBlock("ochre_starfish", () -> new OchreStarfish(STARFISH_PROPERTIES));
 
     public static final RegistryObject<Block> ALGAE_BLOCK = registerBlock("algae_block",
             () -> new AlgaeBlock(BlockBehaviour.Properties

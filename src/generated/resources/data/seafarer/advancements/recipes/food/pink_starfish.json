@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "seafarer:pink_starfish"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "pink_starfish": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "seafarer:pink_starfish"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "pink_starfish",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "seafarer:pink_starfish"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -39,15 +39,14 @@ public class SFLanguageGenerator extends LanguageProvider {
 
         addBlock(SFBlocks.FISHING_NET, "Fishing Net");
 
-        addBlock(SFBlocks.STARFISH_COMMON_ORANGE, "Starfish");
-        addBlock(SFBlocks.STARFISH_RED, "Starfish");
-        addBlock(SFBlocks.STARFISH_PINK, "Starfish");
-        addBlock(SFBlocks.STARFISH_CHOCOLATE_CHIP, "Starfish");
-
-        addBlock(SFBlocks.STARFISH_BIG_BLUE, "Big Starfish");
-        addBlock(SFBlocks.STARFISH_BIG_PURPLE_OCHRE, "Big Starfish");
-        addBlock(SFBlocks.STARFISH_BIG_ROYAL, "Big Starfish");
-        addBlock(SFBlocks.STARFISH_BIG_OCHRE, "Big Starfish");
+        addBlock(SFBlocks.COMMON_ORANGE_STARFISH, "Starfish");
+        addBlock(SFBlocks.RED_STARFISH, "Starfish");
+        addBlock(SFBlocks.PINK_STARFISH, "Starfish");
+        addBlock(SFBlocks.CHOCOLATE_CHIP_STARFISH, "Starfish");
+        addBlock(SFBlocks.BLUE_STARFISH, "Starfish");
+        addBlock(SFBlocks.PURPLE_OCHRE_STARFISH, "Starfish");
+        addBlock(SFBlocks.ROYAL_STARFISH, "Starfish");
+        addBlock(SFBlocks.OCHRE_STARFISH, "Starfish");
 
         addItem(SFItems.COOKED_STARFISH, "Cooked Starfish");
 
@@ -291,14 +290,15 @@ public class SFLanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.PALE_SPONGE, "Pale Sponge");
         addBlock(SFBlocks.TUBE_WORMS, "Tube Worms");
 
-        add("seafarer.starfish_common_orange", "Common Orange");
-        add("seafarer.starfish_pink", "Pink");
-        add("seafarer.starfish_red", "Red");
-        add("seafarer.starfish_chocolate_chip", "Chocolate Chip");
-        add("seafarer.starfish_big_blue", "Blue");
-        add("seafarer.starfish_big_purple_ochre", "Purple Ochre");
-        add("seafarer.starfish_big_ochre", "Ochre");
-        add("seafarer.starfish_big_royal", "Big Royal");
+        add("seafarer.common_orange_starfish", "Common Orange");
+        add("seafarer.pink_starfish", "Pink");
+        add("seafarer.red_starfish", "Red");
+        add("seafarer.chocolate_chip_starfish", "Chocolate Chip");
+        add("seafarer.blue_starfish", "Blue");
+        add("seafarer.purple_ochre_starfish", "Purple Ochre");
+        add("seafarer.ochre_starfish", "Ochre");
+        add("seafarer.royal_starfish", "Royal");
+
         add("seafarer.message_in_a_bottle", "Message in a bottle");
         add("seafarer.message.structure_not_found", "Structure was not found!");
         add("seafarer.message.structure_search_failed", "Structure was not found!");

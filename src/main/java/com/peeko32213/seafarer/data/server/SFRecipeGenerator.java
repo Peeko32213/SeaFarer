@@ -291,14 +291,14 @@ public class SFRecipeGenerator extends SFRecipeProvider implements IConditionBui
 
 
     private void smeltingRecipes(Consumer<FinishedRecipe> consumer) {
-        foodSmeltingRecipes(key(SFBlocks.STARFISH_BIG_BLUE.get()).getPath(),SFBlocks.STARFISH_BIG_BLUE.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
-        foodSmeltingRecipes(key(SFBlocks.STARFISH_BIG_OCHRE.get()).getPath(),SFBlocks.STARFISH_BIG_OCHRE.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
-        foodSmeltingRecipes(key(SFBlocks.STARFISH_BIG_PURPLE_OCHRE.get()).getPath(),SFBlocks.STARFISH_BIG_PURPLE_OCHRE.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
-        foodSmeltingRecipes(key(SFBlocks.STARFISH_PINK.get()).getPath(),SFBlocks.STARFISH_PINK.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
-        foodSmeltingRecipes(key(SFBlocks.STARFISH_RED.get()).getPath(),SFBlocks.STARFISH_RED.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
-        foodSmeltingRecipes(key(SFBlocks.STARFISH_BIG_ROYAL.get()).getPath(),SFBlocks.STARFISH_BIG_ROYAL.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
-        foodSmeltingRecipes(key(SFBlocks.STARFISH_CHOCOLATE_CHIP.get()).getPath(),SFBlocks.STARFISH_CHOCOLATE_CHIP.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
-        foodSmeltingRecipes(key(SFBlocks.STARFISH_COMMON_ORANGE.get()).getPath(),SFBlocks.STARFISH_COMMON_ORANGE.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SFBlocks.BLUE_STARFISH.get()).getPath(),SFBlocks.BLUE_STARFISH.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SFBlocks.OCHRE_STARFISH.get()).getPath(),SFBlocks.OCHRE_STARFISH.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SFBlocks.PURPLE_OCHRE_STARFISH.get()).getPath(),SFBlocks.PURPLE_OCHRE_STARFISH.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SFBlocks.PINK_STARFISH.get()).getPath(),SFBlocks.PINK_STARFISH.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SFBlocks.RED_STARFISH.get()).getPath(),SFBlocks.RED_STARFISH.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SFBlocks.ROYAL_STARFISH.get()).getPath(),SFBlocks.ROYAL_STARFISH.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SFBlocks.CHOCOLATE_CHIP_STARFISH.get()).getPath(),SFBlocks.CHOCOLATE_CHIP_STARFISH.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SFBlocks.COMMON_ORANGE_STARFISH.get()).getPath(),SFBlocks.COMMON_ORANGE_STARFISH.get().asItem(), SFItems.COOKED_STARFISH.get(),250,consumer);
     }
 
     //Wrappers for conditionals

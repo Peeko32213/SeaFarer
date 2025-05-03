@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 100,
+  "experience": 250.0,
+  "ingredient": {
+    "item": "seafarer:chocolate_chip_starfish"
+  },
+  "result": "seafarer:cooked_starfish"
+}

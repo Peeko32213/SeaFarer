@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "seafarer:red_starfish"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "red_starfish": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "seafarer:red_starfish"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "red_starfish",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "seafarer:red_starfish"
+    ]
+  },
+  "sends_telemetry_event": false
+}

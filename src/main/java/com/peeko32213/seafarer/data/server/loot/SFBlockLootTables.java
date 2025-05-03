@@ -163,14 +163,14 @@ public class SFBlockLootTables extends BlockLootSubProvider {
 
         dropSelf(SFBlocks.FISHING_NET.get());
 
-        dropSelf(SFBlocks.STARFISH_COMMON_ORANGE.get());
-        dropSelf(SFBlocks.STARFISH_PINK.get());
-        dropSelf(SFBlocks.STARFISH_RED.get());
-        dropSelf(SFBlocks.STARFISH_CHOCOLATE_CHIP.get());
-        dropSelf(SFBlocks.STARFISH_BIG_BLUE.get());
-        dropSelf(SFBlocks.STARFISH_BIG_PURPLE_OCHRE.get());
-        dropSelf(SFBlocks.STARFISH_BIG_ROYAL.get());
-        dropSelf(SFBlocks.STARFISH_BIG_OCHRE.get());
+        dropSelf(SFBlocks.COMMON_ORANGE_STARFISH.get());
+        dropSelf(SFBlocks.PINK_STARFISH.get());
+        dropSelf(SFBlocks.RED_STARFISH.get());
+        dropSelf(SFBlocks.CHOCOLATE_CHIP_STARFISH.get());
+        dropSelf(SFBlocks.BLUE_STARFISH.get());
+        dropSelf(SFBlocks.PURPLE_OCHRE_STARFISH.get());
+        dropSelf(SFBlocks.ROYAL_STARFISH.get());
+        dropSelf(SFBlocks.OCHRE_STARFISH.get());
 
         dropSelf(SFBlocks.ALGAE_BLOCK.get());
         dropWhenSilkTouch(SFBlocks.ALGAE_CARPET.get());

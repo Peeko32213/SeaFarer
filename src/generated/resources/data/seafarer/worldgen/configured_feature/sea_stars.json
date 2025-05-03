@@ -10,72 +10,80 @@
             "entries": [
               {
                 "data": {
-                  "Name": "seafarer:starfish_red",
+                  "Name": "seafarer:red_starfish",
                   "Properties": {
-                    "waterlogged": "true"
+                    "facing": "up",
+                    "waterlogged": "false"
                   }
                 },
                 "weight": 15
               },
               {
                 "data": {
-                  "Name": "seafarer:starfish_pink",
+                  "Name": "seafarer:pink_starfish",
                   "Properties": {
-                    "waterlogged": "true"
+                    "facing": "up",
+                    "waterlogged": "false"
                   }
                 },
                 "weight": 15
               },
               {
                 "data": {
-                  "Name": "seafarer:starfish_common_orange",
+                  "Name": "seafarer:common_orange_starfish",
                   "Properties": {
-                    "waterlogged": "true"
+                    "facing": "up",
+                    "waterlogged": "false"
                   }
                 },
                 "weight": 20
               },
               {
                 "data": {
-                  "Name": "seafarer:starfish_chocolate_chip",
+                  "Name": "seafarer:chocolate_chip_starfish",
                   "Properties": {
-                    "waterlogged": "true"
+                    "facing": "up",
+                    "waterlogged": "false"
                   }
                 },
                 "weight": 5
               },
               {
                 "data": {
-                  "Name": "seafarer:starfish_big_blue",
+                  "Name": "seafarer:blue_starfish",
                   "Properties": {
-                    "waterlogged": "true"
+                    "facing": "up",
+                    "waterlogged": "false"
                   }
                 },
                 "weight": 20
               },
               {
                 "data": {
-                  "Name": "seafarer:starfish_big_ochre",
+                  "Name": "seafarer:ochre_starfish",
                   "Properties": {
-                    "waterlogged": "true"
+                    "facing": "up",
+                    "waterlogged": "false"
                   }
                 },
                 "weight": 15
               },
               {
                 "data": {
-                  "Name": "seafarer:starfish_big_purple_ochre",
+                  "Name": "seafarer:purple_ochre_starfish",
                   "Properties": {
-                    "waterlogged": "true"
+                    "facing": "up",
+                    "waterlogged": "false"
                   }
                 },
                 "weight": 10
               },
               {
                 "data": {
-                  "Name": "seafarer:starfish_big_royal",
+                  "Name": "seafarer:royal_starfish",
                   "Properties": {
-                    "waterlogged": "true"
+                    "facing": "up",
+                    "waterlogged": "false"
                   }
                 },
                 "weight": 5

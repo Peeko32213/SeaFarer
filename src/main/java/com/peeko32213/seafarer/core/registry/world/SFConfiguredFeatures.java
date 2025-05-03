@@ -115,14 +115,14 @@ public class SFConfiguredFeatures {
         register(context, SEA_STARS, Feature.RANDOM_PATCH,
                 FeatureUtils.simpleRandomPatchConfiguration(1, PlacementUtils.filtered(SFFeatures.WATERLOGGABLE_BLOCK.get(),
                         new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
-                                .add(SFBlocks.STARFISH_RED.get().defaultBlockState(), 15)
-                                .add(SFBlocks.STARFISH_PINK.get().defaultBlockState(), 15)
-                                .add(SFBlocks.STARFISH_COMMON_ORANGE.get().defaultBlockState(), 20)
-                                .add(SFBlocks.STARFISH_CHOCOLATE_CHIP.get().defaultBlockState(), 5)
-                                .add(SFBlocks.STARFISH_BIG_BLUE.get().defaultBlockState(), 20)
-                                .add(SFBlocks.STARFISH_BIG_OCHRE.get().defaultBlockState(), 15)
-                                .add(SFBlocks.STARFISH_BIG_PURPLE_OCHRE.get().defaultBlockState(), 10)
-                                .add(SFBlocks.STARFISH_BIG_ROYAL.get().defaultBlockState(), 5))),
+                                .add(SFBlocks.RED_STARFISH.get().defaultBlockState(), 15)
+                                .add(SFBlocks.PINK_STARFISH.get().defaultBlockState(), 15)
+                                .add(SFBlocks.COMMON_ORANGE_STARFISH.get().defaultBlockState(), 20)
+                                .add(SFBlocks.CHOCOLATE_CHIP_STARFISH.get().defaultBlockState(), 5)
+                                .add(SFBlocks.BLUE_STARFISH.get().defaultBlockState(), 20)
+                                .add(SFBlocks.OCHRE_STARFISH.get().defaultBlockState(), 15)
+                                .add(SFBlocks.PURPLE_OCHRE_STARFISH.get().defaultBlockState(), 10)
+                                .add(SFBlocks.ROYAL_STARFISH.get().defaultBlockState(), 5))),
                         BlockPredicate.ONLY_IN_AIR_OR_WATER_PREDICATE)));
 
         register(context, JUMBLED_SHELLY_SAND_PATCH, Feature.DISK, new DiskConfiguration(

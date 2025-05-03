@@ -1,0 +1,560 @@
+{
+  "variants": {
+    "facing=up": [
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish",
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish",
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish",
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish",
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated",
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated",
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated",
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated",
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again",
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again",
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again",
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again",
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again",
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again",
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again",
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again",
+        "y": 270,
+        "weight": 10
+      }
+    ],
+    "facing=down": [
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish",
+        "x": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish",
+        "x": 180,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish",
+        "x": 180,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish",
+        "x": 180,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated",
+        "x": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated",
+        "x": 180,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated",
+        "x": 180,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated",
+        "x": 180,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again",
+        "x": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again",
+        "x": 180,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again",
+        "x": 180,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again",
+        "x": 180,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again",
+        "x": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again",
+        "x": 180,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again",
+        "x": 180,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again",
+        "x": 180,
+        "y": 270,
+        "weight": 10
+      }
+    ],
+    "facing=east": [
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish",
+        "x": 90,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish",
+        "x": 270,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_alt",
+        "x": 90,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_alt",
+        "x": 270,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated",
+        "x": 90,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated",
+        "x": 270,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_alt",
+        "x": 90,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_alt",
+        "x": 270,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again",
+        "x": 90,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again",
+        "x": 270,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_alt",
+        "x": 90,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_alt",
+        "x": 270,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again",
+        "x": 90,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again",
+        "x": 270,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again_alt",
+        "x": 90,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again_alt",
+        "x": 270,
+        "y": 270,
+        "weight": 10
+      }
+    ],
+    "facing=west": [
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish",
+        "x": 90,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish",
+        "x": 270,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_alt",
+        "x": 90,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_alt",
+        "x": 270,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated",
+        "x": 90,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated",
+        "x": 270,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_alt",
+        "x": 90,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_alt",
+        "x": 270,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again",
+        "x": 90,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again",
+        "x": 270,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_alt",
+        "x": 90,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_alt",
+        "x": 270,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again",
+        "x": 90,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again",
+        "x": 270,
+        "y": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again_alt",
+        "x": 90,
+        "y": 270,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again_alt",
+        "x": 270,
+        "y": 90,
+        "weight": 10
+      }
+    ],
+    "facing=north": [
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish",
+        "x": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish",
+        "x": 270,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_alt",
+        "x": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_alt",
+        "x": 270,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated",
+        "x": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated",
+        "x": 270,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_alt",
+        "x": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_alt",
+        "x": 270,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again",
+        "x": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again",
+        "x": 270,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_alt",
+        "x": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_alt",
+        "x": 270,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again",
+        "x": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again",
+        "x": 270,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again_alt",
+        "x": 90,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again_alt",
+        "x": 270,
+        "y": 180,
+        "weight": 10
+      }
+    ],
+    "facing=south": [
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish",
+        "x": 90,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish",
+        "x": 270,
+        "y": 0,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_alt",
+        "x": 90,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_alt",
+        "x": 270,
+        "y": 0,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated",
+        "x": 90,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated",
+        "x": 270,
+        "y": 0,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_alt",
+        "x": 90,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_alt",
+        "x": 270,
+        "y": 0,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again",
+        "x": 90,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again",
+        "x": 270,
+        "y": 0,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_alt",
+        "x": 90,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_alt",
+        "x": 270,
+        "y": 0,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again",
+        "x": 90,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again",
+        "x": 270,
+        "y": 0,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again_alt",
+        "x": 90,
+        "y": 180,
+        "weight": 10
+      },
+      {
+        "model": "seafarer:block/starfish/chocolate_chip/chocolate_chip_starfish_rotated_again_again_alt",
+        "x": 270,
+        "y": 0,
+        "weight": 10
+      }
+    ]
+  }
+}

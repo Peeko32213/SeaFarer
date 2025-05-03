@@ -1,12 +1,12 @@
 {
   "values": [
-    "seafarer:starfish_big_royal",
-    "seafarer:starfish_big_purple_ochre",
-    "seafarer:starfish_big_blue",
-    "seafarer:starfish_big_ochre",
-    "seafarer:starfish_red",
-    "seafarer:starfish_pink",
-    "seafarer:starfish_common_orange",
-    "seafarer:starfish_chocolate_chip"
+    "seafarer:royal_starfish",
+    "seafarer:purple_ochre_starfish",
+    "seafarer:blue_starfish",
+    "seafarer:ochre_starfish",
+    "seafarer:red_starfish",
+    "seafarer:pink_starfish",
+    "seafarer:common_orange_starfish",
+    "seafarer:chocolate_chip_starfish"
   ]
 }

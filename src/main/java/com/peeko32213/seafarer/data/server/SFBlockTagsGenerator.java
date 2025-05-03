@@ -43,14 +43,14 @@ public class SFBlockTagsGenerator extends BlockTagsProvider {
         ;
 
         tag(SFTags.STARFISH)
-                .add(SFBlocks.STARFISH_BIG_ROYAL.get())
-                .add(SFBlocks.STARFISH_BIG_PURPLE_OCHRE.get())
-                .add(SFBlocks.STARFISH_BIG_BLUE.get())
-                .add(SFBlocks.STARFISH_BIG_OCHRE.get())
-                .add(SFBlocks.STARFISH_RED.get())
-                .add(SFBlocks.STARFISH_PINK.get())
-                .add(SFBlocks.STARFISH_COMMON_ORANGE.get())
-                .add(SFBlocks.STARFISH_CHOCOLATE_CHIP.get())
+                .add(SFBlocks.ROYAL_STARFISH.get())
+                .add(SFBlocks.PURPLE_OCHRE_STARFISH.get())
+                .add(SFBlocks.BLUE_STARFISH.get())
+                .add(SFBlocks.OCHRE_STARFISH.get())
+                .add(SFBlocks.RED_STARFISH.get())
+                .add(SFBlocks.PINK_STARFISH.get())
+                .add(SFBlocks.COMMON_ORANGE_STARFISH.get())
+                .add(SFBlocks.CHOCOLATE_CHIP_STARFISH.get())
         ;
 
         tag(BlockTags.BEE_GROWABLES)

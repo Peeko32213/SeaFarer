@@ -58,14 +58,14 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.ROSE_SEA_GLASS_PEBBLES.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.CHARTREUSE_SEA_GLASS_PEBBLES.get(), RenderType.translucent());
 
-        ItemBlockRenderTypes.setRenderLayer(SFBlocks.STARFISH_COMMON_ORANGE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(SFBlocks.STARFISH_PINK.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(SFBlocks.STARFISH_RED.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(SFBlocks.STARFISH_CHOCOLATE_CHIP.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(SFBlocks.STARFISH_BIG_BLUE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(SFBlocks.STARFISH_BIG_PURPLE_OCHRE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(SFBlocks.STARFISH_BIG_OCHRE.get(), RenderType.translucent());
-        ItemBlockRenderTypes.setRenderLayer(SFBlocks.STARFISH_BIG_ROYAL.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.COMMON_ORANGE_STARFISH.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.PINK_STARFISH.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.RED_STARFISH.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.CHOCOLATE_CHIP_STARFISH.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.BLUE_STARFISH.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.PURPLE_OCHRE_STARFISH.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.OCHRE_STARFISH.get(), RenderType.translucent());
+        ItemBlockRenderTypes.setRenderLayer(SFBlocks.ROYAL_STARFISH.get(), RenderType.translucent());
 
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.AZURE_SEA_GLASS_BOTTLE.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.UMBER_SEA_GLASS_BOTTLE.get(), RenderType.translucent());
