@@ -2,9 +2,10 @@ package com.peeko32213.seafarer.common.entity;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.peeko32213.seafarer.common.entity.base.EnhancedAnimal;
 import com.peeko32213.seafarer.common.entity.misc.goal.GrazeAlgaeGoal;
-import com.peeko32213.seafarer.common.entity.misc.StatedAnimal;
 import com.peeko32213.seafarer.common.entity.misc.state.*;
+import com.peeko32213.seafarer.common.entity.misc.util.SmartBodyHelper;
 import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFItems;
 import net.minecraft.core.BlockPos;
@@ -22,6 +23,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.control.BodyRotationControl;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Bucketable;
@@ -31,40 +33,37 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib.core.animatable.GeoAnimatable;
-import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
-import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.EnumSet;
 import java.util.List;
 
-public class CrabEntity extends StatedAnimal implements GeoAnimatable, Bucketable {
+public class CrabEntity extends EnhancedAnimal implements Bucketable {
+
     private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(CrabEntity.class, EntityDataSerializers.BOOLEAN);
-    private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+
     private static final RawAnimation CRAB_IDLE = RawAnimation.begin().thenLoop("animation.crab.idle");
     private static final RawAnimation CRAB_WALK = RawAnimation.begin().thenLoop("animation.crab.walk");
     private static final RawAnimation CRAB_SPRINT_1 = RawAnimation.begin().thenLoop("animation.crab.sprint1");
     private static final RawAnimation CRAB_SPRINT_2 = RawAnimation.begin().thenLoop("animation.crab.sprint2");
     private static final RawAnimation CRAB_SWIM = RawAnimation.begin().thenLoop("animation.crab.swim");
+    private static final RawAnimation CRAB_GRAZE = RawAnimation.begin().thenPlay("animation.crab.graze");
 
-    private static final RawAnimation CRAB_GRAZE = RawAnimation.begin().thenLoop("animation.crab.graze");
+    private static final RawAnimation CRAB_DANCE = RawAnimation.begin().thenPlay("animation.crab.dance");
+    private static final RawAnimation CRAB_BLINK = RawAnimation.begin().thenPlay("animation.crab.blink");
+    private static final RawAnimation CRAB_CLAW = RawAnimation.begin().thenPlay("animation.crab.claw");
+    private static final RawAnimation CRAB_WAVE = RawAnimation.begin().thenPlay("animation.crab.wave");
 
-
-    private static final RawAnimation CRAB_DANCE = RawAnimation.begin().thenLoop("animation.crab.dance");
-    private static final RawAnimation CRAB_BLINK = RawAnimation.begin().thenLoop("animation.crab.blink");
-    private static final RawAnimation CRAB_CLAW = RawAnimation.begin().thenLoop("animation.crab.claw");
-    private static final RawAnimation CRAB_WAVE = RawAnimation.begin().thenLoop("animation.crab.wave");
-    private static final EntityDataAccessor<Boolean> GRAZE = SynchedEntityData.defineId(CrabEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> WAVING = SynchedEntityData.defineId(CrabEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> CRAB_CLAWING = SynchedEntityData.defineId(CrabEntity.class, EntityDataSerializers.BOOLEAN);
     private static final EntityDataAccessor<Boolean> CRAB_BLINKING = SynchedEntityData.defineId(CrabEntity.class, EntityDataSerializers.BOOLEAN);
 
-    private static final EntityAction CRAB_WAVE_ACTION = new EntityAction(0, (e) -> { return; } ,1);
+    private static final EntityAction CRAB_WAVE_ACTION = new EntityAction(0, (e) -> {} ,1);
 
     private static final StateHelper CRAB_WAVE_STATE =
             StateHelper.Builder.state(WAVING, "crab_waving")
@@ -75,8 +74,7 @@ public class CrabEntity extends StatedAnimal implements GeoAnimatable, Bucketabl
                     .entityAction(CRAB_WAVE_ACTION)
                     .build();
 
-    private static final EntityAction CRAB_CLAW_ACTION = new EntityAction(0, (e) -> { return; } ,1);
-
+    private static final EntityAction CRAB_CLAW_ACTION = new EntityAction(0, (e) -> {} ,1);
     private static final StateHelper CRAB_CLAW_STATE =
             StateHelper.Builder.state(CRAB_CLAWING, "crab_clawing")
                     .playTime(60)
@@ -85,9 +83,7 @@ public class CrabEntity extends StatedAnimal implements GeoAnimatable, Bucketabl
                     .entityAction(CRAB_CLAW_ACTION)
                     .build();
 
-    private static final EntityAction CRAB_BLINK_ACTION = new EntityAction(0, (e) -> { return; } ,1);
-
-
+    private static final EntityAction CRAB_BLINK_ACTION = new EntityAction(0, (e) -> {} ,1);
     private static final StateHelper CRAB_BLINK_STATE =
             StateHelper.Builder.state(CRAB_BLINKING, "crab_blinking")
                     .playTime(60)
@@ -97,39 +93,42 @@ public class CrabEntity extends StatedAnimal implements GeoAnimatable, Bucketabl
                     .entityAction(CRAB_BLINK_ACTION)
                     .build();
 
-
-
-    private GrazeAlgaeGoal eatBlockGoal;
     private int eatAnimationTick;
-    public CrabEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
+
+    // Body control / navigation
+    @Override
+    protected @NotNull BodyRotationControl createBodyControl() {
+        SmartBodyHelper helper = new SmartBodyHelper(this);
+        helper.bodyLagMoving = 0.5F;
+        helper.bodyLagStill = 0.25F;
+        return helper;
+    }
+
+    public CrabEntity(EntityType<? extends EnhancedAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 5.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.15D)
-                .add(Attributes.ARMOR, 3.0D)
-                .add(Attributes.ARMOR_TOUGHNESS, 2.0D)
-                .add(Attributes.KNOCKBACK_RESISTANCE, 0.5D);
+                .add(Attributes.MAX_HEALTH, 6.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.15F)
+                .add(Attributes.ARMOR, 3.0D);
     }
 
     @Override
     protected void registerGoals() {
-        this.eatBlockGoal = new GrazeAlgaeGoal(this);
-        this.goalSelector.addGoal(2, this.eatBlockGoal);
+        this.goalSelector.addGoal(0, new RandomStateGoal<>(this));
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new PanicGoal(this, 1.25D));
+        this.goalSelector.addGoal(2, new GrazeAlgaeGoal(this));
         this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, Player.class, 5.0F, 2.5D, 2.7D, EntitySelector.NO_SPECTATORS::test));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
-        this.goalSelector.addGoal(3, new RandomStateGoal<>(this));
-
     }
 
-    protected void playStepSound(BlockPos p_28301_, BlockState p_28302_) {
-        this.playSound(SoundEvents.SPIDER_STEP, 0.15F, 1.0F);
+    protected void playStepSound(BlockPos pos, BlockState state) {
+        this.playSound(SoundEvents.SPIDER_STEP, 0.08F, 1.25F);
     }
 
     public boolean canBreatheUnderwater() {
@@ -142,7 +141,6 @@ public class CrabEntity extends StatedAnimal implements GeoAnimatable, Bucketabl
         return null;
     }
 
-
     @Override
     public void aiStep() {
         super.aiStep();
@@ -152,12 +150,9 @@ public class CrabEntity extends StatedAnimal implements GeoAnimatable, Bucketabl
         }
     }
 
-    public InteractionResult mobInteract(Player p_27477_, InteractionHand p_27478_) {
-        return Bucketable.bucketMobPickup(p_27477_, p_27478_, this).orElse(super.mobInteract(p_27477_, p_27478_));
+    public InteractionResult mobInteract(Player player, InteractionHand hand) {
+        return Bucketable.bucketMobPickup(player, hand, this).orElse(super.mobInteract(player, hand));
     }
-
-
-
 
     @Override
     public void handleEntityEvent(byte pId) {
@@ -172,13 +167,15 @@ public class CrabEntity extends StatedAnimal implements GeoAnimatable, Bucketabl
         return this.eatAnimationTick > 0;
     }
 
-    private boolean isStillEnough() {
-        return this.getDeltaMovement().horizontalDistance() < 0.05;
-    }
-
     public static boolean canDig(LivingEntity entity) {
         BlockPos pos = entity.getOnPos();
         return (entity.level().getBlockState(pos).is(SFBlocks.ALGAE_BLOCK.get()));
+    }
+
+    @Override
+    public void registerControllers(final AnimatableManager.ControllerRegistrar controllers) {
+        controllers.add(new AnimationController<>(this, "Normal", 5, this::Controller));
+        controllers.add(new AnimationController<>(this, "Graze", 5, this::eatController));
     }
 
     protected <E extends CrabEntity> PlayState Controller(final software.bernie.geckolib.core.animation.AnimationState<E> event) {
@@ -207,8 +204,6 @@ public class CrabEntity extends StatedAnimal implements GeoAnimatable, Bucketabl
         if(getBooleanState(WAVING)) {
             return event.setAndContinue(CRAB_WAVE);
         }
-
-
         return event.setAndContinue(CRAB_IDLE);
     }
 
@@ -222,30 +217,12 @@ public class CrabEntity extends StatedAnimal implements GeoAnimatable, Bucketabl
     }
 
     @Override
-    public void registerControllers(final AnimatableManager.ControllerRegistrar controllers) {
-        controllers.add(new AnimationController<>(this, "Normal", 5, this::Controller));
-        controllers.add(new AnimationController<>(this, "Graze", 5, this::eatController));
-    }
-
-
-    @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return this.cache;
-    }
-
-    @Override
-    public double getTick(Object o) {
-        return tickCount;
-    }
-
-    @Override
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(FROM_BUCKET, false);
         this.entityData.define(CRAB_BLINKING, false);
         this.entityData.define(CRAB_CLAWING, false);
         this.entityData.define(WAVING, false);
-
     }
 
     public void addAdditionalSaveData(CompoundTag compound) {
@@ -257,7 +234,6 @@ public class CrabEntity extends StatedAnimal implements GeoAnimatable, Bucketabl
         super.readAdditionalSaveData(compound);
         this.setFromBucket(compound.getBoolean("FromBucket"));
     }
-
 
     @Override
     public boolean fromBucket() {
@@ -278,6 +254,7 @@ public class CrabEntity extends StatedAnimal implements GeoAnimatable, Bucketabl
             bucket.setHoverName(this.getCustomName());
         }
     }
+
     public void loadFromBucketTag(CompoundTag pTag) {
         Bucketable.loadDefaultDataFromBucketTag(this, pTag);
     }
@@ -296,8 +273,8 @@ public class CrabEntity extends StatedAnimal implements GeoAnimatable, Bucketabl
         return SoundEvents.BUCKET_EMPTY_FISH;
     }
 
-    @javax.annotation.Nullable
-    public SpawnGroupData finalizeSpawn(ServerLevelAccessor levelAccessor, DifficultyInstance difficultyInstance, MobSpawnType spawnType, @javax.annotation.Nullable SpawnGroupData spawnGroupData, @javax.annotation.Nullable CompoundTag tag) {
+    @Nullable
+    public SpawnGroupData finalizeSpawn(ServerLevelAccessor levelAccessor, DifficultyInstance difficultyInstance, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData, @Nullable CompoundTag tag) {
         spawnGroupData = super.finalizeSpawn(levelAccessor, difficultyInstance, spawnType, spawnGroupData, tag);
         return spawnGroupData;
     }
@@ -305,9 +282,6 @@ public class CrabEntity extends StatedAnimal implements GeoAnimatable, Bucketabl
     public static boolean checkCrabSpawnRules(EntityType<? extends CrabEntity> dino, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource p_186242_) {
         return isBrightEnoughToSpawn(level, pos);
     }
-
-
-
 
     @Override
     public ImmutableMap<String, StateHelper> getStates() {

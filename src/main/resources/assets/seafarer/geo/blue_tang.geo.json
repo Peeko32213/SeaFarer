@@ -25,10 +25,8 @@
 					"parent": "swim_control",
 					"pivot": [0, 4, -1],
 					"cubes": [
-						{"origin": [0, -2, -3], "size": [0, 11, 7], "uv": [0, 15]},
-						{"origin": [-1.5, 0, -6], "size": [3, 7, 8], "uv": [0, 0]},
-						{"origin": [-1.5, 3, -7], "size": [3, 4, 1], "uv": [22, 6]},
-						{"origin": [-1.5, 0, -7], "size": [3, 2, 1], "uv": [22, 11]}
+						{"origin": [0, -2, -4], "size": [0, 11, 8], "inflate": 0.001, "uv": [0, 14]},
+						{"origin": [-1.5, 0, -6], "size": [3, 7, 8], "uv": [0, 0]}
 					]
 				},
 				{
@@ -41,7 +39,7 @@
 					"parent": "FinBone1",
 					"pivot": [1.5, 3, -4],
 					"cubes": [
-						{"origin": [1.525, 1, -4], "size": [0, 2, 4], "uv": [22, 0]}
+						{"origin": [1.525, 1, -4], "size": [0, 2, 4], "inflate": 0.001, "uv": [22, 0]}
 					]
 				},
 				{
@@ -54,7 +52,7 @@
 					"parent": "FinBone2",
 					"pivot": [-1.5, 3, -4],
 					"cubes": [
-						{"origin": [-1.525, 1, -4], "size": [0, 2, 4], "uv": [22, 0], "mirror": true}
+						{"origin": [-1.525, 1, -4], "size": [0, 2, 4], "inflate": 0.001, "uv": [22, 0], "mirror": true}
 					]
 				},
 				{
@@ -70,7 +68,7 @@
 					"parent": "TailMid",
 					"pivot": [0, 3.5, 3],
 					"cubes": [
-						{"origin": [0, 2, 3], "size": [0, 3, 4], "uv": [14, 15]}
+						{"origin": [0, 2, 3], "size": [0, 3, 4], "inflate": 0.001, "uv": [14, 15]}
 					]
 				}
 			]

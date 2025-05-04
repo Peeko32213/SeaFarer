@@ -5,7 +5,6 @@ import com.peeko32213.seafarer.common.entity.misc.state.IStateAction;
 import com.peeko32213.seafarer.common.entity.misc.state.StateHelper;
 import com.peeko32213.seafarer.common.entity.misc.state.WeightedState;
 import net.minecraft.core.BlockPos;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
@@ -26,8 +25,6 @@ import software.bernie.geckolib.util.GeckoLibUtil;
 import java.util.List;
 
 public class EnhancedWaterAnimal extends WaterAnimal implements GeoEntity, GeoAnimatable, IStateAction {
-
-    private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
     protected @NotNull PathNavigation createNavigation(@NotNull Level level) {
         return new WaterBoundPathNavigation(this, level);
@@ -54,7 +51,7 @@ public class EnhancedWaterAnimal extends WaterAnimal implements GeoEntity, GeoAn
         super.tick();
     }
 
-    protected void playStepSound(BlockPos p_28301_, BlockState p_28302_) {
+    protected void playStepSound(BlockPos pos, BlockState state) {
     }
 
     @Override
@@ -81,6 +78,8 @@ public class EnhancedWaterAnimal extends WaterAnimal implements GeoEntity, GeoAn
     public void registerControllers(AnimatableManager.ControllerRegistrar controllerRegistrar) {
 
     }
+
+    private final AnimatableInstanceCache geoCache = GeckoLibUtil.createInstanceCache(this);
 
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
