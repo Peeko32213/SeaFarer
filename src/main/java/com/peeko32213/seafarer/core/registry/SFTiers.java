@@ -1,6 +1,5 @@
 package com.peeko32213.seafarer.core.registry;
 
-import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;

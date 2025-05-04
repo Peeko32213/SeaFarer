@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.core.registry.world;
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
+import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFFeatures;
 import com.peeko32213.seafarer.core.registry.SFTags;
 import com.peeko32213.seafarer.core.registry.world.config.SFFeatureForms;

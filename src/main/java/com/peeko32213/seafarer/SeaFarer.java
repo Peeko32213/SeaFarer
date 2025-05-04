@@ -2,8 +2,8 @@ package com.peeko32213.seafarer;
 
 import com.peeko32213.seafarer.client.event.ClientEvents;
 import com.peeko32213.seafarer.core.registry.*;
-import com.peeko32213.seafarer.core.registry.blocks.SFBlockEntities;
-import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
+import com.peeko32213.seafarer.core.registry.SFBlockEntities;
+import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.data.SFDatapackBuiltinEntriesProvider;
 import com.peeko32213.seafarer.data.client.SFBlockstateGenerator;
 import com.peeko32213.seafarer.data.client.SFItemModelGenerator;
@@ -56,6 +56,7 @@ public class SeaFarer {
         SFBlockEntities.BLOCK_ENTITIES.register(bus);
         SFLootModifiers.LOOT_MODIFIERS.register(bus);
         SFSounds.DEF_REG.register(bus);
+        SFPaintings.PAINTING_VARIANTS.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -96,6 +97,7 @@ public class SeaFarer {
         generator.addProvider(server, new SFItemTagsGenerator(output, provider, blockTags.contentsGetter(), helper));
         generator.addProvider(server, new SFEntityTagsGenerator(output, provider, helper));
         generator.addProvider(server, new SFBiomeTagsProvider(output, provider, helper));
+        generator.addProvider(server, new SFPaintingTagsProvider(output, provider, helper));
         generator.addProvider(server, new SFRecipeGenerator(output));
         generator.addProvider(server, SFLootGenerator.create(output));
 

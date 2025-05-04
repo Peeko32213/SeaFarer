@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 10.0,
+  "ingredient": {
+    "item": "seafarer:marine_iguana_tail"
+  },
+  "result": "seafarer:cooked_marine_iguana_tail"
+}

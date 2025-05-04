@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.data.server.loot;
 
 
-import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
+import com.peeko32213.seafarer.core.registry.SFBlocks;
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.MinMaxBounds;
@@ -186,7 +186,7 @@ public class SFBlockLootTables extends BlockLootSubProvider {
         dropSelf(SFBlocks.SWIRL_SHELL.get());
         dropSelf(SFBlocks.PYRAMID_SHELL.get());
 
-        dropSelf(SFBlocks.PLANK_PATH.get());
+        dropSelf(SFBlocks.OLD_BOARDS.get());
 
         dropSelf(SFBlocks.BEACHGRASS_FAN.get());
         dropSelf(SFBlocks.BEACHGRASS.get());

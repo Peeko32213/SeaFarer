@@ -5,7 +5,7 @@ import com.google.common.collect.ImmutableMap;
 import com.peeko32213.seafarer.common.entity.misc.goal.GrazeAlgaeGoal;
 import com.peeko32213.seafarer.common.entity.misc.StatedAnimal;
 import com.peeko32213.seafarer.common.entity.misc.state.*;
-import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
+import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

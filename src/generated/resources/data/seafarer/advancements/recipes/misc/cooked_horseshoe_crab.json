@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_seafarer:raw_horseshoe_crab": {
+    "has_seafarer:horseshoe_crab": {
       "conditions": {
         "items": [
           {
             "items": [
-              "seafarer:raw_horseshoe_crab"
+              "seafarer:horseshoe_crab"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_seafarer:raw_horseshoe_crab",
+      "has_seafarer:horseshoe_crab",
       "has_the_recipe"
     ]
   ],

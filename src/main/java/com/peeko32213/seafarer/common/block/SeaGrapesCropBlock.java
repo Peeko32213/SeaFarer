@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.common.block;
 
-import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
+import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

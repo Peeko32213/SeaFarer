@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.common.block.entity;
 
 import com.mojang.logging.LogUtils;
-import com.peeko32213.seafarer.core.registry.blocks.SFBlockEntities;
+import com.peeko32213.seafarer.core.registry.SFBlockEntities;
 import com.peeko32213.seafarer.core.registry.SFLootTables;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.advancements.CriteriaTriggers;

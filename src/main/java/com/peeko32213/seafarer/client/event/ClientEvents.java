@@ -5,8 +5,8 @@ import com.peeko32213.seafarer.client.SFItemProperties;
 import com.peeko32213.seafarer.client.block.FishingNetEntityRenderer;
 import com.peeko32213.seafarer.client.model.*;
 import com.peeko32213.seafarer.client.render.*;
-import com.peeko32213.seafarer.core.registry.blocks.SFBlockEntities;
-import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
+import com.peeko32213.seafarer.core.registry.SFBlockEntities;
+import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFEntities;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -84,7 +84,6 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.SPIRAL_SHELL.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.SWIRL_SHELL.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.PYRAMID_SHELL.get(), RenderType.cutout());
-        ItemBlockRenderTypes.setRenderLayer(SFBlocks.PLANK_PATH.get(), RenderType.cutout());
 
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.FISHING_NET.get(), RenderType.translucent());
         ItemBlockRenderTypes.setRenderLayer(SFBlocks.ALGAE_PLANT.get(), RenderType.cutout());

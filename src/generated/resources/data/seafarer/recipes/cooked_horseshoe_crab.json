@@ -4,7 +4,7 @@
   "cookingtime": 200,
   "experience": 10.0,
   "ingredient": {
-    "item": "seafarer:raw_horseshoe_crab"
+    "item": "seafarer:horseshoe_crab"
   },
   "result": "seafarer:cooked_horseshoe_crab"
 }

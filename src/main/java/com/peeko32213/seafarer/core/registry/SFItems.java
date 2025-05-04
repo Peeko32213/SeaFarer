@@ -5,7 +5,6 @@ import com.peeko32213.seafarer.common.item.MessageInABottleItem;
 import com.peeko32213.seafarer.common.item.SFDrinkableItem;
 import com.peeko32213.seafarer.common.item.SFFishBucket;
 import com.peeko32213.seafarer.common.item.SFFood;
-import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.StructureTags;
 import net.minecraft.world.entity.EntityType;
@@ -18,9 +17,13 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Supplier;
 
 public class SFItems {
+
+    public static List<RegistryObject<? extends Item>> AUTO_TRANSLATE = new ArrayList<>();
 
     public static Item.Properties drinkItem() {
         return new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
@@ -49,14 +52,28 @@ public class SFItems {
     public static final RegistryObject<ForgeSpawnEggItem> SUNFISH_SPAWN_EGG = registerSpawnEggs("sunfish_spawn_egg", SFEntities.SUNFISH , 0x628398, 0x33436b);
     public static final RegistryObject<ForgeSpawnEggItem> ZEBRA_SHARK_SPAWN_EGG = registerSpawnEggs("zebra_shark_spawn_egg", SFEntities.ZEBRA_SHARK , 0xe1e3c0, 0xab9558);
 
-    public static final RegistryObject<Item> RAW_SHORE_CRAB = ITEMS.register("shore_crab_leg", () -> new Item(new Item.Properties().food(SFFood.RAW_SHORE_CRAB)));
-    public static final RegistryObject<Item> COOKED_SHORE_CRAB = ITEMS.register("cooked_shore_crab_leg", () -> new Item(new Item.Properties().food(SFFood.COOKED_SHORE_CRAB)));
-    public static final RegistryObject<Item> RAW_HORSESHOE_CRAB = ITEMS.register("raw_horseshoe_crab", () -> new Item(new Item.Properties().food(SFFood.RAW_HORSESHOE_CRAB)));
-    public static final RegistryObject<Item> COOKED_HORSESHOE_CRAB = ITEMS.register("cooked_horseshoe_crab", () -> new Item(new Item.Properties().food(SFFood.COOKED_HORSESHOE_CRAB)));
-    public static final RegistryObject<Item> RAW_MARINE_IGUANA = ITEMS.register("raw_marine_iguana", () -> new Item(new Item.Properties().food(SFFood.RAW_MARINE_IGUANA)));
-    public static final RegistryObject<Item> COOKED_MARINE_IGUANA = ITEMS.register("cooked_marine_iguana", () -> new Item(new Item.Properties().food(SFFood.COOKED_MARINE_IGUANA)));
-    public static final RegistryObject<Item> COOKED_STARFISH = ITEMS.register("cooked_starfish", () -> new Item(new Item.Properties().food(SFFood.COOKED_STARFISH)));
-    public static final RegistryObject<Item> OLD_BOARD = ITEMS.register("old_board", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RAW_SHORE_CRAB = item("shore_crab_leg", () -> new Item(new Item.Properties().food(SFFood.RAW_SHORE_CRAB)));
+    public static final RegistryObject<Item> COOKED_SHORE_CRAB = translatedItem("cooked_shore_crab_leg", () -> new Item(new Item.Properties().food(SFFood.COOKED_SHORE_CRAB)));
+    public static final RegistryObject<Item> RAW_HORSESHOE_CRAB = item("horseshoe_crab", () -> new Item(new Item.Properties().food(SFFood.RAW_HORSESHOE_CRAB)));
+    public static final RegistryObject<Item> COOKED_HORSESHOE_CRAB = translatedItem("cooked_horseshoe_crab", () -> new Item(new Item.Properties().food(SFFood.COOKED_HORSESHOE_CRAB)));
+    public static final RegistryObject<Item> RAW_MARINE_IGUANA = item("marine_iguana_tail", () -> new Item(new Item.Properties().food(SFFood.RAW_MARINE_IGUANA)));
+    public static final RegistryObject<Item> COOKED_MARINE_IGUANA = translatedItem("cooked_marine_iguana_tail", () -> new Item(new Item.Properties().food(SFFood.COOKED_MARINE_IGUANA)));
+    public static final RegistryObject<Item> COOKED_STARFISH = translatedItem("cooked_starfish", () -> new Item(new Item.Properties().food(SFFood.COOKED_STARFISH)));
+    public static final RegistryObject<Item> RAW_SQUIRRELFISH = item("squirrelfish", () -> new Item(new Item.Properties().food(SFFood.RAW_SQUIRRELFISH)));
+    public static final RegistryObject<Item> COOKED_SQUIRRELFISH = translatedItem("cooked_squirrelfish", () -> new Item(new Item.Properties().food(SFFood.COOKED_SQUIRRELFISH)));
+    public static final RegistryObject<Item> RAW_BLUE_TANG = item("blue_tang", () -> new Item(new Item.Properties().food(SFFood.RAW_BLUE_TANG)));
+    public static final RegistryObject<Item> COOKED_BLUE_TANG = translatedItem("cooked_blue_tang", () -> new Item(new Item.Properties().food(SFFood.COOKED_BLUE_TANG)));
+    public static final RegistryObject<Item> RAW_COPPERBAND_BUTTERFLYFISH = item("copperband_butterflyfish", () -> new Item(new Item.Properties().food(SFFood.RAW_COPPERBAND_BUTTERFLYFISH)));
+    public static final RegistryObject<Item> COOKED_COPPERBAND_BUTTERFLYFISH = translatedItem("cooked_copperband_butterflyfish", () -> new Item(new Item.Properties().food(SFFood.COOKED_COPPERBAND_BUTTERFLYFISH)));
+    public static final RegistryObject<Item> RAW_FROGFISH = item("frogfish", () -> new Item(new Item.Properties().food(SFFood.RAW_FROGFISH)));
+    public static final RegistryObject<Item> COOKED_FROGFISH = translatedItem("cooked_frogfish", () -> new Item(new Item.Properties().food(SFFood.COOKED_FROGFISH)));
+    public static final RegistryObject<Item> RAW_GARDEN_EEL = item("garden_eel", () -> new Item(new Item.Properties().food(SFFood.RAW_GARDEN_EEL)));
+    public static final RegistryObject<Item> COOKED_GARDEN_EEL = translatedItem("cooked_garden_eel", () -> new Item(new Item.Properties().food(SFFood.COOKED_GARDEN_EEL)));
+    public static final RegistryObject<Item> RAW_MANDARINFISH = item("mandarinfish", () -> new Item(new Item.Properties().food(SFFood.RAW_MANDARINFISH)));
+    public static final RegistryObject<Item> COOKED_MANDARINFISH = translatedItem("cooked_mandarinfish", () -> new Item(new Item.Properties().food(SFFood.COOKED_MANDARINFISH)));
+    public static final RegistryObject<Item> RAW_SEXY_SHRIMP = item("sexy_shrimp", () -> new Item(new Item.Properties().food(SFFood.RAW_SEXY_SHRIMP)));
+    public static final RegistryObject<Item> COOKED_SEXY_SHRIMP = translatedItem("cooked_sexy_shrimp", () -> new Item(new Item.Properties().food(SFFood.COOKED_SEXY_SHRIMP)));
+
     public static final RegistryObject<Item> OLD_BOOT = ITEMS.register("old_boot", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CAN = ITEMS.register("can", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MESSAGE_IN_A_BOTTLE = ITEMS.register("message_in_a_bottle", () -> new MessageInABottleItem(StructureTags.ON_TREASURE_MAPS, "seafarer.message_in_bottle", MapDecoration.Type.MONUMENT,new Item.Properties()));
@@ -74,59 +91,35 @@ public class SFItems {
     public static final RegistryObject<Item> SPIRAL_HOE = ITEMS.register("spiral_hoe", () -> new HoeItem(SFTiers.SHELL,  0, -3.0F, new Item.Properties()));
     public static final RegistryObject<Item> SWIRL_AXE = ITEMS.register("swirl_axe", () -> new AxeItem(SFTiers.SHELL,  6.0F, -3.2F, new Item.Properties()));
 
-    public static final RegistryObject<Item> AMBER_CORAL_FAN = ITEMS.register("amber_coral_fan",
-            () -> new StandingAndWallBlockItem(SFBlocks.AMBER_CORAL_FAN.get(), SFBlocks.AMBER_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+    public static final RegistryObject<Item> AMBER_CORAL_FAN = ITEMS.register("amber_coral_fan", () -> new StandingAndWallBlockItem(SFBlocks.AMBER_CORAL_FAN.get(), SFBlocks.AMBER_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+    public static final RegistryObject<Item> DEAD_AMBER_CORAL_FAN = ITEMS.register("dead_amber_coral_fan", () -> new StandingAndWallBlockItem(SFBlocks.DEAD_AMBER_CORAL_FAN.get(), SFBlocks.DEAD_AMBER_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+    public static final RegistryObject<Item> CERULEAN_CORAL_FAN = ITEMS.register("cerulean_coral_fan", () -> new StandingAndWallBlockItem(SFBlocks.CERULEAN_CORAL_FAN.get(), SFBlocks.CERULEAN_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+    public static final RegistryObject<Item> DEAD_CERULEAN_CORAL_FAN = ITEMS.register("dead_cerulean_coral_fan", () -> new StandingAndWallBlockItem(SFBlocks.DEAD_CERULEAN_CORAL_FAN.get(), SFBlocks.DEAD_CERULEAN_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+    public static final RegistryObject<Item> MAROON_CORAL_FAN = ITEMS.register("maroon_coral_fan", () -> new StandingAndWallBlockItem(SFBlocks.MAROON_CORAL_FAN.get(), SFBlocks.MAROON_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+    public static final RegistryObject<Item> DEAD_MAROON_CORAL_FAN = ITEMS.register("dead_maroon_coral_fan", () -> new StandingAndWallBlockItem(SFBlocks.DEAD_MAROON_CORAL_FAN.get(), SFBlocks.DEAD_MAROON_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+    public static final RegistryObject<Item> OLIVE_CORAL_FAN = ITEMS.register("olive_coral_fan", () -> new StandingAndWallBlockItem(SFBlocks.OLIVE_CORAL_FAN.get(), SFBlocks.OLIVE_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+    public static final RegistryObject<Item> DEAD_OLIVE_CORAL_FAN = ITEMS.register("dead_olive_coral_fan", () -> new StandingAndWallBlockItem(SFBlocks.DEAD_OLIVE_CORAL_FAN.get(), SFBlocks.DEAD_OLIVE_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+    public static final RegistryObject<Item> TURQUOISE_CORAL_FAN = ITEMS.register("turquoise_coral_fan", () -> new StandingAndWallBlockItem(SFBlocks.TURQUOISE_CORAL_FAN.get(), SFBlocks.TURQUOISE_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+    public static final RegistryObject<Item> DEAD_TURQUOISE_CORAL_FAN = ITEMS.register("dead_turquoise_coral_fan", () -> new StandingAndWallBlockItem(SFBlocks.DEAD_TURQUOISE_CORAL_FAN.get(), SFBlocks.DEAD_TURQUOISE_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+    public static final RegistryObject<Item> VERDANT_CORAL_FAN = ITEMS.register("verdant_coral_fan", () -> new StandingAndWallBlockItem(SFBlocks.VERDANT_CORAL_FAN.get(), SFBlocks.VERDANT_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
+    public static final RegistryObject<Item> DEAD_VERDANT_CORAL_FAN = ITEMS.register("dead_verdant_coral_fan", () -> new StandingAndWallBlockItem(SFBlocks.DEAD_VERDANT_CORAL_FAN.get(), SFBlocks.DEAD_VERDANT_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
 
-    public static final RegistryObject<Item> DEAD_AMBER_CORAL_FAN = ITEMS.register("dead_amber_coral_fan",
-            () -> new StandingAndWallBlockItem(SFBlocks.DEAD_AMBER_CORAL_FAN.get(), SFBlocks.DEAD_AMBER_CORAL_WALL_FAN.get(),
-                    new Item.Properties(), Direction.DOWN));
-
-    public static final RegistryObject<Item> CERULEAN_CORAL_FAN = ITEMS.register("cerulean_coral_fan",
-            () -> new StandingAndWallBlockItem(SFBlocks.CERULEAN_CORAL_FAN.get(), SFBlocks.CERULEAN_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
-
-    public static final RegistryObject<Item> DEAD_CERULEAN_CORAL_FAN = ITEMS.register("dead_cerulean_coral_fan",
-            () -> new StandingAndWallBlockItem(SFBlocks.DEAD_CERULEAN_CORAL_FAN.get(), SFBlocks.DEAD_CERULEAN_CORAL_WALL_FAN.get(),
-                    new Item.Properties(), Direction.DOWN));
-
-    public static final RegistryObject<Item> MAROON_CORAL_FAN = ITEMS.register("maroon_coral_fan",
-            () -> new StandingAndWallBlockItem(SFBlocks.MAROON_CORAL_FAN.get(), SFBlocks.MAROON_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
-
-    public static final RegistryObject<Item> DEAD_MAROON_CORAL_FAN = ITEMS.register("dead_maroon_coral_fan",
-            () -> new StandingAndWallBlockItem(SFBlocks.DEAD_MAROON_CORAL_FAN.get(), SFBlocks.DEAD_MAROON_CORAL_WALL_FAN.get(),
-                    new Item.Properties(), Direction.DOWN));
-
-    public static final RegistryObject<Item> OLIVE_CORAL_FAN = ITEMS.register("olive_coral_fan",
-            () -> new StandingAndWallBlockItem(SFBlocks.OLIVE_CORAL_FAN.get(), SFBlocks.OLIVE_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
-
-    public static final RegistryObject<Item> DEAD_OLIVE_CORAL_FAN = ITEMS.register("dead_olive_coral_fan",
-            () -> new StandingAndWallBlockItem(SFBlocks.DEAD_OLIVE_CORAL_FAN.get(), SFBlocks.DEAD_OLIVE_CORAL_WALL_FAN.get(),
-                    new Item.Properties(), Direction.DOWN));
-
-    public static final RegistryObject<Item> TURQUOISE_CORAL_FAN = ITEMS.register("turquoise_coral_fan",
-            () -> new StandingAndWallBlockItem(SFBlocks.TURQUOISE_CORAL_FAN.get(), SFBlocks.TURQUOISE_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
-
-    public static final RegistryObject<Item> DEAD_TURQUOISE_CORAL_FAN = ITEMS.register("dead_turquoise_coral_fan",
-            () -> new StandingAndWallBlockItem(SFBlocks.DEAD_TURQUOISE_CORAL_FAN.get(), SFBlocks.DEAD_TURQUOISE_CORAL_WALL_FAN.get(),
-                    new Item.Properties(), Direction.DOWN));
-
-    public static final RegistryObject<Item> VERDANT_CORAL_FAN = ITEMS.register("verdant_coral_fan",
-            () -> new StandingAndWallBlockItem(SFBlocks.VERDANT_CORAL_FAN.get(), SFBlocks.VERDANT_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
-
-    public static final RegistryObject<Item> DEAD_VERDANT_CORAL_FAN = ITEMS.register("dead_verdant_coral_fan",
-            () -> new StandingAndWallBlockItem(SFBlocks.DEAD_VERDANT_CORAL_FAN.get(), SFBlocks.DEAD_VERDANT_CORAL_WALL_FAN.get(),
-                    new Item.Properties(), Direction.DOWN));
-
-    public static final RegistryObject<Item> SEA_GRAPES = ITEMS.register("sea_grapes",
-            () -> new ItemNameBlockItem(SFBlocks.SEA_GRAPES_CROP.get(), new Item.Properties().food(SFFood.SALTED_COD)));
-
-    public static final RegistryObject<Item> WAKAME = ITEMS.register("wakame",
-            () -> new ItemNameBlockItem(SFBlocks.WAKAME.get(), new Item.Properties().food(SFFood.SALTED_COD)));
-
-    public static final RegistryObject<Item> SEA_URCHIN = ITEMS.register("sea_urchin",
-            () -> new ItemNameBlockItem(SFBlocks.SEA_URCHIN.get(), new Item.Properties().food(SFFood.SALTED_COD)));
+    public static final RegistryObject<Item> SEA_GRAPES = ITEMS.register("sea_grapes", () -> new ItemNameBlockItem(SFBlocks.SEA_GRAPES_CROP.get(), new Item.Properties().food(SFFood.SALTED_COD)));
+    public static final RegistryObject<Item> WAKAME = ITEMS.register("wakame", () -> new ItemNameBlockItem(SFBlocks.WAKAME.get(), new Item.Properties().food(SFFood.SALTED_COD)));
+    public static final RegistryObject<Item> SEA_URCHIN = ITEMS.register("sea_urchin", () -> new ItemNameBlockItem(SFBlocks.SEA_URCHIN.get(), new Item.Properties().food(SFFood.SALTED_COD)));
 
     private static RegistryObject<ForgeSpawnEggItem> registerSpawnEggs(String name, Supplier<? extends EntityType<? extends Mob>> type, int backgroundColor, int highlightColor) {
         return ITEMS.register(name, () -> new ForgeSpawnEggItem(type, backgroundColor, highlightColor,new Item.Properties()));
     }
 
+    public static <I extends Item> RegistryObject<I> item(String name, Supplier<? extends I> supplier) {
+        RegistryObject<I> item = ITEMS.register(name, supplier);
+        return item;
+    }
+
+    public static <I extends Item> RegistryObject<I> translatedItem(String name, Supplier<? extends I> supplier) {
+        RegistryObject<I> item = ITEMS.register(name, supplier);
+        AUTO_TRANSLATE.add(item);
+        return item;
+    }
 }

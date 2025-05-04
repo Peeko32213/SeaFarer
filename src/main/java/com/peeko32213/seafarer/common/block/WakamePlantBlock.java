@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.common.block;
 
-import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
+import com.peeko32213.seafarer.core.registry.SFBlocks;
 import net.minecraft.world.level.block.*;
 
 public class WakamePlantBlock extends KelpPlantBlock {

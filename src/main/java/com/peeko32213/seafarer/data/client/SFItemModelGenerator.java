@@ -22,34 +22,54 @@ public class SFItemModelGenerator extends ItemModelProvider {
 
     @Override
     protected void registerModels(){
+
         for (Item i : BuiltInRegistries.ITEM) {
             if (i instanceof SpawnEggItem && ForgeRegistries.ITEMS.getKey(i).getNamespace().equals(SeaFarer.MODID)) {
                 getBuilder(ForgeRegistries.ITEMS.getKey(i).getPath())
                         .parent(getExistingFile(new ResourceLocation("item/template_spawn_egg")));
             }
         }
-        singleTex(SFItems.RAW_SHORE_CRAB);
-        singleTex(SFItems.COOKED_SHORE_CRAB);
-        singleTex(SFItems.RAW_HORSESHOE_CRAB);
-        singleTex(SFItems.COOKED_HORSESHOE_CRAB);
-        singleTex(SFItems.MESSAGE_IN_A_BOTTLE);
-        singleTex(SFItems.OLD_BOARD);
-        singleTex(SFItems.OLD_BOOT);
-        singleTex(SFItems.CAN);
-        singleTex(SFItems.SOY_SAUCE);
-        singleTex(SFItems.RAW_MARINE_IGUANA);
-        singleTex(SFItems.COOKED_MARINE_IGUANA);
-        singleTex(SFItems.SALT);
-        singleTex(SFItems.SALTED_COD);
-        singleTex(SFItems.SALTED_SALMON);
-        singleTex(SFItems.SALTED_TROPICAL_FISH);
-        singleTex(SFItems.SALTED_STARFISH);
-        singleTex(SFItems.COOKED_STARFISH);
-        singleTex(SFItems.SEA_GRAPES);
-        singleTex(SFItems.WAKAME);
-        singleTex(SFItems.SEA_URCHIN);
-    }
 
+        // Food
+        item(SFItems.RAW_SHORE_CRAB);
+        item(SFItems.COOKED_SHORE_CRAB);
+        item(SFItems.RAW_HORSESHOE_CRAB);
+        item(SFItems.COOKED_HORSESHOE_CRAB);
+        item(SFItems.RAW_MARINE_IGUANA);
+        item(SFItems.COOKED_MARINE_IGUANA);
+        item(SFItems.RAW_FROGFISH);
+        item(SFItems.COOKED_FROGFISH);
+        item(SFItems.RAW_BLUE_TANG);
+        item(SFItems.COOKED_BLUE_TANG);
+        item(SFItems.RAW_MANDARINFISH);
+        item(SFItems.COOKED_MANDARINFISH);
+        item(SFItems.RAW_SQUIRRELFISH);
+        item(SFItems.COOKED_SQUIRRELFISH);
+        item(SFItems.RAW_COPPERBAND_BUTTERFLYFISH);
+        item(SFItems.COOKED_COPPERBAND_BUTTERFLYFISH);
+        item(SFItems.RAW_GARDEN_EEL);
+        item(SFItems.COOKED_GARDEN_EEL);
+        item(SFItems.RAW_SEXY_SHRIMP);
+        item(SFItems.COOKED_SEXY_SHRIMP);
+        item(SFItems.COOKED_STARFISH);
+        item(SFItems.SALTED_COD);
+        item(SFItems.SALTED_SALMON);
+        item(SFItems.SALTED_TROPICAL_FISH);
+        item(SFItems.SALTED_STARFISH);
+        item(SFItems.SEA_GRAPES);
+        item(SFItems.WAKAME);
+        item(SFItems.SEA_URCHIN);
+        item(SFItems.SOY_SAUCE);
+
+        // Junk
+        item(SFItems.MESSAGE_IN_A_BOTTLE);
+        item(SFItems.OLD_BOOT);
+        item(SFItems.CAN);
+
+        // Misc
+        item(SFItems.SALT);
+
+    }
 
     private void toBlock(RegistryObject<Block> b) {
         toBlockModel(b, b.getId().getPath());
@@ -62,11 +82,8 @@ public class SFItemModelGenerator extends ItemModelProvider {
     private void toBlockModel(RegistryObject<Block> b, ResourceLocation model) {
         withExistingParent(b.getId().getPath(), model);
     }
-    private ItemModelBuilder singleTex(Item item) {
-        return generated(key(item).getPath(), prefix("item/" + key(item).getPath()));
-    }
 
-    private ItemModelBuilder singleTex(RegistryObject<Item> item) {
+    private ItemModelBuilder item(RegistryObject<Item> item) {
         return generated(item.getId().getPath(), prefix("item/" + item.getId().getPath()));
     }
 

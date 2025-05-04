@@ -1,7 +1,6 @@
 package com.peeko32213.seafarer.core.registry;
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -36,6 +35,21 @@ public class SFCreativeTabs {
                     output.accept(SFItems.COOKED_HORSESHOE_CRAB.get());
                     output.accept(SFItems.RAW_MARINE_IGUANA.get());
                     output.accept(SFItems.COOKED_MARINE_IGUANA.get());
+                    output.accept(SFItems.RAW_FROGFISH.get());
+                    output.accept(SFItems.COOKED_FROGFISH.get());
+                    output.accept(SFItems.RAW_BLUE_TANG.get());
+                    output.accept(SFItems.COOKED_BLUE_TANG.get());
+                    output.accept(SFItems.RAW_COPPERBAND_BUTTERFLYFISH.get());
+                    output.accept(SFItems.COOKED_COPPERBAND_BUTTERFLYFISH.get());
+                    output.accept(SFItems.RAW_GARDEN_EEL.get());
+                    output.accept(SFItems.COOKED_GARDEN_EEL.get());
+                    output.accept(SFItems.RAW_SEXY_SHRIMP.get());
+                    output.accept(SFItems.COOKED_SEXY_SHRIMP.get());
+                    output.accept(SFItems.RAW_MANDARINFISH.get());
+                    output.accept(SFItems.COOKED_MANDARINFISH.get());
+                    output.accept(SFItems.RAW_SQUIRRELFISH.get());
+                    output.accept(SFItems.COOKED_SQUIRRELFISH.get());
+                    output.accept(SFItems.COOKED_MARINE_IGUANA.get());
                     output.accept(SFBlocks.COMMON_ORANGE_STARFISH.get());
                     output.accept(SFBlocks.PINK_STARFISH.get());
                     output.accept(SFBlocks.RED_STARFISH.get());
@@ -56,7 +70,9 @@ public class SFCreativeTabs {
                     output.accept(SFItems.SALTED_STARFISH.get());
 
                     // junk
-                    output.accept(SFItems.OLD_BOARD.get());
+                    output.accept(SFBlocks.FLOATSOME.get());
+                    output.accept(SFBlocks.FISHING_NET.get());
+                    output.accept(SFBlocks.OLD_BOARDS.get());
                     output.accept(SFItems.OLD_BOOT.get());
                     output.accept(SFItems.CAN.get());
                     output.accept(SFItems.MESSAGE_IN_A_BOTTLE.get());
@@ -77,9 +93,6 @@ public class SFCreativeTabs {
                     output.accept(SFItems.HORN_PICKAXE.get());
                     output.accept(SFItems.SWIRL_AXE.get());
                     output.accept(SFItems.SPIRAL_HOE.get());
-                    output.accept(SFBlocks.FLOATSOME.get());
-                    output.accept(SFBlocks.FISHING_NET.get());
-                    output.accept(SFBlocks.PLANK_PATH.get());
                     output.accept(SFBlocks.BEACHGRASS.get());
                     output.accept(SFBlocks.BEACHGRASS_FAN.get());
                     output.accept(SFBlocks.SEA_THRIFT.get());
@@ -207,6 +220,7 @@ public class SFCreativeTabs {
                     output.accept(SFBlocks.PEARLY_SEA_GLASS_TILES.get());
                     output.accept(SFBlocks.PEARLY_SEA_GLASS_TILE_STAIRS.get());
                     output.accept(SFBlocks.PEARLY_SEA_GLASS_TILE_SLAB.get());
+                    output.accept(SFBlocks.PEARLY_SEA_GLASS_LAMP.get());
                     output.accept(SFBlocks.PEARLY_SEA_GLASS_BOTTLE.get());
                     output.accept(SFBlocks.UMBER_SEA_GLASS_PEBBLES.get());
                     output.accept(SFBlocks.UMBER_PEBBLED_SEA_GLASS.get());
@@ -218,6 +232,7 @@ public class SFCreativeTabs {
                     output.accept(SFBlocks.UMBER_SEA_GLASS_TILES.get());
                     output.accept(SFBlocks.UMBER_SEA_GLASS_TILE_STAIRS.get());
                     output.accept(SFBlocks.UMBER_SEA_GLASS_TILE_SLAB.get());
+                    output.accept(SFBlocks.UMBER_SEA_GLASS_LAMP.get());
                     output.accept(SFBlocks.UMBER_SEA_GLASS_BOTTLE.get());
                     output.accept(SFBlocks.SCARLET_SEA_GLASS_PEBBLES.get());
                     output.accept(SFBlocks.SCARLET_PEBBLED_SEA_GLASS.get());
@@ -229,6 +244,7 @@ public class SFCreativeTabs {
                     output.accept(SFBlocks.SCARLET_SEA_GLASS_TILES.get());
                     output.accept(SFBlocks.SCARLET_SEA_GLASS_TILE_STAIRS.get());
                     output.accept(SFBlocks.SCARLET_SEA_GLASS_TILE_SLAB.get());
+                    output.accept(SFBlocks.SCARLET_SEA_GLASS_LAMP.get());
                     output.accept(SFBlocks.SCARLET_SEA_GLASS_BOTTLE.get());
                     output.accept(SFBlocks.AMBER_SEA_GLASS_PEBBLES.get());
                     output.accept(SFBlocks.AMBER_PEBBLED_SEA_GLASS.get());
@@ -240,6 +256,7 @@ public class SFCreativeTabs {
                     output.accept(SFBlocks.AMBER_SEA_GLASS_TILES.get());
                     output.accept(SFBlocks.AMBER_SEA_GLASS_TILE_STAIRS.get());
                     output.accept(SFBlocks.AMBER_SEA_GLASS_TILE_SLAB.get());
+                    output.accept(SFBlocks.AMBER_SEA_GLASS_LAMP.get());
                     output.accept(SFBlocks.AMBER_SEA_GLASS_BOTTLE.get());
                     output.accept(SFBlocks.CITRINE_SEA_GLASS_PEBBLES.get());
                     output.accept(SFBlocks.CITRINE_PEBBLED_SEA_GLASS.get());
@@ -251,6 +268,7 @@ public class SFCreativeTabs {
                     output.accept(SFBlocks.CITRINE_SEA_GLASS_TILES.get());
                     output.accept(SFBlocks.CITRINE_SEA_GLASS_TILE_STAIRS.get());
                     output.accept(SFBlocks.CITRINE_SEA_GLASS_TILE_SLAB.get());
+                    output.accept(SFBlocks.CITRINE_SEA_GLASS_LAMP.get());
                     output.accept(SFBlocks.CITRINE_SEA_GLASS_BOTTLE.get());
                     output.accept(SFBlocks.CHARTREUSE_SEA_GLASS_PEBBLES.get());
                     output.accept(SFBlocks.CHARTREUSE_PEBBLED_SEA_GLASS.get());
@@ -262,6 +280,7 @@ public class SFCreativeTabs {
                     output.accept(SFBlocks.CHARTREUSE_SEA_GLASS_TILES.get());
                     output.accept(SFBlocks.CHARTREUSE_SEA_GLASS_TILE_STAIRS.get());
                     output.accept(SFBlocks.CHARTREUSE_SEA_GLASS_TILE_SLAB.get());
+                    output.accept(SFBlocks.CHARTREUSE_SEA_GLASS_LAMP.get());
                     output.accept(SFBlocks.CHARTREUSE_SEA_GLASS_BOTTLE.get());
                     output.accept(SFBlocks.SEAFOAM_SEA_GLASS_PEBBLES.get());
                     output.accept(SFBlocks.SEAFOAM_PEBBLED_SEA_GLASS.get());
@@ -273,6 +292,7 @@ public class SFCreativeTabs {
                     output.accept(SFBlocks.SEAFOAM_SEA_GLASS_TILES.get());
                     output.accept(SFBlocks.SEAFOAM_SEA_GLASS_TILE_STAIRS.get());
                     output.accept(SFBlocks.SEAFOAM_SEA_GLASS_TILE_SLAB.get());
+                    output.accept(SFBlocks.SEAFOAM_SEA_GLASS_LAMP.get());
                     output.accept(SFBlocks.SEAFOAM_SEA_GLASS_BOTTLE.get());
                     output.accept(SFBlocks.AZURE_SEA_GLASS_PEBBLES.get());
                     output.accept(SFBlocks.AZURE_PEBBLED_SEA_GLASS.get());
@@ -284,6 +304,7 @@ public class SFCreativeTabs {
                     output.accept(SFBlocks.AZURE_SEA_GLASS_TILES.get());
                     output.accept(SFBlocks.AZURE_SEA_GLASS_TILE_STAIRS.get());
                     output.accept(SFBlocks.AZURE_SEA_GLASS_TILE_SLAB.get());
+                    output.accept(SFBlocks.AZURE_SEA_GLASS_LAMP.get());
                     output.accept(SFBlocks.AZURE_SEA_GLASS_BOTTLE.get());
                     output.accept(SFBlocks.LILAC_SEA_GLASS_PEBBLES.get());
                     output.accept(SFBlocks.LILAC_PEBBLED_SEA_GLASS.get());
@@ -295,6 +316,7 @@ public class SFCreativeTabs {
                     output.accept(SFBlocks.LILAC_SEA_GLASS_TILES.get());
                     output.accept(SFBlocks.LILAC_SEA_GLASS_TILE_STAIRS.get());
                     output.accept(SFBlocks.LILAC_SEA_GLASS_TILE_SLAB.get());
+                    output.accept(SFBlocks.LILAC_SEA_GLASS_LAMP.get());
                     output.accept(SFBlocks.LILAC_SEA_GLASS_BOTTLE.get());
                     output.accept(SFBlocks.ROSE_SEA_GLASS_PEBBLES.get());
                     output.accept(SFBlocks.ROSE_PEBBLED_SEA_GLASS.get());
@@ -306,6 +328,7 @@ public class SFCreativeTabs {
                     output.accept(SFBlocks.ROSE_SEA_GLASS_TILES.get());
                     output.accept(SFBlocks.ROSE_SEA_GLASS_TILE_STAIRS.get());
                     output.accept(SFBlocks.ROSE_SEA_GLASS_TILE_SLAB.get());
+                    output.accept(SFBlocks.ROSE_SEA_GLASS_LAMP.get());
                     output.accept(SFBlocks.ROSE_SEA_GLASS_BOTTLE.get());
 
                     // Unsorted stuff

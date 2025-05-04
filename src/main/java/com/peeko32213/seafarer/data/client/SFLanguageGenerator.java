@@ -2,7 +2,8 @@ package com.peeko32213.seafarer.data.client;
 
 import com.mojang.logging.LogUtils;
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.core.registry.blocks.SFBlocks;
+import com.peeko32213.seafarer.core.registry.SFPaintings;
+import com.peeko32213.seafarer.core.registry.SFBlocks;
 import com.peeko32213.seafarer.core.registry.SFCreativeTabs;
 import com.peeko32213.seafarer.core.registry.SFEntities;
 import com.peeko32213.seafarer.core.registry.SFItems;
@@ -10,6 +11,7 @@ import com.peeko32213.seafarer.core.registry.util.SFTextUtils;
 import net.minecraft.data.PackOutput;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.block.Block;
@@ -33,6 +35,24 @@ public class SFLanguageGenerator extends LanguageProvider {
         // Blocks
         SFBlocks.AUTO_TRANSLATE.forEach(this::forBlock);
 
+        // Items
+        SFItems.AUTO_TRANSLATE.forEach(this::forItem);
+
+        // Paintings
+        SFPaintings.PAINTING_TRANSLATIONS.forEach(this::addPainting);
+
+        // Raw food
+        addItem(SFItems.RAW_FROGFISH, "Raw Frogfish");
+        addItem(SFItems.RAW_BLUE_TANG, "Raw Blue Tang");
+        addItem(SFItems.RAW_COPPERBAND_BUTTERFLYFISH, "Raw Copperband Butterflyfish");
+        addItem(SFItems.RAW_SQUIRRELFISH, "Raw Squirrelfish");
+        addItem(SFItems.RAW_MANDARINFISH, "Raw Mandarinfish");
+        addItem(SFItems.RAW_SEXY_SHRIMP, "Raw Sexy Shrimp");
+        addItem(SFItems.RAW_GARDEN_EEL, "Raw Garden Eel");
+        addItem(SFItems.RAW_HORSESHOE_CRAB, "Raw Horseshoe Crab");
+        addItem(SFItems.RAW_SHORE_CRAB, "Raw Crab Leg");
+        addItem(SFItems.RAW_MARINE_IGUANA, "Raw Marine Iguana Tail");
+
         addBlock(SFBlocks.ALGAE_COBBLESTONE, "Algal Cobblestone");
         addBlock(SFBlocks.ALGAE_COBBLESTONE_SLAB, "Algal Cobblestone Slabs");
         addBlock(SFBlocks.ALGAE_COBBLESTONE_STAIRS, "Algal Cobblestone Stairs");
@@ -47,8 +67,6 @@ public class SFLanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.PURPLE_OCHRE_STARFISH, "Starfish");
         addBlock(SFBlocks.ROYAL_STARFISH, "Starfish");
         addBlock(SFBlocks.OCHRE_STARFISH, "Starfish");
-
-        addItem(SFItems.COOKED_STARFISH, "Cooked Starfish");
 
         addBlock(SFBlocks.CLAM_SHELL, "Clam Shell");
         addBlock(SFBlocks.HORN_SHELL, "Horn Shell");
@@ -87,7 +105,6 @@ public class SFLanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.PYRAMID_SHELL_BRICKS_STAIRS, "Pyramid Shell Brick Stairs");
         addBlock(SFBlocks.PYRAMID_SHELL_PILLAR, "Pyramid Shell Pillar");
 
-
         addBlock(SFBlocks.BEACHGRASS, "Beach Grass");
         addBlock(SFBlocks.BEACHGRASS_FAN, "Fanny Beach Grass");
         addBlock(SFBlocks.SEA_HOLLY, "Sea Holly");
@@ -95,10 +112,7 @@ public class SFLanguageGenerator extends LanguageProvider {
         addBlock(SFBlocks.COASTAL_LAVENDER, "Coastal Lavender");
         addBlock(SFBlocks.COASTAL_WILDFLOWER, "Coastal Wildflower");
 
-        addBlock(SFBlocks.PLANK_PATH, "Plank Path");
-
         addBlock(SFBlocks.SALT_BLOCK, "Block of Salt");
-
 
         addBlock(SFBlocks.BLUE_MIXED_SPRINKLED_SAND, "Blue Mixed Sprinkled Sand");
         addBlock(SFBlocks.RED_MIXED_SPRINKLED_SAND, "Red Mixed Sprinkled Sand");
@@ -119,19 +133,13 @@ public class SFLanguageGenerator extends LanguageProvider {
         addEntityType(SFEntities.CRAB, "Crab");
         addItem(SFItems.CRAB_SPAWN_EGG, "Crab Spawn Egg");
         addItem(SFItems.SHORE_CRAB_BUCKET, "Bucket of Crab");
-        addItem(SFItems.RAW_SHORE_CRAB, "Raw Crab Leg");
-        addItem(SFItems.COOKED_SHORE_CRAB, "Cooked Crab Leg");
 
         addEntityType(SFEntities.HORSESHOE_CRAB, "Horseshoe Crab");
         addItem(SFItems.HORSESHOE_CRAB_SPAWN_EGG, "Horseshoe Crab Spawn Egg");
         addItem(SFItems.HORSESHOE_CRAB_BUCKET, "Bucket of Horseshoe Crab");
-        addItem(SFItems.RAW_HORSESHOE_CRAB, "Raw Horseshoe Crab");
-        addItem(SFItems.COOKED_HORSESHOE_CRAB, "Cooked Horseshoe Crab");
 
         addEntityType(SFEntities.MARINE_IGUANA, "Marine Iguana");
         addItem(SFItems.MARINE_IGUANA_SPAWN_EGG, "Marine Iguana Spawn Egg");
-        addItem(SFItems.RAW_MARINE_IGUANA, "Raw Marine Iguana");
-        addItem(SFItems.COOKED_MARINE_IGUANA, "Cooked Marine Iguana");
 
         addEntityType(SFEntities.GARDEN_EEL, "Garden Eel");
         addItem(SFItems.GARDEN_EEL_SPAWN_EGG, "Garden Eel Spawn Egg");
@@ -187,7 +195,6 @@ public class SFLanguageGenerator extends LanguageProvider {
 
         addItem(SFItems.CAN, "Can");
         addItem(SFItems.MESSAGE_IN_A_BOTTLE, "Message in A Bottle");
-        addItem(SFItems.OLD_BOARD, "Old Boards");
         addItem(SFItems.OLD_BOOT, "Old Boot");
 
         addItem(SFItems.SOY_SAUCE, "Soy Sauce");
@@ -340,7 +347,16 @@ public class SFLanguageGenerator extends LanguageProvider {
         add("item.minecraft.lingering_potion.effect." + regName, "Lingering " + name);
     }
 
+    protected void addPainting(String name, String author) {
+        add("painting." + SeaFarer.MODID + "." + name + ".title",  SFTextUtils.createTranslation(name));
+        add("painting." + SeaFarer.MODID + "." + name + ".author",  author);
+    }
+
     protected void forBlock(Supplier<? extends Block> block) {
         addBlock(block, SFTextUtils.createTranslation(Objects.requireNonNull(ForgeRegistries.BLOCKS.getKey(block.get())).getPath()));
+    }
+
+    protected void forItem(Supplier<? extends Item> item) {
+        addItem(item, SFTextUtils.createTranslation(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item.get())).getPath()));
     }
 }
