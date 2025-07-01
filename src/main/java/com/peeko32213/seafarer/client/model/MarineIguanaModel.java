@@ -1,9 +1,8 @@
 package com.peeko32213.seafarer.client.model;
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.common.entity.MarineIguanaEntity;
+import com.peeko32213.seafarer.entities.MarineIguanaEntity;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.Mth;
 import software.bernie.geckolib.constant.DataTickets;
 import software.bernie.geckolib.core.animatable.model.CoreGeoBone;
 import software.bernie.geckolib.core.animation.AnimationState;

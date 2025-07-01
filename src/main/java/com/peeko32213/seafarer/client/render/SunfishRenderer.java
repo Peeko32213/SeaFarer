@@ -1,9 +1,8 @@
 package com.peeko32213.seafarer.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Axis;
 import com.peeko32213.seafarer.client.model.SunfishModel;
-import com.peeko32213.seafarer.common.entity.SunfishEntity;
+import com.peeko32213.seafarer.entities.SunfishEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 

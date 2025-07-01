@@ -3,7 +3,7 @@ package com.peeko32213.seafarer.client.render;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.peeko32213.seafarer.SeaFarer;
 import com.peeko32213.seafarer.client.model.GardenEelModel;
-import com.peeko32213.seafarer.common.entity.GardenEelEntity;
+import com.peeko32213.seafarer.entities.GardenEelEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;

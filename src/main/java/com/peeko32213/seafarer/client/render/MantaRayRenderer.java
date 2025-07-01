@@ -1,9 +1,7 @@
 package com.peeko32213.seafarer.client.render;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Axis;
 import com.peeko32213.seafarer.client.model.MantaRayModel;
-import com.peeko32213.seafarer.common.entity.MantaRayEntity;
+import com.peeko32213.seafarer.entities.MantaRayEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import software.bernie.geckolib.renderer.GeoEntityRenderer;
 

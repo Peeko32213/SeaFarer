@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.client;
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.core.registry.SFItems;
+import com.peeko32213.seafarer.registry.SeafarerItems;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
@@ -11,8 +11,9 @@ import net.minecraft.world.item.Item;
 public class SFItemProperties {
 
     public static void addItemProperties(){
-        createVariantForBucket(SFItems.SHORE_CRAB_BUCKET.get());
-        createVariantForBucket(SFItems.HORSESHOE_CRAB_BUCKET.get());
+        createVariantForBucket(SeafarerItems.CRAB_BUCKET.get());
+        createVariantForBucket(SeafarerItems.HORSESHOE_CRAB_BUCKET.get());
+        createVariantForBucket(SeafarerItems.SQUIRRELFISH_BUCKET.get());
     }
 
 

@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.client.model;
 
 import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.common.entity.MantaRayEntity;
+import com.peeko32213.seafarer.entities.MantaRayEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import software.bernie.geckolib.constant.DataTickets;

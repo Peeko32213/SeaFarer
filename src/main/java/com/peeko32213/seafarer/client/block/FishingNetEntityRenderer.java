@@ -2,8 +2,8 @@ package com.peeko32213.seafarer.client.block;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
-import com.peeko32213.seafarer.common.block.entity.SFNetBlockEntity;
-import com.peeko32213.seafarer.core.registry.SFItems;
+import com.peeko32213.seafarer.blocks.entity.SFNetBlockEntity;
+import com.peeko32213.seafarer.registry.SeafarerItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
@@ -17,7 +17,7 @@ public class FishingNetEntityRenderer implements BlockEntityRenderer<SFNetBlockE
     public FishingNetEntityRenderer(BlockEntityRendererProvider.Context context) {
     }
 
-    private static final ItemStack STACK = SFItems.SALT.get().getDefaultInstance();
+    private static final ItemStack STACK = SeafarerItems.SEA_SALT.get().getDefaultInstance();
 
     @Override
     public void render(SFNetBlockEntity blockEntity , float partialtick, PoseStack poseStack, MultiBufferSource multiBufferSource, int packedLight, int packedOverlay) {

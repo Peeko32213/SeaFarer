@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.client.render;
 
-import com.peeko32213.seafarer.common.entity.BarreleyeEntity;
+import com.peeko32213.seafarer.entities.BarreleyeEntity;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
