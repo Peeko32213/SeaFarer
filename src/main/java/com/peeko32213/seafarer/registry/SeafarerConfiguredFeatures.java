@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.registry;
 
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.registry.tags.SeafarerTags;
 import com.peeko32213.seafarer.worldgen.configs.SFFeatureForms;
 import com.peeko32213.seafarer.worldgen.configs.TagBasedRandomFeatureConfig;
@@ -37,7 +37,7 @@ import java.util.function.Supplier;
 import static com.peeko32213.seafarer.data.SeafarerItemModelProvider.prefix;
 
 public class SeafarerConfiguredFeatures {
-    public static final DeferredRegister<ConfiguredFeature<?,?>> CONFIGURED_FEATURES = DeferredRegister.create(Registries.CONFIGURED_FEATURE, SeaFarer.MODID);
+    public static final DeferredRegister<ConfiguredFeature<?,?>> CONFIGURED_FEATURES = DeferredRegister.create(Registries.CONFIGURED_FEATURE, Seafarer.MOD_ID);
     public static List<String> configuredFeatureList = new ArrayList<>();
     public static final ResourceKey<ConfiguredFeature<?, ?>> ALGAE_PATCH_PLANTS = registerKey("algae_patch_plants");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ALGAE_PATCH_BONEMEAL = registerKey("algae_patch_bonemeal");

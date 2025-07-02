@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.data;
 
 
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.registry.SeafarerItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -17,14 +17,14 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class SeafarerItemModelProvider extends ItemModelProvider {
     public SeafarerItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
-        super(output, SeaFarer.MODID, existingFileHelper);
+        super(output, Seafarer.MOD_ID, existingFileHelper);
     }
 
     @Override
     protected void registerModels(){
 
         for (Item i : BuiltInRegistries.ITEM) {
-            if (i instanceof SpawnEggItem && ForgeRegistries.ITEMS.getKey(i).getNamespace().equals(SeaFarer.MODID)) {
+            if (i instanceof SpawnEggItem && ForgeRegistries.ITEMS.getKey(i).getNamespace().equals(Seafarer.MOD_ID)) {
                 getBuilder(ForgeRegistries.ITEMS.getKey(i).getPath())
                         .parent(getExistingFile(new ResourceLocation("item/template_spawn_egg")));
             }
@@ -61,9 +61,9 @@ public class SeafarerItemModelProvider extends ItemModelProvider {
         item(SeafarerItems.SEA_URCHIN);
         item(SeafarerItems.SOY_SAUCE);
 
-        item(SeafarerItems.CRAB_BUCKET);
-        item(SeafarerItems.HORSESHOE_CRAB_BUCKET);
-        item(SeafarerItems.SQUIRRELFISH_BUCKET);
+//        item(SeafarerItems.CRAB_BUCKET);
+//        item(SeafarerItems.HORSESHOE_CRAB_BUCKET);
+//        item(SeafarerItems.SQUIRRELFISH_BUCKET);
 
         // Junk
         item(SeafarerItems.MESSAGE_IN_A_BOTTLE);
@@ -100,7 +100,7 @@ public class SeafarerItemModelProvider extends ItemModelProvider {
     }
 
     public static ResourceLocation prefix(String name){
-        return new ResourceLocation(SeaFarer.MODID, name);
+        return new ResourceLocation(Seafarer.MOD_ID, name);
     }
     public static ResourceLocation key(Item item) {
         return BuiltInRegistries.ITEM.getKey(item);

@@ -272,7 +272,7 @@
 [02Nov2023 20:51:56.284] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@1b6924cb - got cpw.mods.cl.ModuleClassLoader@5b3f3ba0
 [02Nov2023 20:51:56.285] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for net.minecraftforge.common.ForgeMod
 [02Nov2023 20:51:56.291] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@1b6924cb - got cpw.mods.cl.ModuleClassLoader@5b3f3ba0
-[02Nov2023 20:51:56.291] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for com.peeko32213.seafarer.SeaFarer
+[02Nov2023 20:51:56.291] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for com.peeko32213.seafarer.Seafarer
 [02Nov2023 20:51:56.292] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@1b6924cb - got cpw.mods.cl.ModuleClassLoader@5b3f3ba0
 [02Nov2023 20:51:56.292] [main/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for software.bernie.example.GeckoLibMod
 [02Nov2023 20:51:56.323] [modloading-worker-0/DEBUG] [net.minecraftforge.versions.forge.ForgeVersion/CORE]: Forge Version package package net.minecraftforge.versions.forge, Forge, version 47.2 from cpw.mods.modlauncher.TransformingClassLoader@1b6924cb
@@ -286,10 +286,10 @@
 [02Nov2023 20:51:56.328] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.2.1 Initialized
 [02Nov2023 20:51:56.374] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.config.ConfigTracker/CONFIG]: Config file seafarer-common.toml for seafarer tracking
 [02Nov2023 20:51:56.375] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for seafarer
-[02Nov2023 20:51:56.380] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.peeko32213.seafarer.client.event.ClientEvents to MOD
+[02Nov2023 20:51:56.380] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.peeko32213.seafarer.events.ClientEvents to MOD
 [02Nov2023 20:51:56.383] [modloading-worker-0/WARN] [software.bernie.geckolib.GeckoLib/]: Minecraft.getInstance() was null, could not register reload listeners
 [02Nov2023 20:51:56.388] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.peeko32213.seafarer.Config to MOD
-[02Nov2023 20:51:56.392] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.peeko32213.seafarer.events.CommonEvents to MOD
+[02Nov2023 20:51:56.392] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.peeko32213.seafarer.events.MobEvents to MOD
 [02Nov2023 20:51:56.395] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.peeko32213.seafarer.registry.SeafarerEntities to MOD
 [02Nov2023 20:51:56.395] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing com.peeko32213.seafarer.data.DataGenerators to MOD
 [02Nov2023 20:51:56.417] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent0/]: -Dio.netty.noUnsafe: false

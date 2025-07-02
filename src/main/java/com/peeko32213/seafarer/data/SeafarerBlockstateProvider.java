@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.data;
 
 import com.mojang.logging.LogUtils;
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.registry.SeafarerBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
@@ -17,12 +17,12 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
-import static com.peeko32213.seafarer.SeaFarer.modPrefix;
+import static com.peeko32213.seafarer.Seafarer.modPrefix;
 import static net.minecraftforge.client.model.generators.ModelProvider.BLOCK_FOLDER;
 
 public class SeafarerBlockstateProvider extends BlockStateProvider {
     public SeafarerBlockstateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
-        super(output, SeaFarer.MODID, exFileHelper);
+        super(output, Seafarer.MOD_ID, exFileHelper);
     }
 
     private static final Logger LOGGER = LogUtils.getLogger();
@@ -36,7 +36,7 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
     }
 
     public ResourceLocation resourceBlock(String path) {
-        return new ResourceLocation(SeaFarer.MODID, "block/" + path);
+        return new ResourceLocation(Seafarer.MOD_ID, "block/" + path);
     }
 
     public ModelFile existingModel(Block block) {
@@ -65,20 +65,20 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
 
         this.simpleBlock(SeafarerBlocks.AZURE_SEA_GLASS_BRICKS.get());
         this.simpleBlockItem(SeafarerBlocks.AZURE_SEA_GLASS_BRICKS.get(), existingModel((getName(SeafarerBlocks.AZURE_SEA_GLASS_BRICKS.get()))));
-        this.slabBlock(SeafarerBlocks.AZURE_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.AZURE_SEA_GLASS_BRICKS.get())), new ResourceLocation(SeaFarer.MODID, "block/azure_sea_glass_bricks"));
+        this.slabBlock(SeafarerBlocks.AZURE_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.AZURE_SEA_GLASS_BRICKS.get())), new ResourceLocation(Seafarer.MOD_ID, "block/azure_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.AZURE_SEA_GLASS_BRICK_SLAB.get(), existingModel((getName(SeafarerBlocks.AZURE_SEA_GLASS_BRICK_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.AZURE_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/azure_sea_glass_bricks"));
+        this.stairsBlock(SeafarerBlocks.AZURE_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/azure_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.AZURE_SEA_GLASS_BRICK_STAIRS.get(), existingModel((getName(SeafarerBlocks.AZURE_SEA_GLASS_BRICK_STAIRS.get()))));
 
         this.simpleBlock(SeafarerBlocks.AZURE_SEA_GLASS_TILES.get());
         this.simpleBlockItem(SeafarerBlocks.AZURE_SEA_GLASS_TILES.get(), existingModel((getName(SeafarerBlocks.AZURE_SEA_GLASS_TILES.get()))));
-        this.slabBlock(SeafarerBlocks.AZURE_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.AZURE_SEA_GLASS_TILES.get())), new ResourceLocation(SeaFarer.MODID, "block/azure_sea_glass_tiles"));
+        this.slabBlock(SeafarerBlocks.AZURE_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.AZURE_SEA_GLASS_TILES.get())), new ResourceLocation(Seafarer.MOD_ID, "block/azure_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.AZURE_SEA_GLASS_TILE_SLAB.get(), existingModel((getName(SeafarerBlocks.AZURE_SEA_GLASS_TILE_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.AZURE_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/azure_sea_glass_tiles"));
+        this.stairsBlock(SeafarerBlocks.AZURE_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/azure_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.AZURE_SEA_GLASS_TILE_STAIRS.get(), existingModel((getName(SeafarerBlocks.AZURE_SEA_GLASS_TILE_STAIRS.get()))));
         this.directionalBlock(SeafarerBlocks.AZURE_SEA_GLASS_LAMP);
 
-        this.paneBlock(SeafarerBlocks.AZURE_SEA_GLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/azure_sea_glass"), new ResourceLocation(SeaFarer.MODID, "block/azure_sea_glass_pane_top"));
+        this.paneBlock(SeafarerBlocks.AZURE_SEA_GLASS_PANE.get(), new ResourceLocation(Seafarer.MOD_ID, "block/azure_sea_glass"), new ResourceLocation(Seafarer.MOD_ID, "block/azure_sea_glass_pane_top"));
 
         // Rose Sea glass
         this.simpleBlock(SeafarerBlocks.ROSE_PEBBLED_SEA_GLASS.get());
@@ -89,20 +89,20 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
 
         this.simpleBlock(SeafarerBlocks.ROSE_SEA_GLASS_BRICKS.get());
         this.simpleBlockItem(SeafarerBlocks.ROSE_SEA_GLASS_BRICKS.get(), existingModel((getName(SeafarerBlocks.ROSE_SEA_GLASS_BRICKS.get()))));
-        this.slabBlock(SeafarerBlocks.ROSE_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.ROSE_SEA_GLASS_BRICKS.get())), new ResourceLocation(SeaFarer.MODID, "block/rose_sea_glass_bricks"));
+        this.slabBlock(SeafarerBlocks.ROSE_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.ROSE_SEA_GLASS_BRICKS.get())), new ResourceLocation(Seafarer.MOD_ID, "block/rose_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.ROSE_SEA_GLASS_BRICK_SLAB.get(), existingModel((getName(SeafarerBlocks.ROSE_SEA_GLASS_BRICK_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.ROSE_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/rose_sea_glass_bricks"));
+        this.stairsBlock(SeafarerBlocks.ROSE_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/rose_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.ROSE_SEA_GLASS_BRICK_STAIRS.get(), existingModel((getName(SeafarerBlocks.ROSE_SEA_GLASS_BRICK_STAIRS.get()))));
 
         this.simpleBlock(SeafarerBlocks.ROSE_SEA_GLASS_TILES.get());
         this.simpleBlockItem(SeafarerBlocks.ROSE_SEA_GLASS_TILES.get(), existingModel((getName(SeafarerBlocks.ROSE_SEA_GLASS_TILES.get()))));
-        this.slabBlock(SeafarerBlocks.ROSE_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.ROSE_SEA_GLASS_TILES.get())), new ResourceLocation(SeaFarer.MODID, "block/rose_sea_glass_tiles"));
+        this.slabBlock(SeafarerBlocks.ROSE_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.ROSE_SEA_GLASS_TILES.get())), new ResourceLocation(Seafarer.MOD_ID, "block/rose_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.ROSE_SEA_GLASS_TILE_SLAB.get(), existingModel((getName(SeafarerBlocks.ROSE_SEA_GLASS_TILE_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.ROSE_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/rose_sea_glass_tiles"));
+        this.stairsBlock(SeafarerBlocks.ROSE_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/rose_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.ROSE_SEA_GLASS_TILE_STAIRS.get(), existingModel((getName(SeafarerBlocks.ROSE_SEA_GLASS_TILE_STAIRS.get()))));
         this.directionalBlock(SeafarerBlocks.ROSE_SEA_GLASS_LAMP);
 
-        this.paneBlock(SeafarerBlocks.ROSE_SEA_GLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/rose_sea_glass"), new ResourceLocation(SeaFarer.MODID, "block/rose_sea_glass_pane_top"));
+        this.paneBlock(SeafarerBlocks.ROSE_SEA_GLASS_PANE.get(), new ResourceLocation(Seafarer.MOD_ID, "block/rose_sea_glass"), new ResourceLocation(Seafarer.MOD_ID, "block/rose_sea_glass_pane_top"));
 
         // Lilac Sea glass
         this.simpleBlock(SeafarerBlocks.LILAC_PEBBLED_SEA_GLASS.get());
@@ -113,20 +113,20 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
 
         this.simpleBlock(SeafarerBlocks.LILAC_SEA_GLASS_BRICKS.get());
         this.simpleBlockItem(SeafarerBlocks.LILAC_SEA_GLASS_BRICKS.get(), existingModel((getName(SeafarerBlocks.LILAC_SEA_GLASS_BRICKS.get()))));
-        this.slabBlock(SeafarerBlocks.LILAC_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.LILAC_SEA_GLASS_BRICKS.get())), new ResourceLocation(SeaFarer.MODID, "block/lilac_sea_glass_bricks"));
+        this.slabBlock(SeafarerBlocks.LILAC_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.LILAC_SEA_GLASS_BRICKS.get())), new ResourceLocation(Seafarer.MOD_ID, "block/lilac_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.LILAC_SEA_GLASS_BRICK_SLAB.get(), existingModel((getName(SeafarerBlocks.LILAC_SEA_GLASS_BRICK_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.LILAC_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/lilac_sea_glass_bricks"));
+        this.stairsBlock(SeafarerBlocks.LILAC_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/lilac_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.LILAC_SEA_GLASS_BRICK_STAIRS.get(), existingModel((getName(SeafarerBlocks.LILAC_SEA_GLASS_BRICK_STAIRS.get()))));
 
         this.simpleBlock(SeafarerBlocks.LILAC_SEA_GLASS_TILES.get());
         this.simpleBlockItem(SeafarerBlocks.LILAC_SEA_GLASS_TILES.get(), existingModel((getName(SeafarerBlocks.LILAC_SEA_GLASS_TILES.get()))));
-        this.slabBlock(SeafarerBlocks.LILAC_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.LILAC_SEA_GLASS_TILES.get())), new ResourceLocation(SeaFarer.MODID, "block/lilac_sea_glass_tiles"));
+        this.slabBlock(SeafarerBlocks.LILAC_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.LILAC_SEA_GLASS_TILES.get())), new ResourceLocation(Seafarer.MOD_ID, "block/lilac_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.LILAC_SEA_GLASS_TILE_SLAB.get(), existingModel((getName(SeafarerBlocks.LILAC_SEA_GLASS_TILE_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.LILAC_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/lilac_sea_glass_tiles"));
+        this.stairsBlock(SeafarerBlocks.LILAC_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/lilac_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.LILAC_SEA_GLASS_TILE_STAIRS.get(), existingModel((getName(SeafarerBlocks.LILAC_SEA_GLASS_TILE_STAIRS.get()))));
         this.directionalBlock(SeafarerBlocks.LILAC_SEA_GLASS_LAMP);
 
-        this.paneBlock(SeafarerBlocks.LILAC_SEA_GLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/lilac_sea_glass"), new ResourceLocation(SeaFarer.MODID, "block/lilac_sea_glass_pane_top"));
+        this.paneBlock(SeafarerBlocks.LILAC_SEA_GLASS_PANE.get(), new ResourceLocation(Seafarer.MOD_ID, "block/lilac_sea_glass"), new ResourceLocation(Seafarer.MOD_ID, "block/lilac_sea_glass_pane_top"));
 
         // Seafoam Sea glass
         this.simpleBlock(SeafarerBlocks.SEAFOAM_PEBBLED_SEA_GLASS.get());
@@ -137,20 +137,20 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
 
         this.simpleBlock(SeafarerBlocks.SEAFOAM_SEA_GLASS_BRICKS.get());
         this.simpleBlockItem(SeafarerBlocks.SEAFOAM_SEA_GLASS_BRICKS.get(), existingModel((getName(SeafarerBlocks.SEAFOAM_SEA_GLASS_BRICKS.get()))));
-        this.slabBlock(SeafarerBlocks.SEAFOAM_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.SEAFOAM_SEA_GLASS_BRICKS.get())), new ResourceLocation(SeaFarer.MODID, "block/seafoam_sea_glass_bricks"));
+        this.slabBlock(SeafarerBlocks.SEAFOAM_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.SEAFOAM_SEA_GLASS_BRICKS.get())), new ResourceLocation(Seafarer.MOD_ID, "block/seafoam_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.SEAFOAM_SEA_GLASS_BRICK_SLAB.get(), existingModel((getName(SeafarerBlocks.SEAFOAM_SEA_GLASS_BRICK_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.SEAFOAM_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/seafoam_sea_glass_bricks"));
+        this.stairsBlock(SeafarerBlocks.SEAFOAM_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/seafoam_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.SEAFOAM_SEA_GLASS_BRICK_STAIRS.get(), existingModel((getName(SeafarerBlocks.SEAFOAM_SEA_GLASS_BRICK_STAIRS.get()))));
 
         this.simpleBlock(SeafarerBlocks.SEAFOAM_SEA_GLASS_TILES.get());
         this.simpleBlockItem(SeafarerBlocks.SEAFOAM_SEA_GLASS_TILES.get(), existingModel((getName(SeafarerBlocks.SEAFOAM_SEA_GLASS_TILES.get()))));
-        this.slabBlock(SeafarerBlocks.SEAFOAM_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.SEAFOAM_SEA_GLASS_TILES.get())), new ResourceLocation(SeaFarer.MODID, "block/seafoam_sea_glass_tiles"));
+        this.slabBlock(SeafarerBlocks.SEAFOAM_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.SEAFOAM_SEA_GLASS_TILES.get())), new ResourceLocation(Seafarer.MOD_ID, "block/seafoam_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.SEAFOAM_SEA_GLASS_TILE_SLAB.get(), existingModel((getName(SeafarerBlocks.SEAFOAM_SEA_GLASS_TILE_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.SEAFOAM_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/seafoam_sea_glass_tiles"));
+        this.stairsBlock(SeafarerBlocks.SEAFOAM_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/seafoam_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.SEAFOAM_SEA_GLASS_TILE_STAIRS.get(), existingModel((getName(SeafarerBlocks.SEAFOAM_SEA_GLASS_TILE_STAIRS.get()))));
         this.directionalBlock(SeafarerBlocks.SEAFOAM_SEA_GLASS_LAMP);
 
-        this.paneBlock(SeafarerBlocks.SEAFOAM_SEA_GLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/seafoam_sea_glass"), new ResourceLocation(SeaFarer.MODID, "block/seafoam_sea_glass_pane_top"));
+        this.paneBlock(SeafarerBlocks.SEAFOAM_SEA_GLASS_PANE.get(), new ResourceLocation(Seafarer.MOD_ID, "block/seafoam_sea_glass"), new ResourceLocation(Seafarer.MOD_ID, "block/seafoam_sea_glass_pane_top"));
 
         // Chartreuse Sea glass
         this.simpleBlock(SeafarerBlocks.CHARTREUSE_PEBBLED_SEA_GLASS.get());
@@ -161,20 +161,20 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
 
         this.simpleBlock(SeafarerBlocks.CHARTREUSE_SEA_GLASS_BRICKS.get());
         this.simpleBlockItem(SeafarerBlocks.CHARTREUSE_SEA_GLASS_BRICKS.get(), existingModel((getName(SeafarerBlocks.CHARTREUSE_SEA_GLASS_BRICKS.get()))));
-        this.slabBlock(SeafarerBlocks.CHARTREUSE_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.CHARTREUSE_SEA_GLASS_BRICKS.get())), new ResourceLocation(SeaFarer.MODID, "block/chartreuse_sea_glass_bricks"));
+        this.slabBlock(SeafarerBlocks.CHARTREUSE_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.CHARTREUSE_SEA_GLASS_BRICKS.get())), new ResourceLocation(Seafarer.MOD_ID, "block/chartreuse_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.CHARTREUSE_SEA_GLASS_BRICK_SLAB.get(), existingModel((getName(SeafarerBlocks.CHARTREUSE_SEA_GLASS_BRICK_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.CHARTREUSE_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/chartreuse_sea_glass_bricks"));
+        this.stairsBlock(SeafarerBlocks.CHARTREUSE_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/chartreuse_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.CHARTREUSE_SEA_GLASS_BRICK_STAIRS.get(), existingModel((getName(SeafarerBlocks.CHARTREUSE_SEA_GLASS_BRICK_STAIRS.get()))));
 
         this.simpleBlock(SeafarerBlocks.CHARTREUSE_SEA_GLASS_TILES.get());
         this.simpleBlockItem(SeafarerBlocks.CHARTREUSE_SEA_GLASS_TILES.get(), existingModel((getName(SeafarerBlocks.CHARTREUSE_SEA_GLASS_TILES.get()))));
-        this.slabBlock(SeafarerBlocks.CHARTREUSE_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.CHARTREUSE_SEA_GLASS_TILES.get())), new ResourceLocation(SeaFarer.MODID, "block/chartreuse_sea_glass_tiles"));
+        this.slabBlock(SeafarerBlocks.CHARTREUSE_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.CHARTREUSE_SEA_GLASS_TILES.get())), new ResourceLocation(Seafarer.MOD_ID, "block/chartreuse_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.CHARTREUSE_SEA_GLASS_TILE_SLAB.get(), existingModel((getName(SeafarerBlocks.CHARTREUSE_SEA_GLASS_TILE_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.CHARTREUSE_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/chartreuse_sea_glass_tiles"));
+        this.stairsBlock(SeafarerBlocks.CHARTREUSE_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/chartreuse_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.CHARTREUSE_SEA_GLASS_TILE_STAIRS.get(), existingModel((getName(SeafarerBlocks.CHARTREUSE_SEA_GLASS_TILE_STAIRS.get()))));
         this.directionalBlock(SeafarerBlocks.CHARTREUSE_SEA_GLASS_LAMP);
 
-        this.paneBlock(SeafarerBlocks.CHARTREUSE_SEA_GLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/chartreuse_sea_glass"), new ResourceLocation(SeaFarer.MODID, "block/chartreuse_sea_glass_pane_top"));
+        this.paneBlock(SeafarerBlocks.CHARTREUSE_SEA_GLASS_PANE.get(), new ResourceLocation(Seafarer.MOD_ID, "block/chartreuse_sea_glass"), new ResourceLocation(Seafarer.MOD_ID, "block/chartreuse_sea_glass_pane_top"));
 
         // Citrine Sea glass
         this.simpleBlock(SeafarerBlocks.CITRINE_PEBBLED_SEA_GLASS.get());
@@ -185,20 +185,20 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
 
         this.simpleBlock(SeafarerBlocks.CITRINE_SEA_GLASS_BRICKS.get());
         this.simpleBlockItem(SeafarerBlocks.CITRINE_SEA_GLASS_BRICKS.get(), existingModel((getName(SeafarerBlocks.CITRINE_SEA_GLASS_BRICKS.get()))));
-        this.slabBlock(SeafarerBlocks.CITRINE_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.CITRINE_SEA_GLASS_BRICKS.get())), new ResourceLocation(SeaFarer.MODID, "block/citrine_sea_glass_bricks"));
+        this.slabBlock(SeafarerBlocks.CITRINE_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.CITRINE_SEA_GLASS_BRICKS.get())), new ResourceLocation(Seafarer.MOD_ID, "block/citrine_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.CITRINE_SEA_GLASS_BRICK_SLAB.get(), existingModel((getName(SeafarerBlocks.CITRINE_SEA_GLASS_BRICK_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.CITRINE_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/citrine_sea_glass_bricks"));
+        this.stairsBlock(SeafarerBlocks.CITRINE_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/citrine_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.CITRINE_SEA_GLASS_BRICK_STAIRS.get(), existingModel((getName(SeafarerBlocks.CITRINE_SEA_GLASS_BRICK_STAIRS.get()))));
 
         this.simpleBlock(SeafarerBlocks.CITRINE_SEA_GLASS_TILES.get());
         this.simpleBlockItem(SeafarerBlocks.CITRINE_SEA_GLASS_TILES.get(), existingModel((getName(SeafarerBlocks.CITRINE_SEA_GLASS_TILES.get()))));
-        this.slabBlock(SeafarerBlocks.CITRINE_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.CITRINE_SEA_GLASS_TILES.get())), new ResourceLocation(SeaFarer.MODID, "block/citrine_sea_glass_tiles"));
+        this.slabBlock(SeafarerBlocks.CITRINE_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.CITRINE_SEA_GLASS_TILES.get())), new ResourceLocation(Seafarer.MOD_ID, "block/citrine_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.CITRINE_SEA_GLASS_TILE_SLAB.get(), existingModel((getName(SeafarerBlocks.CITRINE_SEA_GLASS_TILE_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.CITRINE_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/citrine_sea_glass_tiles"));
+        this.stairsBlock(SeafarerBlocks.CITRINE_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/citrine_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.CITRINE_SEA_GLASS_TILE_STAIRS.get(), existingModel((getName(SeafarerBlocks.CITRINE_SEA_GLASS_TILE_STAIRS.get()))));
         this.directionalBlock(SeafarerBlocks.CITRINE_SEA_GLASS_LAMP);
 
-        this.paneBlock(SeafarerBlocks.CITRINE_SEA_GLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/citrine_sea_glass"), new ResourceLocation(SeaFarer.MODID, "block/citrine_sea_glass_pane_top"));
+        this.paneBlock(SeafarerBlocks.CITRINE_SEA_GLASS_PANE.get(), new ResourceLocation(Seafarer.MOD_ID, "block/citrine_sea_glass"), new ResourceLocation(Seafarer.MOD_ID, "block/citrine_sea_glass_pane_top"));
 
         // Amber Sea glass
         this.simpleBlock(SeafarerBlocks.AMBER_PEBBLED_SEA_GLASS.get());
@@ -209,20 +209,20 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
 
         this.simpleBlock(SeafarerBlocks.AMBER_SEA_GLASS_BRICKS.get());
         this.simpleBlockItem(SeafarerBlocks.AMBER_SEA_GLASS_BRICKS.get(), existingModel((getName(SeafarerBlocks.AMBER_SEA_GLASS_BRICKS.get()))));
-        this.slabBlock(SeafarerBlocks.AMBER_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.AMBER_SEA_GLASS_BRICKS.get())), new ResourceLocation(SeaFarer.MODID, "block/amber_sea_glass_bricks"));
+        this.slabBlock(SeafarerBlocks.AMBER_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.AMBER_SEA_GLASS_BRICKS.get())), new ResourceLocation(Seafarer.MOD_ID, "block/amber_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.AMBER_SEA_GLASS_BRICK_SLAB.get(), existingModel((getName(SeafarerBlocks.AMBER_SEA_GLASS_BRICK_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.AMBER_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/amber_sea_glass_bricks"));
+        this.stairsBlock(SeafarerBlocks.AMBER_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/amber_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.AMBER_SEA_GLASS_BRICK_STAIRS.get(), existingModel((getName(SeafarerBlocks.AMBER_SEA_GLASS_BRICK_STAIRS.get()))));
 
         this.simpleBlock(SeafarerBlocks.AMBER_SEA_GLASS_TILES.get());
         this.simpleBlockItem(SeafarerBlocks.AMBER_SEA_GLASS_TILES.get(), existingModel((getName(SeafarerBlocks.AMBER_SEA_GLASS_TILES.get()))));
-        this.slabBlock(SeafarerBlocks.AMBER_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.AMBER_SEA_GLASS_TILES.get())), new ResourceLocation(SeaFarer.MODID, "block/amber_sea_glass_tiles"));
+        this.slabBlock(SeafarerBlocks.AMBER_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.AMBER_SEA_GLASS_TILES.get())), new ResourceLocation(Seafarer.MOD_ID, "block/amber_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.AMBER_SEA_GLASS_TILE_SLAB.get(), existingModel((getName(SeafarerBlocks.AMBER_SEA_GLASS_TILE_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.AMBER_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/amber_sea_glass_tiles"));
+        this.stairsBlock(SeafarerBlocks.AMBER_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/amber_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.AMBER_SEA_GLASS_TILE_STAIRS.get(), existingModel((getName(SeafarerBlocks.AMBER_SEA_GLASS_TILE_STAIRS.get()))));
         this.directionalBlock(SeafarerBlocks.AMBER_SEA_GLASS_LAMP);
 
-        this.paneBlock(SeafarerBlocks.AMBER_SEA_GLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/amber_sea_glass"), new ResourceLocation(SeaFarer.MODID, "block/amber_sea_glass_pane_top"));
+        this.paneBlock(SeafarerBlocks.AMBER_SEA_GLASS_PANE.get(), new ResourceLocation(Seafarer.MOD_ID, "block/amber_sea_glass"), new ResourceLocation(Seafarer.MOD_ID, "block/amber_sea_glass_pane_top"));
 
         // Scarlet Sea glass
         this.simpleBlock(SeafarerBlocks.SCARLET_PEBBLED_SEA_GLASS.get());
@@ -233,20 +233,20 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
 
         this.simpleBlock(SeafarerBlocks.SCARLET_SEA_GLASS_BRICKS.get());
         this.simpleBlockItem(SeafarerBlocks.SCARLET_SEA_GLASS_BRICKS.get(), existingModel((getName(SeafarerBlocks.SCARLET_SEA_GLASS_BRICKS.get()))));
-        this.slabBlock(SeafarerBlocks.SCARLET_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.SCARLET_SEA_GLASS_BRICKS.get())), new ResourceLocation(SeaFarer.MODID, "block/scarlet_sea_glass_bricks"));
+        this.slabBlock(SeafarerBlocks.SCARLET_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.SCARLET_SEA_GLASS_BRICKS.get())), new ResourceLocation(Seafarer.MOD_ID, "block/scarlet_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.SCARLET_SEA_GLASS_BRICK_SLAB.get(), existingModel((getName(SeafarerBlocks.SCARLET_SEA_GLASS_BRICK_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.SCARLET_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/scarlet_sea_glass_bricks"));
+        this.stairsBlock(SeafarerBlocks.SCARLET_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/scarlet_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.SCARLET_SEA_GLASS_BRICK_STAIRS.get(), existingModel((getName(SeafarerBlocks.SCARLET_SEA_GLASS_BRICK_STAIRS.get()))));
 
         this.simpleBlock(SeafarerBlocks.SCARLET_SEA_GLASS_TILES.get());
         this.simpleBlockItem(SeafarerBlocks.SCARLET_SEA_GLASS_TILES.get(), existingModel((getName(SeafarerBlocks.SCARLET_SEA_GLASS_TILES.get()))));
-        this.slabBlock(SeafarerBlocks.SCARLET_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.SCARLET_SEA_GLASS_TILES.get())), new ResourceLocation(SeaFarer.MODID, "block/scarlet_sea_glass_tiles"));
+        this.slabBlock(SeafarerBlocks.SCARLET_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.SCARLET_SEA_GLASS_TILES.get())), new ResourceLocation(Seafarer.MOD_ID, "block/scarlet_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.SCARLET_SEA_GLASS_TILE_SLAB.get(), existingModel((getName(SeafarerBlocks.SCARLET_SEA_GLASS_TILE_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.SCARLET_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/scarlet_sea_glass_tiles"));
+        this.stairsBlock(SeafarerBlocks.SCARLET_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/scarlet_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.SCARLET_SEA_GLASS_TILE_STAIRS.get(), existingModel((getName(SeafarerBlocks.SCARLET_SEA_GLASS_TILE_STAIRS.get()))));
         this.directionalBlock(SeafarerBlocks.SCARLET_SEA_GLASS_LAMP);
 
-        this.paneBlock(SeafarerBlocks.SCARLET_SEA_GLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/scarlet_sea_glass"), new ResourceLocation(SeaFarer.MODID, "block/scarlet_sea_glass_pane_top"));
+        this.paneBlock(SeafarerBlocks.SCARLET_SEA_GLASS_PANE.get(), new ResourceLocation(Seafarer.MOD_ID, "block/scarlet_sea_glass"), new ResourceLocation(Seafarer.MOD_ID, "block/scarlet_sea_glass_pane_top"));
 
         // Umber Sea glass
         this.simpleBlock(SeafarerBlocks.UMBER_PEBBLED_SEA_GLASS.get());
@@ -257,20 +257,20 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
 
         this.simpleBlock(SeafarerBlocks.UMBER_SEA_GLASS_BRICKS.get());
         this.simpleBlockItem(SeafarerBlocks.UMBER_SEA_GLASS_BRICKS.get(), existingModel((getName(SeafarerBlocks.UMBER_SEA_GLASS_BRICKS.get()))));
-        this.slabBlock(SeafarerBlocks.UMBER_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.UMBER_SEA_GLASS_BRICKS.get())), new ResourceLocation(SeaFarer.MODID, "block/umber_sea_glass_bricks"));
+        this.slabBlock(SeafarerBlocks.UMBER_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.UMBER_SEA_GLASS_BRICKS.get())), new ResourceLocation(Seafarer.MOD_ID, "block/umber_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.UMBER_SEA_GLASS_BRICK_SLAB.get(), existingModel((getName(SeafarerBlocks.UMBER_SEA_GLASS_BRICK_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.UMBER_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/umber_sea_glass_bricks"));
+        this.stairsBlock(SeafarerBlocks.UMBER_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/umber_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.UMBER_SEA_GLASS_BRICK_STAIRS.get(), existingModel((getName(SeafarerBlocks.UMBER_SEA_GLASS_BRICK_STAIRS.get()))));
 
         this.simpleBlock(SeafarerBlocks.UMBER_SEA_GLASS_TILES.get());
         this.simpleBlockItem(SeafarerBlocks.UMBER_SEA_GLASS_TILES.get(), existingModel((getName(SeafarerBlocks.UMBER_SEA_GLASS_TILES.get()))));
-        this.slabBlock(SeafarerBlocks.UMBER_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.UMBER_SEA_GLASS_TILES.get())), new ResourceLocation(SeaFarer.MODID, "block/umber_sea_glass_tiles"));
+        this.slabBlock(SeafarerBlocks.UMBER_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.UMBER_SEA_GLASS_TILES.get())), new ResourceLocation(Seafarer.MOD_ID, "block/umber_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.UMBER_SEA_GLASS_TILE_SLAB.get(), existingModel((getName(SeafarerBlocks.UMBER_SEA_GLASS_TILE_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.UMBER_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/umber_sea_glass_tiles"));
+        this.stairsBlock(SeafarerBlocks.UMBER_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/umber_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.UMBER_SEA_GLASS_TILE_STAIRS.get(), existingModel((getName(SeafarerBlocks.UMBER_SEA_GLASS_TILE_STAIRS.get()))));
         this.directionalBlock(SeafarerBlocks.UMBER_SEA_GLASS_LAMP);
 
-        this.paneBlock(SeafarerBlocks.UMBER_SEA_GLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/umber_sea_glass"), new ResourceLocation(SeaFarer.MODID, "block/umber_sea_glass_pane_top"));
+        this.paneBlock(SeafarerBlocks.UMBER_SEA_GLASS_PANE.get(), new ResourceLocation(Seafarer.MOD_ID, "block/umber_sea_glass"), new ResourceLocation(Seafarer.MOD_ID, "block/umber_sea_glass_pane_top"));
 
         // Pearly Sea glass
         this.simpleBlock(SeafarerBlocks.PEARLY_PEBBLED_SEA_GLASS.get());
@@ -281,20 +281,20 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
 
         this.simpleBlock(SeafarerBlocks.PEARLY_SEA_GLASS_BRICKS.get());
         this.simpleBlockItem(SeafarerBlocks.PEARLY_SEA_GLASS_BRICKS.get(), existingModel((getName(SeafarerBlocks.PEARLY_SEA_GLASS_BRICKS.get()))));
-        this.slabBlock(SeafarerBlocks.PEARLY_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.PEARLY_SEA_GLASS_BRICKS.get())), new ResourceLocation(SeaFarer.MODID, "block/pearly_sea_glass_bricks"));
+        this.slabBlock(SeafarerBlocks.PEARLY_SEA_GLASS_BRICK_SLAB.get(), resourceBlock(getName(SeafarerBlocks.PEARLY_SEA_GLASS_BRICKS.get())), new ResourceLocation(Seafarer.MOD_ID, "block/pearly_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.PEARLY_SEA_GLASS_BRICK_SLAB.get(), existingModel((getName(SeafarerBlocks.PEARLY_SEA_GLASS_BRICK_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.PEARLY_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/pearly_sea_glass_bricks"));
+        this.stairsBlock(SeafarerBlocks.PEARLY_SEA_GLASS_BRICK_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/pearly_sea_glass_bricks"));
         this.simpleBlockItem(SeafarerBlocks.PEARLY_SEA_GLASS_BRICK_STAIRS.get(), existingModel((getName(SeafarerBlocks.PEARLY_SEA_GLASS_BRICK_STAIRS.get()))));
 
         this.simpleBlock(SeafarerBlocks.PEARLY_SEA_GLASS_TILES.get());
         this.simpleBlockItem(SeafarerBlocks.PEARLY_SEA_GLASS_TILES.get(), existingModel((getName(SeafarerBlocks.PEARLY_SEA_GLASS_TILES.get()))));
-        this.slabBlock(SeafarerBlocks.PEARLY_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.PEARLY_SEA_GLASS_TILES.get())), new ResourceLocation(SeaFarer.MODID, "block/pearly_sea_glass_tiles"));
+        this.slabBlock(SeafarerBlocks.PEARLY_SEA_GLASS_TILE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.PEARLY_SEA_GLASS_TILES.get())), new ResourceLocation(Seafarer.MOD_ID, "block/pearly_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.PEARLY_SEA_GLASS_TILE_SLAB.get(), existingModel((getName(SeafarerBlocks.PEARLY_SEA_GLASS_TILE_SLAB.get()))));
-        this.stairsBlock(SeafarerBlocks.PEARLY_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/pearly_sea_glass_tiles"));
+        this.stairsBlock(SeafarerBlocks.PEARLY_SEA_GLASS_TILE_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/pearly_sea_glass_tiles"));
         this.simpleBlockItem(SeafarerBlocks.PEARLY_SEA_GLASS_TILE_STAIRS.get(), existingModel((getName(SeafarerBlocks.PEARLY_SEA_GLASS_TILE_STAIRS.get()))));
         this.directionalBlock(SeafarerBlocks.PEARLY_SEA_GLASS_LAMP);
 
-        this.paneBlock(SeafarerBlocks.PEARLY_SEA_GLASS_PANE.get(), new ResourceLocation(SeaFarer.MODID, "block/pearly_sea_glass"), new ResourceLocation(SeaFarer.MODID, "block/pearly_sea_glass_pane_top"));
+        this.paneBlock(SeafarerBlocks.PEARLY_SEA_GLASS_PANE.get(), new ResourceLocation(Seafarer.MOD_ID, "block/pearly_sea_glass"), new ResourceLocation(Seafarer.MOD_ID, "block/pearly_sea_glass_pane_top"));
 
         //NEW SHELL BLOCKS
 
@@ -306,10 +306,10 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
         simpleBlock(SeafarerBlocks.CLAM_SHELL_BRICKS.get());
         simpleBlockItem(SeafarerBlocks.CLAM_SHELL_BRICKS.get(), existingModel((getName(SeafarerBlocks.CLAM_SHELL_BRICKS.get()))));
 
-        slabBlock(SeafarerBlocks.CLAM_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SeafarerBlocks.CLAM_SHELL_BRICKS_SLAB.get())), new ResourceLocation(SeaFarer.MODID, "block/clam_shell_bricks"));
+        slabBlock(SeafarerBlocks.CLAM_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SeafarerBlocks.CLAM_SHELL_BRICKS_SLAB.get())), new ResourceLocation(Seafarer.MOD_ID, "block/clam_shell_bricks"));
         simpleBlockItem(SeafarerBlocks.CLAM_SHELL_BRICKS_SLAB.get(), existingModel((getName(SeafarerBlocks.CLAM_SHELL_BRICKS_SLAB.get()))));
 
-        stairsBlock(SeafarerBlocks.CLAM_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/clam_shell_bricks"));
+        stairsBlock(SeafarerBlocks.CLAM_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/clam_shell_bricks"));
         simpleBlockItem(SeafarerBlocks.CLAM_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SeafarerBlocks.CLAM_SHELL_BRICKS_STAIRS.get()))));
 
         //Horn
@@ -320,10 +320,10 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
         simpleBlock(SeafarerBlocks.HORN_SHELL_BRICKS.get());
         simpleBlockItem(SeafarerBlocks.HORN_SHELL_BRICKS.get(), existingModel((getName(SeafarerBlocks.HORN_SHELL_BRICKS.get()))));
 
-        slabBlock(SeafarerBlocks.HORN_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SeafarerBlocks.HORN_SHELL_BRICKS_SLAB.get())), new ResourceLocation(SeaFarer.MODID, "block/horn_shell_bricks"));
+        slabBlock(SeafarerBlocks.HORN_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SeafarerBlocks.HORN_SHELL_BRICKS_SLAB.get())), new ResourceLocation(Seafarer.MOD_ID, "block/horn_shell_bricks"));
         simpleBlockItem(SeafarerBlocks.HORN_SHELL_BRICKS_SLAB.get(), existingModel((getName(SeafarerBlocks.HORN_SHELL_BRICKS_SLAB.get()))));
 
-        stairsBlock(SeafarerBlocks.HORN_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/horn_shell_bricks"));
+        stairsBlock(SeafarerBlocks.HORN_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/horn_shell_bricks"));
         simpleBlockItem(SeafarerBlocks.HORN_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SeafarerBlocks.HORN_SHELL_BRICKS_STAIRS.get()))));
 
         //Horn
@@ -334,10 +334,10 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
         simpleBlock(SeafarerBlocks.SPIKY_SHELL_BRICKS.get());
         simpleBlockItem(SeafarerBlocks.SPIKY_SHELL_BRICKS.get(), existingModel((getName(SeafarerBlocks.SPIKY_SHELL_BRICKS.get()))));
 
-        slabBlock(SeafarerBlocks.SPIKY_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SeafarerBlocks.SPIKY_SHELL_BRICKS_SLAB.get())), new ResourceLocation(SeaFarer.MODID, "block/spiky_shell_bricks"));
+        slabBlock(SeafarerBlocks.SPIKY_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SeafarerBlocks.SPIKY_SHELL_BRICKS_SLAB.get())), new ResourceLocation(Seafarer.MOD_ID, "block/spiky_shell_bricks"));
         simpleBlockItem(SeafarerBlocks.SPIKY_SHELL_BRICKS_SLAB.get(), existingModel((getName(SeafarerBlocks.SPIKY_SHELL_BRICKS_SLAB.get()))));
 
-        stairsBlock(SeafarerBlocks.SPIKY_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/spiky_shell_bricks"));
+        stairsBlock(SeafarerBlocks.SPIKY_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/spiky_shell_bricks"));
         simpleBlockItem(SeafarerBlocks.SPIKY_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SeafarerBlocks.SPIKY_SHELL_BRICKS_STAIRS.get()))));
 
         //Spiral
@@ -348,10 +348,10 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
         simpleBlock(SeafarerBlocks.SPIRAL_SHELL_BRICKS.get());
         simpleBlockItem(SeafarerBlocks.SPIRAL_SHELL_BRICKS.get(), existingModel((getName(SeafarerBlocks.SPIRAL_SHELL_BRICKS.get()))));
 
-        slabBlock(SeafarerBlocks.SPIRAL_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SeafarerBlocks.SPIRAL_SHELL_BRICKS_SLAB.get())), new ResourceLocation(SeaFarer.MODID, "block/spiral_shell_bricks"));
+        slabBlock(SeafarerBlocks.SPIRAL_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SeafarerBlocks.SPIRAL_SHELL_BRICKS_SLAB.get())), new ResourceLocation(Seafarer.MOD_ID, "block/spiral_shell_bricks"));
         simpleBlockItem(SeafarerBlocks.SPIRAL_SHELL_BRICKS_SLAB.get(), existingModel((getName(SeafarerBlocks.SPIRAL_SHELL_BRICKS_SLAB.get()))));
 
-        stairsBlock(SeafarerBlocks.SPIRAL_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/spiral_shell_bricks"));
+        stairsBlock(SeafarerBlocks.SPIRAL_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/spiral_shell_bricks"));
         simpleBlockItem(SeafarerBlocks.SPIRAL_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SeafarerBlocks.SPIRAL_SHELL_BRICKS_STAIRS.get()))));
 
         //Swirl
@@ -362,10 +362,10 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
         simpleBlock(SeafarerBlocks.SWIRL_SHELL_BRICKS.get());
         simpleBlockItem(SeafarerBlocks.SWIRL_SHELL_BRICKS.get(), existingModel((getName(SeafarerBlocks.SWIRL_SHELL_BRICKS.get()))));
 
-        slabBlock(SeafarerBlocks.SWIRL_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SeafarerBlocks.SWIRL_SHELL_BRICKS_SLAB.get())), new ResourceLocation(SeaFarer.MODID, "block/swirl_shell_bricks"));
+        slabBlock(SeafarerBlocks.SWIRL_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SeafarerBlocks.SWIRL_SHELL_BRICKS_SLAB.get())), new ResourceLocation(Seafarer.MOD_ID, "block/swirl_shell_bricks"));
         simpleBlockItem(SeafarerBlocks.SWIRL_SHELL_BRICKS_SLAB.get(), existingModel((getName(SeafarerBlocks.SWIRL_SHELL_BRICKS_SLAB.get()))));
 
-        stairsBlock(SeafarerBlocks.SWIRL_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/swirl_shell_bricks"));
+        stairsBlock(SeafarerBlocks.SWIRL_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/swirl_shell_bricks"));
         simpleBlockItem(SeafarerBlocks.SWIRL_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SeafarerBlocks.SWIRL_SHELL_BRICKS_STAIRS.get()))));
 
         //Pyramid
@@ -377,10 +377,10 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
         simpleBlock(SeafarerBlocks.PYRAMID_SHELL_BRICKS.get());
         simpleBlockItem(SeafarerBlocks.PYRAMID_SHELL_BRICKS.get(), existingModel((getName(SeafarerBlocks.PYRAMID_SHELL_BRICKS.get()))));
 
-        slabBlock(SeafarerBlocks.PYRAMID_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SeafarerBlocks.PYRAMID_SHELL_BRICKS_SLAB.get())), new ResourceLocation(SeaFarer.MODID, "block/pyramid_shell_bricks"));
+        slabBlock(SeafarerBlocks.PYRAMID_SHELL_BRICKS_SLAB.get(), resourceBlock(getName(SeafarerBlocks.PYRAMID_SHELL_BRICKS_SLAB.get())), new ResourceLocation(Seafarer.MOD_ID, "block/pyramid_shell_bricks"));
         simpleBlockItem(SeafarerBlocks.PYRAMID_SHELL_BRICKS_SLAB.get(), existingModel((getName(SeafarerBlocks.PYRAMID_SHELL_BRICKS_SLAB.get()))));
 
-        stairsBlock(SeafarerBlocks.PYRAMID_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/pyramid_shell_bricks"));
+        stairsBlock(SeafarerBlocks.PYRAMID_SHELL_BRICKS_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/pyramid_shell_bricks"));
         simpleBlockItem(SeafarerBlocks.PYRAMID_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SeafarerBlocks.PYRAMID_SHELL_BRICKS_STAIRS.get()))));
 
 
@@ -436,10 +436,10 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
         simpleBlock(SeafarerBlocks.ALGAE_COBBLESTONE.get());
         simpleBlockItem(SeafarerBlocks.ALGAE_COBBLESTONE.get(), existingModel((getName(SeafarerBlocks.ALGAE_COBBLESTONE.get()))));
 
-        slabBlock(SeafarerBlocks.ALGAE_COBBLESTONE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.ALGAE_COBBLESTONE.get())), new ResourceLocation(SeaFarer.MODID, "block/algae_cobblestone"));
+        slabBlock(SeafarerBlocks.ALGAE_COBBLESTONE_SLAB.get(), resourceBlock(getName(SeafarerBlocks.ALGAE_COBBLESTONE.get())), new ResourceLocation(Seafarer.MOD_ID, "block/algae_cobblestone"));
         simpleBlockItem(SeafarerBlocks.ALGAE_COBBLESTONE_SLAB.get(), existingModel((getName(SeafarerBlocks.ALGAE_COBBLESTONE_SLAB.get()))));
 
-        stairsBlock(SeafarerBlocks.ALGAE_COBBLESTONE_STAIRS.get(), new ResourceLocation(SeaFarer.MODID, "block/algae_cobblestone"));
+        stairsBlock(SeafarerBlocks.ALGAE_COBBLESTONE_STAIRS.get(), new ResourceLocation(Seafarer.MOD_ID, "block/algae_cobblestone"));
         simpleBlockItem(SeafarerBlocks.ALGAE_COBBLESTONE_STAIRS.get(), existingModel((getName(SeafarerBlocks.ALGAE_COBBLESTONE_STAIRS.get()))));
 
         //CORAL
@@ -602,7 +602,7 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
         return generated(name(block), name);
     }
     private BlockModelBuilder singleTexItem(Block block) {
-        return generated(name(block), new ResourceLocation(SeaFarer.MODID, "registerItemNoLang/" + name(block)));
+        return generated(name(block), new ResourceLocation(Seafarer.MOD_ID, "registerItemNoLang/" + name(block)));
     }
 
     private BlockModelBuilder singleTex(Block block) {
@@ -610,7 +610,7 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
     }
 
     private BlockModelBuilder singleTex(Block block, String name) {
-        return generated(name(block), new ResourceLocation(SeaFarer.MODID, "block/" + name));
+        return generated(name(block), new ResourceLocation(Seafarer.MOD_ID, "block/" + name));
     }
 
     private BlockModelBuilder generated(String name, ResourceLocation... layers) {
@@ -624,7 +624,7 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
 
     public ModelFile createFlatWaterEgg(Block block, String modifier){
         String baseName = getName(block);
-        return models().singleTexture("block/eggs/" + modifier + baseName.replace(SeaFarer.MODID + ":", ""), new ResourceLocation(SeaFarer.MODID, "block/template_eggs/template_flat_water_egg"), blockTextureEggs(block));
+        return models().singleTexture("block/eggs/" + modifier + baseName.replace(Seafarer.MOD_ID + ":", ""), new ResourceLocation(Seafarer.MOD_ID, "block/template_eggs/template_flat_water_egg"), blockTextureEggs(block));
     }
 
     public ResourceLocation blockTextureEggs(Block block) {
@@ -637,7 +637,7 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
     }
 
     private String getName(Block block) {
-        return key(block).toString().replace(SeaFarer.MODID + ":", "");
+        return key(block).toString().replace(Seafarer.MOD_ID + ":", "");
     }
 
     public void block(Block block) {
@@ -677,6 +677,6 @@ public class SeafarerBlockstateProvider extends BlockStateProvider {
 
     @Override
     public String getName() {
-        return "Block States: " + SeaFarer.MODID;
+        return "Block States: " + Seafarer.MOD_ID;
     }
 }

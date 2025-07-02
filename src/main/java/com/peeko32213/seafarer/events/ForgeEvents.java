@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.events;
 
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.blocks.entity.SFNetBlockEntity;
 import com.peeko32213.seafarer.utils.AsyncLocator;
 import net.minecraft.core.BlockPos;
@@ -31,7 +31,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.Nullable;
 
-@Mod.EventBusSubscriber(modid = SeaFarer.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
+@Mod.EventBusSubscriber(modid = Seafarer.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ForgeEvents {
     private static final double MAX_BRUSH_DISTANCE = Math.sqrt(ServerGamePacketListenerImpl.MAX_INTERACTION_DISTANCE) - 1.0D;
     @SubscribeEvent

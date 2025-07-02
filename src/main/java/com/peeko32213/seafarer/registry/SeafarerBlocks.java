@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.registry;
 
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.blocks.*;
 import com.peeko32213.seafarer.blocks.shell.PyramidShellBlock;
 import com.peeko32213.seafarer.blocks.shell.ShellBlock;
@@ -23,7 +23,7 @@ import java.util.function.Supplier;
 
 public class SeafarerBlocks {
 
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, SeaFarer.MODID);
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Seafarer.MOD_ID);
     public static List<RegistryObject<? extends Block>> AUTO_TRANSLATE = new ArrayList<>();
 
     public static final RegistryObject<Block> AZURE_SEA_GLASS_PEBBLES = registerBlock("azure_sea_glass_pebbles", () -> new FloorLayerBlock(SeafarerBlockProperties.seaGlassPebbles(MapColor.COLOR_BLUE)));

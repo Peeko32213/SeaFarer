@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.registry;
 
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import net.minecraft.world.entity.decoration.PaintingVariant;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public final class SeafarerPaintings {
-    public static final DeferredRegister<PaintingVariant> PAINTING_VARIANTS = DeferredRegister.create(ForgeRegistries.PAINTING_VARIANTS, SeaFarer.MODID);
+    public static final DeferredRegister<PaintingVariant> PAINTING_VARIANTS = DeferredRegister.create(ForgeRegistries.PAINTING_VARIANTS, Seafarer.MOD_ID);
     public static Map<String, String> PAINTING_TRANSLATIONS = new HashMap<>();
 
     // Paintings

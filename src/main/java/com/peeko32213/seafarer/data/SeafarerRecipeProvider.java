@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.data;
 
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-import static com.peeko32213.seafarer.SeaFarer.modPrefix;
+import static com.peeko32213.seafarer.Seafarer.modPrefix;
 import static net.minecraft.advancements.critereon.InventoryChangeTrigger.TriggerInstance.hasItems;
 
 public abstract class SeafarerRecipeProvider extends RecipeProvider {
@@ -406,7 +406,7 @@ public abstract class SeafarerRecipeProvider extends RecipeProvider {
 
     private void oreSmeltingRecipe(ItemLike result, List<ItemLike> ingredients, float xp, String group, Consumer<FinishedRecipe> consumer) {
         for (ItemLike ingredient : ingredients) {
-            smeltingRecipe(result, ingredient, xp, 1).group(group).save(consumer, new ResourceLocation(SeaFarer.MODID, "smelt_" + ForgeRegistries.ITEMS.getKey(ingredient.asItem()).getPath()));
+            smeltingRecipe(result, ingredient, xp, 1).group(group).save(consumer, new ResourceLocation(Seafarer.MOD_ID, "smelt_" + ForgeRegistries.ITEMS.getKey(ingredient.asItem()).getPath()));
         }
     }
 
@@ -430,7 +430,7 @@ public abstract class SeafarerRecipeProvider extends RecipeProvider {
 
     private void oreBlastingRecipe(ItemLike result, List<ItemLike> ingredients, float xp, String group, Consumer<FinishedRecipe> consumer) {
         for (ItemLike ingredient : ingredients) {
-            blastingRecipe(result, ingredient, xp, 1).group(group).save(consumer, new ResourceLocation(SeaFarer.MODID, "blast_" + ForgeRegistries.ITEMS.getKey(ingredient.asItem()).getPath()));
+            blastingRecipe(result, ingredient, xp, 1).group(group).save(consumer, new ResourceLocation(Seafarer.MOD_ID, "blast_" + ForgeRegistries.ITEMS.getKey(ingredient.asItem()).getPath()));
         }
     }
 
@@ -475,7 +475,7 @@ public abstract class SeafarerRecipeProvider extends RecipeProvider {
 
 
     public void foodSmeltingRecipes(String name, ItemLike ingredient, ItemLike result, float experience, Consumer<FinishedRecipe> consumer) {
-        String namePrefix = new ResourceLocation(SeaFarer.MODID, name).toString();
+        String namePrefix = new ResourceLocation(Seafarer.MOD_ID, name).toString();
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 200)
                 .unlockedBy(name, hasItems(ingredient)).save(consumer, modPrefix(name));
         SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), RecipeCategory.FOOD, result, experience, 600)

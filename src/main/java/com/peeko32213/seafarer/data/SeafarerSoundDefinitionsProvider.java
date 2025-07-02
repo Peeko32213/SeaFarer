@@ -1,7 +1,6 @@
 package com.peeko32213.seafarer.data;
 
-import com.peeko32213.seafarer.SeaFarer;
-import com.peeko32213.seafarer.registry.SeafarerSoundEvents;
+import com.peeko32213.seafarer.Seafarer;
 import net.minecraft.data.PackOutput;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -14,7 +13,7 @@ import java.util.function.Supplier;
 public class SeafarerSoundDefinitionsProvider extends SoundDefinitionsProvider {
 
     public SeafarerSoundDefinitionsProvider(PackOutput packOutput, ExistingFileHelper helper) {
-        super(packOutput, SeaFarer.MODID, helper);
+        super(packOutput, Seafarer.MOD_ID, helper);
     }
 
     @Override
@@ -30,6 +29,6 @@ public class SeafarerSoundDefinitionsProvider extends SoundDefinitionsProvider {
     }
 
     private void addMusicDiscSound(Supplier<SoundEvent> soundEvent, String name) {
-        this.add(soundEvent.get(), SoundDefinition.definition().with(sound(SeaFarer.modPrefix("records/" + name)).stream()));
+        this.add(soundEvent.get(), SoundDefinition.definition().with(sound(Seafarer.modPrefix("records/" + name)).stream()));
     }
 }

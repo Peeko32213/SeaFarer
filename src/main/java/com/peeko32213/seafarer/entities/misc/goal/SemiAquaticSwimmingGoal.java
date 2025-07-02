@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.entities.misc.goal;
 
 import com.peeko32213.seafarer.entities.misc.interfaces.ISemiAquatic;
-import com.peeko32213.seafarer.entities.misc.util.SFBlockPos;
+import com.peeko32213.seafarer.entities.misc.util.SeafarerBlockPos;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.entity.PathfinderMob;
@@ -54,7 +54,7 @@ public class SemiAquaticSwimmingGoal extends RandomStrollGoal {
         }
         Vec3 vector3d = DefaultRandomPos.getPos(this.mob, 7, 3);
 
-        for (int i = 0; vector3d != null && !this.mob.level().getFluidState(SFBlockPos.fromVec3(vector3d)).is(FluidTags.LAVA) && !this.mob.level().getBlockState(SFBlockPos.fromVec3(vector3d)).isPathfindable(this.mob.level(), SFBlockPos.fromVec3(vector3d), PathComputationType.WATER) && i++ < 15; vector3d = DefaultRandomPos.getPos(this.mob, 10, 7)) {
+        for (int i = 0; vector3d != null && !this.mob.level().getFluidState(SeafarerBlockPos.fromVec3(vector3d)).is(FluidTags.LAVA) && !this.mob.level().getBlockState(SeafarerBlockPos.fromVec3(vector3d)).isPathfindable(this.mob.level(), SeafarerBlockPos.fromVec3(vector3d), PathComputationType.WATER) && i++ < 15; vector3d = DefaultRandomPos.getPos(this.mob, 10, 7)) {
         }
 
         return vector3d;

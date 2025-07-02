@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.data;
 
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.registry.tags.SeafarerTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -11,7 +11,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class SeafarerBiomeTagProvider extends net.minecraft.data.tags.BiomeTagsProvider {
     public SeafarerBiomeTagProvider(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pPro, ExistingFileHelper existingFileHelper) {
-        super(pOutput,pPro , SeaFarer.MODID, existingFileHelper);
+        super(pOutput,pPro , Seafarer.MOD_ID, existingFileHelper);
     }
 
     @Override

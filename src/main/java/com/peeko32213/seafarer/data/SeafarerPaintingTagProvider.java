@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.data;
 
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.registry.SeafarerPaintings;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
@@ -16,7 +16,7 @@ import java.util.concurrent.CompletableFuture;
 public class SeafarerPaintingTagProvider extends PaintingVariantTagsProvider {
 
     public SeafarerPaintingTagProvider(PackOutput packOutput, CompletableFuture<Provider> lookupProvider, ExistingFileHelper helper) {
-        super(packOutput, lookupProvider, SeaFarer.MODID, helper);
+        super(packOutput, lookupProvider, Seafarer.MOD_ID, helper);
     }
 
     @Override

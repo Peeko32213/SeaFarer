@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.registry;
 
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.registry.tags.SeafarerTags;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
@@ -58,10 +58,10 @@ public class SeafarerBiomeModifiers {
         removeFeatureNoTag(context, "remove_coral", Biomes.WARM_OCEAN, Decoration.VEGETAL_DECORATION, AquaticPlacements.WARM_OCEAN_VEGETATION);
 
         // Add spawns
-        addSpawn(context, "crab", SeafarerTags.IS_CRAB_BIOME, new MobSpawnSettings.SpawnerData(SeafarerEntities.CRAB.get(), 25, 1, 3));
-        addSpawn(context, "horseshoe_crab", SeafarerTags.IS_HORSECRAB_BIOME, new MobSpawnSettings.SpawnerData(SeafarerEntities.HORSESHOE_CRAB.get(), 25, 1, 3));
-        addSpawn(context, "marine_iguana", SeafarerTags.IS_MARINE_IGUANA_BIOME, new MobSpawnSettings.SpawnerData(SeafarerEntities.MARINE_IGUANA.get(), 20, 1, 2));
-        addSpawn(context, "sunfish", SeafarerTags.IS_SUNFISH_BIOME, new MobSpawnSettings.SpawnerData(SeafarerEntities.SUNFISH.get(), 10, 1, 1));
+//        addSpawn(context, "crab", SeafarerTags.IS_CRAB_BIOME, new MobSpawnSettings.SpawnerData(SeafarerEntities.CRAB.get(), 25, 1, 3));
+//        addSpawn(context, "horseshoe_crab", SeafarerTags.IS_HORSECRAB_BIOME, new MobSpawnSettings.SpawnerData(SeafarerEntities.HORSESHOE_CRAB.get(), 25, 1, 3));
+//        addSpawn(context, "marine_iguana", SeafarerTags.IS_MARINE_IGUANA_BIOME, new MobSpawnSettings.SpawnerData(SeafarerEntities.MARINE_IGUANA.get(), 20, 1, 2));
+//        addSpawn(context, "sunfish", SeafarerTags.IS_SUNFISH_BIOME, new MobSpawnSettings.SpawnerData(SeafarerEntities.SUNFISH.get(), 10, 1, 1));
     }
 
     @SafeVarargs
@@ -89,7 +89,7 @@ public class SeafarerBiomeModifiers {
     }
 
     private static void register(BootstapContext<BiomeModifier> context, String name, Supplier<? extends BiomeModifier> modifier) {
-        context.register(ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(SeaFarer.MODID, name)), modifier.get());
+        context.register(ResourceKey.create(ForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(Seafarer.MOD_ID, name)), modifier.get());
     }
 
     @SafeVarargs

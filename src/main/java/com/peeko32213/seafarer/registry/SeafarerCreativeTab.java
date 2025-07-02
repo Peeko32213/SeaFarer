@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.registry;
 
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -13,19 +13,19 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class SeafarerCreativeTab {
 
-    public static final DeferredRegister<CreativeModeTab> DEF_REG = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, SeaFarer.MODID);
+    public static final DeferredRegister<CreativeModeTab> DEF_REG = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Seafarer.MOD_ID);
 
-    public static final RegistryObject<CreativeModeTab> TAB = DEF_REG.register(SeaFarer.MODID, () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup." + SeaFarer.MODID))
+    public static final RegistryObject<CreativeModeTab> TAB = DEF_REG.register(Seafarer.MOD_ID, () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup." + Seafarer.MOD_ID))
             .icon(() -> new ItemStack(SeafarerBlocks.SWIRL_SHELL.get()))
             .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)
             .displayItems((enabledFeatures, output) -> {
-                for(RegistryObject<Item> item : SeafarerItems.ITEMS.getEntries()){
-                    // Spawn eggs
-                    SeafarerItems.ITEMS.getEntries().forEach(spawnEgg -> {
-                        if ((spawnEgg.get() instanceof ForgeSpawnEggItem)) {
-                            output.accept(spawnEgg.get());
-                        }
+
+                    for (RegistryObject<Item> item : SeafarerItems.ITEMS.getEntries()) {
+                        SeafarerItems.ITEMS.getEntries().forEach(spawnEgg -> {
+                            if ((spawnEgg.get() instanceof ForgeSpawnEggItem)) {
+                                output.accept(spawnEgg.get());
+                            }
                     });
 
                     // food
@@ -78,9 +78,9 @@ public class SeafarerCreativeTab {
                     output.accept(SeafarerItems.MESSAGE_IN_A_BOTTLE.get());
 
                     // buckets
-                    output.accept(SeafarerItems.CRAB_BUCKET.get());
-                    output.accept(SeafarerItems.HORSESHOE_CRAB_BUCKET.get());
-                    output.accept(SeafarerItems.SQUIRRELFISH_BUCKET.get());
+//                    output.accept(SeafarerItems.CRAB_BUCKET.get());
+//                    output.accept(SeafarerItems.HORSESHOE_CRAB_BUCKET.get());
+//                    output.accept(SeafarerItems.SQUIRRELFISH_BUCKET.get());
 
                     // shells
                     output.accept(SeafarerBlocks.SPIKY_SHELL.get());

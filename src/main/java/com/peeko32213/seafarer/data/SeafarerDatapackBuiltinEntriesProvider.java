@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.data;
 
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.registry.SeafarerBiomeModifiers;
 import com.peeko32213.seafarer.registry.SeafarerConfiguredFeatures;
 import com.peeko32213.seafarer.registry.SeafarerPlacedFeatures;
@@ -23,6 +23,6 @@ public class SeafarerDatapackBuiltinEntriesProvider extends DatapackBuiltinEntri
     ;
 
     public SeafarerDatapackBuiltinEntriesProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> provider) {
-        super(output, provider, BUILDER, Set.of(SeaFarer.MODID));
+        super(output, provider, BUILDER, Set.of(Seafarer.MOD_ID));
     }
 }

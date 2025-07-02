@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.data;
 
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.registry.SeafarerBlocks;
 import com.peeko32213.seafarer.registry.tags.SeafarerTags;
 import net.minecraft.core.HolderLookup;
@@ -14,7 +14,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class SeafarerBlockTagProvider extends BlockTagsProvider {
     public SeafarerBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
-        super(output, lookupProvider, SeaFarer.MODID, existingFileHelper);
+        super(output, lookupProvider, Seafarer.MOD_ID, existingFileHelper);
     }
 
     @Override
@@ -186,6 +186,6 @@ public class SeafarerBlockTagProvider extends BlockTagsProvider {
 
     @Override
     public String getName() {
-        return SeaFarer.MODID + " Block Tags";
+        return Seafarer.MOD_ID + " Block Tags";
     }
 }

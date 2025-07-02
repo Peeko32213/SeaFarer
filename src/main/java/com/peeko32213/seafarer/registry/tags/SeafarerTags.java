@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.registry.tags;
 
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -39,23 +39,23 @@ public class SeafarerTags {
 
 
     private static TagKey<Item> registerItemTag(String name) {
-        return TagKey.create(Registries.ITEM, new ResourceLocation(SeaFarer.MODID, name));
+        return TagKey.create(Registries.ITEM, new ResourceLocation(Seafarer.MOD_ID, name));
     }
 
     private static TagKey<Block> registerBlockTag(String name) {
-        return TagKey.create(Registries.BLOCK, new ResourceLocation(SeaFarer.MODID, name));
+        return TagKey.create(Registries.BLOCK, new ResourceLocation(Seafarer.MOD_ID, name));
     }
 
     private static TagKey<EntityType<?>> registerEntityTag(String name) {
-        return TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation(SeaFarer.MODID, name));
+        return TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation(Seafarer.MOD_ID, name));
     }
 
     private static TagKey<Instrument> registerInstrument(String name) {
-        return TagKey.create(Registries.INSTRUMENT, new ResourceLocation(SeaFarer.MODID, name));
+        return TagKey.create(Registries.INSTRUMENT, new ResourceLocation(Seafarer.MOD_ID, name));
     }
 
     private static TagKey<Biome> registerBiomeTag(String name){
-        return TagKey.create(Registries.BIOME, new ResourceLocation(SeaFarer.MODID, name));
+        return TagKey.create(Registries.BIOME, new ResourceLocation(Seafarer.MOD_ID, name));
 
     }
 }

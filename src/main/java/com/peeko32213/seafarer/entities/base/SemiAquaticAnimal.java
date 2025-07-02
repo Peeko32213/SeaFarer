@@ -7,7 +7,6 @@ import com.peeko32213.seafarer.entities.misc.navigator.SemiAquaticPathNavigation
 import com.peeko32213.seafarer.entities.misc.state.IStateAction;
 import com.peeko32213.seafarer.entities.misc.state.StateHelper;
 import com.peeko32213.seafarer.entities.misc.state.WeightedState;
-import com.peeko32213.seafarer.entities.navigation.SmoothGroundNavigation;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -16,6 +15,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.control.MoveControl;
+import net.minecraft.world.entity.ai.navigation.GroundPathNavigation;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
@@ -57,7 +57,7 @@ public class SemiAquaticAnimal extends Animal implements GeoEntity, GeoAnimatabl
     protected void switchNavigator(boolean onLand) {
         if (onLand) {
             this.moveControl = new MoveControl(this);
-            this.navigation = new SmoothGroundNavigation(this, level());
+            this.navigation = new GroundPathNavigation(this, level());
             this.isLandNavigator = true;
         } else {
             this.moveControl = new WaterMoveController(this, 1.1F);

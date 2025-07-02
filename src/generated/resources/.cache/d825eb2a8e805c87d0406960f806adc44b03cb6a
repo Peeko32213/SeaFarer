@@ -1,6 +1,6 @@
 // 1.20.1	2025-07-01T13:46:07.6424773	Item Models: seafarer
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/barreleye_spawn_egg.json
-ab1932c19a058525f37122a00274430884e51ba9 assets/seafarer/models/item/blue_tang.json
+ab1932c19a058525f37122a00274430884e51ba9 assets/seafarer/models/item/BlueTangModel.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/blue_tang_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/chimaera_shark_spawn_egg.json
 b6fb4d2c3c0ecfffc978ee7ac648e53c650c082b assets/seafarer/models/item/cooked_blue_tang.json

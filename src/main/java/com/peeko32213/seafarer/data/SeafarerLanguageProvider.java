@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.data;
 
 import com.mojang.logging.LogUtils;
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.registry.*;
 import net.minecraft.data.PackOutput;
 import net.minecraft.sounds.SoundEvent;
@@ -19,7 +19,7 @@ import java.util.function.Supplier;
 
 public class SeafarerLanguageProvider extends LanguageProvider {
     public SeafarerLanguageProvider(PackOutput output) {
-        super(output, SeaFarer.MODID, "en_us");
+        super(output, Seafarer.MOD_ID, "en_us");
     }
     private static final Logger LOGGER = LogUtils.getLogger();
     @Override
@@ -48,9 +48,9 @@ public class SeafarerLanguageProvider extends LanguageProvider {
         addItem(SeafarerItems.RAW_CRAB_LEG, "Raw Crab Leg");
         addItem(SeafarerItems.RAW_MARINE_IGUANA_TAIL, "Raw Marine Iguana Tail");
 
-        addItem(SeafarerItems.CRAB_BUCKET, "Bucket of Crab");
-        addItem(SeafarerItems.HORSESHOE_CRAB_BUCKET, "Bucket of Horseshoe Crab");
-        addItem(SeafarerItems.SQUIRRELFISH_BUCKET, "Bucket of Squirrelfish");
+//        addItem(SeafarerItems.CRAB_BUCKET, "Bucket of Crab");
+//        addItem(SeafarerItems.HORSESHOE_CRAB_BUCKET, "Bucket of Horseshoe Crab");
+//        addItem(SeafarerItems.SQUIRRELFISH_BUCKET, "Bucket of Squirrelfish");
 
         add("seafarer.common_orange_starfish", "Common Orange");
         add("seafarer.pink_starfish", "Pink");
@@ -69,15 +69,15 @@ public class SeafarerLanguageProvider extends LanguageProvider {
 
     @Override
     public String getName() {
-        return  SeaFarer.MODID  + " Languages: en_us";
+        return  Seafarer.MOD_ID + " Languages: en_us";
     }
 
     public void addBETranslatable(String beName,String name){
-        add(SeaFarer.MODID + ".blockentity." + beName, name);
+        add(Seafarer.MOD_ID + ".blockentity." + beName, name);
     }
 
     public void addSound(Supplier<? extends SoundEvent> key, String name){
-        add(SeaFarer.MODID + ".sound.subtitle." + key.get().getLocation().getPath(), name);
+        add(Seafarer.MOD_ID + ".sound.subtitle." + key.get().getLocation().getPath(), name);
     }
 
     public void addTabName(CreativeModeTab key, String name){
@@ -103,8 +103,8 @@ public class SeafarerLanguageProvider extends LanguageProvider {
     }
 
     protected void painting(String name, String author) {
-        add("painting." + SeaFarer.MODID + "." + name + ".title",  SeafarerTextUtils.createTranslation(name));
-        add("painting." + SeaFarer.MODID + "." + name + ".author",  author);
+        add("painting." + Seafarer.MOD_ID + "." + name + ".title",  SeafarerTextUtils.createTranslation(name));
+        add("painting." + Seafarer.MOD_ID + "." + name + ".author",  author);
     }
 
     protected void forBlock(Supplier<? extends Block> block) {

@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.entities.misc.state;
 
 import com.google.common.collect.ImmutableMap;
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import net.minecraft.world.entity.Entity;
 
 import java.util.List;
@@ -23,7 +23,7 @@ public interface IStateAction {
         if(getStates().containsKey(name)) {
             return getStates().get(name);
         } else {
-            SeaFarer.LOGGER.error("Could not get state {} for {}", name, entity.getEncodeId());
+            Seafarer.LOGGER.error("Could not get state {} for {}", name, entity.getEncodeId());
             return null;
         }
     }

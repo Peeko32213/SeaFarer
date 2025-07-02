@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.registry;
 
 import com.google.common.collect.ImmutableList;
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.Vec3i;
@@ -26,7 +26,7 @@ import static com.peeko32213.seafarer.data.SeafarerItemModelProvider.prefix;
 public class SeafarerPlacedFeatures {
     public static List<String> placedFeatureList = new ArrayList<>();
 
-    public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = DeferredRegister.create(Registries.PLACED_FEATURE, SeaFarer.MODID);
+    public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = DeferredRegister.create(Registries.PLACED_FEATURE, Seafarer.MOD_ID);
 
 
     public static final ResourceKey<PlacedFeature> BEACHGRASS_PLACED = registerKey("beachgrass_placed");

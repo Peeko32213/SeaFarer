@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.data;
 
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.registry.SeafarerBlocks;
 import com.peeko32213.seafarer.registry.SeafarerItems;
 import com.peeko32213.seafarer.registry.tags.SeafarerTags;
@@ -303,7 +303,7 @@ public class SeafarerRecipeGenerator extends SeafarerRecipeProvider implements I
 
     //Wrappers for conditionals
     private void wrap(RecipeBuilder builder, String name, Consumer<FinishedRecipe> consumer, ICondition... conds) {
-        wrap(builder, SeaFarer.MODID, name, consumer, conds);
+        wrap(builder, Seafarer.MOD_ID, name, consumer, conds);
     }
 
     protected static String getEntityName(EntityType<?> pItemLike) {
@@ -311,7 +311,7 @@ public class SeafarerRecipeGenerator extends SeafarerRecipeProvider implements I
     }
 
     private ResourceLocation name(String name) {
-        return new ResourceLocation(SeaFarer.MODID, name);
+        return new ResourceLocation(Seafarer.MOD_ID, name);
     }
 
     private void wrap(RecipeBuilder builder, String modid, String name, Consumer<FinishedRecipe> consumer, ICondition... conds) {

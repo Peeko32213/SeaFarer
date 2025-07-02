@@ -2,7 +2,7 @@ package com.peeko32213.seafarer.registry;
 
 import net.minecraft.resources.ResourceLocation;
 
-import static com.peeko32213.seafarer.SeaFarer.modPrefix;
+import static com.peeko32213.seafarer.Seafarer.modPrefix;
 
 public class SeafarerLootTables {
     //public static final ResourceKey<LootTable> LAVA_FISHING = register("gameplay/lava_fishing");

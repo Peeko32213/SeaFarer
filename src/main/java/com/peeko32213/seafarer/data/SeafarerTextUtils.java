@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.data;
 
 import com.mojang.datafixers.util.Pair;
-import com.peeko32213.seafarer.SeaFarer;
+import com.peeko32213.seafarer.Seafarer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 
@@ -17,7 +17,7 @@ public class SeafarerTextUtils {
     }
 
     public static MutableComponent addUPTranslatable(String translatable, String translation) {
-        return addTranslatable(SeaFarer.MODID + "." + translatable, translation);
+        return addTranslatable(Seafarer.MOD_ID + "." + translatable, translation);
     }
 
     public static Pair<Component, Component> addAdvancementTranslatables(String path, String titleTranslation, String descTranslation) {
