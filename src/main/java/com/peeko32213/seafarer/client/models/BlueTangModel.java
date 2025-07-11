@@ -2,11 +2,14 @@ package com.peeko32213.seafarer.client.models;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.peeko32213.seafarer.client.animations.BarreleyeAnimations;
+import com.peeko32213.seafarer.client.animations.BlueTangAnimations;
 import com.peeko32213.seafarer.entities.BlueTang;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -65,6 +68,12 @@ public class BlueTangModel<T extends BlueTang> extends HierarchicalModel<T> {
 	@Override
 	public void setupAnim(BlueTang entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
+
+		this.animateWalk(BlueTangAnimations.SWIM, limbSwing, limbSwingAmount, 4, 8);
+
+		this.swim_control.xRot = headPitch * (Mth.DEG_TO_RAD);
+		this.swim_control.zRot = netHeadYaw * ((Mth.DEG_TO_RAD) / 2);
+
 	}
 
 	@Override

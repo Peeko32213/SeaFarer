@@ -163,6 +163,18 @@ public final class ClientEvents {
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(SeafarerEntities.BARRELEYE.get(), BarreleyeRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.BLUE_TANG.get(), BlueTangRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.COPPERBAND_BUTTERFLY.get(), CopperbandButterflyRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.CHIMAERA.get(), ChimaeraRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.CRAB.get(), CrabRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.FILEFISH.get(), FilefishRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.FROG_FISH.get(), FrogfishRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.GARDEN_EEL.get(), GardenEelRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.HORSESHOE_CRAB.get(), HorseshoeCrabRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.LEAFY_SCORPIONFISH.get(), LeafyScorpionfishRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.MANDARIN_GOBY.get(), MandarinGobyRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.MANTA_RAY.get(), MantaRayRenderer::new);
+
     }
 
     @SubscribeEvent

@@ -16,9 +16,9 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.phys.Vec3;
 
-public class Mandarinfish extends EnhancedWaterAnimal {
+public class MandarinGoby extends EnhancedWaterAnimal {
 
-    public Mandarinfish(EntityType<? extends WaterAnimal> pEntityType, Level pLevel) {
+    public MandarinGoby(EntityType<? extends WaterAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.moveControl = new SmoothSwimmingMoveControl(this, 1000, 8, 0.02F, 0.1F, true);
         this.lookControl = new SmoothSwimmingLookControl(this, 8);
