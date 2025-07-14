@@ -3,6 +3,7 @@ package com.peeko32213.seafarer.events;
 
 import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.entities.*;
+import com.peeko32213.seafarer.entities.misc.unimplemented.*;
 import com.peeko32213.seafarer.registry.SeafarerEntities;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -23,16 +24,13 @@ public class MobEvents {
           event.put(SeafarerEntities.GARDEN_EEL.get(), GardenEel.createAttributes().build());
           event.put(SeafarerEntities.MANDARIN_GOBY.get(), MandarinGoby.createAttributes().build());
 //        event.put(SeafarerEntities.SEXY_SHRIMP.get(), SexyShrimpEntity.createAttributes().build());
-          event.put(SeafarerEntities.FROG_FISH.get(), Frogfish.createAttributes().build());
-          event.put(SeafarerEntities.BLUE_TANG.get(), BlueTang.createAttributes().build());
-          event.put(SeafarerEntities.COPPERBAND_BUTTERFLY.get(), CopperbandButterflyfish.createAttributes().build());
+//        event.put(SeafarerEntities.FROG_FISH.get(), Frogfish.createAttributes().build());
 //        event.put(SeafarerEntities.MANTIS_SHRIMP.get(), MantisShrimpEntity.createAttributes().build());
           event.put(SeafarerEntities.MANTA_RAY.get(), MantaRay.createAttributes().build());
 //        event.put(SeafarerEntities.PARROTFISH.get(), ParrotfishEntity.createAttributes().build());
-          event.put(SeafarerEntities.FILEFISH.get(), Filefish.createAttributes().build());
-          event.put(SeafarerEntities.LEAFY_SCORPIONFISH.get(), LeafyScorpionfish.createAttributes().build());
+//       event.put(SeafarerEntities.FILEFISH.get(), Filefish.createAttributes().build());
 //        event.put(SeafarerEntities.ZEBRA_SHARK.get(), ZebraSharkEntity.createAttributes().build());
-          event.put(SeafarerEntities.CHIMAERA.get(), Chimaera.createAttributes().build());
+//        event.put(SeafarerEntities.CHIMAERA.get(), Chimaera.createAttributes().build());
 //        event.put(SeafarerEntities.SPIDER_CRAB.get(), SpiderCrabEntity.createAttributes().build());
 //        event.put(SeafarerEntities.SQUIRRELFISH.get(), SquirrelfishEntity.createAttributes().build());
     }

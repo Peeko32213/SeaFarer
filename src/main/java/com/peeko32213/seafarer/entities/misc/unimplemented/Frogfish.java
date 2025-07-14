@@ -1,9 +1,12 @@
-package com.peeko32213.seafarer.entities;
+package com.peeko32213.seafarer.entities.misc.unimplemented;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.peeko32213.seafarer.entities.misc.StatedWaterAnimal;
+import com.peeko32213.seafarer.entities.Crab;
 import com.peeko32213.seafarer.entities.misc.goal.BottomWalkerFindWaterGoal;
 import com.peeko32213.seafarer.entities.misc.goal.BottomWalkerPathfinder;
+import com.peeko32213.seafarer.entities.misc.StatedWaterAnimal;
+import com.peeko32213.seafarer.entities.misc.state.EntityAction;
 import com.peeko32213.seafarer.entities.misc.state.StateHelper;
 import com.peeko32213.seafarer.entities.misc.state.WeightedState;
 import com.peeko32213.seafarer.registry.tags.SeafarerTags;
@@ -35,14 +38,25 @@ import net.minecraft.world.phys.Vec3;
 import java.util.EnumSet;
 import java.util.List;
 
-public class LeafyScorpionfish extends StatedWaterAnimal {
+public class Frogfish extends StatedWaterAnimal {
 
-    private static final EntityDataAccessor<Boolean> IS_SWALLOWING = SynchedEntityData.defineId(LeafyScorpionfish.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> LURE = SynchedEntityData.defineId(LeafyScorpionfish.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> IS_SWALLOWING = SynchedEntityData.defineId(Frogfish.class, EntityDataSerializers.BOOLEAN);
+    private static final EntityDataAccessor<Boolean> LURE = SynchedEntityData.defineId(Crab.class, EntityDataSerializers.BOOLEAN);
 
     private int eatCooldown = 0;
 
-    public LeafyScorpionfish(EntityType<? extends WaterAnimal> pEntityType, Level pLevel) {
+    private static final EntityAction LURE_ACTION = new EntityAction(0, (e) -> { return; } ,1);
+
+
+    private static final StateHelper LURE_STATE =
+            StateHelper.Builder.state(LURE, "lure")
+                    .playTime(10)
+                    .stopTime(73)
+                    .affectsAI(true)
+                    .entityAction(LURE_ACTION)
+                    .build();
+
+    public Frogfish(EntityType<? extends WaterAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
         this.setPathfindingMalus(BlockPathTypes.WATER_BORDER, 0.0F);
@@ -61,7 +75,7 @@ public class LeafyScorpionfish extends StatedWaterAnimal {
         this.goalSelector.addGoal(1, new RandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(5, new LookAtPlayerGoal(this, Player.class, 6.0F));
-        this.goalSelector.addGoal(2, new LeafyScorpionfish.EatFoodGoal(this));
+        this.goalSelector.addGoal(2, new Frogfish.EatFoodGoal(this));
         this.targetSelector.addGoal(1, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, false, false, entity -> entity.getType().is(getTargetTag())));
     }
 
@@ -125,27 +139,17 @@ public class LeafyScorpionfish extends StatedWaterAnimal {
         }
     }
 
-    @Override
-    public ImmutableMap<String, StateHelper> getStates() {
-        return null;
-    }
-
-    @Override
-    public List<WeightedState<StateHelper>> getWeightedStatesToPerform() {
-        return null;
-    }
-
 
     class EatFoodGoal extends Goal {
 
-        private final LeafyScorpionfish beelzebufo;
+        private final Frogfish beelzebufo;
         private Entity food;
 
         private int executionCooldown = 50;
 
 
-        public EatFoodGoal (LeafyScorpionfish beelzebufo){
-            this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
+        public EatFoodGoal (Frogfish beelzebufo){
+            this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
             this.beelzebufo = beelzebufo;
         }
 
@@ -200,7 +204,7 @@ public class LeafyScorpionfish extends StatedWaterAnimal {
     }
 
     private boolean isFood(Entity entity) {
-        return entity instanceof Mob && !(entity instanceof LeafyScorpionfish) && entity.getBbHeight() <= 1.0F;
+        return entity instanceof Mob && !(entity instanceof Frogfish) && entity.getBbHeight() <= 1.0F;
     }
 
     public boolean swallowEntity(Entity entity) {
@@ -220,4 +224,19 @@ public class LeafyScorpionfish extends StatedWaterAnimal {
         }
         return false;
     }
+
+    @Override
+    public ImmutableMap<String, StateHelper> getStates() {
+        return ImmutableMap.of(
+                LURE_STATE.getName(), LURE_STATE
+        );
+    }
+
+    @Override
+    public List<WeightedState<StateHelper>> getWeightedStatesToPerform() {
+        return ImmutableList.of(
+                WeightedState.of(LURE_STATE, 55)
+        );
+    }
+
 }

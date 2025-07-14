@@ -1,9 +1,9 @@
-package com.peeko32213.seafarer.client.models;
+package com.peeko32213.seafarer.client.models.unimplemented;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.peeko32213.seafarer.client.animations.BarreleyeAnimations;
-import com.peeko32213.seafarer.entities.Barreleye;
+import com.peeko32213.seafarer.client.animations.unimplemented.BarreleyeAnimations;
+import com.peeko32213.seafarer.entities.misc.unimplemented.Barreleye;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;

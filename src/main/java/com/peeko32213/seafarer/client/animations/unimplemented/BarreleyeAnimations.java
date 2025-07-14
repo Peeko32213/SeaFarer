@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.client.animations;
+package com.peeko32213.seafarer.client.animations.unimplemented;
 
 import net.minecraft.client.animation.AnimationChannel;
 import net.minecraft.client.animation.AnimationDefinition;

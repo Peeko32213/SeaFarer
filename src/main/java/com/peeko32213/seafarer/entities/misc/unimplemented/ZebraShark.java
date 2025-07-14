@@ -1,12 +1,9 @@
-package com.peeko32213.seafarer.entities;
+package com.peeko32213.seafarer.entities.misc.unimplemented;
 
-import com.peeko32213.seafarer.entities.base.SchoolingWaterAnimal;
-import com.peeko32213.seafarer.entities.misc.goal.CustomRandomSwimGoal;
-import com.peeko32213.seafarer.entities.misc.goal.FollowSchoolLeaderGoal;
-import net.minecraft.core.BlockPos;
+import com.peeko32213.seafarer.entities.base.EnhancedWaterAnimal;
+import com.peeko32213.seafarer.entities.misc.goal.GroundseekingRandomSwimGoal;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -14,39 +11,31 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingMoveControl;
 import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
-import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.phys.Vec3;
 
-public class BlueTang extends SchoolingWaterAnimal {
+public class ZebraShark extends EnhancedWaterAnimal {
 
-    public BlueTang(EntityType<? extends SchoolingWaterAnimal> pEntityType, Level pLevel) {
+    public ZebraShark(EntityType<? extends EnhancedWaterAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.moveControl = new SmoothSwimmingMoveControl(this, 1000, 6, 0.02F, 0.1F, true);
-        this.lookControl = new SmoothSwimmingLookControl(this, 4);
+        this.moveControl = new SmoothSwimmingMoveControl(this, 32, 10, 0.02F, 0.1F, true);
+        this.lookControl = new SmoothSwimmingLookControl(this, 10);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 4.0D)
-                .add(Attributes.MOVEMENT_SPEED, 1.1F);
+                .add(Attributes.MAX_HEALTH, 50.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.9F);
     }
 
-    @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
-        this.goalSelector.addGoal(1, new CustomRandomSwimGoal(this, 1, 1, 20, 20, 3));
-        this.goalSelector.addGoal(6, new FollowSchoolLeaderGoal(this));
+        this.goalSelector.addGoal(5, new GroundseekingRandomSwimGoal(this, 1, 24, 20, 32, 0.01));
     }
 
     protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
         return pSize.height * 0.5F;
-    }
-
-    @Override
-    public int getMaxSchoolSize() {
-        return 24;
     }
 
     public void travel(Vec3 pTravelVector) {
@@ -55,7 +44,7 @@ public class BlueTang extends SchoolingWaterAnimal {
             this.move(MoverType.SELF, this.getDeltaMovement());
             this.setDeltaMovement(this.getDeltaMovement().scale(0.9));
             if (this.getTarget() == null) {
-                this.setDeltaMovement(this.getDeltaMovement().add(0.0, -0.005, 0.0));
+                this.setDeltaMovement(this.getDeltaMovement().add(0.0, -0.0025, 0.0));
             }
         } else {
             super.travel(pTravelVector);
@@ -90,7 +79,7 @@ public class BlueTang extends SchoolingWaterAnimal {
         return SoundEvents.TROPICAL_FISH_FLOP;
     }
 
-    public static boolean canSpawn(EntityType<BlueTang> p_223364_0_, LevelAccessor p_223364_1_, MobSpawnType reason, BlockPos p_223364_3_, RandomSource p_223364_4_) {
-        return WaterAnimal.checkSurfaceWaterAnimalSpawnRules(p_223364_0_, p_223364_1_, reason, p_223364_3_, p_223364_4_);
+    public boolean checkSpawnObstruction(LevelReader pLevel) {
+        return pLevel.isUnobstructed(this);
     }
 }

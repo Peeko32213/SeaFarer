@@ -1,12 +1,9 @@
-package com.peeko32213.seafarer.entities;
+package com.peeko32213.seafarer.entities.misc.unimplemented;
 
-import com.peeko32213.seafarer.entities.base.SchoolingWaterAnimal;
-import com.peeko32213.seafarer.entities.misc.goal.CustomRandomSwimGoal;
-import com.peeko32213.seafarer.entities.misc.goal.FollowSchoolLeaderGoal;
-import net.minecraft.core.BlockPos;
+import com.peeko32213.seafarer.entities.base.EnhancedWaterAnimal;
+import com.peeko32213.seafarer.entities.misc.goal.GroundseekingRandomSwimGoal;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -14,39 +11,31 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingMoveControl;
 import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
-import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.phys.Vec3;
 
-public class CopperbandButterflyfish extends SchoolingWaterAnimal {
+public class Chimaera extends EnhancedWaterAnimal {
 
-    public CopperbandButterflyfish(EntityType<? extends SchoolingWaterAnimal> pEntityType, Level pLevel) {
+    public Chimaera(EntityType<? extends EnhancedWaterAnimal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.moveControl = new SmoothSwimmingMoveControl(this, 1000, 6, 0.02F, 0.1F, true);
-        this.lookControl = new SmoothSwimmingLookControl(this, 4);
+        this.moveControl = new SmoothSwimmingMoveControl(this, 40, 10, 0.02F, 0.1F, true);
+        this.lookControl = new SmoothSwimmingLookControl(this, 10);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 5.0D)
-                .add(Attributes.MOVEMENT_SPEED, 1.0F);
+                .add(Attributes.MAX_HEALTH, 20.0D)
+                .add(Attributes.MOVEMENT_SPEED, 0.7F);
     }
 
-    @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
-        this.goalSelector.addGoal(1, new CustomRandomSwimGoal(this, 1, 1, 24, 24, 3));
-        this.goalSelector.addGoal(6, new FollowSchoolLeaderGoal(this));
+        this.goalSelector.addGoal(4, new GroundseekingRandomSwimGoal(this, 1, 20, 16, 24, 0.01));
     }
 
     protected float getStandingEyeHeight(Pose pPose, EntityDimensions pSize) {
         return pSize.height * 0.5F;
-    }
-
-    @Override
-    public int getMaxSchoolSize() {
-        return 16;
     }
 
     public void travel(Vec3 pTravelVector) {
@@ -90,7 +79,7 @@ public class CopperbandButterflyfish extends SchoolingWaterAnimal {
         return SoundEvents.TROPICAL_FISH_FLOP;
     }
 
-    public static boolean canSpawn(EntityType<BlueTang> p_223364_0_, LevelAccessor p_223364_1_, MobSpawnType reason, BlockPos p_223364_3_, RandomSource p_223364_4_) {
-        return WaterAnimal.checkSurfaceWaterAnimalSpawnRules(p_223364_0_, p_223364_1_, reason, p_223364_3_, p_223364_4_);
+    public boolean checkSpawnObstruction(LevelReader pLevel) {
+        return pLevel.isUnobstructed(this);
     }
 }

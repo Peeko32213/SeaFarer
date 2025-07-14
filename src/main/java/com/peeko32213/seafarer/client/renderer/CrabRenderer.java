@@ -1,11 +1,7 @@
 package com.peeko32213.seafarer.client.renderer;
 
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.math.Axis;
 import com.peeko32213.seafarer.Seafarer;
-import com.peeko32213.seafarer.client.models.BlueTangModel;
 import com.peeko32213.seafarer.client.models.CrabModel;
-import com.peeko32213.seafarer.entities.BlueTang;
 import com.peeko32213.seafarer.entities.Crab;
 import com.peeko32213.seafarer.registry.SeafarerModelLayers;
 import net.minecraft.client.renderer.RenderType;

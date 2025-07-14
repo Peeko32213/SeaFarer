@@ -3,7 +3,6 @@ package com.peeko32213.seafarer.client.models;// Made with Blockbench 4.12.5
 // Paste this class into your mod and generate all required imports
 
 
-import com.peeko32213.seafarer.client.animations.FrogfishAnimations;
 import com.peeko32213.seafarer.client.animations.HorseshoeCrabAnimations;
 import com.peeko32213.seafarer.entities.HorseshoeCrab;
 import net.minecraft.client.model.HierarchicalModel;
@@ -12,7 +11,6 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
-import net.minecraft.util.Mth;
 
 public class HorseshoeCrabModel<T extends HorseshoeCrab> extends HierarchicalModel<T> {
 	private final ModelPart Body;

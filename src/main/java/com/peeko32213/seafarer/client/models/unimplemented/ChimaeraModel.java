@@ -1,10 +1,9 @@
-package com.peeko32213.seafarer.client.models;
+package com.peeko32213.seafarer.client.models.unimplemented;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.peeko32213.seafarer.client.animations.BarreleyeAnimations;
-import com.peeko32213.seafarer.client.animations.ChimaeraAnimations;
-import com.peeko32213.seafarer.entities.Chimaera;
+import com.peeko32213.seafarer.client.animations.unimplemented.ChimaeraAnimations;
+import com.peeko32213.seafarer.entities.misc.unimplemented.Chimaera;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;

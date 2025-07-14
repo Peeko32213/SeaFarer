@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.entities;
+package com.peeko32213.seafarer.entities.misc.unimplemented;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;

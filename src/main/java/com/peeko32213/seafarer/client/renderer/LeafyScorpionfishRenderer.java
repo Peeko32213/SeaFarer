@@ -1,10 +1,8 @@
 package com.peeko32213.seafarer.client.renderer;
 
 import com.peeko32213.seafarer.Seafarer;
-import com.peeko32213.seafarer.client.models.HorseshoeCrabModel;
-import com.peeko32213.seafarer.client.models.LeafyScorpionFishModel;
-import com.peeko32213.seafarer.entities.HorseshoeCrab;
-import com.peeko32213.seafarer.entities.LeafyScorpionfish;
+import com.peeko32213.seafarer.client.models.unimplemented.LeafyScorpionFishModel;
+import com.peeko32213.seafarer.entities.misc.unimplemented.LeafyScorpionfish;
 import com.peeko32213.seafarer.registry.SeafarerModelLayers;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

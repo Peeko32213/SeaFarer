@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.client.animations;// Save this class in your mod and generate all required imports
+package com.peeko32213.seafarer.client.animations.unimplemented;// Save this class in your mod and generate all required imports
 
 import net.minecraft.client.animation.AnimationDefinition;
 
