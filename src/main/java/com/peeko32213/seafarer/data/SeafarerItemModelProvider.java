@@ -30,27 +30,12 @@ public class SeafarerItemModelProvider extends ItemModelProvider {
             }
         }
 
-        // Food
         item(SeafarerItems.RAW_CRAB_LEG);
         item(SeafarerItems.COOKED_CRAB_LEG);
         item(SeafarerItems.RAW_HORSESHOE_CRAB);
         item(SeafarerItems.COOKED_HORSESHOE_CRAB);
         item(SeafarerItems.RAW_MARINE_IGUANA_TAIL);
         item(SeafarerItems.COOKED_MARINE_IGUANA_TAIL);
-        item(SeafarerItems.RAW_FROGFISH);
-        item(SeafarerItems.COOKED_FROGFISH);
-        item(SeafarerItems.RAW_BLUE_TANG);
-        item(SeafarerItems.COOKED_BLUE_TANG);
-        item(SeafarerItems.RAW_MANDARINFISH);
-        item(SeafarerItems.COOKED_MANDARINFISH);
-        item(SeafarerItems.RAW_SQUIRRELFISH);
-        item(SeafarerItems.COOKED_SQUIRRELFISH);
-        item(SeafarerItems.RAW_COPPERBAND_BUTTERFLYFISH);
-        item(SeafarerItems.COOKED_COPPERBAND_BUTTERFLYFISH);
-        item(SeafarerItems.RAW_GARDEN_EEL);
-        item(SeafarerItems.COOKED_GARDEN_EEL);
-        item(SeafarerItems.RAW_SEXY_SHRIMP);
-        item(SeafarerItems.COOKED_SEXY_SHRIMP);
         item(SeafarerItems.COOKED_STARFISH);
         item(SeafarerItems.SALTED_COD);
         item(SeafarerItems.SALTED_SALMON);
@@ -65,14 +50,11 @@ public class SeafarerItemModelProvider extends ItemModelProvider {
 //        item(SeafarerItems.HORSESHOE_CRAB_BUCKET);
 //        item(SeafarerItems.SQUIRRELFISH_BUCKET);
 
-        // Junk
         item(SeafarerItems.MESSAGE_IN_A_BOTTLE);
         item(SeafarerItems.OLD_BOOT);
         item(SeafarerItems.METAL_CAN);
 
-        // Misc
         item(SeafarerItems.SEA_SALT);
-
     }
 
     private void toBlock(RegistryObject<Block> b) {

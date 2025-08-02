@@ -1,12 +1,12 @@
-package com.peeko32213.seafarer.client.animations;// Save this class in your mod and generate all required imports
+package com.peeko32213.seafarer.client.animations;
 
 import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.client.animation.AnimationChannel;
-import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.client.animation.Keyframe;
 import net.minecraft.client.animation.KeyframeAnimations;
 
 public class MantaRayAnimations {
+
 	public static final AnimationDefinition SWIM = AnimationDefinition.Builder.withLength(2.0F).looping()
 		.addAnimation("Wing1", new AnimationChannel(AnimationChannel.Targets.ROTATION, 
 			new Keyframe(0.0F, KeyframeAnimations.degreeVec(0.0F, 0.0F, -30.0F), AnimationChannel.Interpolations.CATMULLROM),

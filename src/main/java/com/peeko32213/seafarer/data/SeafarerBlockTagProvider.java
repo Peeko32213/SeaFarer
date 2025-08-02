@@ -13,12 +13,13 @@ import org.jetbrains.annotations.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class SeafarerBlockTagProvider extends BlockTagsProvider {
+
     public SeafarerBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, Seafarer.MOD_ID, existingFileHelper);
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider pProvider) {
+    protected void addTags(HolderLookup.Provider provider) {
 
         tag(SeafarerTags.BEACH_PLANT_BLOCKS)
                 .addTag(BlockTags.DEAD_BUSH_MAY_PLACE_ON)

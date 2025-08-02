@@ -1,14 +1,7 @@
 package com.peeko32213.seafarer.entities;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.peeko32213.seafarer.entities.base.SemiAquaticAnimal;
-import com.peeko32213.seafarer.entities.misc.goal.*;
-import com.peeko32213.seafarer.entities.misc.interfaces.Brushable;
-import com.peeko32213.seafarer.entities.misc.state.EntityAction;
-import com.peeko32213.seafarer.entities.misc.state.RandomStateGoal;
-import com.peeko32213.seafarer.entities.misc.state.StateHelper;
-import com.peeko32213.seafarer.entities.misc.state.WeightedState;
+import com.peeko32213.seafarer.entities.ai.goal.*;
+import com.peeko32213.seafarer.entities.interfaces.Brushable;
 import com.peeko32213.seafarer.registry.SeafarerItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -25,8 +18,8 @@ import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.control.BodyRotationControl;
 import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
@@ -41,11 +34,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collections;
-import java.util.EnumSet;
 import java.util.List;
-import java.util.function.Predicate;
 
-public class MarineIguana extends SemiAquaticAnimal implements Brushable, IForgeShearable {
+public class MarineIguana extends Animal implements Brushable, IForgeShearable {
 
     private static final EntityDataAccessor<Integer> SALT = SynchedEntityData.defineId(MarineIguana.class, EntityDataSerializers.INT);
 
@@ -55,69 +46,7 @@ public class MarineIguana extends SemiAquaticAnimal implements Brushable, IForge
 
     private Level level;
 
-    private static final EntityDataAccessor<Boolean> SIT_1 = SynchedEntityData.defineId(MarineIguana.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> SIT_2 = SynchedEntityData.defineId(MarineIguana.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> SIT_3 = SynchedEntityData.defineId(MarineIguana.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> SNEEZE = SynchedEntityData.defineId(MarineIguana.class, EntityDataSerializers.BOOLEAN);
-
-    // Starting predicates
-    private static final Predicate<LivingEntity> IGUANA_STARTING_PREDICATE = (e -> {
-        if(e instanceof MarineIguana entity) {
-            return !entity.isSprinting() && !entity.isInWater();
-        }
-        return false;
-    });
-
-    private static final Predicate<LivingEntity> IGUANA_SNEEZE_PREDICATE = (e -> {
-        if(e instanceof MarineIguana entity) {
-            return !entity.isSprinting() && !entity.isInWater() && entity.canBeBrushed();
-        }
-        return false;
-    });
-
-    private static final EntityAction IGUANA_SIT_1_ACTION = new EntityAction(0, (e) -> {} ,1);
-    private static final StateHelper IGUANA_SIT_1_STATE =
-            StateHelper.Builder.state(SIT_1, "iguana_sit_1")
-                    .playTime(140)
-                    .stopTime(280)
-                    .startingPredicate(IGUANA_STARTING_PREDICATE)
-                    .affectsAI(true)
-                    .affectedFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK))
-                    .entityAction(IGUANA_SIT_1_ACTION)
-                    .build();
-
-    private static final EntityAction IGUANA_SIT_2_ACTION = new EntityAction(0, (e) -> {} ,1);
-    private static final StateHelper IGUANA_SIT_2_STATE =
-            StateHelper.Builder.state(SIT_2, "iguana_sit_2")
-                    .playTime(140)
-                    .stopTime(280)
-                    .startingPredicate(IGUANA_STARTING_PREDICATE)
-                    .affectsAI(true)
-                    .affectedFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK))
-                    .entityAction(IGUANA_SIT_2_ACTION)
-                    .build();
-
-    private static final EntityAction IGUANA_SIT_3_ACTION = new EntityAction(0, (e) -> {} ,1);
-    private static final StateHelper IGUANA_SIT_3_STATE =
-            StateHelper.Builder.state(SIT_3, "iguana_sit_3")
-                    .playTime(140)
-                    .stopTime(280)
-                    .startingPredicate(IGUANA_STARTING_PREDICATE)
-                    .affectsAI(true)
-                    .affectedFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK))
-                    .entityAction(IGUANA_SIT_3_ACTION)
-                    .build();
-
-    private static final EntityAction IGUANA_SNEEZE_ACTION = new EntityAction(0, (e) -> {} ,1);
-    private static final StateHelper IGUANA_SNEEZE_STATE =
-            StateHelper.Builder.state(SNEEZE, "iguana_sneeze")
-                    .playTime(20)
-                    .stopTime(180)
-                    .startingPredicate(IGUANA_SNEEZE_PREDICATE)
-                    .entityAction(IGUANA_SNEEZE_ACTION)
-                    .build();
-
-    public MarineIguana(EntityType<? extends SemiAquaticAnimal> pEntityType, Level pLevel) {
+    public MarineIguana(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
@@ -130,19 +59,15 @@ public class MarineIguana extends SemiAquaticAnimal implements Brushable, IForge
     protected void registerGoals() {
         this.eatBlockGoal = new GrazeAlgaeGoal(this);
         this.goalSelector.addGoal(2, this.eatBlockGoal);
-        this.goalSelector.addGoal(0, new RandomStateGoal<>(this));
         this.goalSelector.addGoal(4, new BigPanicGoal(this, 2.1D));
-        this.goalSelector.addGoal(7, new FindWaterGoal(this));
-        this.goalSelector.addGoal(7, new LeaveWaterGoal(this));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 6.0F));
-        this.goalSelector.addGoal(9, new SemiAquaticSwimmingGoal(this, 1.0D, 60));
         this.goalSelector.addGoal(9, new RandomStrollGoal(this, 1.0D, 60));
     }
 
     public float getStepHeight() {
-        if (this.isRunning() || this.isInWater()) {
-            return 1.25F;
+        if (this.isInWater()) {
+            return 1.0F;
         }
         return 0.6F;
     }
@@ -199,10 +124,6 @@ public class MarineIguana extends SemiAquaticAnimal implements Brushable, IForge
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(SALT, 0);
-        this.entityData.define(SIT_1, false);
-        this.entityData.define(SIT_2, false);
-        this.entityData.define(SIT_3, false);
-        this.entityData.define(SNEEZE, false);
     }
 
     public void addAdditionalSaveData(CompoundTag compound) {
@@ -223,27 +144,8 @@ public class MarineIguana extends SemiAquaticAnimal implements Brushable, IForge
         this.entityData.set(SALT, Salt);
     }
 
-    @Override
-    public boolean shouldEnterWater() {
-        return !shouldLeaveWater() && swimTimer <= -1000;
-    }
-
-    public boolean shouldLeaveWater() {
-        LivingEntity target = this.getTarget();
-        if (target != null && !target.isInWater()) {
-            return true;
-        }
-        return swimTimer > 600;
-    }
-
-    @Override
-    public int getWaterSearchRange() {
-        return 12;
-    }
-
     protected void playStepSound(BlockPos pos, BlockState state) {
         if (this.isInWater()) {
-
         }
         else {
             SoundType soundtype = state.getSoundType(this.level, pos, this);
@@ -302,25 +204,5 @@ public class MarineIguana extends SemiAquaticAnimal implements Brushable, IForge
     @Override
     public SoundEvent brushSound() {
         return SoundEvents.BRUSH_GENERIC;
-    }
-
-    @Override
-    public ImmutableMap<String, StateHelper> getStates() {
-        return ImmutableMap.of(
-                IGUANA_SIT_1_STATE.getName(), IGUANA_SIT_1_STATE,
-                IGUANA_SIT_2_STATE.getName(), IGUANA_SIT_2_STATE,
-                IGUANA_SIT_3_STATE.getName(), IGUANA_SIT_3_STATE,
-                IGUANA_SNEEZE_STATE.getName(), IGUANA_SNEEZE_STATE
-        );
-    }
-
-    @Override
-    public List<WeightedState<StateHelper>> getWeightedStatesToPerform() {
-        return ImmutableList.of(
-                WeightedState.of(IGUANA_SIT_1_STATE, 8),
-                WeightedState.of(IGUANA_SIT_2_STATE, 8),
-                WeightedState.of(IGUANA_SIT_3_STATE, 8),
-                WeightedState.of(IGUANA_SNEEZE_STATE, 12)
-        );
     }
 }

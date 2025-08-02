@@ -24,10 +24,10 @@ import java.util.function.Supplier;
 import static com.peeko32213.seafarer.data.SeafarerItemModelProvider.prefix;
 
 public class SeafarerPlacedFeatures {
+
     public static List<String> placedFeatureList = new ArrayList<>();
 
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = DeferredRegister.create(Registries.PLACED_FEATURE, Seafarer.MOD_ID);
-
 
     public static final ResourceKey<PlacedFeature> BEACHGRASS_PLACED = registerKey("beachgrass_placed");
     public static final ResourceKey<PlacedFeature> BEACHGRASS_FAN_PLACED = registerKey("beachgrass_fan_placed");
@@ -56,8 +56,8 @@ public class SeafarerPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SAND_TAG_PATCH_PLACED = registerKey("sand_tag_patch_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
-        HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
+        HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, BEACHGRASS_PLACED, configuredFeatures.getOrThrow(SeafarerConfiguredFeatures.BEACHGRASS), ImmutableList.of(
                 RarityFilter.onAverageOnceEvery(1),

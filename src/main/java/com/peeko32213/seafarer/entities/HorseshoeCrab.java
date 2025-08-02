@@ -1,11 +1,5 @@
 package com.peeko32213.seafarer.entities;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.peeko32213.seafarer.entities.misc.goal.NocturnalSleepingGoal;
-import com.peeko32213.seafarer.entities.misc.AbstractSleepingAnimal;
-import com.peeko32213.seafarer.entities.misc.state.StateHelper;
-import com.peeko32213.seafarer.entities.misc.state.WeightedState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -18,7 +12,6 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -26,16 +19,13 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Bucketable;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
-
-public class HorseshoeCrab extends AbstractSleepingAnimal implements Bucketable {
+public class HorseshoeCrab extends Animal implements Bucketable {
 
     private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(HorseshoeCrab.class, EntityDataSerializers.BOOLEAN);
 
@@ -55,7 +45,6 @@ public class HorseshoeCrab extends AbstractSleepingAnimal implements Bucketable 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new NocturnalSleepingGoal(this));
         this.goalSelector.addGoal(1, new PanicGoal(this, 1.25D));
         this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1.0D));
         this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 6.0F));
@@ -69,20 +58,6 @@ public class HorseshoeCrab extends AbstractSleepingAnimal implements Bucketable 
         return null;
     }
 
-    public boolean hurt(DamageSource pSource, float pAmount) {
-        if (this.isAsleep()) {
-            Entity entity = pSource.getDirectEntity();
-            if (entity instanceof AbstractArrow) {
-                return false;
-            }
-        }
-        return super.hurt(pSource, pAmount);
-    }
-
-    protected SoundEvent getHurtSound(DamageSource pDamageSource) {
-        return this.isAsleep() ? SoundEvents.SHIELD_BLOCK : SoundEvents.SHIELD_BREAK;
-    }
-
     @Nullable
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor levelAccessor, DifficultyInstance difficultyInstance, MobSpawnType spawnType, @Nullable SpawnGroupData spawnGroupData, @Nullable CompoundTag tag) {
         return super.finalizeSpawn(levelAccessor, difficultyInstance, spawnType, spawnGroupData, tag);
@@ -90,16 +65,6 @@ public class HorseshoeCrab extends AbstractSleepingAnimal implements Bucketable 
 
     public static boolean checkHorseshoeCrabSpawnRules(EntityType<? extends HorseshoeCrab> dino, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource p_186242_) {
         return isBrightEnoughToSpawn(level, pos);
-    }
-
-    @Override
-    public ImmutableMap<String, StateHelper> getStates() {
-        return ImmutableMap.of();
-    }
-
-    @Override
-    public List<WeightedState<StateHelper>> getWeightedStatesToPerform() {
-        return ImmutableList.of();
     }
 
     @Override

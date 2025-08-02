@@ -37,13 +37,6 @@ public class SeafarerLanguageProvider extends LanguageProvider {
         SeafarerPaintings.PAINTING_TRANSLATIONS.forEach(this::painting);
 
         // Raw food
-        addItem(SeafarerItems.RAW_FROGFISH, "Raw Frogfish");
-        addItem(SeafarerItems.RAW_BLUE_TANG, "Raw Blue Tang");
-        addItem(SeafarerItems.RAW_COPPERBAND_BUTTERFLYFISH, "Raw Copperband Butterflyfish");
-        addItem(SeafarerItems.RAW_SQUIRRELFISH, "Raw Squirrelfish");
-        addItem(SeafarerItems.RAW_MANDARINFISH, "Raw Mandarinfish");
-        addItem(SeafarerItems.RAW_SEXY_SHRIMP, "Raw Sexy Shrimp");
-        addItem(SeafarerItems.RAW_GARDEN_EEL, "Raw Garden Eel");
         addItem(SeafarerItems.RAW_HORSESHOE_CRAB, "Raw Horseshoe Crab");
         addItem(SeafarerItems.RAW_CRAB_LEG, "Raw Crab Leg");
         addItem(SeafarerItems.RAW_MARINE_IGUANA_TAIL, "Raw Marine Iguana Tail");
@@ -64,7 +57,6 @@ public class SeafarerLanguageProvider extends LanguageProvider {
         add("seafarer.message_in_a_bottle", "Message in a bottle");
         add("seafarer.message.structure_not_found", "Structure was not found!");
         add("seafarer.message.structure_search_failed", "Structure was not found!");
-
     }
 
     @Override

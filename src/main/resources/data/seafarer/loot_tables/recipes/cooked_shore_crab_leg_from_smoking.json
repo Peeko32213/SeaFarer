@@ -1,9 +1,0 @@
-{
-  "type": "minecraft:smoking",
-  "ingredient": {
-    "item": "seafarer:shore_crab_leg"
-  },
-  "result": "seafarer:cooked_shore_crab_leg",
-  "experience": 0.35,
-  "cookingtime": 100
-}

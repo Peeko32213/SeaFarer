@@ -1,12 +1,7 @@
 package com.peeko32213.seafarer.entities;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.peeko32213.seafarer.entities.base.EnhancedAnimal;
-import com.peeko32213.seafarer.entities.misc.goal.GrazeAlgaeGoal;
-import com.peeko32213.seafarer.entities.misc.state.*;
+import com.peeko32213.seafarer.entities.ai.goal.GrazeAlgaeGoal;
 import com.peeko32213.seafarer.registry.SeafarerBlocks;
-import com.peeko32213.seafarer.registry.SeafarerItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -23,6 +18,7 @@ import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Bucketable;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
@@ -35,47 +31,13 @@ import org.jetbrains.annotations.Nullable;
 import java.util.EnumSet;
 import java.util.List;
 
-public class Crab extends EnhancedAnimal implements Bucketable {
+public class Crab extends Animal implements Bucketable {
 
     private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(Crab.class, EntityDataSerializers.BOOLEAN);
 
-    private static final EntityDataAccessor<Boolean> WAVING = SynchedEntityData.defineId(Crab.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> CRAB_CLAWING = SynchedEntityData.defineId(Crab.class, EntityDataSerializers.BOOLEAN);
-    private static final EntityDataAccessor<Boolean> CRAB_BLINKING = SynchedEntityData.defineId(Crab.class, EntityDataSerializers.BOOLEAN);
-
-    private static final EntityAction CRAB_WAVE_ACTION = new EntityAction(0, (e) -> {} ,1);
-
-    private static final StateHelper CRAB_WAVE_STATE =
-            StateHelper.Builder.state(WAVING, "crab_waving")
-                    .playTime(60)
-                    .stopTime(100)
-                    .affectsAI(true)
-                    .affectedFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK))
-                    .entityAction(CRAB_WAVE_ACTION)
-                    .build();
-
-    private static final EntityAction CRAB_CLAW_ACTION = new EntityAction(0, (e) -> {} ,1);
-    private static final StateHelper CRAB_CLAW_STATE =
-            StateHelper.Builder.state(CRAB_CLAWING, "crab_clawing")
-                    .playTime(60)
-                    .stopTime(100)
-                    .affectsAI(true)
-                    .entityAction(CRAB_CLAW_ACTION)
-                    .build();
-
-    private static final EntityAction CRAB_BLINK_ACTION = new EntityAction(0, (e) -> {} ,1);
-    private static final StateHelper CRAB_BLINK_STATE =
-            StateHelper.Builder.state(CRAB_BLINKING, "crab_blinking")
-                    .playTime(60)
-                    .stopTime(100)
-                    .affectsAI(true)
-                    .affectedFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK))
-                    .entityAction(CRAB_BLINK_ACTION)
-                    .build();
-
     private int eatAnimationTick;
 
-    public Crab(EntityType<? extends EnhancedAnimal> pEntityType, Level pLevel) {
+    public Crab(EntityType<? extends Animal> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
@@ -88,7 +50,6 @@ public class Crab extends EnhancedAnimal implements Bucketable {
 
     @Override
     protected void registerGoals() {
-        this.goalSelector.addGoal(0, new RandomStateGoal<>(this));
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new PanicGoal(this, 1.25D));
         this.goalSelector.addGoal(2, new GrazeAlgaeGoal(this));
@@ -147,9 +108,6 @@ public class Crab extends EnhancedAnimal implements Bucketable {
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(FROM_BUCKET, false);
-        this.entityData.define(CRAB_BLINKING, false);
-        this.entityData.define(CRAB_CLAWING, false);
-        this.entityData.define(WAVING, false);
     }
 
     public void addAdditionalSaveData(CompoundTag compound) {
@@ -209,23 +167,5 @@ public class Crab extends EnhancedAnimal implements Bucketable {
 
     public static boolean checkCrabSpawnRules(EntityType<? extends Crab> dino, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource p_186242_) {
         return isBrightEnoughToSpawn(level, pos);
-    }
-
-    @Override
-    public ImmutableMap<String, StateHelper> getStates() {
-        return ImmutableMap.of(
-                CRAB_BLINK_STATE.getName(), CRAB_BLINK_STATE,
-                CRAB_CLAW_STATE.getName(), CRAB_CLAW_STATE,
-                CRAB_WAVE_STATE.getName(), CRAB_WAVE_STATE
-        );
-    }
-
-    @Override
-    public List<WeightedState<StateHelper>> getWeightedStatesToPerform() {
-        return ImmutableList.of(
-                WeightedState.of(CRAB_BLINK_STATE, 77),
-                WeightedState.of(CRAB_CLAW_STATE, 15),
-                WeightedState.of(CRAB_WAVE_STATE, 10)
-        );
     }
 }

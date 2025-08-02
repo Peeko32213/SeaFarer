@@ -1,7 +1,4 @@
-package com.peeko32213.seafarer.client.models;// Made with Blockbench 4.12.5
-// Exported for Minecraft version 1.17 or later with Mojang mappings
-// Paste this class into your mod and generate all required imports
-
+package com.peeko32213.seafarer.client.models;
 
 import com.peeko32213.seafarer.client.animations.CrabAnimations;
 import com.peeko32213.seafarer.entities.Crab;
@@ -12,8 +9,13 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
+@OnlyIn(Dist.CLIENT)
+@SuppressWarnings("FieldCanBeLocal, unused")
 public class CrabModel<T extends Crab> extends HierarchicalModel<T> {
+
 	private final ModelPart root;
 	private final ModelPart Body;
 	private final ModelPart Body_B;
@@ -124,7 +126,6 @@ public class CrabModel<T extends Crab> extends HierarchicalModel<T> {
 
 		this.Body.xRot = headPitch * (Mth.DEG_TO_RAD);
 		this.Body.zRot = netHeadYaw * ((Mth.DEG_TO_RAD) / 2);
-
 	}
 
 	@Override

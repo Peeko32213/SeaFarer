@@ -27,7 +27,6 @@ import static net.minecraft.advancements.critereon.InventoryChangeTrigger.Trigge
 
 public abstract class SeafarerRecipeProvider extends RecipeProvider {
 
-
     public SeafarerRecipeProvider(PackOutput pOutput) {
         super(pOutput);
     }

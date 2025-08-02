@@ -16,8 +16,8 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.eventbus.api.Cancelable;
 import net.minecraftforge.eventbus.api.Event;
 
-
 public class BrushingEvent extends Event {
+
     private final Level level;
     private final ItemStack item;
     private final Player player;

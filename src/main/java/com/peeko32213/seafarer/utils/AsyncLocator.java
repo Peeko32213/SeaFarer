@@ -16,6 +16,7 @@ import java.util.function.Consumer;
 
 // Source: https://github.com/thebrightspark/AsyncLocator/blob/1.19.x/src/main/java/brightspark/asynclocator/AsyncLocator.java
 public class AsyncLocator {
+
 	private static ExecutorService LOCATING_EXECUTOR_SERVICE = null;
 
 	private AsyncLocator() {

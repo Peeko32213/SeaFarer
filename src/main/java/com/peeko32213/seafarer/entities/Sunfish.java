@@ -1,8 +1,7 @@
 package com.peeko32213.seafarer.entities;
 
-import com.peeko32213.seafarer.entities.base.EnhancedWaterAnimal;
-import com.peeko32213.seafarer.entities.misc.goal.CustomRandomSwimGoal;
-import com.peeko32213.seafarer.entities.misc.goal.SFAquaticLeapGoal;
+import com.peeko32213.seafarer.entities.ai.goal.CustomRandomSwimGoal;
+import com.peeko32213.seafarer.entities.ai.goal.AquaticLeapGoal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -25,7 +24,7 @@ import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.Nullable;
 
-public class Sunfish extends EnhancedWaterAnimal {
+public class Sunfish extends WaterAnimal {
 
     public Sunfish(EntityType<? extends WaterAnimal> entityType, Level level) {
         super(entityType, level);
@@ -93,7 +92,7 @@ public class Sunfish extends EnhancedWaterAnimal {
     }
 
     // Goals
-    private class SunfishLeapGoal extends SFAquaticLeapGoal {
+    private class SunfishLeapGoal extends AquaticLeapGoal {
 
         public SunfishLeapGoal() {
             super(Sunfish.this, 5);

@@ -1,6 +1,5 @@
 package com.peeko32213.seafarer.worldgen.feature;
 
-import com.mojang.logging.LogUtils;
 import com.mojang.serialization.Codec;
 import com.peeko32213.seafarer.worldgen.feature.util.FastNoiseLite;
 import com.peeko32213.seafarer.registry.SeafarerBlocks;
@@ -18,12 +17,10 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.material.Fluids;
-import org.slf4j.Logger;
 
 import static net.minecraft.world.level.block.MultifaceBlock.getFaceProperty;
 
 public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
-    private static final Logger LOGGER = LogUtils.getLogger();
 
     public AlgaeBoulderFeature(Codec<NoneFeatureConfiguration> config) {
         super(config);
@@ -48,7 +45,6 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
         //if(!placeFeature){
         //   return false;
         //}
-
 
         double middleBlockZ = worldgenlevel.getChunk(blockpos.getX() >> 4, blockpos.getZ() >> 4).getPos().getMiddleBlockZ();
         double middleBlockX = worldgenlevel.getChunk(blockpos.getX() >> 4, blockpos.getZ() >> 4).getPos().getMiddleBlockX();
@@ -155,9 +151,8 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     public static double distance(double x, double y, double z, double xRadius, double yRadius, double zRadius) {
-        return Mth.square((double) x / (xRadius)) + Mth.square((double) y / (yRadius)) + Mth.square((double) z / (zRadius));
+        return Mth.square(x / (xRadius)) + Mth.square(y / (yRadius)) + Mth.square(z / (zRadius));
     }
-
 
     private static FastNoiseLite createNoise(long seed, float frequency) {
         FastNoiseLite noise = new FastNoiseLite((int) seed);

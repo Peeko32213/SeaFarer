@@ -12,16 +12,15 @@ import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
 
 public class SeafarerItemTagProvider extends ItemTagsProvider {
-    public SeafarerItemTagProvider(PackOutput p_275343_, CompletableFuture<HolderLookup.Provider> p_275729_,
-                                   CompletableFuture<TagLookup<Block>> p_275322_, @Nullable ExistingFileHelper existingFileHelper) {
-        super(p_275343_, p_275729_, p_275322_, Seafarer.MOD_ID, existingFileHelper);
+
+    public SeafarerItemTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, CompletableFuture<TagLookup<Block>> p_275322_, @Nullable ExistingFileHelper existingFileHelper) {
+        super(output, provider, p_275322_, Seafarer.MOD_ID, existingFileHelper);
     }
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        this.copy(SeafarerTags.STARFISH, SeafarerTags.STARFISH_ITEM);}
-
-
+        this.copy(SeafarerTags.STARFISH, SeafarerTags.STARFISH_ITEM);
+    }
 
     @Override
     public String getName() { return Seafarer.MOD_ID + " Item Tags";}

@@ -1,8 +1,8 @@
 package com.peeko32213.seafarer.entities;
 
 import com.peeko32213.seafarer.entities.base.SchoolingWaterAnimal;
-import com.peeko32213.seafarer.entities.misc.goal.CustomRandomSwimGoal;
-import com.peeko32213.seafarer.entities.misc.goal.FollowSchoolLeaderGoal;
+import com.peeko32213.seafarer.entities.ai.goal.CustomRandomSwimGoal;
+import com.peeko32213.seafarer.entities.ai.goal.FollowSchoolLeaderGoal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;

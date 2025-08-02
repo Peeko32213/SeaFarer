@@ -19,8 +19,9 @@ import java.util.function.Consumer;
 
 
 public class SeafarerRecipeGenerator extends SeafarerRecipeProvider implements IConditionBuilder {
-    public SeafarerRecipeGenerator(PackOutput pGenerator) {
-        super(pGenerator);
+
+    public SeafarerRecipeGenerator(PackOutput output) {
+        super(output);
     }
 
     public static final int FAST_COOKING = 100;        // 5 seconds

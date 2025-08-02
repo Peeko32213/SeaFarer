@@ -33,7 +33,9 @@ import org.jetbrains.annotations.Nullable;
 
 @Mod.EventBusSubscriber(modid = Seafarer.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class ForgeEvents {
+
     private static final double MAX_BRUSH_DISTANCE = Math.sqrt(ServerGamePacketListenerImpl.MAX_INTERACTION_DISTANCE) - 1.0D;
+
     @SubscribeEvent
     public static void serverAboutToStart(final ServerAboutToStartEvent event) {
         AsyncLocator.handleServerAboutToStartEvent();
@@ -43,7 +45,6 @@ public class ForgeEvents {
     public static void onServerStopping(final ServerStoppingEvent event) {
         AsyncLocator.handleServerStoppingEvent();
     }
-
 
     @SubscribeEvent
     public static void brushSaltFromBlock(BrushingEvent.Block event) {
@@ -71,8 +72,6 @@ public class ForgeEvents {
             }
         }
     }
-
-
 
     private static void spawnEntityParticles(@Nullable ParticleOptions options, Level level, EntityHitResult hitResult, Vec3 vec, HumanoidArm arm) {
         double d0 = 3.0D;
@@ -102,19 +101,13 @@ public class ForgeEvents {
         for(int k = 0; k < j; ++k) {
             level.addParticle(blockparticleoption, vec3.x - (double)(direction == Direction.WEST ? 1.0E-6F : 0.0F), vec3.y, vec3.z - (double)(direction == Direction.NORTH ? 1.0E-6F : 0.0F), brushitem$dustparticlesdelta.xd() * (double)i * 3.0D * level.getRandom().nextDouble(), 0.0D, brushitem$dustparticlesdelta.zd() * (double)i * 3.0D * level.getRandom().nextDouble());
         }
-
     }
-
-
-
 
     public static HitResult calculateHitResult(LivingEntity entity) {
         return ProjectileUtil.getHitResultOnViewVector(entity, (p_281111_) -> {
             return !p_281111_.isSpectator() && p_281111_.isPickable();
         }, MAX_BRUSH_DISTANCE);
     }
-
-
 
     record DustParticlesDelta(double xd, double yd, double zd) {
         private static final double ALONG_SIDE_DELTA = 1.0D;
@@ -143,7 +136,6 @@ public class ForgeEvents {
                 default:
                     throw new IncompatibleClassChangeError();
             }
-
             return brushitem$dustparticlesdelta;
         }
     }

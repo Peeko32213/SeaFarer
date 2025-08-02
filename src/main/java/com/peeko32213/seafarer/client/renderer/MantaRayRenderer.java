@@ -1,9 +1,7 @@
 package com.peeko32213.seafarer.client.renderer;
 
 import com.peeko32213.seafarer.Seafarer;
-import com.peeko32213.seafarer.client.models.MandarinGobyModel;
 import com.peeko32213.seafarer.client.models.MantaRayModel;
-import com.peeko32213.seafarer.entities.MandarinGoby;
 import com.peeko32213.seafarer.entities.MantaRay;
 import com.peeko32213.seafarer.registry.SeafarerModelLayers;
 import net.minecraft.client.renderer.RenderType;
@@ -20,7 +18,7 @@ public class MantaRayRenderer extends MobRenderer<MantaRay, MantaRayModel<MantaR
     private static final ResourceLocation TEXTURE = new ResourceLocation(Seafarer.MOD_ID, "textures/entity/manta_ray.png");
 
     public MantaRayRenderer(EntityRendererProvider.Context context) {
-        super(context, new MantaRayModel<>(context.bakeLayer(SeafarerModelLayers.LEAFY_SCORPIONFISH_LAYER)), 0.4F);
+        super(context, new MantaRayModel<>(context.bakeLayer(SeafarerModelLayers.MANTA_RAY_LAYER)), 0.8F);
     }
 
     @Override

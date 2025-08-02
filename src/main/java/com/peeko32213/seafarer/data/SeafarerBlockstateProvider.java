@@ -21,6 +21,7 @@ import static com.peeko32213.seafarer.Seafarer.modPrefix;
 import static net.minecraftforge.client.model.generators.ModelProvider.BLOCK_FOLDER;
 
 public class SeafarerBlockstateProvider extends BlockStateProvider {
+
     public SeafarerBlockstateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, Seafarer.MOD_ID, exFileHelper);
     }

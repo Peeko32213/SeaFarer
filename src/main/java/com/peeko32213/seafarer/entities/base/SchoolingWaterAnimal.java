@@ -95,9 +95,7 @@ public abstract class SchoolingWaterAnimal extends WaterAnimal {
     }
 
     public void addFollowers(Stream<? extends SchoolingWaterAnimal> entity) {
-        entity.limit(this.getMaxSchoolSize() - this.schoolSize).filter((entity1) -> entity1 != this).forEach((entity2) -> {
-            entity2.startFollowing(this);
-        });
+        entity.limit(this.getMaxSchoolSize() - this.schoolSize).filter((entity1) -> entity1 != this).forEach((entity2) -> entity2.startFollowing(this));
     }
 
     @Nullable

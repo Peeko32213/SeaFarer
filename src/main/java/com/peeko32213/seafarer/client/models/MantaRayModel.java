@@ -1,7 +1,4 @@
-package com.peeko32213.seafarer.client.models;// Made with Blockbench 4.12.5
-// Exported for Minecraft version 1.17 or later with Mojang mappings
-// Paste this class into your mod and generate all required imports
-
+package com.peeko32213.seafarer.client.models;
 
 import com.peeko32213.seafarer.client.animations.MantaRayAnimations;
 import com.peeko32213.seafarer.entities.MantaRay;
@@ -11,8 +8,13 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
+@OnlyIn(Dist.CLIENT)
+@SuppressWarnings("FieldCanBeLocal, unused")
 public class MantaRayModel<T extends MantaRay> extends HierarchicalModel<T> {
+
 	private final ModelPart swim_control;
 	private final ModelPart Body;
 	private final ModelPart Wing1;
@@ -68,14 +70,12 @@ public class MantaRayModel<T extends MantaRay> extends HierarchicalModel<T> {
 	public void setupAnim(MantaRay entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 
-
 		this.animateWalk(MantaRayAnimations.SWIM, limbSwing, limbSwingAmount, 4, 8);
-
 	}
 
 	@Override
 	public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-		Body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+		this.Body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
 	}
 
 	public ModelPart root() {

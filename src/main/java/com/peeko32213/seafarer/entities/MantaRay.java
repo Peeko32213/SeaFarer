@@ -1,8 +1,7 @@
 package com.peeko32213.seafarer.entities;
 
-import com.peeko32213.seafarer.entities.base.EnhancedWaterAnimal;
-import com.peeko32213.seafarer.entities.misc.goal.CustomRandomSwimGoal;
-import com.peeko32213.seafarer.entities.misc.goal.SFAquaticLeapGoal;
+import com.peeko32213.seafarer.entities.ai.goal.CustomRandomSwimGoal;
+import com.peeko32213.seafarer.entities.ai.goal.AquaticLeapGoal;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -19,7 +18,7 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.level.Level;
 
-public class MantaRay extends EnhancedWaterAnimal {
+public class MantaRay extends WaterAnimal {
 
     public MantaRay(EntityType<? extends WaterAnimal> entityType, Level level) {
         super(entityType, level);
@@ -75,7 +74,7 @@ public class MantaRay extends EnhancedWaterAnimal {
     }
 
     // Goals
-    private class MantaRayLeapGoal extends SFAquaticLeapGoal {
+    private class MantaRayLeapGoal extends AquaticLeapGoal {
 
         public MantaRayLeapGoal() {
             super(MantaRay.this, 5);

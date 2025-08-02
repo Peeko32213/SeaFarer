@@ -1,12 +1,10 @@
 package com.peeko32213.seafarer.events;
 
 import com.peeko32213.seafarer.Seafarer;
-import com.peeko32213.seafarer.client.models.unimplemented.BarreleyeModel;
 import com.peeko32213.seafarer.registry.SeafarerItemProperties;
 import com.peeko32213.seafarer.client.renderer.*;
 import com.peeko32213.seafarer.registry.SeafarerBlocks;
 import com.peeko32213.seafarer.registry.SeafarerEntities;
-import com.peeko32213.seafarer.registry.SeafarerModelLayers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -162,21 +160,12 @@ public final class ClientEvents {
 
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        //event.registerEntityRenderer(SeafarerEntities.BARRELEYE.get(), BarreleyeRenderer::new);
-        //event.registerEntityRenderer(SeafarerEntities.CHIMAERA.get(), ChimaeraRenderer::new);
         event.registerEntityRenderer(SeafarerEntities.CRAB.get(), CrabRenderer::new);
-        //event.registerEntityRenderer(SeafarerEntities.FILEFISH.get(), FilefishRenderer::new);
-        //event.registerEntityRenderer(SeafarerEntities.FROG_FISH.get(), FrogfishRenderer::new);
-        event.registerEntityRenderer(SeafarerEntities.GARDEN_EEL.get(), GardenEelRenderer::new);
         event.registerEntityRenderer(SeafarerEntities.HORSESHOE_CRAB.get(), HorseshoeCrabRenderer::new);
-        //event.registerEntityRenderer(SeafarerEntities.LEAFY_SCORPIONFISH.get(), LeafyScorpionfishRenderer::new);
-        event.registerEntityRenderer(SeafarerEntities.MANDARIN_GOBY.get(), MandarinGobyRenderer::new);
         event.registerEntityRenderer(SeafarerEntities.MANTA_RAY.get(), MantaRayRenderer::new);
-
     }
 
     @SubscribeEvent
     public static void registerEntityLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(SeafarerModelLayers.BARRELEYE_LAYER, BarreleyeModel::createBodyLayer);
     }
 }
