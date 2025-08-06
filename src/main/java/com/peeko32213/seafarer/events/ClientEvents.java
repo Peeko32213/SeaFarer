@@ -1,10 +1,13 @@
 package com.peeko32213.seafarer.events;
 
 import com.peeko32213.seafarer.Seafarer;
+import com.peeko32213.seafarer.client.models.*;
+import com.peeko32213.seafarer.client.models.unimplemented.BarreleyeModel;
 import com.peeko32213.seafarer.registry.SeafarerItemProperties;
 import com.peeko32213.seafarer.client.renderer.*;
 import com.peeko32213.seafarer.registry.SeafarerBlocks;
 import com.peeko32213.seafarer.registry.SeafarerEntities;
+import com.peeko32213.seafarer.registry.SeafarerModelLayers;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -162,10 +165,22 @@ public final class ClientEvents {
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(SeafarerEntities.CRAB.get(), CrabRenderer::new);
         event.registerEntityRenderer(SeafarerEntities.HORSESHOE_CRAB.get(), HorseshoeCrabRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.MARINE_IGUANA.get(), MarineIguanaRenderer::new);
         event.registerEntityRenderer(SeafarerEntities.MANTA_RAY.get(), MantaRayRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.PARROTFISH.get(), ParrotfishRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.SUNFISH.get(), SunfishRenderer::new);
+
     }
 
     @SubscribeEvent
     public static void registerEntityLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(SeafarerModelLayers.CRAB_LAYER, CrabModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.HORSESHOE_CRAB_LAYER, HorseshoeCrabModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.MARINE_IGUANA_LAYER, MarineIguanaModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.MANTA_RAY_LAYER, MantaRayModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.PARROTFISH_LAYER, ParrotfishModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.SUNFISH_LAYER, SunfishModel::createBodyLayer);
+
+
     }
 }
