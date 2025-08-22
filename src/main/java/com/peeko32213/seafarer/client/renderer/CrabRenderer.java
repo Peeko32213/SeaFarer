@@ -18,7 +18,7 @@ public class CrabRenderer extends MobRenderer<Crab, CrabModel<Crab>> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(Seafarer.MOD_ID, "textures/entity/crab.png");
 
     public CrabRenderer(EntityRendererProvider.Context context) {
-        super(context, new CrabModel<>(context.bakeLayer(SeafarerModelLayers.CRAB_LAYER)), 0.4F);
+        super(context, new CrabModel<>(context.bakeLayer(SeafarerModelLayers.CRAB)), 0.4F);
     }
 
     @Override

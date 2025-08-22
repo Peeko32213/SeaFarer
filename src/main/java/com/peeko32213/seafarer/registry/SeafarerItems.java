@@ -31,7 +31,7 @@ public class SeafarerItems {
     public static final RegistryObject<Item> CRAB_SPAWN_EGG = registerSpawnEggItem("crab", SeafarerEntities.CRAB , 0xed5515, 0xffdf4f);
     public static final RegistryObject<Item> HORSESHOE_CRAB_SPAWN_EGG = registerSpawnEggItem("horseshoe_crab", SeafarerEntities.HORSESHOE_CRAB , 0x2d2219, 0x473d2c);
     public static final RegistryObject<Item> MANTA_RAY_SPAWN_EGG = registerSpawnEggItem("manta_ray", SeafarerEntities.MANTA_RAY , 0x070708, 0xedf5f5);
-    public static final RegistryObject<Item> MARINE_IGUANA_SPAWN_EGG = registerSpawnEggItem("marine_iguana", SeafarerEntities.MARINE_IGUANA , 0xb43324, 0x4fdecb);
+//    public static final RegistryObject<Item> MARINE_IGUANA_SPAWN_EGG = registerSpawnEggItem("marine_iguana", SeafarerEntities.MARINE_IGUANA , 0xb43324, 0x4fdecb);
     public static final RegistryObject<Item> PARROTFISH_SPAWN_EGG = registerSpawnEggItem("parrotfish", SeafarerEntities.PARROTFISH , 0x2ac9e5, 0xfbb1ea);
     public static final RegistryObject<Item> SUNFISH_SPAWN_EGG = registerSpawnEggItem("sunfish", SeafarerEntities.SUNFISH , 0x628398, 0x33436b);
 

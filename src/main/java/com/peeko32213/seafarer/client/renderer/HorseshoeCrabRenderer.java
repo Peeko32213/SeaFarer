@@ -18,7 +18,7 @@ public class HorseshoeCrabRenderer extends MobRenderer<HorseshoeCrab, HorseshoeC
     private static final ResourceLocation TEXTURE = new ResourceLocation(Seafarer.MOD_ID, "textures/entity/horseshoecrab.png");
 
     public HorseshoeCrabRenderer(EntityRendererProvider.Context context) {
-        super(context, new HorseshoeCrabModel<>(context.bakeLayer(SeafarerModelLayers.HORSESHOE_CRAB_LAYER)), 0.4F);
+        super(context, new HorseshoeCrabModel<>(context.bakeLayer(SeafarerModelLayers.HORSESHOE_CRAB)), 0.4F);
     }
 
     @Override

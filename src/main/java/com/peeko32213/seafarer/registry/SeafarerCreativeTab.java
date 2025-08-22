@@ -35,21 +35,6 @@ public class SeafarerCreativeTab {
                     output.accept(SeafarerItems.COOKED_HORSESHOE_CRAB.get());
                     output.accept(SeafarerItems.RAW_MARINE_IGUANA_TAIL.get());
                     output.accept(SeafarerItems.COOKED_MARINE_IGUANA_TAIL.get());
-                    output.accept(SeafarerItems.RAW_FROGFISH.get());
-                    output.accept(SeafarerItems.COOKED_FROGFISH.get());
-                    output.accept(SeafarerItems.RAW_BLUE_TANG.get());
-                    output.accept(SeafarerItems.COOKED_BLUE_TANG.get());
-                    output.accept(SeafarerItems.RAW_COPPERBAND_BUTTERFLYFISH.get());
-                    output.accept(SeafarerItems.COOKED_COPPERBAND_BUTTERFLYFISH.get());
-                    output.accept(SeafarerItems.RAW_GARDEN_EEL.get());
-                    output.accept(SeafarerItems.COOKED_GARDEN_EEL.get());
-                    output.accept(SeafarerItems.RAW_SEXY_SHRIMP.get());
-                    output.accept(SeafarerItems.COOKED_SEXY_SHRIMP.get());
-                    output.accept(SeafarerItems.RAW_MANDARINFISH.get());
-                    output.accept(SeafarerItems.COOKED_MANDARINFISH.get());
-                    output.accept(SeafarerItems.RAW_SQUIRRELFISH.get());
-                    output.accept(SeafarerItems.COOKED_SQUIRRELFISH.get());
-                    output.accept(SeafarerItems.COOKED_MARINE_IGUANA_TAIL.get());
                     output.accept(SeafarerBlocks.COMMON_ORANGE_STARFISH.get());
                     output.accept(SeafarerBlocks.PINK_STARFISH.get());
                     output.accept(SeafarerBlocks.RED_STARFISH.get());
@@ -331,11 +316,6 @@ public class SeafarerCreativeTab {
                     output.accept(SeafarerBlocks.ROSE_SEA_GLASS_TILE_SLAB.get());
                     output.accept(SeafarerBlocks.ROSE_SEA_GLASS_LAMP.get());
                     output.accept(SeafarerBlocks.ROSE_SEA_GLASS_BOTTLE.get());
-
-                    // Unsorted stuff
-                    if (!(item.get() instanceof ForgeSpawnEggItem)) {
-                        output.accept(item.get());
-                    }
                 }
             })
             .build());

@@ -18,7 +18,7 @@ public class MantaRayRenderer extends MobRenderer<MantaRay, MantaRayModel<MantaR
     private static final ResourceLocation TEXTURE = new ResourceLocation(Seafarer.MOD_ID, "textures/entity/manta_ray.png");
 
     public MantaRayRenderer(EntityRendererProvider.Context context) {
-        super(context, new MantaRayModel<>(context.bakeLayer(SeafarerModelLayers.MANTA_RAY_LAYER)), 0.8F);
+        super(context, new MantaRayModel<>(context.bakeLayer(SeafarerModelLayers.MANTA_RAY)), 0.8F);
     }
 
     @Override
