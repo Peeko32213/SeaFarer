@@ -58,7 +58,7 @@ public class SunfishModel<T extends Sunfish> extends HierarchicalModel<T> {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 
 		if (entity.isInWaterOrBubble()) {
-			this.animateWalk(SunfishAnimations.SWIM, limbSwing, limbSwingAmount, 4, 8);
+			this.animateWalk(SunfishAnimations.SWIM, limbSwing, limbSwingAmount, 6, 12);
 		} else {
 			this.animate(entity.flopAnimationState, SunfishAnimations.FLOP, ageInTicks);
 		}
@@ -68,7 +68,7 @@ public class SunfishModel<T extends Sunfish> extends HierarchicalModel<T> {
 		float partialTicks = ageInTicks - entity.tickCount;
 		float landProgress = prevOnLandProgress + (onLandProgress - prevOnLandProgress) * partialTicks;
 
-		this.root.xRot = headPitch * (Mth.DEG_TO_RAD);
+		this.root.xRot = headPitch * (Mth.DEG_TO_RAD) / 4;
 		this.root.zRot += landProgress * ((float) Math.toRadians(-90) / 10F);
 	}
 

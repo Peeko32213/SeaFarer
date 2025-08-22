@@ -10,7 +10,7 @@ import net.minecraft.world.item.Item;
 public class SeafarerItemProperties {
 
     public static void addItemProperties(){
-//        createVariantForBucket(SeafarerItems.CRAB_BUCKET.get());
+//        createVariantForBucket(SeafarerItems.SHORE_CRAB_BUCKET.get());
 //        createVariantForBucket(SeafarerItems.HORSESHOE_CRAB_BUCKET.get());
 //        createVariantForBucket(SeafarerItems.SQUIRRELFISH_BUCKET.get());
     }

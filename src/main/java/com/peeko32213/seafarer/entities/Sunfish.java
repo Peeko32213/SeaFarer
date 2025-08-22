@@ -1,9 +1,6 @@
 package com.peeko32213.seafarer.entities;
 
-import com.peeko32213.seafarer.entities.ai.goal.CustomRandomSwimGoal;
-import com.peeko32213.seafarer.entities.ai.goal.AquaticLeapGoal;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.FluidTags;
@@ -14,6 +11,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingMoveControl;
+import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
@@ -22,6 +20,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class Sunfish extends WaterAnimal {
@@ -33,31 +32,30 @@ public class Sunfish extends WaterAnimal {
 
     public Sunfish(EntityType<? extends WaterAnimal> entityType, Level level) {
         super(entityType, level);
-        this.moveControl = new SmoothSwimmingMoveControl(this, 85, 5, 0.02F, 0.1F, true);
-        this.lookControl = new SmoothSwimmingLookControl(this, 4);
+        this.moveControl = new SmoothSwimmingMoveControl(this, 40, 1, 0.02F, 0.1F, true);
+        this.lookControl = new SmoothSwimmingLookControl(this, 1);
     }
 
     @Override
-    protected PathNavigation createNavigation(Level level) {
+    protected @NotNull PathNavigation createNavigation(@NotNull Level level) {
         return new WaterBoundPathNavigation(this, level);
     }
 
     public static AttributeSupplier.Builder createAttributes() {
         return Mob.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 16.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.8F);
+                .add(Attributes.MOVEMENT_SPEED, 0.5F);
     }
 
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
-        this.goalSelector.addGoal(1, new CustomRandomSwimGoal(this, 1, 1, 16, 16, 3));
-        this.goalSelector.addGoal(2, new SunfishLeapGoal(this));
+        this.goalSelector.addGoal(1, new RandomSwimmingGoal(this, 1, 10));
     }
 
     @Override
     protected float getStandingEyeHeight(Pose pose, EntityDimensions size) {
-        return size.height * 0.5F;
+        return size.height * 0.7F;
     }
 
     @Override
@@ -68,6 +66,9 @@ public class Sunfish extends WaterAnimal {
             this.setDeltaMovement(this.getDeltaMovement().scale(0.9D));
             if (this.getTarget() == null) {
                 this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.005D, 0.0D));
+            }
+            if (!this.isEyeInFluid(FluidTags.WATER)) {
+                this.setDeltaMovement(this.getDeltaMovement().add(0.0D, -0.05D, 0.0D));
             }
         } else {
             super.travel(travelVec);
@@ -135,23 +136,5 @@ public class Sunfish extends WaterAnimal {
         int seaLevel = level.getSeaLevel();
         int spawnHeight = seaLevel - 13;
         return pos.getY() >= spawnHeight && pos.getY() <= seaLevel && level.getFluidState(pos.below()).is(FluidTags.WATER) && level.getBlockState(pos.above()).is(Blocks.WATER);
-    }
-
-    // Goals
-    static class SunfishLeapGoal extends AquaticLeapGoal {
-
-        private final Sunfish sunfish;
-
-        public SunfishLeapGoal(Sunfish sunfish) {
-            super(sunfish, 20);
-            this.sunfish = sunfish;
-        }
-
-        @Override
-        public void start() {
-            Direction direction = sunfish.getMotionDirection();
-            sunfish.setDeltaMovement(sunfish.getDeltaMovement().add((double) direction.getStepX() * 1.1D, 0.8D, (double) direction.getStepZ() * 1.1D));
-            sunfish.getNavigation().stop();
-        }
     }
 }

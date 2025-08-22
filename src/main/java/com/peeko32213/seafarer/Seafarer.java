@@ -3,7 +3,6 @@ package com.peeko32213.seafarer;
 import com.peeko32213.seafarer.events.ClientEvents;
 import com.peeko32213.seafarer.data.*;
 import com.peeko32213.seafarer.registry.*;
-import com.peeko32213.seafarer.registry.SeafarerBlockEntities;
 import com.peeko32213.seafarer.registry.SeafarerBlocks;
 import com.peeko32213.seafarer.data.SeafarerBlockstateProvider;
 import com.peeko32213.seafarer.data.SeafarerItemModelProvider;
@@ -27,8 +26,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegistryObject;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.Locale;
 import java.util.concurrent.CompletableFuture;
@@ -38,8 +35,6 @@ import java.util.function.Supplier;
 public class Seafarer {
 
     public static final String MOD_ID = "seafarer";
-    private static int packetsRegistered;
-    public static final Logger LOGGER = LogManager.getLogger();
 
     public Seafarer() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -52,7 +47,6 @@ public class Seafarer {
         SeafarerCreativeTab.DEF_REG.register(bus);
         SeafarerEntities.ENTITY_TYPES.register(bus);
         SeafarerFeatures.FEATURES.register(bus);
-        SeafarerBlockEntities.BLOCK_ENTITIES.register(bus);
         SeafarerLootModifiers.LOOT_MODIFIERS.register(bus);
         SeafarerSoundEvents.DEF_REG.register(bus);
         SeafarerPaintings.PAINTING_VARIANTS.register(bus);
@@ -62,7 +56,6 @@ public class Seafarer {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            SeafarerEntityPlacement.entityPlacement();
             addToFlowerPot(SeafarerBlocks.COASTAL_LAVENDER, SeafarerBlocks.POTTED_COASTAL_LAVENDER);
             addToFlowerPot(SeafarerBlocks.COASTAL_WILDFLOWER, SeafarerBlocks.POTTED_COASTAL_WILDFLOWER);
             addToFlowerPot(SeafarerBlocks.SEA_THRIFT, SeafarerBlocks.POTTED_SEA_THRIFT);
@@ -88,7 +81,6 @@ public class Seafarer {
         generator.addProvider(server, datapackEntries);
         provider = datapackEntries.getRegistryProvider();
 
-        // Server generators
         SeafarerBlockTagProvider blockTags = new SeafarerBlockTagProvider(output, provider, helper);
         generator.addProvider(server, blockTags);
         generator.addProvider(server, new SeafarerItemTagProvider(output, provider, blockTags.contentsGetter(), helper));
@@ -98,7 +90,6 @@ public class Seafarer {
         generator.addProvider(server, new SeafarerRecipeGenerator(output));
         generator.addProvider(server, SeafarerLootProvider.create(output));
 
-        // Client generators
         generator.addProvider(client, new SeafarerBlockstateProvider(output, helper));
         generator.addProvider(client, new SeafarerItemModelProvider(output, helper));
         generator.addProvider(client, new SeafarerLanguageProvider(output));

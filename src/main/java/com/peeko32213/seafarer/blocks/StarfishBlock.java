@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.blocks.starfish;
+package com.peeko32213.seafarer.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;

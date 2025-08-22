@@ -7,6 +7,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.tags.StructureTags;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.saveddata.maps.MapDecoration;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
@@ -22,40 +23,36 @@ public class SeafarerItems {
 
     public static List<RegistryObject<? extends Item>> AUTO_TRANSLATE = new ArrayList<>();
 
-    public static Item.Properties drinkItem() {
-        return new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16);
-    }
-
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Seafarer.MOD_ID);
 
-    public static final RegistryObject<Item> CRAB_SPAWN_EGG = registerSpawnEggItem("crab", SeafarerEntities.CRAB , 0xed5515, 0xffdf4f);
-    public static final RegistryObject<Item> HORSESHOE_CRAB_SPAWN_EGG = registerSpawnEggItem("horseshoe_crab", SeafarerEntities.HORSESHOE_CRAB , 0x2d2219, 0x473d2c);
-    public static final RegistryObject<Item> MANTA_RAY_SPAWN_EGG = registerSpawnEggItem("manta_ray", SeafarerEntities.MANTA_RAY , 0x070708, 0xedf5f5);
-//    public static final RegistryObject<Item> MARINE_IGUANA_SPAWN_EGG = registerSpawnEggItem("marine_iguana", SeafarerEntities.MARINE_IGUANA , 0xb43324, 0x4fdecb);
-    public static final RegistryObject<Item> PARROTFISH_SPAWN_EGG = registerSpawnEggItem("parrotfish", SeafarerEntities.PARROTFISH , 0x2ac9e5, 0xfbb1ea);
-    public static final RegistryObject<Item> SUNFISH_SPAWN_EGG = registerSpawnEggItem("sunfish", SeafarerEntities.SUNFISH , 0x628398, 0x33436b);
+    public static final RegistryObject<Item> SHORE_CRAB_SPAWN_EGG = registerSpawnEgg("shore_crab", SeafarerEntities.SHORE_CRAB, 0xf3901f, 0x92fedb);
+    public static final RegistryObject<Item> HORSESHOE_CRAB_SPAWN_EGG = registerSpawnEgg("horseshoe_crab", SeafarerEntities.HORSESHOE_CRAB , 0x251a13, 0x473d2c);
+    public static final RegistryObject<Item> MANTA_RAY_SPAWN_EGG = registerSpawnEgg("manta_ray", SeafarerEntities.MANTA_RAY , 0x070708, 0xedf5f5);
+//    public static final RegistryObject<Item> MARINE_IGUANA_SPAWN_EGG = registerSpawnEgg("marine_iguana", SeafarerEntities.MARINE_IGUANA , 0xb43324, 0x4fdecb);
+    public static final RegistryObject<Item> PARROTFISH_SPAWN_EGG = registerSpawnEgg("parrotfish", SeafarerEntities.PARROTFISH , 0x2ac9e5, 0xfbb1ea);
+    public static final RegistryObject<Item> SUNFISH_SPAWN_EGG = registerSpawnEgg("sunfish", SeafarerEntities.SUNFISH , 0x628398, 0x33436b);
 
-    public static final RegistryObject<Item> RAW_CRAB_LEG = registerItemNoLang("crab_leg", () -> new Item(new Item.Properties().food(SeafarerFoodValues.RAW_SHORE_CRAB)));
+    public static final RegistryObject<Item> RAW_SHORE_CRAB_LEG = registerItemNoLang("shore_crab_leg", () -> new Item(new Item.Properties().food(SeafarerFoodValues.RAW_SHORE_CRAB)));
     public static final RegistryObject<Item> RAW_HORSESHOE_CRAB = registerItemNoLang("horseshoe_crab", () -> new Item(new Item.Properties().food(SeafarerFoodValues.RAW_HORSESHOE_CRAB)));
     public static final RegistryObject<Item> RAW_MARINE_IGUANA_TAIL = registerItemNoLang("marine_iguana_tail", () -> new Item(new Item.Properties().food(SeafarerFoodValues.RAW_MARINE_IGUANA)));
 
-    public static final RegistryObject<Item> COOKED_CRAB_LEG = registerItem("cooked_crab_leg", () -> new Item(new Item.Properties().food(SeafarerFoodValues.COOKED_SHORE_CRAB)));
+    public static final RegistryObject<Item> COOKED_SHORE_CRAB_LEG = registerItem("cooked_shore_crab_leg", () -> new Item(new Item.Properties().food(SeafarerFoodValues.COOKED_SHORE_CRAB)));
     public static final RegistryObject<Item> COOKED_HORSESHOE_CRAB = registerItem("cooked_horseshoe_crab", () -> new Item(new Item.Properties().food(SeafarerFoodValues.COOKED_HORSESHOE_CRAB)));
     public static final RegistryObject<Item> COOKED_MARINE_IGUANA_TAIL = registerItem("cooked_marine_iguana_tail", () -> new Item(new Item.Properties().food(SeafarerFoodValues.COOKED_MARINE_IGUANA)));
     public static final RegistryObject<Item> COOKED_STARFISH = registerItem("cooked_starfish", () -> new Item(new Item.Properties().food(SeafarerFoodValues.COOKED_STARFISH)));
 
     public static final RegistryObject<Item> OLD_BOOT = registerItem("old_boot", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> METAL_CAN = registerItem("metal_can", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> MESSAGE_IN_A_BOTTLE = registerItem("message_in_a_bottle", () -> new MessageInABottleItem(StructureTags.ON_TREASURE_MAPS, "seafarer.message_in_bottle", MapDecoration.Type.MONUMENT,new Item.Properties()));
-    public static final RegistryObject<Item> SOY_SAUCE = registerItem("soy_sauce", () -> new SeafarerDrinkableItem(drinkItem().stacksTo(16).food(SeafarerFoodValues.SOY_SAUCE), false, false));
+    public static final RegistryObject<Item> MESSAGE_IN_A_BOTTLE = registerItem("message_in_a_bottle", () -> new MessageInABottleItem(StructureTags.ON_TREASURE_MAPS, "filled_map.buried_treasure", MapDecoration.Type.RED_X,new Item.Properties()));
+    public static final RegistryObject<Item> SOY_SAUCE = registerItem("soy_sauce", () -> new SeafarerDrinkableItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).food(SeafarerFoodValues.SOY_SAUCE), false, false));
     public static final RegistryObject<Item> SEA_SALT = registerItem("sea_salt", () -> new Item(new Item.Properties().food(SeafarerFoodValues.SALT)));
     public static final RegistryObject<Item> SALTED_COD = registerItem("salted_cod", () -> new Item(new Item.Properties().food(SeafarerFoodValues.SALTED_COD)));
     public static final RegistryObject<Item> SALTED_SALMON = registerItem("salted_salmon", () -> new Item(new Item.Properties().food(SeafarerFoodValues.SALTED_SALMON)));
     public static final RegistryObject<Item> SALTED_TROPICAL_FISH = registerItem("salted_tropical_fish", () -> new Item(new Item.Properties().food(SeafarerFoodValues.SALTED_TROPICAL_FISH)));
     public static final RegistryObject<Item> SALTED_STARFISH = registerItem("salted_starfish", () -> new Item(new Item.Properties().food(SeafarerFoodValues.SALTED_STARFISH)));
 
-//    public static final RegistryObject<Item> CRAB_BUCKET = registerItemNoLang("crab_bucket", () -> new SeafarerFishBucket(SeafarerEntities.CRAB, () -> Fluids.FLOWING_WATER, false, new Item.Properties().stacksTo(1)));
-//    public static final RegistryObject<Item> HORSESHOE_CRAB_BUCKET = registerItemNoLang("horseshoe_crab_bucket", () -> new SeafarerFishBucket(SeafarerEntities.HORSESHOE_CRAB, () -> Fluids.FLOWING_WATER, false, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> SHORE_CRAB_BUCKET = registerItemNoLang("shore_crab_bucket", () -> new SeafarerMobBucketItem(SeafarerEntities.SHORE_CRAB, () -> Fluids.WATER, false, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> HORSESHOE_CRAB_BUCKET = registerItemNoLang("horseshoe_crab_bucket", () -> new SeafarerMobBucketItem(SeafarerEntities.HORSESHOE_CRAB, () -> Fluids.WATER, false, new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> CLAM_SHOVEL = registerItem("clam_shovel", () -> new ShovelItem(SeafarerTiers.SHELL,  1.5F, -3.0F, new Item.Properties()));
     public static final RegistryObject<Item> HORN_PICKAXE = registerItem("horn_pickaxe", () -> new PickaxeItem(SeafarerTiers.SHELL,  1, -2.8F, new Item.Properties()));
@@ -91,7 +88,7 @@ public class SeafarerItems {
         }
     });
 
-    public static RegistryObject<Item> registerSpawnEggItem(String name, RegistryObject type, int baseColor, int spotColor) {
+    public static RegistryObject<Item> registerSpawnEgg(String name, RegistryObject type, int baseColor, int spotColor) {
         return registerItem(name + "_spawn_egg", () -> new ForgeSpawnEggItem(type, baseColor, spotColor, new Item.Properties()));
     }
 

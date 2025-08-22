@@ -10,13 +10,6 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
 public class SeafarerDrinkableItem extends SeafarerConsumableItem {
-    public SeafarerDrinkableItem(Item.Properties properties) {
-        super(properties);
-    }
-
-    public SeafarerDrinkableItem(Item.Properties properties, boolean hasFoodEffectTooltip) {
-        super(properties, hasFoodEffectTooltip);
-    }
 
     public SeafarerDrinkableItem(Item.Properties properties, boolean hasPotionEffectTooltip, boolean hasCustomTooltip) {
         super(properties, hasPotionEffectTooltip, hasCustomTooltip);

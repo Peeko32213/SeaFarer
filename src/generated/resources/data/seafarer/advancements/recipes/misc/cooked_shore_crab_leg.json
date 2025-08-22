@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_seafarer:crab_leg": {
+    "has_seafarer:shore_crab_leg": {
       "conditions": {
         "items": [
           {
             "items": [
-              "seafarer:crab_leg"
+              "seafarer:shore_crab_leg"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "seafarer:cooked_crab_leg"
+        "recipe": "seafarer:cooked_shore_crab_leg"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_seafarer:crab_leg",
+      "has_seafarer:shore_crab_leg",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "seafarer:cooked_crab_leg"
+      "seafarer:cooked_shore_crab_leg"
     ]
   },
   "sends_telemetry_event": false

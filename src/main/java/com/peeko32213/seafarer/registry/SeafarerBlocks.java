@@ -4,7 +4,6 @@ import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.blocks.*;
 import com.peeko32213.seafarer.blocks.shell.PyramidShellBlock;
 import com.peeko32213.seafarer.blocks.shell.ShellBlock;
-import com.peeko32213.seafarer.blocks.starfish.*;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PlaceOnWaterBlockItem;
@@ -160,14 +159,14 @@ public class SeafarerBlocks {
 
     public static final RegistryObject<Block> FISHING_NET = registerPlaceOnWaterBlockItem("fishing_net", () -> new FishingNet(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion().strength(0.2F).sound(SoundType.LADDER)));
 
-    public static final RegistryObject<Block> COMMON_ORANGE_STARFISH = registerBlock("common_orange_starfish", () -> new CommonOrangeStarfish(SeafarerBlockProperties.starfish(MapColor.COLOR_ORANGE)));
-    public static final RegistryObject<Block> PINK_STARFISH = registerBlock("pink_starfish", () -> new PinkStarfish(SeafarerBlockProperties.starfish(MapColor.COLOR_PINK)));
-    public static final RegistryObject<Block> RED_STARFISH = registerBlock("red_starfish", () -> new RedStarfish(SeafarerBlockProperties.starfish(MapColor.COLOR_RED)));
-    public static final RegistryObject<Block> CHOCOLATE_CHIP_STARFISH = registerBlock("chocolate_chip_starfish", () -> new ChocolateChipStarfish(SeafarerBlockProperties.starfish(MapColor.COLOR_BROWN)));
-    public static final RegistryObject<Block> BLUE_STARFISH = registerBlock("blue_starfish", () -> new BlueStarfish(SeafarerBlockProperties.starfish(MapColor.COLOR_BLUE)));
-    public static final RegistryObject<Block> PURPLE_OCHRE_STARFISH = registerBlock("purple_ochre_starfish", () -> new PurpleOchreStarfish(SeafarerBlockProperties.starfish(MapColor.COLOR_MAGENTA)));
-    public static final RegistryObject<Block> ROYAL_STARFISH = registerBlock("royal_starfish", () -> new RoyalStarfish(SeafarerBlockProperties.starfish(MapColor.COLOR_PURPLE)));
-    public static final RegistryObject<Block> OCHRE_STARFISH = registerBlock("ochre_starfish", () -> new OchreStarfish(SeafarerBlockProperties.starfish(MapColor.COLOR_YELLOW)));
+    public static final RegistryObject<Block> COMMON_ORANGE_STARFISH = registerBlock("common_orange_starfish", () -> new StarfishBlock(SeafarerBlockProperties.starfish(MapColor.COLOR_ORANGE)));
+    public static final RegistryObject<Block> PINK_STARFISH = registerBlock("pink_starfish", () -> new StarfishBlock(SeafarerBlockProperties.starfish(MapColor.COLOR_PINK)));
+    public static final RegistryObject<Block> RED_STARFISH = registerBlock("red_starfish", () -> new StarfishBlock(SeafarerBlockProperties.starfish(MapColor.COLOR_RED)));
+    public static final RegistryObject<Block> CHOCOLATE_CHIP_STARFISH = registerBlock("chocolate_chip_starfish", () -> new StarfishBlock(SeafarerBlockProperties.starfish(MapColor.COLOR_BROWN)));
+    public static final RegistryObject<Block> BLUE_STARFISH = registerBlock("blue_starfish", () -> new StarfishBlock(SeafarerBlockProperties.starfish(MapColor.COLOR_BLUE)));
+    public static final RegistryObject<Block> PURPLE_OCHRE_STARFISH = registerBlock("purple_ochre_starfish", () -> new StarfishBlock(SeafarerBlockProperties.starfish(MapColor.COLOR_MAGENTA)));
+    public static final RegistryObject<Block> ROYAL_STARFISH = registerBlock("royal_starfish", () -> new StarfishBlock(SeafarerBlockProperties.starfish(MapColor.COLOR_PURPLE)));
+    public static final RegistryObject<Block> OCHRE_STARFISH = registerBlock("ochre_starfish", () -> new StarfishBlock(SeafarerBlockProperties.starfish(MapColor.COLOR_YELLOW)));
 
     public static final RegistryObject<Block> ALGAE_BLOCK = registerBlock("algae_block",
             () -> new AlgaeBlock(BlockBehaviour.Properties

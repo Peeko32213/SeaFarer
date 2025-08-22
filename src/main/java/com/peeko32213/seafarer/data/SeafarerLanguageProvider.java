@@ -38,21 +38,12 @@ public class SeafarerLanguageProvider extends LanguageProvider {
 
         // Raw food
         addItem(SeafarerItems.RAW_HORSESHOE_CRAB, "Raw Horseshoe Crab");
-        addItem(SeafarerItems.RAW_CRAB_LEG, "Raw Crab Leg");
+        addItem(SeafarerItems.RAW_SHORE_CRAB_LEG, "Raw Shore Crab Leg");
         addItem(SeafarerItems.RAW_MARINE_IGUANA_TAIL, "Raw Marine Iguana Tail");
 
-//        addItem(SeafarerItems.CRAB_BUCKET, "Bucket of Crab");
-//        addItem(SeafarerItems.HORSESHOE_CRAB_BUCKET, "Bucket of Horseshoe Crab");
+        addItem(SeafarerItems.SHORE_CRAB_BUCKET, "Bucket of Shore Crab");
+        addItem(SeafarerItems.HORSESHOE_CRAB_BUCKET, "Bucket of Horseshoe Crab");
 //        addItem(SeafarerItems.SQUIRRELFISH_BUCKET, "Bucket of Squirrelfish");
-
-        add("seafarer.common_orange_starfish", "Common Orange");
-        add("seafarer.pink_starfish", "Pink");
-        add("seafarer.red_starfish", "Red");
-        add("seafarer.chocolate_chip_starfish", "Chocolate Chip");
-        add("seafarer.blue_starfish", "Blue");
-        add("seafarer.purple_ochre_starfish", "Purple Ochre");
-        add("seafarer.ochre_starfish", "Ochre");
-        add("seafarer.royal_starfish", "Royal");
 
         add("seafarer.message_in_a_bottle", "Message in a bottle");
         add("seafarer.message.structure_not_found", "Structure was not found!");

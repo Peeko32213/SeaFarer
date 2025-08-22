@@ -237,7 +237,7 @@ public class SeafarerRecipeGenerator extends SeafarerRecipeProvider implements I
         makeBlockHoe(SeafarerItems.SPIRAL_HOE, SeafarerBlocks.SPIRAL_SHELL).save(consumer);
         makeBlockAxe(SeafarerItems.SWIRL_AXE, SeafarerBlocks.SWIRL_SHELL).save(consumer);
 
-        smeltingRecipe(SeafarerItems.COOKED_CRAB_LEG.get(), SeafarerItems.RAW_CRAB_LEG.get(), 10, 1).save(consumer);
+        smeltingRecipe(SeafarerItems.COOKED_SHORE_CRAB_LEG.get(), SeafarerItems.RAW_SHORE_CRAB_LEG.get(), 10, 1).save(consumer);
 
         smeltingRecipe(SeafarerItems.COOKED_HORSESHOE_CRAB.get(), SeafarerItems.RAW_HORSESHOE_CRAB.get(), 10, 1).save(consumer);
 

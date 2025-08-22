@@ -30,8 +30,8 @@ public class SeafarerItemModelProvider extends ItemModelProvider {
             }
         }
 
-        item(SeafarerItems.RAW_CRAB_LEG);
-        item(SeafarerItems.COOKED_CRAB_LEG);
+        item(SeafarerItems.RAW_SHORE_CRAB_LEG);
+        item(SeafarerItems.COOKED_SHORE_CRAB_LEG);
         item(SeafarerItems.RAW_HORSESHOE_CRAB);
         item(SeafarerItems.COOKED_HORSESHOE_CRAB);
         item(SeafarerItems.RAW_MARINE_IGUANA_TAIL);
@@ -46,8 +46,8 @@ public class SeafarerItemModelProvider extends ItemModelProvider {
         item(SeafarerItems.SEA_URCHIN);
         item(SeafarerItems.SOY_SAUCE);
 
-//        item(SeafarerItems.CRAB_BUCKET);
-//        item(SeafarerItems.HORSESHOE_CRAB_BUCKET);
+        item(SeafarerItems.SHORE_CRAB_BUCKET);
+        item(SeafarerItems.HORSESHOE_CRAB_BUCKET);
 //        item(SeafarerItems.SQUIRRELFISH_BUCKET);
 
         item(SeafarerItems.MESSAGE_IN_A_BOTTLE);

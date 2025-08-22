@@ -29,8 +29,8 @@ public class SeafarerCreativeTab {
                     });
 
                     // food
-                    output.accept(SeafarerItems.RAW_CRAB_LEG.get());
-                    output.accept(SeafarerItems.COOKED_CRAB_LEG.get());
+                    output.accept(SeafarerItems.RAW_SHORE_CRAB_LEG.get());
+                    output.accept(SeafarerItems.COOKED_SHORE_CRAB_LEG.get());
                     output.accept(SeafarerItems.RAW_HORSESHOE_CRAB.get());
                     output.accept(SeafarerItems.COOKED_HORSESHOE_CRAB.get());
                     output.accept(SeafarerItems.RAW_MARINE_IGUANA_TAIL.get());
@@ -63,8 +63,8 @@ public class SeafarerCreativeTab {
                     output.accept(SeafarerItems.MESSAGE_IN_A_BOTTLE.get());
 
                     // buckets
-//                    output.accept(SeafarerItems.CRAB_BUCKET.get());
-//                    output.accept(SeafarerItems.HORSESHOE_CRAB_BUCKET.get());
+                    output.accept(SeafarerItems.HORSESHOE_CRAB_BUCKET.get());
+                    output.accept(SeafarerItems.SHORE_CRAB_BUCKET.get());
 //                    output.accept(SeafarerItems.SQUIRRELFISH_BUCKET.get());
 
                     // shells

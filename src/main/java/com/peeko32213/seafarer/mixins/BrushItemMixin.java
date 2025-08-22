@@ -8,10 +8,13 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BrushItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
@@ -30,9 +33,9 @@ public class BrushItemMixin extends Item {
     }
 
     @Override
-    public InteractionResult interactLivingEntity(ItemStack pStack, Player pPlayer, LivingEntity pInteractionTarget, InteractionHand pUsedHand) {
-        if (pPlayer != null && ForgeEvents.calculateHitResult(pPlayer).getType() == HitResult.Type.ENTITY) {
-            pPlayer.startUsingItem(pUsedHand);
+    public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity entity, InteractionHand hand) {
+        if (player != null && ForgeEvents.calculateHitResult(player).getType() == HitResult.Type.ENTITY) {
+            player.startUsingItem(hand);
         }
         return InteractionResult.CONSUME;
     }
@@ -45,19 +48,18 @@ public class BrushItemMixin extends Item {
     }
 
     @Inject(method = "onUseTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/LivingEntity;releaseUsingItem()V"), locals = LocalCapture.CAPTURE_FAILEXCEPTION, cancellable = true)
-    private void seafarer$injectEntityBrushEventAndBrushable(Level level, LivingEntity pLivingEntity, ItemStack stack, int pRemainingUseDuration, CallbackInfo ci) {
-        if (pLivingEntity instanceof Player player) {
+    private void seafarer$injectEntityBrushEventAndBrushable(Level level, LivingEntity entity, ItemStack stack, int useDuration, CallbackInfo ci) {
+        if (entity instanceof Player player) {
             HitResult hitresult = ForgeEvents.calculateHitResult(player);
             if (hitresult instanceof EntityHitResult entityHitResult) {
                 if (hitresult.getType() == HitResult.Type.ENTITY) {
                     net.minecraft.world.entity.Entity targetEntity = entityHitResult.getEntity();
                     if (targetEntity instanceof Brushable brushable) {
                         brushable.startBrusing();
-                        int i = stack.getUseDuration() - pRemainingUseDuration + 1;
+                        int i = stack.getUseDuration() - useDuration + 1;
                         boolean flag = i % 10 == 5;
                         if (flag) {
                             BlockPos pos = targetEntity.blockPosition();
-
                             BrushingEvent.Entity brushingEvent = new BrushingEvent.Entity(level, stack, player, entityHitResult, targetEntity, pos);
                             MinecraftForge.EVENT_BUS.post(brushingEvent);
                             if (!brushingEvent.isCanceled()) {
@@ -65,12 +67,11 @@ public class BrushItemMixin extends Item {
                                     if (brushable.brushSound() != null) {
                                         level.playSound(null, pos, brushable.brushSound(), player == null ? SoundSource.BLOCKS : SoundSource.PLAYERS);
                                     }
-                                    java.util.List<ItemStack> drops = brushable.brush(level.getGameTime(), player, entityHitResult.getEntity().getDirection(), stack, targetEntity.level(), pos,
-                                            net.minecraft.world.item.enchantment.EnchantmentHelper.getItemEnchantmentLevel(net.minecraft.world.item.enchantment.Enchantments.BLOCK_FORTUNE, stack));
-                                    java.util.Random rand = new java.util.Random();
-                                    drops.forEach(d -> {
-                                        net.minecraft.world.entity.item.ItemEntity ent = targetEntity.spawnAtLocation(d, 1.0F);
-                                        ent.setDeltaMovement(ent.getDeltaMovement().add((double) ((rand.nextFloat() - rand.nextFloat()) * 0.1F), (double) (rand.nextFloat() * 0.05F), (double) ((rand.nextFloat() - rand.nextFloat()) * 0.1F)));
+                                    java.util.List<ItemStack> drops = brushable.brush(level.getGameTime(), player, entityHitResult.getEntity().getDirection(), stack, targetEntity.level(), pos, EnchantmentHelper.getItemEnchantmentLevel(Enchantments.BLOCK_FORTUNE, stack));
+                                    java.util.Random random = new java.util.Random();
+                                    drops.forEach(itemStack -> {
+                                        ItemEntity itemEntity = targetEntity.spawnAtLocation(itemStack, 1.0F);
+                                        itemEntity.setDeltaMovement(itemEntity.getDeltaMovement().add((random.nextFloat() - random.nextFloat()) * 0.1F, random.nextFloat() * 0.05F, (random.nextFloat() - random.nextFloat()) * 0.1F));
                                     });
                                     stack.hurtAndBreak(1, player, e -> e.broadcastBreakEvent(player.getUsedItemHand()));
                                     brushable.endBrushing();

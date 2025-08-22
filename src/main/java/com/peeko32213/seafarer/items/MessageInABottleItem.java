@@ -19,42 +19,43 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class MessageInABottleItem extends Item {
+
     public static final Logger LOGGER = LogManager.getLogger();
     private final TagKey<Structure> destination;
     private final String displayName;
     private final MapDecoration.Type destinationType;
+
     public MessageInABottleItem(TagKey<Structure> destination, String displayName, MapDecoration.Type destinationType, Properties pProperties) {
         super(pProperties);
         this.destination = destination;
         this.displayName = displayName;
         this.destinationType = destinationType;
-
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player pPlayer, InteractionHand pUsedHand) {
-        ItemStack stack = pPlayer.getItemInHand(pUsedHand);
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand pUsedHand) {
+        ItemStack stack = player.getItemInHand(pUsedHand);
         if (level instanceof ServerLevel serverlevel) {
-            if(!pPlayer.isCreative()) {
+            if(!player.isCreative()) {
                 ItemStack bottleStack = Items.GLASS_BOTTLE.getDefaultInstance();
-                ItemStack itemstack2 = ItemUtils.createFilledResult(stack, pPlayer, bottleStack);
+                ItemStack itemstack2 = ItemUtils.createFilledResult(stack, player, bottleStack);
             }
-            serverlevel.playSound(null, pPlayer.blockPosition(), SoundEvents.BOOK_PAGE_TURN, SoundSource.PLAYERS, 1, 1);
+            serverlevel.playSound(null, player.blockPosition(), SoundEvents.BOOK_PAGE_TURN, SoundSource.PLAYERS, 1, 1);
             boolean findUnexplored = false;
-            pPlayer.getCooldowns().addCooldown(this, 4800);
-            var async = AsyncLocator.locate(serverlevel, destination, pPlayer.blockPosition(), 50, findUnexplored);
+            player.getCooldowns().addCooldown(this, 200);
+            var async = AsyncLocator.locate(serverlevel, destination, player.blockPosition(), 50, findUnexplored);
             async.thenOnServerThread(pair -> {
                 BlockPos blockpos = pair;
                 if (blockpos == null) {
-                    pPlayer.displayClientMessage(Component.translatable("seafarer.message.structure_not_found"), false);
-                    serverlevel.playSound(null, pPlayer.blockPosition(), SoundEvents.WAXED_SIGN_INTERACT_FAIL, SoundSource.PLAYERS, 1, 1);
+                    player.displayClientMessage(Component.translatable("seafarer.message.structure_not_found"), false);
+                    serverlevel.playSound(null, player.blockPosition(), SoundEvents.WAXED_SIGN_INTERACT_FAIL, SoundSource.PLAYERS, 1, 1);
                 } else {
                     ItemStack itemstack = MapItem.create(serverlevel, blockpos.getX(), blockpos.getZ(), (byte) 2, true, true);
                     MapItem.renderBiomePreviewMap(serverlevel, itemstack);
                     MapItemSavedData.addTargetDecoration(itemstack, blockpos, "+", this.destinationType);
                     itemstack.setHoverName(Component.translatable(this.displayName));
-                    findEmptySlotAndPlaceItem(pPlayer, itemstack);
-                    serverlevel.playSound(null, pPlayer.blockPosition(), SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.PLAYERS, 1, 1);
+                    findEmptySlotAndPlaceItem(player, itemstack);
+                    serverlevel.playSound(null, player.blockPosition(), SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.PLAYERS, 1, 1);
                 }
             });
             return InteractionResultHolder.success(stack);

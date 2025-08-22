@@ -13,12 +13,12 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 
 @OnlyIn(Dist.CLIENT)
-public class HorseshoeCrabRenderer extends MobRenderer<HorseshoeCrab, HorseshoeCrabModel<HorseshoeCrab>> {
+public class HorseshoeCrabRenderer extends MobRenderer<HorseshoeCrab, HorseshoeCrabModel> {
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(Seafarer.MOD_ID, "textures/entity/horseshoecrab.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(Seafarer.MOD_ID, "textures/entity/horseshoe_crab.png");
 
     public HorseshoeCrabRenderer(EntityRendererProvider.Context context) {
-        super(context, new HorseshoeCrabModel<>(context.bakeLayer(SeafarerModelLayers.HORSESHOE_CRAB)), 0.4F);
+        super(context, new HorseshoeCrabModel(context.bakeLayer(SeafarerModelLayers.HORSESHOE_CRAB)), 0.4F);
     }
 
     @Override

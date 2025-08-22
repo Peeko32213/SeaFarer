@@ -1,6 +1,7 @@
 package com.peeko32213.seafarer.client.models;
 
 import com.peeko32213.seafarer.client.animations.MantaRayAnimations;
+import com.peeko32213.seafarer.client.animations.SunfishAnimations;
 import com.peeko32213.seafarer.entities.MantaRay;
 import net.minecraft.client.model.HierarchicalModel;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -8,6 +9,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
@@ -41,11 +43,12 @@ public class MantaRayModel<T extends MantaRay> extends HierarchicalModel<T> {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 
-		PartDefinition swim_control = partdefinition.addOrReplaceChild("swim_control", CubeListBuilder.create(), PartPose.offset(0.0F, 17.0F, -1.0F));
+		PartDefinition swim_control = partdefinition.addOrReplaceChild("swim_control", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, -1.0F));
 
-		PartDefinition Body = swim_control.addOrReplaceChild("Body", CubeListBuilder.create().texOffs(173, 0).addBox(-0.5F, -12.0F, 14.0F, 1.0F, 6.0F, 6.0F, new CubeDeformation(0.0F))
-		.texOffs(0, 0).addBox(-17.0F, -9.0F, -17.0F, 34.0F, 16.0F, 34.0F, new CubeDeformation(0.0F))
-		.texOffs(13, 140).addBox(-15.0F, -8.0F, -13.5F, 30.0F, 14.0F, 23.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+		PartDefinition Body = swim_control.addOrReplaceChild("Body", CubeListBuilder.create()
+				.texOffs(173, 0).addBox(-0.5F, -12.0F, 14.0F, 1.0F, 6.0F, 6.0F, new CubeDeformation(0.0F))
+				.texOffs(0, 0).addBox(-17.0F, -9.0F, -17.0F, 34.0F, 16.0F, 34.0F, new CubeDeformation(0.0F))
+				.texOffs(13, 140).addBox(-15.0F, -8.0F, -13.5F, 30.0F, 14.0F, 23.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
 		PartDefinition Wing1 = Body.addOrReplaceChild("Wing1", CubeListBuilder.create().texOffs(0, 50).addBox(-28.0F, -5.0F, -16.0F, 28.0F, 5.0F, 29.0F, new CubeDeformation(0.01F)), PartPose.offset(-13.925F, -1.0F, 3.15F));
 
@@ -56,10 +59,10 @@ public class MantaRayModel<T extends MantaRay> extends HierarchicalModel<T> {
 		PartDefinition WingTip2 = Wing2.addOrReplaceChild("WingTip2", CubeListBuilder.create().texOffs(0, 84).mirror().addBox(-1.0F, -2.0F, -8.0F, 17.0F, 3.0F, 17.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(29.0F, -3.0F, -8.0F));
 
 		PartDefinition Thingy1 = Body.addOrReplaceChild("Thingy1", CubeListBuilder.create().texOffs(0, 104).addBox(0.0F, -2.0F, -8.0F, 12.0F, 11.0F, 0.0F, new CubeDeformation(0.0F))
-		.texOffs(24, 104).addBox(0.0F, -2.0F, -8.0F, 0.0F, 9.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(-14.0F, 4.0F, -17.0F));
+				.texOffs(24, 104).addBox(0.0F, -2.0F, -8.0F, 0.0F, 9.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(-14.0F, 4.0F, -17.0F));
 
 		PartDefinition Thingy2 = Body.addOrReplaceChild("Thingy2", CubeListBuilder.create().texOffs(0, 104).mirror().addBox(-12.0F, -2.0F, -8.0F, 12.0F, 11.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false)
-		.texOffs(24, 104).mirror().addBox(0.0F, -2.0F, -8.0F, 0.0F, 9.0F, 8.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(14.0F, 4.0F, -17.0F));
+				.texOffs(24, 104).mirror().addBox(0.0F, -2.0F, -8.0F, 0.0F, 9.0F, 8.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offset(14.0F, 4.0F, -17.0F));
 
 		PartDefinition Tail = Body.addOrReplaceChild("Tail", CubeListBuilder.create().texOffs(173, 210).addBox(-1.0F, 0.0F, 0.0F, 2.0F, 2.0F, 24.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -4.0F, 17.0F));
 
@@ -70,7 +73,18 @@ public class MantaRayModel<T extends MantaRay> extends HierarchicalModel<T> {
 	public void setupAnim(MantaRay entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 
-		this.animateWalk(MantaRayAnimations.SWIM, limbSwing, limbSwingAmount, 4, 8);
+		if (entity.isInWaterOrBubble()) {
+			this.animateWalk(MantaRayAnimations.SWIM, limbSwing, limbSwingAmount, 4, 8);
+		} else {
+			this.animate(entity.flopAnimationState, MantaRayAnimations.BEACHED, ageInTicks, 0.1F);
+		}
+
+		float prevOnLandProgress = entity.prevOnLandProgress;
+		float onLandProgress = entity.onLandProgress;
+		float partialTicks = ageInTicks - entity.tickCount;
+		float landProgress = prevOnLandProgress + (onLandProgress - prevOnLandProgress) * partialTicks;
+
+		this.Body.xRot = headPitch * (Mth.DEG_TO_RAD) / 2;
 	}
 
 	@Override

@@ -9,11 +9,7 @@ import java.util.function.Supplier;
 
 public enum SeafarerTiers implements Tier {
 
-//TODO
-    // Make Ingredients be decided by the Shell Tag rather than just one registerItemNoLang
-    SHELL(0, 65, 3.0F, 0.0F, 22, () -> Ingredient.of(SeafarerBlocks.CLAM_SHELL.get())),
-
-    ;
+    SHELL(0, 65, 3.0F, 0.0F, 22, () -> Ingredient.of(SeafarerBlocks.CLAM_SHELL.get()));
 
     private final int level;
     private final int durability;

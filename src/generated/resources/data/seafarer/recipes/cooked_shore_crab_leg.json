@@ -4,7 +4,7 @@
   "cookingtime": 200,
   "experience": 10.0,
   "ingredient": {
-    "item": "seafarer:crab_leg"
+    "item": "seafarer:shore_crab_leg"
   },
-  "result": "seafarer:cooked_crab_leg"
+  "result": "seafarer:cooked_shore_crab_leg"
 }

@@ -9,7 +9,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class SeafarerModelLayers {
 
-    public static final ModelLayerLocation CRAB = main("crab");
+    public static final ModelLayerLocation SHORE_CRAB = main("shore_crab");
     public static final ModelLayerLocation HORSESHOE_CRAB = main("horseshoe_crab");
     public static final ModelLayerLocation MANTA_RAY = main("manta_ray");
     public static final ModelLayerLocation MARINE_IGUANA = main("marine_iguana");
