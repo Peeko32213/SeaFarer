@@ -18,13 +18,13 @@ import java.util.Objects;
 import java.util.function.Supplier;
 
 public class SeafarerLanguageProvider extends LanguageProvider {
+
     public SeafarerLanguageProvider(PackOutput output) {
         super(output, Seafarer.MOD_ID, "en_us");
     }
-    private static final Logger LOGGER = LogUtils.getLogger();
+
     @Override
     protected void addTranslations(){
-
         addTabName(SeafarerCreativeTab.TAB.get(), "Seafarer");
 
         // Blocks
