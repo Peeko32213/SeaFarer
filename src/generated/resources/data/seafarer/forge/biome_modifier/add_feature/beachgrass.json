@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#seafarer:is_sandy_beach_biome",
-  "features": "seafarer:beachgrass_placed",
-  "step": "vegetal_decoration"
-}

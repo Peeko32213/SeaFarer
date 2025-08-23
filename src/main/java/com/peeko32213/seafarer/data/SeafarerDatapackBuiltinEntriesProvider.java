@@ -1,7 +1,6 @@
 package com.peeko32213.seafarer.data;
 
 import com.peeko32213.seafarer.Seafarer;
-import com.peeko32213.seafarer.registry.SeafarerBiomeModifiers;
 import com.peeko32213.seafarer.registry.SeafarerConfiguredFeatures;
 import com.peeko32213.seafarer.registry.SeafarerPlacedFeatures;
 import net.minecraft.core.HolderLookup;

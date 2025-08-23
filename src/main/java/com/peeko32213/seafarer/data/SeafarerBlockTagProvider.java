@@ -135,52 +135,52 @@ public class SeafarerBlockTagProvider extends BlockTagsProvider {
                 .add(SeafarerBlocks.ALGAE_COBBLESTONE_STAIRS.get())
         ;
 
-        tag(BlockTags.CORAL_BLOCKS)
-                .add(SeafarerBlocks.AMBER_CORAL_BLOCK.get())
-                .add(SeafarerBlocks.CERULEAN_CORAL_BLOCK.get())
-                .add(SeafarerBlocks.MAROON_CORAL_BLOCK.get())
-                .add(SeafarerBlocks.OLIVE_CORAL_BLOCK.get())
-                .add(SeafarerBlocks.TURQUOISE_CORAL_BLOCK.get())
-                .add(SeafarerBlocks.VERDANT_CORAL_BLOCK.get())
-        ;
-
-        tag(BlockTags.CORAL_PLANTS)
-                .add(SeafarerBlocks.AMBER_CORAL.get())
-                .add(SeafarerBlocks.CERULEAN_CORAL.get())
-                .add(SeafarerBlocks.MAROON_CORAL.get())
-                .add(SeafarerBlocks.OLIVE_CORAL.get())
-                .add(SeafarerBlocks.TURQUOISE_CORAL.get())
-                .add(SeafarerBlocks.VERDANT_CORAL.get())
-                .add(SeafarerBlocks.CYAN_ZOA.get())
-                .add(SeafarerBlocks.ORANGE_ZOA.get())
-                .add(SeafarerBlocks.PURPLE_ZOA.get())
-                .add(SeafarerBlocks.RED_ZOA.get())
-                .add(SeafarerBlocks.ANTLER_GORGONIAN.get())
-                .add(SeafarerBlocks.TOWERING_GORGONIAN.get())
-                .add(SeafarerBlocks.BLUE_CHRISTMAS_TREE_WORM.get())
-                .add(SeafarerBlocks.BLACK_CHRISTMAS_TREE_WORM.get())
-                .add(SeafarerBlocks.RED_CHRISTMAS_TREE_WORM.get())
-                .add(SeafarerBlocks.YELLOW_CHRISTMAS_TREE_WORM.get())
-                .add(SeafarerBlocks.WHITE_CHRISTMAS_TREE_WORM.get())
-        ;
-
-        tag(BlockTags.CORALS)
-                .add(SeafarerBlocks.AMBER_CORAL_FAN.get())
-                .add(SeafarerBlocks.CERULEAN_CORAL_FAN.get())
-                .add(SeafarerBlocks.MAROON_CORAL_FAN.get())
-                .add(SeafarerBlocks.OLIVE_CORAL_FAN.get())
-                .add(SeafarerBlocks.TURQUOISE_CORAL_FAN.get())
-                .add(SeafarerBlocks.VERDANT_CORAL_FAN.get())
-        ;
-
-        tag(BlockTags.WALL_CORALS)
-                .add(SeafarerBlocks.AMBER_CORAL_WALL_FAN.get())
-                .add(SeafarerBlocks.CERULEAN_CORAL_WALL_FAN.get())
-                .add(SeafarerBlocks.MAROON_CORAL_WALL_FAN.get())
-                .add(SeafarerBlocks.OLIVE_CORAL_WALL_FAN.get())
-                .add(SeafarerBlocks.TURQUOISE_CORAL_WALL_FAN.get())
-                .add(SeafarerBlocks.VERDANT_CORAL_WALL_FAN.get())
-        ;
+//        tag(BlockTags.CORAL_BLOCKS)
+//                .add(SeafarerBlocks.AMBER_CORAL_BLOCK.get())
+//                .add(SeafarerBlocks.CERULEAN_CORAL_BLOCK.get())
+//                .add(SeafarerBlocks.MAROON_CORAL_BLOCK.get())
+//                .add(SeafarerBlocks.OLIVE_CORAL_BLOCK.get())
+//                .add(SeafarerBlocks.TURQUOISE_CORAL_BLOCK.get())
+//                .add(SeafarerBlocks.VERDANT_CORAL_BLOCK.get())
+//        ;
+//
+//        tag(BlockTags.CORAL_PLANTS)
+//                .add(SeafarerBlocks.AMBER_CORAL.get())
+//                .add(SeafarerBlocks.CERULEAN_CORAL.get())
+//                .add(SeafarerBlocks.MAROON_CORAL.get())
+//                .add(SeafarerBlocks.OLIVE_CORAL.get())
+//                .add(SeafarerBlocks.TURQUOISE_CORAL.get())
+//                .add(SeafarerBlocks.VERDANT_CORAL.get())
+//                .add(SeafarerBlocks.CYAN_ZOA.get())
+//                .add(SeafarerBlocks.ORANGE_ZOA.get())
+//                .add(SeafarerBlocks.PURPLE_ZOA.get())
+//                .add(SeafarerBlocks.RED_ZOA.get())
+//                .add(SeafarerBlocks.ANTLER_GORGONIAN.get())
+//                .add(SeafarerBlocks.TOWERING_GORGONIAN.get())
+//                .add(SeafarerBlocks.BLUE_CHRISTMAS_TREE_WORM.get())
+//                .add(SeafarerBlocks.BLACK_CHRISTMAS_TREE_WORM.get())
+//                .add(SeafarerBlocks.RED_CHRISTMAS_TREE_WORM.get())
+//                .add(SeafarerBlocks.YELLOW_CHRISTMAS_TREE_WORM.get())
+//                .add(SeafarerBlocks.WHITE_CHRISTMAS_TREE_WORM.get())
+//        ;
+//
+//        tag(BlockTags.CORALS)
+//                .add(SeafarerBlocks.AMBER_CORAL_FAN.get())
+//                .add(SeafarerBlocks.CERULEAN_CORAL_FAN.get())
+//                .add(SeafarerBlocks.MAROON_CORAL_FAN.get())
+//                .add(SeafarerBlocks.OLIVE_CORAL_FAN.get())
+//                .add(SeafarerBlocks.TURQUOISE_CORAL_FAN.get())
+//                .add(SeafarerBlocks.VERDANT_CORAL_FAN.get())
+//        ;
+//
+//        tag(BlockTags.WALL_CORALS)
+//                .add(SeafarerBlocks.AMBER_CORAL_WALL_FAN.get())
+//                .add(SeafarerBlocks.CERULEAN_CORAL_WALL_FAN.get())
+//                .add(SeafarerBlocks.MAROON_CORAL_WALL_FAN.get())
+//                .add(SeafarerBlocks.OLIVE_CORAL_WALL_FAN.get())
+//                .add(SeafarerBlocks.TURQUOISE_CORAL_WALL_FAN.get())
+//                .add(SeafarerBlocks.VERDANT_CORAL_WALL_FAN.get())
+//        ;
 
     }
 

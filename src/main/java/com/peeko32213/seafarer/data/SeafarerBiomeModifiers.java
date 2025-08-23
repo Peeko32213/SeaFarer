@@ -1,6 +1,7 @@
-package com.peeko32213.seafarer.registry;
+package com.peeko32213.seafarer.data;
 
 import com.peeko32213.seafarer.Seafarer;
+import com.peeko32213.seafarer.registry.SeafarerPlacedFeatures;
 import com.peeko32213.seafarer.registry.tags.SeafarerTags;
 import net.minecraft.core.HolderSet;
 import net.minecraft.core.registries.Registries;
@@ -30,32 +31,29 @@ public class SeafarerBiomeModifiers {
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         // Add features
-        addFeature(context, "beachgrass", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.BEACHGRASS_PLACED);
-        addFeature(context, "beachgrass_fan", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.BEACHGRASS_FAN_PLACED);
-        addFeature(context, "sea_thrift", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.SEA_THRIFT_PLACED);
-        addFeature(context, "sea_holly", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.SEA_HOLLY_PLACED);
-        addFeature(context, "coastal_lavender", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.COASTAL_LAVENDER_PLACED);
-        addFeature(context, "coastal_wildflower", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.COASTAL_WILDFLOWER_PLACED);
-        addFeature(context, "land_sea_stars", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.SEA_STAR_LAND);
-        addFeature(context, "land_sea_shells", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.SEA_SHELL_LAND);
-        addFeature(context, "seaglass", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.SEA_GLASS);
-        addFeature(context, "floatsome", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.FLOATSOME);
-        addFeature(context, "algae_boulder", SeafarerTags.IS_ALGAE_BOULDER_BIOME, Decoration.SURFACE_STRUCTURES, SeafarerPlacedFeatures.ALGAE_BOULDER_PLACED);
-        addFeature(context, "jumbled_shelly_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.JUMBLED_SHELLY_SAND_PATCH);
-        addFeature(context, "scattered_shelly_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.SCATTERED_SHELLY_SAND_PATCH_PLACED);
-        addFeature(context, "mixed_shelly_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.MIXED_SHELLY_SAND_PATCH_PLACED);
-        addFeature(context, "gravely_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.GRAVELY_SAND_PATCH_PLACED);
-        addFeature(context, "rocky_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.ROCKY_SAND_PATCH_PLACED);
-        addFeature(context, "red_sprinkled_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.RED_SPRINKLED_SAND_PATCH_PLACED);
-        addFeature(context, "purple_sprinkled_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.PURPLE_SPRINKLED_SAND_PATCH_PLACED);
-        addFeature(context, "pink_sprinkled_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.PINK_SPRINKLED_SAND_PATCH_PLACED);
-        addFeature(context, "blue_sprinkled_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.BLUE_SPRINKLED_SAND_PATCH_PLACED);
-        addFeature(context, "blue_mixed_sprinkled_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.BLUE_MIXED_SPRINKLED_SAND_PATCH_PLACED);
-        addFeature(context, "red_mixed_sprinkled_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.RED_MIXED_SPRINKLED_SAND_PATCH_PLACED);
-        addFeature(context, "mixed_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.SAND_TAG_PATCH_PLACED);
-
-        // Remove features
-        removeFeatureNoTag(context, "remove_coral", Biomes.WARM_OCEAN, Decoration.VEGETAL_DECORATION, AquaticPlacements.WARM_OCEAN_VEGETATION);
+//        addFeature(context, "beachgrass", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.BEACHGRASS_PLACED);
+//        addFeature(context, "beachgrass_fan", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.BEACHGRASS_FAN_PLACED);
+//        addFeature(context, "sea_thrift", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.SEA_THRIFT_PLACED);
+//        addFeature(context, "sea_holly", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.SEA_HOLLY_PLACED);
+//        addFeature(context, "coastal_lavender", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.COASTAL_LAVENDER_PLACED);
+//        addFeature(context, "coastal_wildflower", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.COASTAL_WILDFLOWER_PLACED);
+//        addFeature(context, "land_sea_stars", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.SEA_STAR_LAND);
+//        addFeature(context, "land_sea_shells", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.SEA_SHELL_LAND);
+//        addFeature(context, "seaglass", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.SEA_GLASS);
+//        addFeature(context, "floatsome", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.VEGETAL_DECORATION, SeafarerPlacedFeatures.FLOATSOME);
+//        addFeature(context, "algae_boulder", SeafarerTags.IS_ALGAE_BOULDER_BIOME, Decoration.SURFACE_STRUCTURES, SeafarerPlacedFeatures.ALGAE_BOULDER_PLACED);
+//        addFeature(context, "jumbled_shelly_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.JUMBLED_SHELLY_SAND_PATCH);
+//        addFeature(context, "scattered_shelly_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.SCATTERED_SHELLY_SAND_PATCH_PLACED);
+//        addFeature(context, "mixed_shelly_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.MIXED_SHELLY_SAND_PATCH_PLACED);
+//        addFeature(context, "gravely_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.GRAVELY_SAND_PATCH_PLACED);
+//        addFeature(context, "rocky_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.ROCKY_SAND_PATCH_PLACED);
+//        addFeature(context, "red_sprinkled_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.RED_SPRINKLED_SAND_PATCH_PLACED);
+//        addFeature(context, "purple_sprinkled_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.PURPLE_SPRINKLED_SAND_PATCH_PLACED);
+//        addFeature(context, "pink_sprinkled_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.PINK_SPRINKLED_SAND_PATCH_PLACED);
+//        addFeature(context, "blue_sprinkled_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.BLUE_SPRINKLED_SAND_PATCH_PLACED);
+//        addFeature(context, "blue_mixed_sprinkled_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.BLUE_MIXED_SPRINKLED_SAND_PATCH_PLACED);
+//        addFeature(context, "red_mixed_sprinkled_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.RED_MIXED_SPRINKLED_SAND_PATCH_PLACED);
+//        addFeature(context, "mixed_sand", SeafarerTags.IS_SANDY_BEACH_BIOME, Decoration.UNDERGROUND_ORES, SeafarerPlacedFeatures.SAND_TAG_PATCH_PLACED);
 
         // Add spawns
 //        addSpawn(context, "crab", SeafarerTags.IS_CRAB_BIOME, new MobSpawnSettings.SpawnerData(SeafarerEntities.SHORE_CRAB.get(), 25, 1, 3));

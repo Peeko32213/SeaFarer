@@ -34,6 +34,8 @@ public class ShoreCrab extends Animal implements Bucketable {
 
     private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(ShoreCrab.class, EntityDataSerializers.BOOLEAN);
 
+    public final AnimationState idleAnimationState = new AnimationState();
+
     public ShoreCrab(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
         this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
@@ -72,6 +74,19 @@ public class ShoreCrab extends Animal implements Bucketable {
         } else {
             super.travel(travelVec);
         }
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+
+        if (this.level().isClientSide()) {
+            this.setupAnimationStates();
+        }
+    }
+
+    private void setupAnimationStates() {
+        this.idleAnimationState.animateWhen(this.isAlive(), this.tickCount);
     }
 
     @Override

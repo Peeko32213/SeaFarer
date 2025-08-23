@@ -29,6 +29,7 @@ public class Sunfish extends WaterAnimal {
     public float onLandProgress;
 
     public final AnimationState flopAnimationState = new AnimationState();
+    public final AnimationState swimmingAnimationState = new AnimationState();
 
     public Sunfish(EntityType<? extends WaterAnimal> entityType, Level level) {
         super(entityType, level);
@@ -61,7 +62,7 @@ public class Sunfish extends WaterAnimal {
     @Override
     public void travel(Vec3 travelVec) {
         if (this.isEffectiveAi() && this.isInWater()) {
-            this.moveRelative(0.01F, travelVec);
+            this.moveRelative(this.getSpeed(), travelVec);
             this.move(MoverType.SELF, this.getDeltaMovement());
             this.setDeltaMovement(this.getDeltaMovement().scale(0.9D));
             if (this.getTarget() == null) {
@@ -86,6 +87,7 @@ public class Sunfish extends WaterAnimal {
 
     private void setupAnimationStates() {
         this.flopAnimationState.animateWhen(this.isAlive() && !this.isInWaterOrBubble(), this.tickCount);
+        this.swimmingAnimationState.animateWhen(this.isInWaterOrBubble(), this.tickCount);
     }
 
     @Override

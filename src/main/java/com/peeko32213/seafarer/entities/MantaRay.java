@@ -1,15 +1,19 @@
 package com.peeko32213.seafarer.entities;
 
 import com.peeko32213.seafarer.entities.ai.goal.AquaticLeapGoal;
+import com.peeko32213.seafarer.entities.pose.SeafarerPoses;
 import net.minecraft.core.Direction;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingMoveControl;
+import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.ai.goal.TryFindWaterGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
@@ -17,6 +21,7 @@ import net.minecraft.world.entity.ai.navigation.WaterBoundPathNavigation;
 import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -26,7 +31,14 @@ public class MantaRay extends WaterAnimal {
     public float prevOnLandProgress;
     public float onLandProgress;
 
+    private int rollCooldown = this.random.nextInt(10 * 40) + (20 * 40);
+    private int loopCooldown = this.random.nextInt(10 * 40) + (20 * 80);
+
     public final AnimationState flopAnimationState = new AnimationState();
+    public final AnimationState swimmingAnimationState = new AnimationState();
+    public final AnimationState roll1AnimationState = new AnimationState();
+    public final AnimationState roll2AnimationState = new AnimationState();
+    public final AnimationState loopingAnimationState = new AnimationState();
 
     public MantaRay(EntityType<? extends WaterAnimal> entityType, Level level) {
         super(entityType, level);
@@ -49,6 +61,8 @@ public class MantaRay extends WaterAnimal {
         this.goalSelector.addGoal(0, new TryFindWaterGoal(this));
         this.goalSelector.addGoal(1, new RandomSwimmingGoal(this, 1, 10));
         this.goalSelector.addGoal(2, new MantaRayLeapGoal(this));
+        this.goalSelector.addGoal(3, new MantaRayRollingGoal(this));
+        this.goalSelector.addGoal(4, new MantaRayLoopingGoal(this));
     }
 
     @Override
@@ -59,7 +73,7 @@ public class MantaRay extends WaterAnimal {
     @Override
     public void travel(Vec3 travelVec) {
         if (this.isEffectiveAi() && this.isInWater()) {
-            this.moveRelative(0.01F, travelVec);
+            this.moveRelative(this.getSpeed(), travelVec);
             this.move(MoverType.SELF, this.getDeltaMovement());
             this.setDeltaMovement(this.getDeltaMovement().scale(0.9D));
             if (this.getTarget() == null) {
@@ -74,13 +88,41 @@ public class MantaRay extends WaterAnimal {
     public void tick() {
         super.tick();
 
+        if (this.isInWater() && this.getPose() != SeafarerPoses.ROLLING.get() && rollCooldown > 0) rollCooldown--;
+        if (this.isInWater() && this.getPose() != SeafarerPoses.LOOPING.get() && loopCooldown > 0) loopCooldown--;
+
         if (this.level().isClientSide()) {
             this.setupAnimationStates();
         }
     }
 
     private void setupAnimationStates() {
-        this.flopAnimationState.animateWhen(this.isAlive() && !this.isInWaterOrBubble(), this.tickCount);
+        this.flopAnimationState.animateWhen(!this.isInWaterOrBubble(), this.tickCount);
+        this.swimmingAnimationState.animateWhen(this.isInWaterOrBubble(), this.tickCount);
+    }
+
+    @Override
+    public void onSyncedDataUpdated(@NotNull EntityDataAccessor<?> entityDataAccessor) {
+        if (DATA_POSE.equals(entityDataAccessor)) {
+            if (this.getPose() == SeafarerPoses.ROLLING.get()) {
+                this.swimmingAnimationState.stop();
+                if (random.nextBoolean()) {
+                    this.roll1AnimationState.start(this.tickCount);
+                } else {
+                    this.roll2AnimationState.start(this.tickCount);
+                }
+            }
+            else if (this.getPose() == SeafarerPoses.LOOPING.get()) {
+                this.swimmingAnimationState.stop();
+                this.loopingAnimationState.start(this.tickCount);
+            }
+            else if (this.getPose() == Pose.STANDING) {
+                this.roll1AnimationState.stop();
+                this.roll2AnimationState.stop();
+                this.loopingAnimationState.stop();
+            }
+        }
+        super.onSyncedDataUpdated(entityDataAccessor);
     }
 
     @Override
@@ -142,6 +184,92 @@ public class MantaRay extends WaterAnimal {
             Direction direction = mantaRay.getMotionDirection();
             mantaRay.setDeltaMovement(mantaRay.getDeltaMovement().add((double) direction.getStepX() * 1.25D, 0.9D, (double) direction.getStepZ() * 1.25D));
             mantaRay.getNavigation().stop();
+        }
+    }
+
+    public static class MantaRayRollingGoal extends Goal {
+
+        public MantaRay mantaRay;
+        public int timer;
+
+        public MantaRayRollingGoal(MantaRay mantaRay) {
+            this.mantaRay = mantaRay;
+        }
+
+        @Override
+        public boolean canUse() {
+            return mantaRay.rollCooldown == 0 && mantaRay.getPose() == Pose.STANDING && mantaRay.isInWater();
+        }
+
+        @Override
+        public void start() {
+            this.timer = 80;
+            this.mantaRay.getNavigation().stop();
+            this.mantaRay.setPose(SeafarerPoses.ROLLING.get());
+        }
+
+        @Override
+        public boolean canContinueToUse() {
+            return timer > 0 && mantaRay.isInWater() && mantaRay.getPose() == SeafarerPoses.ROLLING.get();
+        }
+
+        @Override
+        public void tick() {
+            this.timer--;
+        }
+
+        @Override
+        public void stop() {
+            mantaRay.rollCooldown = mantaRay.random.nextInt(10 * 40) + (20 * 40);
+            this.mantaRay.setPose(Pose.STANDING);
+        }
+
+        @Override
+        public boolean requiresUpdateEveryTick() {
+            return true;
+        }
+    }
+
+    public static class MantaRayLoopingGoal extends Goal {
+
+        public MantaRay mantaRay;
+        public int timer;
+
+        public MantaRayLoopingGoal(MantaRay mantaRay) {
+            this.mantaRay = mantaRay;
+        }
+
+        @Override
+        public boolean canUse() {
+            return mantaRay.loopCooldown == 0 && mantaRay.getPose() == Pose.STANDING && mantaRay.isInWater() && mantaRay.level().getFluidState(mantaRay.blockPosition().below(2)).is(FluidTags.WATER) && mantaRay.level().getBlockState(mantaRay.blockPosition().above(6)).is(Blocks.WATER);
+        }
+
+        @Override
+        public void start() {
+            this.timer = 80;
+            this.mantaRay.getNavigation().stop();
+            this.mantaRay.setPose(SeafarerPoses.LOOPING.get());
+        }
+
+        @Override
+        public boolean canContinueToUse() {
+            return timer > 0 && mantaRay.isInWater() && mantaRay.getPose() == SeafarerPoses.LOOPING.get();
+        }
+
+        @Override
+        public void tick() {
+            this.timer--;
+        }
+
+        @Override
+        public void stop() {
+            mantaRay.loopCooldown = mantaRay.random.nextInt(10 * 40) + (20 * 80);
+            this.mantaRay.setPose(Pose.STANDING);
+        }
+
+        @Override
+        public boolean requiresUpdateEveryTick() {
+            return true;
         }
     }
 }

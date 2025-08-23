@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#seafarer:is_algae_boulder_biome",
-  "features": "seafarer:algae_boulder_placed",
-  "step": "surface_structures"
-}
