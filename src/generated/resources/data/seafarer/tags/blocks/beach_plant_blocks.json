@@ -1,15 +1,8 @@
 {
   "values": [
     "#minecraft:dead_bush_may_place_on",
-    "seafarer:blue_mixed_sprinkled_sand",
-    "seafarer:purple_sprinkled_sand",
-    "seafarer:red_mixed_sprinkled_sand",
-    "seafarer:pink_sprinkled_sand",
-    "seafarer:blue_sprinkled_sand",
-    "seafarer:red_sprinkled_sand",
-    "seafarer:jumbled_shelly_sand",
-    "seafarer:scattered_shelly_sand",
-    "seafarer:mixed_shelly_sand",
+    "seafarer:sprinkled_sand",
+    "seafarer:shelly_sand",
     "seafarer:coraline_sand"
   ]
 }

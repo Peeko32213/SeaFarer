@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "seafarer:block/sand/sprinkled_sand1"
+      },
+      {
+        "model": "seafarer:block/sand/sprinkled_sand2"
+      },
+      {
+        "model": "seafarer:block/sand/sprinkled_sand3"
+      },
+      {
+        "model": "seafarer:block/sand/sprinkled_sand4"
+      },
+      {
+        "model": "seafarer:block/sand/sprinkled_sand5"
+      },
+      {
+        "model": "seafarer:block/sand/sprinkled_sand6"
+      }
+    ]
+  }
+}

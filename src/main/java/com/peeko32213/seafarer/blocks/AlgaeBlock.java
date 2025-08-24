@@ -1,6 +1,5 @@
 package com.peeko32213.seafarer.blocks;
 
-import com.peeko32213.seafarer.registry.SFConfiguredFeatures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
@@ -13,13 +12,11 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
 public class AlgaeBlock extends MossBlock implements BonemealableBlock {
+
     public AlgaeBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
     }
 
-    /**
-     * @return whether bonemeal can be used on this block
-     */
     public boolean isValidBonemealTarget(LevelReader pLevel, BlockPos pPos, BlockState pState, boolean pIsClient) {
         return pLevel.getBlockState(pPos.above()).isAir();
     }
@@ -30,12 +27,8 @@ public class AlgaeBlock extends MossBlock implements BonemealableBlock {
         return true;
     }
 
-    public void performBonemeal(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
-        pLevel.registryAccess().registry(Registries.CONFIGURED_FEATURE).flatMap((p_258973_) -> {
-            return p_258973_.getHolder(SFConfiguredFeatures.ALGAE_PATCH_BONEMEAL);
-        }).ifPresent((p_255669_) -> {
-            p_255669_.value().place(pLevel, pLevel.getChunkSource().getGenerator(), pRandom, pPos.above());
-        });
-    }
+//    public void performBonemeal(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
+//        pLevel.registryAccess().registry(Registries.CONFIGURED_FEATURE).flatMap((configuredFeatures) -> configuredFeatures.getHolder(SFConfiguredFeatures.ALGAE_PATCH_BONEMEAL)).ifPresent((featureReference) -> featureReference.value().place(pLevel, pLevel.getChunkSource().getGenerator(), pRandom, pPos.above()));
+//    }
 
 }

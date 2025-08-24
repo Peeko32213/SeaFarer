@@ -227,19 +227,11 @@ public class SFBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SFBlocks.PYRAMID_SHELL_BRICKS_STAIRS.get());
         dropSelf(SFBlocks.PYRAMID_SHELL_BRICKS_SLAB.get());
 
-        dropSelf(SFBlocks.GRAVELY_SAND.get());
-        dropSelf(SFBlocks.ROCKY_SAND.get());
-        dropSelf(SFBlocks.BLUE_MIXED_SPRINKLED_SAND.get());
-        dropSelf(SFBlocks.RED_MIXED_SPRINKLED_SAND.get());
-        dropSelf(SFBlocks.BLUE_SPRINKLED_SAND.get());
-        dropSelf(SFBlocks.PINK_SPRINKLED_SAND.get());
-        dropSelf(SFBlocks.PURPLE_SPRINKLED_SAND.get());
-        dropSelf(SFBlocks.RED_SPRINKLED_SAND.get());
+        dropSelf(SFBlocks.GRAVELLY_SAND.get());
+        dropSelf(SFBlocks.SPRINKLED_SAND.get());
         dropSelf(SFBlocks.CORAL_SAND.get());
 
-        createMultipleDrops(SFBlocks.MIXED_SHELLY_SAND.get(), SFBlocks.SPIRAL_SHELL.get().asItem(), SFBlocks.SWIRL_SHELL.get().asItem());
-        createMultipleDrops(SFBlocks.SCATTERED_SHELLY_SAND.get(), SFBlocks.CLAM_SHELL.get().asItem(), SFBlocks.HORN_SHELL.get().asItem());
-        createMultipleDrops(SFBlocks.JUMBLED_SHELLY_SAND.get(), SFBlocks.PYRAMID_SHELL.get().asItem(), SFBlocks.SPIKY_SHELL.get().asItem());
+        createMultipleDrops(SFBlocks.SHELLY_SAND.get(), SFBlocks.SPIRAL_SHELL.get().asItem(), SFBlocks.SWIRL_SHELL.get().asItem());
 
         createPotFlowerItemTable(SFBlocks.POTTED_COASTAL_LAVENDER.get(), SFBlocks.COASTAL_LAVENDER.get());
         createPotFlowerItemTable(SFBlocks.POTTED_SEA_HOLLY.get(), SFBlocks.SEA_HOLLY.get());

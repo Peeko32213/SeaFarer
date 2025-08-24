@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "seafarer:block/sand/gravelly_sand1"
+      },
+      {
+        "model": "seafarer:block/sand/gravelly_sand2"
+      }
+    ]
+  }
+}

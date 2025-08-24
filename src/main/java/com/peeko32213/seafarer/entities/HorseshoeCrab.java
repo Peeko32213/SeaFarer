@@ -157,7 +157,7 @@ public class HorseshoeCrab extends Animal implements Bucketable {
         this.playSound(SoundEvents.SPIDER_STEP, 0.01F, 1.25F);
     }
 
-    public static boolean canSpawn(EntityType<? extends ShoreCrab> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
+    public static boolean canSpawn(EntityType<HorseshoeCrab> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos pos, RandomSource random) {
         return isBrightEnoughToSpawn(level, pos);
     }
 }

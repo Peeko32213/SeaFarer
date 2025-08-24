@@ -395,82 +395,10 @@ public class SFBlocks {
                     .requiresCorrectToolForDrops()
             ));
 
-    public static final RegistryObject<Block> BLUE_MIXED_SPRINKLED_SAND = register("blue_mixed_sprinkled_sand",
-            () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.SAND)
-                    .instrument(NoteBlockInstrument.SNARE)
-                    .strength(0.5F)
-                    .sound(SoundType.SAND)));
-
-    public static final RegistryObject<Block> RED_MIXED_SPRINKLED_SAND = register("red_mixed_sprinkled_sand",
-            () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.SAND)
-                    .instrument(NoteBlockInstrument.SNARE)
-                    .strength(0.5F)
-                    .sound(SoundType.SAND)));
-
-    public static final RegistryObject<Block> BLUE_SPRINKLED_SAND = register("blue_sprinkled_sand",
-            () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.SAND)
-                    .instrument(NoteBlockInstrument.SNARE)
-                    .strength(0.5F)
-                    .sound(SoundType.SAND)));
-
-    public static final RegistryObject<Block> PINK_SPRINKLED_SAND = register("pink_sprinkled_sand",
-            () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.SAND)
-                    .instrument(NoteBlockInstrument.SNARE)
-                    .strength(0.5F)
-                    .sound(SoundType.SAND)));
-
-    public static final RegistryObject<Block> PURPLE_SPRINKLED_SAND = register("purple_sprinkled_sand",
-            () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.SAND)
-                    .instrument(NoteBlockInstrument.SNARE)
-                    .strength(0.5F)
-                    .sound(SoundType.SAND)));
-
-    public static final RegistryObject<Block> RED_SPRINKLED_SAND = register("red_sprinkled_sand",
-            () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.SAND)
-                    .instrument(NoteBlockInstrument.SNARE)
-                    .strength(0.5F)
-                    .sound(SoundType.SAND)));
-
-    public static final RegistryObject<Block> GRAVELY_SAND = register("gravely_sand",
-            () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.SAND)
-                    .instrument(NoteBlockInstrument.SNARE)
-                    .strength(0.5F)
-                    .sound(SoundType.SAND)));
-
-    public static final RegistryObject<Block> ROCKY_SAND = register("rocky_sand",
-            () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.SAND)
-                    .instrument(NoteBlockInstrument.SNARE)
-                    .strength(0.5F)
-                    .sound(SoundType.SAND)));
-
-    public static final RegistryObject<Block>  MIXED_SHELLY_SAND = register("mixed_shelly_sand",
-            () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.SAND)
-                    .instrument(NoteBlockInstrument.SNARE)
-                    .strength(0.5F)
-                    .sound(SoundType.SAND)));
-
-    public static final RegistryObject<Block> SCATTERED_SHELLY_SAND = register("scattered_shelly_sand",
-            () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.SAND)
-                    .instrument(NoteBlockInstrument.SNARE)
-                    .strength(0.5F)
-                    .sound(SoundType.SAND)));
-
-    public static final RegistryObject<Block> JUMBLED_SHELLY_SAND = register("jumbled_shelly_sand",
-            () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.SAND)
-                    .instrument(NoteBlockInstrument.SNARE)
-                    .strength(0.5F)
-                    .sound(SoundType.SAND)));
+    public static final RegistryObject<Block> SPRINKLED_SAND = registerBlock("sprinkled_sand", () -> new SandBlock(14406560, SFBlockProperties.SAND));
+    public static final RegistryObject<Block> GRAVELLY_SAND = registerBlock("gravelly_sand", () -> new SandBlock(14406560, SFBlockProperties.SAND));
+    public static final RegistryObject<Block> SHELLY_SAND = registerBlock("shelly_sand", () -> new SandBlock(14406560, SFBlockProperties.SAND));
+    public static final RegistryObject<Block> STARRY_SAND = registerBlock("starry_sand", () -> new SandBlock(14406560, SFBlockProperties.SAND));
 
     public static final RegistryObject<Block> PYRAMID_SHELL_BRICKS = register("pyramid_shell_bricks",
             () -> new Block(BlockBehaviour.Properties

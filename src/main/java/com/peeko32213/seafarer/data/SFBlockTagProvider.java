@@ -23,15 +23,8 @@ public class SFBlockTagProvider extends BlockTagsProvider {
 
         tag(SFTags.BEACH_PLANT_BLOCKS)
                 .addTag(BlockTags.DEAD_BUSH_MAY_PLACE_ON)
-                .add(SFBlocks.BLUE_MIXED_SPRINKLED_SAND.get())
-                .add(SFBlocks.PURPLE_SPRINKLED_SAND.get())
-                .add(SFBlocks.RED_MIXED_SPRINKLED_SAND.get())
-                .add(SFBlocks.PINK_SPRINKLED_SAND.get())
-                .add(SFBlocks.BLUE_SPRINKLED_SAND.get())
-                .add(SFBlocks.RED_SPRINKLED_SAND.get())
-                .add(SFBlocks.JUMBLED_SHELLY_SAND.get())
-                .add(SFBlocks.SCATTERED_SHELLY_SAND.get())
-                .add(SFBlocks.MIXED_SHELLY_SAND.get())
+                .add(SFBlocks.SPRINKLED_SAND.get())
+                .add(SFBlocks.SHELLY_SAND.get())
                 .add(SFBlocks.CORAL_SAND.get())
         ;
 
@@ -62,30 +55,16 @@ public class SFBlockTagProvider extends BlockTagsProvider {
         ;
 
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
-                .add(SFBlocks.BLUE_MIXED_SPRINKLED_SAND.get())
-                .add(SFBlocks.RED_MIXED_SPRINKLED_SAND.get())
-                .add(SFBlocks.BLUE_SPRINKLED_SAND.get())
-                .add(SFBlocks.PINK_SPRINKLED_SAND.get())
-                .add(SFBlocks.PURPLE_SPRINKLED_SAND.get())
-                .add(SFBlocks.RED_SPRINKLED_SAND.get())
-                .add(SFBlocks.GRAVELY_SAND.get())
-                .add(SFBlocks.ROCKY_SAND.get())
-                .add(SFBlocks.MIXED_SHELLY_SAND.get())
-                .add(SFBlocks.SCATTERED_SHELLY_SAND.get())
-                .add(SFBlocks.JUMBLED_SHELLY_SAND.get())
+                .add(SFBlocks.SPRINKLED_SAND.get())
+                .add(SFBlocks.GRAVELLY_SAND.get())
+                .add(SFBlocks.SHELLY_SAND.get())
                 .add(SFBlocks.CORAL_SAND.get())
         ;
 
         tag(SFTags.SPRINKLED_SAND)
-                .add(SFBlocks.BLUE_MIXED_SPRINKLED_SAND.get())
-                .add(SFBlocks.BLUE_SPRINKLED_SAND.get())
-                .add(SFBlocks.JUMBLED_SHELLY_SAND.get())
-                .add(SFBlocks.SCATTERED_SHELLY_SAND.get())
-                .add(SFBlocks.GRAVELY_SAND.get())
-                .add(SFBlocks.PINK_SPRINKLED_SAND.get())
-                .add(SFBlocks.RED_SPRINKLED_SAND.get())
-                .add(SFBlocks.MIXED_SHELLY_SAND.get())
-
+                .add(SFBlocks.SPRINKLED_SAND.get())
+                .add(SFBlocks.GRAVELLY_SAND.get())
+                .add(SFBlocks.SHELLY_SAND.get())
         ;
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)

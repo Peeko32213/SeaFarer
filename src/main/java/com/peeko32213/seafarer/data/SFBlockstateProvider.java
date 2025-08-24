@@ -385,45 +385,8 @@ public class SFBlockstateProvider extends BlockStateProvider {
         simpleBlockItem(SFBlocks.PYRAMID_SHELL_BRICKS_STAIRS.get(), existingModel((getName(SFBlocks.PYRAMID_SHELL_BRICKS_STAIRS.get()))));
 
 
-        //Sand
-
-        simpleBlock(SFBlocks.BLUE_MIXED_SPRINKLED_SAND.get());
-        simpleBlockItem(SFBlocks.BLUE_MIXED_SPRINKLED_SAND.get(), existingModel((getName(SFBlocks.BLUE_MIXED_SPRINKLED_SAND.get()))));
-
-        simpleBlock(SFBlocks.RED_MIXED_SPRINKLED_SAND.get());
-        simpleBlockItem(SFBlocks.RED_MIXED_SPRINKLED_SAND.get(), existingModel((getName(SFBlocks.RED_MIXED_SPRINKLED_SAND.get()))));
-
-        simpleBlock(SFBlocks.BLUE_SPRINKLED_SAND.get());
-        simpleBlockItem(SFBlocks.BLUE_SPRINKLED_SAND.get(), existingModel((getName(SFBlocks.BLUE_SPRINKLED_SAND.get()))));
-
-        simpleBlock(SFBlocks.PINK_SPRINKLED_SAND.get());
-        simpleBlockItem(SFBlocks.PINK_SPRINKLED_SAND.get(), existingModel((getName(SFBlocks.PINK_SPRINKLED_SAND.get()))));
-
-        simpleBlock(SFBlocks.PURPLE_SPRINKLED_SAND.get());
-        simpleBlockItem(SFBlocks.PURPLE_SPRINKLED_SAND.get(), existingModel((getName(SFBlocks.PURPLE_SPRINKLED_SAND.get()))));
-
-        simpleBlock(SFBlocks.RED_SPRINKLED_SAND.get());
-        simpleBlockItem(SFBlocks.RED_SPRINKLED_SAND.get(), existingModel((getName(SFBlocks.RED_SPRINKLED_SAND.get()))));
-
-        simpleBlock(SFBlocks.GRAVELY_SAND.get());
-        simpleBlockItem(SFBlocks.GRAVELY_SAND.get(), existingModel((getName(SFBlocks.GRAVELY_SAND.get()))));
-
-        simpleBlock(SFBlocks.ROCKY_SAND.get());
-        simpleBlockItem(SFBlocks.ROCKY_SAND.get(), existingModel((getName(SFBlocks.ROCKY_SAND.get()))));
-
-        simpleBlock(SFBlocks.MIXED_SHELLY_SAND.get());
-        simpleBlockItem(SFBlocks.MIXED_SHELLY_SAND.get(), existingModel((getName(SFBlocks.MIXED_SHELLY_SAND.get()))));
-
-        simpleBlock(SFBlocks.SCATTERED_SHELLY_SAND.get());
-        simpleBlockItem(SFBlocks.SCATTERED_SHELLY_SAND.get(), existingModel((getName(SFBlocks.SCATTERED_SHELLY_SAND.get()))));
-
-        simpleBlock(SFBlocks.JUMBLED_SHELLY_SAND.get());
-        simpleBlockItem(SFBlocks.JUMBLED_SHELLY_SAND.get(), existingModel((getName(SFBlocks.JUMBLED_SHELLY_SAND.get()))));
-
         simpleBlock(SFBlocks.CORAL_SAND.get());
         simpleBlockItem(SFBlocks.CORAL_SAND.get(), existingModel((getName(SFBlocks.CORAL_SAND.get()))));
-
-
 
         simpleBlock(SFBlocks.SALT_BLOCK.get());
         simpleBlockItem(SFBlocks.SALT_BLOCK.get(), existingModel((getName(SFBlocks.SALT_BLOCK.get()))));
@@ -432,7 +395,6 @@ public class SFBlockstateProvider extends BlockStateProvider {
         createPottedPlant(SFBlocks.SEA_HOLLY, SFBlocks.POTTED_SEA_HOLLY, "cutout");
         createPottedPlant(SFBlocks.COASTAL_LAVENDER, SFBlocks.POTTED_COASTAL_LAVENDER, "cutout");
         createPottedPlant(SFBlocks.COASTAL_WILDFLOWER, SFBlocks.POTTED_COASTAL_WILDFLOWER, "cutout");
-
 
         simpleBlock(SFBlocks.ALGAE_COBBLESTONE.get());
         simpleBlockItem(SFBlocks.ALGAE_COBBLESTONE.get(), existingModel((getName(SFBlocks.ALGAE_COBBLESTONE.get()))));

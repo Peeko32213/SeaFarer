@@ -68,7 +68,7 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
         BlockState block = SFBlocks.ALGAE_COBBLESTONE.get().defaultBlockState();
         BlockState block2 = SFBlocks.ALGAE_BLOCK.get().defaultBlockState();
         BlockState block3 = Blocks.COBBLESTONE.defaultBlockState();
-        //BlockState block3 = SFBlocks.GRAVELY_SAND.get().defaultBlockState();
+        //BlockState block3 = SFBlocks.GRAVELLY_SAND.get().defaultBlockState();
         BlockState block4 = Blocks.SAND.defaultBlockState();
         origin = origin.offset(0,0,0);
 
@@ -128,9 +128,8 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     public static void changeTerrain(WorldGenLevel worldgenlevel, RandomSource rand, BlockPos origin, FastNoiseLite noise, int radius) {
-        BlockState block = SFBlocks.GRAVELY_SAND.get().defaultBlockState();
-        BlockState block2 = SFBlocks.ROCKY_SAND.get().defaultBlockState();
-        BlockState block3 = Blocks.COARSE_DIRT.defaultBlockState();
+        BlockState block = Blocks.SAND.defaultBlockState();
+        BlockState block2 = SFBlocks.GRAVELLY_SAND.get().defaultBlockState();
         for (int x = -radius; x < radius; x++) {
             for (int z = -radius; z < radius; z++) {
                 BlockPos pos = origin.offset(x, 0, z);

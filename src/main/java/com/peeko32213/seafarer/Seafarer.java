@@ -46,7 +46,6 @@ public class Seafarer {
         SFItems.ITEMS.register(bus);
         SeafarerTab.DEF_REG.register(bus);
         SFEntities.ENTITY_TYPES.register(bus);
-        SFFeatures.FEATURES.register(bus);
         SFLootModifiers.LOOT_MODIFIERS.register(bus);
         SFSoundEvents.DEF_REG.register(bus);
         SFPaintings.PAINTING_VARIANTS.register(bus);

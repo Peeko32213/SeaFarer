@@ -143,17 +143,10 @@ public class SeafarerTab {
                     output.accept(SFBlocks.DEAD_VERDANT_CORAL_FAN.get());
 
                     // sand
-                    output.accept(SFBlocks.GRAVELY_SAND.get());
-                    output.accept(SFBlocks.ROCKY_SAND.get());
-                    output.accept(SFBlocks.MIXED_SHELLY_SAND.get());
-                    output.accept(SFBlocks.JUMBLED_SHELLY_SAND.get());
-                    output.accept(SFBlocks.SCATTERED_SHELLY_SAND.get());
-                    output.accept(SFBlocks.RED_SPRINKLED_SAND.get());
-                    output.accept(SFBlocks.RED_MIXED_SPRINKLED_SAND.get());
-                    output.accept(SFBlocks.BLUE_SPRINKLED_SAND.get());
-                    output.accept(SFBlocks.BLUE_MIXED_SPRINKLED_SAND.get());
-                    output.accept(SFBlocks.PURPLE_SPRINKLED_SAND.get());
-                    output.accept(SFBlocks.PINK_SPRINKLED_SAND.get());
+                    output.accept(SFBlocks.GRAVELLY_SAND.get());
+                    output.accept(SFBlocks.SHELLY_SAND.get());
+                    output.accept(SFBlocks.SPRINKLED_SAND.get());
+                    output.accept(SFBlocks.STARRY_SAND.get());
                     output.accept(SFBlocks.CORAL_SAND.get());
                     output.accept(SFBlocks.CORALINE_SANDSTONE.get());
                     output.accept(SFBlocks.CORALINE_SANDSTONE_STAIRS.get());
