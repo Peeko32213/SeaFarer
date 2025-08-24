@@ -9,8 +9,7 @@ import java.util.function.Supplier;
 
 public class SFMobBucketItem extends MobBucketItem {
 
-	public SFMobBucketItem(Supplier<? extends EntityType<?>> entityType, Supplier<? extends Fluid> fluid,
-						   boolean hasTooltip, Properties builder) {
+	public SFMobBucketItem(Supplier<? extends EntityType<?>> entityType, Supplier<? extends Fluid> fluid, boolean hasTooltip, Properties builder) {
 		super(entityType, fluid, () -> SoundEvents.BUCKET_EMPTY_FISH, builder);
 	}
 
