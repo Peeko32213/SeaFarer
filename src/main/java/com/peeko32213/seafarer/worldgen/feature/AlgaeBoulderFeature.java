@@ -2,7 +2,7 @@ package com.peeko32213.seafarer.worldgen.feature;
 
 import com.mojang.serialization.Codec;
 import com.peeko32213.seafarer.worldgen.feature.util.FastNoiseLite;
-import com.peeko32213.seafarer.registry.SeafarerBlocks;
+import com.peeko32213.seafarer.registry.SFBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
@@ -65,8 +65,8 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
     public static void createSphere(WorldGenLevel worldgenlevel, RandomSource rand, BlockPos origin, FastNoiseLite noise) {
         int height = rand.nextInt(2, 4);
         int radius = height;
-        BlockState block = SeafarerBlocks.ALGAE_COBBLESTONE.get().defaultBlockState();
-        BlockState block2 = SeafarerBlocks.ALGAE_BLOCK.get().defaultBlockState();
+        BlockState block = SFBlocks.ALGAE_COBBLESTONE.get().defaultBlockState();
+        BlockState block2 = SFBlocks.ALGAE_BLOCK.get().defaultBlockState();
         BlockState block3 = Blocks.COBBLESTONE.defaultBlockState();
         //BlockState block3 = SFBlocks.GRAVELY_SAND.get().defaultBlockState();
         BlockState block4 = Blocks.SAND.defaultBlockState();
@@ -102,8 +102,8 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     public static void addBushes(WorldGenLevel worldgenlevel, RandomSource rand, BlockPos origin, FastNoiseLite noise, int radius) {
-        BlockState block = SeafarerBlocks.ALGAE_PLANT.get().defaultBlockState();
-        BlockState block2 = SeafarerBlocks.ALGAE_CARPET.get().defaultBlockState().setValue(getFaceProperty(Direction.DOWN), Boolean.valueOf(true));
+        BlockState block = SFBlocks.ALGAE_PLANT.get().defaultBlockState();
+        BlockState block2 = SFBlocks.ALGAE_CARPET.get().defaultBlockState().setValue(getFaceProperty(Direction.DOWN), Boolean.valueOf(true));
 
         for (int x = -radius; x < radius; x++) {
             for (int z = -radius; z < radius; z++) {
@@ -113,7 +113,7 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
                 double distance = distance(x, 0, z, radius, 1, radius);
                 float f = noise.GetNoise(x, (float) yHeight, z);
                 if (distance < 1) {
-                    boolean isCorrectBlock = worldgenlevel.getBlockState(pos2).is(Blocks.AIR) || !worldgenlevel.getFluidState(pos2).isEmpty() || worldgenlevel.getBlockState(pos2.below()).is(BlockTags.BASE_STONE_OVERWORLD) || worldgenlevel.getBlockState(pos2.below()).is(SeafarerBlocks.ALGAE_COBBLESTONE.get());
+                    boolean isCorrectBlock = worldgenlevel.getBlockState(pos2).is(Blocks.AIR) || !worldgenlevel.getFluidState(pos2).isEmpty() || worldgenlevel.getBlockState(pos2.below()).is(BlockTags.BASE_STONE_OVERWORLD) || worldgenlevel.getBlockState(pos2.below()).is(SFBlocks.ALGAE_COBBLESTONE.get());
                     if (f > 0 && f < 0.5 && isCorrectBlock) {
                         block = block.setValue(BlockStateProperties.WATERLOGGED, worldgenlevel.getFluidState(pos2).is(Fluids.WATER));
                         worldgenlevel.setBlock(pos2, block, 3);
@@ -128,8 +128,8 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
     }
 
     public static void changeTerrain(WorldGenLevel worldgenlevel, RandomSource rand, BlockPos origin, FastNoiseLite noise, int radius) {
-        BlockState block = SeafarerBlocks.GRAVELY_SAND.get().defaultBlockState();
-        BlockState block2 = SeafarerBlocks.ROCKY_SAND.get().defaultBlockState();
+        BlockState block = SFBlocks.GRAVELY_SAND.get().defaultBlockState();
+        BlockState block2 = SFBlocks.ROCKY_SAND.get().defaultBlockState();
         BlockState block3 = Blocks.COARSE_DIRT.defaultBlockState();
         for (int x = -radius; x < radius; x++) {
             for (int z = -radius; z < radius; z++) {

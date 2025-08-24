@@ -53,7 +53,7 @@ public class MantaRay extends WaterAnimal {
 
     public static AttributeSupplier.Builder createAttributes() {
         return Animal.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 14.0D)
+                .add(Attributes.MAX_HEALTH, 16.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.8F);
     }
 

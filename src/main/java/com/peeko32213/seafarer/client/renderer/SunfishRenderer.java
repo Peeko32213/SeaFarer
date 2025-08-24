@@ -3,7 +3,7 @@ package com.peeko32213.seafarer.client.renderer;
 import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.client.models.SunfishModel;
 import com.peeko32213.seafarer.entities.Sunfish;
-import com.peeko32213.seafarer.registry.SeafarerModelLayers;
+import com.peeko32213.seafarer.registry.SFEntityModelLayers;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
@@ -18,7 +18,7 @@ public class SunfishRenderer extends MobRenderer<Sunfish, SunfishModel<Sunfish>>
     private static final ResourceLocation TEXTURE = new ResourceLocation(Seafarer.MOD_ID, "textures/entity/sunfish.png");
 
     public SunfishRenderer(EntityRendererProvider.Context context) {
-        super(context, new SunfishModel<>(context.bakeLayer(SeafarerModelLayers.SUNFISH)), 0.7F);
+        super(context, new SunfishModel<>(context.bakeLayer(SFEntityModelLayers.SUNFISH)), 0.7F);
     }
 
     @Override

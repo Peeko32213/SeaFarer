@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.blocks;
 
-import com.peeko32213.seafarer.registry.SeafarerBlocks;
+import com.peeko32213.seafarer.registry.SFBlocks;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
@@ -15,6 +15,6 @@ public class WakameBlock extends KelpBlock {
 
     @Override
     protected Block getBodyBlock() {
-        return SeafarerBlocks.WAKAME_PLANT.get();
+        return SFBlocks.WAKAME_PLANT.get();
     }
 }

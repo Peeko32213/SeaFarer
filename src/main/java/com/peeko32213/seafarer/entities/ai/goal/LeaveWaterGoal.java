@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.entities.ai.goal;
 
-import com.peeko32213.seafarer.utils.SeafarerBlockPos;
+import com.peeko32213.seafarer.utils.SFBlockPos;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
@@ -65,7 +65,7 @@ public class LeaveWaterGoal extends Goal {
             if (waterDetected) {
                 vector3d = LandRandomPos.getPos(this.mob, 23, 7);
             } else {
-                return SeafarerBlockPos.fromVec3(vector3d);
+                return SFBlockPos.fromVec3(vector3d);
             }
             tries++;
         }

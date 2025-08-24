@@ -2,7 +2,7 @@ package com.peeko32213.seafarer.entities;
 
 import com.peeko32213.seafarer.entities.ai.goal.*;
 import com.peeko32213.seafarer.entities.interfaces.Brushable;
-import com.peeko32213.seafarer.registry.SeafarerItems;
+import com.peeko32213.seafarer.registry.SFItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -192,7 +192,7 @@ public class MarineIguana extends Animal implements Brushable, IForgeShearable {
         this.gameEvent(GameEvent.ENTITY_INTERACT);
         if (!level.isClientSide()) {
             if (random.nextFloat() < this.getSalt() * 0.05F) {
-                ItemStack stack1 = SeafarerItems.SEA_SALT.get().getDefaultInstance();
+                ItemStack stack1 = SFItems.SEA_SALT.get().getDefaultInstance();
                 stack1.setCount(getSalt());
                 return Collections.singletonList(stack1);
             }

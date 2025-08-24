@@ -2,10 +2,10 @@ package com.peeko32213.seafarer.events;
 
 import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.client.models.*;
-import com.peeko32213.seafarer.registry.SeafarerItemProperties;
+import com.peeko32213.seafarer.registry.SFEntities;
+import com.peeko32213.seafarer.registry.SFItemProperties;
 import com.peeko32213.seafarer.client.renderer.*;
-import com.peeko32213.seafarer.registry.SeafarerEntities;
-import com.peeko32213.seafarer.registry.SeafarerModelLayers;
+import com.peeko32213.seafarer.registry.SFEntityModelLayers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -18,22 +18,22 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public final class ClientEvents {
 
     public static void init(FMLClientSetupEvent event) {
-        event.enqueueWork(SeafarerItemProperties::addItemProperties);
+        event.enqueueWork(SFItemProperties::addItemProperties);
     }
 
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(SeafarerEntities.HORSESHOE_CRAB.get(), HorseshoeCrabRenderer::new);
-        event.registerEntityRenderer(SeafarerEntities.MANTA_RAY.get(), MantaRayRenderer::new);
-        event.registerEntityRenderer(SeafarerEntities.SHORE_CRAB.get(), ShoreCrabRenderer::new);
-        event.registerEntityRenderer(SeafarerEntities.SUNFISH.get(), SunfishRenderer::new);
+        event.registerEntityRenderer(SFEntities.HORSESHOE_CRAB.get(), HorseshoeCrabRenderer::new);
+        event.registerEntityRenderer(SFEntities.MANTA_RAY.get(), MantaRayRenderer::new);
+        event.registerEntityRenderer(SFEntities.SHORE_CRAB.get(), ShoreCrabRenderer::new);
+        event.registerEntityRenderer(SFEntities.SUNFISH.get(), SunfishRenderer::new);
     }
 
     @SubscribeEvent
     public static void registerEntityLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(SeafarerModelLayers.HORSESHOE_CRAB, HorseshoeCrabModel::createBodyLayer);
-        event.registerLayerDefinition(SeafarerModelLayers.MANTA_RAY, MantaRayModel::createBodyLayer);
-        event.registerLayerDefinition(SeafarerModelLayers.SHORE_CRAB, ShoreCrabModel::createBodyLayer);
-        event.registerLayerDefinition(SeafarerModelLayers.SUNFISH, SunfishModel::createBodyLayer);
+        event.registerLayerDefinition(SFEntityModelLayers.HORSESHOE_CRAB, HorseshoeCrabModel::createBodyLayer);
+        event.registerLayerDefinition(SFEntityModelLayers.MANTA_RAY, MantaRayModel::createBodyLayer);
+        event.registerLayerDefinition(SFEntityModelLayers.SHORE_CRAB, ShoreCrabModel::createBodyLayer);
+        event.registerLayerDefinition(SFEntityModelLayers.SUNFISH, SunfishModel::createBodyLayer);
     }
 }

@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.blocks;
 
-import com.peeko32213.seafarer.registry.SeafarerBlocks;
-import com.peeko32213.seafarer.registry.SeafarerItems;
+import com.peeko32213.seafarer.registry.SFBlocks;
+import com.peeko32213.seafarer.registry.SFItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.FluidTags;
@@ -43,12 +43,12 @@ public class SeaGrapesCropBlock extends CropBlock implements LiquidBlockContaine
 
     @Override
     public BlockState getPlant(BlockGetter level, BlockPos pos) {
-        return SeafarerBlocks.SEA_GRAPES_CROP.get().defaultBlockState();
+        return SFBlocks.SEA_GRAPES_CROP.get().defaultBlockState();
     }
 
     @Override
     protected ItemLike getBaseSeedId() {
-        return SeafarerItems.SEA_GRAPES.get();
+        return SFItems.SEA_GRAPES.get();
     }
 
     @Override

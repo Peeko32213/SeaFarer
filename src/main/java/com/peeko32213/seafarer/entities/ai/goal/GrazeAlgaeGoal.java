@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.entities.ai.goal;
 
-import com.peeko32213.seafarer.registry.SeafarerBlocks;
+import com.peeko32213.seafarer.registry.SFBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.goal.Goal;
@@ -36,7 +36,7 @@ public class GrazeAlgaeGoal extends Goal {
     public boolean canUse() {
         if (this.mob.getRandom().nextInt(100) == 0) {
             BlockPos blockpos = this.mob.blockPosition();
-            return this.level.getBlockState(blockpos.below()).is(SeafarerBlocks.ALGAE_BLOCK.get());
+            return this.level.getBlockState(blockpos.below()).is(SFBlocks.ALGAE_BLOCK.get());
         } else {
             return false;
         }

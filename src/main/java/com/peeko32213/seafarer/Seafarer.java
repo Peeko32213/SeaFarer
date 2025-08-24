@@ -3,11 +3,11 @@ package com.peeko32213.seafarer;
 import com.peeko32213.seafarer.events.ClientEvents;
 import com.peeko32213.seafarer.data.*;
 import com.peeko32213.seafarer.registry.*;
-import com.peeko32213.seafarer.registry.SeafarerBlocks;
-import com.peeko32213.seafarer.data.SeafarerBlockstateProvider;
-import com.peeko32213.seafarer.data.SeafarerItemModelProvider;
-import com.peeko32213.seafarer.data.SeafarerLanguageProvider;
-import com.peeko32213.seafarer.data.SeafarerSoundDefinitionsProvider;
+import com.peeko32213.seafarer.registry.SFBlocks;
+import com.peeko32213.seafarer.data.SFBlockstateProvider;
+import com.peeko32213.seafarer.data.SFItemModelProvider;
+import com.peeko32213.seafarer.data.SFLanguageProvider;
+import com.peeko32213.seafarer.data.SFSoundDefinitionsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -42,29 +42,29 @@ public class Seafarer {
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> bus.addListener(ClientEvents::init));
         bus.addListener(this::dataSetup);
 
-        SeafarerBlocks.BLOCKS.register(bus);
-        SeafarerItems.ITEMS.register(bus);
-        SeafarerCreativeTab.DEF_REG.register(bus);
-        SeafarerEntities.ENTITY_TYPES.register(bus);
-        SeafarerFeatures.FEATURES.register(bus);
-        SeafarerLootModifiers.LOOT_MODIFIERS.register(bus);
-        SeafarerSoundEvents.DEF_REG.register(bus);
-        SeafarerPaintings.PAINTING_VARIANTS.register(bus);
+        SFBlocks.BLOCKS.register(bus);
+        SFItems.ITEMS.register(bus);
+        SeafarerTab.DEF_REG.register(bus);
+        SFEntities.ENTITY_TYPES.register(bus);
+        SFFeatures.FEATURES.register(bus);
+        SFLootModifiers.LOOT_MODIFIERS.register(bus);
+        SFSoundEvents.DEF_REG.register(bus);
+        SFPaintings.PAINTING_VARIANTS.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            addToFlowerPot(SeafarerBlocks.COASTAL_LAVENDER, SeafarerBlocks.POTTED_COASTAL_LAVENDER);
-            addToFlowerPot(SeafarerBlocks.COASTAL_WILDFLOWER, SeafarerBlocks.POTTED_COASTAL_WILDFLOWER);
-            addToFlowerPot(SeafarerBlocks.SEA_THRIFT, SeafarerBlocks.POTTED_SEA_THRIFT);
-            addToFlowerPot(SeafarerBlocks.SEA_HOLLY, SeafarerBlocks.POTTED_SEA_HOLLY);
+            addToFlowerPot(SFBlocks.COASTAL_LAVENDER, SFBlocks.POTTED_COASTAL_LAVENDER);
+            addToFlowerPot(SFBlocks.COASTAL_WILDFLOWER, SFBlocks.POTTED_COASTAL_WILDFLOWER);
+            addToFlowerPot(SFBlocks.SEA_THRIFT, SFBlocks.POTTED_SEA_THRIFT);
+            addToFlowerPot(SFBlocks.SEA_HOLLY, SFBlocks.POTTED_SEA_HOLLY);
 
-            addToComposter(SeafarerBlocks.COASTAL_LAVENDER, 0.7F);
-            addToComposter(SeafarerBlocks.COASTAL_WILDFLOWER, 0.3F);
-            addToComposter(SeafarerBlocks.SEA_THRIFT, 0.5F);
-            addToComposter(SeafarerBlocks.SEA_HOLLY, 0.6F);
+            addToComposter(SFBlocks.COASTAL_LAVENDER, 0.7F);
+            addToComposter(SFBlocks.COASTAL_WILDFLOWER, 0.3F);
+            addToComposter(SFBlocks.SEA_THRIFT, 0.5F);
+            addToComposter(SFBlocks.SEA_HOLLY, 0.6F);
         });
     }
 
@@ -77,23 +77,23 @@ public class Seafarer {
         boolean server = event.includeServer();
         boolean client = event.includeClient();
 
-        SeafarerDatapackBuiltinEntriesProvider datapackEntries = new SeafarerDatapackBuiltinEntriesProvider(output, provider);
+        SFDatapackBuiltinEntriesProvider datapackEntries = new SFDatapackBuiltinEntriesProvider(output, provider);
         generator.addProvider(server, datapackEntries);
         provider = datapackEntries.getRegistryProvider();
 
-        SeafarerBlockTagProvider blockTags = new SeafarerBlockTagProvider(output, provider, helper);
+        SFBlockTagProvider blockTags = new SFBlockTagProvider(output, provider, helper);
         generator.addProvider(server, blockTags);
-        generator.addProvider(server, new SeafarerItemTagProvider(output, provider, blockTags.contentsGetter(), helper));
-        generator.addProvider(server, new SeafarerEntityTagProvider(output, provider, helper));
-        generator.addProvider(server, new SeafarerBiomeTagProvider(output, provider, helper));
-        generator.addProvider(server, new SeafarerPaintingTagProvider(output, provider, helper));
-        generator.addProvider(server, new SeafarerRecipeGenerator(output));
-        generator.addProvider(server, SeafarerLootProvider.create(output));
+        generator.addProvider(server, new SFItemTagProvider(output, provider, blockTags.contentsGetter(), helper));
+        generator.addProvider(server, new SFEntityTagProvider(output, provider, helper));
+        generator.addProvider(server, new SFBiomeTagProvider(output, provider, helper));
+        generator.addProvider(server, new SFPaintingTagProvider(output, provider, helper));
+        generator.addProvider(server, new SFRecipeGenerator(output));
+        generator.addProvider(server, SFLootProvider.create(output));
 
-        generator.addProvider(client, new SeafarerBlockstateProvider(output, helper));
-        generator.addProvider(client, new SeafarerItemModelProvider(output, helper));
-        generator.addProvider(client, new SeafarerLanguageProvider(output));
-        generator.addProvider(client, new SeafarerSoundDefinitionsProvider(output, helper));
+        generator.addProvider(client, new SFBlockstateProvider(output, helper));
+        generator.addProvider(client, new SFItemModelProvider(output, helper));
+        generator.addProvider(client, new SFLanguageProvider(output));
+        generator.addProvider(client, new SFSoundDefinitionsProvider(output, helper));
     }
 
     public static void addToFlowerPot(RegistryObject<Block> plantBlockLoc, Supplier<? extends Block> pottedPlantBlock){

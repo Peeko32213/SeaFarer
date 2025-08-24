@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.blocks;
 
-import com.peeko32213.seafarer.registry.SeafarerConfiguredFeatures;
+import com.peeko32213.seafarer.registry.SFConfiguredFeatures;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
@@ -32,7 +32,7 @@ public class AlgaeBlock extends MossBlock implements BonemealableBlock {
 
     public void performBonemeal(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
         pLevel.registryAccess().registry(Registries.CONFIGURED_FEATURE).flatMap((p_258973_) -> {
-            return p_258973_.getHolder(SeafarerConfiguredFeatures.ALGAE_PATCH_BONEMEAL);
+            return p_258973_.getHolder(SFConfiguredFeatures.ALGAE_PATCH_BONEMEAL);
         }).ifPresent((p_255669_) -> {
             p_255669_.value().place(pLevel, pLevel.getChunkSource().getGenerator(), pRandom, pPos.above());
         });

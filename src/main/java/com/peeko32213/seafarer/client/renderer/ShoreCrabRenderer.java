@@ -3,7 +3,7 @@ package com.peeko32213.seafarer.client.renderer;
 import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.client.models.ShoreCrabModel;
 import com.peeko32213.seafarer.entities.ShoreCrab;
-import com.peeko32213.seafarer.registry.SeafarerModelLayers;
+import com.peeko32213.seafarer.registry.SFEntityModelLayers;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
@@ -18,7 +18,7 @@ public class ShoreCrabRenderer extends MobRenderer<ShoreCrab, ShoreCrabModel> {
     private static final ResourceLocation TEXTURE = new ResourceLocation(Seafarer.MOD_ID, "textures/entity/shore_crab.png");
 
     public ShoreCrabRenderer(EntityRendererProvider.Context context) {
-        super(context, new ShoreCrabModel(context.bakeLayer(SeafarerModelLayers.SHORE_CRAB)), 0.4F);
+        super(context, new ShoreCrabModel(context.bakeLayer(SFEntityModelLayers.SHORE_CRAB)), 0.4F);
     }
 
     @Override
