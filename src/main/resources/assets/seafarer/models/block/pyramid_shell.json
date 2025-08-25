@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "seafarer:block/shells/pyramid_shell",
-		"particle": "seafarer:block/shells/pyramid_shell"
+		"0": "seafarer:block/pyramid_shell",
+		"particle": "seafarer:block/pyramid_shell"
 	},
 	"elements": [
 		{

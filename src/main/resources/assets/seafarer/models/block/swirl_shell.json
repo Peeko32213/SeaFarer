@@ -3,8 +3,8 @@
 	"parent": "swirl_shell",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "seafarer:block/shells/swirl_shell",
-		"particle": "seafarer:block/shells/swirl_shell"
+		"0": "seafarer:block/swirl_shell",
+		"particle": "seafarer:block/swirl_shell"
 	},
 	"elements": [
 		{

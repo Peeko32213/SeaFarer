@@ -3,8 +3,8 @@
 	"texture_size": [32, 32],
 	"render_type": "minecraft:cutout",
 	"textures": {
-		"0": "seafarer:block/shells/spiky_shell",
-		"particle": "seafarer:block/shells/spiky_shell"
+		"0": "seafarer:block/spiky_shell",
+		"particle": "seafarer:block/spiky_shell"
 	},
 	"elements": [
 		{
