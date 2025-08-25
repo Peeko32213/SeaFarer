@@ -199,33 +199,33 @@ public class SFBlockLootTableProvider extends BlockLootSubProvider {
 
         dropSelf(SFBlocks.CLAM_SHELL_BRICKS.get());
         dropSelf(SFBlocks.CLAM_SHELL_PILLAR.get());
-        dropSelf(SFBlocks.CLAM_SHELL_BRICKS_STAIRS.get());
-        dropSelf(SFBlocks.CLAM_SHELL_BRICKS_SLAB.get());
+        dropSelf(SFBlocks.CLAM_SHELL_BRICK_STAIRS.get());
+        dropSelf(SFBlocks.CLAM_SHELL_BRICK_SLAB.get());
 
         dropSelf(SFBlocks.HORN_SHELL_BRICKS.get());
         dropSelf(SFBlocks.HORN_SHELL_PILLAR.get());
-        dropSelf(SFBlocks.HORN_SHELL_BRICKS_STAIRS.get());
-        dropSelf(SFBlocks.HORN_SHELL_BRICKS_SLAB.get());
+        dropSelf(SFBlocks.HORN_SHELL_BRICK_STAIRS.get());
+        dropSelf(SFBlocks.HORN_SHELL_BRICK_SLAB.get());
 
         dropSelf(SFBlocks.SPIKY_SHELL_BRICKS.get());
         dropSelf(SFBlocks.SPIKY_SHELL_PILLAR.get());
-        dropSelf(SFBlocks.SPIKY_SHELL_BRICKS_STAIRS.get());
-        dropSelf(SFBlocks.SPIKY_SHELL_BRICKS_SLAB.get());
+        dropSelf(SFBlocks.SPIKY_SHELL_BRICK_STAIRS.get());
+        dropSelf(SFBlocks.SPIKY_SHELL_BRICK_SLAB.get());
 
         dropSelf(SFBlocks.SPIRAL_SHELL_BRICKS.get());
         dropSelf(SFBlocks.SPIRAL_SHELL_PILLAR.get());
-        dropSelf(SFBlocks.SPIRAL_SHELL_BRICKS_STAIRS.get());
-        dropSelf(SFBlocks.SPIRAL_SHELL_BRICKS_SLAB.get());
+        dropSelf(SFBlocks.SPIRAL_SHELL_BRICK_STAIRS.get());
+        dropSelf(SFBlocks.SPIRAL_SHELL_BRICK_SLAB.get());
 
         dropSelf(SFBlocks.SWIRL_SHELL_BRICKS.get());
         dropSelf(SFBlocks.SWIRL_SHELL_PILLAR.get());
-        dropSelf(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS.get());
-        dropSelf(SFBlocks.SWIRL_SHELL_BRICKS_SLAB.get());
+        dropSelf(SFBlocks.SWIRL_SHELL_BRICK_STAIRS.get());
+        dropSelf(SFBlocks.SWIRL_SHELL_BRICK_SLAB.get());
 
         dropSelf(SFBlocks.PYRAMID_SHELL_BRICKS.get());
         dropSelf(SFBlocks.PYRAMID_SHELL_PILLAR.get());
-        dropSelf(SFBlocks.PYRAMID_SHELL_BRICKS_STAIRS.get());
-        dropSelf(SFBlocks.PYRAMID_SHELL_BRICKS_SLAB.get());
+        dropSelf(SFBlocks.PYRAMID_SHELL_BRICK_STAIRS.get());
+        dropSelf(SFBlocks.PYRAMID_SHELL_BRICK_SLAB.get());
 
         dropSelf(SFBlocks.GRAVELLY_SAND.get());
         dropSelf(SFBlocks.SPRINKLED_SAND.get());

@@ -196,38 +196,38 @@ public class SFRecipeGenerator extends SFRecipeProvider implements IConditionBui
         // Clam Blockset
         makeSeaGlass(SFBlocks.CLAM_SHELL_BRICKS, SFBlocks.CLAM_SHELL).save(consumer);
         makeBricks(SFBlocks.CLAM_SHELL_PILLAR, SFBlocks.CLAM_SHELL_BRICKS).save(consumer);
-        makeStairs(SFBlocks.CLAM_SHELL_BRICKS_STAIRS, SFBlocks.CLAM_SHELL_BRICKS).save(consumer);
-        makeSlab(SFBlocks.CLAM_SHELL_BRICKS_SLAB, SFBlocks.CLAM_SHELL_BRICKS).save(consumer);
+        makeStairs(SFBlocks.CLAM_SHELL_BRICK_STAIRS, SFBlocks.CLAM_SHELL_BRICKS).save(consumer);
+        makeSlab(SFBlocks.CLAM_SHELL_BRICK_SLAB, SFBlocks.CLAM_SHELL_BRICKS).save(consumer);
 
         // Horn Blockset
         makeSeaGlass(SFBlocks.HORN_SHELL_BRICKS, SFBlocks.HORN_SHELL).save(consumer);
         makeBricks(SFBlocks.HORN_SHELL_PILLAR, SFBlocks.HORN_SHELL_BRICKS).save(consumer);
-        makeStairs(SFBlocks.HORN_SHELL_BRICKS_STAIRS, SFBlocks.HORN_SHELL_BRICKS).save(consumer);
-        makeSlab(SFBlocks.HORN_SHELL_BRICKS_SLAB, SFBlocks.HORN_SHELL_BRICKS).save(consumer);
+        makeStairs(SFBlocks.HORN_SHELL_BRICK_STAIRS, SFBlocks.HORN_SHELL_BRICKS).save(consumer);
+        makeSlab(SFBlocks.HORN_SHELL_BRICK_SLAB, SFBlocks.HORN_SHELL_BRICKS).save(consumer);
 
         // Spiky Blockset
         makeSeaGlass(SFBlocks.SPIKY_SHELL_BRICKS, SFBlocks.SPIKY_SHELL).save(consumer);
         makeBricks(SFBlocks.SPIKY_SHELL_PILLAR, SFBlocks.SPIKY_SHELL_BRICKS).save(consumer);
-        makeStairs(SFBlocks.SPIKY_SHELL_BRICKS_STAIRS, SFBlocks.SPIKY_SHELL_BRICKS).save(consumer);
-        makeSlab(SFBlocks.SPIKY_SHELL_BRICKS_SLAB, SFBlocks.SPIKY_SHELL_BRICKS).save(consumer);
+        makeStairs(SFBlocks.SPIKY_SHELL_BRICK_STAIRS, SFBlocks.SPIKY_SHELL_BRICKS).save(consumer);
+        makeSlab(SFBlocks.SPIKY_SHELL_BRICK_SLAB, SFBlocks.SPIKY_SHELL_BRICKS).save(consumer);
 
         // Spiral Blockset
         makeSeaGlass(SFBlocks.SPIRAL_SHELL_BRICKS, SFBlocks.SPIRAL_SHELL).save(consumer);
         makeBricks(SFBlocks.SPIRAL_SHELL_PILLAR, SFBlocks.SPIRAL_SHELL_BRICKS).save(consumer);
-        makeStairs(SFBlocks.SPIRAL_SHELL_BRICKS_STAIRS, SFBlocks.SPIRAL_SHELL_BRICKS).save(consumer);
-        makeSlab(SFBlocks.SPIRAL_SHELL_BRICKS_SLAB, SFBlocks.SPIRAL_SHELL_BRICKS).save(consumer);
+        makeStairs(SFBlocks.SPIRAL_SHELL_BRICK_STAIRS, SFBlocks.SPIRAL_SHELL_BRICKS).save(consumer);
+        makeSlab(SFBlocks.SPIRAL_SHELL_BRICK_SLAB, SFBlocks.SPIRAL_SHELL_BRICKS).save(consumer);
 
         // Swirl Blockset
         makeSeaGlass(SFBlocks.SWIRL_SHELL_BRICKS, SFBlocks.SWIRL_SHELL).save(consumer);
         makeBricks(SFBlocks.SWIRL_SHELL_PILLAR, SFBlocks.SWIRL_SHELL_BRICKS).save(consumer);
-        makeStairs(SFBlocks.SWIRL_SHELL_BRICKS_STAIRS, SFBlocks.SWIRL_SHELL_BRICKS).save(consumer);
-        makeSlab(SFBlocks.SWIRL_SHELL_BRICKS_SLAB, SFBlocks.SWIRL_SHELL_BRICKS).save(consumer);
+        makeStairs(SFBlocks.SWIRL_SHELL_BRICK_STAIRS, SFBlocks.SWIRL_SHELL_BRICKS).save(consumer);
+        makeSlab(SFBlocks.SWIRL_SHELL_BRICK_SLAB, SFBlocks.SWIRL_SHELL_BRICKS).save(consumer);
 
         // Pyramid Blockset
         makeSeaGlass(SFBlocks.PYRAMID_SHELL_BRICKS, SFBlocks.PYRAMID_SHELL).save(consumer);
         makeBricks(SFBlocks.PYRAMID_SHELL_PILLAR, SFBlocks.PYRAMID_SHELL_BRICKS).save(consumer);
-        makeStairs(SFBlocks.PYRAMID_SHELL_BRICKS_STAIRS, SFBlocks.PYRAMID_SHELL_BRICKS).save(consumer);
-        makeSlab(SFBlocks.PYRAMID_SHELL_BRICKS_SLAB, SFBlocks.PYRAMID_SHELL_BRICKS).save(consumer);
+        makeStairs(SFBlocks.PYRAMID_SHELL_BRICK_STAIRS, SFBlocks.PYRAMID_SHELL_BRICKS).save(consumer);
+        makeSlab(SFBlocks.PYRAMID_SHELL_BRICK_SLAB, SFBlocks.PYRAMID_SHELL_BRICKS).save(consumer);
 
         makeIngotToBlock(SFBlocks.SALT_BLOCK, SFItems.SEA_SALT).save(consumer);
 

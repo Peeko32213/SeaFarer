@@ -14,6 +14,10 @@ public class SFBlockProperties {
 
     public static final BlockBehaviour.Properties SAND = BlockBehaviour.Properties.of().strength(0.5F).sound(SoundType.SAND).instrument(NoteBlockInstrument.SNARE).mapColor(MapColor.SAND);
 
+    public static BlockBehaviour.Properties shellBlock(MapColor color) {
+        return BlockBehaviour.Properties.of().mapColor(color).instrument(NoteBlockInstrument.XYLOPHONE).requiresCorrectToolForDrops().strength(2.0F).sound(SoundType.BONE_BLOCK);
+    }
+
     public static BlockBehaviour.Properties seaGlass(MapColor color) {
         return BlockBehaviour.Properties.of().mapColor(color).instrument(NoteBlockInstrument.HAT).strength(0.3F).sound(SoundType.AMETHYST).noOcclusion().isValidSpawn(SFBlockProperties::neverEntity).isRedstoneConductor(SFBlockProperties::never).isSuffocating(SFBlockProperties::never).isViewBlocking(SFBlockProperties::never);
     }
