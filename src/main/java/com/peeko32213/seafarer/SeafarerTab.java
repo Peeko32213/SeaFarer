@@ -100,9 +100,6 @@ public class SeafarerTab {
                     output.accept(SFBlocks.PURPLE_ZOA.get());
                     output.accept(SFBlocks.ANTLER_GORGONIAN.get());
                     output.accept(SFBlocks.TOWERING_GORGONIAN.get());
-                    output.accept(SFBlocks.GHOUL_CORAL.get());
-                    output.accept(SFBlocks.PALE_SPONGE.get());
-                    output.accept(SFBlocks.TUBE_WORMS.get());
 
                     // corals
                     output.accept(SFBlocks.AMBER_CORAL_BLOCK.get());

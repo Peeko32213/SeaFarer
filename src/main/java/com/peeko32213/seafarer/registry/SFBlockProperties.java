@@ -12,6 +12,12 @@ import net.minecraft.world.level.material.PushReaction;
 
 public class SFBlockProperties {
 
+    public static final BlockBehaviour.Properties PLANT = BlockBehaviour.Properties.of().mapColor(MapColor.GRASS).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY);
+    public static final BlockBehaviour.Properties WATER_PLANT = BlockBehaviour.Properties.of().mapColor(MapColor.GRASS).noCollission().instabreak().sound(SoundType.WET_GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY);
+
+    public static final BlockBehaviour.Properties DEAD_CORAL_BLOCK = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(1.5F, 6.0F);
+    public static final BlockBehaviour.Properties DEAD_CORAL = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().noCollission().instabreak();
+
     public static final BlockBehaviour.Properties SAND = BlockBehaviour.Properties.of().strength(0.5F).sound(SoundType.SAND).instrument(NoteBlockInstrument.SNARE).mapColor(MapColor.SAND);
 
     public static BlockBehaviour.Properties shellBlock(MapColor color) {
@@ -40,6 +46,18 @@ public class SFBlockProperties {
 
     public static BlockBehaviour.Properties starfish(MapColor color) {
         return BlockBehaviour.Properties.of().mapColor(color).strength(0.4F).sound(SoundType.CORAL_BLOCK).instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
+    }
+
+    public static BlockBehaviour.Properties coral(MapColor color) {
+        return BlockBehaviour.Properties.of().mapColor(color).noCollission().instabreak().sound(SoundType.WET_GRASS).pushReaction(PushReaction.DESTROY);
+    }
+
+    public static BlockBehaviour.Properties coralBlock(MapColor color) {
+        return BlockBehaviour.Properties.of().mapColor(color).requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.CORAL_BLOCK);
+    }
+
+    public static BlockBehaviour.Properties flower(MapColor color) {
+        return BlockBehaviour.Properties.of().mapColor(color).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY);
     }
 
     public static boolean never(BlockState state, BlockGetter getter, BlockPos pos) {

@@ -222,12 +222,13 @@ public class SFBlockstateProvider extends BlockStateProvider {
         this.stairs(ALGAE_COBBLESTONE_STAIRS, this.blockTexture(ALGAE_COBBLESTONE.get()));
         this.slab(ALGAE_COBBLESTONE_SLAB, this.blockTexture(ALGAE_COBBLESTONE.get()));
 
-        createPottedPlant(SFBlocks.SEA_THRIFT, SFBlocks.POTTED_SEA_THRIFT, "cutout");
-        createPottedPlant(SFBlocks.SEA_HOLLY, SFBlocks.POTTED_SEA_HOLLY, "cutout");
-        createPottedPlant(SFBlocks.COASTAL_LAVENDER, SFBlocks.POTTED_COASTAL_LAVENDER, "cutout");
-        createPottedPlant(SFBlocks.COASTAL_WILDFLOWER, SFBlocks.POTTED_COASTAL_WILDFLOWER, "cutout");
+        this.pottedPlant(BEACHGRASS, POTTED_BEACHGRASS);
 
-        //CORAL
+        this.pottedPlant(SEA_THRIFT, POTTED_SEA_THRIFT);
+        this.pottedPlant(COASTAL_LAVENDER, POTTED_COASTAL_LAVENDER);
+        this.pottedPlant(COASTAL_WILDFLOWER, POTTED_COASTAL_WILDFLOWER);
+        this.pottedPlant(SEA_HOLLY, POTTED_SEA_HOLLY);
+
         this.cubeAllBlock(AMBER_CORAL_BLOCK);
         this.cubeAllBlock(DEAD_AMBER_CORAL_BLOCK);
 

@@ -4,6 +4,7 @@ import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.blocks.*;
 import com.peeko32213.seafarer.blocks.shell.PyramidShellBlock;
 import com.peeko32213.seafarer.blocks.shell.ShellBlock;
+import net.minecraft.world.flag.FeatureFlag;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PlaceOnWaterBlockItem;
@@ -169,100 +170,25 @@ public class SFBlocks {
 
     public static final RegistryObject<Block> ALGAE_BLOCK = registerBlock("algae_block", () -> new AlgaeBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(0.1F).sound(SoundType.MOSS).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> ALGAE_CARPET = registerBlock("algae_carpet", () -> new AlageCarpetBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(0.1F).sound(SoundType.MOSS_CARPET).pushReaction(PushReaction.DESTROY).noCollission().noOcclusion().replaceable()));
+    public static final RegistryObject<Block> ALGAE_PLANT = registerBlock("algae_plant", () -> new AlgaePlantBlock(SFBlockProperties.WATER_PLANT));
 
-    public static final RegistryObject<Block> ALGAE_PLANT = registerBlock("algae_plant", () ->
-            new AlgaePlantBlock(BlockBehaviour.Properties.
-                    copy(Blocks.LILY_PAD)
-                    .noCollission()
-                    .instabreak()
-                    .offsetType(BlockBehaviour.OffsetType.XZ)
-                    .sound(SoundType.WET_GRASS)));
+    public static final RegistryObject<Block> BEACHGRASS_FAN = registerBlock("beachgrass_fan", () -> new LandFanBlock(SFBlockProperties.PLANT));
+    public static final RegistryObject<Block> BEACHGRASS = registerBlock("beachgrass", () -> new SFCropLikePlantBlock(SFBlockProperties.PLANT));
+    public static final RegistryObject<Block> POTTED_BEACHGRASS = registerBlockWithoutItem("potted_beachgrass", () -> new FlowerPotBlock(SFBlocks.BEACHGRASS.get(), registerFlowerPot()));
 
-    public static final RegistryObject<Block> BEACHGRASS_FAN = registerBlock("beachgrass_fan",
-            () -> new LandFanBlock(BlockBehaviour.Properties
-                    .of()
-                    .mapColor(MapColor.TERRACOTTA_YELLOW)
-                    .noCollission().instabreak()
-                    .sound(SoundType.GRASS)
-                    .pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> SEA_THRIFT = registerBlock("sea_thrift", () -> new SandPlantBlock(SFBlockProperties.flower(MapColor.COLOR_PURPLE)));
+    public static final RegistryObject<Block> POTTED_SEA_THRIFT = registerBlockWithoutItem("potted_sea_thrift", () -> new FlowerPotBlock(SFBlocks.SEA_THRIFT.get(), registerFlowerPot()));
 
-    public static final RegistryObject<Block> BEACHGRASS = registerBlock("beachgrass", () ->
-            new SFCropLikePlantBlock(BlockBehaviour.Properties
-                    .of().mapColor(MapColor.TERRACOTTA_YELLOW)
-                    .replaceable().noCollission()
-                    .instabreak()
-                    .sound(SoundType.GRASS)
-                    .ignitedByLava()
-                    .offsetType(BlockBehaviour.OffsetType.XZ)
-                    .pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> SEA_HOLLY = registerBlock("sea_holly", () -> new SandPlantBlock(SFBlockProperties.flower(MapColor.COLOR_PURPLE)));
+    public static final RegistryObject<Block> POTTED_SEA_HOLLY = registerBlockWithoutItem("potted_sea_holly", () -> new FlowerPotBlock(SFBlocks.SEA_HOLLY.get(), registerFlowerPot()));
 
-    public static final RegistryObject<Block> SEA_THRIFT = registerBlock("sea_thrift", () ->
-            new SFCropLikePlantBlock(BlockBehaviour.Properties
-                    .of().mapColor(MapColor.COLOR_PINK)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.GRASS)
-                    .ignitedByLava()
-                    .offsetType(BlockBehaviour.OffsetType.XZ)
-                    .pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> COASTAL_LAVENDER = registerBlock("coastal_lavender", () -> new SandPlantBlock(SFBlockProperties.flower(MapColor.COLOR_PURPLE)));
+    public static final RegistryObject<Block> POTTED_COASTAL_LAVENDER = registerBlockWithoutItem("potted_coastal_lavender", () -> new FlowerPotBlock(SFBlocks.COASTAL_LAVENDER.get(), registerFlowerPot()));
 
+    public static final RegistryObject<Block> COASTAL_WILDFLOWER = registerBlock("coastal_wildflower", () -> new SandPlantBlock(SFBlockProperties.flower(MapColor.TERRACOTTA_YELLOW)));
+    public static final RegistryObject<Block> POTTED_COASTAL_WILDFLOWER = registerBlockWithoutItem("potted_coastal_wildflower", () -> new FlowerPotBlock(SFBlocks.COASTAL_WILDFLOWER.get(), registerFlowerPot()));
 
-    public static final RegistryObject<Block> POTTED_SEA_THRIFT = registerBlockNoItem("potted_sea_thrift",
-            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SFBlocks.SEA_THRIFT, BlockBehaviour
-                    .Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
-
-
-
-    public static final RegistryObject<Block> SEA_HOLLY = registerBlock("sea_holly", () ->
-            new SandPlantBlock(BlockBehaviour.Properties
-                    .of().mapColor(MapColor.TERRACOTTA_YELLOW)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.GRASS)
-                    .ignitedByLava()
-                    .offsetType(BlockBehaviour.OffsetType.XZ)
-                    .pushReaction(PushReaction.DESTROY)));
-
-
-    public static final RegistryObject<Block> POTTED_SEA_HOLLY = registerBlockNoItem("potted_sea_holly",
-            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SFBlocks.SEA_HOLLY, BlockBehaviour
-                    .Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
-
-    public static final RegistryObject<Block> COASTAL_LAVENDER = registerBlock("coastal_lavender", () ->
-            new SandPlantBlock(BlockBehaviour.Properties
-                    .of().mapColor(MapColor.COLOR_PURPLE)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.GRASS)
-                    .ignitedByLava()
-                    .offsetType(BlockBehaviour.OffsetType.XZ)
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> POTTED_COASTAL_LAVENDER = registerBlockNoItem("potted_coastal_lavender",
-            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SFBlocks.COASTAL_LAVENDER, BlockBehaviour
-                    .Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
-
-
-    public static final RegistryObject<Block> COASTAL_WILDFLOWER = registerBlock("coastal_wildflower", () ->
-            new SandPlantBlock(BlockBehaviour.Properties
-                    .of().mapColor(MapColor.TERRACOTTA_YELLOW)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.GRASS)
-                    .ignitedByLava()
-                    .offsetType(BlockBehaviour.OffsetType.XZ)
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> POTTED_COASTAL_WILDFLOWER = registerBlockNoItem("potted_coastal_wildflower",
-            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, SFBlocks.COASTAL_WILDFLOWER, BlockBehaviour
-                    .Properties.copy(Blocks.POTTED_DANDELION).noOcclusion()));
-
-    public static final RegistryObject<Block> SALT_BLOCK = register("salt_block",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.BONE_BLOCK)
-                    .strength(3.0F, 1.0F)
-                    .requiresCorrectToolForDrops()
-            ));
+    public static final RegistryObject<Block> SALT_BLOCK = register("salt_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).instrument(NoteBlockInstrument.XYLOPHONE).requiresCorrectToolForDrops().strength(1.0F).sound(SoundType.BONE_BLOCK)));
 
     public static final RegistryObject<Block> CLAM_SHELL = registerBlock("clam_shell", () -> new ShellBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.STONE).noOcclusion().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> HORN_SHELL = registerBlock("horn_shell", () -> new ShellBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.STONE).noOcclusion().pushReaction(PushReaction.DESTROY)));
@@ -312,468 +238,85 @@ public class SFBlocks {
     public static final RegistryObject<Block> ALGAE_COBBLESTONE_STAIRS = registerBlock("algae_cobblestone_stairs", () -> new StairBlock(() -> ALGAE_COBBLESTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(ALGAE_COBBLESTONE.get())));
     public static final RegistryObject<Block> ALGAE_COBBLESTONE_SLAB = registerBlock("algae_cobblestone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ALGAE_COBBLESTONE.get())));
 
-    public static final RegistryObject<Block> DEAD_AMBER_CORAL = registerBlock("dead_amber_coral", () ->
-            new BaseCoralPlantBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GRAY)
-                    .forceSolidOn()
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .noCollission()
-                    .instabreak()));
+    // amber
+    public static final RegistryObject<Block> DEAD_AMBER_CORAL_BLOCK = registerBlock("dead_amber_coral_block", () -> new Block(SFBlockProperties.DEAD_CORAL_BLOCK));
+    public static final RegistryObject<Block> DEAD_AMBER_CORAL = registerBlock("dead_amber_coral", () -> new BaseCoralPlantBlock(SFBlockProperties.DEAD_CORAL));
+    public static final RegistryObject<Block> DEAD_AMBER_CORAL_WALL_FAN = registerBlockWithoutItem("dead_amber_coral_wall_fan", () -> new BaseCoralWallFanBlock(SFBlockProperties.DEAD_CORAL));
+    public static final RegistryObject<Block> DEAD_AMBER_CORAL_FAN = registerBlockWithoutItem("dead_amber_coral_fan", () -> new BaseCoralFanBlock(SFBlockProperties.DEAD_CORAL));
 
-    public static final RegistryObject<Block> AMBER_CORAL = registerBlock("amber_coral", () ->
-            new CoralPlantBlock(DEAD_AMBER_CORAL.get(), BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_ORANGE)
-                    .noCollission().instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> AMBER_CORAL_BLOCK = registerBlock("amber_coral_block", () -> new CoralBlock(DEAD_AMBER_CORAL_BLOCK.get(), SFBlockProperties.coralBlock(MapColor.TERRACOTTA_ORANGE)));
+    public static final RegistryObject<Block> AMBER_CORAL = registerBlock("amber_coral", () -> new CoralPlantBlock(DEAD_AMBER_CORAL.get(), SFBlockProperties.coral(MapColor.TERRACOTTA_ORANGE)));
+    public static final RegistryObject<Block> AMBER_CORAL_WALL_FAN = registerBlockWithoutItem("amber_coral_wall_fan", () -> new CoralWallFanBlock(DEAD_AMBER_CORAL_WALL_FAN.get(), SFBlockProperties.coral(MapColor.TERRACOTTA_ORANGE)));
+    public static final RegistryObject<Block> AMBER_CORAL_FAN = registerBlockWithoutItem("amber_coral_fan", () -> new CoralFanBlock(DEAD_AMBER_CORAL_FAN.get(), SFBlockProperties.coral(MapColor.TERRACOTTA_ORANGE)));
 
-    public static final RegistryObject<Block> DEAD_AMBER_CORAL_BLOCK = register("dead_amber_coral_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GRAY)
-                    .forceSolidOn()
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .strength(1.5F, 1.0F)));
+    // cerulean
+    public static final RegistryObject<Block> DEAD_CERULEAN_CORAL_BLOCK = registerBlock("dead_cerulean_coral_block", () -> new Block(SFBlockProperties.DEAD_CORAL_BLOCK));
+    public static final RegistryObject<Block> DEAD_CERULEAN_CORAL = registerBlock("dead_cerulean_coral", () -> new BaseCoralPlantBlock(SFBlockProperties.DEAD_CORAL));
+    public static final RegistryObject<Block> DEAD_CERULEAN_CORAL_WALL_FAN = registerBlockWithoutItem("dead_cerulean_coral_wall_fan", () -> new BaseCoralWallFanBlock(SFBlockProperties.DEAD_CORAL));
+    public static final RegistryObject<Block> DEAD_CERULEAN_CORAL_FAN = registerBlockWithoutItem("dead_cerulean_coral_fan", () -> new BaseCoralFanBlock(SFBlockProperties.DEAD_CORAL));
 
-    public static final RegistryObject<Block> AMBER_CORAL_BLOCK = register("amber_coral_block",
-            () -> new CoralBlock(DEAD_AMBER_CORAL_BLOCK.get(), BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_ORANGE)
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .strength(1.5F, 1.0F)
-                    .sound(SoundType.CORAL_BLOCK)));
+    public static final RegistryObject<Block> CERULEAN_CORAL_BLOCK = registerBlock("cerulean_coral_block", () -> new CoralBlock(DEAD_CERULEAN_CORAL_BLOCK.get(), SFBlockProperties.coralBlock(MapColor.COLOR_BLUE)));
+    public static final RegistryObject<Block> CERULEAN_CORAL = registerBlock("cerulean_coral", () -> new CoralPlantBlock(DEAD_CERULEAN_CORAL.get(), SFBlockProperties.coral(MapColor.COLOR_BLUE)));
+    public static final RegistryObject<Block> CERULEAN_CORAL_WALL_FAN = registerBlockWithoutItem("cerulean_coral_wall_fan", () -> new CoralWallFanBlock(DEAD_CERULEAN_CORAL_WALL_FAN.get(), SFBlockProperties.coral(MapColor.COLOR_BLUE)));
+    public static final RegistryObject<Block> CERULEAN_CORAL_FAN = registerBlockWithoutItem("cerulean_coral_fan", () -> new CoralFanBlock(DEAD_CERULEAN_CORAL_FAN.get(), SFBlockProperties.coral(MapColor.COLOR_BLUE)));
 
-    public static final RegistryObject<Block> DEAD_AMBER_CORAL_FAN = BLOCKS.register("dead_amber_coral_fan", () ->
-            new BaseCoralFanBlock(BlockBehaviour.Properties
-                    .copy(Blocks.DEAD_BRAIN_CORAL_FAN)
-                    .requiresCorrectToolForDrops()
-                    .noCollission()
-                    .instabreak()));
+    // maroon
+    public static final RegistryObject<Block> DEAD_MAROON_CORAL_BLOCK = registerBlock("dead_maroon_coral_block", () -> new Block(SFBlockProperties.DEAD_CORAL_BLOCK));
+    public static final RegistryObject<Block> DEAD_MAROON_CORAL = registerBlock("dead_maroon_coral", () -> new BaseCoralPlantBlock(SFBlockProperties.DEAD_CORAL));
+    public static final RegistryObject<Block> DEAD_MAROON_CORAL_WALL_FAN = registerBlockWithoutItem("dead_maroon_coral_wall_fan", () -> new BaseCoralWallFanBlock(SFBlockProperties.DEAD_CORAL));
+    public static final RegistryObject<Block> DEAD_MAROON_CORAL_FAN = registerBlockWithoutItem("dead_maroon_coral_fan", () -> new BaseCoralFanBlock(SFBlockProperties.DEAD_CORAL));
 
-    public static final RegistryObject<Block> DEAD_AMBER_CORAL_WALL_FAN = BLOCKS.register("dead_amber_coral_wall_fan", () ->
-            new BaseCoralWallFanBlock(BlockBehaviour.Properties
-                    .copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN)
-                    .requiresCorrectToolForDrops()
-                    .noCollission().instabreak()
-                    .dropsLike(DEAD_AMBER_CORAL_FAN.get())));
+    public static final RegistryObject<Block> MAROON_CORAL_BLOCK = registerBlock("maroon_coral_block", () -> new CoralBlock(DEAD_MAROON_CORAL_BLOCK.get(), SFBlockProperties.coralBlock(MapColor.COLOR_RED)));
+    public static final RegistryObject<Block> MAROON_CORAL = registerBlock("maroon_coral", () -> new CoralPlantBlock(DEAD_MAROON_CORAL.get(), SFBlockProperties.coral(MapColor.COLOR_RED)));
+    public static final RegistryObject<Block> MAROON_CORAL_WALL_FAN = registerBlockWithoutItem("maroon_coral_wall_fan", () -> new CoralWallFanBlock(DEAD_MAROON_CORAL_WALL_FAN.get(), SFBlockProperties.coral(MapColor.COLOR_RED)));
+    public static final RegistryObject<Block> MAROON_CORAL_FAN = registerBlockWithoutItem("maroon_coral_fan", () -> new CoralFanBlock(DEAD_MAROON_CORAL_FAN.get(), SFBlockProperties.coral(MapColor.COLOR_RED)));
 
-    public static final RegistryObject<Block> AMBER_CORAL_FAN = BLOCKS.register("amber_coral_fan", () ->
-            new CoralFanBlock(DEAD_AMBER_CORAL_FAN.get(), BlockBehaviour.Properties
-                    .copy(Blocks.BRAIN_CORAL_FAN)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)));
+    // olive
+    public static final RegistryObject<Block> DEAD_OLIVE_CORAL_BLOCK = registerBlock("dead_olive_coral_block", () -> new Block(SFBlockProperties.DEAD_CORAL_BLOCK));
+    public static final RegistryObject<Block> DEAD_OLIVE_CORAL = registerBlock("dead_olive_coral", () -> new BaseCoralPlantBlock(SFBlockProperties.DEAD_CORAL));
+    public static final RegistryObject<Block> DEAD_OLIVE_CORAL_WALL_FAN = registerBlockWithoutItem("dead_olive_coral_wall_fan", () -> new BaseCoralWallFanBlock(SFBlockProperties.DEAD_CORAL));
+    public static final RegistryObject<Block> DEAD_OLIVE_CORAL_FAN = registerBlockWithoutItem("dead_olive_coral_fan", () -> new BaseCoralFanBlock(SFBlockProperties.DEAD_CORAL));
 
-    public static final RegistryObject<Block> AMBER_CORAL_WALL_FAN = BLOCKS.register("amber_coral_wall_fan", () ->
-            new CoralWallFanBlock(DEAD_AMBER_CORAL_WALL_FAN.get(), BlockBehaviour.Properties
-                    .copy(Blocks.BRAIN_CORAL_WALL_FAN)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .dropsLike(AMBER_CORAL_FAN.get())));
+    public static final RegistryObject<Block> OLIVE_CORAL_BLOCK = registerBlock("olive_coral_block", () -> new CoralBlock(DEAD_OLIVE_CORAL_BLOCK.get(), SFBlockProperties.coralBlock(MapColor.COLOR_LIGHT_GREEN)));
+    public static final RegistryObject<Block> OLIVE_CORAL = registerBlock("olive_coral", () -> new CoralPlantBlock(DEAD_OLIVE_CORAL.get(), SFBlockProperties.coral(MapColor.COLOR_LIGHT_GREEN)));
+    public static final RegistryObject<Block> OLIVE_CORAL_WALL_FAN = registerBlockWithoutItem("olive_coral_wall_fan", () -> new CoralWallFanBlock(DEAD_OLIVE_CORAL_WALL_FAN.get(), SFBlockProperties.coral(MapColor.COLOR_LIGHT_GREEN)));
+    public static final RegistryObject<Block> OLIVE_CORAL_FAN = registerBlockWithoutItem("olive_coral_fan", () -> new CoralFanBlock(DEAD_OLIVE_CORAL_FAN.get(), SFBlockProperties.coral(MapColor.COLOR_LIGHT_GREEN)));
 
-    public static final RegistryObject<Block> DEAD_CERULEAN_CORAL = registerBlock("dead_cerulean_coral", () ->
-            new BaseCoralPlantBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GRAY)
-                    .forceSolidOn()
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .noCollission()
-                    .instabreak()));
+    // turquoise
+    public static final RegistryObject<Block> DEAD_TURQUOISE_CORAL_BLOCK = registerBlock("dead_turquoise_coral_block", () -> new Block(SFBlockProperties.DEAD_CORAL_BLOCK));
+    public static final RegistryObject<Block> DEAD_TURQUOISE_CORAL = registerBlock("dead_turquoise_coral", () -> new BaseCoralPlantBlock(SFBlockProperties.DEAD_CORAL));
+    public static final RegistryObject<Block> DEAD_TURQUOISE_CORAL_WALL_FAN = registerBlockWithoutItem("dead_turquoise_coral_wall_fan", () -> new BaseCoralWallFanBlock(SFBlockProperties.DEAD_CORAL));
+    public static final RegistryObject<Block> DEAD_TURQUOISE_CORAL_FAN = registerBlockWithoutItem("dead_turquoise_coral_fan", () -> new BaseCoralFanBlock(SFBlockProperties.DEAD_CORAL));
 
-    public static final RegistryObject<Block> CERULEAN_CORAL = registerBlock("cerulean_coral", () ->
-            new CoralPlantBlock(DEAD_CERULEAN_CORAL.get(), BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_CYAN)
-                    .noCollission().instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> TURQUOISE_CORAL_BLOCK = registerBlock("turquoise_coral_block", () -> new CoralBlock(DEAD_TURQUOISE_CORAL_BLOCK.get(), SFBlockProperties.coralBlock(MapColor.COLOR_CYAN)));
+    public static final RegistryObject<Block> TURQUOISE_CORAL = registerBlock("turquoise_coral", () -> new CoralPlantBlock(DEAD_TURQUOISE_CORAL.get(), SFBlockProperties.coral(MapColor.COLOR_CYAN)));
+    public static final RegistryObject<Block> TURQUOISE_CORAL_WALL_FAN = registerBlockWithoutItem("turquoise_coral_wall_fan", () -> new CoralWallFanBlock(DEAD_TURQUOISE_CORAL_WALL_FAN.get(), SFBlockProperties.coral(MapColor.COLOR_CYAN)));
+    public static final RegistryObject<Block> TURQUOISE_CORAL_FAN = registerBlockWithoutItem("turquoise_coral_fan", () -> new CoralFanBlock(DEAD_TURQUOISE_CORAL_FAN.get(), SFBlockProperties.coral(MapColor.COLOR_CYAN)));
 
-    public static final RegistryObject<Block> DEAD_CERULEAN_CORAL_BLOCK = register("dead_cerulean_coral_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GRAY)
-                    .forceSolidOn()
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .strength(1.5F, 1.0F)));
+    // verdant
+    public static final RegistryObject<Block> DEAD_VERDANT_CORAL_BLOCK = registerBlock("dead_verdant_coral_block", () -> new Block(SFBlockProperties.DEAD_CORAL_BLOCK));
+    public static final RegistryObject<Block> DEAD_VERDANT_CORAL = registerBlock("dead_verdant_coral", () -> new BaseCoralPlantBlock(SFBlockProperties.DEAD_CORAL));
+    public static final RegistryObject<Block> DEAD_VERDANT_CORAL_WALL_FAN = registerBlockWithoutItem("dead_verdant_coral_wall_fan", () -> new BaseCoralWallFanBlock(SFBlockProperties.DEAD_CORAL));
+    public static final RegistryObject<Block> DEAD_VERDANT_CORAL_FAN = registerBlockWithoutItem("dead_verdant_coral_fan", () -> new BaseCoralFanBlock(SFBlockProperties.DEAD_CORAL));
 
-    public static final RegistryObject<Block> CERULEAN_CORAL_BLOCK = register("cerulean_coral_block",
-            () -> new CoralBlock(DEAD_CERULEAN_CORAL_BLOCK.get(), BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_CYAN)
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .strength(1.5F, 1.0F)
-                    .sound(SoundType.CORAL_BLOCK)));
+    public static final RegistryObject<Block> VERDANT_CORAL_BLOCK = registerBlock("verdant_coral_block", () -> new CoralBlock(DEAD_VERDANT_CORAL_BLOCK.get(), SFBlockProperties.coralBlock(MapColor.COLOR_GREEN)));
+    public static final RegistryObject<Block> VERDANT_CORAL = registerBlock("verdant_coral", () -> new CoralPlantBlock(DEAD_VERDANT_CORAL.get(), SFBlockProperties.coral(MapColor.COLOR_GREEN)));
+    public static final RegistryObject<Block> VERDANT_CORAL_WALL_FAN = registerBlockWithoutItem("verdant_coral_wall_fan", () -> new CoralWallFanBlock(DEAD_VERDANT_CORAL_WALL_FAN.get(), SFBlockProperties.coral(MapColor.COLOR_GREEN)));
+    public static final RegistryObject<Block> VERDANT_CORAL_FAN = registerBlockWithoutItem("verdant_coral_fan", () -> new CoralFanBlock(DEAD_VERDANT_CORAL_FAN.get(), SFBlockProperties.coral(MapColor.COLOR_GREEN)));
 
-    public static final RegistryObject<Block> DEAD_CERULEAN_CORAL_FAN = BLOCKS.register("dead_cerulean_coral_fan", () ->
-            new BaseCoralFanBlock(BlockBehaviour.Properties
-                    .copy(Blocks.DEAD_BRAIN_CORAL_FAN)
-                    .requiresCorrectToolForDrops()
-                    .noCollission()
-                    .instabreak()));
+    public static final RegistryObject<Block> CYAN_ZOA = registerBlock("cyan_zoa",() -> new FloweryCoralBlock(SFBlockProperties.coral(MapColor.COLOR_CYAN)));
+    public static final RegistryObject<Block> ORANGE_ZOA = registerBlock("orange_zoa",() -> new FloweryCoralBlock(SFBlockProperties.coral(MapColor.COLOR_ORANGE)));
+    public static final RegistryObject<Block> RED_ZOA = registerBlock("red_zoa",() -> new FloweryCoralBlock(SFBlockProperties.coral(MapColor.COLOR_RED)));
+    public static final RegistryObject<Block> PURPLE_ZOA = registerBlock("purple_zoa",() -> new FloweryCoralBlock(SFBlockProperties.coral(MapColor.COLOR_PURPLE)));
 
-    public static final RegistryObject<Block> DEAD_CERULEAN_CORAL_WALL_FAN = BLOCKS.register("dead_cerulean_coral_wall_fan", () ->
-            new BaseCoralWallFanBlock(BlockBehaviour.Properties
-                    .copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN)
-                    .requiresCorrectToolForDrops()
-                    .noCollission().instabreak()
-                    .dropsLike(DEAD_CERULEAN_CORAL_FAN.get())));
+    public static final RegistryObject<Block> ANTLER_GORGONIAN = registerBlock("antler_gorgonian",() -> new LargeCoralPlantBlock(SFBlockProperties.coral(MapColor.COLOR_PURPLE)));
+    public static final RegistryObject<Block> TOWERING_GORGONIAN = registerBlock("towering_gorgonian",() -> new LargeCoralPlantBlock(SFBlockProperties.coral(MapColor.COLOR_ORANGE)));
 
-    public static final RegistryObject<Block> CERULEAN_CORAL_FAN = BLOCKS.register("cerulean_coral_fan", () ->
-            new CoralFanBlock(DEAD_CERULEAN_CORAL_FAN.get(), BlockBehaviour.Properties
-                    .copy(Blocks.BRAIN_CORAL_FAN)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)));
-
-    public static final RegistryObject<Block> CERULEAN_CORAL_WALL_FAN = BLOCKS.register("cerulean_coral_wall_fan", () ->
-            new CoralWallFanBlock(DEAD_CERULEAN_CORAL_WALL_FAN.get(), BlockBehaviour.Properties
-                    .copy(Blocks.BRAIN_CORAL_WALL_FAN)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .dropsLike(AMBER_CORAL_FAN.get())));
-
-    public static final RegistryObject<Block> DEAD_MAROON_CORAL = registerBlock("dead_maroon_coral", () ->
-            new BaseCoralPlantBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GRAY)
-                    .forceSolidOn()
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .noCollission()
-                    .instabreak()));
-
-    public static final RegistryObject<Block> MAROON_CORAL = registerBlock("maroon_coral", () ->
-            new CoralPlantBlock(DEAD_MAROON_CORAL.get(), BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_RED)
-                    .noCollission().instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> DEAD_MAROON_CORAL_BLOCK = register("dead_maroon_coral_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GRAY)
-                    .forceSolidOn()
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .strength(1.5F, 1.0F)));
-
-    public static final RegistryObject<Block> MAROON_CORAL_BLOCK = register("maroon_coral_block",
-            () -> new CoralBlock(DEAD_MAROON_CORAL_BLOCK.get(), BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_RED)
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .strength(1.5F, 1.0F)
-                    .sound(SoundType.CORAL_BLOCK)));
-
-    public static final RegistryObject<Block> DEAD_MAROON_CORAL_FAN = BLOCKS.register("dead_maroon_coral_fan", () ->
-            new BaseCoralFanBlock(BlockBehaviour.Properties
-                    .copy(Blocks.DEAD_BRAIN_CORAL_FAN)
-                    .requiresCorrectToolForDrops()
-                    .noCollission()
-                    .instabreak()));
-
-    public static final RegistryObject<Block> DEAD_MAROON_CORAL_WALL_FAN = BLOCKS.register("dead_maroon_coral_wall_fan", () ->
-            new BaseCoralWallFanBlock(BlockBehaviour.Properties
-                    .copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN)
-                    .requiresCorrectToolForDrops()
-                    .noCollission().instabreak()
-                    .dropsLike(DEAD_MAROON_CORAL_FAN.get())));
-
-    public static final RegistryObject<Block> MAROON_CORAL_FAN = BLOCKS.register("maroon_coral_fan", () ->
-            new CoralFanBlock(DEAD_MAROON_CORAL_FAN.get(), BlockBehaviour.Properties
-                    .copy(Blocks.BRAIN_CORAL_FAN)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)));
-
-    public static final RegistryObject<Block> MAROON_CORAL_WALL_FAN = BLOCKS.register("maroon_coral_wall_fan", () ->
-            new CoralWallFanBlock(DEAD_MAROON_CORAL_WALL_FAN.get(), BlockBehaviour.Properties
-                    .copy(Blocks.BRAIN_CORAL_WALL_FAN)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .dropsLike(MAROON_CORAL_FAN.get())));
-
-    public static final RegistryObject<Block> DEAD_OLIVE_CORAL = registerBlock("dead_olive_coral", () ->
-            new BaseCoralPlantBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GRAY)
-                    .forceSolidOn()
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .noCollission()
-                    .instabreak()));
-
-    public static final RegistryObject<Block> OLIVE_CORAL = registerBlock("olive_coral", () ->
-            new CoralPlantBlock(DEAD_OLIVE_CORAL.get(), BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_RED)
-                    .noCollission().instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> DEAD_OLIVE_CORAL_BLOCK = register("dead_olive_coral_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GRAY)
-                    .forceSolidOn()
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .strength(1.5F, 1.0F)));
-
-    public static final RegistryObject<Block> OLIVE_CORAL_BLOCK = register("olive_coral_block",
-            () -> new CoralBlock(DEAD_OLIVE_CORAL_BLOCK.get(), BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_LIGHT_GREEN)
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .strength(1.5F, 1.0F)
-                    .sound(SoundType.CORAL_BLOCK)));
-
-    public static final RegistryObject<Block> DEAD_OLIVE_CORAL_FAN = BLOCKS.register("dead_olive_coral_fan", () ->
-            new BaseCoralFanBlock(BlockBehaviour.Properties
-                    .copy(Blocks.DEAD_BRAIN_CORAL_FAN)
-                    .requiresCorrectToolForDrops()
-                    .noCollission()
-                    .instabreak()));
-
-    public static final RegistryObject<Block> DEAD_OLIVE_CORAL_WALL_FAN = BLOCKS.register("dead_olive_coral_wall_fan", () ->
-            new BaseCoralWallFanBlock(BlockBehaviour.Properties
-                    .copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN)
-                    .requiresCorrectToolForDrops()
-                    .noCollission().instabreak()
-                    .dropsLike(DEAD_OLIVE_CORAL_FAN.get())));
-
-    public static final RegistryObject<Block> OLIVE_CORAL_FAN = BLOCKS.register("olive_coral_fan", () ->
-            new CoralFanBlock(DEAD_OLIVE_CORAL_FAN.get(), BlockBehaviour.Properties
-                    .copy(Blocks.BRAIN_CORAL_FAN)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)));
-
-    public static final RegistryObject<Block> OLIVE_CORAL_WALL_FAN = BLOCKS.register("olive_coral_wall_fan", () ->
-            new CoralWallFanBlock(DEAD_OLIVE_CORAL_WALL_FAN.get(), BlockBehaviour.Properties
-                    .copy(Blocks.BRAIN_CORAL_WALL_FAN)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .dropsLike(OLIVE_CORAL_FAN.get())));
-
-    public static final RegistryObject<Block> DEAD_TURQUOISE_CORAL = registerBlock("dead_turquoise_coral", () ->
-            new BaseCoralPlantBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GRAY)
-                    .forceSolidOn()
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .noCollission()
-                    .instabreak()));
-
-    public static final RegistryObject<Block> TURQUOISE_CORAL = registerBlock("turquoise_coral", () ->
-            new CoralPlantBlock(DEAD_TURQUOISE_CORAL.get(), BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_CYAN)
-                    .noCollission().instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> DEAD_TURQUOISE_CORAL_BLOCK = register("dead_turquoise_coral_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GRAY)
-                    .forceSolidOn()
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .strength(1.5F, 1.0F)));
-
-    public static final RegistryObject<Block> TURQUOISE_CORAL_BLOCK = register("turquoise_coral_block",
-            () -> new CoralBlock(DEAD_TURQUOISE_CORAL_BLOCK.get(), BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_CYAN)
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .strength(1.5F, 1.0F)
-                    .sound(SoundType.CORAL_BLOCK)));
-
-    public static final RegistryObject<Block> DEAD_TURQUOISE_CORAL_FAN = BLOCKS.register("dead_turquoise_coral_fan", () ->
-            new BaseCoralFanBlock(BlockBehaviour.Properties
-                    .copy(Blocks.DEAD_BRAIN_CORAL_FAN)
-                    .requiresCorrectToolForDrops()
-                    .noCollission()
-                    .instabreak()));
-
-    public static final RegistryObject<Block> DEAD_TURQUOISE_CORAL_WALL_FAN = BLOCKS.register("dead_turquoise_coral_wall_fan", () ->
-            new BaseCoralWallFanBlock(BlockBehaviour.Properties
-                    .copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN)
-                    .requiresCorrectToolForDrops()
-                    .noCollission().instabreak()
-                    .dropsLike(DEAD_TURQUOISE_CORAL_FAN.get())));
-
-    public static final RegistryObject<Block> TURQUOISE_CORAL_FAN = BLOCKS.register("turquoise_coral_fan", () ->
-            new CoralFanBlock(DEAD_TURQUOISE_CORAL_FAN.get(), BlockBehaviour.Properties
-                    .copy(Blocks.BRAIN_CORAL_FAN)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)));
-
-    public static final RegistryObject<Block> TURQUOISE_CORAL_WALL_FAN = BLOCKS.register("turquoise_coral_wall_fan", () ->
-            new CoralWallFanBlock(DEAD_TURQUOISE_CORAL_WALL_FAN.get(), BlockBehaviour.Properties
-                    .copy(Blocks.BRAIN_CORAL_WALL_FAN)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .dropsLike(TURQUOISE_CORAL_FAN.get())));
-
-    public static final RegistryObject<Block> DEAD_VERDANT_CORAL = registerBlock("dead_verdant_coral", () ->
-            new BaseCoralPlantBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GRAY)
-                    .forceSolidOn()
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .noCollission()
-                    .instabreak()));
-
-    public static final RegistryObject<Block> VERDANT_CORAL = registerBlock("verdant_coral", () ->
-            new CoralPlantBlock(DEAD_TURQUOISE_CORAL.get(), BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GREEN)
-                    .noCollission().instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> DEAD_VERDANT_CORAL_BLOCK = register("dead_verdant_coral_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GRAY)
-                    .forceSolidOn()
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .strength(1.5F, 1.0F)));
-
-    public static final RegistryObject<Block> VERDANT_CORAL_BLOCK = register("verdant_coral_block",
-            () -> new CoralBlock(DEAD_VERDANT_CORAL_BLOCK.get(), BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GREEN)
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .strength(1.5F, 1.0F)
-                    .sound(SoundType.CORAL_BLOCK)));
-
-    public static final RegistryObject<Block> DEAD_VERDANT_CORAL_FAN = BLOCKS.register("dead_verdant_coral_fan", () ->
-            new BaseCoralFanBlock(BlockBehaviour.Properties
-                    .copy(Blocks.DEAD_BRAIN_CORAL_FAN)
-                    .requiresCorrectToolForDrops()
-                    .noCollission()
-                    .instabreak()));
-
-    public static final RegistryObject<Block> DEAD_VERDANT_CORAL_WALL_FAN = BLOCKS.register("dead_verdant_coral_wall_fan", () ->
-            new BaseCoralWallFanBlock(BlockBehaviour.Properties
-                    .copy(Blocks.DEAD_BRAIN_CORAL_WALL_FAN)
-                    .requiresCorrectToolForDrops()
-                    .noCollission().instabreak()
-                    .dropsLike(DEAD_VERDANT_CORAL_FAN.get())));
-
-    public static final RegistryObject<Block> VERDANT_CORAL_FAN = BLOCKS.register("verdant_coral_fan", () ->
-            new CoralFanBlock(DEAD_VERDANT_CORAL_FAN.get(), BlockBehaviour.Properties
-                    .copy(Blocks.BRAIN_CORAL_FAN)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)));
-
-    public static final RegistryObject<Block> VERDANT_CORAL_WALL_FAN = BLOCKS.register("verdant_coral_wall_fan", () ->
-            new CoralWallFanBlock(DEAD_VERDANT_CORAL_WALL_FAN.get(), BlockBehaviour.Properties
-                    .copy(Blocks.BRAIN_CORAL_WALL_FAN)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .dropsLike(VERDANT_CORAL_FAN.get())));
-
-    public static final RegistryObject<Block> CYAN_ZOA = registerBlock("cyan_zoa",() ->
-            new FloweryCoralBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_CYAN)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> ORANGE_ZOA = registerBlock("orange_zoa",() ->
-            new FloweryCoralBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_ORANGE)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> RED_ZOA = registerBlock("red_zoa",() ->
-            new FloweryCoralBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_RED)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .pushReaction(PushReaction.DESTROY)));
-
-
-    public static final RegistryObject<Block> PURPLE_ZOA = registerBlock("purple_zoa",() ->
-            new FloweryCoralBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_PURPLE)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> ANTLER_GORGONIAN = registerBlock("antler_gorgonian",() ->
-            new LargeCoralPlantBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_ORANGE)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> TOWERING_GORGONIAN = registerBlock("towering_gorgonian",() ->
-            new LargeCoralPlantBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_PURPLE)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .pushReaction(PushReaction.DESTROY)));
-
-
-    public static final RegistryObject<Block> BLUE_CHRISTMAS_TREE_WORM = registerBlock("blue_christmas_tree_worm",() ->
-            new FloweryCoralBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_BLUE)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .offsetType(BlockBehaviour.OffsetType.XZ)
-                    .pushReaction(PushReaction.DESTROY)));
-
-
-    public static final RegistryObject<Block> BLACK_CHRISTMAS_TREE_WORM = registerBlock("black_christmas_tree_worm",() ->
-            new FloweryCoralBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_BLACK)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .offsetType(BlockBehaviour.OffsetType.XZ)
-                    .pushReaction(PushReaction.DESTROY)));
-
-
-    public static final RegistryObject<Block> RED_CHRISTMAS_TREE_WORM = registerBlock("red_christmas_tree_worm",() ->
-            new FloweryCoralBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_RED)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .offsetType(BlockBehaviour.OffsetType.XZ)
-                    .pushReaction(PushReaction.DESTROY)));
-
-
-    public static final RegistryObject<Block> YELLOW_CHRISTMAS_TREE_WORM = registerBlock("yellow_christmas_tree_worm",() ->
-            new FloweryCoralBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.TERRACOTTA_YELLOW)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> WHITE_CHRISTMAS_TREE_WORM = registerBlock("white_christmas_tree_worm",() ->
-            new FloweryCoralBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.TERRACOTTA_YELLOW)
-                    .noCollission()
-                    .instabreak()
-                    .sound(SoundType.WET_GRASS)
-                    .offsetType(BlockBehaviour.OffsetType.XZ)
-                    .pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> BLUE_CHRISTMAS_TREE_WORM = registerBlock("blue_christmas_tree_worm",() -> new FloweryCoralBlock(SFBlockProperties.coral(MapColor.COLOR_BLUE)));
+    public static final RegistryObject<Block> BLACK_CHRISTMAS_TREE_WORM = registerBlock("black_christmas_tree_worm",() -> new FloweryCoralBlock(SFBlockProperties.coral(MapColor.COLOR_BLACK)));
+    public static final RegistryObject<Block> RED_CHRISTMAS_TREE_WORM = registerBlock("red_christmas_tree_worm",() -> new FloweryCoralBlock(SFBlockProperties.coral(MapColor.COLOR_RED)));
+    public static final RegistryObject<Block> YELLOW_CHRISTMAS_TREE_WORM = registerBlock("yellow_christmas_tree_worm",() -> new FloweryCoralBlock(SFBlockProperties.coral(MapColor.COLOR_YELLOW)));
+    public static final RegistryObject<Block> WHITE_CHRISTMAS_TREE_WORM = registerBlock("white_christmas_tree_worm",() -> new FloweryCoralBlock(SFBlockProperties.coral(MapColor.TERRACOTTA_WHITE)));
 
     public static final RegistryObject<Block> CORAL_SAND = register("coraline_sand",
             () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
@@ -823,49 +366,13 @@ public class SFBlocks {
     public static final RegistryObject<Block> SMOOTH_CORALINE_SANDSTONE_STAIRS = registerBlock("smooth_coraline_sandstone_stairs", () -> new StairBlock(() -> CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(SMOOTH_CORALINE_SANDSTONE.get())));
     public static final RegistryObject<Block> SMOOTH_CORALINE_SANDSTONE_SLAB = registerBlock("smooth_coraline_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SMOOTH_CORALINE_SANDSTONE.get())));
 
-    public static final RegistryObject<Block> SEA_GRAPES_CROP = BLOCKS.register("sea_grapes_crop",
-            () -> new SeaGrapesCropBlock(Block.Properties.copy(Blocks.CARROTS).strength(0.2F)));
+    public static final RegistryObject<Block> SEA_GRAPES_CROP = BLOCKS.register("sea_grapes_crop", () -> new SeaGrapesCropBlock(Block.Properties.copy(Blocks.CARROTS).strength(0.2F)));
 
-    public static final RegistryObject<KelpBlock> WAKAME = BLOCKS.register("wakame_block",
-            () -> new WakameBlock(BlockBehaviour.Properties.copy(Blocks.KELP)));
+    public static final RegistryObject<KelpBlock> WAKAME = BLOCKS.register("wakame_block", () -> new WakameBlock(BlockBehaviour.Properties.copy(Blocks.KELP)));
 
-    public static final RegistryObject<KelpPlantBlock> WAKAME_PLANT = BLOCKS.register("wakame_plant",
-            () -> new WakamePlantBlock(BlockBehaviour.Properties.copy(Blocks.KELP_PLANT)));
+    public static final RegistryObject<KelpPlantBlock> WAKAME_PLANT = BLOCKS.register("wakame_plant", () -> new WakamePlantBlock(BlockBehaviour.Properties.copy(Blocks.KELP_PLANT)));
 
     public static final RegistryObject<Block> SEA_URCHIN = registerBlockWithoutItem("sea_urchin_block", () -> new SeaUrchinBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instabreak().sound(SoundType.WET_GRASS).pushReaction(PushReaction.DESTROY).strength(1.0F)));
-
-    public static final RegistryObject<Block> GHOUL_CORAL = registerBlock("ghoul_coral", () ->
-            new BaseCoralPlantBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GRAY)
-                    .forceSolidOn()
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .noCollission()
-                    .instabreak()));
-
-    public static final RegistryObject<Block> PALE_SPONGE = registerBlock("pale_sponge", () ->
-            new BaseCoralPlantBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GRAY)
-                    .forceSolidOn()
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .noCollission()
-                    .instabreak()));
-
-    public static final RegistryObject<Block> TUBE_WORMS = registerBlock("tube_worms", () ->
-            new BaseCoralPlantBlock(BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.COLOR_GRAY)
-                    .forceSolidOn()
-                    .instrument(NoteBlockInstrument.BASEDRUM)
-                    .requiresCorrectToolForDrops()
-                    .noCollission()
-                    .instabreak()));
-
-    private static <B extends Block> RegistryObject<B> createBlockNoLang(String name, Supplier<? extends B> supplier) {
-        RegistryObject<B> block = BLOCKS.register(name, supplier);
-        SFItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
-        return block;
-    }
 
     public static <B extends Block> RegistryObject<B> register(String name, Supplier<? extends B> supplier) {
         RegistryObject<B> block = BLOCKS.register(name, supplier);
@@ -886,12 +393,15 @@ public class SFBlocks {
         return block;
     }
 
-    public static <B extends Block> RegistryObject<B> registerBlockNoItem(String name, Supplier<? extends B> supplier) {
-        RegistryObject<B> block = BLOCKS.register(name, supplier);
-        return block;
-    }
-
     private static <B extends Block> RegistryObject<B> registerBlockWithoutItem(String name, Supplier<B> block) {
         return BLOCKS.register(name, block);
+    }
+
+    private static BlockBehaviour.Properties registerFlowerPot(FeatureFlag... featureFlags) {
+        BlockBehaviour.Properties properties = BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
+        if (featureFlags.length > 0) {
+            properties = properties.requiredFeatures(featureFlags);
+        }
+        return properties;
     }
 }

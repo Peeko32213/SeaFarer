@@ -55,11 +55,6 @@ public class Seafarer {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            addToFlowerPot(SFBlocks.COASTAL_LAVENDER, SFBlocks.POTTED_COASTAL_LAVENDER);
-            addToFlowerPot(SFBlocks.COASTAL_WILDFLOWER, SFBlocks.POTTED_COASTAL_WILDFLOWER);
-            addToFlowerPot(SFBlocks.SEA_THRIFT, SFBlocks.POTTED_SEA_THRIFT);
-            addToFlowerPot(SFBlocks.SEA_HOLLY, SFBlocks.POTTED_SEA_HOLLY);
-
             addToComposter(SFBlocks.COASTAL_LAVENDER, 0.7F);
             addToComposter(SFBlocks.COASTAL_WILDFLOWER, 0.3F);
             addToComposter(SFBlocks.SEA_THRIFT, 0.5F);
@@ -95,9 +90,6 @@ public class Seafarer {
         generator.addProvider(client, new SFSoundDefinitionsProvider(output, helper));
     }
 
-    public static void addToFlowerPot(RegistryObject<Block> plantBlockLoc, Supplier<? extends Block> pottedPlantBlock){
-        ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(plantBlockLoc.getId(),pottedPlantBlock);
-    }
     public static void addToComposter(RegistryObject<Block> item, float amountOfCompost){
         ComposterBlock.COMPOSTABLES.put(item.get().asItem(), amountOfCompost);
     }
