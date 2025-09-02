@@ -2,7 +2,7 @@ package com.peeko32213.seafarer.events;
 
 import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.client.models.*;
-import com.peeko32213.seafarer.client.models.unimplemented.BarreleyeModel;
+import com.peeko32213.seafarer.entities.MahiMahi;
 import com.peeko32213.seafarer.registry.SeafarerItemProperties;
 import com.peeko32213.seafarer.client.renderer.*;
 import com.peeko32213.seafarer.registry.SeafarerBlocks;
@@ -165,22 +165,46 @@ public final class ClientEvents {
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(SeafarerEntities.CRAB.get(), CrabRenderer::new);
         event.registerEntityRenderer(SeafarerEntities.HORSESHOE_CRAB.get(), HorseshoeCrabRenderer::new);
-        event.registerEntityRenderer(SeafarerEntities.MARINE_IGUANA.get(), MarineIguanaRenderer::new);
+        //event.registerEntityRenderer(SeafarerEntities.MARINE_IGUANA.get(), MarineIguanaRenderer::new);
         event.registerEntityRenderer(SeafarerEntities.MANTA_RAY.get(), MantaRayRenderer::new);
         event.registerEntityRenderer(SeafarerEntities.PARROTFISH.get(), ParrotfishRenderer::new);
         event.registerEntityRenderer(SeafarerEntities.SUNFISH.get(), SunfishRenderer::new);
-
+        event.registerEntityRenderer(SeafarerEntities.BOWHEAD_WHALE.get(), BowheadWhaleRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.FLOUNDER.get(), FlounderRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.MAHI_MAHI.get(), MahiMahiRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.MAN_O_WAR.get(), ManOWarRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.SAILFISH.get(), SailfishRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.SARDINE.get(), SardineRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.SCALLOP.get(), ScallopRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.SEA_CUCMBER.get(), SeaCucumberRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.SHARK.get(), SharkRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.THRESHER_SHARK.get(), ThresherSharkRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.TUNA.get(), TunaRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.LEAFY_SEA_DRAGON.get(), LeafySeaDragonRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.WHALE_SHARK.get(), WhaleSharkRenderer::new);
     }
 
     @SubscribeEvent
     public static void registerEntityLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(SeafarerModelLayers.CRAB_LAYER, CrabModel::createBodyLayer);
         event.registerLayerDefinition(SeafarerModelLayers.HORSESHOE_CRAB_LAYER, HorseshoeCrabModel::createBodyLayer);
-        event.registerLayerDefinition(SeafarerModelLayers.MARINE_IGUANA_LAYER, MarineIguanaModel::createBodyLayer);
+        //event.registerLayerDefinition(SeafarerModelLayers.MARINE_IGUANA_LAYER, MarineIguanaModel::createBodyLayer);
         event.registerLayerDefinition(SeafarerModelLayers.MANTA_RAY_LAYER, MantaRayModel::createBodyLayer);
         event.registerLayerDefinition(SeafarerModelLayers.PARROTFISH_LAYER, ParrotfishModel::createBodyLayer);
         event.registerLayerDefinition(SeafarerModelLayers.SUNFISH_LAYER, SunfishModel::createBodyLayer);
-
+        event.registerLayerDefinition(SeafarerModelLayers.BOWHEAD_WHALE_LAYER, BowheadWhaleModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.FLOUNDER_LAYER, FlounderModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.MAHI_MAHI_LAYER, MahiMahiModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.MAN_O_WAR_LAYER, ManOWarModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.SAILFISH_LAYER, SailfishModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.SARDINE_LAYER, SardineModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.SCALLOP_LAYER, ScallopModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.SEA_CUCUMBER_LAYER, SeaCucumberModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.SHARK_LAYER, SharkModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.THRESHER_SHARK_LAYER, ThresherSharkModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.TUNA_LAYER, TunaModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.LEAFY_SEA_DRAGON_LAYER, LeafySeaDragonModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.WHALE_SHARK_LAYER, WhaleSharkModel::createBodyLayer);
 
     }
 }

@@ -1,7 +1,9 @@
 package com.peeko32213.seafarer.client.renderer;
 
 import com.peeko32213.seafarer.Seafarer;
+import com.peeko32213.seafarer.client.models.BowheadWhaleModel;
 import com.peeko32213.seafarer.client.models.SunfishModel;
+import com.peeko32213.seafarer.entities.BowheadWhale;
 import com.peeko32213.seafarer.entities.Sunfish;
 import com.peeko32213.seafarer.registry.SeafarerModelLayers;
 import net.minecraft.client.renderer.RenderType;
@@ -13,21 +15,21 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 
 @OnlyIn(Dist.CLIENT)
-public class SunfishRenderer extends MobRenderer<Sunfish, SunfishModel<Sunfish>> {
+public class BowheadWhaleRenderer extends MobRenderer<BowheadWhale, BowheadWhaleModel<BowheadWhale>> {
 
-    private static final ResourceLocation TEXTURE = new ResourceLocation(Seafarer.MOD_ID, "textures/entity/sunfish.png");
+    private static final ResourceLocation TEXTURE = new ResourceLocation(Seafarer.MOD_ID, "textures/entity/bowhead_whale.png");
 
-    public SunfishRenderer(EntityRendererProvider.Context context) {
-        super(context, new SunfishModel<>(context.bakeLayer(SeafarerModelLayers.SUNFISH_LAYER)), 0.8F);
+    public BowheadWhaleRenderer(EntityRendererProvider.Context context) {
+        super(context, new BowheadWhaleModel<>(context.bakeLayer(SeafarerModelLayers.BOWHEAD_WHALE_LAYER)), 0.8F);
     }
 
     @Override
-    public ResourceLocation getTextureLocation(Sunfish entity) {
+    public ResourceLocation getTextureLocation(BowheadWhale entity) {
         return TEXTURE;
     }
 
     @Override
-    protected @Nullable RenderType getRenderType(Sunfish entity, boolean bodyVisible, boolean translucent, boolean glowing) {
+    protected @Nullable RenderType getRenderType(BowheadWhale entity, boolean bodyVisible, boolean translucent, boolean glowing) {
         return RenderType.entityCutoutNoCull(TEXTURE);
     }
 

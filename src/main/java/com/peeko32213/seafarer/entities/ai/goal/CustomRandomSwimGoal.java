@@ -16,8 +16,8 @@ public class CustomRandomSwimGoal extends RandomStrollGoal {
     int height;
     int prox;
 
-    public CustomRandomSwimGoal(PathfinderMob fish, double spdmultiplier, int interval, int radius, int height, int proximity) {
-        super(fish, spdmultiplier, interval);
+    public CustomRandomSwimGoal(PathfinderMob fish, double speedMultiplier, int interval, int radius, int height, int proximity) {
+        super(fish, speedMultiplier, interval);
         this.fish = fish;
         this.radius = radius;
         this.height = height;

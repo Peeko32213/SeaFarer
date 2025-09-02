@@ -1,4 +1,4 @@
-// 1.20.1	2025-05-02T22:07:20.327374	Registries
+// 1.20.1	2025-08-22T23:09:39.3967766	Registries
 34be4fddea0310061ac1bf7524d82de77493de71 data/seafarer/forge/biome_modifier/add_feature/algae_boulder.json
 01e5e644afacfaa4370948f855ccc161a6601e7f data/seafarer/forge/biome_modifier/add_feature/beachgrass.json
 0243f5a5d1476d3b51cdf78e80d75e74e14cbbc9 data/seafarer/forge/biome_modifier/add_feature/beachgrass_fan.json
@@ -22,10 +22,6 @@ dfa14f02f463ea4a4325665fb5753dfae2d5b519 data/seafarer/forge/biome_modifier/add_
 05c8ab5af61009f39eb1f18fc9d30d12632b56ed data/seafarer/forge/biome_modifier/add_feature/seaglass.json
 1d41f5704a22750d937b71740d327bd211358f71 data/seafarer/forge/biome_modifier/add_feature/sea_holly.json
 5d3d3f039bdb36ed14a51432f1f8d752bdfa5331 data/seafarer/forge/biome_modifier/add_feature/sea_thrift.json
-8a18c34e112c68da68de26f07bc55c52643b90e1 data/seafarer/forge/biome_modifier/add_spawn/crab.json
-cf47b863feb7e526c5702d7ce801abd74ab404b1 data/seafarer/forge/biome_modifier/add_spawn/horseshoe_crab.json
-0fb39e3f95054ac764e89ceb94edbc350635ae9d data/seafarer/forge/biome_modifier/add_spawn/marine_iguana.json
-960fa18a55f4e7b52e204794cd442d1ddba868c8 data/seafarer/forge/biome_modifier/add_spawn/SunfishModel.json
 42e0ee3903b9110610de4689027e71f22df17cff data/seafarer/forge/biome_modifier/remove_feature/remove_coral.json
 dd25e52c2251359fdf594ef1fc19234ab017c65a data/seafarer/worldgen/configured_feature/algae_boulder.json
 0ed3e91dd6f73355e5835e5c1cbc91087a15d318 data/seafarer/worldgen/configured_feature/algae_patch_bonemeal.json

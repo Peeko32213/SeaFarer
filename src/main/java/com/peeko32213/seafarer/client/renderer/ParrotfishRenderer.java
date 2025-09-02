@@ -18,7 +18,7 @@ public class ParrotfishRenderer extends MobRenderer<Parrotfish, ParrotfishModel<
     private static final ResourceLocation TEXTURE = new ResourceLocation(Seafarer.MOD_ID, "textures/entity/parrotfish.png");
 
     public ParrotfishRenderer(EntityRendererProvider.Context context) {
-        super(context, new ParrotfishModel<>(context.bakeLayer(SeafarerModelLayers.MANTA_RAY_LAYER)), 0.8F);
+        super(context, new ParrotfishModel<>(context.bakeLayer(SeafarerModelLayers.PARROTFISH_LAYER)), 0.8F);
     }
 
     @Override
