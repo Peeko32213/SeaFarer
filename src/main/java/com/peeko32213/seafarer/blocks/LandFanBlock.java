@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.blocks;
 
-import com.peeko32213.seafarer.registry.tags.SFTags;
+import com.peeko32213.seafarer.registry.tags.SeaTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
@@ -23,7 +23,7 @@ public class LandFanBlock extends BushBlock {
     }
 
     protected boolean mayPlaceOn(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-        return pState.is(SFTags.BEACH_PLANT_BLOCKS);
+        return pState.is(SeaTags.BEACH_PLANT_BLOCKS);
     }
 
 }

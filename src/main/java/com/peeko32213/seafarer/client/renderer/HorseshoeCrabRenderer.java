@@ -3,7 +3,7 @@ package com.peeko32213.seafarer.client.renderer;
 import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.client.models.HorseshoeCrabModel;
 import com.peeko32213.seafarer.entities.HorseshoeCrab;
-import com.peeko32213.seafarer.registry.SFEntityModelLayers;
+import com.peeko32213.seafarer.registry.SeaModelLayers;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
@@ -18,7 +18,7 @@ public class HorseshoeCrabRenderer extends MobRenderer<HorseshoeCrab, HorseshoeC
     private static final ResourceLocation TEXTURE = new ResourceLocation(Seafarer.MOD_ID, "textures/entity/horseshoe_crab.png");
 
     public HorseshoeCrabRenderer(EntityRendererProvider.Context context) {
-        super(context, new HorseshoeCrabModel(context.bakeLayer(SFEntityModelLayers.HORSESHOE_CRAB)), 0.4F);
+        super(context, new HorseshoeCrabModel(context.bakeLayer(SeaModelLayers.HORSESHOE_CRAB)), 0.4F);
     }
 
     @Override

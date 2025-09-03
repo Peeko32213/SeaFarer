@@ -3,7 +3,7 @@ package com.peeko32213.seafarer.client.renderer;
 import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.client.models.MantaRayModel;
 import com.peeko32213.seafarer.entities.MantaRay;
-import com.peeko32213.seafarer.registry.SFEntityModelLayers;
+import com.peeko32213.seafarer.registry.SeaModelLayers;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
@@ -19,7 +19,7 @@ public class MantaRayRenderer extends MobRenderer<MantaRay, MantaRayModel<MantaR
     private static final ResourceLocation EVIL_TEXTURE = new ResourceLocation(Seafarer.MOD_ID, "textures/entity/manta_ray/mantaaaaaa_ray.png");
 
     public MantaRayRenderer(EntityRendererProvider.Context context) {
-        super(context, new MantaRayModel<>(context.bakeLayer(SFEntityModelLayers.MANTA_RAY)), 0.8F);
+        super(context, new MantaRayModel<>(context.bakeLayer(SeaModelLayers.MANTA_RAY)), 0.8F);
     }
 
     @Override

@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.blocks;
 
-import com.peeko32213.seafarer.registry.SFBlocks;
+import com.peeko32213.seafarer.registry.SeaBlocks;
 import net.minecraft.world.level.block.*;
 
 public class WakamePlantBlock extends KelpPlantBlock {
@@ -11,7 +11,7 @@ public class WakamePlantBlock extends KelpPlantBlock {
 
     @Override
     protected GrowingPlantHeadBlock getHeadBlock() {
-        return SFBlocks.WAKAME.get();
+        return SeaBlocks.WAKAME.get();
     }
 }
 

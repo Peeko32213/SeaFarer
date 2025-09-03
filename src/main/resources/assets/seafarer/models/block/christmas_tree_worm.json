@@ -1,9 +1,10 @@
 {
-	"credit": "Made with Blockbench",
+	"render_type": "minecraft:cutout",
+	"ambientocclusion": false,
 	"texture_size": [64, 64],
 	"textures": {
 		"4": "seafarer:block/yellow_christmas_tree_worm",
-		"particle": "seafarer:block/white_christmas_tree_worm"
+		"particle": "seafarer:block/yellow_christmas_tree_worm"
 	},
 	"elements": [
 		{
