@@ -2,13 +2,10 @@ package com.peeko32213.seafarer.data;
 
 import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.registry.SeaBlocks;
-import com.peeko32213.seafarer.registry.tags.SeaBlockTags;
 import com.peeko32213.seafarer.registry.tags.SeaTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -92,7 +89,7 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
                 .add(SeaBlocks.OCHRE_STARFISH.get())
                 .add(SeaBlocks.RED_STARFISH.get())
                 .add(SeaBlocks.PINK_STARFISH.get())
-                .add(SeaBlocks.COMMON_ORANGE_STARFISH.get())
+                .add(SeaBlocks.ORANGE_STARFISH.get())
                 .add(SeaBlocks.CHOCOLATE_CHIP_STARFISH.get())
         ;
 

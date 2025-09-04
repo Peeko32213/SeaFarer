@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "seafarer:orange_starfish"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "orange_starfish": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "seafarer:orange_starfish"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "orange_starfish",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "seafarer:orange_starfish"
+    ]
+  },
+  "sends_telemetry_event": false
+}

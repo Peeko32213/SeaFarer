@@ -299,7 +299,7 @@ public class SeaRecipeGenerator extends SeaRecipeProvider implements IConditionB
         foodSmeltingRecipes(key(SeaBlocks.RED_STARFISH.get()).getPath(), SeaBlocks.RED_STARFISH.get().asItem(), SeaItems.COOKED_STARFISH.get(),250,consumer);
         foodSmeltingRecipes(key(SeaBlocks.ROYAL_STARFISH.get()).getPath(), SeaBlocks.ROYAL_STARFISH.get().asItem(), SeaItems.COOKED_STARFISH.get(),250,consumer);
         foodSmeltingRecipes(key(SeaBlocks.CHOCOLATE_CHIP_STARFISH.get()).getPath(), SeaBlocks.CHOCOLATE_CHIP_STARFISH.get().asItem(), SeaItems.COOKED_STARFISH.get(),250,consumer);
-        foodSmeltingRecipes(key(SeaBlocks.COMMON_ORANGE_STARFISH.get()).getPath(), SeaBlocks.COMMON_ORANGE_STARFISH.get().asItem(), SeaItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SeaBlocks.ORANGE_STARFISH.get()).getPath(), SeaBlocks.ORANGE_STARFISH.get().asItem(), SeaItems.COOKED_STARFISH.get(),250,consumer);
     }
 
     //Wrappers for conditionals

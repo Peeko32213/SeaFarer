@@ -163,7 +163,7 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
 
         dropSelf(SeaBlocks.FISHING_NET.get());
 
-        dropSelf(SeaBlocks.COMMON_ORANGE_STARFISH.get());
+        dropSelf(SeaBlocks.ORANGE_STARFISH.get());
         dropSelf(SeaBlocks.PINK_STARFISH.get());
         dropSelf(SeaBlocks.RED_STARFISH.get());
         dropSelf(SeaBlocks.CHOCOLATE_CHIP_STARFISH.get());

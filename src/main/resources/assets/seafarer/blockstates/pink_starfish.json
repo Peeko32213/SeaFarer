@@ -2,558 +2,238 @@
   "variants": {
     "facing=up": [
       {
-        "model": "seafarer:block/starfish/pink/pink_starfish",
-        "weight": 10
+        "model": "seafarer:block/starfish/pink/pink_starfish"
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish",
-        "y": 90,
-        "weight": 10
+        "y": 90
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish",
-        "y": 180,
-        "weight": 10
+        "y": 180
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish",
-        "y": 270,
-        "weight": 10
+        "y": 270
+      },
+      {
+        "model": "seafarer:block/starfish/pink/pink_starfish_rotated"
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
-        "weight": 10
+        "y": 90
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
-        "y": 90,
-        "weight": 10
+        "y": 180
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
-        "y": 180,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
-        "y": 270,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again",
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again",
-        "y": 90,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again",
-        "y": 180,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again",
-        "y": 270,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again",
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again",
-        "y": 90,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again",
-        "y": 180,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again",
-        "y": 270,
-        "weight": 10
+        "y": 270
       }
     ],
     "facing=down": [
       {
         "model": "seafarer:block/starfish/pink/pink_starfish",
-        "x": 180,
-        "weight": 10
+        "x": 180
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish",
         "x": 180,
-        "y": 90,
-        "weight": 10
+        "y": 90
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish",
         "x": 180,
-        "y": 180,
-        "weight": 10
+        "y": 180
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish",
         "x": 180,
-        "y": 270,
-        "weight": 10
+        "y": 270
+      },
+      {
+        "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
+        "x": 180
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
         "x": 180,
-        "weight": 10
+        "y": 90
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
         "x": 180,
-        "y": 90,
-        "weight": 10
+        "y": 180
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
         "x": 180,
-        "y": 180,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
-        "x": 180,
-        "y": 270,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again",
-        "x": 180,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again",
-        "x": 180,
-        "y": 90,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again",
-        "x": 180,
-        "y": 180,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again",
-        "x": 180,
-        "y": 270,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again",
-        "x": 180,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again",
-        "x": 180,
-        "y": 90,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again",
-        "x": 180,
-        "y": 180,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again",
-        "x": 180,
-        "y": 270,
-        "weight": 10
+        "y": 270
       }
     ],
     "facing=east": [
       {
         "model": "seafarer:block/starfish/pink/pink_starfish",
         "x": 90,
-        "y": 90,
-        "weight": 10
+        "y": 90
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish",
         "x": 270,
-        "y": 270,
-        "weight": 10
+        "y": 270
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_alt",
         "x": 90,
-        "y": 90,
-        "weight": 10
+        "y": 90
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_alt",
         "x": 270,
-        "y": 270,
-        "weight": 10
+        "y": 270
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
         "x": 90,
-        "y": 90,
-        "weight": 10
+        "y": 90
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
         "x": 270,
-        "y": 270,
-        "weight": 10
+        "y": 270
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated_alt",
         "x": 90,
-        "y": 90,
-        "weight": 10
+        "y": 90
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated_alt",
         "x": 270,
-        "y": 270,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again",
-        "x": 90,
-        "y": 90,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again",
-        "x": 270,
-        "y": 270,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_alt",
-        "x": 90,
-        "y": 90,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_alt",
-        "x": 270,
-        "y": 270,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again",
-        "x": 90,
-        "y": 90,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again",
-        "x": 270,
-        "y": 270,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again_alt",
-        "x": 90,
-        "y": 90,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again_alt",
-        "x": 270,
-        "y": 270,
-        "weight": 10
+        "y": 270
       }
     ],
     "facing=west": [
       {
         "model": "seafarer:block/starfish/pink/pink_starfish",
         "x": 90,
-        "y": 270,
-        "weight": 10
+        "y": 270
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish",
         "x": 270,
-        "y": 90,
-        "weight": 10
+        "y": 90
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_alt",
         "x": 90,
-        "y": 270,
-        "weight": 10
+        "y": 270
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_alt",
         "x": 270,
-        "y": 90,
-        "weight": 10
+        "y": 90
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
         "x": 90,
-        "y": 270,
-        "weight": 10
+        "y": 270
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
         "x": 270,
-        "y": 90,
-        "weight": 10
+        "y": 90
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated_alt",
         "x": 90,
-        "y": 270,
-        "weight": 10
+        "y": 270
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated_alt",
         "x": 270,
-        "y": 90,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again",
-        "x": 90,
-        "y": 270,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again",
-        "x": 270,
-        "y": 90,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_alt",
-        "x": 90,
-        "y": 270,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_alt",
-        "x": 270,
-        "y": 90,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again",
-        "x": 90,
-        "y": 270,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again",
-        "x": 270,
-        "y": 90,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again_alt",
-        "x": 90,
-        "y": 270,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again_alt",
-        "x": 270,
-        "y": 90,
-        "weight": 10
+        "y": 90
       }
     ],
     "facing=north": [
       {
         "model": "seafarer:block/starfish/pink/pink_starfish",
-        "x": 90,
-        "weight": 10
+        "x": 90
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish",
         "x": 270,
-        "y": 180,
-        "weight": 10
+        "y": 180
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_alt",
-        "x": 90,
-        "weight": 10
+        "x": 90
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_alt",
         "x": 270,
-        "y": 180,
-        "weight": 10
+        "y": 180
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
-        "x": 90,
-        "weight": 10
+        "x": 90
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
         "x": 270,
-        "y": 180,
-        "weight": 10
+        "y": 180
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated_alt",
-        "x": 90,
-        "weight": 10
+        "x": 90
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated_alt",
         "x": 270,
-        "y": 180,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again",
-        "x": 90,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again",
-        "x": 270,
-        "y": 180,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_alt",
-        "x": 90,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_alt",
-        "x": 270,
-        "y": 180,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again",
-        "x": 90,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again",
-        "x": 270,
-        "y": 180,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again_alt",
-        "x": 90,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again_alt",
-        "x": 270,
-        "y": 180,
-        "weight": 10
+        "y": 180
       }
     ],
     "facing=south": [
       {
         "model": "seafarer:block/starfish/pink/pink_starfish",
         "x": 90,
-        "y": 180,
-        "weight": 10
+        "y": 180
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish",
         "x": 270,
-        "y": 0,
-        "weight": 10
+        "y": 0
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_alt",
         "x": 90,
-        "y": 180,
-        "weight": 10
+        "y": 180
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_alt",
         "x": 270,
-        "y": 0,
-        "weight": 10
+        "y": 0
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
         "x": 90,
-        "y": 180,
-        "weight": 10
+        "y": 180
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated",
         "x": 270,
-        "y": 0,
-        "weight": 10
+        "y": 0
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated_alt",
         "x": 90,
-        "y": 180,
-        "weight": 10
+        "y": 180
       },
       {
         "model": "seafarer:block/starfish/pink/pink_starfish_rotated_alt",
         "x": 270,
-        "y": 0,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again",
-        "x": 90,
-        "y": 180,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again",
-        "x": 270,
-        "y": 0,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_alt",
-        "x": 90,
-        "y": 180,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_alt",
-        "x": 270,
-        "y": 0,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again",
-        "x": 90,
-        "y": 180,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again",
-        "x": 270,
-        "y": 0,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again_alt",
-        "x": 90,
-        "y": 180,
-        "weight": 10
-      },
-      {
-        "model": "seafarer:block/starfish/pink/pink_starfish_rotated_again_again_alt",
-        "x": 270,
-        "y": 0,
-        "weight": 10
+        "y": 0
       }
     ]
   }

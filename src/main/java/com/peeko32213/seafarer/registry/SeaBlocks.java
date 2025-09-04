@@ -159,7 +159,7 @@ public class SeaBlocks {
 
     public static final RegistryObject<Block> FISHING_NET = registerPlaceOnWaterBlockItem("fishing_net", () -> new FishingNet(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion().strength(0.2F).sound(SoundType.LADDER)));
 
-    public static final RegistryObject<Block> COMMON_ORANGE_STARFISH = registerBlock("common_orange_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_ORANGE)));
+    public static final RegistryObject<Block> ORANGE_STARFISH = registerBlock("orange_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_ORANGE)));
     public static final RegistryObject<Block> PINK_STARFISH = registerBlock("pink_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_PINK)));
     public static final RegistryObject<Block> RED_STARFISH = registerBlock("red_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_RED)));
     public static final RegistryObject<Block> CHOCOLATE_CHIP_STARFISH = registerBlock("chocolate_chip_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_BROWN)));

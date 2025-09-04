@@ -36,7 +36,7 @@ public class SeafarerTab {
                     output.accept(SeaItems.COOKED_HORSESHOE_CRAB.get());
                     output.accept(SeaItems.RAW_MARINE_IGUANA_TAIL.get());
                     output.accept(SeaItems.COOKED_MARINE_IGUANA_TAIL.get());
-                    output.accept(SeaBlocks.COMMON_ORANGE_STARFISH.get());
+                    output.accept(SeaBlocks.ORANGE_STARFISH.get());
                     output.accept(SeaBlocks.PINK_STARFISH.get());
                     output.accept(SeaBlocks.RED_STARFISH.get());
                     output.accept(SeaBlocks.CHOCOLATE_CHIP_STARFISH.get());

@@ -1,0 +1,7 @@
+{
+	"parent": "seafarer:block/starfish/starfish_rotated_alt",
+	"textures": {
+		"starfish": "seafarer:block/orange_starfish",
+		"particle": "seafarer:block/orange_starfish_particle"
+	}
+}
