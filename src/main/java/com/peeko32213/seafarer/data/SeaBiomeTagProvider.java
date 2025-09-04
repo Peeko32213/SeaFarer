@@ -4,6 +4,8 @@ import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.registry.tags.SeaTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagEntry;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -23,7 +25,7 @@ public class SeaBiomeTagProvider extends net.minecraft.data.tags.BiomeTagsProvid
         tag(SeaTags.IS_CRAB_BIOME).add(Biomes.BEACH).add(Biomes.STONY_SHORE);
         tag(SeaTags.IS_HORSECRAB_BIOME).add(Biomes.BEACH);
         tag(SeaTags.IS_MARINE_IGUANA_BIOME).add(Biomes.STONY_SHORE);
-        tag(SeaTags.IS_SUNFISH_BIOME).add(Biomes.OCEAN).add(Biomes.LUKEWARM_OCEAN).add(Biomes.COLD_OCEAN);
+        tag(SeaTags.IS_SUNFISH_BIOME).add(Biomes.OCEAN).add(Biomes.LUKEWARM_OCEAN).add(Biomes.COLD_OCEAN).add(TagEntry.element(new ResourceLocation(Seafarer.MOD_ID, "warm_reef")));
 
         tag(SeaTags.IS_BEACH_BIOME).add(Biomes.BEACH).add(Biomes.STONY_SHORE);
         tag(SeaTags.IS_SANDY_BEACH_BIOME).add(Biomes.BEACH);

@@ -17,7 +17,6 @@ public class SeaDatapackBuiltinEntriesProvider extends DatapackBuiltinEntriesPro
             .add(ForgeRegistries.Keys.BIOME_MODIFIERS, SeaBiomeModifiers::bootstrap)
             .add(Registries.CONFIGURED_FEATURE, SeaConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, SeaPlacedFeatures::bootstrap)
-            .add(Registries.BIOME, SeaBiomes::bootstrap)
     ;
 
     public SeaDatapackBuiltinEntriesProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> provider) {

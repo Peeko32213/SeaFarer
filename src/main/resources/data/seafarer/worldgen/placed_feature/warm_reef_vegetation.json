@@ -2,10 +2,14 @@
   "feature": "minecraft:warm_ocean_vegetation",
   "placement": [
     {
-      "type": "minecraft:noise_based_count",
-      "noise_factor": 2.0,
-      "noise_offset": 0.0,
-      "noise_to_count_ratio": 32
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": 4,
+          "max_inclusive": 8
+        }
+      }
     },
     {
       "type": "minecraft:in_square"

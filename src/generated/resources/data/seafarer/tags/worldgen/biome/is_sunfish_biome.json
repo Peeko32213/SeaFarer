@@ -2,6 +2,7 @@
   "values": [
     "minecraft:ocean",
     "minecraft:lukewarm_ocean",
-    "minecraft:cold_ocean"
+    "minecraft:cold_ocean",
+    "seafarer:warm_reef"
   ]
 }

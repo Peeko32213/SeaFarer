@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      "seafarer:disk_shelly_sand",
+      "seafarer:disk_sprinkled_sand",
+      "seafarer:disk_starry_sand"
+    ]
+  }
+}
