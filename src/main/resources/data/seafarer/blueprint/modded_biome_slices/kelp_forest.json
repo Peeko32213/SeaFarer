@@ -1,0 +1,21 @@
+{
+  "levels": [
+    "minecraft:overworld"
+  ],
+  "provider": {
+    "type": "blueprint:overlay",
+    "overlays": [
+      {
+        "biome_source": {
+          "type": "minecraft:fixed",
+          "biome": "seafarer:kelp_forest"
+        },
+        "matches_biomes": [
+          "minecraft:lukewarm_ocean",
+          "minecraft:deep_lukewarm_ocean"
+        ]
+      }
+    ]
+  },
+  "weight": 50
+}

@@ -48,6 +48,7 @@ public class SeaLanguageProvider extends LanguageProvider {
         add("seafarer.message.structure_search_failed", "Structure was not found!");
 
         add("biome.seafarer.warm_reef", "Warm Reef");
+        add("biome.seafarer.kelp_forest", "Kelp Forest");
     }
 
     @Override

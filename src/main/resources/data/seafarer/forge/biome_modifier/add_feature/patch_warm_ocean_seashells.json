@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "minecraft:warm_ocean",
+  "biomes": "#seafarer:warm_oceans",
   "features": "seafarer:patch_warm_ocean_seashells",
   "step": "vegetal_decoration"
 }
