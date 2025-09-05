@@ -67,7 +67,6 @@ public class Seafarer {
         ExistingFileHelper helper = event.getExistingFileHelper();
 
         boolean server = event.includeServer();
-        boolean client = event.includeClient();
 
         SeaDatapackBuiltinEntriesProvider datapackEntries = new SeaDatapackBuiltinEntriesProvider(output, provider);
         generator.addProvider(server, datapackEntries);
@@ -81,6 +80,9 @@ public class Seafarer {
         generator.addProvider(server, new SeaPaintingTagProvider(output, provider, helper));
         generator.addProvider(server, new SeaRecipeGenerator(output));
         generator.addProvider(server, SeaLootProvider.create(output));
+        generator.addProvider(server, new SeaChunkGeneratorModifierProvider(event, datapackEntries));
+
+        boolean client = event.includeClient();
 
         generator.addProvider(client, new SeaBlockstateProvider(output, helper));
         generator.addProvider(client, new SeaItemModelProvider(output, helper));

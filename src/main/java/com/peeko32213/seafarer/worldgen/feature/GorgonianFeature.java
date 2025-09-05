@@ -1,50 +1,64 @@
 package com.peeko32213.seafarer.worldgen.feature;
 
+import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import com.peeko32213.seafarer.blocks.GorgonianCoralBlock;
+import com.peeko32213.seafarer.registry.SeaBlocks;
+import com.peeko32213.seafarer.registry.tags.SeaBlockTags;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
-public class GorgonianFeature extends Feature<SimpleBlockConfiguration> {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Optional;
 
-    public GorgonianFeature(Codec<SimpleBlockConfiguration> configuration) {
+public class GorgonianFeature extends Feature<NoneFeatureConfiguration> {
+
+    public GorgonianFeature(Codec<NoneFeatureConfiguration> configuration) {
         super(configuration);
     }
 
     @Override
-    public boolean place(FeaturePlaceContext<SimpleBlockConfiguration> context) {
-        boolean placed = false;
+    public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
         WorldGenLevel level = context.level();
         BlockPos pos = context.origin();
         RandomSource random = context.random();
-        SimpleBlockConfiguration configuration = context.config();
 
-        BlockState blockstate = configuration.toPlace().getState(context.random(), pos);
+        Optional<Block> gorgonian = BuiltInRegistries.BLOCK.getTag(SeaBlockTags.GORGONIANS).flatMap((holders) -> holders.getRandomElement(level.getRandom())).map(Holder::value);
 
-        int x = random.nextInt(8) - random.nextInt(8);
-        int z = random.nextInt(8) - random.nextInt(8);
-        int heightMap = level.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, pos.getX() + x, pos.getZ() + z);
-        BlockPos newPos = new BlockPos(pos.getX() + x, heightMap, pos.getZ() + z);
+        int i = 0;
 
-        if (level.getBlockState(newPos).is(Blocks.WATER)) {
-            if (blockstate.canSurvive(level, newPos)) {
-                BlockState upperState = blockstate.setValue(GorgonianCoralBlock.HALF, DoubleBlockHalf.UPPER);
-                BlockPos abovePos = newPos.above();
-                if (level.getBlockState(abovePos).is(Blocks.WATER)) {
-                    level.setBlock(newPos, blockstate, 2);
-                    level.setBlock(abovePos, upperState, 2);
+        BlockState block = gorgonian.map(Block::defaultBlockState).orElseGet(SeaBlocks.TOWERING_GORGONIAN.get()::defaultBlockState).setValue(GorgonianCoralBlock.WATERLOGGED, true);
+        BlockPos blockpos = pos.offset(random.nextInt(8) - random.nextInt(8), random.nextInt(4) - random.nextInt(4), random.nextInt(8) - random.nextInt(8));
+        for (int j = 0; j < 4; j++) {
+            if (level.getFluidState(blockpos).is(FluidTags.WATER) && blockpos.getY() < 255 && block.canSurvive(level, blockpos)) {
+                Direction direction = Direction.getRandom(random);
+                BlockState upperState = block.setValue(GorgonianCoralBlock.HALF, DoubleBlockHalf.UPPER);
+                BlockPos abovePos = blockpos.above();
+                if (direction.getAxis().isHorizontal()) {
+                    while (!block.setValue(GorgonianCoralBlock.FACING, direction).canSurvive(level, blockpos)) {
+                        direction = Direction.getRandom(random);
+                    }
+                    if (level.getBlockState(abovePos).is(Blocks.WATER)) {
+                        level.setBlock(blockpos, block.setValue(GorgonianCoralBlock.FACING, direction).setValue(GorgonianCoralBlock.WATERLOGGED, true), 2);
+                        level.setBlock(abovePos, upperState.setValue(GorgonianCoralBlock.FACING, direction).setValue(GorgonianCoralBlock.WATERLOGGED, true), 2);
+                    }
+                    i++;
                 }
-                placed = true;
             }
         }
-        return placed;
+        return i > 0;
     }
 }

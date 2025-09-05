@@ -8,14 +8,11 @@
       {
         "biome_source": {
           "type": "minecraft:fixed",
-          "biome": "seafarer:kelp_forest"
+          "biome": "seafarer:flowering_beach"
         },
-        "matches_biomes": [
-          "minecraft:lukewarm_ocean",
-          "minecraft:deep_lukewarm_ocean"
-        ]
+        "matches_biomes": "minecraft:beach"
       }
     ]
   },
-  "weight": 50
+  "weight": 20
 }

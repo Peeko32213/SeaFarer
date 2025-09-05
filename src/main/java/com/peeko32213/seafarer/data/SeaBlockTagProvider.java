@@ -86,6 +86,13 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
                 PURPLE_OCHRE_STARFISH.get()
         );
 
+        this.tag(SeaBlockTags.BEACH_FLOWERS).add(
+                COASTAL_WILDFLOWER.get(),
+                COASTAL_LAVENDER.get(),
+                SEA_HOLLY.get(),
+                SEA_THRIFT.get()
+        );
+
         tag(SeaTags.BEACH_PLANT_BLOCKS)
                 .addTag(BlockTags.DEAD_BUSH_MAY_PLACE_ON)
                 .add(SeaBlocks.SPRINKLED_SAND.get())

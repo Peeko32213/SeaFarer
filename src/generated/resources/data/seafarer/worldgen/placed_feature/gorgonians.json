@@ -1,13 +1,13 @@
 {
-  "feature": "seafarer:patch_gorgonian",
+  "feature": "seafarer:gorgonians",
   "placement": [
     {
       "type": "minecraft:count",
       "count": {
         "type": "minecraft:uniform",
         "value": {
-          "min_inclusive": 1,
-          "max_inclusive": 2
+          "max_inclusive": 2,
+          "min_inclusive": 1
         }
       }
     },

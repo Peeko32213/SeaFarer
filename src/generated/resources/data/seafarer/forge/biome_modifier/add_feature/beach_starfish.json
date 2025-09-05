@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:beach",
+  "features": "seafarer:beach_starfish",
+  "step": "vegetal_decoration"
+}

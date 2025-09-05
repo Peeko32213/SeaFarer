@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:beach",
+  "features": "minecraft:seagrass_simple",
+  "step": "vegetal_decoration"
+}
