@@ -39,7 +39,7 @@ public class SeaItems {
     public static final RegistryObject<Item> COOKED_SHORE_CRAB_LEG = registerItem("cooked_shore_crab_leg", () -> new Item(new Item.Properties().food(SeaFoodValues.COOKED_SHORE_CRAB)));
     public static final RegistryObject<Item> COOKED_HORSESHOE_CRAB = registerItem("cooked_horseshoe_crab", () -> new Item(new Item.Properties().food(SeaFoodValues.COOKED_HORSESHOE_CRAB)));
     public static final RegistryObject<Item> COOKED_MARINE_IGUANA_TAIL = registerItem("cooked_marine_iguana_tail", () -> new Item(new Item.Properties().food(SeaFoodValues.COOKED_MARINE_IGUANA)));
-    public static final RegistryObject<Item> COOKED_STARFISH = registerItem("cooked_starfish", () -> new Item(new Item.Properties().food(SeaFoodValues.COOKED_STARFISH)));
+    public static final RegistryObject<Item> DRIED_STARFISH = registerItem("dried_starfish", () -> new Item(new Item.Properties().food(SeaFoodValues.COOKED_STARFISH)));
 
     public static final RegistryObject<Item> OLD_BOOT = registerItem("old_boot", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> METAL_CAN = registerItem("metal_can", () -> new Item(new Item.Properties()));

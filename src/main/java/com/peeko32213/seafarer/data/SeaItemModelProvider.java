@@ -36,7 +36,7 @@ public class SeaItemModelProvider extends ItemModelProvider {
         item(SeaItems.COOKED_HORSESHOE_CRAB);
         item(SeaItems.RAW_MARINE_IGUANA_TAIL);
         item(SeaItems.COOKED_MARINE_IGUANA_TAIL);
-        item(SeaItems.COOKED_STARFISH);
+        item(SeaItems.DRIED_STARFISH);
         item(SeaItems.SALTED_COD);
         item(SeaItems.SALTED_SALMON);
         item(SeaItems.SALTED_TROPICAL_FISH);

@@ -38,7 +38,7 @@ public class SeaGrapesCropBlock extends CropBlock implements LiquidBlockContaine
 
     public SeaGrapesCropBlock(Properties properties) {
         super(properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(false)));
+        this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, Boolean.FALSE));
     }
 
     @Override

@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-04T13:29:54.5553372	Loot Tables
+// 1.20.1	2025-09-04T19:04:42.5014863	Loot Tables
 36713e43689ef0458ebc53f949bdd923d2162fd4 data/seafarer/loot_tables/blocks/algae_block.json
 9e3aff10eb6b4e737ad115d3c5cec5341ceb7a5f data/seafarer/loot_tables/blocks/algae_carpet.json
 d20d205c81d1f68bff1128d4c135c1fccf6bae2d data/seafarer/loot_tables/blocks/algae_cobblestone.json
@@ -28,7 +28,6 @@ aeb5797b96c54e9fad696fd51a6e03ae3c2051fa data/seafarer/loot_tables/blocks/azure_
 d22adb5958096cf5cbbd8e8a88b3ae6ee9a1952b data/seafarer/loot_tables/blocks/azure_sea_glass_tile_slab.json
 df64bbeda9254ed6030512e2424a95765ec667bb data/seafarer/loot_tables/blocks/azure_sea_glass_tile_stairs.json
 d65d5a717456268ec82a8338b2ba9bc6a5f7f4c3 data/seafarer/loot_tables/blocks/beachgrass.json
-8ed07d83fe4ff3c871c8750fdd3043a2702702db data/seafarer/loot_tables/blocks/beachgrass_fan.json
 2dbf73e0a407eb252c099892859fcefd4074f85c data/seafarer/loot_tables/blocks/blue_starfish.json
 f1d796375a2a0db3eb24169f6d4aef508d160a0d data/seafarer/loot_tables/blocks/chartreuse_pebbled_sea_glass.json
 ac18238e4b794ac01bc480b8212614d56b373109 data/seafarer/loot_tables/blocks/chartreuse_sea_glass.json

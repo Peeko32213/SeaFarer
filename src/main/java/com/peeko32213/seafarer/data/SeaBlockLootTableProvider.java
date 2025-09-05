@@ -188,7 +188,6 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
 
         dropSelf(SeaBlocks.OLD_BOARDS.get());
 
-        dropSelf(SeaBlocks.BEACHGRASS_FAN.get());
         dropSelf(SeaBlocks.BEACHGRASS.get());
         dropSelf(SeaBlocks.SEA_THRIFT.get());
         dropSelf(SeaBlocks.SEA_HOLLY.get());

@@ -2,6 +2,7 @@ package com.peeko32213.seafarer.data;
 
 import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.registry.SeaBlocks;
+import com.peeko32213.seafarer.registry.tags.SeaBlockTags;
 import com.peeko32213.seafarer.registry.tags.SeaTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -40,8 +41,6 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
                 ORANGE_ZOA.get(),
                 PURPLE_ZOA.get(),
                 RED_ZOA.get(),
-                ANTLER_GORGONIAN.get(),
-                TOWERING_GORGONIAN.get(),
                 BLUE_CHRISTMAS_TREE_WORM.get(),
                 BLACK_CHRISTMAS_TREE_WORM.get(),
                 YELLOW_CHRISTMAS_TREE_WORM.get(),
@@ -65,6 +64,26 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
                 OLIVE_CORAL_WALL_FAN.get(),
                 TURQUOISE_CORAL_WALL_FAN.get(),
                 VERDANT_CORAL_WALL_FAN.get()
+        );
+
+        this.tag(SeaBlockTags.GORGONIANS).add(
+                TOWERING_GORGONIAN.get(),
+                ATTUM_GORGONIAN.get(),
+                ANTLER_GORGONIAN.get()
+        );
+
+        this.tag(SeaBlockTags.STARFISH).add(
+                RED_STARFISH.get(),
+                PINK_STARFISH.get(),
+                ORANGE_STARFISH.get(),
+                CHOCOLATE_CHIP_STARFISH.get()
+        );
+
+        this.tag(SeaBlockTags.LARGE_STARFISH).add(
+                BLUE_STARFISH.get(),
+                OCHRE_STARFISH.get(),
+                ROYAL_STARFISH.get(),
+                PURPLE_OCHRE_STARFISH.get()
         );
 
         tag(SeaTags.BEACH_PLANT_BLOCKS)

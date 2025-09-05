@@ -1,0 +1,85 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "seafarer:seafarer_simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "seafarer:clam_shell",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "seafarer:horn_shell",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "seafarer:spiky_shell",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "seafarer:spiral_shell",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "seafarer:swirl_shell",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "seafarer:pyramid_shell",
+                  "Properties": {
+                    "waterlogged": "true"
+                  }
+                },
+                "weight": 1
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "minecraft:water"
+            ]
+          }
+        }
+      ]
+    },
+    "tries": 2,
+    "xz_spread": 7,
+    "y_spread": 3
+  }
+}

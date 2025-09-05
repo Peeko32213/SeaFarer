@@ -44,7 +44,7 @@ public class SeafarerTab {
                     output.accept(SeaBlocks.PURPLE_OCHRE_STARFISH.get());
                     output.accept(SeaBlocks.ROYAL_STARFISH.get());
                     output.accept(SeaBlocks.OCHRE_STARFISH.get());
-                    output.accept(SeaItems.COOKED_STARFISH.get());
+                    output.accept(SeaItems.DRIED_STARFISH.get());
                     output.accept(SeaItems.SEA_GRAPES.get());
                     output.accept(SeaItems.WAKAME.get());
                     output.accept(SeaItems.SEA_URCHIN.get());
@@ -81,7 +81,6 @@ public class SeafarerTab {
                     output.accept(SeaItems.SWIRL_AXE.get());
                     output.accept(SeaItems.SPIRAL_HOE.get());
                     output.accept(SeaBlocks.BEACHGRASS.get());
-                    output.accept(SeaBlocks.BEACHGRASS_FAN.get());
                     output.accept(SeaBlocks.SEA_THRIFT.get());
                     output.accept(SeaBlocks.SEA_HOLLY.get());
                     output.accept(SeaBlocks.COASTAL_LAVENDER.get());
@@ -99,6 +98,7 @@ public class SeafarerTab {
                     output.accept(SeaBlocks.CYAN_ZOA.get());
                     output.accept(SeaBlocks.PURPLE_ZOA.get());
                     output.accept(SeaBlocks.ANTLER_GORGONIAN.get());
+                    output.accept(SeaBlocks.ATTUM_GORGONIAN.get());
                     output.accept(SeaBlocks.TOWERING_GORGONIAN.get());
 
                     // corals

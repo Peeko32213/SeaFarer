@@ -292,14 +292,14 @@ public class SeaRecipeGenerator extends SeaRecipeProvider implements IConditionB
 
 
     private void smeltingRecipes(Consumer<FinishedRecipe> consumer) {
-        foodSmeltingRecipes(key(SeaBlocks.BLUE_STARFISH.get()).getPath(), SeaBlocks.BLUE_STARFISH.get().asItem(), SeaItems.COOKED_STARFISH.get(),250,consumer);
-        foodSmeltingRecipes(key(SeaBlocks.OCHRE_STARFISH.get()).getPath(), SeaBlocks.OCHRE_STARFISH.get().asItem(), SeaItems.COOKED_STARFISH.get(),250,consumer);
-        foodSmeltingRecipes(key(SeaBlocks.PURPLE_OCHRE_STARFISH.get()).getPath(), SeaBlocks.PURPLE_OCHRE_STARFISH.get().asItem(), SeaItems.COOKED_STARFISH.get(),250,consumer);
-        foodSmeltingRecipes(key(SeaBlocks.PINK_STARFISH.get()).getPath(), SeaBlocks.PINK_STARFISH.get().asItem(), SeaItems.COOKED_STARFISH.get(),250,consumer);
-        foodSmeltingRecipes(key(SeaBlocks.RED_STARFISH.get()).getPath(), SeaBlocks.RED_STARFISH.get().asItem(), SeaItems.COOKED_STARFISH.get(),250,consumer);
-        foodSmeltingRecipes(key(SeaBlocks.ROYAL_STARFISH.get()).getPath(), SeaBlocks.ROYAL_STARFISH.get().asItem(), SeaItems.COOKED_STARFISH.get(),250,consumer);
-        foodSmeltingRecipes(key(SeaBlocks.CHOCOLATE_CHIP_STARFISH.get()).getPath(), SeaBlocks.CHOCOLATE_CHIP_STARFISH.get().asItem(), SeaItems.COOKED_STARFISH.get(),250,consumer);
-        foodSmeltingRecipes(key(SeaBlocks.ORANGE_STARFISH.get()).getPath(), SeaBlocks.ORANGE_STARFISH.get().asItem(), SeaItems.COOKED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SeaBlocks.BLUE_STARFISH.get()).getPath(), SeaBlocks.BLUE_STARFISH.get().asItem(), SeaItems.DRIED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SeaBlocks.OCHRE_STARFISH.get()).getPath(), SeaBlocks.OCHRE_STARFISH.get().asItem(), SeaItems.DRIED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SeaBlocks.PURPLE_OCHRE_STARFISH.get()).getPath(), SeaBlocks.PURPLE_OCHRE_STARFISH.get().asItem(), SeaItems.DRIED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SeaBlocks.PINK_STARFISH.get()).getPath(), SeaBlocks.PINK_STARFISH.get().asItem(), SeaItems.DRIED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SeaBlocks.RED_STARFISH.get()).getPath(), SeaBlocks.RED_STARFISH.get().asItem(), SeaItems.DRIED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SeaBlocks.ROYAL_STARFISH.get()).getPath(), SeaBlocks.ROYAL_STARFISH.get().asItem(), SeaItems.DRIED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SeaBlocks.CHOCOLATE_CHIP_STARFISH.get()).getPath(), SeaBlocks.CHOCOLATE_CHIP_STARFISH.get().asItem(), SeaItems.DRIED_STARFISH.get(),250,consumer);
+        foodSmeltingRecipes(key(SeaBlocks.ORANGE_STARFISH.get()).getPath(), SeaBlocks.ORANGE_STARFISH.get().asItem(), SeaItems.DRIED_STARFISH.get(),250,consumer);
     }
 
     //Wrappers for conditionals

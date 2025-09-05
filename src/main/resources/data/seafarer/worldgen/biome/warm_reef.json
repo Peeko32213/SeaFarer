@@ -81,6 +81,9 @@
       "minecraft:patch_pumpkin",
       "minecraft:seagrass_warm",
       "minecraft:sea_pickle",
+      "seafarer:patch_gorgonian",
+      "seafarer:patch_warm_ocean_seashells",
+      "seafarer:patch_starfish",
       "seafarer:warm_reef_vegetation"
     ],
     [

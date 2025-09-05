@@ -1,0 +1,7 @@
+{
+  "parent": "seafarer:block/gorgonian_bottom",
+  "textures": {
+    "bottom": "seafarer:block/antler_gorgonian_bottom",
+    "particle": "seafarer:block/antler_gorgonian_bottom"
+  }
+}

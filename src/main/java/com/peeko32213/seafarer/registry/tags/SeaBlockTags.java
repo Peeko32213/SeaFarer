@@ -8,10 +8,9 @@ import net.minecraft.world.level.block.Block;
 
 public class SeaBlockTags {
 
-    public static final TagKey<Block> WARM_CORAL_BLOCKS = modBlockTag("warm_coral_blocks");
-    public static final TagKey<Block> WARM_CORALS = modBlockTag("warm_corals");
-    public static final TagKey<Block> WARM_WALL_CORALS = modBlockTag("warm_wall_corals");
-    public static final TagKey<Block> WARM_CORAL_PLANTS = modBlockTag("warm_coral_plants");
+    public static final TagKey<Block> GORGONIANS = modBlockTag("gorgonians");
+    public static final TagKey<Block> STARFISH = modBlockTag("starfish");
+    public static final TagKey<Block> LARGE_STARFISH = modBlockTag("large_starfish");
 
     private static TagKey<Block> modBlockTag(String name) {
         return blockTag(Seafarer.MOD_ID, name);

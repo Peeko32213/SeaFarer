@@ -2,8 +2,8 @@ package com.peeko32213.seafarer.registry;
 
 import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.blocks.*;
-import com.peeko32213.seafarer.blocks.shell.PyramidShellBlock;
-import com.peeko32213.seafarer.blocks.shell.ShellBlock;
+import com.peeko32213.seafarer.blocks.PyramidShellBlock;
+import com.peeko32213.seafarer.blocks.ShellBlock;
 import net.minecraft.world.flag.FeatureFlag;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -172,7 +172,6 @@ public class SeaBlocks {
     public static final RegistryObject<Block> ALGAE_CARPET = registerBlock("algae_carpet", () -> new AlageCarpetBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(0.1F).sound(SoundType.MOSS_CARPET).pushReaction(PushReaction.DESTROY).noCollission().noOcclusion().replaceable()));
     public static final RegistryObject<Block> ALGAE_PLANT = registerBlock("algae_plant", () -> new AlgaePlantBlock(SeaBlockProperties.WATER_PLANT));
 
-    public static final RegistryObject<Block> BEACHGRASS_FAN = registerBlock("beachgrass_fan", () -> new LandFanBlock(SeaBlockProperties.PLANT));
     public static final RegistryObject<Block> BEACHGRASS = registerBlock("beachgrass", () -> new SFCropLikePlantBlock(SeaBlockProperties.PLANT));
     public static final RegistryObject<Block> POTTED_BEACHGRASS = registerBlockWithoutItem("potted_beachgrass", () -> new FlowerPotBlock(SeaBlocks.BEACHGRASS.get(), registerFlowerPot()));
 
@@ -309,8 +308,9 @@ public class SeaBlocks {
     public static final RegistryObject<Block> RED_ZOA = registerBlock("red_zoa",() -> new FloweryCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_RED)));
     public static final RegistryObject<Block> PURPLE_ZOA = registerBlock("purple_zoa",() -> new FloweryCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_PURPLE)));
 
-    public static final RegistryObject<Block> ANTLER_GORGONIAN = registerBlock("antler_gorgonian",() -> new LargeCoralPlantBlock(SeaBlockProperties.coral(MapColor.COLOR_PURPLE)));
-    public static final RegistryObject<Block> TOWERING_GORGONIAN = registerBlock("towering_gorgonian",() -> new LargeCoralPlantBlock(SeaBlockProperties.coral(MapColor.COLOR_ORANGE)));
+    public static final RegistryObject<Block> ANTLER_GORGONIAN = registerBlock("antler_gorgonian",() -> new GorgonianCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_PURPLE)));
+    public static final RegistryObject<Block> TOWERING_GORGONIAN = registerBlock("towering_gorgonian",() -> new GorgonianCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_ORANGE)));
+    public static final RegistryObject<Block> ATTUM_GORGONIAN = registerBlock("attum_gorgonian",() -> new GorgonianCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_YELLOW)));
 
     public static final RegistryObject<Block> BLUE_CHRISTMAS_TREE_WORM = registerBlock("blue_christmas_tree_worm",() -> new FloweryCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_BLUE)));
     public static final RegistryObject<Block> BLACK_CHRISTMAS_TREE_WORM = registerBlock("black_christmas_tree_worm",() -> new FloweryCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_BLACK)));

@@ -1,0 +1,48 @@
+{
+	"ambientocclusion": false,
+	"render_type": "minecraft:cutout",
+	"texture_size": [64, 32],
+	"elements": [
+		{
+			"name": "Body",
+			"from": [-8, 0, 8],
+			"to": [24, 16, 8],
+			"rotation": {"angle": 22.5, "axis": "y", "origin": [8, 9.5, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#bottom"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#bottom"}
+			}
+		},
+		{
+			"name": "Body",
+			"from": [-8, 0, 8],
+			"to": [24, 16, 8],
+			"rotation": {"angle": -22.5, "axis": "y", "origin": [8, 9.5, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#bottom"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#bottom"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "Root",
+			"origin": [6, 0, 8],
+			"color": 0,
+			"children": [
+				{
+					"name": "Body",
+					"origin": [6, 0, 8],
+					"color": 0,
+					"children": [0]
+				},
+				{
+					"name": "Body",
+					"origin": [6, 0, 8],
+					"color": 0,
+					"children": [1]
+				}
+			]
+		}
+	]
+}
