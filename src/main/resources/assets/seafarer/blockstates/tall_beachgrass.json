@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "half=lower": [
+      {
+        "model": "seafarer:block/beachgrass/tall_beachgrass_bottom1"
+      },
+      {
+        "model": "seafarer:block/beachgrass/tall_beachgrass_bottom2"
+      }
+    ],
+    "half=upper": [
+      {
+        "model": "seafarer:block/beachgrass/tall_beachgrass_top1"
+      },
+      {
+        "model": "seafarer:block/beachgrass/tall_beachgrass_top2"
+      }
+    ]
+  }
+}

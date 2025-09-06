@@ -37,4 +37,32 @@ public class SeaBiomeGeneration {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.BEACH_FLOWERS);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.FLOWERING_BEACHGRASS);
     }
+
+    public static void grassyBeach(BiomeGenerationSettings.Builder generation) {
+        OverworldBiomes.globalOverworldGeneration(generation);
+        BiomeDefaultFeatures.addDefaultOres(generation);
+        BiomeDefaultFeatures.addDefaultSoftDisks(generation);
+        BiomeDefaultFeatures.addWaterTrees(generation);
+        BiomeDefaultFeatures.addDefaultFlowers(generation);
+        BiomeDefaultFeatures.addDefaultGrass(generation);
+        BiomeDefaultFeatures.addDefaultMushrooms(generation);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_NORMAL);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.BEACH_STARFISH);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.GRASSY_BEACHGRASS);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.TALL_BEACHGRASS);
+    }
+
+    public static void coralBeach(BiomeGenerationSettings.Builder generation) {
+        OverworldBiomes.globalOverworldGeneration(generation);
+        BiomeDefaultFeatures.addDefaultOres(generation);
+        BiomeDefaultFeatures.addDefaultSoftDisks(generation);
+        BiomeDefaultFeatures.addWaterTrees(generation);
+        BiomeDefaultFeatures.addDefaultFlowers(generation);
+        BiomeDefaultFeatures.addDefaultGrass(generation);
+        BiomeDefaultFeatures.addDefaultMushrooms(generation);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_NORMAL);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.BEACH_STARFISH);
+    }
 }

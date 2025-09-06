@@ -80,7 +80,9 @@ public class SeafarerTab {
                     output.accept(SeaItems.HORN_PICKAXE.get());
                     output.accept(SeaItems.SWIRL_AXE.get());
                     output.accept(SeaItems.SPIRAL_HOE.get());
+                    output.accept(SeaBlocks.SHORT_BEACHGRASS.get());
                     output.accept(SeaBlocks.BEACHGRASS.get());
+                    output.accept(SeaBlocks.TALL_BEACHGRASS.get());
                     output.accept(SeaBlocks.SEA_THRIFT.get());
                     output.accept(SeaBlocks.SEA_HOLLY.get());
                     output.accept(SeaBlocks.COASTAL_LAVENDER.get());

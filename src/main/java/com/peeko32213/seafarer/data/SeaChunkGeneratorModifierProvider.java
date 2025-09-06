@@ -21,7 +21,8 @@ public class SeaChunkGeneratorModifierProvider extends ChunkGeneratorModifierPro
     @Override
     protected void registerEntries(HolderLookup.Provider provider) {
         SurfaceRules.ConditionSource isWarmReef = isBiome(SeaBiomeProvider.WARM_REEF);
-        SurfaceRules.ConditionSource isFloweringBeach = isBiome(SeaBiomeProvider.FLOWERING_BEACH);
+        SurfaceRules.ConditionSource isSandyBeach = isBiome(SeaBiomeProvider.FLOWERING_BEACH, SeaBiomeProvider.GRASSY_BEACH);
+        SurfaceRules.ConditionSource isCoralBeach = isBiome(SeaBiomeProvider.CORAL_BEACH);
 
         RuleSource sand = state(Blocks.SAND.defaultBlockState());
         RuleSource sandstone = state(Blocks.SANDSTONE.defaultBlockState());
@@ -33,10 +34,12 @@ public class SeaChunkGeneratorModifierProvider extends ChunkGeneratorModifierPro
         RuleSource oceanCoralineSandRuleSource = oceanSandRuleSource(coraline_sand, coraline_sandstone);
 
         RuleSource beachSandRuleSource = beachSandRuleSource(sand, sandstone);
+        RuleSource coralBeachSandRuleSource = beachSandRuleSource(coraline_sand, coraline_sandstone);
 
         this.entry("seafarer_surface_rule").selects("minecraft:overworld")
                 .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isWarmReef, sequence(ifTrue(noiseRange(0.3F, 2.5F), oceanCoralineSandRuleSource), oceanSandRuleSource))), false))
-                .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isFloweringBeach, beachSandRuleSource)), false)
+                .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isSandyBeach, beachSandRuleSource)), false))
+                .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isCoralBeach, coralBeachSandRuleSource)), false)
         );
     }
 

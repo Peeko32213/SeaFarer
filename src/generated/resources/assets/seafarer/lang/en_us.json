@@ -1,5 +1,7 @@
 {
+  "biome.seafarer.coral_beach": "Coral Beach",
   "biome.seafarer.flowering_beach": "Flowering Beach",
+  "biome.seafarer.grassy_beach": "Grassy Beach",
   "biome.seafarer.kelp_forest": "Kelp Forest",
   "biome.seafarer.warm_reef": "Warm Reef",
   "block.seafarer.algae_block": "Algae Block",
@@ -173,6 +175,7 @@
   "block.seafarer.seafoam_sea_glass_tile_stairs": "Seafoam Sea Glass Tile Stairs",
   "block.seafarer.seafoam_sea_glass_tiles": "Seafoam Sea Glass Tiles",
   "block.seafarer.shelly_sand": "Shelly Sand",
+  "block.seafarer.short_beachgrass": "Short Beachgrass",
   "block.seafarer.smooth_coraline_sandstone_slab": "Smooth Coraline Sandstone Slab",
   "block.seafarer.smooth_coraline_sandstone_stairs": "Smooth Coraline Sandstone Stairs",
   "block.seafarer.spiky_shell": "Spiky Shell",
@@ -186,6 +189,7 @@
   "block.seafarer.swirl_shell": "Swirl Shell",
   "block.seafarer.swirl_shell_brick_slab": "Swirl Shell Brick Slab",
   "block.seafarer.swirl_shell_brick_stairs": "Swirl Shell Brick Stairs",
+  "block.seafarer.tall_beachgrass": "Tall Beachgrass",
   "block.seafarer.towering_gorgonian": "Towering Gorgonian",
   "block.seafarer.turquoise_coral": "Turquoise Coral",
   "block.seafarer.turquoise_coral_block": "Turquoise Coral Block",

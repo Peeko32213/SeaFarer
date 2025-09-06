@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "seafarer:block/beachgrass"
+    "layer0": "seafarer:block/tall_beachgrass_top1"
   }
 }
