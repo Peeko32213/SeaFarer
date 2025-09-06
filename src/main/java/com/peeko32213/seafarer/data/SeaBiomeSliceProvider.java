@@ -37,8 +37,9 @@ public class SeaBiomeSliceProvider {
     public static final ResourceKey<ModdedBiomeSlice> WARM_REEF = createKey("warm_reef");
     public static final ResourceKey<ModdedBiomeSlice> FLOWERING_BEACH = createKey("flowering_beach");
     public static final ResourceKey<ModdedBiomeSlice> GRASSY_BEACH = createKey("grassy_beach");
-    public static final ResourceKey<ModdedBiomeSlice> CORAL_BEACH = createKey("coral_beach");
+    public static final ResourceKey<ModdedBiomeSlice> GLASS_BEACH = createKey("glass_beach");
 
+    public static final ResourceKey<ModdedBiomeSlice> CORAL_BEACH = createKey("coral_beach");
     public static final ResourceKey<Biome> CORAL_BEACH_AREA = SeaBiomeProvider.createKey("coral_beach_area");
 
     public static void bootstrap(BootstapContext<ModdedBiomeSlice> context) {
@@ -67,7 +68,14 @@ public class SeaBiomeSliceProvider {
                 )), LevelStem.OVERWORLD)
         );
 
-        context.register(CORAL_BEACH, new ModdedBiomeSlice(30, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
+        context.register(GLASS_BEACH, new ModdedBiomeSlice(3,
+                new OverlayModdedBiomeProvider(List.of(
+                        Pair.of(HolderSet.direct(Stream.of(Biomes.BEACH).map(biomes::getOrThrow)
+                                .collect(Collectors.toList())), new FixedBiomeSource(Holder.direct(biomes.getOrThrow(SeaBiomeProvider.GLASS_BEACH)).get()))
+                )), LevelStem.OVERWORLD)
+        );
+
+        context.register(CORAL_BEACH, new ModdedBiomeSlice(25, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
                 .area(CORAL_BEACH_AREA, SeaBiomeProvider.CORAL_BEACH)
                 .build(), LevelStem.OVERWORLD)
         );
@@ -408,12 +416,10 @@ public class SeaBiomeSliceProvider {
         private ResourceKey<Biome> pickBeachBiome(int temperature, int humidity) {
             if (temperature == 0) {
                 return VANILLA;
+            } else if (temperature == 3) {
+                return CORAL_BEACH_AREA;
             } else {
-                if (temperature == 3 && humidity >= 2) {
-                    return CORAL_BEACH_AREA;
-                } else {
-                    return VANILLA;
-                }
+                return VANILLA;
             }
         }
 

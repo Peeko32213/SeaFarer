@@ -33,10 +33,10 @@ public class SeaPlacedFeatureProvider {
         register(context, WARM_REEF_STARFISH, SeaConfiguredFeatureProvider.STARFISH, CountPlacement.of(UniformInt.of(1, 2)), RarityFilter.onAverageOnceEvery(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
         register(context, WARM_REEF_CORALS, AquaticFeatures.WARM_OCEAN_VEGETATION, CountPlacement.of(UniformInt.of(4, 8)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
         register(context, BEACH_STARFISH, SeaConfiguredFeatureProvider.STARFISH, CountPlacement.of(UniformInt.of(1, 2)), RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
-        register(context, BEACH_FLOWERS, SeaConfiguredFeatureProvider.BEACH_FLOWERS, CountPlacement.of(BiasedToBottomInt.of(3, 40)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+        register(context, BEACH_FLOWERS, SeaConfiguredFeatureProvider.BEACH_FLOWERS, CountPlacement.of(BiasedToBottomInt.of(3, 30)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
         register(context, BEACHGRASS, SeaConfiguredFeatureProvider.BEACHGRASS, CountPlacement.of(ConstantInt.of(1)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
         createBeachPlantPatch(context, FLOWERING_BEACHGRASS, 4, 8, SeaConfiguredFeatureProvider.BEACHGRASS);
-        createBeachPlantPatch(context, GRASSY_BEACHGRASS, 6, 20, SeaConfiguredFeatureProvider.GRASSY_BEACHGRASS);
+        createBeachPlantPatch(context, GRASSY_BEACHGRASS, 6, 18, SeaConfiguredFeatureProvider.GRASSY_BEACHGRASS);
         register(context, TALL_BEACHGRASS, SeaConfiguredFeatureProvider.TALL_BEACHGRASS, CountPlacement.of(BiasedToBottomInt.of(4, 8)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
     }
 

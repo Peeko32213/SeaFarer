@@ -181,7 +181,6 @@ public class SeaBlocks {
     public static final RegistryObject<Block> SHORT_BEACHGRASS = registerBlock("short_beachgrass", () -> new BeachgrassBlock(SeaBlockProperties.PLANT));
     public static final RegistryObject<Block> POTTED_SHORT_BEACHGRASS = registerBlockWithoutItem("potted_short_beachgrass", () -> new FlowerPotBlock(SeaBlocks.BEACHGRASS.get(), registerFlowerPot()));
 
-
     public static final RegistryObject<Block> SEA_THRIFT = registerBlock("sea_thrift", () -> new SeaFlowerBlock(() -> MobEffects.DAMAGE_BOOST, 7, SeaBlockProperties.flower(MapColor.COLOR_PURPLE)));
     public static final RegistryObject<Block> POTTED_SEA_THRIFT = registerBlockWithoutItem("potted_sea_thrift", () -> new FlowerPotBlock(SeaBlocks.SEA_THRIFT.get(), registerFlowerPot()));
 
@@ -237,6 +236,7 @@ public class SeaBlocks {
     public static final RegistryObject<Block> GRAVELLY_SAND = registerBlock("gravelly_sand", () -> new SandBlock(14406560, SeaBlockProperties.SAND));
     public static final RegistryObject<Block> SHELLY_SAND = registerBlock("shelly_sand", () -> new SandBlock(14406560, SeaBlockProperties.SAND));
     public static final RegistryObject<Block> STARRY_SAND = registerBlock("starry_sand", () -> new SandBlock(14406560, SeaBlockProperties.SAND));
+    public static final RegistryObject<Block> SEA_GLASS_SAND = registerBlock("sea_glass_sand", () -> new SandBlock(14406560, SeaBlockProperties.SAND));
 
     public static final RegistryObject<Block> FLOATSOME = register("floatsome", () -> new FloorLayerBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.CHERRY_WOOD).noCollission().noOcclusion().replaceable().pushReaction(PushReaction.DESTROY)));
 

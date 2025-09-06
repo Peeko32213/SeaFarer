@@ -21,7 +21,7 @@ public class SeaChunkGeneratorModifierProvider extends ChunkGeneratorModifierPro
     @Override
     protected void registerEntries(HolderLookup.Provider provider) {
         SurfaceRules.ConditionSource isWarmReef = isBiome(SeaBiomeProvider.WARM_REEF);
-        SurfaceRules.ConditionSource isSandyBeach = isBiome(SeaBiomeProvider.FLOWERING_BEACH, SeaBiomeProvider.GRASSY_BEACH);
+        SurfaceRules.ConditionSource isSandyBeach = isBiome(SeaBiomeProvider.FLOWERING_BEACH, SeaBiomeProvider.GRASSY_BEACH, SeaBiomeProvider.GLASS_BEACH);
         SurfaceRules.ConditionSource isCoralBeach = isBiome(SeaBiomeProvider.CORAL_BEACH);
 
         RuleSource sand = state(Blocks.SAND.defaultBlockState());

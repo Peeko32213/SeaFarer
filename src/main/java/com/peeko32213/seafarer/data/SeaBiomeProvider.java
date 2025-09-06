@@ -22,6 +22,7 @@ public class SeaBiomeProvider {
     public static final ResourceKey<Biome> FLOWERING_BEACH = createKey("flowering_beach");
     public static final ResourceKey<Biome> GRASSY_BEACH = createKey("grassy_beach");
     public static final ResourceKey<Biome> CORAL_BEACH = createKey("coral_beach");
+    public static final ResourceKey<Biome> GLASS_BEACH = createKey("glass_beach");
 
     public static void bootstrap(BootstapContext<Biome> context) {
         HolderGetter<PlacedFeature> features = context.lookup(Registries.PLACED_FEATURE);
@@ -31,6 +32,7 @@ public class SeaBiomeProvider {
         context.register(FLOWERING_BEACH, floweringBeach(features, carvers));
         context.register(GRASSY_BEACH, grassyBeach(features, carvers));
         context.register(CORAL_BEACH, coralBeach(features, carvers));
+        context.register(GLASS_BEACH, glassBeach(features, carvers));
     }
 
     public static ResourceKey<Biome> createKey(String name) {
@@ -68,6 +70,16 @@ public class SeaBiomeProvider {
     }
 
     private static Biome coralBeach(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+        BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(features, carvers);
+        SeaBiomeGeneration.coralBeach(generation);
+
+        MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.commonSpawns(spawns);
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.TURTLE, 5, 2, 5));
+        return biome(true, 0.8F, 0.4F, 4445678, 270131, spawns, generation, null);
+    }
+
+    private static Biome glassBeach(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
         BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(features, carvers);
         SeaBiomeGeneration.coralBeach(generation);
 

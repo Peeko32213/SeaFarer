@@ -206,7 +206,8 @@
               "type": "minecraft:biome",
               "biome_is": [
                 "seafarer:flowering_beach",
-                "seafarer:grassy_beach"
+                "seafarer:grassy_beach",
+                "seafarer:glass_beach"
               ]
             },
             "then_run": {

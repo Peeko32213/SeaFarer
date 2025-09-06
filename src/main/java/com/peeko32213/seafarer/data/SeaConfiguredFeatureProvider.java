@@ -4,21 +4,28 @@ import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.blocks.TallBeachgrassBlock;
 import com.peeko32213.seafarer.registry.SeaBlocks;
 import com.peeko32213.seafarer.registry.SeaFeatures;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.*;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+
+import java.util.List;
 
 public class SeaConfiguredFeatureProvider {
 
@@ -28,6 +35,7 @@ public class SeaConfiguredFeatureProvider {
     public static final ResourceKey<ConfiguredFeature<?, ?>> BEACHGRASS = createKey("beachgrass");
     public static final ResourceKey<ConfiguredFeature<?, ?>> GRASSY_BEACHGRASS = createKey("grassy_beachgrass");
     public static final ResourceKey<ConfiguredFeature<?, ?>> TALL_BEACHGRASS = createKey("tall_beachgrass");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SEA_GLASS_SAND = createKey("sea_glass_sand");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         HolderGetter<PlacedFeature> placed = context.lookup(Registries.PLACED_FEATURE);
@@ -39,6 +47,7 @@ public class SeaConfiguredFeatureProvider {
         context.register(BEACHGRASS, new ConfiguredFeature<>(Feature.RANDOM_PATCH, Configs.createPlantPatch(32, Configs.createBeachgrass())));
         context.register(GRASSY_BEACHGRASS, new ConfiguredFeature<>(Feature.RANDOM_PATCH, new RandomPatchConfiguration(64, 5, 3, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, Configs.createBeachgrassTall()))));
         context.register(TALL_BEACHGRASS, new ConfiguredFeature<>(Feature.RANDOM_PATCH, new RandomPatchConfiguration(64, 4, 4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(SeaBlocks.TALL_BEACHGRASS.get()))))));
+
     }
 
     private static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {

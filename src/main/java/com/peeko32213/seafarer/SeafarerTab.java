@@ -146,6 +146,7 @@ public class SeafarerTab {
                     output.accept(SeaBlocks.SHELLY_SAND.get());
                     output.accept(SeaBlocks.SPRINKLED_SAND.get());
                     output.accept(SeaBlocks.STARRY_SAND.get());
+                    output.accept(SeaBlocks.SEA_GLASS_SAND.get());
                     output.accept(SeaBlocks.CORAL_SAND.get());
                     output.accept(SeaBlocks.CORALINE_SANDSTONE.get());
                     output.accept(SeaBlocks.CORALINE_SANDSTONE_STAIRS.get());
