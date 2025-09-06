@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "seafarer:block/beachgrass/potted_short_beachgrass1"
+      },
+      {
+        "model": "seafarer:block/beachgrass/potted_short_beachgrass2"
+      }
+    ]
+  }
+}

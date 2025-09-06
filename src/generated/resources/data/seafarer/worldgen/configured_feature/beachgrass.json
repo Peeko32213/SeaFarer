@@ -13,6 +13,12 @@
                   "Name": "seafarer:beachgrass"
                 },
                 "weight": 40
+              },
+              {
+                "data": {
+                  "Name": "seafarer:short_beachgrass"
+                },
+                "weight": 30
               }
             ]
           }
@@ -28,7 +34,7 @@
         }
       ]
     },
-    "tries": 64,
+    "tries": 32,
     "xz_spread": 5,
     "y_spread": 2
   }

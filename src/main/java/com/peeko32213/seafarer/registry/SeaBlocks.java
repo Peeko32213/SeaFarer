@@ -173,8 +173,14 @@ public class SeaBlocks {
     public static final RegistryObject<Block> ALGAE_CARPET = registerBlock("algae_carpet", () -> new AlageCarpetBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(0.1F).sound(SoundType.MOSS_CARPET).pushReaction(PushReaction.DESTROY).noCollission().noOcclusion().replaceable()));
     public static final RegistryObject<Block> ALGAE_PLANT = registerBlock("algae_plant", () -> new AlgaePlantBlock(SeaBlockProperties.WATER_PLANT));
 
-    public static final RegistryObject<Block> BEACHGRASS = registerBlock("beachgrass", () -> new BeachPlantBlock(SeaBlockProperties.PLANT));
+    public static final RegistryObject<Block> TALL_BEACHGRASS = registerBlock("tall_beachgrass", () -> new TallBeachgrassBlock(SeaBlockProperties.PLANT));
+
+    public static final RegistryObject<Block> BEACHGRASS = registerBlock("beachgrass", () -> new BeachgrassBlock(SeaBlockProperties.PLANT));
     public static final RegistryObject<Block> POTTED_BEACHGRASS = registerBlockWithoutItem("potted_beachgrass", () -> new FlowerPotBlock(SeaBlocks.BEACHGRASS.get(), registerFlowerPot()));
+
+    public static final RegistryObject<Block> SHORT_BEACHGRASS = registerBlock("short_beachgrass", () -> new BeachgrassBlock(SeaBlockProperties.PLANT));
+    public static final RegistryObject<Block> POTTED_SHORT_BEACHGRASS = registerBlockWithoutItem("potted_short_beachgrass", () -> new FlowerPotBlock(SeaBlocks.BEACHGRASS.get(), registerFlowerPot()));
+
 
     public static final RegistryObject<Block> SEA_THRIFT = registerBlock("sea_thrift", () -> new SeaFlowerBlock(() -> MobEffects.DAMAGE_BOOST, 7, SeaBlockProperties.flower(MapColor.COLOR_PURPLE)));
     public static final RegistryObject<Block> POTTED_SEA_THRIFT = registerBlockWithoutItem("potted_sea_thrift", () -> new FlowerPotBlock(SeaBlocks.SEA_THRIFT.get(), registerFlowerPot()));

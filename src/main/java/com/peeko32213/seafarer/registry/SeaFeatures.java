@@ -19,6 +19,5 @@ public class SeaFeatures {
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> GORGONIAN = FEATURES.register("gorgonian", () -> new GorgonianFeature(NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<SimpleBlockConfiguration>> SEAFARER_SIMPLE_BLOCK = FEATURES.register("seafarer_simple_block", () -> new SeaSimpleBlockFeature(SimpleBlockConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> STARFISH = FEATURES.register("starfish", () -> new StarfishFeature(NoneFeatureConfiguration.CODEC));
-    public static final RegistryObject<Feature<NoneFeatureConfiguration>> BEACH_FLOWERS = FEATURES.register("beach_flowers", () -> new BeachFlowerFeature(NoneFeatureConfiguration.CODEC));
 
 }

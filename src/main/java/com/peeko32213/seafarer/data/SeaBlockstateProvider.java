@@ -222,8 +222,6 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.stairs(ALGAE_COBBLESTONE_STAIRS, this.blockTexture(ALGAE_COBBLESTONE.get()));
         this.slab(ALGAE_COBBLESTONE_SLAB, this.blockTexture(ALGAE_COBBLESTONE.get()));
 
-        this.pottedPlant(BEACHGRASS, POTTED_BEACHGRASS);
-
         this.pottedPlant(SEA_THRIFT, POTTED_SEA_THRIFT);
         this.pottedPlant(COASTAL_LAVENDER, POTTED_COASTAL_LAVENDER);
         this.pottedPlant(COASTAL_WILDFLOWER, POTTED_COASTAL_WILDFLOWER);

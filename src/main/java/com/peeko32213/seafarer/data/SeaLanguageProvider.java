@@ -51,6 +51,8 @@ public class SeaLanguageProvider extends LanguageProvider {
         add("biome.seafarer.warm_reef", "Warm Reef");
         add("biome.seafarer.flowering_beach", "Flowering Beach");
         add("biome.seafarer.kelp_forest", "Kelp Forest");
+        add("biome.seafarer.coral_beach", "Coral Beach");
+        add("biome.seafarer.grassy_beach", "Grassy Beach");
     }
 
     @Override

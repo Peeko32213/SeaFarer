@@ -1,7 +1,6 @@
 package com.peeko32213.seafarer.data;
 
 import com.peeko32213.seafarer.Seafarer;
-import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.AquaticFeatures;
@@ -9,9 +8,9 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.valueproviders.BiasedToBottomInt;
+import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.*;
 
@@ -27,6 +26,7 @@ public class SeaPlacedFeatureProvider {
     public static final ResourceKey<PlacedFeature> FLOWERING_BEACHGRASS = createKey("flowering_beachgrass");
     public static final ResourceKey<PlacedFeature> BEACHGRASS = createKey("beachgrass");
     public static final ResourceKey<PlacedFeature> GRASSY_BEACHGRASS = createKey("grassy_beachgrass");
+    public static final ResourceKey<PlacedFeature> TALL_BEACHGRASS = createKey("tall_beachgrass");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         register(context, GORGONIANS, SeaConfiguredFeatureProvider.GORGONIANS, CountPlacement.of(UniformInt.of(1, 2)), RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
@@ -34,9 +34,10 @@ public class SeaPlacedFeatureProvider {
         register(context, WARM_REEF_CORALS, AquaticFeatures.WARM_OCEAN_VEGETATION, CountPlacement.of(UniformInt.of(4, 8)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
         register(context, BEACH_STARFISH, SeaConfiguredFeatureProvider.STARFISH, CountPlacement.of(UniformInt.of(1, 2)), RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
         register(context, BEACH_FLOWERS, SeaConfiguredFeatureProvider.BEACH_FLOWERS, CountPlacement.of(BiasedToBottomInt.of(3, 40)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
-        createBeachPlantPatch(context, BEACHGRASS, 1, 2, SeaConfiguredFeatureProvider.BEACHGRASS);
+        register(context, BEACHGRASS, SeaConfiguredFeatureProvider.BEACHGRASS, CountPlacement.of(ConstantInt.of(1)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
         createBeachPlantPatch(context, FLOWERING_BEACHGRASS, 4, 8, SeaConfiguredFeatureProvider.BEACHGRASS);
-        createBeachPlantPatch(context, GRASSY_BEACHGRASS, 10, 40, SeaConfiguredFeatureProvider.BEACHGRASS);
+        createBeachPlantPatch(context, GRASSY_BEACHGRASS, 6, 20, SeaConfiguredFeatureProvider.GRASSY_BEACHGRASS);
+        register(context, TALL_BEACHGRASS, SeaConfiguredFeatureProvider.TALL_BEACHGRASS, CountPlacement.of(BiasedToBottomInt.of(4, 8)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
     }
 
     private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, ResourceKey<ConfiguredFeature<?, ?>> feature, List<PlacementModifier> modifiers) {
@@ -52,7 +53,7 @@ public class SeaPlacedFeatureProvider {
     }
 
     private static void createBeachPlantPatch(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, int minCount, int maxCount, ResourceKey<ConfiguredFeature<?, ?>> feature) {
-        register(context, key, feature, List.of(CountPlacement.of(UniformInt.of(minCount, maxCount)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), BlockPredicateFilter.forPredicate(BlockPredicate.matchesBlocks(Direction.DOWN.getNormal(), Blocks.SAND))));
+        register(context, key, feature, List.of(CountPlacement.of(UniformInt.of(minCount, maxCount)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
     }
 
     private static ResourceKey<PlacedFeature> createKey(String name) {
