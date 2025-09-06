@@ -1,5 +1,5 @@
 {
-  "feature": "seafarer:starfish",
+  "feature": "seafarer:beachgrass",
   "placement": [
     {
       "type": "minecraft:count",
@@ -12,18 +12,26 @@
       }
     },
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 5
-    },
-    {
       "type": "minecraft:in_square"
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "OCEAN_FLOOR_WG"
+      "heightmap": "MOTION_BLOCKING"
     },
     {
       "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "blocks": "minecraft:sand",
+        "offset": [
+          0,
+          -1,
+          0
+        ]
+      }
     }
   ]
 }

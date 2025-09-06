@@ -1,6 +1,7 @@
 package com.peeko32213.seafarer.data;
 
 import com.peeko32213.seafarer.Seafarer;
+import com.peeko32213.seafarer.registry.SeaBlocks;
 import com.peeko32213.seafarer.registry.SeaFeatures;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
@@ -8,6 +9,7 @@ import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -20,6 +22,7 @@ public class SeaConfiguredFeatureProvider {
     public static final ResourceKey<ConfiguredFeature<?, ?>> GORGONIANS = createKey("gorgonians");
     public static final ResourceKey<ConfiguredFeature<?, ?>> STARFISH = createKey("starfish");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BEACH_FLOWERS = createKey("beach_flowers");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BEACHGRASS = createKey("beachgrass");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         HolderGetter<PlacedFeature> placed = context.lookup(Registries.PLACED_FEATURE);
@@ -27,7 +30,9 @@ public class SeaConfiguredFeatureProvider {
 
         context.register(GORGONIANS, new ConfiguredFeature<>(SeaFeatures.GORGONIAN.get(), NoneFeatureConfiguration.NONE));
         context.register(STARFISH, new ConfiguredFeature<>(SeaFeatures.STARFISH.get(), NoneFeatureConfiguration.NONE));
-        context.register(BEACH_FLOWERS, new ConfiguredFeature<>(SeaFeatures.BEACH_FLOWERS.get(), NoneFeatureConfiguration.NONE));
+        context.register(BEACH_FLOWERS, new ConfiguredFeature<>(Feature.NO_BONEMEAL_FLOWER, Configs.createPlantPatch(64, Configs.createBeachFlowers())));
+        context.register(BEACHGRASS, new ConfiguredFeature<>(Feature.RANDOM_PATCH, Configs.createPlantPatch(64, Configs.createBeachgrass())));
+
     }
 
     private static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {
@@ -35,6 +40,20 @@ public class SeaConfiguredFeatureProvider {
     }
 
     private static class Configs {
+
+        public static SimpleBlockConfiguration createBeachFlowers() {
+            return new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                    .add(SeaBlocks.SEA_HOLLY.get().defaultBlockState(), 40)
+                    .add(SeaBlocks.SEA_THRIFT.get().defaultBlockState(), 40)
+                    .add(SeaBlocks.COASTAL_LAVENDER.get().defaultBlockState(), 30)
+                    .add(SeaBlocks.COASTAL_WILDFLOWER.get().defaultBlockState(), 30)));
+        }
+
+        public static SimpleBlockConfiguration createBeachgrass() {
+            return new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
+                    .add(SeaBlocks.BEACHGRASS.get().defaultBlockState(), 40)));
+        }
+
         public static RandomPatchConfiguration createPlantPatch(int tries, BlockState state) {
             return createPlantPatch(tries, new SimpleBlockConfiguration(BlockStateProvider.simple(state)));
         }

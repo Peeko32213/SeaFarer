@@ -4,6 +4,7 @@ import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.blocks.*;
 import com.peeko32213.seafarer.blocks.PyramidShellBlock;
 import com.peeko32213.seafarer.blocks.ShellBlock;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.flag.FeatureFlag;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -172,19 +173,19 @@ public class SeaBlocks {
     public static final RegistryObject<Block> ALGAE_CARPET = registerBlock("algae_carpet", () -> new AlageCarpetBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).strength(0.1F).sound(SoundType.MOSS_CARPET).pushReaction(PushReaction.DESTROY).noCollission().noOcclusion().replaceable()));
     public static final RegistryObject<Block> ALGAE_PLANT = registerBlock("algae_plant", () -> new AlgaePlantBlock(SeaBlockProperties.WATER_PLANT));
 
-    public static final RegistryObject<Block> BEACHGRASS = registerBlock("beachgrass", () -> new SFCropLikePlantBlock(SeaBlockProperties.PLANT));
+    public static final RegistryObject<Block> BEACHGRASS = registerBlock("beachgrass", () -> new BeachPlantBlock(SeaBlockProperties.PLANT));
     public static final RegistryObject<Block> POTTED_BEACHGRASS = registerBlockWithoutItem("potted_beachgrass", () -> new FlowerPotBlock(SeaBlocks.BEACHGRASS.get(), registerFlowerPot()));
 
-    public static final RegistryObject<Block> SEA_THRIFT = registerBlock("sea_thrift", () -> new SandPlantBlock(SeaBlockProperties.flower(MapColor.COLOR_PURPLE)));
+    public static final RegistryObject<Block> SEA_THRIFT = registerBlock("sea_thrift", () -> new SeaFlowerBlock(() -> MobEffects.DAMAGE_BOOST, 7, SeaBlockProperties.flower(MapColor.COLOR_PURPLE)));
     public static final RegistryObject<Block> POTTED_SEA_THRIFT = registerBlockWithoutItem("potted_sea_thrift", () -> new FlowerPotBlock(SeaBlocks.SEA_THRIFT.get(), registerFlowerPot()));
 
-    public static final RegistryObject<Block> SEA_HOLLY = registerBlock("sea_holly", () -> new SandPlantBlock(SeaBlockProperties.flower(MapColor.COLOR_PURPLE)));
+    public static final RegistryObject<Block> SEA_HOLLY = registerBlock("sea_holly", () -> new SeaFlowerBlock(() -> MobEffects.MOVEMENT_SPEED, 7, SeaBlockProperties.flower(MapColor.COLOR_PURPLE)));
     public static final RegistryObject<Block> POTTED_SEA_HOLLY = registerBlockWithoutItem("potted_sea_holly", () -> new FlowerPotBlock(SeaBlocks.SEA_HOLLY.get(), registerFlowerPot()));
 
-    public static final RegistryObject<Block> COASTAL_LAVENDER = registerBlock("coastal_lavender", () -> new SandPlantBlock(SeaBlockProperties.flower(MapColor.COLOR_PURPLE)));
+    public static final RegistryObject<Block> COASTAL_LAVENDER = registerBlock("coastal_lavender", () -> new SeaFlowerBlock(() -> MobEffects.SLOW_FALLING, 9, SeaBlockProperties.flower(MapColor.COLOR_PURPLE)));
     public static final RegistryObject<Block> POTTED_COASTAL_LAVENDER = registerBlockWithoutItem("potted_coastal_lavender", () -> new FlowerPotBlock(SeaBlocks.COASTAL_LAVENDER.get(), registerFlowerPot()));
 
-    public static final RegistryObject<Block> COASTAL_WILDFLOWER = registerBlock("coastal_wildflower", () -> new SandPlantBlock(SeaBlockProperties.flower(MapColor.TERRACOTTA_YELLOW)));
+    public static final RegistryObject<Block> COASTAL_WILDFLOWER = registerBlock("coastal_wildflower", () -> new SeaFlowerBlock(() -> MobEffects.DIG_SPEED, 9, SeaBlockProperties.flower(MapColor.TERRACOTTA_YELLOW)));
     public static final RegistryObject<Block> POTTED_COASTAL_WILDFLOWER = registerBlockWithoutItem("potted_coastal_wildflower", () -> new FlowerPotBlock(SeaBlocks.COASTAL_WILDFLOWER.get(), registerFlowerPot()));
 
     public static final RegistryObject<Block> SALT_BLOCK = register("salt_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_WHITE).instrument(NoteBlockInstrument.XYLOPHONE).requiresCorrectToolForDrops().strength(1.0F).sound(SoundType.BONE_BLOCK)));

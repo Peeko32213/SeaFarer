@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:no_bonemeal_flower",
+  "type": "minecraft:random_patch",
   "config": {
     "feature": {
       "feature": {
@@ -10,27 +10,9 @@
             "entries": [
               {
                 "data": {
-                  "Name": "seafarer:sea_holly"
+                  "Name": "seafarer:beachgrass"
                 },
                 "weight": 40
-              },
-              {
-                "data": {
-                  "Name": "seafarer:sea_thrift"
-                },
-                "weight": 40
-              },
-              {
-                "data": {
-                  "Name": "seafarer:coastal_lavender"
-                },
-                "weight": 30
-              },
-              {
-                "data": {
-                  "Name": "seafarer:coastal_wildflower"
-                },
-                "weight": 30
               }
             ]
           }

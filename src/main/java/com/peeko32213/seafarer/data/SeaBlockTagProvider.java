@@ -93,12 +93,7 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
                 SEA_THRIFT.get()
         );
 
-        tag(SeaTags.BEACH_PLANT_BLOCKS)
-                .addTag(BlockTags.DEAD_BUSH_MAY_PLACE_ON)
-                .add(SeaBlocks.SPRINKLED_SAND.get())
-                .add(SeaBlocks.SHELLY_SAND.get())
-                .add(SeaBlocks.CORAL_SAND.get())
-        ;
+        this.tag(SeaBlockTags.BEACH_PLANT_PLACEABLE).addTag(BlockTags.SAND);
 
         tag(SeaTags.SHELLS)
                 .add(SeaBlocks.CLAM_SHELL.get())

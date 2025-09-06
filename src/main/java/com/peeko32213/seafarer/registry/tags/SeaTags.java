@@ -11,8 +11,6 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 
 public class SeaTags {
-    // Blocks
-    public static final TagKey<Block> BEACH_PLANT_BLOCKS = registerBlockTag("beach_plant_blocks");
 
     public static final TagKey<Block> SHELLS = registerBlockTag("shells");
     public static final TagKey<Block> STARFISH = registerBlockTag("starfish");

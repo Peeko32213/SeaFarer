@@ -35,5 +35,6 @@ public class SeaBiomeGeneration {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_NORMAL);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.BEACH_STARFISH);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.BEACH_FLOWERS);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.FLOWERING_BEACHGRASS);
     }
 }

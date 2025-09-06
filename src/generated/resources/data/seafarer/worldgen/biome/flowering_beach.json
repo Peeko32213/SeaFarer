@@ -80,7 +80,8 @@
       "minecraft:patch_pumpkin",
       "minecraft:seagrass_normal",
       "seafarer:beach_starfish",
-      "seafarer:beach_flowers"
+      "seafarer:beach_flowers",
+      "seafarer:flowering_beachgrass"
     ],
     [
       "minecraft:freeze_top_layer"
