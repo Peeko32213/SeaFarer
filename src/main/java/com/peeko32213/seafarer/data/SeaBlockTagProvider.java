@@ -125,7 +125,7 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
                 .add(SeaBlocks.SPRINKLED_SAND.get())
                 .add(SeaBlocks.GRAVELLY_SAND.get())
                 .add(SeaBlocks.SHELLY_SAND.get())
-                .add(SeaBlocks.CORAL_SAND.get())
+                .add(SeaBlocks.CORALINE_SAND.get())
         ;
 
         tag(SeaTags.SPRINKLED_SAND)

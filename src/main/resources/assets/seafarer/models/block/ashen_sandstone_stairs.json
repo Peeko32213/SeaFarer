@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "seafarer:block/ashen_sandstone_bottom",
+    "side": "seafarer:block/ashen_sandstone",
+    "top": "seafarer:block/ashen_sandstone_top"
+  }
+}

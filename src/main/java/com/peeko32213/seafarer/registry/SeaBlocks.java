@@ -325,53 +325,32 @@ public class SeaBlocks {
     public static final RegistryObject<Block> YELLOW_CHRISTMAS_TREE_WORM = registerBlock("yellow_christmas_tree_worm",() -> new FloweryCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_YELLOW)));
     public static final RegistryObject<Block> WHITE_CHRISTMAS_TREE_WORM = registerBlock("white_christmas_tree_worm",() -> new FloweryCoralBlock(SeaBlockProperties.coral(MapColor.TERRACOTTA_WHITE)));
 
-    public static final RegistryObject<Block> CORAL_SAND = register("coraline_sand",
-            () -> new SandBlock(14406560, BlockBehaviour.Properties.of()
-                    .mapColor(MapColor.SAND)
-                    .instrument(NoteBlockInstrument.SNARE)
-                    .strength(0.5F)
-                    .sound(SoundType.SAND)));
+    public static final RegistryObject<Block> CORALINE_SAND = registerBlock("coraline_sand", () -> new SandBlock(15790058, SeaBlockProperties.SAND));
+    public static final RegistryObject<Block> CORALINE_SANDSTONE = registerBlock("coraline_sandstone", () -> new Block(SeaBlockProperties.SANDSTONE));
+    public static final RegistryObject<Block> CORALINE_SANDSTONE_SLAB = registerBlock("coraline_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CORALINE_SANDSTONE.get())));
+    public static final RegistryObject<Block> CORALINE_SANDSTONE_STAIRS = registerBlock("coraline_sandstone_stairs", () -> new StairBlock(() -> CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(CORALINE_SANDSTONE.get())));
+    public static final RegistryObject<Block> CUT_CORALINE_SANDSTONE = registerBlock("cut_coraline_sandstone", () -> new Block(SeaBlockProperties.SANDSTONE));
+    public static final RegistryObject<Block> CUT_CORALINE_SANDSTONE_SLAB = registerBlock("cut_coraline_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CUT_CORALINE_SANDSTONE.get())));
+    public static final RegistryObject<Block> CUT_CORALINE_SANDSTONE_STAIRS = registerBlock("cut_coraline_sandstone_stairs", () -> new StairBlock(() -> CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(CUT_CORALINE_SANDSTONE.get())));
+    public static final RegistryObject<Block> CHISELED_CORALINE_SANDSTONE = registerBlock("chiseled_coraline_sandstone", () -> new Block(SeaBlockProperties.SANDSTONE));
 
-    public static final RegistryObject<Block> CORALINE_SANDSTONE = register("coraline_sandstone",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.SANDSTONE)
-                    .strength(3.0F, 2.0F)
-                    .requiresCorrectToolForDrops()
-            ));
-
-    public static final RegistryObject<SlabBlock> CORALINE_SANDSTONE_SLAB = registerBlock("coraline_sandstone_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(CORALINE_SANDSTONE.get())));
-
-    public static final RegistryObject<StairBlock> CORALINE_SANDSTONE_STAIRS = registerBlock("coraline_sandstone_stairs",
-            () -> new StairBlock(() -> CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(CORALINE_SANDSTONE.get())));
-
-    public static final RegistryObject<Block> CUT_CORALINE_SANDSTONE = register("cut_coraline_sandstone",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.SANDSTONE)
-                    .strength(3.0F, 2.0F)
-                    .requiresCorrectToolForDrops()
-            ));
-
-    public static final RegistryObject<SlabBlock> CUT_CORALINE_SANDSTONE_SLAB = registerBlock("cut_coraline_sandstone_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties
-                    .copy(CUT_CORALINE_SANDSTONE.get())));
-
-    public static final RegistryObject<StairBlock> CUT_CORALINE_SANDSTONE_STAIRS = registerBlock("cut_coraline_sandstone_stairs",
-            () -> new StairBlock(() -> CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties
-                    .copy(CUT_CORALINE_SANDSTONE.get())));
-
-    public static final RegistryObject<Block> CHISELED_CORALINE_SANDSTONE = register("chiseled_coraline_sandstone",
-            () -> new Block(BlockBehaviour.Properties
-                    .copy(Blocks.SANDSTONE)
-                    .strength(3.0F, 2.0F)
-                    .requiresCorrectToolForDrops()
-            ));
-
-    public static final RegistryObject<Block> SMOOTH_CORALINE_SANDSTONE = register("smooth_coraline_sandstone", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
-    public static final RegistryObject<Block> SMOOTH_CORALINE_SANDSTONE_STAIRS = registerBlock("smooth_coraline_sandstone_stairs", () -> new StairBlock(() -> CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(SMOOTH_CORALINE_SANDSTONE.get())));
+    public static final RegistryObject<Block> SMOOTH_CORALINE_SANDSTONE = registerBlock("smooth_coraline_sandstone", () -> new Block(SeaBlockProperties.SANDSTONE));
+    public static final RegistryObject<Block> SMOOTH_CORALINE_SANDSTONE_STAIRS = registerBlock("smooth_coraline_sandstone_stairs", () -> new StairBlock(() -> SMOOTH_CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(SMOOTH_CORALINE_SANDSTONE.get())));
     public static final RegistryObject<Block> SMOOTH_CORALINE_SANDSTONE_SLAB = registerBlock("smooth_coraline_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SMOOTH_CORALINE_SANDSTONE.get())));
+
+    public static final RegistryObject<Block> ASHEN_SAND = registerBlock("ashen_sand", () -> new SandBlock(15790058, SeaBlockProperties.SAND));
+    public static final RegistryObject<Block> ASHEN_SANDSTONE = registerBlock("ashen_sandstone", () -> new Block(SeaBlockProperties.SANDSTONE));
+    public static final RegistryObject<Block> ASHEN_SANDSTONE_SLAB = registerBlock("ashen_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CORALINE_SANDSTONE.get())));
+    public static final RegistryObject<Block> ASHEN_SANDSTONE_STAIRS = registerBlock("ashen_sandstone_stairs", () -> new StairBlock(() -> CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(CORALINE_SANDSTONE.get())));
+    public static final RegistryObject<Block> CUT_ASHEN_SANDSTONE = registerBlock("cut_ashen_sandstone", () -> new Block(SeaBlockProperties.SANDSTONE));
+    public static final RegistryObject<Block> CUT_ASHEN_SANDSTONE_SLAB = registerBlock("cut_ashen_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CUT_CORALINE_SANDSTONE.get())));
+    public static final RegistryObject<Block> CUT_ASHEN_SANDSTONE_STAIRS = registerBlock("cut_ashen_sandstone_stairs", () -> new StairBlock(() -> CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(CUT_CORALINE_SANDSTONE.get())));
+    public static final RegistryObject<Block> CHISELED_ASHEN_SANDSTONE = registerBlock("chiseled_ashen_sandstone", () -> new Block(SeaBlockProperties.SANDSTONE));
+
+    public static final RegistryObject<Block> SMOOTH_ASHEN_SANDSTONE = registerBlock("smooth_ashen_sandstone", () -> new Block(SeaBlockProperties.SANDSTONE));
+    public static final RegistryObject<Block> SMOOTH_ASHEN_SANDSTONE_STAIRS = registerBlock("smooth_ashen_sandstone_stairs", () -> new StairBlock(() -> SMOOTH_CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(SMOOTH_CORALINE_SANDSTONE.get())));
+    public static final RegistryObject<Block> SMOOTH_ASHEN_SANDSTONE_SLAB = registerBlock("smooth_ashen_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SMOOTH_CORALINE_SANDSTONE.get())));
+
 
     public static final RegistryObject<Block> SEA_GRAPES_CROP = BLOCKS.register("sea_grapes_crop", () -> new SeaGrapesCropBlock(Block.Properties.copy(Blocks.CARROTS).strength(0.2F)));
 

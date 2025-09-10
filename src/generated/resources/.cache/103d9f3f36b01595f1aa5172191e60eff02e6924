@@ -1,5 +1,4 @@
-// 1.20.1	2025-09-05T22:58:28.9314887	Registries
-bd3a9326fd2d7636ebee80c336e05c05af583367 data/seafarer/blueprint/modded_biome_slices/coral_beach.json
+// 1.20.1	2025-09-09T22:42:01.5293916	Registries
 cf0ef577e2a01d827b1beda67c2c2138b1b65a05 data/seafarer/blueprint/modded_biome_slices/flowering_beach.json
 8f31d8807f6a6b8727a070db30078c53280bab1d data/seafarer/blueprint/modded_biome_slices/glass_beach.json
 dea6a2f4804194fa464cbba33b71be1e22b90d3a data/seafarer/blueprint/modded_biome_slices/grassy_beach.json
@@ -8,6 +7,7 @@ ef3606999b9051dddb60098aac9dfafadcfe581f data/seafarer/forge/biome_modifier/add_
 089d003ab90bb2b65b32844ba6f38b57d2664265 data/seafarer/forge/biome_modifier/add_feature/beach_seagrass.json
 6f5ba23d04e5ea6534d8dd7099d1a28cccdc1fb9 data/seafarer/forge/biome_modifier/add_feature/beach_starfish.json
 42e0ee3903b9110610de4689027e71f22df17cff data/seafarer/forge/biome_modifier/remove_feature/remove_coral.json
+11fcf8cfe5756554a15b9bef30d6ea1e36a936cd data/seafarer/worldgen/biome/ashen_beach.json
 11fcf8cfe5756554a15b9bef30d6ea1e36a936cd data/seafarer/worldgen/biome/coral_beach.json
 80baa65477487c13af8d422bc1c28afa52f5be0d data/seafarer/worldgen/biome/flowering_beach.json
 3e6d720f96a03623b26dc928416a6a1ac7fb8528 data/seafarer/worldgen/biome/glass_beach.json

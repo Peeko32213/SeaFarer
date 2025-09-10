@@ -228,7 +228,7 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
 
         dropSelf(SeaBlocks.GRAVELLY_SAND.get());
         dropSelf(SeaBlocks.SPRINKLED_SAND.get());
-        dropSelf(SeaBlocks.CORAL_SAND.get());
+        dropSelf(SeaBlocks.CORALINE_SAND.get());
 
         createMultipleDrops(SeaBlocks.SHELLY_SAND.get(), SeaBlocks.SPIRAL_SHELL.get().asItem(), SeaBlocks.SWIRL_SHELL.get().asItem());
 

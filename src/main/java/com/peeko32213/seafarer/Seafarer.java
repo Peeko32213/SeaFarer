@@ -1,5 +1,6 @@
 package com.peeko32213.seafarer;
 
+import com.peeko32213.seafarer.biolith.SeaBiomePlacements;
 import com.peeko32213.seafarer.events.ClientEvents;
 import com.peeko32213.seafarer.data.*;
 import com.peeko32213.seafarer.registry.*;
@@ -53,6 +54,7 @@ public class Seafarer {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            SeaBiomePlacements.register();
             addToComposter(SeaBlocks.COASTAL_LAVENDER, 0.7F);
             addToComposter(SeaBlocks.COASTAL_WILDFLOWER, 0.3F);
             addToComposter(SeaBlocks.SEA_THRIFT, 0.5F);

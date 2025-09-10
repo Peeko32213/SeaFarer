@@ -79,6 +79,7 @@ dependencies {
     minecraft "net.minecraftforge:forge:${project.minecraft}-${project.forge}"
 
     implementation fg.deobf("com.teamabnormals:blueprint:${project.minecraft}-${project.blueprint}")
+    implementation fg.deobf("com.terraformersmc:biolith-forge:${project.biolith}")
 
     compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}-common-api:${project.jei}")
     compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}-forge-api:${project.jei}")
@@ -90,9 +91,22 @@ dependencies {
 }
 
 repositories {
-    maven { url "https://www.cursemaven.com" }
-    maven { url "https://modmaven.k-4u.nl" }
-    maven { url "https://maven.teamabnormals.com/" }
+    maven {
+        name = 'CurseMaven'
+        url = "https://www.cursemaven.com"
+    }
+    maven {
+        name = 'K-4U'
+        url = "https://modmaven.k-4u.nl"
+    }
+    maven {
+        name = 'TeamAbnormals'
+        url = "https://maven.teamabnormals.com/"
+    }
+    maven {
+        name = 'TerraformersMC'
+        url = 'https://maven.terraformersmc.com/'
+    }
 }
 
 jar {

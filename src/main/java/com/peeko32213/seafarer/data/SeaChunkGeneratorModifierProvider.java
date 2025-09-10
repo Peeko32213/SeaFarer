@@ -23,23 +23,29 @@ public class SeaChunkGeneratorModifierProvider extends ChunkGeneratorModifierPro
         SurfaceRules.ConditionSource isWarmReef = isBiome(SeaBiomeProvider.WARM_REEF);
         SurfaceRules.ConditionSource isSandyBeach = isBiome(SeaBiomeProvider.FLOWERING_BEACH, SeaBiomeProvider.GRASSY_BEACH, SeaBiomeProvider.GLASS_BEACH);
         SurfaceRules.ConditionSource isCoralBeach = isBiome(SeaBiomeProvider.CORAL_BEACH);
+        SurfaceRules.ConditionSource isAshenBeach = isBiome(SeaBiomeProvider.ASHEN_BEACH);
 
         RuleSource sand = state(Blocks.SAND.defaultBlockState());
         RuleSource sandstone = state(Blocks.SANDSTONE.defaultBlockState());
 
-        RuleSource coraline_sand = state(SeaBlocks.CORAL_SAND.get().defaultBlockState());
+        RuleSource coraline_sand = state(SeaBlocks.CORALINE_SAND.get().defaultBlockState());
         RuleSource coraline_sandstone = state(SeaBlocks.CORALINE_SANDSTONE.get().defaultBlockState());
+
+        RuleSource ashen_sand = state(SeaBlocks.ASHEN_SAND.get().defaultBlockState());
+        RuleSource ashen_sandstone = state(SeaBlocks.ASHEN_SANDSTONE.get().defaultBlockState());
 
         RuleSource oceanSandRuleSource = oceanSandRuleSource(sand, sandstone);
         RuleSource oceanCoralineSandRuleSource = oceanSandRuleSource(coraline_sand, coraline_sandstone);
 
         RuleSource beachSandRuleSource = beachSandRuleSource(sand, sandstone);
         RuleSource coralBeachSandRuleSource = beachSandRuleSource(coraline_sand, coraline_sandstone);
+        RuleSource ashenBeachSandRuleSource = beachSandRuleSource(ashen_sand, ashen_sandstone);
 
         this.entry("seafarer_surface_rule").selects("minecraft:overworld")
                 .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isWarmReef, sequence(ifTrue(noiseRange(0.3F, 2.5F), oceanCoralineSandRuleSource), oceanSandRuleSource))), false))
                 .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isSandyBeach, beachSandRuleSource)), false))
-                .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isCoralBeach, coralBeachSandRuleSource)), false)
+                .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isCoralBeach, coralBeachSandRuleSource)), false))
+                .addModifier(new SurfaceRuleModifier(ifTrue(abovePreliminarySurface(), ifTrue(isAshenBeach, ashenBeachSandRuleSource)), false)
         );
     }
 

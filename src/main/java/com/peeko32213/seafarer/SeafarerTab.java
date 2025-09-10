@@ -147,7 +147,7 @@ public class SeafarerTab {
                     output.accept(SeaBlocks.SPRINKLED_SAND.get());
                     output.accept(SeaBlocks.STARRY_SAND.get());
                     output.accept(SeaBlocks.SEA_GLASS_SAND.get());
-                    output.accept(SeaBlocks.CORAL_SAND.get());
+                    output.accept(SeaBlocks.CORALINE_SAND.get());
                     output.accept(SeaBlocks.CORALINE_SANDSTONE.get());
                     output.accept(SeaBlocks.CORALINE_SANDSTONE_STAIRS.get());
                     output.accept(SeaBlocks.CORALINE_SANDSTONE_SLAB.get());
@@ -158,6 +158,11 @@ public class SeafarerTab {
                     output.accept(SeaBlocks.CUT_CORALINE_SANDSTONE.get());
                     output.accept(SeaBlocks.CUT_CORALINE_SANDSTONE_STAIRS.get());
                     output.accept(SeaBlocks.CUT_CORALINE_SANDSTONE_SLAB.get());
+                    output.accept(SeaBlocks.ASHEN_SAND.get());
+                    output.accept(SeaBlocks.ASHEN_SANDSTONE.get());
+                    output.accept(SeaBlocks.ASHEN_SANDSTONE_STAIRS.get());
+                    output.accept(SeaBlocks.ASHEN_SANDSTONE_SLAB.get());
+
                     output.accept(SeaBlocks.SALT_BLOCK.get());
 
                     // shell blocks

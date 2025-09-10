@@ -19,6 +19,7 @@ public class SeaBlockProperties {
     public static final BlockBehaviour.Properties DEAD_CORAL = BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).forceSolidOn().instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().noCollission().instabreak();
 
     public static final BlockBehaviour.Properties SAND = BlockBehaviour.Properties.of().strength(0.5F).sound(SoundType.SAND).instrument(NoteBlockInstrument.SNARE).mapColor(MapColor.SAND);
+    public static final BlockBehaviour.Properties SANDSTONE = BlockBehaviour.Properties.of().mapColor(MapColor.SAND).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(0.8F);
 
     public static BlockBehaviour.Properties shellBlock(MapColor color) {
         return BlockBehaviour.Properties.of().mapColor(color).instrument(NoteBlockInstrument.XYLOPHONE).requiresCorrectToolForDrops().strength(2.0F).sound(SoundType.BONE_BLOCK);

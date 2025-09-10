@@ -42,6 +42,8 @@ public class SeaBiomeSliceProvider {
     public static final ResourceKey<ModdedBiomeSlice> CORAL_BEACH = createKey("coral_beach");
     public static final ResourceKey<Biome> CORAL_BEACH_AREA = SeaBiomeProvider.createKey("coral_beach_area");
 
+    public static final ResourceKey<ModdedBiomeSlice> ASHEN_BEACH = createKey("ashen_beach");
+
     public static void bootstrap(BootstapContext<ModdedBiomeSlice> context) {
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
         List<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> entries = new ArrayList<>();
@@ -75,10 +77,15 @@ public class SeaBiomeSliceProvider {
                 )), LevelStem.OVERWORLD)
         );
 
-        context.register(CORAL_BEACH, new ModdedBiomeSlice(25, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
-                .area(CORAL_BEACH_AREA, SeaBiomeProvider.CORAL_BEACH)
-                .build(), LevelStem.OVERWORLD)
-        );
+//        context.register(CORAL_BEACH, new ModdedBiomeSlice(25, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
+//                .area(CORAL_BEACH_AREA, SeaBiomeProvider.CORAL_BEACH)
+//                .build(), LevelStem.OVERWORLD)
+//        );
+//
+//        context.register(ASHEN_BEACH, new ModdedBiomeSlice(10, MultiNoiseModdedBiomeProvider.builder().biomes(entries::forEach)
+//                .area(CORAL_BEACH_AREA, SeaBiomeProvider.ASHEN_BEACH)
+//                .build(), LevelStem.OVERWORLD)
+//        );
     }
 
     private static ResourceKey<ModdedBiomeSlice> createKey(String name) {

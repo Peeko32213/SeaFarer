@@ -215,7 +215,6 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(PYRAMID_SHELL_BRICK_SLAB, this.blockTexture(PYRAMID_SHELL_BRICKS.get()));
         this.pillar(PYRAMID_SHELL_PILLAR);
 
-        this.cubeAllBlock(CORAL_SAND);
         this.cubeAllBlock(SALT_BLOCK);
 
         this.cubeAllBlock(ALGAE_COBBLESTONE);
@@ -270,22 +269,26 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.coralFan(DEAD_VERDANT_CORAL_FAN, DEAD_VERDANT_CORAL_WALL_FAN);
         this.coralFan(VERDANT_CORAL_FAN, VERDANT_CORAL_WALL_FAN);
 
+        this.cubeAllBlock(CORALINE_SAND);
+
         this.cubeAllBlock(SMOOTH_CORALINE_SANDSTONE);
         this.stairs(SMOOTH_CORALINE_SANDSTONE_STAIRS, this.blockTexture(SMOOTH_CORALINE_SANDSTONE.get()));
         this.slab(SMOOTH_CORALINE_SANDSTONE_SLAB, this.blockTexture(SMOOTH_CORALINE_SANDSTONE.get()));
 
-        simpleBlockItem(SeaBlocks.CUT_CORALINE_SANDSTONE.get(), existingModel((getName(SeaBlocks.CUT_CORALINE_SANDSTONE.get()))));
-        simpleBlockItem(SeaBlocks.CHISELED_CORALINE_SANDSTONE.get(), existingModel((getName(SeaBlocks.CHISELED_CORALINE_SANDSTONE.get()))));
-        simpleBlockItem(SeaBlocks.SMOOTH_CORALINE_SANDSTONE.get(), existingModel((getName(SeaBlocks.SMOOTH_CORALINE_SANDSTONE.get()))));
-        simpleBlockItem(SeaBlocks.CORALINE_SANDSTONE.get(), existingModel((getName(SeaBlocks.CORALINE_SANDSTONE.get()))));
+        this.simpleBlockItem(SeaBlocks.CUT_CORALINE_SANDSTONE.get(), existingModel((getName(SeaBlocks.CUT_CORALINE_SANDSTONE.get()))));
+        this.simpleBlockItem(SeaBlocks.CHISELED_CORALINE_SANDSTONE.get(), existingModel((getName(SeaBlocks.CHISELED_CORALINE_SANDSTONE.get()))));
+        this.simpleBlockItem(SeaBlocks.SMOOTH_CORALINE_SANDSTONE.get(), existingModel((getName(SeaBlocks.SMOOTH_CORALINE_SANDSTONE.get()))));
+        this.simpleBlockItem(SeaBlocks.CORALINE_SANDSTONE.get(), existingModel((getName(SeaBlocks.CORALINE_SANDSTONE.get()))));
+        this.simpleBlockItem(SeaBlocks.CORALINE_SANDSTONE_SLAB.get(), existingModel((getName(SeaBlocks.CORALINE_SANDSTONE_SLAB.get()))));
+        this.simpleBlockItem(SeaBlocks.CORALINE_SANDSTONE_STAIRS.get(), existingModel((getName(SeaBlocks.CORALINE_SANDSTONE_STAIRS.get()))));
+        this.simpleBlockItem(SeaBlocks.CUT_CORALINE_SANDSTONE_SLAB.get(), existingModel((getName(SeaBlocks.CUT_CORALINE_SANDSTONE_SLAB.get()))));
+        this.simpleBlockItem(SeaBlocks.CUT_CORALINE_SANDSTONE_STAIRS.get(), existingModel((getName(SeaBlocks.CUT_CORALINE_SANDSTONE_STAIRS.get()))));
 
-        simpleBlockItem(SeaBlocks.CORALINE_SANDSTONE_SLAB.get(), existingModel((getName(SeaBlocks.CORALINE_SANDSTONE_SLAB.get()))));
+        this.cubeAllBlock(ASHEN_SAND);
 
-        simpleBlockItem(SeaBlocks.CORALINE_SANDSTONE_STAIRS.get(), existingModel((getName(SeaBlocks.CORALINE_SANDSTONE_STAIRS.get()))));
-
-        simpleBlockItem(SeaBlocks.CUT_CORALINE_SANDSTONE_SLAB.get(), existingModel((getName(SeaBlocks.CUT_CORALINE_SANDSTONE_SLAB.get()))));
-
-        simpleBlockItem(SeaBlocks.CUT_CORALINE_SANDSTONE_STAIRS.get(), existingModel((getName(SeaBlocks.CUT_CORALINE_SANDSTONE_STAIRS.get()))));
+        this.simpleBlockItem(SeaBlocks.ASHEN_SANDSTONE.get(), existingModel((getName(SeaBlocks.ASHEN_SANDSTONE.get()))));
+        this.simpleBlockItem(SeaBlocks.ASHEN_SANDSTONE_SLAB.get(), existingModel((getName(SeaBlocks.ASHEN_SANDSTONE_SLAB.get()))));
+        this.simpleBlockItem(SeaBlocks.ASHEN_SANDSTONE_STAIRS.get(), existingModel((getName(SeaBlocks.ASHEN_SANDSTONE_STAIRS.get()))));
     }
 
     private void createPottedPlant(RegistryObject<Block> plant, RegistryObject<Block> pottedPlant, String renderType){
