@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.data;
+package com.peeko32213.seafarer.registry.worldgen;
 
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.biome.OverworldBiomes;
@@ -16,11 +16,11 @@ public class SeaBiomeGeneration {
         BiomeDefaultFeatures.addDefaultGrass(generation);
         BiomeDefaultFeatures.addDefaultMushrooms(generation);
         BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.WARM_REEF_CORALS);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.WARM_REEF_CORALS);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEA_PICKLE);
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.GORGONIANS);
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.WARM_REEF_STARFISH);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.GORGONIANS);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.WARM_REEF_STARFISH);
     }
 
     public static void floweringBeach(BiomeGenerationSettings.Builder generation) {
@@ -33,9 +33,9 @@ public class SeaBiomeGeneration {
         BiomeDefaultFeatures.addDefaultMushrooms(generation);
         BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_NORMAL);
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.BEACH_STARFISH);
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.BEACH_FLOWERS);
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.FLOWERING_BEACHGRASS);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.BEACH_STARFISH);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.BEACH_FLOWERS);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.FLOWERING_BEACHGRASS);
     }
 
     public static void grassyBeach(BiomeGenerationSettings.Builder generation) {
@@ -48,9 +48,9 @@ public class SeaBiomeGeneration {
         BiomeDefaultFeatures.addDefaultMushrooms(generation);
         BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_NORMAL);
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.BEACH_STARFISH);
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.GRASSY_BEACHGRASS);
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.TALL_BEACHGRASS);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.BEACH_STARFISH);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.GRASSY_BEACHGRASS);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.TALL_BEACHGRASS);
     }
 
     public static void coralBeach(BiomeGenerationSettings.Builder generation) {
@@ -63,7 +63,7 @@ public class SeaBiomeGeneration {
         BiomeDefaultFeatures.addDefaultMushrooms(generation);
         BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_NORMAL);
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.BEACH_STARFISH);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.BEACH_STARFISH);
     }
 
     public static void ashenBeach(BiomeGenerationSettings.Builder generation) {
@@ -76,7 +76,7 @@ public class SeaBiomeGeneration {
         BiomeDefaultFeatures.addDefaultMushrooms(generation);
         BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_NORMAL);
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.BEACH_STARFISH);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.BEACH_STARFISH);
     }
 
     public static void glassBeach(BiomeGenerationSettings.Builder generation) {
@@ -89,6 +89,19 @@ public class SeaBiomeGeneration {
         BiomeDefaultFeatures.addDefaultMushrooms(generation);
         BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_NORMAL);
-        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.BEACH_STARFISH);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.BEACH_STARFISH);
+    }
+
+    public static void kelpForest(BiomeGenerationSettings.Builder generation) {
+        OverworldBiomes.globalOverworldGeneration(generation);
+        BiomeDefaultFeatures.addDefaultOres(generation);
+        BiomeDefaultFeatures.addDefaultSoftDisks(generation);
+        BiomeDefaultFeatures.addWaterTrees(generation);
+        BiomeDefaultFeatures.addDefaultFlowers(generation);
+        BiomeDefaultFeatures.addDefaultGrass(generation);
+        BiomeDefaultFeatures.addDefaultMushrooms(generation);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.KELP_FOREST_KELP);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
     }
 }

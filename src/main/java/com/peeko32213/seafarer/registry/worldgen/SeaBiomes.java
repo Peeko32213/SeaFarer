@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.data;
+package com.peeko32213.seafarer.registry.worldgen;
 
 import com.peeko32213.seafarer.Seafarer;
 import net.minecraft.core.HolderGetter;
@@ -16,7 +16,7 @@ import net.minecraft.world.level.levelgen.carver.ConfiguredWorldCarver;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import org.jetbrains.annotations.Nullable;
 
-public class SeaBiomeProvider {
+public class SeaBiomes {
 
     public static final ResourceKey<Biome> WARM_REEF = createKey("warm_reef");
     public static final ResourceKey<Biome> FLOWERING_BEACH = createKey("flowering_beach");
@@ -24,6 +24,7 @@ public class SeaBiomeProvider {
     public static final ResourceKey<Biome> CORAL_BEACH = createKey("coral_beach");
     public static final ResourceKey<Biome> GLASS_BEACH = createKey("glass_beach");
     public static final ResourceKey<Biome> ASHEN_BEACH = createKey("ashen_beach");
+    public static final ResourceKey<Biome> KELP_FOREST = createKey("kelp_forest");
 
     public static void bootstrap(BootstapContext<Biome> context) {
         HolderGetter<PlacedFeature> features = context.lookup(Registries.PLACED_FEATURE);
@@ -35,6 +36,7 @@ public class SeaBiomeProvider {
         context.register(CORAL_BEACH, coralBeach(features, carvers));
         context.register(GLASS_BEACH, glassBeach(features, carvers));
         context.register(ASHEN_BEACH, ashenBeach(features, carvers));
+        context.register(KELP_FOREST, kelpForest(features, carvers));
     }
 
     public static ResourceKey<Biome> createKey(String name) {
@@ -93,12 +95,24 @@ public class SeaBiomeProvider {
 
     private static Biome glassBeach(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
         BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(features, carvers);
-        SeaBiomeGeneration.coralBeach(generation);
+        SeaBiomeGeneration.glassBeach(generation);
 
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.commonSpawns(spawns);
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.TURTLE, 5, 2, 5));
         return biome(true, 0.8F, 0.4F, 4159204, 329011, spawns, generation, null);
+    }
+
+    private static Biome kelpForest(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+        BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(features, carvers);
+        SeaBiomeGeneration.kelpForest(generation);
+
+        MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.oceanSpawns(spawns, 10, 2, 15);
+        spawns.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.PUFFERFISH, 5, 1, 3));
+        spawns.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.TROPICAL_FISH, 25, 8, 8));
+        spawns.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.DOLPHIN, 2, 1, 2));
+        return biome(true, 0.5F, 0.5F, 4514047, 2055507, spawns, generation, null);
     }
 
     private static Biome biome(boolean precipitation, float temperature, float downfall, int waterColor, int waterFogColor, MobSpawnSettings.Builder spawns, BiomeGenerationSettings.Builder generation, @Nullable Music music) {

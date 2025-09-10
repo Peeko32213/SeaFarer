@@ -1,8 +1,4 @@
-// 1.20.1	2025-09-09T22:42:01.5293916	Registries
-cf0ef577e2a01d827b1beda67c2c2138b1b65a05 data/seafarer/blueprint/modded_biome_slices/flowering_beach.json
-8f31d8807f6a6b8727a070db30078c53280bab1d data/seafarer/blueprint/modded_biome_slices/glass_beach.json
-dea6a2f4804194fa464cbba33b71be1e22b90d3a data/seafarer/blueprint/modded_biome_slices/grassy_beach.json
-1f1689f28d40237dc84d5b8746ff8dae341efe8a data/seafarer/blueprint/modded_biome_slices/warm_reef.json
+// 1.20.1	2025-09-10T11:44:06.1316602	Registries
 ef3606999b9051dddb60098aac9dfafadcfe581f data/seafarer/forge/biome_modifier/add_feature/beach_beachgrass.json
 089d003ab90bb2b65b32844ba6f38b57d2664265 data/seafarer/forge/biome_modifier/add_feature/beach_seagrass.json
 6f5ba23d04e5ea6534d8dd7099d1a28cccdc1fb9 data/seafarer/forge/biome_modifier/add_feature/beach_starfish.json
@@ -12,6 +8,7 @@ ef3606999b9051dddb60098aac9dfafadcfe581f data/seafarer/forge/biome_modifier/add_
 80baa65477487c13af8d422bc1c28afa52f5be0d data/seafarer/worldgen/biome/flowering_beach.json
 3e6d720f96a03623b26dc928416a6a1ac7fb8528 data/seafarer/worldgen/biome/glass_beach.json
 92cdd5fa808b61d1330c58b637e353824dee4e7f data/seafarer/worldgen/biome/grassy_beach.json
+e2b82f6ca79b21b4148a783cab6896f52912515d data/seafarer/worldgen/biome/kelp_forest.json
 6a40ff54e5135104e8c410b5daa79a38589b7112 data/seafarer/worldgen/biome/warm_reef.json
 a65f08f48b82c6ff1d1754bc6fa9bdd39ba8be70 data/seafarer/worldgen/configured_feature/beachgrass.json
 0d99eb49c84871345480ecefc09c801a33ef6a23 data/seafarer/worldgen/configured_feature/beach_flowers.json
@@ -25,6 +22,7 @@ f5bc6484520844aef5e5537c9b48177101042baa data/seafarer/worldgen/placed_feature/b
 6f3fb1fe9302ee0b0c9c479c49b7886b22aa5852 data/seafarer/worldgen/placed_feature/flowering_beachgrass.json
 153f669b1088cf204709a0bdac0651a8ec9ab5a9 data/seafarer/worldgen/placed_feature/gorgonians.json
 60ec5261552e3bbca588a8846ef05b5e3c222af9 data/seafarer/worldgen/placed_feature/grassy_beachgrass.json
+6a3903ce445dbda0f9c48d57f46d176ce79f76f8 data/seafarer/worldgen/placed_feature/kelp_forest_kelp.json
 49633e4bb5bfb2df0047b76428bcd91e203549c2 data/seafarer/worldgen/placed_feature/tall_beachgrass.json
 37067970b93f385d4f95b7e504899187ec530d85 data/seafarer/worldgen/placed_feature/warm_reef_corals.json
 dab87913d911aef20238a1325e082f18fad544f8 data/seafarer/worldgen/placed_feature/warm_reef_starfish.json

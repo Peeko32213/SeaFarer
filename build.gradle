@@ -78,7 +78,6 @@ sourceSets.main.resources {
 dependencies {
     minecraft "net.minecraftforge:forge:${project.minecraft}-${project.forge}"
 
-    implementation fg.deobf("com.teamabnormals:blueprint:${project.minecraft}-${project.blueprint}")
     implementation fg.deobf("com.terraformersmc:biolith-forge:${project.biolith}")
 
     compileOnly fg.deobf("mezz.jei:jei-${project.minecraft}-common-api:${project.jei}")
@@ -98,10 +97,6 @@ repositories {
     maven {
         name = 'K-4U'
         url = "https://modmaven.k-4u.nl"
-    }
-    maven {
-        name = 'TeamAbnormals'
-        url = "https://maven.teamabnormals.com/"
     }
     maven {
         name = 'TerraformersMC'

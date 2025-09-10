@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.data;
+package com.peeko32213.seafarer.registry.worldgen;
 
 import com.peeko32213.seafarer.Seafarer;
 import net.minecraft.core.HolderSet;
@@ -29,8 +29,8 @@ public class SeaBiomeModifierProvider {
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         addFeatureNoTag(context, "beach_seagrass", Biomes.BEACH, Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_SIMPLE);
-        addFeatureNoTag(context, "beach_starfish", Biomes.BEACH, Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.BEACH_STARFISH);
-        addFeatureNoTag(context, "beach_beachgrass", Biomes.BEACH, Decoration.VEGETAL_DECORATION, SeaPlacedFeatureProvider.BEACHGRASS);
+        addFeatureNoTag(context, "beach_starfish", Biomes.BEACH, Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.BEACH_STARFISH);
+        addFeatureNoTag(context, "beach_beachgrass", Biomes.BEACH, Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.BEACHGRASS);
         removeFeatureNoTag(context, "remove_coral", Biomes.WARM_OCEAN, Decoration.VEGETAL_DECORATION, AquaticPlacements.WARM_OCEAN_VEGETATION);
     }
 

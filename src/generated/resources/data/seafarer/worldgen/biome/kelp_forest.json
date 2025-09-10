@@ -78,8 +78,8 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "minecraft:seagrass_warm",
-      "seafarer:kelp_kelp_forest"
+      "seafarer:kelp_forest_kelp",
+      "minecraft:seagrass_warm"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -181,6 +181,12 @@
         "maxCount": 8,
         "minCount": 8,
         "weight": 25
+      },
+      {
+        "type": "minecraft:dolphin",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 2
       }
     ],
     "water_creature": [
@@ -189,12 +195,6 @@
         "maxCount": 2,
         "minCount": 1,
         "weight": 10
-      },
-      {
-        "type": "minecraft:dolphin",
-        "maxCount": 2,
-        "minCount": 1,
-        "weight": 2
       }
     ]
   },

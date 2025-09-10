@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.data;
+package com.peeko32213.seafarer.registry.worldgen;
 
 import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.blocks.TallBeachgrassBlock;
@@ -19,7 +19,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.*;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
-public class SeaConfiguredFeatureProvider {
+public class SeaConfiguredFeatures {
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> GORGONIANS = createKey("gorgonians");
     public static final ResourceKey<ConfiguredFeature<?, ?>> STARFISH = createKey("starfish");

@@ -1,4 +1,4 @@
-package com.peeko32213.seafarer.data;
+package com.peeko32213.seafarer.registry.worldgen;
 
 import com.peeko32213.seafarer.Seafarer;
 import net.minecraft.core.registries.Registries;
@@ -16,7 +16,7 @@ import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
-public class SeaPlacedFeatureProvider {
+public class SeaPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> GORGONIANS = createKey("gorgonians");
     public static final ResourceKey<PlacedFeature> WARM_REEF_STARFISH = createKey("warm_reef_starfish");
@@ -27,17 +27,19 @@ public class SeaPlacedFeatureProvider {
     public static final ResourceKey<PlacedFeature> BEACHGRASS = createKey("beachgrass");
     public static final ResourceKey<PlacedFeature> GRASSY_BEACHGRASS = createKey("grassy_beachgrass");
     public static final ResourceKey<PlacedFeature> TALL_BEACHGRASS = createKey("tall_beachgrass");
+    public static final ResourceKey<PlacedFeature> KELP_FOREST_KELP = createKey("kelp_forest_kelp");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
-        register(context, GORGONIANS, SeaConfiguredFeatureProvider.GORGONIANS, CountPlacement.of(UniformInt.of(1, 2)), RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
-        register(context, WARM_REEF_STARFISH, SeaConfiguredFeatureProvider.STARFISH, CountPlacement.of(UniformInt.of(1, 2)), RarityFilter.onAverageOnceEvery(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
+        register(context, GORGONIANS, SeaConfiguredFeatures.GORGONIANS, CountPlacement.of(UniformInt.of(1, 2)), RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
+        register(context, WARM_REEF_STARFISH, SeaConfiguredFeatures.STARFISH, CountPlacement.of(UniformInt.of(1, 2)), RarityFilter.onAverageOnceEvery(3), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
         register(context, WARM_REEF_CORALS, AquaticFeatures.WARM_OCEAN_VEGETATION, CountPlacement.of(UniformInt.of(4, 8)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
-        register(context, BEACH_STARFISH, SeaConfiguredFeatureProvider.STARFISH, CountPlacement.of(UniformInt.of(1, 2)), RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
-        register(context, BEACH_FLOWERS, SeaConfiguredFeatureProvider.BEACH_FLOWERS, CountPlacement.of(BiasedToBottomInt.of(3, 30)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
-        register(context, BEACHGRASS, SeaConfiguredFeatureProvider.BEACHGRASS, CountPlacement.of(ConstantInt.of(1)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
-        createBeachPlantPatch(context, FLOWERING_BEACHGRASS, 4, 8, SeaConfiguredFeatureProvider.BEACHGRASS);
-        createBeachPlantPatch(context, GRASSY_BEACHGRASS, 6, 18, SeaConfiguredFeatureProvider.GRASSY_BEACHGRASS);
-        register(context, TALL_BEACHGRASS, SeaConfiguredFeatureProvider.TALL_BEACHGRASS, CountPlacement.of(BiasedToBottomInt.of(4, 8)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+        register(context, BEACH_STARFISH, SeaConfiguredFeatures.STARFISH, CountPlacement.of(UniformInt.of(1, 2)), RarityFilter.onAverageOnceEvery(5), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
+        register(context, BEACH_FLOWERS, SeaConfiguredFeatures.BEACH_FLOWERS, CountPlacement.of(BiasedToBottomInt.of(3, 30)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+        register(context, BEACHGRASS, SeaConfiguredFeatures.BEACHGRASS, CountPlacement.of(ConstantInt.of(1)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+        createBeachPlantPatch(context, FLOWERING_BEACHGRASS, 4, 8, SeaConfiguredFeatures.BEACHGRASS);
+        createBeachPlantPatch(context, GRASSY_BEACHGRASS, 6, 18, SeaConfiguredFeatures.GRASSY_BEACHGRASS);
+        register(context, TALL_BEACHGRASS, SeaConfiguredFeatures.TALL_BEACHGRASS, CountPlacement.of(BiasedToBottomInt.of(4, 8)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+        register(context, KELP_FOREST_KELP, AquaticFeatures.KELP, CountPlacement.of(UniformInt.of(40, 70)), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_TOP_SOLID, BiomeFilter.biome());
     }
 
     private static void register(BootstapContext<PlacedFeature> context, ResourceKey<PlacedFeature> key, ResourceKey<ConfiguredFeature<?, ?>> feature, List<PlacementModifier> modifiers) {

@@ -1,14 +1,9 @@
 package com.peeko32213.seafarer;
 
-import com.peeko32213.seafarer.biolith.SeaBiomePlacements;
-import com.peeko32213.seafarer.events.ClientEvents;
+import com.peeko32213.seafarer.worldgen.biome.*;
+import com.peeko32213.seafarer.events.*;
 import com.peeko32213.seafarer.data.*;
 import com.peeko32213.seafarer.registry.*;
-import com.peeko32213.seafarer.registry.SeaBlocks;
-import com.peeko32213.seafarer.data.SeaBlockstateProvider;
-import com.peeko32213.seafarer.data.SeaItemModelProvider;
-import com.peeko32213.seafarer.data.SeaLanguageProvider;
-import com.peeko32213.seafarer.data.SeaSoundDefinitionsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -21,7 +16,9 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.RegistryObject;
@@ -36,9 +33,13 @@ public class Seafarer {
 
     public Seafarer() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        ModLoadingContext context = ModLoadingContext.get();
+
         bus.addListener(this::commonSetup);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> bus.addListener(ClientEvents::init));
         bus.addListener(this::dataSetup);
+
+        context.registerConfig(ModConfig.Type.COMMON, SeafarerConfig.COMMON_CONFIG);
 
         SeaBlocks.BLOCKS.register(bus);
         SeaItems.ITEMS.register(bus);
@@ -54,7 +55,8 @@ public class Seafarer {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            SeaBiomePlacements.register();
+            if (SeafarerConfig.BIOMES.get()) SeaBiomePlacements.register();
+            SeaSurfaceRules.register();
             addToComposter(SeaBlocks.COASTAL_LAVENDER, 0.7F);
             addToComposter(SeaBlocks.COASTAL_WILDFLOWER, 0.3F);
             addToComposter(SeaBlocks.SEA_THRIFT, 0.5F);
@@ -70,7 +72,7 @@ public class Seafarer {
 
         boolean server = event.includeServer();
 
-        SeaDatapackBuiltinEntriesProvider datapackEntries = new SeaDatapackBuiltinEntriesProvider(output, provider);
+        SeaDatapackProvider datapackEntries = new SeaDatapackProvider(output, provider);
         generator.addProvider(server, datapackEntries);
         provider = datapackEntries.getRegistryProvider();
 
@@ -82,7 +84,7 @@ public class Seafarer {
         generator.addProvider(server, new SeaPaintingTagProvider(output, provider, helper));
         generator.addProvider(server, new SeaRecipeGenerator(output));
         generator.addProvider(server, SeaLootProvider.create(output));
-        generator.addProvider(server, new SeaChunkGeneratorModifierProvider(event, datapackEntries));
+//        generator.addProvider(server, new SeaChunkGeneratorModifierProvider(event, datapackEntries));
 
         boolean client = event.includeClient();
 
