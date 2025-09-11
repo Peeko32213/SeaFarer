@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-10T16:55:16.9970823	Item Models: seafarer
+// 1.20.1	2025-09-10T21:40:28.705133	Item Models: seafarer
 023ad0ac08249552a1bf59309a271de130255508 assets/seafarer/models/item/cooked_horseshoe_crab.json
 eef2535286fe21195414d20646165c30a90d5be9 assets/seafarer/models/item/cooked_marine_iguana_tail.json
 18ee0acdbd31bc4dd7c5fdbc395850bb3e6724c9 assets/seafarer/models/item/cooked_shore_crab_leg.json
@@ -6,17 +6,9 @@ bc3e5828d6085b75ecfe1d11c784cd5a0490df17 assets/seafarer/models/item/dried_starf
 fb68873cb17d6a8805ae20da476a598ea8b5ad01 assets/seafarer/models/item/horseshoe_crab.json
 99a2cacbc5e540faffca6fcab3ed8ce740b0ce14 assets/seafarer/models/item/horseshoe_crab_bucket.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/horseshoe_crab_spawn_egg.json
-dc671bc88a12400dc70f5f3e0a5086f73c80529c assets/seafarer/models/item/light_blue_sea_glass_pebbles.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/manta_ray_spawn_egg.json
 fdc350322224e09cb46e1c7473f6c0146cf54cb7 assets/seafarer/models/item/marine_iguana_tail.json
-236f6e5ad884df80b6b00f4f67d9b0980a7ed1a9 assets/seafarer/models/item/message_in_a_bottle.json
-4759c2a62c2d93bbfe20321f80f1144a5c6ab0c4 assets/seafarer/models/item/metal_can.json
-996920eaea952f2da3c56a43f323d6703e720814 assets/seafarer/models/item/old_boot.json
-63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/parrotfish_spawn_egg.json
-f186fbf60ef9548f14c572869b4d2a6528c31c09 assets/seafarer/models/item/salted_cod.json
-ed4218a74bb9e92a0a36af6ce9478de5c8111be4 assets/seafarer/models/item/salted_salmon.json
-ca49f583fe9f3e519b1fdff197cdfe44d3d14eee assets/seafarer/models/item/salted_starfish.json
-c8e51600be6faddc2f68d7a0296a899d24de3555 assets/seafarer/models/item/salted_tropical_fish.json
+d209ed16dc7700b940710f459e8a756b3b3d6f1e assets/seafarer/models/item/sea_glass_pebbles.json
 a2052eebceebd2c149288263f3e5e98ae02a67ca assets/seafarer/models/item/sea_salt.json
 dfb2d60dea619171f052d8016e24e9ce8606c052 assets/seafarer/models/item/sea_urchin.json
 f4f8ff57f8a9205c7e7e2a45b963eb0fa9f9d9d9 assets/seafarer/models/item/shore_crab_bucket.json

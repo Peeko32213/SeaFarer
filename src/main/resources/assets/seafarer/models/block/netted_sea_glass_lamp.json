@@ -1,0 +1,39 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"render_type": "minecraft:cutout",
+	"textures": {
+		"net_top": "seafarer:block/fishing_net_top",
+		"net": "seafarer:block/fishing_net",
+		"particle": "#side"
+	},
+	"elements": [
+		{
+			"name": "inner",
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#side"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#side"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#side"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#side"},
+				"up": {"uv": [16, 16, 0, 0], "texture": "#top"},
+				"down": {"uv": [16, 0, 0, 16], "texture": "#top"}
+			}
+		},
+		{
+			"name": "net",
+			"from": [-0.05, -0.05, -0.05],
+			"to": [16.05, 16.05, 16.05],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#net", "cullface": "north"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#net", "cullface": "east"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#net", "cullface": "south"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#net", "cullface": "west"},
+				"up": {"uv": [16, 16, 0, 0], "texture": "#net_top", "cullface": "up"},
+				"down": {"uv": [16, 0, 0, 16], "texture": "#net_top", "cullface": "down"}
+			}
+		}
+	]
+}

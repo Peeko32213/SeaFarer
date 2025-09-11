@@ -4,11 +4,9 @@ import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.items.*;
 import com.peeko32213.seafarer.registry.enums.*;
 import net.minecraft.core.Direction;
-import net.minecraft.tags.StructureTags;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.level.saveddata.maps.MapDecoration;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -25,12 +23,11 @@ public class SeaItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Seafarer.MOD_ID);
 
-    public static final RegistryObject<Item> LIGHT_BLUE_SEA_GLASS_PEBBLES = registerItem("light_blue_sea_glass_pebbles", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SEA_GLASS_PEBBLES = registerItem("sea_glass_pebbles", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> HORSESHOE_CRAB_SPAWN_EGG = registerSpawnEgg("horseshoe_crab", SeaEntities.HORSESHOE_CRAB , 0x251a13, 0x473d2c);
     public static final RegistryObject<Item> MANTA_RAY_SPAWN_EGG = registerSpawnEgg("manta_ray", SeaEntities.MANTA_RAY , 0x070708, 0xedf5f5);
 //    public static final RegistryObject<Item> MARINE_IGUANA_SPAWN_EGG = registerSpawnEgg("marine_iguana", SeafarerEntities.MARINE_IGUANA , 0xb43324, 0x4fdecb);
-    public static final RegistryObject<Item> PARROTFISH_SPAWN_EGG = registerSpawnEgg("parrotfish", SeaEntities.PARROTFISH , 0x2ac9e5, 0xfbb1ea);
     public static final RegistryObject<Item> SHORE_CRAB_SPAWN_EGG = registerSpawnEgg("shore_crab", SeaEntities.SHORE_CRAB, 0xf3901f, 0x92fedb);
     public static final RegistryObject<Item> SUNFISH_SPAWN_EGG = registerSpawnEgg("sunfish", SeaEntities.SUNFISH , 0x628398, 0x33436b);
 
@@ -43,15 +40,8 @@ public class SeaItems {
     public static final RegistryObject<Item> COOKED_MARINE_IGUANA_TAIL = registerItem("cooked_marine_iguana_tail", () -> new Item(new Item.Properties().food(SeaFoodValues.COOKED_MARINE_IGUANA)));
     public static final RegistryObject<Item> DRIED_STARFISH = registerItem("dried_starfish", () -> new Item(new Item.Properties().food(SeaFoodValues.COOKED_STARFISH)));
 
-    public static final RegistryObject<Item> OLD_BOOT = registerItem("old_boot", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> METAL_CAN = registerItem("metal_can", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> MESSAGE_IN_A_BOTTLE = registerItem("message_in_a_bottle", () -> new MessageInABottleItem(StructureTags.ON_TREASURE_MAPS, "filled_map.buried_treasure", MapDecoration.Type.RED_X,new Item.Properties()));
     public static final RegistryObject<Item> SOY_SAUCE = registerItem("soy_sauce", () -> new SeaDrinkableItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).food(SeaFoodValues.SOY_SAUCE), false, false));
     public static final RegistryObject<Item> SEA_SALT = registerItem("sea_salt", () -> new Item(new Item.Properties().food(SeaFoodValues.SALT)));
-    public static final RegistryObject<Item> SALTED_COD = registerItem("salted_cod", () -> new Item(new Item.Properties().food(SeaFoodValues.SALTED_COD)));
-    public static final RegistryObject<Item> SALTED_SALMON = registerItem("salted_salmon", () -> new Item(new Item.Properties().food(SeaFoodValues.SALTED_SALMON)));
-    public static final RegistryObject<Item> SALTED_TROPICAL_FISH = registerItem("salted_tropical_fish", () -> new Item(new Item.Properties().food(SeaFoodValues.SALTED_TROPICAL_FISH)));
-    public static final RegistryObject<Item> SALTED_STARFISH = registerItem("salted_starfish", () -> new Item(new Item.Properties().food(SeaFoodValues.SALTED_STARFISH)));
 
     public static final RegistryObject<Item> SHORE_CRAB_BUCKET = registerItemNoLang("shore_crab_bucket", () -> new SeaMobBucketItem(SeaEntities.SHORE_CRAB, () -> Fluids.WATER, false, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> HORSESHOE_CRAB_BUCKET = registerItemNoLang("horseshoe_crab_bucket", () -> new SeaMobBucketItem(SeaEntities.HORSESHOE_CRAB, () -> Fluids.WATER, false, new Item.Properties().stacksTo(1)));

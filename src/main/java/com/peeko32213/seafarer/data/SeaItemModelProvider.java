@@ -29,7 +29,7 @@ public class SeaItemModelProvider extends ItemModelProvider {
             }
         }
 
-        this.item(SeaItems.LIGHT_BLUE_SEA_GLASS_PEBBLES);
+        this.item(SeaItems.SEA_GLASS_PEBBLES);
 
         this.item(SeaItems.RAW_SHORE_CRAB_LEG);
         this.item(SeaItems.COOKED_SHORE_CRAB_LEG);
@@ -38,19 +38,11 @@ public class SeaItemModelProvider extends ItemModelProvider {
         this.item(SeaItems.RAW_MARINE_IGUANA_TAIL);
         this.item(SeaItems.COOKED_MARINE_IGUANA_TAIL);
         this.item(SeaItems.DRIED_STARFISH);
-        this.item(SeaItems.SALTED_COD);
-        this.item(SeaItems.SALTED_SALMON);
-        this.item(SeaItems.SALTED_TROPICAL_FISH);
-        this.item(SeaItems.SALTED_STARFISH);
         this.item(SeaItems.SEA_URCHIN);
         this.item(SeaItems.SOY_SAUCE);
 
         this.item(SeaItems.SHORE_CRAB_BUCKET);
         this.item(SeaItems.HORSESHOE_CRAB_BUCKET);
-
-        this.item(SeaItems.MESSAGE_IN_A_BOTTLE);
-        this.item(SeaItems.OLD_BOOT);
-        this.item(SeaItems.METAL_CAN);
 
         this.item(SeaItems.SEA_SALT);
     }

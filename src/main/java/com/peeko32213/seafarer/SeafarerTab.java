@@ -36,9 +36,6 @@ public class SeafarerTab {
                         // sunfish
                         output.accept(SeaItems.SUNFISH_SPAWN_EGG.get());
 
-                        // food
-
-
                         output.accept(SeaItems.RAW_MARINE_IGUANA_TAIL.get());
                         output.accept(SeaItems.COOKED_MARINE_IGUANA_TAIL.get());
                         output.accept(SeaBlocks.ORANGE_STARFISH.get());
@@ -53,55 +50,10 @@ public class SeafarerTab {
                         output.accept(SeaItems.SEA_URCHIN.get());
                         output.accept(SeaItems.SOY_SAUCE.get());
                         output.accept(SeaItems.SEA_SALT.get());
-                        output.accept(SeaItems.SALTED_COD.get());
-                        output.accept(SeaItems.SALTED_SALMON.get());
-                        output.accept(SeaItems.SALTED_TROPICAL_FISH.get());
-                        output.accept(SeaItems.SALTED_STARFISH.get());
+                        output.accept(SeaBlocks.SALT_BLOCK.get());
 
                         // junk
-                        output.accept(SeaBlocks.FLOATSOME.get());
                         output.accept(SeaBlocks.FISHING_NET.get());
-                        output.accept(SeaBlocks.OLD_BOARDS.get());
-                        output.accept(SeaItems.OLD_BOOT.get());
-                        output.accept(SeaItems.METAL_CAN.get());
-                        output.accept(SeaItems.MESSAGE_IN_A_BOTTLE.get());
-
-                        // shells
-                        output.accept(SeaBlocks.SPIKY_SHELL.get());
-                        output.accept(SeaBlocks.CLAM_SHELL.get());
-                        output.accept(SeaBlocks.HORN_SHELL.get());
-                        output.accept(SeaBlocks.SWIRL_SHELL.get());
-                        output.accept(SeaBlocks.SPIRAL_SHELL.get());
-                        output.accept(SeaBlocks.PYRAMID_SHELL.get());
-                        output.accept(SeaItems.SPIKY_SWORD.get());
-                        output.accept(SeaItems.CLAM_SHOVEL.get());
-                        output.accept(SeaItems.HORN_PICKAXE.get());
-                        output.accept(SeaItems.SWIRL_AXE.get());
-                        output.accept(SeaItems.SPIRAL_HOE.get());
-                        output.accept(SeaBlocks.SPIKY_SHELL_BRICKS.get());
-                        output.accept(SeaBlocks.SPIKY_SHELL_BRICK_STAIRS.get());
-                        output.accept(SeaBlocks.SPIKY_SHELL_BRICK_SLAB.get());
-                        output.accept(SeaBlocks.SPIKY_SHELL_PILLAR.get());
-                        output.accept(SeaBlocks.CLAM_SHELL_BRICKS.get());
-                        output.accept(SeaBlocks.CLAM_SHELL_BRICK_STAIRS.get());
-                        output.accept(SeaBlocks.CLAM_SHELL_BRICK_SLAB.get());
-                        output.accept(SeaBlocks.CLAM_SHELL_PILLAR.get());
-                        output.accept(SeaBlocks.HORN_SHELL_BRICKS.get());
-                        output.accept(SeaBlocks.HORN_SHELL_BRICK_STAIRS.get());
-                        output.accept(SeaBlocks.HORN_SHELL_BRICK_SLAB.get());
-                        output.accept(SeaBlocks.HORN_SHELL_PILLAR.get());
-                        output.accept(SeaBlocks.SWIRL_SHELL_BRICKS.get());
-                        output.accept(SeaBlocks.SWIRL_SHELL_BRICK_STAIRS.get());
-                        output.accept(SeaBlocks.SWIRL_SHELL_BRICK_SLAB.get());
-                        output.accept(SeaBlocks.SWIRL_SHELL_PILLAR.get());
-                        output.accept(SeaBlocks.SPIRAL_SHELL_BRICKS.get());
-                        output.accept(SeaBlocks.SPIRAL_SHELL_BRICK_STAIRS.get());
-                        output.accept(SeaBlocks.SPIRAL_SHELL_BRICK_SLAB.get());
-                        output.accept(SeaBlocks.SPIRAL_SHELL_PILLAR.get());
-                        output.accept(SeaBlocks.PYRAMID_SHELL_BRICKS.get());
-                        output.accept(SeaBlocks.PYRAMID_SHELL_BRICK_STAIRS.get());
-                        output.accept(SeaBlocks.PYRAMID_SHELL_BRICK_SLAB.get());
-                        output.accept(SeaBlocks.PYRAMID_SHELL_PILLAR.get());
 
                         output.accept(SeaBlocks.SHORT_BEACHGRASS.get());
                         output.accept(SeaBlocks.BEACHGRASS.get());
@@ -164,6 +116,43 @@ public class SeafarerTab {
                         output.accept(SeaBlocks.DEAD_VERDANT_CORAL.get());
                         output.accept(SeaBlocks.DEAD_VERDANT_CORAL_FAN.get());
 
+                        // shells
+                        output.accept(SeaBlocks.SPIKY_SHELL.get());
+                        output.accept(SeaBlocks.CLAM_SHELL.get());
+                        output.accept(SeaBlocks.HORN_SHELL.get());
+                        output.accept(SeaBlocks.SWIRL_SHELL.get());
+                        output.accept(SeaBlocks.SPIRAL_SHELL.get());
+                        output.accept(SeaBlocks.PYRAMID_SHELL.get());
+                        output.accept(SeaItems.SPIKY_SWORD.get());
+                        output.accept(SeaItems.CLAM_SHOVEL.get());
+                        output.accept(SeaItems.HORN_PICKAXE.get());
+                        output.accept(SeaItems.SWIRL_AXE.get());
+                        output.accept(SeaItems.SPIRAL_HOE.get());
+                        output.accept(SeaBlocks.SPIKY_SHELL_BRICKS.get());
+                        output.accept(SeaBlocks.SPIKY_SHELL_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.SPIKY_SHELL_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.SPIKY_SHELL_PILLAR.get());
+                        output.accept(SeaBlocks.CLAM_SHELL_BRICKS.get());
+                        output.accept(SeaBlocks.CLAM_SHELL_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.CLAM_SHELL_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.CLAM_SHELL_PILLAR.get());
+                        output.accept(SeaBlocks.HORN_SHELL_BRICKS.get());
+                        output.accept(SeaBlocks.HORN_SHELL_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.HORN_SHELL_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.HORN_SHELL_PILLAR.get());
+                        output.accept(SeaBlocks.SWIRL_SHELL_BRICKS.get());
+                        output.accept(SeaBlocks.SWIRL_SHELL_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.SWIRL_SHELL_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.SWIRL_SHELL_PILLAR.get());
+                        output.accept(SeaBlocks.SPIRAL_SHELL_BRICKS.get());
+                        output.accept(SeaBlocks.SPIRAL_SHELL_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.SPIRAL_SHELL_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.SPIRAL_SHELL_PILLAR.get());
+                        output.accept(SeaBlocks.PYRAMID_SHELL_BRICKS.get());
+                        output.accept(SeaBlocks.PYRAMID_SHELL_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.PYRAMID_SHELL_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.PYRAMID_SHELL_PILLAR.get());
+
                         // sand
                         output.accept(SeaBlocks.SHELLY_SAND.get());
                         output.accept(SeaBlocks.STARRY_SAND.get());
@@ -186,72 +175,79 @@ public class SeafarerTab {
                         output.accept(SeaBlocks.ASHEN_SANDSTONE_STAIRS.get());
                         output.accept(SeaBlocks.ASHEN_SANDSTONE_SLAB.get());
 
-                        output.accept(SeaBlocks.SALT_BLOCK.get());
+                        output.accept(SeaItems.SEA_GLASS_PEBBLES.get());
 
-                        output.accept(SeaItems.LIGHT_BLUE_SEA_GLASS_PEBBLES.get());
+                        output.accept(SeaBlocks.WHITE_PEBBLED_SEA_GLASS.get());
+                        output.accept(SeaBlocks.WHITE_SEA_GLASS.get());
+                        output.accept(SeaBlocks.WHITE_SEA_GLASS_PANE.get());
+                        output.accept(SeaBlocks.WHITE_SEA_GLASS_BRICKS.get());
+                        output.accept(SeaBlocks.WHITE_SEA_GLASS_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.WHITE_SEA_GLASS_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.WHITE_SEA_GLASS_LAMP.get());
+                        output.accept(SeaBlocks.WHITE_SEA_GLASS_BOTTLE.get());
 
-                        output.accept(SeaBlocks.PEARLY_PEBBLED_SEA_GLASS.get());
-                        output.accept(SeaBlocks.PEARLY_SEA_GLASS.get());
-                        output.accept(SeaBlocks.PEARLY_SEA_GLASS_PANE.get());
-                        output.accept(SeaBlocks.PEARLY_SEA_GLASS_BRICKS.get());
-                        output.accept(SeaBlocks.PEARLY_SEA_GLASS_BRICK_STAIRS.get());
-                        output.accept(SeaBlocks.PEARLY_SEA_GLASS_BRICK_SLAB.get());
-                        output.accept(SeaBlocks.PEARLY_SEA_GLASS_LAMP.get());
-                        output.accept(SeaBlocks.PEARLY_SEA_GLASS_BOTTLE.get());
+                        output.accept(SeaBlocks.LIGHT_GRAY_PEBBLED_SEA_GLASS.get());
+                        output.accept(SeaBlocks.LIGHT_GRAY_SEA_GLASS.get());
+                        output.accept(SeaBlocks.LIGHT_GRAY_SEA_GLASS_PANE.get());
+                        output.accept(SeaBlocks.LIGHT_GRAY_SEA_GLASS_BRICKS.get());
+                        output.accept(SeaBlocks.LIGHT_GRAY_SEA_GLASS_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.LIGHT_GRAY_SEA_GLASS_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.LIGHT_GRAY_SEA_GLASS_LAMP.get());
+                        output.accept(SeaBlocks.NETTED_LIGHT_GRAY_SEA_GLASS_LAMP.get());
 
-                        output.accept(SeaBlocks.UMBER_PEBBLED_SEA_GLASS.get());
-                        output.accept(SeaBlocks.UMBER_SEA_GLASS.get());
-                        output.accept(SeaBlocks.UMBER_SEA_GLASS_PANE.get());
-                        output.accept(SeaBlocks.UMBER_SEA_GLASS_BRICKS.get());
-                        output.accept(SeaBlocks.UMBER_SEA_GLASS_BRICK_STAIRS.get());
-                        output.accept(SeaBlocks.UMBER_SEA_GLASS_BRICK_SLAB.get());
-                        output.accept(SeaBlocks.UMBER_SEA_GLASS_LAMP.get());
-                        output.accept(SeaBlocks.UMBER_SEA_GLASS_BOTTLE.get());
+                        output.accept(SeaBlocks.BLACK_PEBBLED_SEA_GLASS.get());
+                        output.accept(SeaBlocks.BLACK_SEA_GLASS.get());
+                        output.accept(SeaBlocks.BLACK_SEA_GLASS_PANE.get());
+                        output.accept(SeaBlocks.BLACK_SEA_GLASS_BRICKS.get());
+                        output.accept(SeaBlocks.BLACK_SEA_GLASS_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.BLACK_SEA_GLASS_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.BLACK_SEA_GLASS_LAMP.get());
+                        output.accept(SeaBlocks.BLACK_SEA_GLASS_BOTTLE.get());
 
-                        output.accept(SeaBlocks.SCARLET_PEBBLED_SEA_GLASS.get());
-                        output.accept(SeaBlocks.SCARLET_SEA_GLASS.get());
-                        output.accept(SeaBlocks.SCARLET_SEA_GLASS_PANE.get());
-                        output.accept(SeaBlocks.SCARLET_SEA_GLASS_BRICKS.get());
-                        output.accept(SeaBlocks.SCARLET_SEA_GLASS_BRICK_STAIRS.get());
-                        output.accept(SeaBlocks.SCARLET_SEA_GLASS_BRICK_SLAB.get());
-                        output.accept(SeaBlocks.SCARLET_SEA_GLASS_LAMP.get());
-                        output.accept(SeaBlocks.SCARLET_SEA_GLASS_BOTTLE.get());
+                        output.accept(SeaBlocks.RED_PEBBLED_SEA_GLASS.get());
+                        output.accept(SeaBlocks.RED_SEA_GLASS.get());
+                        output.accept(SeaBlocks.RED_SEA_GLASS_PANE.get());
+                        output.accept(SeaBlocks.RED_SEA_GLASS_BRICKS.get());
+                        output.accept(SeaBlocks.RED_SEA_GLASS_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.RED_SEA_GLASS_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.RED_SEA_GLASS_LAMP.get());
+                        output.accept(SeaBlocks.RED_SEA_GLASS_BOTTLE.get());
 
-                        output.accept(SeaBlocks.AMBER_PEBBLED_SEA_GLASS.get());
-                        output.accept(SeaBlocks.AMBER_SEA_GLASS.get());
-                        output.accept(SeaBlocks.AMBER_SEA_GLASS_PANE.get());
-                        output.accept(SeaBlocks.AMBER_SEA_GLASS_BRICKS.get());
-                        output.accept(SeaBlocks.AMBER_SEA_GLASS_BRICK_STAIRS.get());
-                        output.accept(SeaBlocks.AMBER_SEA_GLASS_BRICK_SLAB.get());
-                        output.accept(SeaBlocks.AMBER_SEA_GLASS_LAMP.get());
-                        output.accept(SeaBlocks.AMBER_SEA_GLASS_BOTTLE.get());
+                        output.accept(SeaBlocks.ORANGE_PEBBLED_SEA_GLASS.get());
+                        output.accept(SeaBlocks.ORANGE_SEA_GLASS.get());
+                        output.accept(SeaBlocks.ORANGE_SEA_GLASS_PANE.get());
+                        output.accept(SeaBlocks.ORANGE_SEA_GLASS_BRICKS.get());
+                        output.accept(SeaBlocks.ORANGE_SEA_GLASS_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.ORANGE_SEA_GLASS_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.ORANGE_SEA_GLASS_LAMP.get());
+                        output.accept(SeaBlocks.ORANGE_SEA_GLASS_BOTTLE.get());
 
-                        output.accept(SeaBlocks.CITRINE_PEBBLED_SEA_GLASS.get());
-                        output.accept(SeaBlocks.CITRINE_SEA_GLASS.get());
-                        output.accept(SeaBlocks.CITRINE_SEA_GLASS_PANE.get());
-                        output.accept(SeaBlocks.CITRINE_SEA_GLASS_BRICKS.get());
-                        output.accept(SeaBlocks.CITRINE_SEA_GLASS_BRICK_STAIRS.get());
-                        output.accept(SeaBlocks.CITRINE_SEA_GLASS_BRICK_SLAB.get());
-                        output.accept(SeaBlocks.CITRINE_SEA_GLASS_LAMP.get());
-                        output.accept(SeaBlocks.CITRINE_SEA_GLASS_BOTTLE.get());
+                        output.accept(SeaBlocks.YELLOW_PEBBLED_SEA_GLASS.get());
+                        output.accept(SeaBlocks.YELLOW_SEA_GLASS.get());
+                        output.accept(SeaBlocks.YELLOW_SEA_GLASS_PANE.get());
+                        output.accept(SeaBlocks.YELLOW_SEA_GLASS_BRICKS.get());
+                        output.accept(SeaBlocks.YELLOW_SEA_GLASS_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.YELLOW_SEA_GLASS_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.YELLOW_SEA_GLASS_LAMP.get());
+                        output.accept(SeaBlocks.YELLOW_SEA_GLASS_BOTTLE.get());
 
-                        output.accept(SeaBlocks.CHARTREUSE_PEBBLED_SEA_GLASS.get());
-                        output.accept(SeaBlocks.CHARTREUSE_SEA_GLASS.get());
-                        output.accept(SeaBlocks.CHARTREUSE_SEA_GLASS_PANE.get());
-                        output.accept(SeaBlocks.CHARTREUSE_SEA_GLASS_BRICKS.get());
-                        output.accept(SeaBlocks.CHARTREUSE_SEA_GLASS_BRICK_STAIRS.get());
-                        output.accept(SeaBlocks.CHARTREUSE_SEA_GLASS_BRICK_SLAB.get());
-                        output.accept(SeaBlocks.CHARTREUSE_SEA_GLASS_LAMP.get());
-                        output.accept(SeaBlocks.CHARTREUSE_SEA_GLASS_BOTTLE.get());
+                        output.accept(SeaBlocks.LIME_PEBBLED_SEA_GLASS.get());
+                        output.accept(SeaBlocks.LIME_SEA_GLASS.get());
+                        output.accept(SeaBlocks.LIME_SEA_GLASS_PANE.get());
+                        output.accept(SeaBlocks.LIME_SEA_GLASS_BRICKS.get());
+                        output.accept(SeaBlocks.LIME_SEA_GLASS_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.LIME_SEA_GLASS_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.LIME_SEA_GLASS_LAMP.get());
+                        output.accept(SeaBlocks.LIME_SEA_GLASS_BOTTLE.get());
 
-                        output.accept(SeaBlocks.SEAFOAM_PEBBLED_SEA_GLASS.get());
-                        output.accept(SeaBlocks.SEAFOAM_SEA_GLASS.get());
-                        output.accept(SeaBlocks.SEAFOAM_SEA_GLASS_PANE.get());
-                        output.accept(SeaBlocks.SEAFOAM_SEA_GLASS_BRICKS.get());
-                        output.accept(SeaBlocks.SEAFOAM_SEA_GLASS_BRICK_STAIRS.get());
-                        output.accept(SeaBlocks.SEAFOAM_SEA_GLASS_BRICK_SLAB.get());
-                        output.accept(SeaBlocks.SEAFOAM_SEA_GLASS_LAMP.get());
-                        output.accept(SeaBlocks.SEAFOAM_SEA_GLASS_BOTTLE.get());
+                        output.accept(SeaBlocks.GREEN_PEBBLED_SEA_GLASS.get());
+                        output.accept(SeaBlocks.GREEN_SEA_GLASS.get());
+                        output.accept(SeaBlocks.GREEN_SEA_GLASS_PANE.get());
+                        output.accept(SeaBlocks.GREEN_SEA_GLASS_BRICKS.get());
+                        output.accept(SeaBlocks.GREEN_SEA_GLASS_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.GREEN_SEA_GLASS_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.GREEN_SEA_GLASS_LAMP.get());
+                        output.accept(SeaBlocks.GREEN_SEA_GLASS_BOTTLE.get());
 
                         // light blue sea glass
                         output.accept(SeaBlocks.LIGHT_BLUE_PEBBLED_SEA_GLASS.get());
@@ -263,22 +259,22 @@ public class SeafarerTab {
                         output.accept(SeaBlocks.LIGHT_BLUE_SEA_GLASS_LAMP.get());
                         output.accept(SeaBlocks.LIGHT_BLUE_SEA_GLASS_BOTTLE.get());
 
-                        output.accept(SeaBlocks.LILAC_PEBBLED_SEA_GLASS.get());
-                        output.accept(SeaBlocks.LILAC_SEA_GLASS.get());
-                        output.accept(SeaBlocks.LILAC_SEA_GLASS_PANE.get());
-                        output.accept(SeaBlocks.LILAC_SEA_GLASS_BRICKS.get());
-                        output.accept(SeaBlocks.LILAC_SEA_GLASS_BRICK_STAIRS.get());
-                        output.accept(SeaBlocks.LILAC_SEA_GLASS_BRICK_SLAB.get());
-                        output.accept(SeaBlocks.LILAC_SEA_GLASS_LAMP.get());
-                        output.accept(SeaBlocks.LILAC_SEA_GLASS_BOTTLE.get());
+                        output.accept(SeaBlocks.MAGENTA_PEBBLED_SEA_GLASS.get());
+                        output.accept(SeaBlocks.MAGENTA_SEA_GLASS.get());
+                        output.accept(SeaBlocks.MAGENTA_SEA_GLASS_PANE.get());
+                        output.accept(SeaBlocks.MAGENTA_SEA_GLASS_BRICKS.get());
+                        output.accept(SeaBlocks.MAGENTA_SEA_GLASS_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.MAGENTA_SEA_GLASS_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.MAGENTA_SEA_GLASS_LAMP.get());
+                        output.accept(SeaBlocks.MAGENTA_SEA_GLASS_BOTTLE.get());
 
-                        output.accept(SeaBlocks.ROSE_PEBBLED_SEA_GLASS.get());
-                        output.accept(SeaBlocks.ROSE_SEA_GLASS.get());
-                        output.accept(SeaBlocks.ROSE_SEA_GLASS_PANE.get());
-                        output.accept(SeaBlocks.ROSE_SEA_GLASS_BRICKS.get());
-                        output.accept(SeaBlocks.ROSE_SEA_GLASS_BRICK_STAIRS.get());
-                        output.accept(SeaBlocks.ROSE_SEA_GLASS_BRICK_SLAB.get());
-                        output.accept(SeaBlocks.ROSE_SEA_GLASS_LAMP.get());
-                        output.accept(SeaBlocks.ROSE_SEA_GLASS_BOTTLE.get());
+                        output.accept(SeaBlocks.PINK_PEBBLED_SEA_GLASS.get());
+                        output.accept(SeaBlocks.PINK_SEA_GLASS.get());
+                        output.accept(SeaBlocks.PINK_SEA_GLASS_PANE.get());
+                        output.accept(SeaBlocks.PINK_SEA_GLASS_BRICKS.get());
+                        output.accept(SeaBlocks.PINK_SEA_GLASS_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.PINK_SEA_GLASS_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.PINK_SEA_GLASS_LAMP.get());
+                        output.accept(SeaBlocks.PINK_SEA_GLASS_BOTTLE.get());
             }).build());
 }

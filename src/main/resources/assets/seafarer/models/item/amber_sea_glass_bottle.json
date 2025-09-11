@@ -1,6 +1,0 @@
-{
-  "parent" : "item/generated",
-  "textures" : {
-    "layer0" : "seafarer:item/amber_sea_glass_bottle"
-  }
-}

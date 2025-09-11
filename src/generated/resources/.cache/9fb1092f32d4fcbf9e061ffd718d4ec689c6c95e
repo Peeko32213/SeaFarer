@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-10T17:22:09.6239951	Recipes
+// 1.20.1	2025-09-10T21:10:28.6307268	Recipes
 1905df905c5ddeb52b29c481359099d9f783ba29 data/seafarer/advancements/recipes/building_blocks/algae_block.json
 829aa477e55fa4340aad878a7edcac4929e50c09 data/seafarer/advancements/recipes/building_blocks/algae_carpet.json
 c52de069b70a1f33b0a9dac863b4fc627f1c8e14 data/seafarer/advancements/recipes/building_blocks/clam_shell_bricks.json
@@ -51,10 +51,6 @@ bc60218bf011ee414ca52e1e65aed59dc75958dd data/seafarer/advancements/recipes/food
 ff3939c376b68f582f79a58c5988c0767dc4851d data/seafarer/advancements/recipes/food/royal_starfish.json
 96ae1f49e25159a9e9d322cd240e9a5925fdb2d8 data/seafarer/advancements/recipes/food/royal_starfish_from_campfire_cooking.json
 8cdf0c8163135fb3d4bb9d41b17ca2aba8032097 data/seafarer/advancements/recipes/food/royal_starfish_from_smoking.json
-1b05596e5039110f5449afcfdf634eead4fa917a data/seafarer/advancements/recipes/food/salted_cod.json
-ca91b775ee2fff477ece25f01431b340e5b2a6d6 data/seafarer/advancements/recipes/food/salted_salmon.json
-658021f900de9e782345fdc5bf41405e489fd11c data/seafarer/advancements/recipes/food/salted_starfish.json
-b254e470b4bea8a9d74e00c472fba4a546edd7f4 data/seafarer/advancements/recipes/food/salted_tropical_fish.json
 a5cfb0bcd3529022693a7335b8a3053557ddbb3d data/seafarer/advancements/recipes/misc/blue_dye_from_sea_holly.json
 870f3ae38213bb98574d35d07ba93e69b6caad95 data/seafarer/advancements/recipes/misc/cooked_horseshoe_crab.json
 9d00fb824fa1f9eea3b917253afdae48cb553ac6 data/seafarer/advancements/recipes/misc/cooked_marine_iguana_tail.json
@@ -112,10 +108,6 @@ ccf625a970c600f014e5329ed018146a0a3a2aa9 data/seafarer/recipes/red_starfish.json
 aaf9d9bee770845d0927bed469b4dabc62e693cf data/seafarer/recipes/royal_starfish.json
 08df17965d8b25af6e90f3357907e155af84653b data/seafarer/recipes/royal_starfish_from_campfire_cooking.json
 64906babd69f42bbd8f8ef16f17b95179053d88a data/seafarer/recipes/royal_starfish_from_smoking.json
-a3fbc08a74fa89828b995146d275f837ab05f515 data/seafarer/recipes/salted_cod.json
-1e7d48fab6d9349ec06bf28c57eff6ba06e7ef8f data/seafarer/recipes/salted_salmon.json
-18f8df70d9e652fe6df2358a3de83bc78c76785e data/seafarer/recipes/salted_starfish.json
-72e19a9cdd429f3fae9e63aac5796d83f999d35a data/seafarer/recipes/salted_tropical_fish.json
 70be472e00cf38c0023601fe177a815f9b85ad33 data/seafarer/recipes/salt_block.json
 f9fb0c52c5d4865d0e3b8c7f806c31d2adc71ff8 data/seafarer/recipes/spiky_shell_bricks.json
 b84b4c691ffbb40bfd368be053f72d7eeae9fed2 data/seafarer/recipes/spiky_shell_brick_slab.json

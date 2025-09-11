@@ -1,0 +1,7 @@
+{
+  "parent": "seafarer:block/netted_sea_glass_lamp",
+  "textures": {
+    "side": "seafarer:block/netted_light_gray_sea_glass_lamp",
+    "top": "seafarer:block/netted_light_gray_sea_glass_lamp_top"
+  }
+}

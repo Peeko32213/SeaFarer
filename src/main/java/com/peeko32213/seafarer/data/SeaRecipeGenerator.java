@@ -86,45 +86,6 @@ public class SeaRecipeGenerator extends SeaRecipeProvider implements IConditionB
         makeDye(consumer, Items.BLUE_DYE, SeaBlocks.SEA_HOLLY.get());
         makeDye(consumer, Items.PINK_DYE, SeaBlocks.SEA_THRIFT.get());
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, SeaItems.SALTED_SALMON.get())
-                .define('s', SeaItems.SEA_SALT.get())
-                .define('l', Items.SALMON)
-                .pattern(" s ")
-                .pattern("sls")
-                .pattern(" s ")
-                .unlockedBy(getHasName(Items.SALMON.asItem()), has(Items.SALMON))
-                .unlockedBy(getHasName(SeaItems.SEA_SALT.get().asItem()), has(SeaItems.SEA_SALT.get().asItem()))
-                .save(consumer, key(SeaItems.SALTED_SALMON.get()));
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, SeaItems.SALTED_COD.get())
-                .define('s', SeaItems.SEA_SALT.get())
-                .define('l', Items.COD)
-                .pattern(" s ")
-                .pattern("sls")
-                .pattern(" s ")
-                .unlockedBy(getHasName(Items.COD.asItem()), has(Items.COD))
-                .unlockedBy(getHasName(SeaItems.SEA_SALT.get().asItem()), has(SeaItems.SEA_SALT.get().asItem()))
-                .save(consumer, key(SeaItems.SALTED_COD.get()));
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, SeaItems.SALTED_STARFISH.get())
-                .define('s', SeaItems.SEA_SALT.get())
-                .define('l', SeaTags.STARFISH_ITEM)
-                .pattern(" s ")
-                .pattern("sls")
-                .pattern(" s ")
-                .unlockedBy(getHasName(SeaItems.SEA_SALT.get().asItem()), has(SeaItems.SEA_SALT.get().asItem()))
-                .save(consumer, key(SeaItems.SALTED_STARFISH.get()));
-
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.FOOD, SeaItems.SALTED_TROPICAL_FISH.get())
-                .define('s', SeaItems.SEA_SALT.get())
-                .define('l', Items.TROPICAL_FISH)
-                .pattern(" s ")
-                .pattern("sls")
-                .pattern(" s ")
-                .unlockedBy(getHasName(SeaItems.SEA_SALT.get().asItem()), has(SeaItems.SEA_SALT.get().asItem()))
-                .save(consumer, key(SeaItems.SALTED_TROPICAL_FISH.get()));
-
         smeltingRecipes(consumer);
     }
 
