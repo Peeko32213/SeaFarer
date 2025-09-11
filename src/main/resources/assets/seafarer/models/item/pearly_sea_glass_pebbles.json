@@ -1,6 +1,0 @@
-{
-  "parent" : "item/generated",
-  "textures" : {
-    "layer0" : "seafarer:block/pearly_sea_glass_pebbles"
-  }
-}

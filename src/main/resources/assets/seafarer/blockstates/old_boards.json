@@ -2,93 +2,93 @@
   "variants": {
     "facing=up": [
         {
-          "model": "seafarer:block/old_boards",
+          "model": "seafarer:block/old_boards1",
           "weight": 10
         },
         {
-          "model": "seafarer:block/old_boards_1",
+          "model": "seafarer:block/old_boards2",
           "weight": 10
         },
         {
-          "model": "seafarer:block/old_boards_2",
+          "model": "seafarer:block/old_boards3",
           "weight": 10
         }
     ],
     "facing=down": [
         {
-          "model": "seafarer:block/old_boards",
+          "model": "seafarer:block/old_boards1",
           "weight": 10
         },
         {
-          "model": "seafarer:block/old_boards_1",
+          "model": "seafarer:block/old_boards2",
           "weight": 10
         },
         {
-          "model": "seafarer:block/old_boards_2",
+          "model": "seafarer:block/old_boards3",
           "weight": 10
         }
     ],
     "facing=north": [
         {
-          "model": "seafarer:block/old_boards",
+          "model": "seafarer:block/old_boards1",
           "weight": 10
         },
         {
-          "model": "seafarer:block/old_boards_1",
+          "model": "seafarer:block/old_boards2",
           "weight": 10
         },
         {
-          "model": "seafarer:block/old_boards_2",
+          "model": "seafarer:block/old_boards3",
           "weight": 10
         }
     ],
     "facing=south": [
         {
-          "model": "seafarer:block/old_boards",
+          "model": "seafarer:block/old_boards1",
           "weight": 10,
           "y": 180
         },
         {
-          "model": "seafarer:block/old_boards_1",
+          "model": "seafarer:block/old_boards2",
           "weight": 10,
           "y": 180
         },
         {
-          "model": "seafarer:block/old_boards_2",
+          "model": "seafarer:block/old_boards3",
           "weight": 10,
           "y": 180
         }
     ],
     "facing=east": [
         {
-          "model": "seafarer:block/old_boards",
+          "model": "seafarer:block/old_boards1",
           "weight": 10,
           "y": 90
         },
         {
-          "model": "seafarer:block/old_boards_1",
+          "model": "seafarer:block/old_boards2",
           "weight": 10,
           "y": 90
         },
         {
-          "model": "seafarer:block/old_boards_2",
+          "model": "seafarer:block/old_boards3",
           "weight": 10,
           "y": 90
         }
     ],
     "facing=west": [
         {
-          "model": "seafarer:block/old_boards",
+          "model": "seafarer:block/old_boards1",
           "weight": 10,
           "y": 270
         },
         {
-          "model": "seafarer:block/old_boards_1",
+          "model": "seafarer:block/old_boards2",
           "weight": 10,
           "y": 270
         },
         {
-          "model": "seafarer:block/old_boards_2",
+          "model": "seafarer:block/old_boards3",
           "weight": 10,
           "y": 270
         }

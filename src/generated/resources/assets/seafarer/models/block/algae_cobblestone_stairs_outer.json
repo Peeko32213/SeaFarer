@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "seafarer:block/algae_cobblestone",
-    "side": "seafarer:block/algae_cobblestone",
-    "top": "seafarer:block/algae_cobblestone"
-  }
-}

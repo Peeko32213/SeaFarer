@@ -25,11 +25,13 @@ public class SeaItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Seafarer.MOD_ID);
 
-    public static final RegistryObject<Item> SHORE_CRAB_SPAWN_EGG = registerSpawnEgg("shore_crab", SeaEntities.SHORE_CRAB, 0xf3901f, 0x92fedb);
+    public static final RegistryObject<Item> LIGHT_BLUE_SEA_GLASS_PEBBLES = registerItem("light_blue_sea_glass_pebbles", () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> HORSESHOE_CRAB_SPAWN_EGG = registerSpawnEgg("horseshoe_crab", SeaEntities.HORSESHOE_CRAB , 0x251a13, 0x473d2c);
     public static final RegistryObject<Item> MANTA_RAY_SPAWN_EGG = registerSpawnEgg("manta_ray", SeaEntities.MANTA_RAY , 0x070708, 0xedf5f5);
 //    public static final RegistryObject<Item> MARINE_IGUANA_SPAWN_EGG = registerSpawnEgg("marine_iguana", SeafarerEntities.MARINE_IGUANA , 0xb43324, 0x4fdecb);
     public static final RegistryObject<Item> PARROTFISH_SPAWN_EGG = registerSpawnEgg("parrotfish", SeaEntities.PARROTFISH , 0x2ac9e5, 0xfbb1ea);
+    public static final RegistryObject<Item> SHORE_CRAB_SPAWN_EGG = registerSpawnEgg("shore_crab", SeaEntities.SHORE_CRAB, 0xf3901f, 0x92fedb);
     public static final RegistryObject<Item> SUNFISH_SPAWN_EGG = registerSpawnEgg("sunfish", SeaEntities.SUNFISH , 0x628398, 0x33436b);
 
     public static final RegistryObject<Item> RAW_SHORE_CRAB_LEG = registerItemNoLang("shore_crab_leg", () -> new Item(new Item.Properties().food(SeaFoodValues.RAW_SHORE_CRAB)));
@@ -73,8 +75,6 @@ public class SeaItems {
     public static final RegistryObject<Item> VERDANT_CORAL_FAN = ITEMS.register("verdant_coral_fan", () -> new StandingAndWallBlockItem(SeaBlocks.VERDANT_CORAL_FAN.get(), SeaBlocks.VERDANT_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
     public static final RegistryObject<Item> DEAD_VERDANT_CORAL_FAN = ITEMS.register("dead_verdant_coral_fan", () -> new StandingAndWallBlockItem(SeaBlocks.DEAD_VERDANT_CORAL_FAN.get(), SeaBlocks.DEAD_VERDANT_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
 
-    public static final RegistryObject<Item> SEA_GRAPES = registerItem("sea_grapes", () -> new ItemNameBlockItem(SeaBlocks.SEA_GRAPES_CROP.get(), new Item.Properties().food(SeaFoodValues.SALTED_COD)));
-    public static final RegistryObject<Item> WAKAME = registerItem("wakame", () -> new ItemNameBlockItem(SeaBlocks.WAKAME.get(), new Item.Properties().food(SeaFoodValues.SALTED_COD)));
     public static final RegistryObject<Item> SEA_URCHIN = registerItem("sea_urchin", () -> new ItemNameBlockItem(SeaBlocks.SEA_URCHIN.get(), new Item.Properties().food(SeaFoodValues.SALTED_COD)) {
         @Override
         public void registerBlocks(Map<Block, Item> blockItemMap, Item item) {

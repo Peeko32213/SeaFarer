@@ -9,6 +9,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
 
 import static net.minecraft.world.level.levelgen.SurfaceRules.*;
 
@@ -20,6 +21,8 @@ public class SeaSurfaceRules {
     private static final SurfaceRules.RuleSource CORALINE_SANDSTONE = makeStateRule(SeaBlocks.CORALINE_SANDSTONE.get());
     private static final SurfaceRules.RuleSource ASHEN_SAND = makeStateRule(SeaBlocks.ASHEN_SAND.get());
     private static final SurfaceRules.RuleSource ASHEN_SANDSTONE = makeStateRule(SeaBlocks.ASHEN_SANDSTONE.get());
+    private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
+    private static final SurfaceRules.RuleSource WATER = makeStateRule(Blocks.WATER);
 
     public static void register() {
 
@@ -43,11 +46,19 @@ public class SeaSurfaceRules {
                 SurfaceRules.ifTrue(abovePreliminarySurface(), sequence(ifTrue(noiseRange(0.3F, 2.5F), oceanSandRuleSource(CORALINE_SAND, CORALINE_SANDSTONE)), oceanSandRuleSource(SAND, SANDSTONE)))
         );
 
+        SurfaceRules.RuleSource tropical_river = SurfaceRules.ifTrue(
+                SurfaceRules.isBiome(SeaBiomes.TROPICAL_RIVER),
+                SurfaceRules.sequence(
+                        SurfaceRules.ifTrue(surfaceNoiseAbove(1.25), SAND), SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(60), 0),
+                        SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(63), 0)), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0), WATER)))
+        ));
+
         SurfaceRules.RuleSource kelp_forest = SurfaceRules.ifTrue(
                 SurfaceRules.isBiome(SeaBiomes.KELP_FOREST),
                 SurfaceRules.ifTrue(abovePreliminarySurface(), oceanSandRuleSource(SAND, SANDSTONE))
         );
 
+        // vanilla biomes
         SurfaceRules.RuleSource lukewarm_ocean = SurfaceRules.ifTrue(
                 SurfaceRules.isBiome(Biomes.LUKEWARM_OCEAN, Biomes.DEEP_LUKEWARM_OCEAN),
                 SurfaceRules.ifTrue(abovePreliminarySurface(), oceanSandRuleSource(SAND, SANDSTONE))
@@ -58,7 +69,15 @@ public class SeaSurfaceRules {
                 SurfaceRules.ifTrue(
                         SurfaceRules.abovePreliminarySurface(),
                         SurfaceRules.sequence(
-                                SurfaceRules.sequence(sandy_beach, coral_beach, ashen_beach, warm_reef, kelp_forest, lukewarm_ocean)
+                                SurfaceRules.sequence(
+                                        sandy_beach,
+                                        coral_beach,
+                                        ashen_beach,
+                                        warm_reef,
+                                        tropical_river,
+                                        kelp_forest,
+                                        lukewarm_ocean
+                                )
                         )
                 )
         );
@@ -80,6 +99,10 @@ public class SeaSurfaceRules {
 
     private static RuleSource makeStateRule(Block block) {
         return state(block.defaultBlockState());
+    }
+
+    private static SurfaceRules.ConditionSource surfaceNoiseAbove(double value) {
+        return SurfaceRules.noiseCondition(Noises.SURFACE, value / 8.25, Double.MAX_VALUE);
     }
 
     private static ConditionSource noiseRange(float low, float high) {

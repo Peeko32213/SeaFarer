@@ -84,7 +84,6 @@ public class Seafarer {
         generator.addProvider(server, new SeaPaintingTagProvider(output, provider, helper));
         generator.addProvider(server, new SeaRecipeGenerator(output));
         generator.addProvider(server, SeaLootProvider.create(output));
-//        generator.addProvider(server, new SeaChunkGeneratorModifierProvider(event, datapackEntries));
 
         boolean client = event.includeClient();
 

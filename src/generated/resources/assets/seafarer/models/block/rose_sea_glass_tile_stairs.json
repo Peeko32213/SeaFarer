@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "seafarer:block/rose_sea_glass_tiles",
-    "side": "seafarer:block/rose_sea_glass_tiles",
-    "top": "seafarer:block/rose_sea_glass_tiles"
-  }
-}

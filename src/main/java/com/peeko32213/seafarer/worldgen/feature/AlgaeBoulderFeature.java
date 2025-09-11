@@ -65,7 +65,7 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
     public static void createSphere(WorldGenLevel worldgenlevel, RandomSource rand, BlockPos origin, FastNoiseLite noise) {
         int height = rand.nextInt(2, 4);
         int radius = height;
-        BlockState block = SeaBlocks.ALGAE_COBBLESTONE.get().defaultBlockState();
+        BlockState block = Blocks.MOSSY_COBBLESTONE.defaultBlockState();
         BlockState block2 = SeaBlocks.ALGAE_BLOCK.get().defaultBlockState();
         BlockState block3 = Blocks.COBBLESTONE.defaultBlockState();
         //BlockState block3 = SFBlocks.GRAVELLY_SAND.get().defaultBlockState();
@@ -113,7 +113,7 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
                 double distance = distance(x, 0, z, radius, 1, radius);
                 float f = noise.GetNoise(x, (float) yHeight, z);
                 if (distance < 1) {
-                    boolean isCorrectBlock = worldgenlevel.getBlockState(pos2).is(Blocks.AIR) || !worldgenlevel.getFluidState(pos2).isEmpty() || worldgenlevel.getBlockState(pos2.below()).is(BlockTags.BASE_STONE_OVERWORLD) || worldgenlevel.getBlockState(pos2.below()).is(SeaBlocks.ALGAE_COBBLESTONE.get());
+                    boolean isCorrectBlock = worldgenlevel.getBlockState(pos2).is(Blocks.AIR) || !worldgenlevel.getFluidState(pos2).isEmpty() || worldgenlevel.getBlockState(pos2.below()).is(BlockTags.BASE_STONE_OVERWORLD) || worldgenlevel.getBlockState(pos2.below()).is(Blocks.MOSSY_COBBLESTONE);
                     if (f > 0 && f < 0.5 && isCorrectBlock) {
                         block = block.setValue(BlockStateProperties.WATERLOGGED, worldgenlevel.getFluidState(pos2).is(Fluids.WATER));
                         worldgenlevel.setBlock(pos2, block, 3);
@@ -129,7 +129,7 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
 
     public static void changeTerrain(WorldGenLevel worldgenlevel, RandomSource rand, BlockPos origin, FastNoiseLite noise, int radius) {
         BlockState block = Blocks.SAND.defaultBlockState();
-        BlockState block2 = SeaBlocks.GRAVELLY_SAND.get().defaultBlockState();
+        BlockState block2 = SeaBlocks.ASHEN_SAND.get().defaultBlockState();
         for (int x = -radius; x < radius; x++) {
             for (int z = -radius; z < radius; z++) {
                 BlockPos pos = origin.offset(x, 0, z);

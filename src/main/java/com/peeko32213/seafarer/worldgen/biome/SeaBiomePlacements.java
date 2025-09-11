@@ -4,9 +4,12 @@ import com.peeko32213.seafarer.SeafarerConfig;
 import com.peeko32213.seafarer.registry.worldgen.SeaBiomes;
 import com.terraformersmc.biolith.api.biome.BiomePlacement;
 import com.terraformersmc.biolith.api.biome.SubBiomeMatcher;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biomes;
 
 public class SeaBiomePlacements {
+
+    public static final SubBiomeMatcher.Criterion NEAR_BORDER = SubBiomeMatcher.Criterion.ofMax(SubBiomeMatcher.CriterionTargets.EDGE, SubBiomeMatcher.CriterionTypes.RATIO, 1.25F);
 
     public static void register() {
 
@@ -17,7 +20,7 @@ public class SeaBiomePlacements {
                     SubBiomeMatcher.of(
                             SubBiomeMatcher.Criterion.ofRange(SubBiomeMatcher.CriterionTargets.TEMPERATURE, SubBiomeMatcher.CriterionTypes.VALUE, 0.3F, 0.55F, false),
                             SubBiomeMatcher.Criterion.ofRange(SubBiomeMatcher.CriterionTargets.HUMIDITY, SubBiomeMatcher.CriterionTypes.VALUE, 0.1F, 1.0F, false)
-                    ));
+            ));
         }
 
         if (SeafarerConfig.CORAL_BEACH.get()) {
@@ -27,7 +30,7 @@ public class SeaBiomePlacements {
                     SubBiomeMatcher.of(
                             SubBiomeMatcher.Criterion.ofRange(SubBiomeMatcher.CriterionTargets.TEMPERATURE, SubBiomeMatcher.CriterionTypes.VALUE, 0.2F, 0.55F, false),
                             SubBiomeMatcher.Criterion.ofRange(SubBiomeMatcher.CriterionTargets.HUMIDITY, SubBiomeMatcher.CriterionTypes.VALUE, 0.2F, 1.0F, false)
-                    ));
+            ));
         }
 
         if (SeafarerConfig.FLOWERING_BEACH.get()) {
@@ -60,6 +63,14 @@ public class SeaBiomePlacements {
                     SeaBiomes.KELP_FOREST,
                     0.1D
             );
+        }
+
+        if (SeafarerConfig.TROPICAL_RIVER.get()) {
+            BiomePlacement.addSubOverworld(
+                    Biomes.RIVER,
+                    SeaBiomes.TROPICAL_RIVER,
+                    SubBiomeMatcher.of(NEAR_BORDER, SubBiomeMatcher.Criterion.ofBiome(SubBiomeMatcher.CriterionTargets.NEIGHBOR, BiomeTags.IS_JUNGLE, false)
+            ));
         }
 
         if (SeafarerConfig.WARM_REEF.get()) {

@@ -41,17 +41,13 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropWhenSilkTouch(SeaBlocks.AZURE_SEA_GLASS.get());
-        dropWhenSilkTouch(SeaBlocks.AZURE_SEA_GLASS_PANE.get());
-        dropSelf(SeaBlocks.AZURE_SEA_GLASS_BRICKS.get());
-        dropSelf(SeaBlocks.AZURE_SEA_GLASS_BRICK_SLAB.get());
-        dropSelf(SeaBlocks.AZURE_SEA_GLASS_BRICK_STAIRS.get());
-        dropSelf(SeaBlocks.AZURE_PEBBLED_SEA_GLASS.get());
-        dropSelf(SeaBlocks.AZURE_SEA_GLASS_TILES.get());
-        dropSelf(SeaBlocks.AZURE_SEA_GLASS_TILE_SLAB.get());
-        dropSelf(SeaBlocks.AZURE_SEA_GLASS_TILE_STAIRS.get());
-        dropSelf(SeaBlocks.AZURE_SEA_GLASS_PEBBLES.get());
-        dropSelf(SeaBlocks.AZURE_SEA_GLASS_BOTTLE.get());
+        dropWhenSilkTouch(SeaBlocks.LIGHT_BLUE_SEA_GLASS.get());
+        dropWhenSilkTouch(SeaBlocks.LIGHT_BLUE_SEA_GLASS_PANE.get());
+        dropSelf(SeaBlocks.LIGHT_BLUE_SEA_GLASS_BRICKS.get());
+        dropSelf(SeaBlocks.LIGHT_BLUE_GLASS_BRICK_SLAB.get());
+        dropSelf(SeaBlocks.LIGHT_BLUE_SEA_GLASS_BRICK_STAIRS.get());
+        dropSelf(SeaBlocks.LIGHT_BLUE_PEBBLED_SEA_GLASS.get());
+        dropSelf(SeaBlocks.LIGHT_BLUE_SEA_GLASS_BOTTLE.get());
 
         dropWhenSilkTouch(SeaBlocks.UMBER_SEA_GLASS.get());
         dropWhenSilkTouch(SeaBlocks.UMBER_SEA_GLASS_PANE.get());
@@ -59,10 +55,6 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SeaBlocks.UMBER_SEA_GLASS_BRICK_SLAB.get());
         dropSelf(SeaBlocks.UMBER_SEA_GLASS_BRICK_STAIRS.get());
         dropSelf(SeaBlocks.UMBER_PEBBLED_SEA_GLASS.get());
-        dropSelf(SeaBlocks.UMBER_SEA_GLASS_TILES.get());
-        dropSelf(SeaBlocks.UMBER_SEA_GLASS_TILE_SLAB.get());
-        dropSelf(SeaBlocks.UMBER_SEA_GLASS_TILE_STAIRS.get());
-        dropSelf(SeaBlocks.UMBER_SEA_GLASS_PEBBLES.get());
         dropSelf(SeaBlocks.UMBER_SEA_GLASS_BOTTLE.get());
 
         dropWhenSilkTouch(SeaBlocks.SEAFOAM_SEA_GLASS.get());
@@ -71,10 +63,6 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SeaBlocks.SEAFOAM_SEA_GLASS_BRICK_SLAB.get());
         dropSelf(SeaBlocks.SEAFOAM_SEA_GLASS_BRICK_STAIRS.get());
         dropSelf(SeaBlocks.SEAFOAM_PEBBLED_SEA_GLASS.get());
-        dropSelf(SeaBlocks.SEAFOAM_SEA_GLASS_TILES.get());
-        dropSelf(SeaBlocks.SEAFOAM_SEA_GLASS_TILE_SLAB.get());
-        dropSelf(SeaBlocks.SEAFOAM_SEA_GLASS_TILE_STAIRS.get());
-        dropSelf(SeaBlocks.SEAFOAM_SEA_GLASS_PEBBLES.get());
         dropSelf(SeaBlocks.SEAFOAM_SEA_GLASS_BOTTLE.get());
 
         dropWhenSilkTouch(SeaBlocks.AMBER_SEA_GLASS.get());
@@ -83,10 +71,6 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SeaBlocks.AMBER_SEA_GLASS_BRICK_SLAB.get());
         dropSelf(SeaBlocks.AMBER_SEA_GLASS_BRICK_STAIRS.get());
         dropSelf(SeaBlocks.AMBER_PEBBLED_SEA_GLASS.get());
-        dropSelf(SeaBlocks.AMBER_SEA_GLASS_TILES.get());
-        dropSelf(SeaBlocks.AMBER_SEA_GLASS_TILE_SLAB.get());
-        dropSelf(SeaBlocks.AMBER_SEA_GLASS_TILE_STAIRS.get());
-        dropSelf(SeaBlocks.AMBER_SEA_GLASS_PEBBLES.get());
         dropSelf(SeaBlocks.AMBER_SEA_GLASS_BOTTLE.get());
 
         dropWhenSilkTouch(SeaBlocks.LILAC_SEA_GLASS.get());
@@ -95,10 +79,6 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SeaBlocks.LILAC_SEA_GLASS_BRICK_SLAB.get());
         dropSelf(SeaBlocks.LILAC_SEA_GLASS_BRICK_STAIRS.get());
         dropSelf(SeaBlocks.LILAC_PEBBLED_SEA_GLASS.get());
-        dropSelf(SeaBlocks.LILAC_SEA_GLASS_TILES.get());
-        dropSelf(SeaBlocks.LILAC_SEA_GLASS_TILE_SLAB.get());
-        dropSelf(SeaBlocks.LILAC_SEA_GLASS_TILE_STAIRS.get());
-        dropSelf(SeaBlocks.LILAC_SEA_GLASS_PEBBLES.get());
         dropSelf(SeaBlocks.LILAC_SEA_GLASS_BOTTLE.get());
 
         dropWhenSilkTouch(SeaBlocks.SCARLET_SEA_GLASS.get());
@@ -107,10 +87,6 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SeaBlocks.SCARLET_SEA_GLASS_BRICK_SLAB.get());
         dropSelf(SeaBlocks.SCARLET_SEA_GLASS_BRICK_STAIRS.get());
         dropSelf(SeaBlocks.SCARLET_PEBBLED_SEA_GLASS.get());
-        dropSelf(SeaBlocks.SCARLET_SEA_GLASS_TILES.get());
-        dropSelf(SeaBlocks.SCARLET_SEA_GLASS_TILE_SLAB.get());
-        dropSelf(SeaBlocks.SCARLET_SEA_GLASS_TILE_STAIRS.get());
-        dropSelf(SeaBlocks.SCARLET_SEA_GLASS_PEBBLES.get());
         dropSelf(SeaBlocks.SCARLET_SEA_GLASS_BOTTLE.get());
 
         dropWhenSilkTouch(SeaBlocks.PEARLY_SEA_GLASS.get());
@@ -119,10 +95,6 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SeaBlocks.PEARLY_SEA_GLASS_BRICK_SLAB.get());
         dropSelf(SeaBlocks.PEARLY_SEA_GLASS_BRICK_STAIRS.get());
         dropSelf(SeaBlocks.PEARLY_PEBBLED_SEA_GLASS.get());
-        dropSelf(SeaBlocks.PEARLY_SEA_GLASS_TILES.get());
-        dropSelf(SeaBlocks.PEARLY_SEA_GLASS_TILE_SLAB.get());
-        dropSelf(SeaBlocks.PEARLY_SEA_GLASS_TILE_STAIRS.get());
-        dropSelf(SeaBlocks.PEARLY_SEA_GLASS_PEBBLES.get());
         dropSelf(SeaBlocks.PEARLY_SEA_GLASS_BOTTLE.get());
 
         dropWhenSilkTouch(SeaBlocks.CITRINE_SEA_GLASS.get());
@@ -131,10 +103,6 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SeaBlocks.CITRINE_SEA_GLASS_BRICK_SLAB.get());
         dropSelf(SeaBlocks.CITRINE_SEA_GLASS_BRICK_STAIRS.get());
         dropSelf(SeaBlocks.CITRINE_PEBBLED_SEA_GLASS.get());
-        dropSelf(SeaBlocks.CITRINE_SEA_GLASS_TILES.get());
-        dropSelf(SeaBlocks.CITRINE_SEA_GLASS_TILE_SLAB.get());
-        dropSelf(SeaBlocks.CITRINE_SEA_GLASS_TILE_STAIRS.get());
-        dropSelf(SeaBlocks.CITRINE_SEA_GLASS_PEBBLES.get());
         dropSelf(SeaBlocks.CITRINE_SEA_GLASS_BOTTLE.get());
 
         dropWhenSilkTouch(SeaBlocks.ROSE_SEA_GLASS.get());
@@ -143,10 +111,6 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SeaBlocks.ROSE_SEA_GLASS_BRICK_SLAB.get());
         dropSelf(SeaBlocks.ROSE_SEA_GLASS_BRICK_STAIRS.get());
         dropSelf(SeaBlocks.ROSE_PEBBLED_SEA_GLASS.get());
-        dropSelf(SeaBlocks.ROSE_SEA_GLASS_TILES.get());
-        dropSelf(SeaBlocks.ROSE_SEA_GLASS_TILE_SLAB.get());
-        dropSelf(SeaBlocks.ROSE_SEA_GLASS_TILE_STAIRS.get());
-        dropSelf(SeaBlocks.ROSE_SEA_GLASS_PEBBLES.get());
         dropSelf(SeaBlocks.ROSE_SEA_GLASS_BOTTLE.get());
 
         dropWhenSilkTouch(SeaBlocks.CHARTREUSE_SEA_GLASS.get());
@@ -155,10 +119,6 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SeaBlocks.CHARTREUSE_SEA_GLASS_BRICK_SLAB.get());
         dropSelf(SeaBlocks.CHARTREUSE_SEA_GLASS_BRICK_STAIRS.get());
         dropSelf(SeaBlocks.CHARTREUSE_PEBBLED_SEA_GLASS.get());
-        dropSelf(SeaBlocks.CHARTREUSE_SEA_GLASS_TILES.get());
-        dropSelf(SeaBlocks.CHARTREUSE_SEA_GLASS_TILE_SLAB.get());
-        dropSelf(SeaBlocks.CHARTREUSE_SEA_GLASS_TILE_STAIRS.get());
-        dropSelf(SeaBlocks.CHARTREUSE_SEA_GLASS_PEBBLES.get());
         dropSelf(SeaBlocks.CHARTREUSE_SEA_GLASS_BOTTLE.get());
 
         dropSelf(SeaBlocks.FISHING_NET.get());
@@ -175,9 +135,6 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SeaBlocks.ALGAE_BLOCK.get());
         dropWhenSilkTouch(SeaBlocks.ALGAE_CARPET.get());
         dropWhenSilkTouch(SeaBlocks.ALGAE_PLANT.get());
-        dropSelf(SeaBlocks.ALGAE_COBBLESTONE.get());
-        dropSelf(SeaBlocks.ALGAE_COBBLESTONE_STAIRS.get());
-        dropSelf(SeaBlocks.ALGAE_COBBLESTONE_SLAB.get());
 
         dropSelf(SeaBlocks.CLAM_SHELL.get());
         dropSelf(SeaBlocks.HORN_SHELL.get());
@@ -226,8 +183,6 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SeaBlocks.PYRAMID_SHELL_BRICK_STAIRS.get());
         dropSelf(SeaBlocks.PYRAMID_SHELL_BRICK_SLAB.get());
 
-        dropSelf(SeaBlocks.GRAVELLY_SAND.get());
-        dropSelf(SeaBlocks.SPRINKLED_SAND.get());
         dropSelf(SeaBlocks.CORALINE_SAND.get());
 
         createMultipleDrops(SeaBlocks.SHELLY_SAND.get(), SeaBlocks.SPIRAL_SHELL.get().asItem(), SeaBlocks.SWIRL_SHELL.get().asItem());
@@ -236,14 +191,6 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
         createPotFlowerItemTable(SeaBlocks.POTTED_SEA_HOLLY.get(), SeaBlocks.SEA_HOLLY.get());
         createPotFlowerItemTable(SeaBlocks.POTTED_SEA_THRIFT.get(), SeaBlocks.SEA_THRIFT.get());
         createPotFlowerItemTable(SeaBlocks.POTTED_COASTAL_WILDFLOWER.get(), SeaBlocks.COASTAL_WILDFLOWER.get());
-
-        dropSelf(SeaBlocks.ALGAE_COBBLESTONE.get());
-        dropSelf(SeaBlocks.ALGAE_COBBLESTONE_SLAB.get());
-        dropSelf(SeaBlocks.ALGAE_COBBLESTONE_STAIRS.get());
-
-        dropSelf(SeaBlocks.WAKAME.get());
-
-
     }
     protected void createPotFlowerItemTable(Block flowerpotBlock, ItemLike pItem) {
         add(flowerpotBlock ,LootTable.lootTable()

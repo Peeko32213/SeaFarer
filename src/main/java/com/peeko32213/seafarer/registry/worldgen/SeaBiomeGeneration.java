@@ -104,4 +104,16 @@ public class SeaBiomeGeneration {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.KELP_FOREST_KELP);
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
     }
+
+    public static void tropicalRiver(BiomeGenerationSettings.Builder generation) {
+        OverworldBiomes.globalOverworldGeneration(generation);
+        BiomeDefaultFeatures.addDefaultOres(generation);
+        BiomeDefaultFeatures.addDefaultSoftDisks(generation);
+        BiomeDefaultFeatures.addWaterTrees(generation);
+        BiomeDefaultFeatures.addDefaultFlowers(generation);
+        BiomeDefaultFeatures.addDefaultGrass(generation);
+        BiomeDefaultFeatures.addDefaultMushrooms(generation);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
+    }
 }

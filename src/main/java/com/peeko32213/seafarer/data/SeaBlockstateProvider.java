@@ -45,18 +45,15 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.cubeAllBlock(ALGAE_BLOCK);
 
         // Azure Sea glass
-        this.cubeAllBlock(AZURE_PEBBLED_SEA_GLASS);
-        this.cubeAllBlockWithRenderType(AZURE_SEA_GLASS, "translucent");
+        this.cubeAllBlock(LIGHT_BLUE_PEBBLED_SEA_GLASS);
+        this.cubeAllBlockWithRenderType(LIGHT_BLUE_SEA_GLASS, "translucent");
 
-        this.cubeAllBlock(AZURE_SEA_GLASS_BRICKS);
-        this.slab(AZURE_SEA_GLASS_BRICK_SLAB, this.blockTexture(AZURE_SEA_GLASS_BRICKS.get()));
-        this.stairs(AZURE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(AZURE_SEA_GLASS_BRICKS.get()));
+        this.cubeAllBlock(LIGHT_BLUE_SEA_GLASS_BRICKS);
+        this.slab(LIGHT_BLUE_GLASS_BRICK_SLAB, this.blockTexture(LIGHT_BLUE_SEA_GLASS_BRICKS.get()));
+        this.stairs(LIGHT_BLUE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(LIGHT_BLUE_SEA_GLASS_BRICKS.get()));
 
-        this.cubeAllBlock(AZURE_SEA_GLASS_TILES);
-        this.slab(AZURE_SEA_GLASS_TILE_SLAB, this.blockTexture(AZURE_SEA_GLASS_TILES.get()));
-        this.stairs(AZURE_SEA_GLASS_TILE_STAIRS, this.blockTexture(AZURE_SEA_GLASS_TILES.get()));
-        this.directionalBlock(AZURE_SEA_GLASS_LAMP);
-        this.paneBlockWithRenderType((IronBarsBlock) AZURE_SEA_GLASS_PANE.get(), this.blockTexture(AZURE_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/azure_sea_glass_pane_top"), "translucent");
+        this.directionalBlock(LIGHT_BLUE_SEA_GLASS_LAMP);
+        this.paneBlockWithRenderType((IronBarsBlock) LIGHT_BLUE_SEA_GLASS_PANE.get(), this.blockTexture(LIGHT_BLUE_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/light_blue_sea_glass_pane_top"), "translucent");
 
         // Rose Sea glass
         this.cubeAllBlock(ROSE_PEBBLED_SEA_GLASS);
@@ -66,9 +63,6 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(ROSE_SEA_GLASS_BRICK_SLAB, this.blockTexture(ROSE_SEA_GLASS_BRICKS.get()));
         this.stairs(ROSE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(ROSE_SEA_GLASS_BRICKS.get()));
 
-        this.cubeAllBlock(ROSE_SEA_GLASS_TILES);
-        this.slab(ROSE_SEA_GLASS_TILE_SLAB, this.blockTexture(ROSE_SEA_GLASS_TILES.get()));
-        this.stairs(ROSE_SEA_GLASS_TILE_STAIRS, this.blockTexture(ROSE_SEA_GLASS_TILES.get()));
         this.directionalBlock(ROSE_SEA_GLASS_LAMP);
         this.paneBlockWithRenderType((IronBarsBlock) ROSE_SEA_GLASS_PANE.get(), this.blockTexture(ROSE_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/rose_sea_glass_pane_top"), "translucent");
 
@@ -80,9 +74,6 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(LILAC_SEA_GLASS_BRICK_SLAB, this.blockTexture(LILAC_SEA_GLASS_BRICKS.get()));
         this.stairs(LILAC_SEA_GLASS_BRICK_STAIRS, this.blockTexture(LILAC_SEA_GLASS_BRICKS.get()));
 
-        this.cubeAllBlock(LILAC_SEA_GLASS_TILES);
-        this.slab(LILAC_SEA_GLASS_TILE_SLAB, this.blockTexture(LILAC_SEA_GLASS_TILES.get()));
-        this.stairs(LILAC_SEA_GLASS_TILE_STAIRS, this.blockTexture(LILAC_SEA_GLASS_TILES.get()));
         this.directionalBlock(LILAC_SEA_GLASS_LAMP);
         this.paneBlockWithRenderType((IronBarsBlock) LILAC_SEA_GLASS_PANE.get(), this.blockTexture(LILAC_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/lilac_sea_glass_pane_top"), "translucent");
 
@@ -94,9 +85,6 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(SEAFOAM_SEA_GLASS_BRICK_SLAB, this.blockTexture(SEAFOAM_SEA_GLASS_BRICKS.get()));
         this.stairs(SEAFOAM_SEA_GLASS_BRICK_STAIRS, this.blockTexture(SEAFOAM_SEA_GLASS_BRICKS.get()));
 
-        this.cubeAllBlock(SEAFOAM_SEA_GLASS_TILES);
-        this.slab(SEAFOAM_SEA_GLASS_TILE_SLAB, this.blockTexture(SEAFOAM_SEA_GLASS_TILES.get()));
-        this.stairs(SEAFOAM_SEA_GLASS_TILE_STAIRS, this.blockTexture(SEAFOAM_SEA_GLASS_TILES.get()));
         this.directionalBlock(SEAFOAM_SEA_GLASS_LAMP);
         this.paneBlockWithRenderType((IronBarsBlock) SEAFOAM_SEA_GLASS_PANE.get(), this.blockTexture(SEAFOAM_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/seafoam_sea_glass_pane_top"), "translucent");
 
@@ -108,9 +96,6 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(CHARTREUSE_SEA_GLASS_BRICK_SLAB, this.blockTexture(CHARTREUSE_SEA_GLASS_BRICKS.get()));
         this.stairs(CHARTREUSE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(CHARTREUSE_SEA_GLASS_BRICKS.get()));
 
-        this.cubeAllBlock(CHARTREUSE_SEA_GLASS_TILES);
-        this.slab(CHARTREUSE_SEA_GLASS_TILE_SLAB, this.blockTexture(CHARTREUSE_SEA_GLASS_TILES.get()));
-        this.stairs(CHARTREUSE_SEA_GLASS_TILE_STAIRS, this.blockTexture(CHARTREUSE_SEA_GLASS_TILES.get()));
         this.directionalBlock(CHARTREUSE_SEA_GLASS_LAMP);
         this.paneBlockWithRenderType((IronBarsBlock) CHARTREUSE_SEA_GLASS_PANE.get(), this.blockTexture(CHARTREUSE_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/chartreuse_sea_glass_pane_top"), "translucent");
 
@@ -122,9 +107,6 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(CITRINE_SEA_GLASS_BRICK_SLAB, this.blockTexture(CITRINE_SEA_GLASS_BRICKS.get()));
         this.stairs(CITRINE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(CITRINE_SEA_GLASS_BRICKS.get()));
 
-        this.cubeAllBlock(CITRINE_SEA_GLASS_TILES);
-        this.slab(CITRINE_SEA_GLASS_TILE_SLAB, this.blockTexture(CITRINE_SEA_GLASS_TILES.get()));
-        this.stairs(CITRINE_SEA_GLASS_TILE_STAIRS, this.blockTexture(CITRINE_SEA_GLASS_TILES.get()));
         this.directionalBlock(CITRINE_SEA_GLASS_LAMP);
         this.paneBlockWithRenderType((IronBarsBlock) CITRINE_SEA_GLASS_PANE.get(), this.blockTexture(CITRINE_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/citrine_sea_glass_pane_top"), "translucent");
 
@@ -136,9 +118,6 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(AMBER_SEA_GLASS_BRICK_SLAB, this.blockTexture(AMBER_SEA_GLASS_BRICKS.get()));
         this.stairs(AMBER_SEA_GLASS_BRICK_STAIRS, this.blockTexture(AMBER_SEA_GLASS_BRICKS.get()));
 
-        this.cubeAllBlock(AMBER_SEA_GLASS_TILES);
-        this.slab(AMBER_SEA_GLASS_TILE_SLAB, this.blockTexture(AMBER_SEA_GLASS_TILES.get()));
-        this.stairs(AMBER_SEA_GLASS_TILE_STAIRS, this.blockTexture(AMBER_SEA_GLASS_TILES.get()));
         this.directionalBlock(AMBER_SEA_GLASS_LAMP);
         this.paneBlockWithRenderType((IronBarsBlock) AMBER_SEA_GLASS_PANE.get(), this.blockTexture(AMBER_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/amber_sea_glass_pane_top"), "translucent");
 
@@ -150,9 +129,6 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(SCARLET_SEA_GLASS_BRICK_SLAB, this.blockTexture(SCARLET_SEA_GLASS_BRICKS.get()));
         this.stairs(SCARLET_SEA_GLASS_BRICK_STAIRS, this.blockTexture(SCARLET_SEA_GLASS_BRICKS.get()));
 
-        this.cubeAllBlock(SCARLET_SEA_GLASS_TILES);
-        this.slab(SCARLET_SEA_GLASS_TILE_SLAB, this.blockTexture(SCARLET_SEA_GLASS_TILES.get()));
-        this.stairs(SCARLET_SEA_GLASS_TILE_STAIRS, this.blockTexture(SCARLET_SEA_GLASS_TILES.get()));
         this.directionalBlock(SCARLET_SEA_GLASS_LAMP);
         this.paneBlockWithRenderType((IronBarsBlock) SCARLET_SEA_GLASS_PANE.get(), this.blockTexture(SCARLET_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/scarlet_sea_glass_pane_top"), "translucent");
 
@@ -164,9 +140,6 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(UMBER_SEA_GLASS_BRICK_SLAB, this.blockTexture(UMBER_SEA_GLASS_BRICKS.get()));
         this.stairs(UMBER_SEA_GLASS_BRICK_STAIRS, this.blockTexture(UMBER_SEA_GLASS_BRICKS.get()));
 
-        this.cubeAllBlock(UMBER_SEA_GLASS_TILES);
-        this.slab(UMBER_SEA_GLASS_TILE_SLAB, this.blockTexture(UMBER_SEA_GLASS_TILES.get()));
-        this.stairs(UMBER_SEA_GLASS_TILE_STAIRS, this.blockTexture(UMBER_SEA_GLASS_TILES.get()));
         this.directionalBlock(UMBER_SEA_GLASS_LAMP);
         this.paneBlockWithRenderType((IronBarsBlock) UMBER_SEA_GLASS_PANE.get(), this.blockTexture(UMBER_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/umber_sea_glass_pane_top"), "translucent");
 
@@ -178,9 +151,6 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(PEARLY_SEA_GLASS_BRICK_SLAB, this.blockTexture(PEARLY_SEA_GLASS_BRICKS.get()));
         this.stairs(PEARLY_SEA_GLASS_BRICK_STAIRS, this.blockTexture(PEARLY_SEA_GLASS_BRICKS.get()));
 
-        this.cubeAllBlock(PEARLY_SEA_GLASS_TILES);
-        this.slab(PEARLY_SEA_GLASS_TILE_SLAB, this.blockTexture(PEARLY_SEA_GLASS_TILES.get()));
-        this.stairs(PEARLY_SEA_GLASS_TILE_STAIRS, this.blockTexture(PEARLY_SEA_GLASS_TILES.get()));
         this.directionalBlock(PEARLY_SEA_GLASS_LAMP);
         this.paneBlockWithRenderType((IronBarsBlock) PEARLY_SEA_GLASS_PANE.get(), this.blockTexture(PEARLY_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/pearly_sea_glass_pane_top"), "translucent");
 
@@ -216,10 +186,6 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.pillar(PYRAMID_SHELL_PILLAR);
 
         this.cubeAllBlock(SALT_BLOCK);
-
-        this.cubeAllBlock(ALGAE_COBBLESTONE);
-        this.stairs(ALGAE_COBBLESTONE_STAIRS, this.blockTexture(ALGAE_COBBLESTONE.get()));
-        this.slab(ALGAE_COBBLESTONE_SLAB, this.blockTexture(ALGAE_COBBLESTONE.get()));
 
         this.pottedPlant(SEA_THRIFT, POTTED_SEA_THRIFT);
         this.pottedPlant(COASTAL_LAVENDER, POTTED_COASTAL_LAVENDER);

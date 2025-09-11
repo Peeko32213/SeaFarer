@@ -10,7 +10,6 @@ import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -24,174 +23,13 @@ public class SeaRecipeGenerator extends SeaRecipeProvider implements IConditionB
         super(output);
     }
 
-    public static final int FAST_COOKING = 100;        // 5 seconds
-    public static final int NORMAL_COOKING = 200;    // 10 seconds
-    public static final int SLOW_COOKING = 400;        // 20 seconds
-
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
-
-        // Azure Sea Glass
-        makeSeaGlass(SeaBlocks.AZURE_SEA_GLASS, SeaBlocks.AZURE_SEA_GLASS_PEBBLES).save(consumer);
-        makeBricks(SeaBlocks.AZURE_SEA_GLASS_BRICKS, SeaBlocks.AZURE_SEA_GLASS).save(consumer);
-        makeStairs(SeaBlocks.AZURE_SEA_GLASS_BRICK_STAIRS, SeaBlocks.AZURE_SEA_GLASS_BRICKS).save(consumer);
-        makeSlab(SeaBlocks.AZURE_SEA_GLASS_BRICK_SLAB, SeaBlocks.AZURE_SEA_GLASS_BRICKS).save(consumer);
-
-        makeCondensedToBlock(SeaBlocks.AZURE_PEBBLED_SEA_GLASS, SeaBlocks.AZURE_SEA_GLASS_PEBBLES).save(consumer);
-
-        makeBricks(SeaBlocks.AZURE_SEA_GLASS_TILES, SeaBlocks.AZURE_SEA_GLASS_BRICKS).save(consumer);
-        makeStairs(SeaBlocks.AZURE_SEA_GLASS_TILE_STAIRS, SeaBlocks.AZURE_SEA_GLASS_TILES).save(consumer);
-        makeSlab(SeaBlocks.AZURE_SEA_GLASS_TILE_SLAB, SeaBlocks.AZURE_SEA_GLASS_TILES).save(consumer);
-        makePanes(SeaBlocks.AZURE_SEA_GLASS_PANE, SeaBlocks.AZURE_SEA_GLASS).save(consumer);
-
-        makeGlasstoBottle(SeaBlocks.AZURE_SEA_GLASS_BOTTLE, SeaBlocks.AZURE_SEA_GLASS).save(consumer);
-
-        // Umber Sea Glass
-        makeSeaGlass(SeaBlocks.UMBER_SEA_GLASS, SeaBlocks.UMBER_SEA_GLASS_PEBBLES).save(consumer);
-        makeBricks(SeaBlocks.UMBER_SEA_GLASS_BRICKS, SeaBlocks.UMBER_SEA_GLASS).save(consumer);
-        makeStairs(SeaBlocks.UMBER_SEA_GLASS_BRICK_STAIRS, SeaBlocks.UMBER_SEA_GLASS_BRICKS).save(consumer);
-        makeSlab(SeaBlocks.UMBER_SEA_GLASS_BRICK_SLAB, SeaBlocks.UMBER_SEA_GLASS_BRICKS).save(consumer);
-
-        makeCondensedToBlock(SeaBlocks.UMBER_PEBBLED_SEA_GLASS, SeaBlocks.UMBER_SEA_GLASS_PEBBLES).save(consumer);
-
-        makeBricks(SeaBlocks.UMBER_SEA_GLASS_TILES, SeaBlocks.UMBER_SEA_GLASS_BRICKS).save(consumer);
-        makeStairs(SeaBlocks.UMBER_SEA_GLASS_TILE_STAIRS, SeaBlocks.UMBER_SEA_GLASS_TILES).save(consumer);
-        makeSlab(SeaBlocks.UMBER_SEA_GLASS_TILE_SLAB, SeaBlocks.UMBER_SEA_GLASS_TILES).save(consumer);
-        makePanes(SeaBlocks.UMBER_SEA_GLASS_PANE, SeaBlocks.UMBER_SEA_GLASS).save(consumer);
-
-        makeGlasstoBottle(SeaBlocks.UMBER_SEA_GLASS_BOTTLE, SeaBlocks.UMBER_SEA_GLASS).save(consumer);
-
-        // Seafoam Sea Glass
-        makeSeaGlass(SeaBlocks.SEAFOAM_SEA_GLASS, SeaBlocks.SEAFOAM_SEA_GLASS_PEBBLES).save(consumer);
-        makeBricks(SeaBlocks.SEAFOAM_SEA_GLASS_BRICKS, SeaBlocks.SEAFOAM_SEA_GLASS).save(consumer);
-        makeStairs(SeaBlocks.SEAFOAM_SEA_GLASS_BRICK_STAIRS, SeaBlocks.SEAFOAM_SEA_GLASS_BRICKS).save(consumer);
-        makeSlab(SeaBlocks.SEAFOAM_SEA_GLASS_BRICK_SLAB, SeaBlocks.SEAFOAM_SEA_GLASS_BRICKS).save(consumer);
-
-        makeCondensedToBlock(SeaBlocks.SEAFOAM_PEBBLED_SEA_GLASS, SeaBlocks.SEAFOAM_SEA_GLASS_PEBBLES).save(consumer);
-
-        makeBricks(SeaBlocks.SEAFOAM_SEA_GLASS_TILES, SeaBlocks.SEAFOAM_SEA_GLASS_BRICKS).save(consumer);
-        makeStairs(SeaBlocks.SEAFOAM_SEA_GLASS_TILE_STAIRS, SeaBlocks.SEAFOAM_SEA_GLASS_TILES).save(consumer);
-        makeSlab(SeaBlocks.SEAFOAM_SEA_GLASS_TILE_SLAB, SeaBlocks.SEAFOAM_SEA_GLASS_TILES).save(consumer);
-        makePanes(SeaBlocks.SEAFOAM_SEA_GLASS_PANE, SeaBlocks.SEAFOAM_SEA_GLASS).save(consumer);
-
-        makeGlasstoBottle(SeaBlocks.SEAFOAM_SEA_GLASS_BOTTLE, SeaBlocks.SEAFOAM_SEA_GLASS).save(consumer);
-
-        // Amber Sea Glass
-        makeSeaGlass(SeaBlocks.AMBER_SEA_GLASS, SeaBlocks.AMBER_SEA_GLASS_PEBBLES).save(consumer);
-        makeBricks(SeaBlocks.AMBER_SEA_GLASS_BRICKS, SeaBlocks.AMBER_SEA_GLASS).save(consumer);
-        makeStairs(SeaBlocks.AMBER_SEA_GLASS_BRICK_STAIRS, SeaBlocks.AMBER_SEA_GLASS_BRICKS).save(consumer);
-        makeSlab(SeaBlocks.AMBER_SEA_GLASS_BRICK_SLAB, SeaBlocks.AMBER_SEA_GLASS_BRICKS).save(consumer);
-
-        makeCondensedToBlock(SeaBlocks.AMBER_PEBBLED_SEA_GLASS, SeaBlocks.AMBER_SEA_GLASS_PEBBLES).save(consumer);
-
-        makeBricks(SeaBlocks.AMBER_SEA_GLASS_TILES, SeaBlocks.AMBER_SEA_GLASS_BRICKS).save(consumer);
-        makeStairs(SeaBlocks.AMBER_SEA_GLASS_TILE_STAIRS, SeaBlocks.AMBER_SEA_GLASS_TILES).save(consumer);
-        makeSlab(SeaBlocks.AMBER_SEA_GLASS_TILE_SLAB, SeaBlocks.AMBER_SEA_GLASS_TILES).save(consumer);
-        makePanes(SeaBlocks.AMBER_SEA_GLASS_PANE, SeaBlocks.AMBER_SEA_GLASS).save(consumer);
-
-        makeGlasstoBottle(SeaBlocks.AMBER_SEA_GLASS_BOTTLE, SeaBlocks.AMBER_SEA_GLASS).save(consumer);
-
-        // Lilac Sea Glass
-        makeSeaGlass(SeaBlocks.LILAC_SEA_GLASS, SeaBlocks.LILAC_SEA_GLASS_PEBBLES).save(consumer);
-        makeBricks(SeaBlocks.LILAC_SEA_GLASS_BRICKS, SeaBlocks.LILAC_SEA_GLASS).save(consumer);
-        makeStairs(SeaBlocks.LILAC_SEA_GLASS_BRICK_STAIRS, SeaBlocks.LILAC_SEA_GLASS_BRICKS).save(consumer);
-        makeSlab(SeaBlocks.LILAC_SEA_GLASS_BRICK_SLAB, SeaBlocks.LILAC_SEA_GLASS_BRICKS).save(consumer);
-
-        makeCondensedToBlock(SeaBlocks.LILAC_PEBBLED_SEA_GLASS, SeaBlocks.LILAC_SEA_GLASS_PEBBLES).save(consumer);
-
-        makeBricks(SeaBlocks.LILAC_SEA_GLASS_TILES, SeaBlocks.LILAC_SEA_GLASS_BRICKS).save(consumer);
-        makeStairs(SeaBlocks.LILAC_SEA_GLASS_TILE_STAIRS, SeaBlocks.LILAC_SEA_GLASS_TILES).save(consumer);
-        makeSlab(SeaBlocks.LILAC_SEA_GLASS_TILE_SLAB, SeaBlocks.LILAC_SEA_GLASS_TILES).save(consumer);
-        makePanes(SeaBlocks.LILAC_SEA_GLASS_PANE, SeaBlocks.LILAC_SEA_GLASS).save(consumer);
-
-        makeGlasstoBottle(SeaBlocks.LILAC_SEA_GLASS_BOTTLE, SeaBlocks.LILAC_SEA_GLASS).save(consumer);
-
-        // Scarlet Sea Glass
-        makeSeaGlass(SeaBlocks.SCARLET_SEA_GLASS, SeaBlocks.SCARLET_SEA_GLASS_PEBBLES).save(consumer);
-        makeBricks(SeaBlocks.SCARLET_SEA_GLASS_BRICKS, SeaBlocks.SCARLET_SEA_GLASS).save(consumer);
-        makeStairs(SeaBlocks.SCARLET_SEA_GLASS_BRICK_STAIRS, SeaBlocks.SCARLET_SEA_GLASS_BRICKS).save(consumer);
-        makeSlab(SeaBlocks.SCARLET_SEA_GLASS_BRICK_SLAB, SeaBlocks.SCARLET_SEA_GLASS_BRICKS).save(consumer);
-
-        makeCondensedToBlock(SeaBlocks.SCARLET_PEBBLED_SEA_GLASS, SeaBlocks.SCARLET_SEA_GLASS_PEBBLES).save(consumer);
-
-        makeBricks(SeaBlocks.SCARLET_SEA_GLASS_TILES, SeaBlocks.SCARLET_SEA_GLASS_BRICKS).save(consumer);
-        makeStairs(SeaBlocks.SCARLET_SEA_GLASS_TILE_STAIRS, SeaBlocks.SCARLET_SEA_GLASS_TILES).save(consumer);
-        makeSlab(SeaBlocks.SCARLET_SEA_GLASS_TILE_SLAB, SeaBlocks.SCARLET_SEA_GLASS_TILES).save(consumer);
-        makePanes(SeaBlocks.SCARLET_SEA_GLASS_PANE, SeaBlocks.SCARLET_SEA_GLASS).save(consumer);
-
-        makeGlasstoBottle(SeaBlocks.SCARLET_SEA_GLASS_BOTTLE, SeaBlocks.SCARLET_SEA_GLASS).save(consumer);
-
-        // Pearly Sea Glass
-        makeSeaGlass(SeaBlocks.PEARLY_SEA_GLASS, SeaBlocks.PEARLY_SEA_GLASS_PEBBLES).save(consumer);
-        makeBricks(SeaBlocks.PEARLY_SEA_GLASS_BRICKS, SeaBlocks.PEARLY_SEA_GLASS).save(consumer);
-        makeStairs(SeaBlocks.PEARLY_SEA_GLASS_BRICK_STAIRS, SeaBlocks.PEARLY_SEA_GLASS_BRICKS).save(consumer);
-        makeSlab(SeaBlocks.PEARLY_SEA_GLASS_BRICK_SLAB, SeaBlocks.PEARLY_SEA_GLASS_BRICKS).save(consumer);
-
-        makeCondensedToBlock(SeaBlocks.PEARLY_PEBBLED_SEA_GLASS, SeaBlocks.PEARLY_SEA_GLASS_PEBBLES).save(consumer);
-
-        makeBricks(SeaBlocks.PEARLY_SEA_GLASS_TILES, SeaBlocks.PEARLY_SEA_GLASS_BRICKS).save(consumer);
-        makeStairs(SeaBlocks.PEARLY_SEA_GLASS_TILE_STAIRS, SeaBlocks.PEARLY_SEA_GLASS_TILES).save(consumer);
-        makeSlab(SeaBlocks.PEARLY_SEA_GLASS_TILE_SLAB, SeaBlocks.PEARLY_SEA_GLASS_TILES).save(consumer);
-        makePanes(SeaBlocks.PEARLY_SEA_GLASS_PANE, SeaBlocks.PEARLY_SEA_GLASS).save(consumer);
-
-        makeGlasstoBottle(SeaBlocks.PEARLY_SEA_GLASS_BOTTLE, SeaBlocks.PEARLY_SEA_GLASS).save(consumer);
-
-        // Citrine Sea Glass
-        makeSeaGlass(SeaBlocks.CITRINE_SEA_GLASS, SeaBlocks.CITRINE_SEA_GLASS_PEBBLES).save(consumer);
-        makeBricks(SeaBlocks.CITRINE_SEA_GLASS_BRICKS, SeaBlocks.CITRINE_SEA_GLASS).save(consumer);
-        makeStairs(SeaBlocks.CITRINE_SEA_GLASS_BRICK_STAIRS, SeaBlocks.CITRINE_SEA_GLASS_BRICKS).save(consumer);
-        makeSlab(SeaBlocks.CITRINE_SEA_GLASS_BRICK_SLAB, SeaBlocks.CITRINE_SEA_GLASS_BRICKS).save(consumer);
-
-        makeCondensedToBlock(SeaBlocks.CITRINE_PEBBLED_SEA_GLASS, SeaBlocks.CITRINE_SEA_GLASS_PEBBLES).save(consumer);
-
-        makeBricks(SeaBlocks.CITRINE_SEA_GLASS_TILES, SeaBlocks.CITRINE_SEA_GLASS_BRICKS).save(consumer);
-        makeStairs(SeaBlocks.CITRINE_SEA_GLASS_TILE_STAIRS, SeaBlocks.CITRINE_SEA_GLASS_TILES).save(consumer);
-        makeSlab(SeaBlocks.CITRINE_SEA_GLASS_TILE_SLAB, SeaBlocks.CITRINE_SEA_GLASS_TILES).save(consumer);
-        makePanes(SeaBlocks.CITRINE_SEA_GLASS_PANE, SeaBlocks.CITRINE_SEA_GLASS).save(consumer);
-
-        makeGlasstoBottle(SeaBlocks.CITRINE_SEA_GLASS_BOTTLE, SeaBlocks.CITRINE_SEA_GLASS).save(consumer);
-
-
-        // Rose Sea Glass
-        makeSeaGlass(SeaBlocks.ROSE_SEA_GLASS, SeaBlocks.ROSE_SEA_GLASS_PEBBLES).save(consumer);
-        makeBricks(SeaBlocks.ROSE_SEA_GLASS_BRICKS, SeaBlocks.ROSE_SEA_GLASS).save(consumer);
-        makeStairs(SeaBlocks.ROSE_SEA_GLASS_BRICK_STAIRS, SeaBlocks.ROSE_SEA_GLASS_BRICKS).save(consumer);
-        makeSlab(SeaBlocks.ROSE_SEA_GLASS_BRICK_SLAB, SeaBlocks.ROSE_SEA_GLASS_BRICKS).save(consumer);
-
-        makeCondensedToBlock(SeaBlocks.ROSE_PEBBLED_SEA_GLASS, SeaBlocks.ROSE_SEA_GLASS_PEBBLES).save(consumer);
-
-        makeBricks(SeaBlocks.ROSE_SEA_GLASS_TILES, SeaBlocks.ROSE_SEA_GLASS_BRICKS).save(consumer);
-        makeStairs(SeaBlocks.ROSE_SEA_GLASS_TILE_STAIRS, SeaBlocks.ROSE_SEA_GLASS_TILES).save(consumer);
-        makeSlab(SeaBlocks.ROSE_SEA_GLASS_TILE_SLAB, SeaBlocks.ROSE_SEA_GLASS_TILES).save(consumer);
-        makePanes(SeaBlocks.ROSE_SEA_GLASS_PANE, SeaBlocks.ROSE_SEA_GLASS).save(consumer);
-
-        makeGlasstoBottle(SeaBlocks.ROSE_SEA_GLASS_BOTTLE, SeaBlocks.ROSE_SEA_GLASS).save(consumer);
-
-        // Chartreuse Sea Glass
-        makeSeaGlass(SeaBlocks.CHARTREUSE_SEA_GLASS, SeaBlocks.CHARTREUSE_SEA_GLASS_PEBBLES).save(consumer);
-        makeBricks(SeaBlocks.CHARTREUSE_SEA_GLASS_BRICKS, SeaBlocks.CHARTREUSE_SEA_GLASS).save(consumer);
-        makeStairs(SeaBlocks.CHARTREUSE_SEA_GLASS_BRICK_STAIRS, SeaBlocks.CHARTREUSE_SEA_GLASS_BRICKS).save(consumer);
-        makeSlab(SeaBlocks.CHARTREUSE_SEA_GLASS_BRICK_SLAB, SeaBlocks.CHARTREUSE_SEA_GLASS_BRICKS).save(consumer);
-
-        makeCondensedToBlock(SeaBlocks.CHARTREUSE_PEBBLED_SEA_GLASS, SeaBlocks.CHARTREUSE_SEA_GLASS_PEBBLES).save(consumer);
-
-        makeBricks(SeaBlocks.CHARTREUSE_SEA_GLASS_TILES, SeaBlocks.CHARTREUSE_SEA_GLASS_BRICKS).save(consumer);
-        makeStairs(SeaBlocks.CHARTREUSE_SEA_GLASS_TILE_STAIRS, SeaBlocks.CHARTREUSE_SEA_GLASS_TILES).save(consumer);
-        makeSlab(SeaBlocks.CHARTREUSE_SEA_GLASS_TILE_SLAB, SeaBlocks.CHARTREUSE_SEA_GLASS_TILES).save(consumer);
-        makePanes(SeaBlocks.CHARTREUSE_SEA_GLASS_PANE, SeaBlocks.CHARTREUSE_SEA_GLASS).save(consumer);
-
-        makeGlasstoBottle(SeaBlocks.CHARTREUSE_SEA_GLASS_BOTTLE, SeaBlocks.CHARTREUSE_SEA_GLASS).save(consumer);
 
 
         // Algae Block
         makeBricks(SeaBlocks.ALGAE_BLOCK, SeaBlocks.ALGAE_PLANT).save(consumer);
         makCarpet(SeaBlocks.ALGAE_CARPET, SeaBlocks.ALGAE_PLANT).save(consumer);
-
-        makeStairs(SeaBlocks.ALGAE_COBBLESTONE_STAIRS, SeaBlocks.ALGAE_COBBLESTONE).save(consumer);
-        makeSlab(SeaBlocks.ALGAE_COBBLESTONE_SLAB, SeaBlocks.ALGAE_COBBLESTONE).save(consumer);
-
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, SeaBlocks.ALGAE_COBBLESTONE.get()).requires(Blocks.COBBLESTONE).requires(SeaBlocks.ALGAE_PLANT.get()).group("mossy_cobblestone").unlockedBy("has_vine", has(Blocks.VINE));
-
 
         // Clam Blockset
         makeSeaGlass(SeaBlocks.CLAM_SHELL_BRICKS, SeaBlocks.CLAM_SHELL).save(consumer);

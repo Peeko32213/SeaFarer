@@ -1,13 +1,10 @@
 {
   "values": [
-    "seafarer:azure_sea_glass",
-    "seafarer:azure_sea_glass_pane",
-    "seafarer:azure_sea_glass_bricks",
-    "seafarer:azure_sea_glass_brick_slab",
-    "seafarer:azure_sea_glass_brick_stairs",
-    "seafarer:azure_sea_glass_tiles",
-    "seafarer:azure_sea_glass_tile_slab",
-    "seafarer:azure_sea_glass_tile_stairs",
+    "seafarer:light_blue_sea_glass",
+    "seafarer:light_blue_sea_glass_pane",
+    "seafarer:light_blue_sea_glass_bricks",
+    "seafarer:light_blue_sea_glass_brick_slab",
+    "seafarer:light_blue_sea_glass_brick_stairs",
     "seafarer:salt_block",
     "seafarer:clam_shell_bricks",
     "seafarer:clam_shell_brick_slab",
@@ -32,9 +29,6 @@
     "seafarer:pyramid_shell_bricks",
     "seafarer:pyramid_shell_brick_slab",
     "seafarer:pyramid_shell_brick_stairs",
-    "seafarer:pyramid_shell_pillar",
-    "seafarer:algae_cobblestone",
-    "seafarer:algae_cobblestone_slab",
-    "seafarer:algae_cobblestone_stairs"
+    "seafarer:pyramid_shell_pillar"
   ]
 }

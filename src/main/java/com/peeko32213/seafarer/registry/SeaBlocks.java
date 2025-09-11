@@ -27,135 +27,96 @@ public class SeaBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Seafarer.MOD_ID);
     public static List<RegistryObject<? extends Block>> AUTO_TRANSLATE = new ArrayList<>();
 
-    public static final RegistryObject<Block> AZURE_SEA_GLASS_PEBBLES = registerBlock("azure_sea_glass_pebbles", () -> new FloorLayerBlock(SeaBlockProperties.seaGlassPebbles(MapColor.COLOR_BLUE)));
-    public static final RegistryObject<Block> AZURE_PEBBLED_SEA_GLASS = registerBlock("azure_pebbled_sea_glass", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_BLUE)));
-    public static final RegistryObject<Block> AZURE_SEA_GLASS = registerBlock("azure_sea_glass", () -> new GlassBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_BLUE)));
-    public static final RegistryObject<Block> AZURE_SEA_GLASS_PANE = registerBlock("azure_sea_glass_pane", () -> new IronBarsBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_BLUE)));
-    public static final RegistryObject<Block> AZURE_SEA_GLASS_BRICKS = registerBlock("azure_sea_glass_bricks", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_BLUE)));
-    public static final RegistryObject<Block> AZURE_SEA_GLASS_BRICK_STAIRS = registerBlock("azure_sea_glass_brick_stairs", () -> new StairBlock(() -> AZURE_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(AZURE_SEA_GLASS_BRICKS.get())));
-    public static final RegistryObject<Block> AZURE_SEA_GLASS_BRICK_SLAB = registerBlock("azure_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(AZURE_SEA_GLASS_BRICKS.get())));
-    public static final RegistryObject<Block> AZURE_SEA_GLASS_TILES = registerBlock("azure_sea_glass_tiles", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_BLUE)));
-    public static final RegistryObject<Block> AZURE_SEA_GLASS_TILE_STAIRS = registerBlock("azure_sea_glass_tile_stairs", () -> new StairBlock(() -> AZURE_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(AZURE_SEA_GLASS_TILES.get())));
-    public static final RegistryObject<Block> AZURE_SEA_GLASS_TILE_SLAB = registerBlock("azure_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(AZURE_SEA_GLASS_TILES.get())));
-    public static final RegistryObject<Block> AZURE_SEA_GLASS_LAMP = registerBlock("azure_sea_glass_lamp", () -> new SeaDirectionalBlock(SeaBlockProperties.seaGlassLamp(MapColor.COLOR_BLUE)));
-    public static final RegistryObject<Block> AZURE_SEA_GLASS_BOTTLE = registerBlock("azure_sea_glass_bottle", () -> new SeaGlassBottleBlock(SeaBlockProperties.seaGlassBottle(MapColor.COLOR_BLUE)));
+    public static final RegistryObject<Block> LIGHT_BLUE_PEBBLED_SEA_GLASS = registerBlock("light_blue_pebbled_sea_glass", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_BLUE)));
+    public static final RegistryObject<Block> LIGHT_BLUE_SEA_GLASS = registerBlock("light_blue_sea_glass", () -> new GlassBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_BLUE)));
+    public static final RegistryObject<Block> LIGHT_BLUE_SEA_GLASS_PANE = registerBlock("light_blue_sea_glass_pane", () -> new IronBarsBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_BLUE)));
+    public static final RegistryObject<Block> LIGHT_BLUE_SEA_GLASS_BRICKS = registerBlock("light_blue_sea_glass_bricks", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_BLUE)));
+    public static final RegistryObject<Block> LIGHT_BLUE_SEA_GLASS_BRICK_STAIRS = registerBlock("light_blue_sea_glass_brick_stairs", () -> new StairBlock(() -> LIGHT_BLUE_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(LIGHT_BLUE_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<Block> LIGHT_BLUE_GLASS_BRICK_SLAB = registerBlock("light_blue_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<Block> LIGHT_BLUE_SEA_GLASS_LAMP = registerBlock("light_blue_sea_glass_lamp", () -> new SeaDirectionalBlock(SeaBlockProperties.seaGlassLamp(MapColor.COLOR_BLUE)));
+    public static final RegistryObject<Block> LIGHT_BLUE_SEA_GLASS_BOTTLE = registerBlock("light_blue_sea_glass_bottle", () -> new SeaGlassBottleBlock(SeaBlockProperties.seaGlassBottle(MapColor.COLOR_BLUE)));
 
-    public static final RegistryObject<Block> ROSE_SEA_GLASS_PEBBLES = registerBlock("rose_sea_glass_pebbles", () -> new FloorLayerBlock(SeaBlockProperties.seaGlassPebbles(MapColor.COLOR_PINK)));
     public static final RegistryObject<Block> ROSE_PEBBLED_SEA_GLASS = registerBlock("rose_pebbled_sea_glass", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_PINK)));
     public static final RegistryObject<Block> ROSE_SEA_GLASS = registerBlock("rose_sea_glass", () -> new GlassBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_PINK)));
     public static final RegistryObject<Block> ROSE_SEA_GLASS_PANE = registerBlock("rose_sea_glass_pane", () -> new IronBarsBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_PINK)));
     public static final RegistryObject<Block> ROSE_SEA_GLASS_BRICKS = registerBlock("rose_sea_glass_bricks", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_PINK)));
     public static final RegistryObject<Block> ROSE_SEA_GLASS_BRICK_STAIRS = registerBlock("rose_sea_glass_brick_stairs", () -> new StairBlock(() -> ROSE_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(ROSE_SEA_GLASS_BRICKS.get())));
     public static final RegistryObject<Block> ROSE_SEA_GLASS_BRICK_SLAB = registerBlock("rose_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ROSE_SEA_GLASS_BRICKS.get())));
-    public static final RegistryObject<Block> ROSE_SEA_GLASS_TILES = registerBlock("rose_sea_glass_tiles", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_PINK)));
-    public static final RegistryObject<Block> ROSE_SEA_GLASS_TILE_STAIRS = registerBlock("rose_sea_glass_tile_stairs", () -> new StairBlock(() -> ROSE_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(ROSE_SEA_GLASS_TILES.get())));
-    public static final RegistryObject<Block> ROSE_SEA_GLASS_TILE_SLAB = registerBlock("rose_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ROSE_SEA_GLASS_TILES.get())));
     public static final RegistryObject<Block> ROSE_SEA_GLASS_LAMP = registerBlock("rose_sea_glass_lamp", () -> new SeaDirectionalBlock(SeaBlockProperties.seaGlassLamp(MapColor.COLOR_PINK)));
     public static final RegistryObject<Block> ROSE_SEA_GLASS_BOTTLE = registerBlock("rose_sea_glass_bottle", () -> new SeaGlassBottleBlock(SeaBlockProperties.seaGlassBottle(MapColor.COLOR_PINK)));
 
-    public static final RegistryObject<Block> LILAC_SEA_GLASS_PEBBLES = registerBlock("lilac_sea_glass_pebbles", () -> new FloorLayerBlock(SeaBlockProperties.seaGlassPebbles(MapColor.COLOR_PURPLE)));
     public static final RegistryObject<Block> LILAC_PEBBLED_SEA_GLASS = registerBlock("lilac_pebbled_sea_glass", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_PURPLE)));
     public static final RegistryObject<Block> LILAC_SEA_GLASS = registerBlock("lilac_sea_glass", () -> new GlassBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_PURPLE)));
     public static final RegistryObject<Block> LILAC_SEA_GLASS_PANE = registerBlock("lilac_sea_glass_pane", () -> new IronBarsBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_PURPLE)));
     public static final RegistryObject<Block> LILAC_SEA_GLASS_BRICKS = registerBlock("lilac_sea_glass_bricks", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_PURPLE)));
     public static final RegistryObject<Block> LILAC_SEA_GLASS_BRICK_STAIRS = registerBlock("lilac_sea_glass_brick_stairs", () -> new StairBlock(() -> LILAC_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(LILAC_SEA_GLASS_BRICKS.get())));
     public static final RegistryObject<Block> LILAC_SEA_GLASS_BRICK_SLAB = registerBlock("lilac_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LILAC_SEA_GLASS_BRICKS.get())));
-    public static final RegistryObject<Block> LILAC_SEA_GLASS_TILES = registerBlock("lilac_sea_glass_tiles", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_PURPLE)));
-    public static final RegistryObject<Block> LILAC_SEA_GLASS_TILE_STAIRS = registerBlock("lilac_sea_glass_tile_stairs", () -> new StairBlock(() -> LILAC_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(LILAC_SEA_GLASS_TILES.get())));
-    public static final RegistryObject<Block> LILAC_SEA_GLASS_TILE_SLAB = registerBlock("lilac_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LILAC_SEA_GLASS_TILES.get())));
     public static final RegistryObject<Block> LILAC_SEA_GLASS_LAMP = registerBlock("lilac_sea_glass_lamp", () -> new SeaDirectionalBlock(SeaBlockProperties.seaGlassLamp(MapColor.COLOR_PURPLE)));
     public static final RegistryObject<Block> LILAC_SEA_GLASS_BOTTLE = registerBlock("lilac_sea_glass_bottle", () -> new SeaGlassBottleBlock(SeaBlockProperties.seaGlassBottle(MapColor.COLOR_PURPLE)));
 
-    public static final RegistryObject<Block> SEAFOAM_SEA_GLASS_PEBBLES = registerBlock("seafoam_sea_glass_pebbles", () -> new FloorLayerBlock(SeaBlockProperties.seaGlassPebbles(MapColor.COLOR_GREEN)));
     public static final RegistryObject<Block> SEAFOAM_PEBBLED_SEA_GLASS = registerBlock("seafoam_pebbled_sea_glass", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_GREEN)));
     public static final RegistryObject<Block> SEAFOAM_SEA_GLASS = registerBlock("seafoam_sea_glass", () -> new GlassBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_GREEN)));
     public static final RegistryObject<Block> SEAFOAM_SEA_GLASS_PANE = registerBlock("seafoam_sea_glass_pane", () -> new IronBarsBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_GREEN)));
     public static final RegistryObject<Block> SEAFOAM_SEA_GLASS_BRICKS = registerBlock("seafoam_sea_glass_bricks", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_GREEN)));
     public static final RegistryObject<Block> SEAFOAM_SEA_GLASS_BRICK_STAIRS = registerBlock("seafoam_sea_glass_brick_stairs", () -> new StairBlock(() -> SEAFOAM_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(SEAFOAM_SEA_GLASS_BRICKS.get())));
     public static final RegistryObject<Block> SEAFOAM_SEA_GLASS_BRICK_SLAB = registerBlock("seafoam_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SEAFOAM_SEA_GLASS_BRICKS.get())));
-    public static final RegistryObject<Block> SEAFOAM_SEA_GLASS_TILES = registerBlock("seafoam_sea_glass_tiles", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_GREEN)));
-    public static final RegistryObject<Block> SEAFOAM_SEA_GLASS_TILE_STAIRS = registerBlock("seafoam_sea_glass_tile_stairs", () -> new StairBlock(() -> SEAFOAM_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(SEAFOAM_SEA_GLASS_TILES.get())));
-    public static final RegistryObject<Block> SEAFOAM_SEA_GLASS_TILE_SLAB = registerBlock("seafoam_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SEAFOAM_SEA_GLASS_TILES.get())));
     public static final RegistryObject<Block> SEAFOAM_SEA_GLASS_LAMP = registerBlock("seafoam_sea_glass_lamp", () -> new SeaDirectionalBlock(SeaBlockProperties.seaGlassLamp(MapColor.COLOR_GREEN)));
     public static final RegistryObject<Block> SEAFOAM_SEA_GLASS_BOTTLE = registerBlock("seafoam_sea_glass_bottle", () -> new SeaGlassBottleBlock(SeaBlockProperties.seaGlassBottle(MapColor.COLOR_GREEN)));
 
-    public static final RegistryObject<Block> CHARTREUSE_SEA_GLASS_PEBBLES = registerBlock("chartreuse_sea_glass_pebbles", () -> new FloorLayerBlock(SeaBlockProperties.seaGlassPebbles(MapColor.COLOR_LIGHT_GREEN)));
     public static final RegistryObject<Block> CHARTREUSE_PEBBLED_SEA_GLASS = registerBlock("chartreuse_pebbled_sea_glass", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_LIGHT_GREEN)));
     public static final RegistryObject<Block> CHARTREUSE_SEA_GLASS = registerBlock("chartreuse_sea_glass", () -> new GlassBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_LIGHT_GREEN)));
     public static final RegistryObject<Block> CHARTREUSE_SEA_GLASS_PANE = registerBlock("chartreuse_sea_glass_pane", () -> new IronBarsBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_LIGHT_GREEN)));
     public static final RegistryObject<Block> CHARTREUSE_SEA_GLASS_BRICKS = registerBlock("chartreuse_sea_glass_bricks", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_LIGHT_GREEN)));
     public static final RegistryObject<Block> CHARTREUSE_SEA_GLASS_BRICK_STAIRS = registerBlock("chartreuse_sea_glass_brick_stairs", () -> new StairBlock(() -> CHARTREUSE_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(CHARTREUSE_SEA_GLASS_BRICKS.get())));
     public static final RegistryObject<Block> CHARTREUSE_SEA_GLASS_BRICK_SLAB = registerBlock("chartreuse_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CHARTREUSE_SEA_GLASS_BRICKS.get())));
-    public static final RegistryObject<Block> CHARTREUSE_SEA_GLASS_TILES = registerBlock("chartreuse_sea_glass_tiles", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_LIGHT_GREEN)));
-    public static final RegistryObject<Block> CHARTREUSE_SEA_GLASS_TILE_STAIRS = registerBlock("chartreuse_sea_glass_tile_stairs", () -> new StairBlock(() -> CHARTREUSE_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(CHARTREUSE_SEA_GLASS_TILES.get())));
-    public static final RegistryObject<Block> CHARTREUSE_SEA_GLASS_TILE_SLAB = registerBlock("chartreuse_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CHARTREUSE_SEA_GLASS_TILES.get())));
     public static final RegistryObject<Block> CHARTREUSE_SEA_GLASS_LAMP = registerBlock("chartreuse_sea_glass_lamp", () -> new SeaDirectionalBlock(SeaBlockProperties.seaGlassLamp(MapColor.COLOR_LIGHT_GREEN)));
     public static final RegistryObject<Block> CHARTREUSE_SEA_GLASS_BOTTLE = registerBlock("chartreuse_sea_glass_bottle", () -> new SeaGlassBottleBlock(SeaBlockProperties.seaGlassBottle(MapColor.COLOR_LIGHT_GREEN)));
 
-    public static final RegistryObject<Block> CITRINE_SEA_GLASS_PEBBLES = registerBlock("citrine_sea_glass_pebbles", () -> new FloorLayerBlock(SeaBlockProperties.seaGlassPebbles(MapColor.COLOR_YELLOW)));
     public static final RegistryObject<Block> CITRINE_PEBBLED_SEA_GLASS = registerBlock("citrine_pebbled_sea_glass", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_YELLOW)));
     public static final RegistryObject<Block> CITRINE_SEA_GLASS = registerBlock("citrine_sea_glass", () -> new GlassBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_YELLOW)));
     public static final RegistryObject<Block> CITRINE_SEA_GLASS_PANE = registerBlock("citrine_sea_glass_pane", () -> new IronBarsBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_YELLOW)));
     public static final RegistryObject<Block> CITRINE_SEA_GLASS_BRICKS = registerBlock("citrine_sea_glass_bricks", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_YELLOW)));
     public static final RegistryObject<Block> CITRINE_SEA_GLASS_BRICK_STAIRS = registerBlock("citrine_sea_glass_brick_stairs", () -> new StairBlock(() -> CITRINE_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(CITRINE_SEA_GLASS_BRICKS.get())));
     public static final RegistryObject<Block> CITRINE_SEA_GLASS_BRICK_SLAB = registerBlock("citrine_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CITRINE_SEA_GLASS_BRICKS.get())));
-    public static final RegistryObject<Block> CITRINE_SEA_GLASS_TILES = registerBlock("citrine_sea_glass_tiles", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_YELLOW)));
-    public static final RegistryObject<Block> CITRINE_SEA_GLASS_TILE_STAIRS = registerBlock("citrine_sea_glass_tile_stairs", () -> new StairBlock(() -> CITRINE_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(CITRINE_SEA_GLASS_TILES.get())));
-    public static final RegistryObject<Block> CITRINE_SEA_GLASS_TILE_SLAB = registerBlock("citrine_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CITRINE_SEA_GLASS_TILES.get())));
     public static final RegistryObject<Block> CITRINE_SEA_GLASS_LAMP = registerBlock("citrine_sea_glass_lamp", () -> new SeaDirectionalBlock(SeaBlockProperties.seaGlassLamp(MapColor.COLOR_YELLOW)));
     public static final RegistryObject<Block> CITRINE_SEA_GLASS_BOTTLE = registerBlock("citrine_sea_glass_bottle", () -> new SeaGlassBottleBlock(SeaBlockProperties.seaGlassBottle(MapColor.COLOR_YELLOW)));
 
-    public static final RegistryObject<Block> AMBER_SEA_GLASS_PEBBLES = registerBlock("amber_sea_glass_pebbles", () -> new FloorLayerBlock(SeaBlockProperties.seaGlassPebbles(MapColor.COLOR_ORANGE)));
     public static final RegistryObject<Block> AMBER_PEBBLED_SEA_GLASS = registerBlock("amber_pebbled_sea_glass", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_ORANGE)));
     public static final RegistryObject<Block> AMBER_SEA_GLASS = registerBlock("amber_sea_glass", () -> new GlassBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_ORANGE)));
     public static final RegistryObject<Block> AMBER_SEA_GLASS_PANE = registerBlock("amber_sea_glass_pane", () -> new IronBarsBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_ORANGE)));
     public static final RegistryObject<Block> AMBER_SEA_GLASS_BRICKS = registerBlock("amber_sea_glass_bricks", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_ORANGE)));
     public static final RegistryObject<Block> AMBER_SEA_GLASS_BRICK_STAIRS = registerBlock("amber_sea_glass_brick_stairs", () -> new StairBlock(() -> AMBER_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(AMBER_SEA_GLASS_BRICKS.get())));
     public static final RegistryObject<Block> AMBER_SEA_GLASS_BRICK_SLAB = registerBlock("amber_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(AMBER_SEA_GLASS_BRICKS.get())));
-    public static final RegistryObject<Block> AMBER_SEA_GLASS_TILES = registerBlock("amber_sea_glass_tiles", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_ORANGE)));
-    public static final RegistryObject<Block> AMBER_SEA_GLASS_TILE_STAIRS = registerBlock("amber_sea_glass_tile_stairs", () -> new StairBlock(() -> AMBER_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(AMBER_SEA_GLASS_TILES.get())));
-    public static final RegistryObject<Block> AMBER_SEA_GLASS_TILE_SLAB = registerBlock("amber_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(AMBER_SEA_GLASS_TILES.get())));
     public static final RegistryObject<Block> AMBER_SEA_GLASS_LAMP = registerBlock("amber_sea_glass_lamp", () -> new SeaDirectionalBlock(SeaBlockProperties.seaGlassLamp(MapColor.COLOR_ORANGE)));
     public static final RegistryObject<Block> AMBER_SEA_GLASS_BOTTLE = registerBlock("amber_sea_glass_bottle", () -> new SeaGlassBottleBlock(SeaBlockProperties.seaGlassBottle(MapColor.COLOR_ORANGE)));
 
-    public static final RegistryObject<Block> SCARLET_SEA_GLASS_PEBBLES = registerBlock("scarlet_sea_glass_pebbles", () -> new FloorLayerBlock(SeaBlockProperties.seaGlassPebbles(MapColor.COLOR_RED)));
     public static final RegistryObject<Block> SCARLET_PEBBLED_SEA_GLASS = registerBlock("scarlet_pebbled_sea_glass", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_RED)));
     public static final RegistryObject<Block> SCARLET_SEA_GLASS = registerBlock("scarlet_sea_glass", () -> new GlassBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_RED)));
     public static final RegistryObject<Block> SCARLET_SEA_GLASS_PANE = registerBlock("scarlet_sea_glass_pane", () -> new IronBarsBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_RED)));
     public static final RegistryObject<Block> SCARLET_SEA_GLASS_BRICKS = registerBlock("scarlet_sea_glass_bricks", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_RED)));
     public static final RegistryObject<Block> SCARLET_SEA_GLASS_BRICK_STAIRS = registerBlock("scarlet_sea_glass_brick_stairs", () -> new StairBlock(() -> SCARLET_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(SCARLET_SEA_GLASS_BRICKS.get())));
     public static final RegistryObject<Block> SCARLET_SEA_GLASS_BRICK_SLAB = registerBlock("scarlet_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SCARLET_SEA_GLASS_BRICKS.get())));
-    public static final RegistryObject<Block> SCARLET_SEA_GLASS_TILES = registerBlock("scarlet_sea_glass_tiles", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_RED)));
-    public static final RegistryObject<Block> SCARLET_SEA_GLASS_TILE_STAIRS = registerBlock("scarlet_sea_glass_tile_stairs", () -> new StairBlock(() -> SCARLET_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(SCARLET_SEA_GLASS_TILES.get())));
-    public static final RegistryObject<Block> SCARLET_SEA_GLASS_TILE_SLAB = registerBlock("scarlet_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SCARLET_SEA_GLASS_TILES.get())));
     public static final RegistryObject<Block> SCARLET_SEA_GLASS_LAMP = registerBlock("scarlet_sea_glass_lamp", () -> new SeaDirectionalBlock(SeaBlockProperties.seaGlassLamp(MapColor.COLOR_RED)));
     public static final RegistryObject<Block> SCARLET_SEA_GLASS_BOTTLE = registerBlock("scarlet_sea_glass_bottle", () -> new SeaGlassBottleBlock(SeaBlockProperties.seaGlassBottle(MapColor.COLOR_RED)));
 
-    public static final RegistryObject<Block> UMBER_SEA_GLASS_PEBBLES = registerBlock("umber_sea_glass_pebbles", () -> new FloorLayerBlock(SeaBlockProperties.seaGlassPebbles(MapColor.COLOR_BROWN)));
     public static final RegistryObject<Block> UMBER_PEBBLED_SEA_GLASS = registerBlock("umber_pebbled_sea_glass", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_BROWN)));
     public static final RegistryObject<Block> UMBER_SEA_GLASS = registerBlock("umber_sea_glass", () -> new GlassBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_BROWN)));
     public static final RegistryObject<Block> UMBER_SEA_GLASS_PANE = registerBlock("umber_sea_glass_pane", () -> new IronBarsBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_BROWN)));
     public static final RegistryObject<Block> UMBER_SEA_GLASS_BRICKS = registerBlock("umber_sea_glass_bricks", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_BROWN)));
     public static final RegistryObject<Block> UMBER_SEA_GLASS_BRICK_STAIRS = registerBlock("umber_sea_glass_brick_stairs", () -> new StairBlock(() -> UMBER_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(UMBER_SEA_GLASS_BRICKS.get())));
     public static final RegistryObject<Block> UMBER_SEA_GLASS_BRICK_SLAB = registerBlock("umber_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(UMBER_SEA_GLASS_BRICKS.get())));
-    public static final RegistryObject<Block> UMBER_SEA_GLASS_TILES = registerBlock("umber_sea_glass_tiles", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_BROWN)));
-    public static final RegistryObject<Block> UMBER_SEA_GLASS_TILE_STAIRS = registerBlock("umber_sea_glass_tile_stairs", () -> new StairBlock(() -> UMBER_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(UMBER_SEA_GLASS_TILES.get())));
-    public static final RegistryObject<Block> UMBER_SEA_GLASS_TILE_SLAB = registerBlock("umber_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(UMBER_SEA_GLASS_TILES.get())));
     public static final RegistryObject<Block> UMBER_SEA_GLASS_LAMP = registerBlock("umber_sea_glass_lamp", () -> new SeaDirectionalBlock(SeaBlockProperties.seaGlassLamp(MapColor.COLOR_BROWN)));
     public static final RegistryObject<Block> UMBER_SEA_GLASS_BOTTLE = registerBlock("umber_sea_glass_bottle", () -> new SeaGlassBottleBlock(SeaBlockProperties.seaGlassBottle(MapColor.COLOR_BROWN)));
 
-    public static final RegistryObject<Block> PEARLY_SEA_GLASS_PEBBLES = registerBlock("pearly_sea_glass_pebbles", () -> new FloorLayerBlock(SeaBlockProperties.seaGlassPebbles(MapColor.COLOR_LIGHT_GRAY)));
     public static final RegistryObject<Block> PEARLY_PEBBLED_SEA_GLASS = registerBlock("pearly_pebbled_sea_glass", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_LIGHT_GRAY)));
     public static final RegistryObject<Block> PEARLY_SEA_GLASS = registerBlock("pearly_sea_glass", () -> new GlassBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_LIGHT_GRAY)));
     public static final RegistryObject<Block> PEARLY_SEA_GLASS_PANE = registerBlock("pearly_sea_glass_pane", () -> new IronBarsBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_LIGHT_GRAY)));
     public static final RegistryObject<Block> PEARLY_SEA_GLASS_BRICKS = registerBlock("pearly_sea_glass_bricks", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_LIGHT_GRAY)));
     public static final RegistryObject<Block> PEARLY_SEA_GLASS_BRICK_STAIRS = registerBlock("pearly_sea_glass_brick_stairs", () -> new StairBlock(() -> PEARLY_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(PEARLY_SEA_GLASS_BRICKS.get())));
     public static final RegistryObject<Block> PEARLY_SEA_GLASS_BRICK_SLAB = registerBlock("pearly_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(PEARLY_SEA_GLASS_BRICKS.get())));
-    public static final RegistryObject<Block> PEARLY_SEA_GLASS_TILES = registerBlock("pearly_sea_glass_tiles", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_LIGHT_GRAY)));
-    public static final RegistryObject<Block> PEARLY_SEA_GLASS_TILE_STAIRS = registerBlock("pearly_sea_glass_tile_stairs", () -> new StairBlock(() -> PEARLY_SEA_GLASS_TILES.get().defaultBlockState(), BlockBehaviour.Properties.copy(PEARLY_SEA_GLASS_TILES.get())));
-    public static final RegistryObject<Block> PEARLY_SEA_GLASS_TILE_SLAB = registerBlock("pearly_sea_glass_tile_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(PEARLY_SEA_GLASS_TILES.get())));
     public static final RegistryObject<Block> PEARLY_SEA_GLASS_LAMP = registerBlock("pearly_sea_glass_lamp", () -> new SeaDirectionalBlock(SeaBlockProperties.seaGlassLamp(MapColor.COLOR_LIGHT_GRAY)));
     public static final RegistryObject<Block> PEARLY_SEA_GLASS_BOTTLE = registerBlock("pearly_sea_glass_bottle", () -> new SeaGlassBottleBlock(SeaBlockProperties.seaGlassBottle(MapColor.COLOR_LIGHT_GRAY)));
+
     public static final RegistryObject<Block> OLD_BOARDS = registerBlock("old_boards", () -> new OldBoardsBlock(BlockBehaviour.Properties.of().sound(SoundType.WOOD).noCollission().noOcclusion().pushReaction(PushReaction.DESTROY).ignitedByLava().strength(0.1F).mapColor(MapColor.WOOD)));
 
     public static final RegistryObject<Block> FISHING_NET = registerPlaceOnWaterBlockItem("fishing_net", () -> new FishingNet(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion().strength(0.2F).sound(SoundType.LADDER)));
@@ -232,17 +193,11 @@ public class SeaBlocks {
     public static final RegistryObject<Block> PYRAMID_SHELL_BRICK_SLAB = registerBlock("pyramid_shell_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(PYRAMID_SHELL_BRICKS.get())));
     public static final RegistryObject<Block> PYRAMID_SHELL_PILLAR = register("pyramid_shell_pillar", () -> new RotatedPillarBlock(SeaBlockProperties.shellBlock(MapColor.SAND)));
 
-    public static final RegistryObject<Block> SPRINKLED_SAND = registerBlock("sprinkled_sand", () -> new SandBlock(14406560, SeaBlockProperties.SAND));
-    public static final RegistryObject<Block> GRAVELLY_SAND = registerBlock("gravelly_sand", () -> new SandBlock(14406560, SeaBlockProperties.SAND));
     public static final RegistryObject<Block> SHELLY_SAND = registerBlock("shelly_sand", () -> new SandBlock(14406560, SeaBlockProperties.SAND));
     public static final RegistryObject<Block> STARRY_SAND = registerBlock("starry_sand", () -> new SandBlock(14406560, SeaBlockProperties.SAND));
     public static final RegistryObject<Block> SEA_GLASS_SAND = registerBlock("sea_glass_sand", () -> new SandBlock(14406560, SeaBlockProperties.SAND));
 
     public static final RegistryObject<Block> FLOATSOME = register("floatsome", () -> new FloorLayerBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.CHERRY_WOOD).noCollission().noOcclusion().replaceable().pushReaction(PushReaction.DESTROY)));
-
-    public static final RegistryObject<Block> ALGAE_COBBLESTONE = register("algae_cobblestone", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F)));
-    public static final RegistryObject<Block> ALGAE_COBBLESTONE_STAIRS = registerBlock("algae_cobblestone_stairs", () -> new StairBlock(() -> ALGAE_COBBLESTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(ALGAE_COBBLESTONE.get())));
-    public static final RegistryObject<Block> ALGAE_COBBLESTONE_SLAB = registerBlock("algae_cobblestone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(ALGAE_COBBLESTONE.get())));
 
     // amber
     public static final RegistryObject<Block> DEAD_AMBER_CORAL_BLOCK = registerBlock("dead_amber_coral_block", () -> new Block(SeaBlockProperties.DEAD_CORAL_BLOCK));
@@ -326,6 +281,9 @@ public class SeaBlocks {
     public static final RegistryObject<Block> WHITE_CHRISTMAS_TREE_WORM = registerBlock("white_christmas_tree_worm",() -> new FloweryCoralBlock(SeaBlockProperties.coral(MapColor.TERRACOTTA_WHITE)));
 
     public static final RegistryObject<Block> CORALINE_SAND = registerBlock("coraline_sand", () -> new SandBlock(15790058, SeaBlockProperties.SAND));
+    public static final RegistryObject<Block> SHELLY_CORALINE_SAND = registerBlock("shelly_coraline_sand", () -> new SandBlock(15790058, SeaBlockProperties.SAND));
+    public static final RegistryObject<Block> STARRY_CORALINE_SAND = registerBlock("starry_coraline_sand", () -> new SandBlock(15790058, SeaBlockProperties.SAND));
+
     public static final RegistryObject<Block> CORALINE_SANDSTONE = registerBlock("coraline_sandstone", () -> new Block(SeaBlockProperties.SANDSTONE));
     public static final RegistryObject<Block> CORALINE_SANDSTONE_SLAB = registerBlock("coraline_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CORALINE_SANDSTONE.get())));
     public static final RegistryObject<Block> CORALINE_SANDSTONE_STAIRS = registerBlock("coraline_sandstone_stairs", () -> new StairBlock(() -> CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(CORALINE_SANDSTONE.get())));
@@ -338,7 +296,7 @@ public class SeaBlocks {
     public static final RegistryObject<Block> SMOOTH_CORALINE_SANDSTONE_STAIRS = registerBlock("smooth_coraline_sandstone_stairs", () -> new StairBlock(() -> SMOOTH_CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(SMOOTH_CORALINE_SANDSTONE.get())));
     public static final RegistryObject<Block> SMOOTH_CORALINE_SANDSTONE_SLAB = registerBlock("smooth_coraline_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SMOOTH_CORALINE_SANDSTONE.get())));
 
-    public static final RegistryObject<Block> ASHEN_SAND = registerBlock("ashen_sand", () -> new SandBlock(15790058, SeaBlockProperties.SAND));
+    public static final RegistryObject<Block> ASHEN_SAND = registerBlock("ashen_sand", () -> new SandBlock(3487297, SeaBlockProperties.SAND));
     public static final RegistryObject<Block> ASHEN_SANDSTONE = registerBlock("ashen_sandstone", () -> new Block(SeaBlockProperties.SANDSTONE));
     public static final RegistryObject<Block> ASHEN_SANDSTONE_SLAB = registerBlock("ashen_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CORALINE_SANDSTONE.get())));
     public static final RegistryObject<Block> ASHEN_SANDSTONE_STAIRS = registerBlock("ashen_sandstone_stairs", () -> new StairBlock(() -> CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(CORALINE_SANDSTONE.get())));
@@ -350,13 +308,6 @@ public class SeaBlocks {
     public static final RegistryObject<Block> SMOOTH_ASHEN_SANDSTONE = registerBlock("smooth_ashen_sandstone", () -> new Block(SeaBlockProperties.SANDSTONE));
     public static final RegistryObject<Block> SMOOTH_ASHEN_SANDSTONE_STAIRS = registerBlock("smooth_ashen_sandstone_stairs", () -> new StairBlock(() -> SMOOTH_CORALINE_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(SMOOTH_CORALINE_SANDSTONE.get())));
     public static final RegistryObject<Block> SMOOTH_ASHEN_SANDSTONE_SLAB = registerBlock("smooth_ashen_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SMOOTH_CORALINE_SANDSTONE.get())));
-
-
-    public static final RegistryObject<Block> SEA_GRAPES_CROP = BLOCKS.register("sea_grapes_crop", () -> new SeaGrapesCropBlock(Block.Properties.copy(Blocks.CARROTS).strength(0.2F)));
-
-    public static final RegistryObject<KelpBlock> WAKAME = BLOCKS.register("wakame_block", () -> new WakameBlock(BlockBehaviour.Properties.copy(Blocks.KELP)));
-
-    public static final RegistryObject<KelpPlantBlock> WAKAME_PLANT = BLOCKS.register("wakame_plant", () -> new WakamePlantBlock(BlockBehaviour.Properties.copy(Blocks.KELP_PLANT)));
 
     public static final RegistryObject<Block> SEA_URCHIN = registerBlockWithoutItem("sea_urchin_block", () -> new SeaUrchinBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instabreak().sound(SoundType.WET_GRASS).pushReaction(PushReaction.DESTROY).strength(1.0F)));
 

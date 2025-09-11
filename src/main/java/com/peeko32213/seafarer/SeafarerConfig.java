@@ -14,6 +14,7 @@ public class SeafarerConfig {
     public static ForgeConfigSpec.BooleanValue GLASS_BEACH;
     public static ForgeConfigSpec.BooleanValue GRASSY_BEACH;
     public static ForgeConfigSpec.BooleanValue KELP_FOREST;
+    public static ForgeConfigSpec.BooleanValue TROPICAL_RIVER;
     public static ForgeConfigSpec.BooleanValue WARM_REEF;
 
     static {
@@ -48,6 +49,10 @@ public class SeafarerConfig {
         KELP_FOREST = COMMON_BUILDER
                 .comment("If the kelp forest sub-biome is enabled (incomplete)")
                 .define("kelpForest", false);
+
+        TROPICAL_RIVER = COMMON_BUILDER
+                .comment("If the tropical river sub-biome is enabled")
+                .define("tropicalRiver", true);
 
         WARM_REEF = COMMON_BUILDER
                 .comment("If the warm reef sub-biome is enabled")

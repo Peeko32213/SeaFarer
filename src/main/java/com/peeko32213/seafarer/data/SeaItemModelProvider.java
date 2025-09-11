@@ -23,38 +23,36 @@ public class SeaItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels(){
 
-        for (Item i : BuiltInRegistries.ITEM) {
-            if (i instanceof SpawnEggItem && ForgeRegistries.ITEMS.getKey(i).getNamespace().equals(Seafarer.MOD_ID)) {
-                getBuilder(ForgeRegistries.ITEMS.getKey(i).getPath())
-                        .parent(getExistingFile(new ResourceLocation("item/template_spawn_egg")));
+        for (Item item : BuiltInRegistries.ITEM) {
+            if (item instanceof SpawnEggItem && ForgeRegistries.ITEMS.getKey(item).getNamespace().equals(Seafarer.MOD_ID)) {
+                this.getBuilder(ForgeRegistries.ITEMS.getKey(item).getPath()).parent(getExistingFile(new ResourceLocation("item/template_spawn_egg")));
             }
         }
 
-        item(SeaItems.RAW_SHORE_CRAB_LEG);
-        item(SeaItems.COOKED_SHORE_CRAB_LEG);
-        item(SeaItems.RAW_HORSESHOE_CRAB);
-        item(SeaItems.COOKED_HORSESHOE_CRAB);
-        item(SeaItems.RAW_MARINE_IGUANA_TAIL);
-        item(SeaItems.COOKED_MARINE_IGUANA_TAIL);
-        item(SeaItems.DRIED_STARFISH);
-        item(SeaItems.SALTED_COD);
-        item(SeaItems.SALTED_SALMON);
-        item(SeaItems.SALTED_TROPICAL_FISH);
-        item(SeaItems.SALTED_STARFISH);
-        item(SeaItems.SEA_GRAPES);
-        item(SeaItems.WAKAME);
-        item(SeaItems.SEA_URCHIN);
-        item(SeaItems.SOY_SAUCE);
+        this.item(SeaItems.LIGHT_BLUE_SEA_GLASS_PEBBLES);
 
-        item(SeaItems.SHORE_CRAB_BUCKET);
-        item(SeaItems.HORSESHOE_CRAB_BUCKET);
-//        item(SeafarerItems.SQUIRRELFISH_BUCKET);
+        this.item(SeaItems.RAW_SHORE_CRAB_LEG);
+        this.item(SeaItems.COOKED_SHORE_CRAB_LEG);
+        this.item(SeaItems.RAW_HORSESHOE_CRAB);
+        this.item(SeaItems.COOKED_HORSESHOE_CRAB);
+        this.item(SeaItems.RAW_MARINE_IGUANA_TAIL);
+        this.item(SeaItems.COOKED_MARINE_IGUANA_TAIL);
+        this.item(SeaItems.DRIED_STARFISH);
+        this.item(SeaItems.SALTED_COD);
+        this.item(SeaItems.SALTED_SALMON);
+        this.item(SeaItems.SALTED_TROPICAL_FISH);
+        this.item(SeaItems.SALTED_STARFISH);
+        this.item(SeaItems.SEA_URCHIN);
+        this.item(SeaItems.SOY_SAUCE);
 
-        item(SeaItems.MESSAGE_IN_A_BOTTLE);
-        item(SeaItems.OLD_BOOT);
-        item(SeaItems.METAL_CAN);
+        this.item(SeaItems.SHORE_CRAB_BUCKET);
+        this.item(SeaItems.HORSESHOE_CRAB_BUCKET);
 
-        item(SeaItems.SEA_SALT);
+        this.item(SeaItems.MESSAGE_IN_A_BOTTLE);
+        this.item(SeaItems.OLD_BOOT);
+        this.item(SeaItems.METAL_CAN);
+
+        this.item(SeaItems.SEA_SALT);
     }
 
     private void toBlock(RegistryObject<Block> b) {

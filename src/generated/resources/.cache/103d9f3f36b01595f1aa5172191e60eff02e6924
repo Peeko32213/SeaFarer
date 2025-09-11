@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-10T11:44:06.1316602	Registries
+// 1.20.1	2025-09-10T18:15:40.3078564	Registries
 ef3606999b9051dddb60098aac9dfafadcfe581f data/seafarer/forge/biome_modifier/add_feature/beach_beachgrass.json
 089d003ab90bb2b65b32844ba6f38b57d2664265 data/seafarer/forge/biome_modifier/add_feature/beach_seagrass.json
 6f5ba23d04e5ea6534d8dd7099d1a28cccdc1fb9 data/seafarer/forge/biome_modifier/add_feature/beach_starfish.json
@@ -9,6 +9,7 @@ ef3606999b9051dddb60098aac9dfafadcfe581f data/seafarer/forge/biome_modifier/add_
 3e6d720f96a03623b26dc928416a6a1ac7fb8528 data/seafarer/worldgen/biome/glass_beach.json
 92cdd5fa808b61d1330c58b637e353824dee4e7f data/seafarer/worldgen/biome/grassy_beach.json
 e2b82f6ca79b21b4148a783cab6896f52912515d data/seafarer/worldgen/biome/kelp_forest.json
+10c6e22f9fb24eb043471b5f92264236acd1579c data/seafarer/worldgen/biome/tropical_river.json
 6a40ff54e5135104e8c410b5daa79a38589b7112 data/seafarer/worldgen/biome/warm_reef.json
 a65f08f48b82c6ff1d1754bc6fa9bdd39ba8be70 data/seafarer/worldgen/configured_feature/beachgrass.json
 0d99eb49c84871345480ecefc09c801a33ef6a23 data/seafarer/worldgen/configured_feature/beach_flowers.json

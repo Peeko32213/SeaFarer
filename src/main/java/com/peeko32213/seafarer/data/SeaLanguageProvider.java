@@ -25,7 +25,7 @@ public class SeaLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations(){
-        addTabName(SeafarerTab.TAB.get(), "Seafarer");
+        addTabName(SeafarerTab.SEAFARER_TAB.get(), "Seafarer");
 
         // Blocks
         SeaBlocks.AUTO_TRANSLATE.forEach(this::forBlock);

@@ -122,27 +122,20 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
         ;
 
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
-                .add(SeaBlocks.SPRINKLED_SAND.get())
-                .add(SeaBlocks.GRAVELLY_SAND.get())
                 .add(SeaBlocks.SHELLY_SAND.get())
                 .add(SeaBlocks.CORALINE_SAND.get())
         ;
 
         tag(SeaTags.SPRINKLED_SAND)
-                .add(SeaBlocks.SPRINKLED_SAND.get())
-                .add(SeaBlocks.GRAVELLY_SAND.get())
                 .add(SeaBlocks.SHELLY_SAND.get())
         ;
 
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(SeaBlocks.AZURE_SEA_GLASS.get())
-                .add(SeaBlocks.AZURE_SEA_GLASS_PANE.get())
-                .add(SeaBlocks.AZURE_SEA_GLASS_BRICKS.get())
-                .add(SeaBlocks.AZURE_SEA_GLASS_BRICK_SLAB.get())
-                .add(SeaBlocks.AZURE_SEA_GLASS_BRICK_STAIRS.get())
-                .add(SeaBlocks.AZURE_SEA_GLASS_TILES.get())
-                .add(SeaBlocks.AZURE_SEA_GLASS_TILE_SLAB.get())
-                .add(SeaBlocks.AZURE_SEA_GLASS_TILE_STAIRS.get())
+                .add(SeaBlocks.LIGHT_BLUE_SEA_GLASS.get())
+                .add(SeaBlocks.LIGHT_BLUE_SEA_GLASS_PANE.get())
+                .add(SeaBlocks.LIGHT_BLUE_SEA_GLASS_BRICKS.get())
+                .add(SeaBlocks.LIGHT_BLUE_GLASS_BRICK_SLAB.get())
+                .add(SeaBlocks.LIGHT_BLUE_SEA_GLASS_BRICK_STAIRS.get())
 
                 .add(SeaBlocks.SALT_BLOCK.get())
 
@@ -175,10 +168,6 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
                 .add(SeaBlocks.PYRAMID_SHELL_BRICK_SLAB.get())
                 .add(SeaBlocks.PYRAMID_SHELL_BRICK_STAIRS.get())
                 .add(SeaBlocks.PYRAMID_SHELL_PILLAR.get())
-
-                .add(SeaBlocks.ALGAE_COBBLESTONE.get())
-                .add(SeaBlocks.ALGAE_COBBLESTONE_SLAB.get())
-                .add(SeaBlocks.ALGAE_COBBLESTONE_STAIRS.get())
         ;
     }
 

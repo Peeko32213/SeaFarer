@@ -25,6 +25,7 @@ public class SeaBiomes {
     public static final ResourceKey<Biome> GLASS_BEACH = createKey("glass_beach");
     public static final ResourceKey<Biome> ASHEN_BEACH = createKey("ashen_beach");
     public static final ResourceKey<Biome> KELP_FOREST = createKey("kelp_forest");
+    public static final ResourceKey<Biome> TROPICAL_RIVER = createKey("tropical_river");
 
     public static void bootstrap(BootstapContext<Biome> context) {
         HolderGetter<PlacedFeature> features = context.lookup(Registries.PLACED_FEATURE);
@@ -37,6 +38,7 @@ public class SeaBiomes {
         context.register(GLASS_BEACH, glassBeach(features, carvers));
         context.register(ASHEN_BEACH, ashenBeach(features, carvers));
         context.register(KELP_FOREST, kelpForest(features, carvers));
+        context.register(TROPICAL_RIVER, tropicalRiver(features, carvers));
     }
 
     public static ResourceKey<Biome> createKey(String name) {
@@ -113,6 +115,18 @@ public class SeaBiomes {
         spawns.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.TROPICAL_FISH, 25, 8, 8));
         spawns.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.DOLPHIN, 2, 1, 2));
         return biome(true, 0.5F, 0.5F, 4514047, 2055507, spawns, generation, null);
+    }
+
+    private static Biome tropicalRiver(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+        BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(features, carvers);
+        SeaBiomeGeneration.tropicalRiver(generation);
+
+        MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.baseJungleSpawns(spawns);
+        spawns.addSpawn(MobCategory.WATER_AMBIENT, new MobSpawnSettings.SpawnerData(EntityType.TROPICAL_FISH, 15, 6, 6));
+        spawns.addSpawn(MobCategory.WATER_CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DOLPHIN, 1, 1, 1));
+        spawns.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.DROWNED, 100, 1, 1));
+        return biome(true, 0.5F, 0.5F, 4445678, 270131, spawns, generation, null);
     }
 
     private static Biome biome(boolean precipitation, float temperature, float downfall, int waterColor, int waterFogColor, MobSpawnSettings.Builder spawns, BiomeGenerationSettings.Builder generation, @Nullable Music music) {
