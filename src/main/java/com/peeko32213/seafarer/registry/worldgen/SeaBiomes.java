@@ -26,6 +26,7 @@ public class SeaBiomes {
     public static final ResourceKey<Biome> VOLCANIC_BEACH = createKey("volcanic_beach");
     public static final ResourceKey<Biome> KELP_FOREST = createKey("kelp_forest");
     public static final ResourceKey<Biome> TROPICAL_RIVER = createKey("tropical_river");
+    public static final ResourceKey<Biome> VOLCANIC_ISLAND = createKey("volcanic_island");
 
     public static void bootstrap(BootstapContext<Biome> context) {
         HolderGetter<PlacedFeature> features = context.lookup(Registries.PLACED_FEATURE);
@@ -39,6 +40,7 @@ public class SeaBiomes {
         context.register(VOLCANIC_BEACH, volcanicBeach(features, carvers));
         context.register(KELP_FOREST, kelpForest(features, carvers));
         context.register(TROPICAL_RIVER, tropicalRiver(features, carvers));
+        context.register(VOLCANIC_ISLAND, volcanicIsland(features, carvers));
     }
 
     public static ResourceKey<Biome> createKey(String name) {
@@ -127,6 +129,16 @@ public class SeaBiomes {
         spawns.addSpawn(MobCategory.WATER_CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DOLPHIN, 1, 1, 1));
         spawns.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.DROWNED, 100, 1, 1));
         return biome(true, 0.5F, 0.5F, 4445678, 270131, spawns, generation, null);
+    }
+
+    private static Biome volcanicIsland(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
+        BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(features, carvers);
+        SeaBiomeGeneration.volcanicBeach(generation);
+
+        MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.commonSpawns(spawns);
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.TURTLE, 5, 2, 5));
+        return biome(true, 0.8F, 0.4F, 4445678, 270131, spawns, generation, null);
     }
 
     private static Biome biome(boolean precipitation, float temperature, float downfall, int waterColor, int waterFogColor, MobSpawnSettings.Builder spawns, BiomeGenerationSettings.Builder generation, @Nullable Music music) {

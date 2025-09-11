@@ -1,4 +1,5 @@
-// 1.20.1	2025-09-04T21:19:02.4168372	Tags for minecraft:worldgen/biome mod id seafarer
+// 1.20.1	2025-09-11T16:33:36.137179	Tags for minecraft:worldgen/biome mod id seafarer
+25b0032ca8b648ea4571a48190e9a350e0c3d00e data/seafarer/tags/worldgen/biome/has_structure/volcano.json
 84ae1b52779cded144ee5496b74ffbb4741be39d data/seafarer/tags/worldgen/biome/is_algae_boulder_biome.json
 10dae9b42630d6d18935669604c94a69d6d28eb8 data/seafarer/tags/worldgen/biome/is_beach_biome.json
 10dae9b42630d6d18935669604c94a69d6d28eb8 data/seafarer/tags/worldgen/biome/is_crab_biome.json

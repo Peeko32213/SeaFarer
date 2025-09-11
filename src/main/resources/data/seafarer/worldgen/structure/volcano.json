@@ -1,0 +1,16 @@
+{
+  "type": "seafarer:volcano",
+  "biomes": "#seafarer:has_structure/volcano",
+  "height": {
+    "absolute": 16
+  },
+  "radius": {
+    "type": "minecraft:uniform",
+    "value": {
+      "max_inclusive": 64,
+      "min_inclusive": 48
+    }
+  },
+  "spawn_overrides": {},
+  "step": "surface_structures"
+}

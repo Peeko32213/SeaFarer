@@ -46,6 +46,8 @@ public class Seafarer {
         SeafarerTab.CREATIVE_TABS.register(bus);
         SeaEntities.ENTITY_TYPES.register(bus);
         SeaFeatures.FEATURES.register(bus);
+        SeaStructureTypes.STRUCTURE_TYPES.register(bus);
+        SeaStructurePieces.STRUCTURE_PIECES.register(bus);
         SeaLootModifiers.LOOT_MODIFIERS.register(bus);
         SeaSoundEvents.SOUND_EVENTS.register(bus);
         SeaPaintings.PAINTING_VARIANTS.register(bus);

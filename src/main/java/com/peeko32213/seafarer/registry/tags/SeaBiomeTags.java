@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.Block;
 public class SeaBiomeTags {
 
     public static final TagKey<Biome> WARM_OCEANS = modBiomeTag("warm_oceans");
+    public static final TagKey<Biome> HAS_VOLCANOES = modBiomeTag("has_structure/volcano");
 
     private static TagKey<Biome> modBiomeTag(String name) {
         return biomeTag(Seafarer.MOD_ID, name);

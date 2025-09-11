@@ -73,6 +73,14 @@ public class SeaBiomePlacements {
                     ));
         }
 
+        if (SeafarerConfig.VOLCANIC_ISLAND.get()) {
+            BiomePlacement.replaceOverworld(
+                    Biomes.MUSHROOM_FIELDS,
+                    SeaBiomes.VOLCANIC_ISLAND,
+                    0.3D
+            );
+        }
+
         if (SeafarerConfig.WARM_REEF.get()) {
             BiomePlacement.replaceOverworld(
                     Biomes.WARM_OCEAN,
