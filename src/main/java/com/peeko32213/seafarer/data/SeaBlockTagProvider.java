@@ -130,7 +130,7 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
                 .add(SeaBlocks.SHELLY_SAND.get())
         ;
 
-        tag(BlockTags.MINEABLE_WITH_PICKAXE)
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(SeaBlocks.LIGHT_BLUE_SEA_GLASS.get())
                 .add(SeaBlocks.LIGHT_BLUE_SEA_GLASS_PANE.get())
                 .add(SeaBlocks.LIGHT_BLUE_SEA_GLASS_BRICKS.get())
@@ -169,6 +169,12 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
                 .add(SeaBlocks.PYRAMID_SHELL_BRICK_STAIRS.get())
                 .add(SeaBlocks.PYRAMID_SHELL_PILLAR.get())
         ;
+
+        this.tag(BlockTags.WALLS).add(
+                VOLCANIC_SANDSTONE_WALL.get(),
+                CORALINE_SANDSTONE_WALL.get()
+        );
+
     }
 
 

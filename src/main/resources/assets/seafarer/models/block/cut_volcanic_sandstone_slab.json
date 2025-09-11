@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "seafarer:block/volcanic_sandstone_top",
+    "side": "seafarer:block/cut_volcanic_sandstone",
+    "top": "seafarer:block/volcanic_sandstone_top"
+  }
+}

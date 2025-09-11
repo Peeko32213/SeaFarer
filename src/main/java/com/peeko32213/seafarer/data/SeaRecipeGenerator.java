@@ -69,12 +69,6 @@ public class SeaRecipeGenerator extends SeaRecipeProvider implements IConditionB
 
         makeIngotToBlock(SeaBlocks.SALT_BLOCK, SeaItems.SEA_SALT).save(consumer);
 
-        makeBlockPickaxe(SeaItems.HORN_PICKAXE, SeaBlocks.HORN_SHELL).save(consumer);
-        makeBlockShovel(SeaItems.CLAM_SHOVEL, SeaBlocks.CLAM_SHELL).save(consumer);
-        makeBlockSword(SeaItems.SPIKY_SWORD, SeaBlocks.SPIKY_SHELL).save(consumer);
-        makeBlockHoe(SeaItems.SPIRAL_HOE, SeaBlocks.SPIRAL_SHELL).save(consumer);
-        makeBlockAxe(SeaItems.SWIRL_AXE, SeaBlocks.SWIRL_SHELL).save(consumer);
-
         smeltingRecipe(SeaItems.COOKED_SHORE_CRAB_LEG.get(), SeaItems.RAW_SHORE_CRAB_LEG.get(), 10, 1).save(consumer);
 
         smeltingRecipe(SeaItems.COOKED_HORSESHOE_CRAB.get(), SeaItems.RAW_HORSESHOE_CRAB.get(), 10, 1).save(consumer);

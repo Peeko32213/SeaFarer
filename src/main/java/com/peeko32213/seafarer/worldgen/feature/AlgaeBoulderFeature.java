@@ -129,7 +129,7 @@ public class AlgaeBoulderFeature extends Feature<NoneFeatureConfiguration> {
 
     public static void changeTerrain(WorldGenLevel worldgenlevel, RandomSource rand, BlockPos origin, FastNoiseLite noise, int radius) {
         BlockState block = Blocks.SAND.defaultBlockState();
-        BlockState block2 = SeaBlocks.ASHEN_SAND.get().defaultBlockState();
+        BlockState block2 = SeaBlocks.VOLCANIC_SAND.get().defaultBlockState();
         for (int x = -radius; x < radius; x++) {
             for (int z = -radius; z < radius; z++) {
                 BlockPos pos = origin.offset(x, 0, z);

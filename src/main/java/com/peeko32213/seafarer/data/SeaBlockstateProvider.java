@@ -36,134 +36,159 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         return new ModelFile.ExistingModelFile(resourceBlock(path), models().existingFileHelper);
     }
 
-    public void simpleBlockItem(Block block, ModelFile model) {
-        itemModels().getBuilder(key(block).getPath()).parent(model);
-    }
-
     @Override
     protected void registerStatesAndModels() {
         this.cubeAllBlock(ALGAE_BLOCK);
 
-        // Azure Sea glass
-        this.cubeAllBlock(LIGHT_BLUE_PEBBLED_SEA_GLASS);
-        this.cubeAllBlockWithRenderType(LIGHT_BLUE_SEA_GLASS, "translucent");
-
-        this.cubeAllBlock(LIGHT_BLUE_SEA_GLASS_BRICKS);
-        this.slab(LIGHT_BLUE_GLASS_BRICK_SLAB, this.blockTexture(LIGHT_BLUE_SEA_GLASS_BRICKS.get()));
-        this.stairs(LIGHT_BLUE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(LIGHT_BLUE_SEA_GLASS_BRICKS.get()));
-
-        this.directionalBlock(LIGHT_BLUE_SEA_GLASS_LAMP);
-        this.paneBlockWithRenderType((IronBarsBlock) LIGHT_BLUE_SEA_GLASS_PANE.get(), this.blockTexture(LIGHT_BLUE_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/light_blue_sea_glass_pane_top"), "translucent");
-
-        // Rose Sea glass
-        this.cubeAllBlock(PINK_PEBBLED_SEA_GLASS);
-        this.cubeAllBlockWithRenderType(PINK_SEA_GLASS, "translucent");
-
-        this.cubeAllBlock(PINK_SEA_GLASS_BRICKS);
-        this.slab(PINK_SEA_GLASS_BRICK_SLAB, this.blockTexture(PINK_SEA_GLASS_BRICKS.get()));
-        this.stairs(PINK_SEA_GLASS_BRICK_STAIRS, this.blockTexture(PINK_SEA_GLASS_BRICKS.get()));
-
-        this.directionalBlock(PINK_SEA_GLASS_LAMP);
-        this.paneBlockWithRenderType((IronBarsBlock) PINK_SEA_GLASS_PANE.get(), this.blockTexture(PINK_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/pink_sea_glass_pane_top"), "translucent");
-
-        // Lilac Sea glass
-        this.cubeAllBlock(MAGENTA_PEBBLED_SEA_GLASS);
-        this.cubeAllBlockWithRenderType(MAGENTA_SEA_GLASS, "translucent");
-
-        this.cubeAllBlock(MAGENTA_SEA_GLASS_BRICKS);
-        this.slab(MAGENTA_SEA_GLASS_BRICK_SLAB, this.blockTexture(MAGENTA_SEA_GLASS_BRICKS.get()));
-        this.stairs(MAGENTA_SEA_GLASS_BRICK_STAIRS, this.blockTexture(MAGENTA_SEA_GLASS_BRICKS.get()));
-
-        this.directionalBlock(MAGENTA_SEA_GLASS_LAMP);
-        this.paneBlockWithRenderType((IronBarsBlock) MAGENTA_SEA_GLASS_PANE.get(), this.blockTexture(MAGENTA_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/magenta_sea_glass_pane_top"), "translucent");
-
-        // Seafoam Sea glass
-        this.cubeAllBlock(GREEN_PEBBLED_SEA_GLASS);
-        this.cubeAllBlockWithRenderType(GREEN_SEA_GLASS, "translucent");
-
-        this.cubeAllBlock(GREEN_SEA_GLASS_BRICKS);
-        this.slab(GREEN_SEA_GLASS_BRICK_SLAB, this.blockTexture(GREEN_SEA_GLASS_BRICKS.get()));
-        this.stairs(GREEN_SEA_GLASS_BRICK_STAIRS, this.blockTexture(GREEN_SEA_GLASS_BRICKS.get()));
-
-        this.directionalBlock(GREEN_SEA_GLASS_LAMP);
-        this.paneBlockWithRenderType((IronBarsBlock) GREEN_SEA_GLASS_PANE.get(), this.blockTexture(GREEN_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/green_sea_glass_pane_top"), "translucent");
-
-        // Chartreuse Sea glass
-        this.cubeAllBlock(LIME_PEBBLED_SEA_GLASS);
-        this.cubeAllBlockWithRenderType(LIME_SEA_GLASS, "translucent");
-
-        this.cubeAllBlock(LIME_SEA_GLASS_BRICKS);
-        this.slab(LIME_SEA_GLASS_BRICK_SLAB, this.blockTexture(LIME_SEA_GLASS_BRICKS.get()));
-        this.stairs(LIME_SEA_GLASS_BRICK_STAIRS, this.blockTexture(LIME_SEA_GLASS_BRICKS.get()));
-
-        this.directionalBlock(LIME_SEA_GLASS_LAMP);
-        this.paneBlockWithRenderType((IronBarsBlock) LIME_SEA_GLASS_PANE.get(), this.blockTexture(LIME_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/lime_sea_glass_pane_top"), "translucent");
-
-        // Citrine Sea glass
-        this.cubeAllBlock(YELLOW_PEBBLED_SEA_GLASS);
-        this.cubeAllBlockWithRenderType(YELLOW_SEA_GLASS, "translucent");
-
-        this.cubeAllBlock(YELLOW_SEA_GLASS_BRICKS);
-        this.slab(YELLOW_SEA_GLASS_BRICK_SLAB, this.blockTexture(YELLOW_SEA_GLASS_BRICKS.get()));
-        this.stairs(YELLOW_SEA_GLASS_BRICK_STAIRS, this.blockTexture(YELLOW_SEA_GLASS_BRICKS.get()));
-
-        this.directionalBlock(YELLOW_SEA_GLASS_LAMP);
-        this.paneBlockWithRenderType((IronBarsBlock) YELLOW_SEA_GLASS_PANE.get(), this.blockTexture(YELLOW_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/yellow_sea_glass_pane_top"), "translucent");
-
-        // Amber Sea glass
-        this.cubeAllBlock(ORANGE_PEBBLED_SEA_GLASS);
-        this.cubeAllBlockWithRenderType(ORANGE_SEA_GLASS, "translucent");
-
-        this.cubeAllBlock(ORANGE_SEA_GLASS_BRICKS);
-        this.slab(ORANGE_SEA_GLASS_BRICK_SLAB, this.blockTexture(ORANGE_SEA_GLASS_BRICKS.get()));
-        this.stairs(ORANGE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(ORANGE_SEA_GLASS_BRICKS.get()));
-
-        this.directionalBlock(ORANGE_SEA_GLASS_LAMP);
-        this.paneBlockWithRenderType((IronBarsBlock) ORANGE_SEA_GLASS_PANE.get(), this.blockTexture(ORANGE_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/orange_sea_glass_pane_top"), "translucent");
-
-        // scarlet sea glass
-        this.cubeAllBlock(RED_PEBBLED_SEA_GLASS);
-        this.cubeAllBlockWithRenderType(RED_SEA_GLASS, "translucent");
-
-        this.cubeAllBlock(RED_SEA_GLASS_BRICKS);
-        this.slab(RED_SEA_GLASS_BRICK_SLAB, this.blockTexture(RED_SEA_GLASS_BRICKS.get()));
-        this.stairs(RED_SEA_GLASS_BRICK_STAIRS, this.blockTexture(RED_SEA_GLASS_BRICKS.get()));
-
-        this.directionalBlock(RED_SEA_GLASS_LAMP);
-        this.paneBlockWithRenderType((IronBarsBlock) RED_SEA_GLASS_PANE.get(), this.blockTexture(RED_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/red_sea_glass_pane_top"), "translucent");
-
-        // umber sea glass
-        this.cubeAllBlock(BLACK_PEBBLED_SEA_GLASS);
-        this.cubeAllBlockWithRenderType(BLACK_SEA_GLASS, "translucent");
-
-        this.cubeAllBlock(BLACK_SEA_GLASS_BRICKS);
-        this.slab(BLACK_SEA_GLASS_BRICK_SLAB, this.blockTexture(BLACK_SEA_GLASS_BRICKS.get()));
-        this.stairs(BLACK_SEA_GLASS_BRICK_STAIRS, this.blockTexture(BLACK_SEA_GLASS_BRICKS.get()));
-
-        this.directionalBlock(BLACK_SEA_GLASS_LAMP);
-        this.paneBlockWithRenderType((IronBarsBlock) BLACK_SEA_GLASS_PANE.get(), this.blockTexture(BLACK_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/black_sea_glass_pane_top"), "translucent");
-
-        // pearly sea glass
+        // white sea glass
         this.cubeAllBlock(WHITE_PEBBLED_SEA_GLASS);
-        this.cubeAllBlockWithRenderType(WHITE_SEA_GLASS, "translucent");
-
+        this.glassBlock(WHITE_SEA_GLASS);
         this.cubeAllBlock(WHITE_SEA_GLASS_BRICKS);
         this.slab(WHITE_SEA_GLASS_BRICK_SLAB, this.blockTexture(WHITE_SEA_GLASS_BRICKS.get()));
         this.stairs(WHITE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(WHITE_SEA_GLASS_BRICKS.get()));
-
         this.directionalBlock(WHITE_SEA_GLASS_LAMP);
-        this.paneBlockWithRenderType((IronBarsBlock) WHITE_SEA_GLASS_PANE.get(), this.blockTexture(WHITE_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/white_sea_glass_pane_top"), "translucent");
+        this.glassPane(WHITE_SEA_GLASS_PANE, this.blockTexture(WHITE_SEA_GLASS.get()));
 
+        // light gray sea glass
         this.cubeAllBlock(LIGHT_GRAY_PEBBLED_SEA_GLASS);
-        this.cubeAllBlockWithRenderType(LIGHT_GRAY_SEA_GLASS, "translucent");
-
+        this.glassBlock(LIGHT_GRAY_SEA_GLASS);
         this.cubeAllBlock(LIGHT_GRAY_SEA_GLASS_BRICKS);
         this.slab(LIGHT_GRAY_SEA_GLASS_BRICK_SLAB, this.blockTexture(LIGHT_GRAY_SEA_GLASS_BRICKS.get()));
         this.stairs(LIGHT_GRAY_SEA_GLASS_BRICK_STAIRS, this.blockTexture(LIGHT_GRAY_SEA_GLASS_BRICKS.get()));
-
         this.directionalBlock(LIGHT_GRAY_SEA_GLASS_LAMP);
-        this.paneBlockWithRenderType((IronBarsBlock) LIGHT_GRAY_SEA_GLASS_PANE.get(), this.blockTexture(LIGHT_GRAY_SEA_GLASS.get()), new ResourceLocation(Seafarer.MOD_ID, "block/light_gray_sea_glass_pane_top"), "translucent");
+        this.pillar(LIGHT_GRAY_NETTED_SEA_GLASS_LAMP);
+        this.glassPane(LIGHT_GRAY_SEA_GLASS_PANE, this.blockTexture(LIGHT_GRAY_SEA_GLASS.get()));
 
+        // gray sea glass
+        this.cubeAllBlock(GRAY_PEBBLED_SEA_GLASS);
+        this.glassBlock(GRAY_SEA_GLASS);
+        this.cubeAllBlock(GRAY_SEA_GLASS_BRICKS);
+        this.slab(GRAY_SEA_GLASS_BRICK_SLAB, this.blockTexture(GRAY_SEA_GLASS_BRICKS.get()));
+        this.stairs(GRAY_SEA_GLASS_BRICK_STAIRS, this.blockTexture(GRAY_SEA_GLASS_BRICKS.get()));
+        this.directionalBlock(GRAY_SEA_GLASS_LAMP);
+        this.pillar(GRAY_NETTED_SEA_GLASS_LAMP);
+        this.glassPane(GRAY_SEA_GLASS_PANE, this.blockTexture(GRAY_SEA_GLASS.get()));
+
+        // black sea glass
+        this.cubeAllBlock(BLACK_PEBBLED_SEA_GLASS);
+        this.glassBlock(BLACK_SEA_GLASS);
+        this.cubeAllBlock(BLACK_SEA_GLASS_BRICKS);
+        this.slab(BLACK_SEA_GLASS_BRICK_SLAB, this.blockTexture(BLACK_SEA_GLASS_BRICKS.get()));
+        this.stairs(BLACK_SEA_GLASS_BRICK_STAIRS, this.blockTexture(BLACK_SEA_GLASS_BRICKS.get()));
+        this.directionalBlock(BLACK_SEA_GLASS_LAMP);
+        this.glassPane(BLACK_SEA_GLASS_PANE, this.blockTexture(BLACK_SEA_GLASS.get()));
+
+        // brown sea glass
+        this.cubeAllBlock(BROWN_PEBBLED_SEA_GLASS);
+        this.glassBlock(BROWN_SEA_GLASS);
+        this.cubeAllBlock(BROWN_SEA_GLASS_BRICKS);
+        this.slab(BROWN_SEA_GLASS_BRICK_SLAB, this.blockTexture(BROWN_SEA_GLASS_BRICKS.get()));
+        this.stairs(BROWN_SEA_GLASS_BRICK_STAIRS, this.blockTexture(BROWN_SEA_GLASS_BRICKS.get()));
+        this.directionalBlock(BROWN_SEA_GLASS_LAMP);
+        this.pillar(BROWN_NETTED_SEA_GLASS_LAMP);
+        this.glassPane(BROWN_SEA_GLASS_PANE, this.blockTexture(BROWN_SEA_GLASS.get()));
+
+        // red sea glass
+        this.cubeAllBlock(RED_PEBBLED_SEA_GLASS);
+        this.glassBlock(RED_SEA_GLASS);
+        this.cubeAllBlock(RED_SEA_GLASS_BRICKS);
+        this.slab(RED_SEA_GLASS_BRICK_SLAB, this.blockTexture(RED_SEA_GLASS_BRICKS.get()));
+        this.stairs(RED_SEA_GLASS_BRICK_STAIRS, this.blockTexture(RED_SEA_GLASS_BRICKS.get()));
+        this.directionalBlock(RED_SEA_GLASS_LAMP);
+        this.glassPane(RED_SEA_GLASS_PANE, this.blockTexture(RED_SEA_GLASS.get()));
+
+        // orange sea glass
+        this.cubeAllBlock(ORANGE_PEBBLED_SEA_GLASS);
+        this.glassBlock(ORANGE_SEA_GLASS);
+        this.cubeAllBlock(ORANGE_SEA_GLASS_BRICKS);
+        this.slab(ORANGE_SEA_GLASS_BRICK_SLAB, this.blockTexture(ORANGE_SEA_GLASS_BRICKS.get()));
+        this.stairs(ORANGE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(ORANGE_SEA_GLASS_BRICKS.get()));
+        this.directionalBlock(ORANGE_SEA_GLASS_LAMP);
+        this.glassPane(ORANGE_SEA_GLASS_PANE, this.blockTexture(ORANGE_SEA_GLASS.get()));
+
+        // yellow sea glass
+        this.cubeAllBlock(YELLOW_PEBBLED_SEA_GLASS);
+        this.glassBlock(YELLOW_SEA_GLASS);
+        this.cubeAllBlock(YELLOW_SEA_GLASS_BRICKS);
+        this.slab(YELLOW_SEA_GLASS_BRICK_SLAB, this.blockTexture(YELLOW_SEA_GLASS_BRICKS.get()));
+        this.stairs(YELLOW_SEA_GLASS_BRICK_STAIRS, this.blockTexture(YELLOW_SEA_GLASS_BRICKS.get()));
+        this.directionalBlock(YELLOW_SEA_GLASS_LAMP);
+        this.glassPane(YELLOW_SEA_GLASS_PANE, this.blockTexture(YELLOW_SEA_GLASS.get()));
+
+        // lime sea glass
+        this.cubeAllBlock(LIME_PEBBLED_SEA_GLASS);
+        this.glassBlock(LIME_SEA_GLASS);
+        this.cubeAllBlock(LIME_SEA_GLASS_BRICKS);
+        this.slab(LIME_SEA_GLASS_BRICK_SLAB, this.blockTexture(LIME_SEA_GLASS_BRICKS.get()));
+        this.stairs(LIME_SEA_GLASS_BRICK_STAIRS, this.blockTexture(LIME_SEA_GLASS_BRICKS.get()));
+        this.directionalBlock(LIME_SEA_GLASS_LAMP);
+        this.glassPane(LIME_SEA_GLASS_PANE, this.blockTexture(LIME_SEA_GLASS.get()));
+
+        // green sea glass
+        this.cubeAllBlock(GREEN_PEBBLED_SEA_GLASS);
+        this.glassBlock(GREEN_SEA_GLASS);
+        this.cubeAllBlock(GREEN_SEA_GLASS_BRICKS);
+        this.slab(GREEN_SEA_GLASS_BRICK_SLAB, this.blockTexture(GREEN_SEA_GLASS_BRICKS.get()));
+        this.stairs(GREEN_SEA_GLASS_BRICK_STAIRS, this.blockTexture(GREEN_SEA_GLASS_BRICKS.get()));
+        this.directionalBlock(GREEN_SEA_GLASS_LAMP);
+        this.glassPane(GREEN_SEA_GLASS_PANE, this.blockTexture(GREEN_SEA_GLASS.get()));
+
+        // cyan sea glass
+        this.cubeAllBlock(CYAN_PEBBLED_SEA_GLASS);
+        this.glassBlock(CYAN_SEA_GLASS);
+        this.cubeAllBlock(CYAN_SEA_GLASS_BRICKS);
+        this.slab(CYAN_SEA_GLASS_BRICK_SLAB, this.blockTexture(CYAN_SEA_GLASS_BRICKS.get()));
+        this.stairs(CYAN_SEA_GLASS_BRICK_STAIRS, this.blockTexture(CYAN_SEA_GLASS_BRICKS.get()));
+        this.directionalBlock(CYAN_SEA_GLASS_LAMP);
+        this.pillar(CYAN_NETTED_SEA_GLASS_LAMP);
+        this.glassPane(CYAN_SEA_GLASS_PANE, this.blockTexture(CYAN_SEA_GLASS.get()));
+
+        // light blue sea glass
+        this.cubeAllBlock(LIGHT_BLUE_PEBBLED_SEA_GLASS);
+        this.glassBlock(LIGHT_BLUE_SEA_GLASS);
+        this.cubeAllBlock(LIGHT_BLUE_SEA_GLASS_BRICKS);
+        this.slab(LIGHT_BLUE_GLASS_BRICK_SLAB, this.blockTexture(LIGHT_BLUE_SEA_GLASS_BRICKS.get()));
+        this.stairs(LIGHT_BLUE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(LIGHT_BLUE_SEA_GLASS_BRICKS.get()));
+        this.directionalBlock(LIGHT_BLUE_SEA_GLASS_LAMP);
+        this.glassPane(LIGHT_BLUE_SEA_GLASS_PANE, this.blockTexture(LIGHT_BLUE_SEA_GLASS.get()));
+
+        // blue sea glass
+        this.cubeAllBlock(BLUE_PEBBLED_SEA_GLASS);
+        this.glassBlock(BLUE_SEA_GLASS);
+        this.cubeAllBlock(BLUE_SEA_GLASS_BRICKS);
+        this.slab(BLUE_SEA_GLASS_BRICK_SLAB, this.blockTexture(BLUE_SEA_GLASS_BRICKS.get()));
+        this.stairs(BLUE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(BLUE_SEA_GLASS_BRICKS.get()));
+        this.directionalBlock(BLUE_SEA_GLASS_LAMP);
+        this.pillar(BLUE_NETTED_SEA_GLASS_LAMP);
+        this.glassPane(BLUE_SEA_GLASS_PANE, this.blockTexture(BLUE_SEA_GLASS.get()));
+
+        // purple sea glass
+        this.cubeAllBlock(PURPLE_PEBBLED_SEA_GLASS);
+        this.glassBlock(PURPLE_SEA_GLASS);
+        this.cubeAllBlock(PURPLE_SEA_GLASS_BRICKS);
+        this.slab(PURPLE_SEA_GLASS_BRICK_SLAB, this.blockTexture(PURPLE_SEA_GLASS_BRICKS.get()));
+        this.stairs(PURPLE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(PURPLE_SEA_GLASS_BRICKS.get()));
+        this.directionalBlock(PURPLE_SEA_GLASS_LAMP);
+        this.pillar(PURPLE_NETTED_SEA_GLASS_LAMP);
+        this.glassPane(PURPLE_SEA_GLASS_PANE, this.blockTexture(PURPLE_SEA_GLASS.get()));
+
+        // magenta sea glass
+        this.cubeAllBlock(MAGENTA_PEBBLED_SEA_GLASS);
+        this.glassBlock(MAGENTA_SEA_GLASS);
+        this.cubeAllBlock(MAGENTA_SEA_GLASS_BRICKS);
+        this.slab(MAGENTA_SEA_GLASS_BRICK_SLAB, this.blockTexture(MAGENTA_SEA_GLASS_BRICKS.get()));
+        this.stairs(MAGENTA_SEA_GLASS_BRICK_STAIRS, this.blockTexture(MAGENTA_SEA_GLASS_BRICKS.get()));
+        this.directionalBlock(MAGENTA_SEA_GLASS_LAMP);
+        this.glassPane(MAGENTA_SEA_GLASS_PANE, this.blockTexture(MAGENTA_SEA_GLASS.get()));
+
+        // pink sea glass
+        this.cubeAllBlock(PINK_PEBBLED_SEA_GLASS);
+        this.glassBlock(PINK_SEA_GLASS);
+        this.cubeAllBlock(PINK_SEA_GLASS_BRICKS);
+        this.slab(PINK_SEA_GLASS_BRICK_SLAB, this.blockTexture(PINK_SEA_GLASS_BRICKS.get()));
+        this.stairs(PINK_SEA_GLASS_BRICK_STAIRS, this.blockTexture(PINK_SEA_GLASS_BRICKS.get()));
+        this.directionalBlock(PINK_SEA_GLASS_LAMP);
+        this.glassPane(PINK_SEA_GLASS_PANE, this.blockTexture(PINK_SEA_GLASS.get()));
 
         // shell blocks
         this.cubeAllBlock(CLAM_SHELL_BRICKS);
@@ -247,25 +272,28 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.coralFan(VERDANT_CORAL_FAN, VERDANT_CORAL_WALL_FAN);
 
         this.cubeAllBlock(CORALINE_SAND);
-
+        this.wall(CORALINE_SANDSTONE_WALL, this.blockTexture(CORALINE_SANDSTONE.get()));
         this.cubeAllBlock(SMOOTH_CORALINE_SANDSTONE);
         this.stairs(SMOOTH_CORALINE_SANDSTONE_STAIRS, this.blockTexture(SMOOTH_CORALINE_SANDSTONE.get()));
         this.slab(SMOOTH_CORALINE_SANDSTONE_SLAB, this.blockTexture(SMOOTH_CORALINE_SANDSTONE.get()));
+        this.simpleBlockItem(SeaBlocks.CORALINE_SANDSTONE.get(), this.existingModel((getName(SeaBlocks.CORALINE_SANDSTONE.get()))));
+        this.simpleBlockItem(SeaBlocks.CORALINE_SANDSTONE_SLAB.get(), this.existingModel((getName(SeaBlocks.CORALINE_SANDSTONE_SLAB.get()))));
+        this.simpleBlockItem(SeaBlocks.CORALINE_SANDSTONE_STAIRS.get(), this.existingModel((getName(SeaBlocks.CORALINE_SANDSTONE_STAIRS.get()))));
+        this.simpleBlockItem(SeaBlocks.CUT_CORALINE_SANDSTONE.get(), this.existingModel((getName(SeaBlocks.CUT_CORALINE_SANDSTONE.get()))));
+        this.simpleBlockItem(SeaBlocks.CUT_CORALINE_SANDSTONE_SLAB.get(), this.existingModel((getName(SeaBlocks.CUT_CORALINE_SANDSTONE_SLAB.get()))));
+        this.simpleBlockItem(SeaBlocks.CHISELED_CORALINE_SANDSTONE.get(), this.existingModel((getName(SeaBlocks.CHISELED_CORALINE_SANDSTONE.get()))));
 
-        this.simpleBlockItem(SeaBlocks.CUT_CORALINE_SANDSTONE.get(), existingModel((getName(SeaBlocks.CUT_CORALINE_SANDSTONE.get()))));
-        this.simpleBlockItem(SeaBlocks.CHISELED_CORALINE_SANDSTONE.get(), existingModel((getName(SeaBlocks.CHISELED_CORALINE_SANDSTONE.get()))));
-        this.simpleBlockItem(SeaBlocks.SMOOTH_CORALINE_SANDSTONE.get(), existingModel((getName(SeaBlocks.SMOOTH_CORALINE_SANDSTONE.get()))));
-        this.simpleBlockItem(SeaBlocks.CORALINE_SANDSTONE.get(), existingModel((getName(SeaBlocks.CORALINE_SANDSTONE.get()))));
-        this.simpleBlockItem(SeaBlocks.CORALINE_SANDSTONE_SLAB.get(), existingModel((getName(SeaBlocks.CORALINE_SANDSTONE_SLAB.get()))));
-        this.simpleBlockItem(SeaBlocks.CORALINE_SANDSTONE_STAIRS.get(), existingModel((getName(SeaBlocks.CORALINE_SANDSTONE_STAIRS.get()))));
-        this.simpleBlockItem(SeaBlocks.CUT_CORALINE_SANDSTONE_SLAB.get(), existingModel((getName(SeaBlocks.CUT_CORALINE_SANDSTONE_SLAB.get()))));
-        this.simpleBlockItem(SeaBlocks.CUT_CORALINE_SANDSTONE_STAIRS.get(), existingModel((getName(SeaBlocks.CUT_CORALINE_SANDSTONE_STAIRS.get()))));
-
-        this.cubeAllBlock(ASHEN_SAND);
-
-        this.simpleBlockItem(SeaBlocks.ASHEN_SANDSTONE.get(), existingModel((getName(SeaBlocks.ASHEN_SANDSTONE.get()))));
-        this.simpleBlockItem(SeaBlocks.ASHEN_SANDSTONE_SLAB.get(), existingModel((getName(SeaBlocks.ASHEN_SANDSTONE_SLAB.get()))));
-        this.simpleBlockItem(SeaBlocks.ASHEN_SANDSTONE_STAIRS.get(), existingModel((getName(SeaBlocks.ASHEN_SANDSTONE_STAIRS.get()))));
+        this.cubeAllBlock(VOLCANIC_SAND);
+        this.wall(VOLCANIC_SANDSTONE_WALL, this.blockTexture(VOLCANIC_SANDSTONE.get()));
+        this.cubeAllBlock(SMOOTH_VOLCANIC_SANDSTONE);
+        this.stairs(SMOOTH_VOLCANIC_SANDSTONE_STAIRS, this.blockTexture(SMOOTH_VOLCANIC_SANDSTONE.get()));
+        this.slab(SMOOTH_VOLCANIC_SANDSTONE_SLAB, this.blockTexture(SMOOTH_VOLCANIC_SANDSTONE.get()));
+        this.simpleBlockItem(SeaBlocks.VOLCANIC_SANDSTONE.get(), this.existingModel((getName(SeaBlocks.VOLCANIC_SANDSTONE.get()))));
+        this.simpleBlockItem(SeaBlocks.VOLCANIC_SANDSTONE_SLAB.get(), this.existingModel((getName(SeaBlocks.VOLCANIC_SANDSTONE_SLAB.get()))));
+        this.simpleBlockItem(SeaBlocks.VOLCANIC_SANDSTONE_STAIRS.get(), this.existingModel((getName(SeaBlocks.VOLCANIC_SANDSTONE_STAIRS.get()))));
+        this.simpleBlockItem(SeaBlocks.CUT_VOLCANIC_SANDSTONE.get(), this.existingModel((getName(SeaBlocks.CUT_VOLCANIC_SANDSTONE.get()))));
+        this.simpleBlockItem(SeaBlocks.CUT_VOLCANIC_SANDSTONE_SLAB.get(), this.existingModel((getName(SeaBlocks.CUT_VOLCANIC_SANDSTONE_SLAB.get()))));
+        this.simpleBlockItem(SeaBlocks.CHISELED_VOLCANIC_SANDSTONE.get(), this.existingModel((getName(SeaBlocks.CHISELED_VOLCANIC_SANDSTONE.get()))));
     }
 
     private void createPottedPlant(RegistryObject<Block> plant, RegistryObject<Block> pottedPlant, String renderType){
@@ -326,7 +354,7 @@ public class SeaBlockstateProvider extends BlockStateProvider {
 
     public void directionalBlock(RegistryObject<Block> block) {
         ResourceLocation blockTexture = blockTexture(block.get());
-        this.directionalBlock(block, suffix(blockTexture, "_side"), suffix(blockTexture, "_top"), suffix(blockTexture, "_bottom"));
+        this.directionalBlock(block, suffix(blockTexture, "_side"), suffix(blockTexture, "_bottom"), suffix(blockTexture, "_top"));
     }
 
     public static ResourceLocation suffix(ResourceLocation resourceLocation, String suffix) {
@@ -361,6 +389,11 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.itemModel(block);
     }
 
+    private void glassBlock(RegistryObject<Block> block) {
+        this.simpleBlock(block.get(), models().getBuilder(name(block.get())).parent(new ModelFile.UncheckedModelFile(new ResourceLocation("block/cube_all"))).renderType("translucent").texture("all", blockTexture(block.get())));
+        this.itemModel(block);
+    }
+
     private void stairs(RegistryObject<Block> stairs, ResourceLocation texture) {
         this.stairsBlock((StairBlock) stairs.get(), texture);
         this.itemModel(stairs);
@@ -392,9 +425,9 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.itemModel(pillar);
     }
 
-    private void pane(RegistryObject<Block> pane, ResourceLocation texture) {
-        this.paneBlockWithRenderType((IronBarsBlock) pane.get(), texture, this.modLoc("block/" + getItemName(pane.get()) + "_top"), "transparent");
-        this.itemModel(pane);
+    private void glassPane(RegistryObject<Block> pane, ResourceLocation texture) {
+        this.paneBlockWithRenderType((IronBarsBlock) pane.get(), texture, this.modLoc("block/" + getItemName(pane.get()) + "_top"), "translucent");
+        this.itemModels().withExistingParent(getItemName(pane.get()), "item/generated").texture("layer0", this.modLoc("block/" + getItemName(pane.get()).replace("_pane", "")));
     }
 
     private void wood(RegistryObject<Block> log, ResourceLocation texture) {

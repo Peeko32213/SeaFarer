@@ -93,7 +93,7 @@ public class Sunfish extends WaterAnimal {
     @Override
     public void aiStep() {
         this.prevOnLandProgress = onLandProgress;
-        boolean onLand = !this.isInWaterOrBubble() && this.onGround();
+        boolean onLand = !this.isInWaterOrBubble();
         if (onLand && onLandProgress < 10F) {
             onLandProgress++;
         }
@@ -129,7 +129,6 @@ public class Sunfish extends WaterAnimal {
         return SoundEvents.TROPICAL_FISH_DEATH;
     }
 
-    @Nullable
     protected SoundEvent getFlopSound() {
         return SoundEvents.TROPICAL_FISH_FLOP;
     }

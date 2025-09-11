@@ -19,8 +19,8 @@ public class SeaSurfaceRules {
     private static final SurfaceRules.RuleSource SANDSTONE = makeStateRule(Blocks.SANDSTONE);
     private static final SurfaceRules.RuleSource CORALINE_SAND = makeStateRule(SeaBlocks.CORALINE_SAND.get());
     private static final SurfaceRules.RuleSource CORALINE_SANDSTONE = makeStateRule(SeaBlocks.CORALINE_SANDSTONE.get());
-    private static final SurfaceRules.RuleSource ASHEN_SAND = makeStateRule(SeaBlocks.ASHEN_SAND.get());
-    private static final SurfaceRules.RuleSource ASHEN_SANDSTONE = makeStateRule(SeaBlocks.ASHEN_SANDSTONE.get());
+    private static final SurfaceRules.RuleSource ASHEN_SAND = makeStateRule(SeaBlocks.VOLCANIC_SAND.get());
+    private static final SurfaceRules.RuleSource ASHEN_SANDSTONE = makeStateRule(SeaBlocks.VOLCANIC_SANDSTONE.get());
     private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
     private static final SurfaceRules.RuleSource WATER = makeStateRule(Blocks.WATER);
 

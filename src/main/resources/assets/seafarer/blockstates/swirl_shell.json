@@ -2,18 +2,33 @@
   "variants": {
     "": [
       {
-        "model": "seafarer:block/swirl_shell"
+        "model": "seafarer:block/shells/swirl_shell"
       },
       {
-        "model": "seafarer:block/swirl_shell",
+        "model": "seafarer:block/shells/swirl_shell",
         "y": 90
       },
       {
-        "model": "seafarer:block/swirl_shell",
+        "model": "seafarer:block/shells/swirl_shell",
         "y": 180
       },
       {
-        "model": "seafarer:block/swirl_shell",
+        "model": "seafarer:block/shells/swirl_shell",
+        "y": 270
+      },
+      {
+        "model": "seafarer:block/shells/swirl_shell_rotated"
+      },
+      {
+        "model": "seafarer:block/shells/swirl_shell_rotated",
+        "y": 90
+      },
+      {
+        "model": "seafarer:block/shells/swirl_shell_rotated",
+        "y": 180
+      },
+      {
+        "model": "seafarer:block/shells/swirl_shell_rotated",
         "y": 270
       }
     ]

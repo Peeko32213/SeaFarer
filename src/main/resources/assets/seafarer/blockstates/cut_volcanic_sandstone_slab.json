@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "seafarer:block/cut_volcanic_sandstone_slab"
+    },
+    "type=double": {
+      "model": "seafarer:block/cut_volcanic_sandstone"
+    },
+    "type=top": {
+      "model": "seafarer:block/cut_volcanic_sandstone_slab_top"
+    }
+  }
+}

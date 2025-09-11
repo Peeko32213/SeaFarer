@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/outer_stairs",
-  "textures": {
-    "bottom": "seafarer:block/coraline_sandstone_top",
-    "side": "seafarer:block/cut_coraline_sandstone",
-    "top": "seafarer:block/coraline_sandstone_top"
-  }
-}

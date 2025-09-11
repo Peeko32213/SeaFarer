@@ -2,21 +2,35 @@
   "variants": {
     "": [
       {
-        "model": "seafarer:block/spiral_shell"
+        "model": "seafarer:block/shells/spiral_shell"
       },
       {
-        "model": "seafarer:block/spiral_shell",
+        "model": "seafarer:block/shells/spiral_shell",
         "y": 90
       },
       {
-        "model": "seafarer:block/spiral_shell",
+        "model": "seafarer:block/shells/spiral_shell",
         "y": 180
       },
       {
-        "model": "seafarer:block/spiral_shell",
+        "model": "seafarer:block/shells/spiral_shell",
+        "y": 270
+      },
+      {
+        "model": "seafarer:block/shells/spiral_shell_rotated"
+      },
+      {
+        "model": "seafarer:block/shells/spiral_shell_rotated",
+        "y": 90
+      },
+      {
+        "model": "seafarer:block/shells/spiral_shell_rotated",
+        "y": 180
+      },
+      {
+        "model": "seafarer:block/shells/spiral_shell_rotated",
         "y": 270
       }
     ]
   }
 }
-

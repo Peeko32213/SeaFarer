@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/cube_bottom_top",
   "textures": {
-    "bottom": "seafarer:block/yellow_sea_glass_lamp_top",
+    "bottom": "seafarer:block/yellow_sea_glass_lamp_bottom",
     "side": "seafarer:block/yellow_sea_glass_lamp_side",
-    "top": "seafarer:block/yellow_sea_glass_lamp_bottom"
+    "top": "seafarer:block/yellow_sea_glass_lamp_top"
   }
 }

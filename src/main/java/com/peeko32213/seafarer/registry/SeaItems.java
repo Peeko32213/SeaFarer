@@ -46,12 +46,6 @@ public class SeaItems {
     public static final RegistryObject<Item> SHORE_CRAB_BUCKET = registerItemNoLang("shore_crab_bucket", () -> new SeaMobBucketItem(SeaEntities.SHORE_CRAB, () -> Fluids.WATER, false, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> HORSESHOE_CRAB_BUCKET = registerItemNoLang("horseshoe_crab_bucket", () -> new SeaMobBucketItem(SeaEntities.HORSESHOE_CRAB, () -> Fluids.WATER, false, new Item.Properties().stacksTo(1)));
 
-    public static final RegistryObject<Item> CLAM_SHOVEL = registerItem("clam_shovel", () -> new ShovelItem(SeaTiers.SHELL,  1.5F, -3.0F, new Item.Properties()));
-    public static final RegistryObject<Item> HORN_PICKAXE = registerItem("horn_pickaxe", () -> new PickaxeItem(SeaTiers.SHELL,  1, -2.8F, new Item.Properties()));
-    public static final RegistryObject<Item> SPIKY_SWORD = registerItem("spiky_sword", () -> new SwordItem(SeaTiers.SHELL,  3, -2.4F, new Item.Properties()));
-    public static final RegistryObject<Item> SPIRAL_HOE = registerItem("spiral_hoe", () -> new HoeItem(SeaTiers.SHELL,  0, -3.0F, new Item.Properties()));
-    public static final RegistryObject<Item> SWIRL_AXE = registerItem("swirl_axe", () -> new AxeItem(SeaTiers.SHELL,  6.0F, -3.2F, new Item.Properties()));
-
     public static final RegistryObject<Item> AMBER_CORAL_FAN = ITEMS.register("amber_coral_fan", () -> new StandingAndWallBlockItem(SeaBlocks.AMBER_CORAL_FAN.get(), SeaBlocks.AMBER_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
     public static final RegistryObject<Item> DEAD_AMBER_CORAL_FAN = ITEMS.register("dead_amber_coral_fan", () -> new StandingAndWallBlockItem(SeaBlocks.DEAD_AMBER_CORAL_FAN.get(), SeaBlocks.DEAD_AMBER_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
     public static final RegistryObject<Item> CERULEAN_CORAL_FAN = ITEMS.register("cerulean_coral_fan", () -> new StandingAndWallBlockItem(SeaBlocks.CERULEAN_CORAL_FAN.get(), SeaBlocks.CERULEAN_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));
