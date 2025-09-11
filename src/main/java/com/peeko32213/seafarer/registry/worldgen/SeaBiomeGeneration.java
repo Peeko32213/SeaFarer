@@ -66,7 +66,7 @@ public class SeaBiomeGeneration {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.BEACH_STARFISH);
     }
 
-    public static void ashenBeach(BiomeGenerationSettings.Builder generation) {
+    public static void volcanicBeach(BiomeGenerationSettings.Builder generation) {
         OverworldBiomes.globalOverworldGeneration(generation);
         BiomeDefaultFeatures.addDefaultOres(generation);
         BiomeDefaultFeatures.addDefaultSoftDisks(generation);

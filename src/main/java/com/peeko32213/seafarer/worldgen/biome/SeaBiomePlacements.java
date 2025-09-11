@@ -13,16 +13,6 @@ public class SeaBiomePlacements {
 
     public static void register() {
 
-        if (SeafarerConfig.ASHEN_BEACH.get()) {
-            BiomePlacement.addSubOverworld(
-                    Biomes.BEACH,
-                    SeaBiomes.ASHEN_BEACH,
-                    SubBiomeMatcher.of(
-                            SubBiomeMatcher.Criterion.ofRange(SubBiomeMatcher.CriterionTargets.TEMPERATURE, SubBiomeMatcher.CriterionTypes.VALUE, 0.3F, 0.55F, false),
-                            SubBiomeMatcher.Criterion.ofRange(SubBiomeMatcher.CriterionTargets.HUMIDITY, SubBiomeMatcher.CriterionTypes.VALUE, 0.1F, 1.0F, false)
-            ));
-        }
-
         if (SeafarerConfig.CORAL_BEACH.get()) {
             BiomePlacement.addSubOverworld(
                     Biomes.BEACH,
@@ -71,6 +61,16 @@ public class SeaBiomePlacements {
                     SeaBiomes.TROPICAL_RIVER,
                     SubBiomeMatcher.of(NEAR_BORDER, SubBiomeMatcher.Criterion.ofBiome(SubBiomeMatcher.CriterionTargets.NEIGHBOR, BiomeTags.IS_JUNGLE, false)
             ));
+        }
+
+        if (SeafarerConfig.VOLCANIC_BEACH.get()) {
+            BiomePlacement.addSubOverworld(
+                    Biomes.BEACH,
+                    SeaBiomes.VOLCANIC_BEACH,
+                    SubBiomeMatcher.of(
+                            SubBiomeMatcher.Criterion.ofRange(SubBiomeMatcher.CriterionTargets.TEMPERATURE, SubBiomeMatcher.CriterionTypes.VALUE, 0.3F, 0.55F, false),
+                            SubBiomeMatcher.Criterion.ofRange(SubBiomeMatcher.CriterionTargets.HUMIDITY, SubBiomeMatcher.CriterionTypes.VALUE, 0.1F, 1.0F, false)
+                    ));
         }
 
         if (SeafarerConfig.WARM_REEF.get()) {

@@ -19,8 +19,8 @@ public class SeaSurfaceRules {
     private static final SurfaceRules.RuleSource SANDSTONE = makeStateRule(Blocks.SANDSTONE);
     private static final SurfaceRules.RuleSource CORALINE_SAND = makeStateRule(SeaBlocks.CORALINE_SAND.get());
     private static final SurfaceRules.RuleSource CORALINE_SANDSTONE = makeStateRule(SeaBlocks.CORALINE_SANDSTONE.get());
-    private static final SurfaceRules.RuleSource ASHEN_SAND = makeStateRule(SeaBlocks.VOLCANIC_SAND.get());
-    private static final SurfaceRules.RuleSource ASHEN_SANDSTONE = makeStateRule(SeaBlocks.VOLCANIC_SANDSTONE.get());
+    private static final SurfaceRules.RuleSource VOLCANIC_SAND = makeStateRule(SeaBlocks.VOLCANIC_SAND.get());
+    private static final SurfaceRules.RuleSource VOLCANIC_SANDSTONE = makeStateRule(SeaBlocks.VOLCANIC_SANDSTONE.get());
     private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
     private static final SurfaceRules.RuleSource WATER = makeStateRule(Blocks.WATER);
 
@@ -36,9 +36,9 @@ public class SeaSurfaceRules {
                 SurfaceRules.ifTrue(abovePreliminarySurface(), beachSandRuleSource(CORALINE_SAND, CORALINE_SANDSTONE))
         );
 
-        SurfaceRules.RuleSource ashen_beach = SurfaceRules.ifTrue(
-                SurfaceRules.isBiome(SeaBiomes.ASHEN_BEACH),
-                SurfaceRules.ifTrue(abovePreliminarySurface(), beachSandRuleSource(ASHEN_SAND, ASHEN_SANDSTONE))
+        SurfaceRules.RuleSource volcanic_beach = SurfaceRules.ifTrue(
+                SurfaceRules.isBiome(SeaBiomes.VOLCANIC_BEACH),
+                SurfaceRules.ifTrue(abovePreliminarySurface(), beachSandRuleSource(VOLCANIC_SAND, VOLCANIC_SANDSTONE))
         );
 
         SurfaceRules.RuleSource warm_reef = SurfaceRules.ifTrue(
@@ -72,7 +72,7 @@ public class SeaSurfaceRules {
                                 SurfaceRules.sequence(
                                         sandy_beach,
                                         coral_beach,
-                                        ashen_beach,
+                                        volcanic_beach,
                                         warm_reef,
                                         tropical_river,
                                         kelp_forest,
