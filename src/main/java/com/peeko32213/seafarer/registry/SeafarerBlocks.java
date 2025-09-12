@@ -1070,6 +1070,49 @@ public class SeafarerBlocks {
                     .noCollission()
                     .instabreak()));
 
+    public static final RegistryObject<Block> GREEN_ANEMONE = registerBlock("green_anemone", () ->
+            new BaseCoralPlantBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_GREEN)
+                    .forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .noCollission()
+                    .instabreak()));
+
+    public static final RegistryObject<Block> PINK_ANEMONE = registerBlock("pink_anemone", () ->
+            new BaseCoralPlantBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.TERRACOTTA_PINK)
+                    .forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .noCollission()
+                    .instabreak()));
+
+    public static final RegistryObject<Block> ORANGE_ANEMONE = registerBlock("orange_anemone", () ->
+            new BaseCoralPlantBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_ORANGE)
+                    .forceSolidOn()
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .noCollission()
+                    .instabreak()));
+
+    public static final RegistryObject<Block> STRAWBERRY_ANEMONE = registerBlock("strawberry_anemone",() ->
+            new FloweryCoralBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .noCollission()
+                    .instabreak()
+                    .sound(SoundType.WET_GRASS)
+                    .pushReaction(PushReaction.DESTROY)));
+
+    public static final RegistryObject<Block> PALE_PLUMOSE_ANEMONE = registerBlock("pale_plumose_anemone",() ->
+            new LargeCoralPlantBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.TERRACOTTA_WHITE)
+                    .noCollission()
+                    .instabreak()
+                    .sound(SoundType.WET_GRASS)
+                    .pushReaction(PushReaction.DESTROY)));
+
     private static <B extends Block> RegistryObject<B> createBlockNoLang(String name, Supplier<? extends B> supplier) {
         RegistryObject<B> block = BLOCKS.register(name, supplier);
         SeafarerItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

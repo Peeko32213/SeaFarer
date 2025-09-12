@@ -1,0 +1,6 @@
+{
+  "parent" : "item/generated",
+  "textures" : {
+    "layer0" : "seafarer:item/pale_plumose_anemone"
+  }
+}

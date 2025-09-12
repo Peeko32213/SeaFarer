@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "seafarer:block/pale_plumose_anemone",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "seafarer:block/pale_plumose_anemone"
+    },
+    "facing=south": {
+      "model": "seafarer:block/pale_plumose_anemone",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "seafarer:block/pale_plumose_anemone",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "seafarer:block/pale_plumose_anemone",
+      "y": 270
+    },
+    "facing=down": {
+      "model": "seafarer:block/pale_plumose_anemone",
+      "y": 270
+    }
+  }
+}
+

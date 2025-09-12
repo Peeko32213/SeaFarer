@@ -159,6 +159,12 @@ public final class ClientEvents {
         ItemBlockRenderTypes.setRenderLayer(SeafarerBlocks.PALE_SPONGE.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(SeafarerBlocks.TUBE_WORMS.get(), RenderType.cutout());
 
+        ItemBlockRenderTypes.setRenderLayer(SeafarerBlocks.GREEN_ANEMONE.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SeafarerBlocks.PINK_ANEMONE.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SeafarerBlocks.ORANGE_ANEMONE.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SeafarerBlocks.STRAWBERRY_ANEMONE.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(SeafarerBlocks.PALE_PLUMOSE_ANEMONE.get(), RenderType.cutout());
+
     }
 
     @SubscribeEvent
