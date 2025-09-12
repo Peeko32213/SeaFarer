@@ -2,15 +2,16 @@ package com.peeko32213.seafarer.worldgen.structure;
 
 import com.peeko32213.seafarer.registry.SeaBlocks;
 import com.peeko32213.seafarer.registry.SeaStructurePieces;
+import com.peeko32213.seafarer.utils.SimpleRadialNoise;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
+import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.ChunkPos;
-import net.minecraft.world.level.LevelHeightAccessor;
 import net.minecraft.world.level.StructureManager;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
@@ -18,121 +19,194 @@ import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.StructurePiece;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceSerializationContext;
-import net.minecraft.world.level.levelgen.synth.ImprovedNoise;
+import net.minecraft.world.level.material.Fluids;
 
 public class VolcanoStructurePiece extends StructurePiece {
-    private final static int CALDERA_CUTOFF = 128; //The Y level where if the height of the volcano would pass becomes the caldera
-    private final static int VOLCANO_TOP = CALDERA_CUTOFF - 7; //The Y level cut off of the sides of the volcano
-    public final static int VOLCANO_CRUST = VOLCANO_TOP - 3; //The Y level where the crust of the volcano generates
-    public final static int LAVA_LEVEL = 100; //The Y level where the top of the lava column is
-    private static final float STEEPNESS = 5.2F;
 
-    private final int radiusX;
-    private final int radiusZ;
-    private final long noiseSeed;
+    private final SimpleRadialNoise radiusNoise;
 
-    private final ImprovedNoise noise;
+    private final int height;
+    private final int radius;
+    private final int lavaHeight;
+    private final int lavaTubeLength;
+    private final int baseY;
+    private final int chamberHeight;
+    private final boolean underwater;
 
-    protected VolcanoStructurePiece(LevelHeightAccessor heightAccessor, BlockPos pos, int radiusX, int radiusZ, long noiseSeed) {
-        super(SeaStructurePieces.VOLCANO.get(), 0, boundingBox(heightAccessor, pos, radiusX, radiusZ));
-        this.radiusX = radiusX;
-        this.radiusZ = radiusZ;
-        this.noiseSeed = noiseSeed;
-        this.noise = createNoise(noiseSeed);
+    private final int centerX;
+    private final int centerZ;
+
+    VolcanoStructurePiece(RandomSource random, int centerX, int centerZ, IntProvider heightProvider, int baseY, boolean thinIfTall) {
+        super(SeaStructurePieces.VOLCANO.get(), 0, null);
+        this.setOrientation(null);
+
+        this.centerX = centerX;
+        this.centerZ = centerZ;
+
+        radiusNoise = new SimpleRadialNoise(16, random.nextLong(), 0.75, 0.5);
+
+        this.height = heightProvider.sample(random);
+        this.baseY = baseY;
+
+        radius = random.nextInt(height / 2) + height / 2;
+
+        lavaHeight = (int) (height * shape(0.2));
+        lavaTubeLength = Math.min(22, baseY - 20);
+
+        // Make sure that the chamber doesn't go too deep
+        int potentialChamberHeight = random.nextInt(Math.max(baseY - lavaTubeLength - 10, 0) + 1);
+        chamberHeight = Math.max(potentialChamberHeight, 10);
+
+        underwater = baseY + lavaHeight < 64;
+
+        int radiusBound = Mth.ceil(radius * 1.5);
+
+        this.boundingBox = new BoundingBox(centerX - radiusBound, 1, centerZ - radiusBound, centerX + radiusBound, 62 + height, centerZ + radiusBound);
     }
 
-    public VolcanoStructurePiece(StructurePieceSerializationContext context, CompoundTag tag) {
-        super(SeaStructurePieces.VOLCANO.get(), tag);
-        this.radiusX = tag.getInt("radius_x");
-        this.radiusZ = tag.getInt("radius_z");
-        this.noiseSeed = tag.getLong("noise_seed");
-        this.noise = createNoise(noiseSeed);
+    public VolcanoStructurePiece(StructurePieceSerializationContext context, CompoundTag compoundTag) {
+        super(SeaStructurePieces.VOLCANO.get(), compoundTag);
+
+        radiusNoise = new SimpleRadialNoise(16, compoundTag.getLong("VRN"), 0.75, 0.5);
+
+        height = compoundTag.getInt("VH");
+        radius = compoundTag.getInt("VR");
+        lavaHeight = compoundTag.getInt("VL");
+        lavaTubeLength = compoundTag.getInt("VLT");
+        baseY = compoundTag.getInt("Y");
+        chamberHeight = compoundTag.getInt("VCH");
+        underwater = compoundTag.getBoolean("VU");
+
+        centerX = compoundTag.getInt("CX");
+        centerZ = compoundTag.getInt("CZ");
     }
 
-    private static BoundingBox boundingBox(LevelHeightAccessor heightAccessor, BlockPos pos, int radiusX, int radiusZ) {
-        return new BoundingBox(
-                pos.getX() - radiusX - 1,
-                pos.getY(),
-                pos.getZ() - radiusZ - 1,
-                pos.getX() + radiusX + 1,
-                heightAccessor.getMaxBuildHeight(),
-                pos.getZ() + radiusZ + 1
-        );
+    private static double positionToAngle(double dist, double dX, double dZ) {
+        double angle = 0.5 * Math.asin(dX / dist) / Math.PI + 0.25;
+
+        if (dZ < 0) {
+            angle = 1.0 - angle;
+        }
+
+        return angle;
     }
 
-    private static ImprovedNoise createNoise(long seed) {
-        return new ImprovedNoise(RandomSource.create(seed));
+    private static double shape(double scaled) {
+        scaled = Math.max(scaled, 0.0);
+
+        double curve = curve(1.0 - scaled);
+
+        if (scaled <= 0.3) {
+            curve -= (0.3 - scaled) * 2;
+        }
+
+        return curve;
+    }
+
+    private static double curve(double progress) {
+        progress = Math.min(progress, 1.0);
+
+        if (progress < 0.1) {
+            return 2 * (progress - 0.1);
+        } else if (progress <= 0.5) {
+            return 2 * progress * progress;
+        } else {
+            double progressUntil = 1.0 - progress;
+            return 1 - 2 * progressUntil * progressUntil;
+        }
     }
 
     @Override
-    protected void addAdditionalSaveData(StructurePieceSerializationContext context, CompoundTag tag) {
-        tag.putInt("radius_x", radiusX);
-        tag.putInt("radius_z", radiusZ);
-        tag.putLong("noise_seed", noiseSeed);
+    protected void addAdditionalSaveData(StructurePieceSerializationContext context, CompoundTag compoundTag) {
+        compoundTag.putLong("VRN", radiusNoise.getSeed());
+        compoundTag.putInt("VH", height);
+        compoundTag.putInt("VR", radius);
+        compoundTag.putInt("VL", lavaHeight);
+        compoundTag.putInt("VLT", lavaTubeLength);
+        compoundTag.putInt("Y", baseY);
+        compoundTag.putInt("VCH", chamberHeight);
+        compoundTag.putBoolean("VU", underwater);
+        compoundTag.putInt("CX", centerX);
+        compoundTag.putInt("CZ", centerZ);
     }
 
     @Override
-    public void postProcess(WorldGenLevel level, StructureManager structureManager, ChunkGenerator generator, RandomSource random, BoundingBox chunkBox, ChunkPos chunkPos, BlockPos pos) {
-        int calderaCutoffY = pos.getY() + CALDERA_CUTOFF;
-        int lavaY = pos.getY() + LAVA_LEVEL;
-        int topY = pos.getY() + VOLCANO_TOP;
-        int crustY = pos.getY() + VOLCANO_CRUST;
+    public void postProcess(WorldGenLevel world, StructureManager structureManager, ChunkGenerator generator, RandomSource random, BoundingBox box, ChunkPos chunkPos, BlockPos blockPos) {
+        if (box.minY() > this.boundingBox.minY() || box.maxY() < this.boundingBox.maxY()) {
+            throw new IllegalArgumentException("Unexpected bounding box Y range in " + box + ", the Y range is smaller than the one we expected");
+        }
 
-        for (int z = chunkBox.minZ(); z <= chunkBox.maxZ(); z++) {
-            for (int x = chunkBox.minX(); x <= chunkBox.maxX(); x++) {
-                float height = getColumnHeight(x - pos.getX(), z - pos.getZ());
-                if (!Float.isNaN(height)) {
-                    placeColumn(level, random, x, z, calderaCutoffY, lavaY, topY, crustY, height);
+        int chamberMiddle = baseY - lavaTubeLength - chamberHeight / 2;
+
+        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
+
+        for (int z = box.minZ(); z <= box.maxZ(); z++) {
+            for (int x = box.minX(); x <= box.maxX(); x++) {
+                int dX = centerX - x;
+                int dZ = centerZ - z;
+
+                double dist = Math.sqrt(dZ * dZ + dX * dX);
+                double angle = positionToAngle(dist, dX, dZ);
+
+                double noise = radiusNoise.sample(angle);
+
+                double scaled = (dist / radius) * noise;
+                int columnHeight = (int) (shape(scaled) * height);
+                BlockState top = SeaBlocks.VOLCANIC_SANDSTONE.get().defaultBlockState();
+
+                if (columnHeight + baseY <= 0) {
+                    continue;
+                }
+
+                if (scaled > 0.2 && scaled < 0.35) {
+                    columnHeight += random.nextInt(2);
+                } else if (scaled >= 0.35 && scaled <= 0.8 && random.nextInt(4) == 0) {
+                    columnHeight += 1;
+                }
+
+                if (scaled > 0.3) {
+                    top = SeaBlocks.VOLCANIC_SANDSTONE.get().defaultBlockState();
+                }
+
+                int startY = world.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR_WG, new BlockPos(x, 0, z)).getY() - baseY;
+
+                for (int dY = startY; dY < columnHeight - 1; dY++) {
+                    pos.set(x, baseY + dY, z);
+
+                    if (world.getBlockState(pos).isAir() || world.getFluidState(pos).getType() == Fluids.WATER) {
+                        world.setBlock(pos, SeaBlocks.VOLCANIC_SANDSTONE.get().defaultBlockState(), 2);
+                    }
+                }
+
+                if ((Math.abs(dX) == 1 && Math.abs(dZ) == 1) || (Math.abs(dX) == 2 && dZ == 0) || (dX == 0 && Math.abs(dZ) == 2)) {
+                    startY = chamberMiddle;
+                    int endY = baseY + columnHeight - 1;
+
+                    for (int y = startY; y < endY; y++) {
+                        pos.set(x, y, z);
+
+                        world.setBlock(pos, SeaBlocks.VOLCANIC_SANDSTONE.get().defaultBlockState(), 2);
+                    }
+
+                    pos.move(Direction.UP);
+                    world.setBlock(pos, Blocks.LAVA.defaultBlockState(), 2);
+                }
+
+                pos.set(x, baseY + columnHeight, z);
+
+                pos.move(Direction.DOWN);
+
+                if ((world.getBlockState(pos).isAir() || world.getFluidState(pos).getType() == Fluids.WATER) && startY < columnHeight) {
+                    world.setBlock(pos, top, 2);
+                }
+
+                if (scaled <= 0.3) {
+                    for (int dY = columnHeight; dY < lavaHeight; dY++) {
+                        pos.set(x, baseY + dY, z);
+                        world.setBlock(pos, Blocks.LAVA.defaultBlockState(), 2);
+                    }
                 }
             }
         }
-    }
-
-    private void placeColumn(WorldGenLevel level, RandomSource random, int x, int z, int calderaCutoffY, int lavaY, int topY, int crustY, float height) {
-        BlockState volcanoState = SeaBlocks.VOLCANIC_SANDSTONE.get().defaultBlockState();
-        BlockState sandState = SeaBlocks.VOLCANIC_SAND.get().defaultBlockState();
-        BlockState lavaState = Blocks.LAVA.defaultBlockState();
-        BlockState airState = Blocks.AIR.defaultBlockState();
-
-        int terrainY = Math.min(level.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, x, z), lavaY - 3);
-
-        BlockPos.MutableBlockPos mutablePos = new BlockPos.MutableBlockPos();
-
-        for (int y = level.getMaxBuildHeight(); y > level.getMinBuildHeight(); y--) {
-            mutablePos.set(x, y, z);
-
-            if (height + terrainY < calderaCutoffY) {
-                if (height + terrainY <= topY) {
-                    if (y <= height + terrainY) {
-                        if (y > terrainY) {
-                            level.setBlock(mutablePos, volcanoState, Block.UPDATE_CLIENTS);
-                        } else if (y > terrainY - 2) {
-                            level.setBlock(mutablePos, sandState, Block.UPDATE_CLIENTS);
-                        }
-                    }
-                } else if (y == crustY - 1) {
-                    if (random.nextInt(3) != 0) {
-                        level.setBlock(mutablePos, volcanoState, Block.UPDATE_CLIENTS);
-                    }
-                } else if (y <= topY) {
-                    level.setBlock(mutablePos, volcanoState, Block.UPDATE_CLIENTS);
-                }
-            } else {
-                if (y <= lavaY) {
-                    level.setBlock(mutablePos, lavaState, Block.UPDATE_CLIENTS);
-                } else {
-                    level.setBlock(mutablePos, airState, Block.UPDATE_CLIENTS);
-                }
-            }
-        }
-    }
-
-    private float getColumnHeight(float x, float z) {
-        float distanceSquared = (float) Mth.lengthSquared(x / radiusX, z / radiusZ);
-        if (distanceSquared >= 1.0f) {
-            return Float.NaN;
-        }
-        float noiseValue = (float) Math.abs(noise.noise(x * 0.21 + 0.01, 0.0, z * 0.21 + 0.01)) * 0.45f + 1.0f;
-        return STEEPNESS / distanceSquared * noiseValue - STEEPNESS - 2.0f;
     }
 }
