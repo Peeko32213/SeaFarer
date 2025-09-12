@@ -193,6 +193,8 @@ public class SeafarerTab {
                         output.accept(SeaBlocks.CUT_VOLCANIC_SANDSTONE.get());
                         output.accept(SeaBlocks.CUT_VOLCANIC_SANDSTONE_SLAB.get());
 
+                        output.accept(SeaBlocks.VOLCANIC_BASALT.get());
+
                         output.accept(SeaItems.SEA_GLASS_PEBBLES.get());
 
                         // white sea glass

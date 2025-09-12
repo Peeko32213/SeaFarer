@@ -1,8 +1,12 @@
 {
   "biome.seafarer.coral_beach": "Coral Beach",
   "biome.seafarer.flowering_beach": "Flowering Beach",
+  "biome.seafarer.glass_beach": "Glass Beach",
   "biome.seafarer.grassy_beach": "Grassy Beach",
   "biome.seafarer.kelp_forest": "Kelp Forest",
+  "biome.seafarer.tropical_river": "Tropical River",
+  "biome.seafarer.volcanic_beach": "Volcanic Beach",
+  "biome.seafarer.volcanic_island": "Volcanic Island",
   "biome.seafarer.warm_reef": "Warm Reef",
   "block.seafarer.algae_block": "Algae Block",
   "block.seafarer.algae_carpet": "Algae Carpet",
@@ -221,6 +225,7 @@
   "block.seafarer.turquoise_coral_block": "Turquoise Coral Block",
   "block.seafarer.verdant_coral": "Verdant Coral",
   "block.seafarer.verdant_coral_block": "Verdant Coral Block",
+  "block.seafarer.volcanic_basalt": "Volcanic Basalt",
   "block.seafarer.volcanic_sand": "Volcanic Sand",
   "block.seafarer.volcanic_sandstone": "Volcanic Sandstone",
   "block.seafarer.volcanic_sandstone_slab": "Volcanic Sandstone Slab",
@@ -269,8 +274,5 @@
   "painting.seafarer.reef.author": "OmayPaty",
   "painting.seafarer.reef.title": "Reef",
   "painting.seafarer.tropical.author": "OmayPaty",
-  "painting.seafarer.tropical.title": "Tropical",
-  "seafarer.message.structure_not_found": "Structure was not found!",
-  "seafarer.message.structure_search_failed": "Structure was not found!",
-  "seafarer.message_in_a_bottle": "Message in a bottle"
+  "painting.seafarer.tropical.title": "Tropical"
 }

@@ -294,6 +294,8 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.simpleBlockItem(SeaBlocks.CUT_VOLCANIC_SANDSTONE.get(), this.existingModel((getName(SeaBlocks.CUT_VOLCANIC_SANDSTONE.get()))));
         this.simpleBlockItem(SeaBlocks.CUT_VOLCANIC_SANDSTONE_SLAB.get(), this.existingModel((getName(SeaBlocks.CUT_VOLCANIC_SANDSTONE_SLAB.get()))));
         this.simpleBlockItem(SeaBlocks.CHISELED_VOLCANIC_SANDSTONE.get(), this.existingModel((getName(SeaBlocks.CHISELED_VOLCANIC_SANDSTONE.get()))));
+
+        this.cubeAllBlock(VOLCANIC_BASALT);
     }
 
     private void createPottedPlant(RegistryObject<Block> plant, RegistryObject<Block> pottedPlant, String renderType){

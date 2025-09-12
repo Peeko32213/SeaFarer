@@ -2,7 +2,6 @@ package com.peeko32213.seafarer.registry;
 
 import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.items.*;
-import com.peeko32213.seafarer.registry.enums.*;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
@@ -19,7 +18,7 @@ import java.util.function.Supplier;
 
 public class SeaItems {
 
-    public static List<RegistryObject<? extends Item>> AUTO_TRANSLATE = new ArrayList<>();
+    public static List<RegistryObject<? extends Item>> ITEM_TRANSLATIONS = new ArrayList<>();
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Seafarer.MOD_ID);
 
@@ -83,7 +82,7 @@ public class SeaItems {
 
     public static <I extends Item> RegistryObject<I> registerItem(String name, Supplier<? extends I> supplier) {
         RegistryObject<I> item = ITEMS.register(name, supplier);
-        AUTO_TRANSLATE.add(item);
+        ITEM_TRANSLATIONS.add(item);
         return item;
     }
 }

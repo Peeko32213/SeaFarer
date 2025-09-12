@@ -74,11 +74,12 @@ public class SeaBiomePlacements {
         }
 
         if (SeafarerConfig.VOLCANIC_ISLAND.get()) {
-            BiomePlacement.replaceOverworld(
+            BiomePlacement.addSubOverworld(
                     Biomes.MUSHROOM_FIELDS,
                     SeaBiomes.VOLCANIC_ISLAND,
-                    0.3D
-            );
+                    SubBiomeMatcher.of(
+                            SubBiomeMatcher.Criterion.ofRange(SubBiomeMatcher.CriterionTargets.TEMPERATURE, SubBiomeMatcher.CriterionTypes.VALUE, 0.2F, 1.0F, false)
+                    ));
         }
 
         if (SeafarerConfig.WARM_REEF.get()) {

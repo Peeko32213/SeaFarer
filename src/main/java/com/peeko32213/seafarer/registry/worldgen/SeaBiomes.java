@@ -40,7 +40,7 @@ public class SeaBiomes {
         context.register(VOLCANIC_BEACH, volcanicBeach(features, carvers));
         context.register(KELP_FOREST, kelpForest(features, carvers));
         context.register(TROPICAL_RIVER, tropicalRiver(features, carvers));
-        context.register(VOLCANIC_ISLAND, volcanicIsland(features, carvers));
+//        context.register(VOLCANIC_ISLAND, volcanicIsland(features, carvers));
     }
 
     public static ResourceKey<Biome> createKey(String name) {
@@ -133,12 +133,13 @@ public class SeaBiomes {
 
     private static Biome volcanicIsland(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
         BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(features, carvers);
-        SeaBiomeGeneration.volcanicBeach(generation);
+        SeaBiomeGeneration.volcanicIsland(generation);
 
         MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
-        BiomeDefaultFeatures.commonSpawns(spawns);
-        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.TURTLE, 5, 2, 5));
-        return biome(true, 0.8F, 0.4F, 4445678, 270131, spawns, generation, null);
+        BiomeDefaultFeatures.baseJungleSpawns(spawns);
+        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.PARROT, 40, 1, 2));
+        spawns.addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.OCELOT, 2, 1, 3));
+        return biome(true, 0.8F, 1.0F, 4445678, 270131, spawns, generation, null);
     }
 
     private static Biome biome(boolean precipitation, float temperature, float downfall, int waterColor, int waterFogColor, MobSpawnSettings.Builder spawns, BiomeGenerationSettings.Builder generation, @Nullable Music music) {

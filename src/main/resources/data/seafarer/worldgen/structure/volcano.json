@@ -1,17 +1,16 @@
 {
   "type": "seafarer:volcano",
   "biomes": "#seafarer:has_structure/volcano",
-  "step": "surface_structures",
-  "terrain_adaptation": "none",
-  "spawn_overrides": {},
-  "config": {},
-  "height": {
-    "type": "uniform",
+  "y_level": {
+    "absolute": 0
+  },
+  "radius": {
+    "type": "minecraft:uniform",
     "value": {
-      "min_inclusive": 16,
-      "max_inclusive": 48
+      "max_inclusive": 96,
+      "min_inclusive": 32
     }
   },
-  "base_y": 60,
-  "thin_if_tall": false
+  "spawn_overrides": {},
+  "step": "surface_structures"
 }

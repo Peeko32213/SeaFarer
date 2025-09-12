@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-11T14:40:30.2264316	Block States: seafarer
+// 1.20.1	2025-09-11T20:54:35.6879577	Block States: seafarer
 852ae8f625a40bf1f7e1caeefc4663f334e46f8f assets/seafarer/blockstates/algae_block.json
 e242b70bf2d088a8f620425331334961987ba03d assets/seafarer/blockstates/amber_coral.json
 986f46bd5db6084185d9f1305b3cf45b557adb8e assets/seafarer/blockstates/amber_coral_block.json
@@ -193,6 +193,7 @@ d7edf41a7b3d0947e6bfcfdf25d7a769b66c3a7a assets/seafarer/blockstates/turquoise_c
 861a32a0671bda63fdefd80ab9967c6aec8add69 assets/seafarer/blockstates/verdant_coral_block.json
 5c0f0900febd4cdde40370fa02c080ca9c42602a assets/seafarer/blockstates/verdant_coral_fan.json
 258380fe3994f1c72645f7446daebb2e1ca3ec63 assets/seafarer/blockstates/verdant_coral_wall_fan.json
+866bf592b909d32a9fa2dab61ec23676989494f4 assets/seafarer/blockstates/volcanic_basalt.json
 427300d09ce758e79efb211cc61eb1a4b8ae02d0 assets/seafarer/blockstates/volcanic_sand.json
 8722ad9b9f428f58289a2d41aacc51b5ea876a13 assets/seafarer/blockstates/volcanic_sandstone_wall.json
 266c171ccd35defbc519baa4f11e1759d4b75c20 assets/seafarer/blockstates/white_pebbled_sea_glass.json
@@ -539,6 +540,7 @@ f935de4a2e9d37487c6dd5993d765a6202a1dcb5 assets/seafarer/models/block/turquoise_
 52b5bdc49e208ce26a4006e657cb55a9fabcf989 assets/seafarer/models/block/verdant_coral_block.json
 d5062706661c203ae2fdfe6d593440d098166430 assets/seafarer/models/block/verdant_coral_fan.json
 0b0a2e0f0e85ea399df16c8f598e5a95a6e14d82 assets/seafarer/models/block/verdant_coral_wall_fan.json
+2a9566acb4a11f21c5cd032dc421a68eb8e2c627 assets/seafarer/models/block/volcanic_basalt.json
 24348367f8e47f0784ef3dbc130eea81ef9969e0 assets/seafarer/models/block/volcanic_sand.json
 044b7768dea24610e6398949be4dea921ff93951 assets/seafarer/models/block/volcanic_sandstone_wall_post.json
 5f1ef888321a1a45c1dab1ee0a923c3ea1a3abf1 assets/seafarer/models/block/volcanic_sandstone_wall_side.json
@@ -758,6 +760,7 @@ b5c23e7030908a06c88c505495b41cfe3e52c460 assets/seafarer/models/item/swirl_shell
 c35c00dd19b052afa03a5a83ebc9d8a5cf17ad78 assets/seafarer/models/item/verdant_coral.json
 146152eb8fb9e618a5a7140cc12f5301ac3046e7 assets/seafarer/models/item/verdant_coral_block.json
 e7cd71a37ec0f09efa0ce0a430fbd0aeefa0a698 assets/seafarer/models/item/verdant_coral_fan.json
+d7e5ae510cdb085ac7c2a8ec663ee801b9f41c1e assets/seafarer/models/item/volcanic_basalt.json
 0176f586e846da41f49d7261719a46753b558e3d assets/seafarer/models/item/volcanic_sand.json
 d8d0f020c7859edbae995007ed2e5ec90c4251a8 assets/seafarer/models/item/volcanic_sandstone.json
 f9f4cfefcf2dd9ab8d377aa787d69d9637596afe assets/seafarer/models/item/volcanic_sandstone_slab.json

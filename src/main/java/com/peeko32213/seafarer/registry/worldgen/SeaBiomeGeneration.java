@@ -79,6 +79,20 @@ public class SeaBiomeGeneration {
         generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.BEACH_STARFISH);
     }
 
+    public static void volcanicIsland(BiomeGenerationSettings.Builder generation) {
+        OverworldBiomes.globalOverworldGeneration(generation);
+        BiomeDefaultFeatures.addDefaultOres(generation);
+        BiomeDefaultFeatures.addDefaultSoftDisks(generation);
+        BiomeDefaultFeatures.addJungleTrees(generation);
+        BiomeDefaultFeatures.addWarmFlowers(generation);
+        BiomeDefaultFeatures.addJungleGrass(generation);
+        BiomeDefaultFeatures.addDefaultMushrooms(generation);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(generation);
+        BiomeDefaultFeatures.addJungleVines(generation);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
+        generation.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, SeaPlacedFeatures.BEACH_STARFISH);
+    }
+
     public static void glassBeach(BiomeGenerationSettings.Builder generation) {
         OverworldBiomes.globalOverworldGeneration(generation);
         BiomeDefaultFeatures.addDefaultOres(generation);

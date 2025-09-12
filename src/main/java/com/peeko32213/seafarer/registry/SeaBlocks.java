@@ -25,7 +25,7 @@ import java.util.function.Supplier;
 public class SeaBlocks {
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Seafarer.MOD_ID);
-    public static List<RegistryObject<? extends Block>> AUTO_TRANSLATE = new ArrayList<>();
+    public static List<RegistryObject<? extends Block>> BLOCK_TRANSLATIONS = new ArrayList<>();
 
     // white sea glass
     public static final RegistryObject<Block> WHITE_PEBBLED_SEA_GLASS = registerBlock("white_pebbled_sea_glass", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.SNOW)));
@@ -373,13 +373,14 @@ public class SeaBlocks {
     public static final RegistryObject<Block> CUT_VOLCANIC_SANDSTONE = registerBlock("cut_volcanic_sandstone", () -> new Block(SeaBlockProperties.SANDSTONE));
     public static final RegistryObject<Block> CUT_VOLCANIC_SANDSTONE_SLAB = registerBlock("cut_volcanic_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CUT_VOLCANIC_SANDSTONE.get())));
 
+    public static final RegistryObject<Block> VOLCANIC_BASALT = registerBlock("volcanic_basalt", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.GUITAR).requiresCorrectToolForDrops().strength(0.9F)));
 
     public static final RegistryObject<Block> SEA_URCHIN = registerBlockWithoutItem("sea_urchin_block", () -> new SeaUrchinBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instabreak().sound(SoundType.WET_GRASS).pushReaction(PushReaction.DESTROY).strength(1.0F)));
 
     public static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {
         RegistryObject<B> block = BLOCKS.register(name, supplier);
         SeaItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
-        AUTO_TRANSLATE.add(block);
+        BLOCK_TRANSLATIONS.add(block);
         return block;
     }
 

@@ -2,55 +2,46 @@ package com.peeko32213.seafarer.worldgen.structure;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import com.peeko32213.seafarer.registry.SeaStructurePieces;
 import com.peeko32213.seafarer.registry.SeaStructureTypes;
-import com.peeko32213.seafarer.registry.worldgen.SeaBiomes;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.ChunkPos;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.WorldGenerationContext;
 import net.minecraft.world.level.levelgen.WorldgenRandom;
 import net.minecraft.world.level.levelgen.heightproviders.HeightProvider;
 import net.minecraft.world.level.levelgen.structure.Structure;
-import net.minecraft.world.level.levelgen.structure.StructurePiece;
 import net.minecraft.world.level.levelgen.structure.StructureType;
-import net.minecraft.world.level.levelgen.structure.pieces.StructurePiecesBuilder;
 
 import java.util.Optional;
 
 public class VolcanoStructure extends Structure {
 
-    public static final Codec<VolcanoStructure> CODEC = RecordCodecBuilder.create(instance -> instance.group(VolcanoStructure.settingsCodec(instance),
-            IntProvider.NON_NEGATIVE_CODEC.fieldOf("height").forGetter(arg -> arg.height),
-            Codec.INT.fieldOf("base_y").forGetter(arg -> arg.baseY),
-            Codec.BOOL.fieldOf("thin_if_tall").forGetter(arg -> arg.thinIfTall)
-    ).apply(instance, VolcanoStructure::new));
+    public static final Codec<VolcanoStructure> CODEC = RecordCodecBuilder.create(volcano -> volcano.group(
+            settingsCodec(volcano),
+            HeightProvider.CODEC.fieldOf("y_level").forGetter(volcanoStructure -> volcanoStructure.y_level),
+            IntProvider.CODEC.fieldOf("radius").forGetter(volcanoStructure -> volcanoStructure.radius)
+    ).apply(volcano, VolcanoStructure::new));
 
-    public final IntProvider height;
-    public final int baseY;
-    public final boolean thinIfTall;
+    private final HeightProvider y_level;
+    private final IntProvider radius;
 
-    public VolcanoStructure(StructureSettings settings, IntProvider height, int baseY, boolean thinIfTall) {
+    public VolcanoStructure(StructureSettings settings, HeightProvider y_level, IntProvider radius) {
         super(settings);
-        this.height = height;
-        this.baseY = baseY;
-        this.thinIfTall = thinIfTall;
+        this.y_level = y_level;
+        this.radius = radius;
     }
 
     @Override
     public Optional<GenerationStub> findGenerationPoint(GenerationContext context) {
-        int x = context.chunkPos().getMiddleBlockX();
-        int z = context.chunkPos().getMiddleBlockZ();
-        int y = context.chunkGenerator().getBaseHeight(x, z, Heightmap.Types.OCEAN_FLOOR_WG, context.heightAccessor(), context.randomState());
+        ChunkPos chunkPos = context.chunkPos();
+        WorldgenRandom random = context.random();
+        int y_level = this.y_level.sample(random, new WorldGenerationContext(context.chunkGenerator(), context.heightAccessor()));
+        int radiusX = this.radius.sample(random);
+        int radiusZ = this.radius.sample(random);
+        long noiseSeed = random.nextLong();
 
-        return Optional.of(new GenerationStub(new BlockPos(x + 8, y, z), builder -> this.addPieces(builder, context)));
-    }
-
-    private void addPieces(StructurePiecesBuilder collector, GenerationContext context) {
-        collector.addPiece(new VolcanoStructurePiece(context.random(), context.chunkPos().getMiddleBlockX(), context.chunkPos().getMiddleBlockZ(), height, baseY, thinIfTall));
+        BlockPos pos = new BlockPos(chunkPos.getMinBlockX() + 8, y_level, chunkPos.getMinBlockZ() + 8);
+        return Optional.of(new GenerationStub(pos, builder -> builder.addPiece(new VolcanoStructurePiece(context.heightAccessor(), pos, radiusX, radiusZ, noiseSeed))));
     }
 
     @Override
