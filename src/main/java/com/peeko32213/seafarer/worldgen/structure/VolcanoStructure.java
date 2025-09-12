@@ -19,16 +19,19 @@ public class VolcanoStructure extends Structure {
     public static final Codec<VolcanoStructure> CODEC = RecordCodecBuilder.create(volcano -> volcano.group(
             settingsCodec(volcano),
             HeightProvider.CODEC.fieldOf("y_level").forGetter(volcanoStructure -> volcanoStructure.y_level),
-            IntProvider.CODEC.fieldOf("radius").forGetter(volcanoStructure -> volcanoStructure.radius)
+            IntProvider.CODEC.fieldOf("radius").forGetter(volcanoStructure -> volcanoStructure.radius),
+            Codec.BOOL.fieldOf("wide").orElse(false).forGetter(volcanoStructure -> volcanoStructure.wide)
     ).apply(volcano, VolcanoStructure::new));
 
     private final HeightProvider y_level;
     private final IntProvider radius;
+    private final boolean wide;
 
-    public VolcanoStructure(StructureSettings settings, HeightProvider y_level, IntProvider radius) {
+    public VolcanoStructure(StructureSettings settings, HeightProvider y_level, IntProvider radius, Boolean wide) {
         super(settings);
         this.y_level = y_level;
         this.radius = radius;
+        this.wide = wide;
     }
 
     @Override
@@ -41,7 +44,7 @@ public class VolcanoStructure extends Structure {
         long noiseSeed = random.nextLong();
 
         BlockPos pos = new BlockPos(chunkPos.getMinBlockX() + 8, y_level, chunkPos.getMinBlockZ() + 8);
-        return Optional.of(new GenerationStub(pos, builder -> builder.addPiece(new VolcanoStructurePiece(context.heightAccessor(), pos, radiusX, radiusZ, noiseSeed))));
+        return Optional.of(new GenerationStub(pos, builder -> builder.addPiece(wide ? new WideVolcanoStructurePiece(context.heightAccessor(), pos, radiusX, radiusZ, noiseSeed) : new VolcanoStructurePiece(context.heightAccessor(), pos, radiusX, radiusZ, noiseSeed))));
     }
 
     @Override

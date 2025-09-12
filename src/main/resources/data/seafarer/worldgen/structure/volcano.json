@@ -12,5 +12,5 @@
     }
   },
   "spawn_overrides": {},
-  "step": "surface_structures"
+  "step": "raw_generation"
 }

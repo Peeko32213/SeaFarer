@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:disk",
+  "config": {
+    "half_height": 1,
+    "radius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "max_inclusive": 3,
+        "min_inclusive": 1
+      }
+    },
+    "state_provider": {
+      "fallback": {
+        "type": "minecraft:weighted_state_provider",
+        "state": {
+          "Name": "seafarer:shelly_volcanic_sand"
+        },
+        "entries": [
+          {
+            "weight": 4,
+            "data": {
+              "Name": "seafarer:shelly_volcanic_sand"
+            }
+          },
+          {
+            "weight": 2,
+            "data": {
+              "Name": "seafarer:volcanic_sand"
+            }
+          }
+        ]
+      },
+      "rules": []
+    },
+    "target": {
+      "type": "minecraft:matching_blocks",
+      "blocks": [
+        "seafarer:volcanic_sand"
+      ]
+    }
+  }
+}

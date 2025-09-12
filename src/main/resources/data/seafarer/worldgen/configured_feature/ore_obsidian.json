@@ -5,14 +5,14 @@
       {
         "target": {
           "predicate_type": "minecraft:block_match",
-          "block": "seafarer:volcanic_basalt"
+          "block": "seafarer:scoria"
         },
         "state": {
           "Name": "minecraft:obsidian"
         }
       }
     ],
-    "size": 32,
+    "size": 16,
     "discard_chance_on_air_exposure": 0.4
   }
 }

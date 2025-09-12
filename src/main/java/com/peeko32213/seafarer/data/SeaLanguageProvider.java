@@ -46,9 +46,7 @@ public class SeaLanguageProvider extends LanguageProvider {
 
         this.translateBiome(SeaBiomes.WARM_REEF);
         this.translateBiome(SeaBiomes.FLOWERING_BEACH);
-        this.translateBiome(SeaBiomes.CORAL_BEACH);
         this.translateBiome(SeaBiomes.VOLCANIC_ISLAND);
-        this.translateBiome(SeaBiomes.VOLCANIC_BEACH);
         this.translateBiome(SeaBiomes.GLASS_BEACH);
         this.translateBiome(SeaBiomes.KELP_FOREST);
         this.translateBiome(SeaBiomes.TROPICAL_RIVER);

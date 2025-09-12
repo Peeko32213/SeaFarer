@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.registry.worldgen;
 
 import com.peeko32213.seafarer.Seafarer;
-import com.peeko32213.seafarer.blocks.TallBeachgrassBlock;
+import com.peeko32213.seafarer.blocks.TallBeachPlantBlock;
 import com.peeko32213.seafarer.registry.SeaBlocks;
 import com.peeko32213.seafarer.registry.SeaFeatures;
 import net.minecraft.core.HolderGetter;
@@ -68,7 +68,7 @@ public class SeaConfiguredFeatures {
             return new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder()
                     .add(SeaBlocks.BEACHGRASS.get().defaultBlockState(), 40)
                     .add(SeaBlocks.SHORT_BEACHGRASS.get().defaultBlockState(), 30)
-                    .add(SeaBlocks.TALL_BEACHGRASS.get().defaultBlockState().setValue(TallBeachgrassBlock.HALF, DoubleBlockHalf.LOWER), 5))
+                    .add(SeaBlocks.TALL_BEACHGRASS.get().defaultBlockState().setValue(TallBeachPlantBlock.HALF, DoubleBlockHalf.LOWER), 5))
             );
         }
 

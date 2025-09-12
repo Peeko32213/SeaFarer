@@ -38,8 +38,6 @@ public class SeaBlockstateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        this.cubeAllBlock(ALGAE_BLOCK);
-
         // white sea glass
         this.cubeAllBlock(WHITE_PEBBLED_SEA_GLASS);
         this.glassBlock(WHITE_SEA_GLASS);
@@ -226,10 +224,14 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.pottedPlant(SEA_THRIFT, POTTED_SEA_THRIFT);
         this.pottedPlant(COASTAL_LAVENDER, POTTED_COASTAL_LAVENDER);
         this.pottedPlant(COASTAL_WILDFLOWER, POTTED_COASTAL_WILDFLOWER);
+
         this.pottedPlant(SEA_HOLLY, POTTED_SEA_HOLLY);
         this.pottedPlant(FIERY_DUSTER, POTTED_FIERY_DUSTER);
         this.pottedPlant(SILK_LILIES, POTTED_SILK_LILIES);
         this.pottedPlant(TWILIGHT_BLADE, POTTED_TWILIGHT_BLADE);
+
+        this.tallPlant(DAWNFLAME);
+        this.tallPlant(SAPPHIRE_COWBELL);
 
         // corals
         this.cubeAllBlock(AMBER_CORAL_BLOCK);
@@ -298,7 +300,10 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.simpleBlockItem(SeaBlocks.CUT_VOLCANIC_SANDSTONE_SLAB.get(), this.existingModel((getName(SeaBlocks.CUT_VOLCANIC_SANDSTONE_SLAB.get()))));
         this.simpleBlockItem(SeaBlocks.CHISELED_VOLCANIC_SANDSTONE.get(), this.existingModel((getName(SeaBlocks.CHISELED_VOLCANIC_SANDSTONE.get()))));
 
-        this.cubeAllBlock(VOLCANIC_BASALT);
+        this.cubeAllBlock(SCORIA);
+        this.stairs(SCORIA_STAIRS, this.blockTexture(SCORIA.get()));
+        this.slab(SCORIA_SLAB, this.blockTexture(SCORIA.get()));
+        this.wall(SCORIA_WALL, this.blockTexture(SCORIA.get()));
     }
 
     private void createPottedPlant(RegistryObject<Block> plant, RegistryObject<Block> pottedPlant, String renderType){

@@ -1,6 +1,5 @@
 package com.peeko32213.seafarer.worldgen.feature;
 
-import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import com.peeko32213.seafarer.blocks.GorgonianCoralBlock;
 import com.peeko32213.seafarer.registry.SeaBlocks;
@@ -20,8 +19,6 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Optional;
 
 public class GorgonianFeature extends Feature<NoneFeatureConfiguration> {

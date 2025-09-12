@@ -33,7 +33,7 @@ public class BeachgrassBlock extends BushBlock implements IForgeShearable, Bonem
             level.setBlockAndUpdate(pos, SeaBlocks.BEACHGRASS.get().defaultBlockState());
         }
         if (state.is(SeaBlocks.BEACHGRASS.get()) && SeaBlocks.TALL_BEACHGRASS.get().defaultBlockState().canSurvive(level, pos) && level.isEmptyBlock(pos.above())) {
-            TallBeachgrassBlock.placeAt(level, SeaBlocks.TALL_BEACHGRASS.get().defaultBlockState(), pos, 2);
+            TallBeachPlantBlock.placeAt(level, SeaBlocks.TALL_BEACHGRASS.get().defaultBlockState(), pos, 2);
         }
     }
 

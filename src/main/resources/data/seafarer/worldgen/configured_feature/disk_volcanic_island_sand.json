@@ -2,6 +2,7 @@
   "type": "minecraft:simple_random_selector",
   "config": {
     "features": [
+      "seafarer:disk_shelly_volcanic_sand",
       "seafarer:disk_starry_volcanic_sand"
     ]
   }

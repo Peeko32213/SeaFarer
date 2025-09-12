@@ -11,4 +11,5 @@ public class SeaStructurePieces {
     public static final DeferredRegister<StructurePieceType> STRUCTURE_PIECES = DeferredRegister.create(Registries.STRUCTURE_PIECE, Seafarer.MOD_ID);
 
     public static final RegistryObject<StructurePieceType> VOLCANO = STRUCTURE_PIECES.register("volcano", () -> VolcanoStructurePiece::new);
+    public static final RegistryObject<StructurePieceType> WIDE_VOLCANO = STRUCTURE_PIECES.register("wide_volcano", () -> VolcanoStructurePiece::new);
 }

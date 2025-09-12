@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "seafarer:volcanic_island_tree",
+    "features": [
+      {
+        "chance": 0.04,
+        "feature": "seafarer:volcanic_island_fancy_oak"
+      },
+      {
+        "chance": 0.06,
+        "feature": "minecraft:jungle_bush"
+      },
+      {
+        "chance": 0.2,
+        "feature": "seafarer:mega_volcanic_island_tree"
+      }
+    ]
+  }
+}

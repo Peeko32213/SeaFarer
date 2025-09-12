@@ -66,7 +66,7 @@ public class Seafarer {
             addToComposter(SeaBlocks.FIERY_DUSTER, 0.6F);
             addToComposter(SeaBlocks.SILK_LILIES, 0.6F);
             addToComposter(SeaBlocks.TWILIGHT_BLADE, 0.6F);
-            addToComposter(SeaBlocks.DAWNFLAME_FLOWER, 0.7F);
+            addToComposter(SeaBlocks.DAWNFLAME, 0.7F);
 
         });
     }

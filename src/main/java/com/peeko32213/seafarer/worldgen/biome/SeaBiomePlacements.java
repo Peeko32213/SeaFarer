@@ -13,16 +13,6 @@ public class SeaBiomePlacements {
 
     public static void register() {
 
-        if (SeafarerConfig.CORAL_BEACH.get()) {
-            BiomePlacement.addSubOverworld(
-                    Biomes.BEACH,
-                    SeaBiomes.CORAL_BEACH,
-                    SubBiomeMatcher.of(
-                            SubBiomeMatcher.Criterion.ofRange(SubBiomeMatcher.CriterionTargets.TEMPERATURE, SubBiomeMatcher.CriterionTypes.VALUE, 0.2F, 0.55F, false),
-                            SubBiomeMatcher.Criterion.ofRange(SubBiomeMatcher.CriterionTargets.HUMIDITY, SubBiomeMatcher.CriterionTypes.VALUE, 0.2F, 1.0F, false)
-            ));
-        }
-
         if (SeafarerConfig.FLOWERING_BEACH.get()) {
             BiomePlacement.replaceOverworld(
                     Biomes.BEACH,
@@ -63,16 +53,6 @@ public class SeaBiomePlacements {
             ));
         }
 
-        if (SeafarerConfig.VOLCANIC_BEACH.get()) {
-            BiomePlacement.addSubOverworld(
-                    Biomes.BEACH,
-                    SeaBiomes.VOLCANIC_BEACH,
-                    SubBiomeMatcher.of(
-                            SubBiomeMatcher.Criterion.ofRange(SubBiomeMatcher.CriterionTargets.TEMPERATURE, SubBiomeMatcher.CriterionTypes.VALUE, 0.3F, 0.55F, false),
-                            SubBiomeMatcher.Criterion.ofRange(SubBiomeMatcher.CriterionTargets.HUMIDITY, SubBiomeMatcher.CriterionTypes.VALUE, 0.1F, 1.0F, false)
-                    ));
-        }
-
         if (SeafarerConfig.VOLCANIC_ISLAND.get()) {
             BiomePlacement.addSubOverworld(
                     Biomes.MUSHROOM_FIELDS,
@@ -86,7 +66,7 @@ public class SeaBiomePlacements {
             BiomePlacement.replaceOverworld(
                     Biomes.WARM_OCEAN,
                     SeaBiomes.WARM_REEF,
-                    0.3D
+                    0.45D
             );
         }
     }

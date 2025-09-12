@@ -65,10 +65,8 @@ public class SeafarerTab {
                         output.accept(SeaBlocks.FIERY_DUSTER.get());
                         output.accept(SeaBlocks.SILK_LILIES.get());
                         output.accept(SeaBlocks.TWILIGHT_BLADE.get());
-                        output.accept(SeaBlocks.DAWNFLAME_FLOWER.get());
-                        output.accept(SeaBlocks.ALGAE_BLOCK.get());
-                        output.accept(SeaBlocks.ALGAE_CARPET.get());
-                        output.accept(SeaBlocks.ALGAE_PLANT.get());
+                        output.accept(SeaBlocks.DAWNFLAME.get());
+                        output.accept(SeaBlocks.SAPPHIRE_COWBELL.get());
                         output.accept(SeaBlocks.BLACK_CHRISTMAS_TREE_WORM.get());
                         output.accept(SeaBlocks.WHITE_CHRISTMAS_TREE_WORM.get());
                         output.accept(SeaBlocks.RED_CHRISTMAS_TREE_WORM.get());
@@ -184,7 +182,7 @@ public class SeafarerTab {
 
                         // volcanic sand
                         output.accept(SeaBlocks.VOLCANIC_SAND.get());
-//                        output.accept(SeaBlocks.SHELLY_VOLCANIC_SAND.get());
+                        output.accept(SeaBlocks.SHELLY_VOLCANIC_SAND.get());
                         output.accept(SeaBlocks.STARRY_VOLCANIC_SAND.get());
                         output.accept(SeaBlocks.VOLCANIC_SANDSTONE.get());
                         output.accept(SeaBlocks.VOLCANIC_SANDSTONE_STAIRS.get());
@@ -197,7 +195,12 @@ public class SeafarerTab {
                         output.accept(SeaBlocks.CUT_VOLCANIC_SANDSTONE.get());
                         output.accept(SeaBlocks.CUT_VOLCANIC_SANDSTONE_SLAB.get());
 
-                        output.accept(SeaBlocks.VOLCANIC_BASALT.get());
+                        // scoria
+                        output.accept(SeaBlocks.SCORIA.get());
+                        output.accept(SeaBlocks.MOSSY_SCORIA.get());
+                        output.accept(SeaBlocks.SCORIA_STAIRS.get());
+                        output.accept(SeaBlocks.SCORIA_SLAB.get());
+                        output.accept(SeaBlocks.SCORIA_WALL.get());
 
                         output.accept(SeaItems.SEA_GLASS_PEBBLES.get());
 

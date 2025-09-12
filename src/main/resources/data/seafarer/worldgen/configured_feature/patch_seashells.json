@@ -3,7 +3,7 @@
   "config": {
     "feature": {
       "feature": {
-        "type": "seafarer:seafarer_simple_block",
+        "type": "seafarer:waterloggable_simple_block",
         "config": {
           "to_place": {
             "type": "minecraft:weighted_state_provider",

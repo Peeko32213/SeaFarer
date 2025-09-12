@@ -1,0 +1,17 @@
+{
+  "type": "seafarer:volcano",
+  "biomes": "#seafarer:has_structure/volcano",
+  "y_level": {
+    "absolute": 0
+  },
+  "radius": {
+    "type": "minecraft:uniform",
+    "value": {
+      "max_inclusive": 96,
+      "min_inclusive": 64
+    }
+  },
+  "wide": true,
+  "spawn_overrides": {},
+  "step": "raw_generation"
+}

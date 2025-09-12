@@ -26,7 +26,8 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "seafarer:mossy_scoria_boulder"
     ],
     [
       "minecraft:monster_room",
@@ -73,7 +74,7 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_jungle",
+      "seafarer:trees_volcanic_island",
       "minecraft:flower_warm",
       "minecraft:patch_grass_jungle",
       "minecraft:brown_mushroom_normal",
@@ -82,7 +83,7 @@
       "minecraft:patch_pumpkin",
       "minecraft:vines",
       "minecraft:seagrass_warm",
-      "seafarer:beach_starfish"
+      "seafarer:volcanic_island_starfish"
     ],
     [
       "minecraft:freeze_top_layer"

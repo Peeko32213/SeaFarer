@@ -97,18 +97,23 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
                 FIERY_DUSTER.get(),
                 SILK_LILIES.get(),
                 TWILIGHT_BLADE.get(),
-                DAWNFLAME_FLOWER.get()
+                DAWNFLAME.get()
         );
 
 
         this.tag(BlockTags.SAND).add(
                 VOLCANIC_SAND.get(),
+                SHELLY_VOLCANIC_SAND.get(),
                 STARRY_VOLCANIC_SAND.get(),
                 CORALINE_SAND.get(),
                 SHELLY_CORALINE_SAND.get(),
                 STARRY_CORALINE_SAND.get(),
                 SHELLY_SAND.get(),
                 STARRY_SAND.get()
+        );
+
+        this.tag(BlockTags.DIRT).add(
+                MOSSY_SCORIA.get()
         );
 
         this.tag(SeaBlockTags.BEACH_PLANT_PLACEABLE).addTag(BlockTags.SAND);
@@ -190,7 +195,8 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
 
         this.tag(BlockTags.WALLS).add(
                 VOLCANIC_SANDSTONE_WALL.get(),
-                CORALINE_SANDSTONE_WALL.get()
+                CORALINE_SANDSTONE_WALL.get(),
+                SCORIA_WALL.get()
         );
 
     }

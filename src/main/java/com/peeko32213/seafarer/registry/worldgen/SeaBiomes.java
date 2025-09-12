@@ -21,9 +21,7 @@ public class SeaBiomes {
     public static final ResourceKey<Biome> WARM_REEF = createKey("warm_reef");
     public static final ResourceKey<Biome> FLOWERING_BEACH = createKey("flowering_beach");
     public static final ResourceKey<Biome> GRASSY_BEACH = createKey("grassy_beach");
-    public static final ResourceKey<Biome> CORAL_BEACH = createKey("coral_beach");
     public static final ResourceKey<Biome> GLASS_BEACH = createKey("glass_beach");
-    public static final ResourceKey<Biome> VOLCANIC_BEACH = createKey("volcanic_beach");
     public static final ResourceKey<Biome> KELP_FOREST = createKey("kelp_forest");
     public static final ResourceKey<Biome> TROPICAL_RIVER = createKey("tropical_river");
     public static final ResourceKey<Biome> VOLCANIC_ISLAND = createKey("volcanic_island");
@@ -35,9 +33,7 @@ public class SeaBiomes {
         context.register(WARM_REEF, warmReef(features, carvers));
         context.register(FLOWERING_BEACH, floweringBeach(features, carvers));
         context.register(GRASSY_BEACH, grassyBeach(features, carvers));
-        context.register(CORAL_BEACH, coralBeach(features, carvers));
         context.register(GLASS_BEACH, glassBeach(features, carvers));
-        context.register(VOLCANIC_BEACH, volcanicBeach(features, carvers));
         context.register(KELP_FOREST, kelpForest(features, carvers));
         context.register(TROPICAL_RIVER, tropicalRiver(features, carvers));
 //        context.register(VOLCANIC_ISLAND, volcanicIsland(features, carvers));
@@ -75,26 +71,6 @@ public class SeaBiomes {
         BiomeDefaultFeatures.commonSpawns(spawns);
         spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.TURTLE, 5, 2, 5));
         return biome(true, 0.8F, 0.4F, 4159204, 329011, spawns, generation, null);
-    }
-
-    private static Biome coralBeach(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
-        BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(features, carvers);
-        SeaBiomeGeneration.coralBeach(generation);
-
-        MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
-        BiomeDefaultFeatures.commonSpawns(spawns);
-        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.TURTLE, 5, 2, 5));
-        return biome(true, 0.8F, 0.4F, 4445678, 270131, spawns, generation, null);
-    }
-
-    private static Biome volcanicBeach(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {
-        BiomeGenerationSettings.Builder generation = new BiomeGenerationSettings.Builder(features, carvers);
-        SeaBiomeGeneration.volcanicBeach(generation);
-
-        MobSpawnSettings.Builder spawns = new MobSpawnSettings.Builder();
-        BiomeDefaultFeatures.commonSpawns(spawns);
-        spawns.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.TURTLE, 5, 2, 5));
-        return biome(true, 0.8F, 0.4F, 4445678, 270131, spawns, generation, null);
     }
 
     private static Biome glassBeach(HolderGetter<PlacedFeature> features, HolderGetter<ConfiguredWorldCarver<?>> carvers) {

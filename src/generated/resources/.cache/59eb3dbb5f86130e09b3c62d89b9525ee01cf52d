@@ -1,7 +1,4 @@
-// 1.20.1	2025-09-10T22:07:02.4384943	Loot Tables
-36713e43689ef0458ebc53f949bdd923d2162fd4 data/seafarer/loot_tables/blocks/algae_block.json
-9e3aff10eb6b4e737ad115d3c5cec5341ceb7a5f data/seafarer/loot_tables/blocks/algae_carpet.json
-c4d3471664ba7b141d12a1681ab7777369107e31 data/seafarer/loot_tables/blocks/algae_plant.json
+// 1.20.1	2025-09-12T14:11:12.4412256	Loot Tables
 d65d5a717456268ec82a8338b2ba9bc6a5f7f4c3 data/seafarer/loot_tables/blocks/beachgrass.json
 5ea43f3020eba9ddc7a93413dc2e8a6c475fb8e9 data/seafarer/loot_tables/blocks/black_pebbled_sea_glass.json
 70a2c5e89df32088e44f612a0598eebe4ba3abe8 data/seafarer/loot_tables/blocks/black_sea_glass.json
@@ -73,8 +70,11 @@ bded3a8659390fc96195d7939befc7e32c393b82 data/seafarer/loot_tables/blocks/pink_p
 66a3fea1f065cf1b0e81cd8f44b1ed0b0963685c data/seafarer/loot_tables/blocks/pink_starfish.json
 69aa7f43b7878a3b7b3978e37bc17773a18384b3 data/seafarer/loot_tables/blocks/potted_coastal_lavender.json
 a1ed836ceb93edeaeff98161c89c9e6d09baae57 data/seafarer/loot_tables/blocks/potted_coastal_wildflower.json
+ac32c3e17eafc3f10f6d03c8ec95cb430497ce7b data/seafarer/loot_tables/blocks/potted_fiery_duster.json
 7110aef5efc77c8ff8d227cdc5c3e541eb8b7bac data/seafarer/loot_tables/blocks/potted_sea_holly.json
 2bffc5be405da514d26c73a83aeb4353e53d963d data/seafarer/loot_tables/blocks/potted_sea_thrift.json
+5c85874cbe71ce5598421d645be81ca05bdff606 data/seafarer/loot_tables/blocks/potted_silk_lilies.json
+3456ce8c098c635a17243c5d853942c31c654b22 data/seafarer/loot_tables/blocks/potted_twilight_blade.json
 d0a8abda8875fbe9dcb25198f9534f488e3d0182 data/seafarer/loot_tables/blocks/purple_ochre_starfish.json
 4196bebf9eef3b1f5d1b6ce46a38da8d175bc17e data/seafarer/loot_tables/blocks/pyramid_shell.json
 782da16575001a79a86e59563c61e0268be05179 data/seafarer/loot_tables/blocks/pyramid_shell_bricks.json

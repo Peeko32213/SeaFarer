@@ -8,7 +8,11 @@
   "structures": [
     {
       "structure": "seafarer:volcano",
-      "weight": 1
+      "weight": 4
+    },
+    {
+      "structure": "seafarer:wide_volcano",
+      "weight": 2
     }
   ]
 }

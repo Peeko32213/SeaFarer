@@ -132,10 +132,6 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SeaBlocks.ROYAL_STARFISH.get());
         dropSelf(SeaBlocks.OCHRE_STARFISH.get());
 
-        dropSelf(SeaBlocks.ALGAE_BLOCK.get());
-        dropWhenSilkTouch(SeaBlocks.ALGAE_CARPET.get());
-        dropWhenSilkTouch(SeaBlocks.ALGAE_PLANT.get());
-
         dropSelf(SeaBlocks.CLAM_SHELL.get());
         dropSelf(SeaBlocks.HORN_SHELL.get());
         dropSelf(SeaBlocks.SPIKY_SHELL.get());

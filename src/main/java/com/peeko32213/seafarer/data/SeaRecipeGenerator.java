@@ -3,7 +3,6 @@ package com.peeko32213.seafarer.data;
 import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.registry.SeaBlocks;
 import com.peeko32213.seafarer.registry.SeaItems;
-import com.peeko32213.seafarer.registry.tags.SeaTags;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -25,11 +24,6 @@ public class SeaRecipeGenerator extends SeaRecipeProvider implements IConditionB
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
-
-
-        // Algae Block
-        makeBricks(SeaBlocks.ALGAE_BLOCK, SeaBlocks.ALGAE_PLANT).save(consumer);
-        makCarpet(SeaBlocks.ALGAE_CARPET, SeaBlocks.ALGAE_PLANT).save(consumer);
 
         // Clam Blockset
         makeSeaGlass(SeaBlocks.CLAM_SHELL_BRICKS, SeaBlocks.CLAM_SHELL).save(consumer);
@@ -81,7 +75,7 @@ public class SeaRecipeGenerator extends SeaRecipeProvider implements IConditionB
         makeDye(consumer, Items.ORANGE_DYE, SeaBlocks.FIERY_DUSTER.get());
         makeDye(consumer, Items.GRAY_DYE, SeaBlocks.SILK_LILIES.get());
         makeDye(consumer, Items.PURPLE_DYE, SeaBlocks.TWILIGHT_BLADE.get());
-        makeDye(consumer, Items.BLUE_DYE, SeaBlocks.DAWNFLAME_FLOWER.get());
+        makeDye(consumer, Items.BLUE_DYE, SeaBlocks.DAWNFLAME.get());
 
         smeltingRecipes(consumer);
     }

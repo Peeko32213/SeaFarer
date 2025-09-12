@@ -21,7 +21,10 @@ public class SeaSurfaceRules {
     private static final SurfaceRules.RuleSource CORALINE_SANDSTONE = makeStateRule(SeaBlocks.CORALINE_SANDSTONE.get());
     private static final SurfaceRules.RuleSource VOLCANIC_SAND = makeStateRule(SeaBlocks.VOLCANIC_SAND.get());
     private static final SurfaceRules.RuleSource VOLCANIC_SANDSTONE = makeStateRule(SeaBlocks.VOLCANIC_SANDSTONE.get());
-    private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
+    private static final SurfaceRules.RuleSource SCORIA = makeStateRule(SeaBlocks.SCORIA.get());
+    private static final SurfaceRules.RuleSource SMOOTH_BASALT = makeStateRule(Blocks.SMOOTH_BASALT);
+    private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
+    private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
     private static final SurfaceRules.RuleSource WATER = makeStateRule(Blocks.WATER);
 
     public static void register() {
@@ -31,20 +34,15 @@ public class SeaSurfaceRules {
                 SurfaceRules.ifTrue(abovePreliminarySurface(), beachSandRuleSource(SAND, SANDSTONE))
         );
 
-        SurfaceRules.RuleSource coral_beach = SurfaceRules.ifTrue(
-                SurfaceRules.isBiome(SeaBiomes.CORAL_BEACH),
-                SurfaceRules.ifTrue(abovePreliminarySurface(), beachSandRuleSource(CORALINE_SAND, CORALINE_SANDSTONE))
-        );
-
-        SurfaceRules.RuleSource volcanic_beach = SurfaceRules.ifTrue(
-                SurfaceRules.isBiome(SeaBiomes.VOLCANIC_BEACH),
-                SurfaceRules.ifTrue(abovePreliminarySurface(), beachSandRuleSource(VOLCANIC_SAND, VOLCANIC_SANDSTONE))
-        );
-
         SurfaceRules.RuleSource volcanic_island = SurfaceRules.ifTrue(
                 SurfaceRules.isBiome(SeaBiomes.VOLCANIC_ISLAND),
-                SurfaceRules.sequence(SurfaceRules.ifTrue(not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(65), 0)), beachSandRuleSource(VOLCANIC_SAND, VOLCANIC_SANDSTONE)))
-        );
+                SurfaceRules.sequence(
+                        SurfaceRules.ifTrue(not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(65), 0)), beachSandRuleSource(VOLCANIC_SAND, VOLCANIC_SANDSTONE)),
+                        SurfaceRules.ifTrue(ON_FLOOR, GRASS_BLOCK),
+                        SurfaceRules.ifTrue(UNDER_FLOOR, DIRT),
+                        SurfaceRules.ifTrue(DEEP_UNDER_FLOOR, sequence(ifTrue(noiseRange(0.3F, 2.2F), SCORIA), SMOOTH_BASALT)),
+                        SurfaceRules.ifTrue(VERY_DEEP_UNDER_FLOOR, sequence(ifTrue(noiseRange(0.3F, 2.2F), SCORIA), SMOOTH_BASALT))
+                ));
 
         SurfaceRules.RuleSource warm_reef = SurfaceRules.ifTrue(
                 SurfaceRules.isBiome(SeaBiomes.WARM_REEF),
@@ -75,11 +73,9 @@ public class SeaSurfaceRules {
                         SurfaceRules.abovePreliminarySurface(),
                         SurfaceRules.sequence(
                                 SurfaceRules.sequence(
-                                        coral_beach,
                                         kelp_forest,
                                         sandy_beach,
                                         tropical_river,
-                                        volcanic_beach,
                                         volcanic_island,
                                         warm_reef,
                                         lukewarm_ocean

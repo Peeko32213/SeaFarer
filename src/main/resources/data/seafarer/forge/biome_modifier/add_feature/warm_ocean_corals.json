@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:warm_ocean",
+  "features": "seafarer:warm_ocean_corals",
+  "step": "vegetal_decoration"
+}

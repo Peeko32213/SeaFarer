@@ -1,0 +1,8 @@
+{
+  "type": "seafarer:boulder",
+  "config": {
+    "state": {
+      "Name": "seafarer:mossy_scoria"
+    }
+  }
+}

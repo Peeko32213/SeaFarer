@@ -8,13 +8,11 @@ public class SeafarerConfig {
 
     public static ForgeConfigSpec.BooleanValue BIOMES;
 
-    public static ForgeConfigSpec.BooleanValue CORAL_BEACH;
     public static ForgeConfigSpec.BooleanValue FLOWERING_BEACH;
     public static ForgeConfigSpec.BooleanValue GLASS_BEACH;
     public static ForgeConfigSpec.BooleanValue GRASSY_BEACH;
     public static ForgeConfigSpec.BooleanValue KELP_FOREST;
     public static ForgeConfigSpec.BooleanValue TROPICAL_RIVER;
-    public static ForgeConfigSpec.BooleanValue VOLCANIC_BEACH;
     public static ForgeConfigSpec.BooleanValue VOLCANIC_ISLAND;
     public static ForgeConfigSpec.BooleanValue WARM_REEF;
 
@@ -26,10 +24,6 @@ public class SeafarerConfig {
         BIOMES = COMMON_BUILDER
                 .comment("If any custom biomes are enabled")
                 .define("biomes", true);
-
-        CORAL_BEACH = COMMON_BUILDER
-                .comment("If the coral beach sub-biome is enabled")
-                .define("coralBeach", true);
 
         FLOWERING_BEACH = COMMON_BUILDER
                 .comment("If the flowering beach sub-biome is enabled")
@@ -50,10 +44,6 @@ public class SeafarerConfig {
         TROPICAL_RIVER = COMMON_BUILDER
                 .comment("If the tropical river sub-biome is enabled")
                 .define("tropicalRiver", true);
-
-        VOLCANIC_BEACH = COMMON_BUILDER
-                .comment("If the volcanic beach sub-biome is enabled")
-                .define("volcanicBeach", true);
 
         VOLCANIC_ISLAND = COMMON_BUILDER
                 .comment("If the volcanic island biome is enabled")

@@ -40,7 +40,6 @@ public class MarineIguana extends Animal implements Brushable, IForgeShearable {
 
     private static final EntityDataAccessor<Integer> SALT = SynchedEntityData.defineId(MarineIguana.class, EntityDataSerializers.INT);
 
-    private GrazeAlgaeGoal eatBlockGoal;
     private int eatAnimationTick;
     private int SaltTime = 0;
 
@@ -57,8 +56,6 @@ public class MarineIguana extends Animal implements Brushable, IForgeShearable {
     }
 
     protected void registerGoals() {
-        this.eatBlockGoal = new GrazeAlgaeGoal(this);
-        this.goalSelector.addGoal(2, this.eatBlockGoal);
         this.goalSelector.addGoal(4, new BigPanicGoal(this, 2.1D));
         this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(4, new LookAtPlayerGoal(this, Player.class, 6.0F));

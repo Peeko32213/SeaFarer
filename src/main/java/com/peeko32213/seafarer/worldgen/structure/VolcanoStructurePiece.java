@@ -22,11 +22,11 @@ import net.minecraft.world.ticks.ScheduledTick;
 
 public class VolcanoStructurePiece extends StructurePiece {
 
-    private final static int CALDERA_CUTOFF = 128;
-    private final static int VOLCANO_TOP = CALDERA_CUTOFF - 7;
-    public final static int VOLCANO_CRUST = VOLCANO_TOP - 3;
-    public final int LAVA_LEVEL = CALDERA_CUTOFF - 16;
-    private static final float STEEPNESS = 7.0F;
+    private final static int calderCuttoff = 128;
+    private final static int volcanoTop = calderCuttoff - 7;
+    public final static int volcanoCrust = volcanoTop - 3;
+    public final int lavaLevel = calderCuttoff - 16;
+    private static final float steepness = 4.5F;
 
     private final int radiusX;
     private final int radiusZ;
@@ -67,10 +67,10 @@ public class VolcanoStructurePiece extends StructurePiece {
 
     @Override
     public void postProcess(WorldGenLevel level, StructureManager structureManager, ChunkGenerator generator, RandomSource random, BoundingBox chunkBox, ChunkPos chunkPos, BlockPos pos) {
-        int calderaCutoffY = pos.getY() + CALDERA_CUTOFF;
-        int lavaY = pos.getY() + LAVA_LEVEL;
-        int topY = pos.getY() + VOLCANO_TOP;
-        int crustY = pos.getY() + VOLCANO_CRUST;
+        int calderaCutoffY = pos.getY() + calderCuttoff;
+        int lavaY = pos.getY() + lavaLevel;
+        int topY = pos.getY() + volcanoTop;
+        int crustY = pos.getY() + volcanoCrust;
 
         for (int z = chunkBox.minZ(); z <= chunkBox.maxZ(); z++) {
             for (int x = chunkBox.minX(); x <= chunkBox.maxX(); x++) {
@@ -83,7 +83,7 @@ public class VolcanoStructurePiece extends StructurePiece {
     }
 
     private void placeColumn(WorldGenLevel level, RandomSource random, int x, int z, int calderaCutoffY, int lavaY, int topY, int crustY, float height) {
-        BlockState volcanoState = SeaBlocks.VOLCANIC_BASALT.get().defaultBlockState();
+        BlockState volcanoState = SeaBlocks.SCORIA.get().defaultBlockState();
 
         int terrainY = Math.min(level.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, x, z), lavaY - 3);
         int lavaBottom = lavaY - 12 + random.nextInt(4);
@@ -129,6 +129,6 @@ public class VolcanoStructurePiece extends StructurePiece {
             return Float.NaN;
         }
         float noiseValue = (float) Math.abs(noise.noise(x * 0.21 + 0.01, 0.0, z * 0.21 + 0.01)) * 0.45F + 1.0F;
-        return STEEPNESS / distanceSquared * noiseValue - STEEPNESS - 2.0F;
+        return steepness / distanceSquared * noiseValue - steepness - 2.0F;
     }
 }
