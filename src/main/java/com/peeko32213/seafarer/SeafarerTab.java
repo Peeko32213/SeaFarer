@@ -181,7 +181,7 @@ public class SeafarerTab {
                         // volcanic sand
                         output.accept(SeaBlocks.VOLCANIC_SAND.get());
 //                        output.accept(SeaBlocks.SHELLY_VOLCANIC_SAND.get());
-//                        output.accept(SeaBlocks.STARRY_VOLCANIC_SAND.get());
+                        output.accept(SeaBlocks.STARRY_VOLCANIC_SAND.get());
                         output.accept(SeaBlocks.VOLCANIC_SANDSTONE.get());
                         output.accept(SeaBlocks.VOLCANIC_SANDSTONE_STAIRS.get());
                         output.accept(SeaBlocks.VOLCANIC_SANDSTONE_SLAB.get());

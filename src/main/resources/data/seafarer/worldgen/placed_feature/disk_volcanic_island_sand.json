@@ -1,5 +1,5 @@
 {
-  "feature": "seafarer:disk_warm_reef_sand",
+  "feature": "seafarer:disk_volcanic_island_sand",
   "placement": [
     {
       "type": "minecraft:in_square"
@@ -20,7 +20,7 @@
     },
     {
       "type": "minecraft:rarity_filter",
-      "chance": 4
+      "chance": 3
     }
   ]
 }

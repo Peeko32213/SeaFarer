@@ -362,6 +362,7 @@ public class SeaBlocks {
     public static final RegistryObject<Block> CUT_CORALINE_SANDSTONE_SLAB = registerBlock("cut_coraline_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(CUT_CORALINE_SANDSTONE.get())));
 
     public static final RegistryObject<Block> VOLCANIC_SAND = registerBlock("volcanic_sand", () -> new SandBlock(3487297, SeaBlockProperties.SAND));
+    public static final RegistryObject<Block> STARRY_VOLCANIC_SAND = registerBlock("starry_volcanic_sand", () -> new SandBlock(3487297, SeaBlockProperties.SAND));
     public static final RegistryObject<Block> VOLCANIC_SANDSTONE = registerBlock("volcanic_sandstone", () -> new Block(SeaBlockProperties.SANDSTONE));
     public static final RegistryObject<Block> VOLCANIC_SANDSTONE_SLAB = registerBlock("volcanic_sandstone_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(VOLCANIC_SANDSTONE.get())));
     public static final RegistryObject<Block> VOLCANIC_SANDSTONE_STAIRS = registerBlock("volcanic_sandstone_stairs", () -> new StairBlock(() -> VOLCANIC_SANDSTONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(VOLCANIC_SANDSTONE.get())));

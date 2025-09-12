@@ -2,8 +2,14 @@
   "feature": "seafarer:ore_obsidian",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 6
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": 80,
+          "max_inclusive": 160
+        }
+      }
     },
     {
       "type": "minecraft:in_square"
@@ -13,10 +19,10 @@
       "height": {
         "type": "minecraft:uniform",
         "max_inclusive": {
-          "absolute": 128
+          "absolute": 256
         },
         "min_inclusive": {
-          "absolute": 48
+          "absolute": 0
         }
       }
     },

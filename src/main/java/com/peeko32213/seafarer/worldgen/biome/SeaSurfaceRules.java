@@ -41,6 +41,11 @@ public class SeaSurfaceRules {
                 SurfaceRules.ifTrue(abovePreliminarySurface(), beachSandRuleSource(VOLCANIC_SAND, VOLCANIC_SANDSTONE))
         );
 
+        SurfaceRules.RuleSource volcanic_island = SurfaceRules.ifTrue(
+                SurfaceRules.isBiome(SeaBiomes.VOLCANIC_ISLAND),
+                SurfaceRules.sequence(SurfaceRules.ifTrue(not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(65), 0)), beachSandRuleSource(VOLCANIC_SAND, VOLCANIC_SANDSTONE)))
+        );
+
         SurfaceRules.RuleSource warm_reef = SurfaceRules.ifTrue(
                 SurfaceRules.isBiome(SeaBiomes.WARM_REEF),
                 SurfaceRules.ifTrue(abovePreliminarySurface(), sequence(ifTrue(noiseRange(0.3F, 2.5F), oceanSandRuleSource(CORALINE_SAND, CORALINE_SANDSTONE)), oceanSandRuleSource(SAND, SANDSTONE)))
@@ -49,8 +54,8 @@ public class SeaSurfaceRules {
         SurfaceRules.RuleSource tropical_river = SurfaceRules.ifTrue(
                 SurfaceRules.isBiome(SeaBiomes.TROPICAL_RIVER),
                 SurfaceRules.sequence(
-                        SurfaceRules.ifTrue(surfaceNoiseAbove(1.25), SAND), SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(60), 0),
-                        SurfaceRules.ifTrue(SurfaceRules.not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(63), 0)), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0), WATER)))
+                        SurfaceRules.ifTrue(surfaceNoiseAbove(1.25), SAND), SurfaceRules.ifTrue(yBlockCheck(VerticalAnchor.absolute(60), 0),
+                        SurfaceRules.ifTrue(not(yBlockCheck(VerticalAnchor.absolute(63), 0)), SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.0), WATER)))
         ));
 
         SurfaceRules.RuleSource kelp_forest = SurfaceRules.ifTrue(
@@ -70,12 +75,13 @@ public class SeaSurfaceRules {
                         SurfaceRules.abovePreliminarySurface(),
                         SurfaceRules.sequence(
                                 SurfaceRules.sequence(
-                                        sandy_beach,
                                         coral_beach,
-                                        volcanic_beach,
-                                        warm_reef,
-                                        tropical_river,
                                         kelp_forest,
+                                        sandy_beach,
+                                        tropical_river,
+                                        volcanic_beach,
+                                        volcanic_island,
+                                        warm_reef,
                                         lukewarm_ocean
                                 )
                         )

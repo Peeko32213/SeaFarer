@@ -10,7 +10,6 @@ import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.LevelHeightAccessor;
 import net.minecraft.world.level.StructureManager;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
@@ -85,9 +84,6 @@ public class VolcanoStructurePiece extends StructurePiece {
 
     private void placeColumn(WorldGenLevel level, RandomSource random, int x, int z, int calderaCutoffY, int lavaY, int topY, int crustY, float height) {
         BlockState volcanoState = SeaBlocks.VOLCANIC_BASALT.get().defaultBlockState();
-        BlockState sandState = SeaBlocks.VOLCANIC_SAND.get().defaultBlockState();
-        BlockState lavaState = Blocks.LAVA.defaultBlockState();
-        BlockState airState = Blocks.AIR.defaultBlockState();
 
         int terrainY = Math.min(level.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, x, z), lavaY - 3);
         int lavaBottom = lavaY - 12 + random.nextInt(4);
@@ -104,7 +100,7 @@ public class VolcanoStructurePiece extends StructurePiece {
                         if (y > terrainY) {
                             level.setBlock(mutablePos, volcanoState, 2);
                         } else if (y > terrainY - 2) {
-                            level.setBlock(mutablePos, sandState, 2);
+                            level.setBlock(mutablePos, SeaBlocks.VOLCANIC_SAND.get().defaultBlockState(), 2);
                         }
                     }
                 } else if (y == crustY - 1) {
@@ -114,10 +110,10 @@ public class VolcanoStructurePiece extends StructurePiece {
                 }
             } else {
                 if (y <= lavaY && y > lavaBottom) {
-                    level.setBlock(mutablePos, lavaState, 2);
+                    level.setBlock(mutablePos, Blocks.LAVA.defaultBlockState(), 2);
                     level.getFluidTicks().schedule(ScheduledTick.probe(level.getFluidState(mutablePos).getType(), mutablePos));
                 } else if (y > lavaY) {
-                    level.setBlock(mutablePos, airState, 2);
+                    level.setBlock(mutablePos, Blocks.AIR.defaultBlockState(), 2);
                 } else if (y > volcanoBottom) {
                     level.setBlock(mutablePos, volcanoState, 2);
                 } else {

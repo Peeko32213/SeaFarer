@@ -95,6 +95,7 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
 
         this.tag(BlockTags.SAND).add(
                 VOLCANIC_SAND.get(),
+                STARRY_VOLCANIC_SAND.get(),
                 CORALINE_SAND.get(),
                 SHELLY_CORALINE_SAND.get(),
                 STARRY_CORALINE_SAND.get(),
