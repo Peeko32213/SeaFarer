@@ -189,6 +189,9 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
         createPotFlowerItemTable(SeaBlocks.POTTED_SEA_HOLLY.get(), SeaBlocks.SEA_HOLLY.get());
         createPotFlowerItemTable(SeaBlocks.POTTED_SEA_THRIFT.get(), SeaBlocks.SEA_THRIFT.get());
         createPotFlowerItemTable(SeaBlocks.POTTED_COASTAL_WILDFLOWER.get(), SeaBlocks.COASTAL_WILDFLOWER.get());
+        createPotFlowerItemTable(SeaBlocks.POTTED_FIERY_DUSTER.get(), SeaBlocks.FIERY_DUSTER.get());
+        createPotFlowerItemTable(SeaBlocks.POTTED_SILK_LILIES.get(), SeaBlocks.SILK_LILIES.get());
+        createPotFlowerItemTable(SeaBlocks.POTTED_TWILIGHT_BLADE.get(), SeaBlocks.TWILIGHT_BLADE.get());
     }
     protected void createPotFlowerItemTable(Block flowerpotBlock, ItemLike pItem) {
         add(flowerpotBlock ,LootTable.lootTable()

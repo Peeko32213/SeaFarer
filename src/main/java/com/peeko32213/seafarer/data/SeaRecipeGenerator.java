@@ -78,7 +78,10 @@ public class SeaRecipeGenerator extends SeaRecipeProvider implements IConditionB
         makeDye(consumer, Items.YELLOW_DYE, SeaBlocks.COASTAL_WILDFLOWER.get());
         makeDye(consumer, Items.PURPLE_DYE, SeaBlocks.COASTAL_LAVENDER.get());
         makeDye(consumer, Items.BLUE_DYE, SeaBlocks.SEA_HOLLY.get());
-        makeDye(consumer, Items.PINK_DYE, SeaBlocks.SEA_THRIFT.get());
+        makeDye(consumer, Items.ORANGE_DYE, SeaBlocks.FIERY_DUSTER.get());
+        makeDye(consumer, Items.GRAY_DYE, SeaBlocks.SILK_LILIES.get());
+        makeDye(consumer, Items.PURPLE_DYE, SeaBlocks.TWILIGHT_BLADE.get());
+        makeDye(consumer, Items.BLUE_DYE, SeaBlocks.DAWNFLAME_FLOWER.get());
 
         smeltingRecipes(consumer);
     }

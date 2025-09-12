@@ -93,6 +93,14 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
                 SEA_THRIFT.get()
         );
 
+        this.tag(SeaBlockTags.VOLCANIC_BEACH_FLOWERS).add(
+                FIERY_DUSTER.get(),
+                SILK_LILIES.get(),
+                TWILIGHT_BLADE.get(),
+                DAWNFLAME_FLOWER.get()
+        );
+
+
         this.tag(BlockTags.SAND).add(
                 VOLCANIC_SAND.get(),
                 STARRY_VOLCANIC_SAND.get(),

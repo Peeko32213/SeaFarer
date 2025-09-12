@@ -227,6 +227,9 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.pottedPlant(COASTAL_LAVENDER, POTTED_COASTAL_LAVENDER);
         this.pottedPlant(COASTAL_WILDFLOWER, POTTED_COASTAL_WILDFLOWER);
         this.pottedPlant(SEA_HOLLY, POTTED_SEA_HOLLY);
+        this.pottedPlant(FIERY_DUSTER, POTTED_FIERY_DUSTER);
+        this.pottedPlant(SILK_LILIES, POTTED_SILK_LILIES);
+        this.pottedPlant(TWILIGHT_BLADE, POTTED_TWILIGHT_BLADE);
 
         // corals
         this.cubeAllBlock(AMBER_CORAL_BLOCK);

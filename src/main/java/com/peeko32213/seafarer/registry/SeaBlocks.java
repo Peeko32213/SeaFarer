@@ -378,6 +378,17 @@ public class SeaBlocks {
 
     public static final RegistryObject<Block> SEA_URCHIN = registerBlockWithoutItem("sea_urchin_block", () -> new SeaUrchinBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instabreak().sound(SoundType.WET_GRASS).pushReaction(PushReaction.DESTROY).strength(1.0F)));
 
+    public static final RegistryObject<Block> FIERY_DUSTER = registerBlock("fiery_duster", () -> new SeaFlowerBlock(() -> MobEffects.DAMAGE_BOOST, 7, SeaBlockProperties.flower(MapColor.COLOR_ORANGE)));
+    public static final RegistryObject<Block> POTTED_FIERY_DUSTER = registerBlockWithoutItem("potted_fiery_duster", () -> new FlowerPotBlock(SeaBlocks.FIERY_DUSTER.get(), registerFlowerPot()));
+
+    public static final RegistryObject<Block> SILK_LILIES = registerBlock("silk_lilies", () -> new SeaFlowerBlock(() -> MobEffects.DAMAGE_BOOST, 7, SeaBlockProperties.flower(MapColor.COLOR_GRAY)));
+    public static final RegistryObject<Block> POTTED_SILK_LILIES = registerBlockWithoutItem("potted_silk_lilies", () -> new FlowerPotBlock(SeaBlocks.SILK_LILIES.get(), registerFlowerPot()));
+
+    public static final RegistryObject<Block> TWILIGHT_BLADE = registerBlock("twilight_blade", () -> new SeaFlowerBlock(() -> MobEffects.DAMAGE_BOOST, 7, SeaBlockProperties.flower(MapColor.COLOR_PURPLE)));
+    public static final RegistryObject<Block> POTTED_TWILIGHT_BLADE = registerBlockWithoutItem("potted_twilight_blade", () -> new FlowerPotBlock(SeaBlocks.TWILIGHT_BLADE.get(), registerFlowerPot()));
+
+    public static final RegistryObject<Block> DAWNFLAME_FLOWER = registerBlock("dawnflame_flower", () -> new TallBeachgrassBlock(SeaBlockProperties.PLANT));
+
     public static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {
         RegistryObject<B> block = BLOCKS.register(name, supplier);
         SeaItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

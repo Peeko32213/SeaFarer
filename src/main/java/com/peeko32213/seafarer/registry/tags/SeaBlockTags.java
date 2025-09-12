@@ -15,6 +15,9 @@ public class SeaBlockTags {
 
     public static final TagKey<Block> BEACH_PLANT_PLACEABLE = modBlockTag("beach_plant_placeable");
 
+    public static final TagKey<Block> VOLCANIC_BEACH_FLOWERS = modBlockTag("volcanic_beach_flowers");
+
+
     private static TagKey<Block> modBlockTag(String name) {
         return blockTag(Seafarer.MOD_ID, name);
     }
