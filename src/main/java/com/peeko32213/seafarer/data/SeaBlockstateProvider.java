@@ -1,7 +1,9 @@
 package com.peeko32213.seafarer.data;
 
 import com.peeko32213.seafarer.Seafarer;
+import com.peeko32213.seafarer.blocks.StarfishBlock;
 import com.peeko32213.seafarer.registry.SeaBlocks;
+import net.minecraft.core.Direction;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
@@ -276,7 +278,37 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.coralFan(DEAD_VERDANT_CORAL_FAN, DEAD_VERDANT_CORAL_WALL_FAN);
         this.coralFan(VERDANT_CORAL_FAN, VERDANT_CORAL_WALL_FAN);
 
+        // christmas tree worms
+        this.christmasTreeWorm(BLACK_CHRISTMAS_TREE_WORM);
+        this.christmasTreeWorm(YELLOW_CHRISTMAS_TREE_WORM);
+        this.christmasTreeWorm(RED_CHRISTMAS_TREE_WORM);
+        this.christmasTreeWorm(BLUE_CHRISTMAS_TREE_WORM);
+        this.christmasTreeWorm(WHITE_CHRISTMAS_TREE_WORM);
+
+        // zoas
+        this.zoa(CYAN_ZOA);
+        this.zoa(ORANGE_ZOA);
+        this.zoa(RED_ZOA);
+        this.zoa(PURPLE_ZOA);
+
+        // starfish
+        this.starfish(ORANGE_STARFISH);
+        this.starfish(CHOCOLATE_CHIP_STARFISH);
+        this.starfish(PINK_STARFISH);
+        this.starfish(RED_STARFISH);
+
+        this.largeStarfish(BLUE_STARFISH);
+        this.largeStarfish(PURPLE_OCHRE_STARFISH);
+        this.largeStarfish(ROYAL_STARFISH);
+        this.largeStarfish(OCHRE_STARFISH);
+
+        this.randomBlock(STARRY_SAND, 4);
+        this.randomBlock(SHELLY_SAND, 3);
+        this.randomBlock(SEA_GLASS_SAND, 4);
+
         this.cubeAllBlock(CORALINE_SAND);
+        this.randomBlock(STARRY_CORALINE_SAND, 4);
+        this.randomBlock(SHELLY_CORALINE_SAND, 3);
         this.wall(CORALINE_SANDSTONE_WALL, this.blockTexture(CORALINE_SANDSTONE.get()));
         this.cubeAllBlock(SMOOTH_CORALINE_SANDSTONE);
         this.stairs(SMOOTH_CORALINE_SANDSTONE_STAIRS, this.blockTexture(SMOOTH_CORALINE_SANDSTONE.get()));
@@ -289,6 +321,8 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.simpleBlockItem(SeaBlocks.CHISELED_CORALINE_SANDSTONE.get(), this.existingModel((getName(SeaBlocks.CHISELED_CORALINE_SANDSTONE.get()))));
 
         this.cubeAllBlock(VOLCANIC_SAND);
+        this.randomBlock(STARRY_VOLCANIC_SAND, 4);
+        this.randomBlock(SHELLY_VOLCANIC_SAND, 3);
         this.wall(VOLCANIC_SANDSTONE_WALL, this.blockTexture(VOLCANIC_SANDSTONE.get()));
         this.cubeAllBlock(SMOOTH_VOLCANIC_SANDSTONE);
         this.stairs(SMOOTH_VOLCANIC_SANDSTONE_STAIRS, this.blockTexture(SMOOTH_VOLCANIC_SANDSTONE.get()));
@@ -304,6 +338,12 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.stairs(SCORIA_STAIRS, this.blockTexture(SCORIA.get()));
         this.slab(SCORIA_SLAB, this.blockTexture(SCORIA.get()));
         this.wall(SCORIA_WALL, this.blockTexture(SCORIA.get()));
+
+        this.floweringJungleLeaves(WHITE_FLOWERING_JUNGLE_LEAVES);
+        this.floweringJungleLeaves(ORANGE_FLOWERING_JUNGLE_LEAVES);
+        this.floweringJungleLeaves(YELLOW_FLOWERING_JUNGLE_LEAVES);
+        this.floweringJungleLeaves(BLUE_FLOWERING_JUNGLE_LEAVES);
+        this.floweringJungleLeaves(MAGENTA_FLOWERING_JUNGLE_LEAVES);
     }
 
     private void createPottedPlant(RegistryObject<Block> plant, RegistryObject<Block> pottedPlant, String renderType){
@@ -500,7 +540,6 @@ public class SeaBlockstateProvider extends BlockStateProvider {
     private void tallPlant(RegistryObject<Block> flower) {
         String name = getItemName(flower.get());
         Function<String, ModelFile> model = s -> this.models().cross(name + "_" + s, this.modLoc("block/" + name + "_" + s)).renderType("cutout");
-
         this.itemModels().withExistingParent(name, "item/generated").texture("layer0", this.modLoc("block/" + name + "_top"));
         this.getVariantBuilder(flower.get()).partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).addModels(new ConfiguredModel(model.apply("top"))).partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).addModels(new ConfiguredModel(model.apply("bottom")));
     }
@@ -530,6 +569,78 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.coralFan(coralFan, this.blockTexture(coralFan.get()));
         this.coralWallFan(coralWallFan, this.blockTexture(coralFan.get()));
         this.generatedItem(coralFan.get(), TextureFolder.BLOCK);
+    }
+
+    private void christmasTreeWorm(RegistryObject<Block> worm) {
+        ResourceLocation texture = this.blockTexture(worm.get());
+        this.simpleBlock(worm.get(), this.models().withExistingParent(getItemName(worm.get()), "seafarer:block/christmas_tree_worm").texture("worm", texture));
+        this.generatedItem(worm.get(), TextureFolder.ITEM);
+    }
+
+    private void zoa(RegistryObject<Block> zoa) {
+        ResourceLocation texture = this.blockTexture(zoa.get());
+        this.simpleBlock(zoa.get(), this.models().withExistingParent(getItemName(zoa.get()), "seafarer:block/zoa").texture("zoa", texture));
+        this.generatedItem(zoa.get(), TextureFolder.ITEM);
+    }
+
+    private void starfish(RegistryObject<Block> block) {
+        ResourceLocation texture = this.blockTexture(block.get());
+        String name = getItemName(block.get());
+
+        ModelFile starfish = this.models().withExistingParent(name, "seafarer:block/starfish").texture("starfish", texture);
+        ModelFile starfish_alt = this.models().withExistingParent(name + "_alt", "seafarer:block/starfish_alt").texture("starfish", texture);
+        ModelFile starfish_rotated = this.models().withExistingParent(name + "_rotated", "seafarer:block/starfish_rotated").texture("starfish", texture);
+        ModelFile starfish_rotated_alt = this.models().withExistingParent(name + "_rotated_alt", "seafarer:block/starfish_rotated_alt").texture("starfish", texture);
+
+        this.generatedItem(block.get(), TextureFolder.ITEM);
+        this.getVariantBuilder(block.get())
+                .partialState().with(StarfishBlock.FACING, Direction.UP).addModels(new ConfiguredModel(starfish), new ConfiguredModel(starfish, 0, 90, false), new ConfiguredModel(starfish, 0, 180, false), new ConfiguredModel(starfish, 0, 270, false), new ConfiguredModel(starfish_rotated), new ConfiguredModel(starfish_rotated, 0, 90, false), new ConfiguredModel(starfish_rotated, 0, 180, false), new ConfiguredModel(starfish_rotated, 0, 270, false))
+                .partialState().with(StarfishBlock.FACING, Direction.DOWN).addModels(new ConfiguredModel(starfish, 180, 0, false), new ConfiguredModel(starfish, 180, 90, false), new ConfiguredModel(starfish, 180, 180, false), new ConfiguredModel(starfish, 180, 270, false), new ConfiguredModel(starfish_rotated, 180, 0, false), new ConfiguredModel(starfish_rotated, 180, 90, false), new ConfiguredModel(starfish_rotated, 180, 180, false), new ConfiguredModel(starfish_rotated, 180, 270, false))
+                .partialState().with(StarfishBlock.FACING, Direction.NORTH).addModels(new ConfiguredModel(starfish, 90, 0, false), new ConfiguredModel(starfish, 270, 180, false), new ConfiguredModel(starfish_alt, 90, 0, false), new ConfiguredModel(starfish_alt, 270, 180, false), new ConfiguredModel(starfish_rotated, 90, 0, false), new ConfiguredModel(starfish_rotated, 270, 180, false), new ConfiguredModel(starfish_rotated_alt, 90, 0, false), new ConfiguredModel(starfish_rotated_alt, 270, 180, false))
+                .partialState().with(StarfishBlock.FACING, Direction.SOUTH).addModels(new ConfiguredModel(starfish, 90, 180, false), new ConfiguredModel(starfish, 270, 0, false), new ConfiguredModel(starfish_alt, 90, 180, false), new ConfiguredModel(starfish_alt, 270, 0, false), new ConfiguredModel(starfish_rotated, 90, 180, false), new ConfiguredModel(starfish_rotated, 270, 0, false), new ConfiguredModel(starfish_rotated_alt, 90, 180, false), new ConfiguredModel(starfish_rotated_alt, 270, 0, false))
+                .partialState().with(StarfishBlock.FACING, Direction.EAST).addModels(new ConfiguredModel(starfish, 90, 90, false), new ConfiguredModel(starfish, 270, 270, false), new ConfiguredModel(starfish_alt, 90, 90, false), new ConfiguredModel(starfish_alt, 270, 270, false), new ConfiguredModel(starfish_rotated, 90, 90, false), new ConfiguredModel(starfish_rotated, 270, 270, false), new ConfiguredModel(starfish_rotated_alt, 90, 90, false), new ConfiguredModel(starfish_rotated_alt, 270, 270, false))
+                .partialState().with(StarfishBlock.FACING, Direction.WEST).addModels(new ConfiguredModel(starfish, 90, 270, false), new ConfiguredModel(starfish, 270, 90, false), new ConfiguredModel(starfish_alt, 90, 270, false), new ConfiguredModel(starfish_alt, 270, 90, false), new ConfiguredModel(starfish_rotated, 90, 270, false), new ConfiguredModel(starfish_rotated, 270, 90, false), new ConfiguredModel(starfish_rotated_alt, 90, 270, false), new ConfiguredModel(starfish_rotated_alt, 270, 90, false)
+        );
+    }
+
+    private void largeStarfish(RegistryObject<Block> block) {
+        ResourceLocation texture = this.blockTexture(block.get());
+        String name = getItemName(block.get());
+
+        ModelFile starfish = this.models().withExistingParent(name, "seafarer:block/large_starfish").texture("starfish", texture);
+        ModelFile starfish_alt = this.models().withExistingParent(name + "_alt", "seafarer:block/large_starfish_alt").texture("starfish", texture);
+        ModelFile starfish_rotated = this.models().withExistingParent(name + "_rotated", "seafarer:block/large_starfish_rotated").texture("starfish", texture);
+        ModelFile starfish_rotated_alt = this.models().withExistingParent(name + "_rotated_alt", "seafarer:block/large_starfish_rotated_alt").texture("starfish", texture);
+
+        this.generatedItem(block.get(), TextureFolder.ITEM);
+        this.getVariantBuilder(block.get())
+                .partialState().with(StarfishBlock.FACING, Direction.UP).addModels(new ConfiguredModel(starfish), new ConfiguredModel(starfish, 0, 90, false), new ConfiguredModel(starfish, 0, 180, false), new ConfiguredModel(starfish, 0, 270, false), new ConfiguredModel(starfish_rotated), new ConfiguredModel(starfish_rotated, 0, 90, false), new ConfiguredModel(starfish_rotated, 0, 180, false), new ConfiguredModel(starfish_rotated, 0, 270, false))
+                .partialState().with(StarfishBlock.FACING, Direction.DOWN).addModels(new ConfiguredModel(starfish, 180, 0, false), new ConfiguredModel(starfish, 180, 90, false), new ConfiguredModel(starfish, 180, 180, false), new ConfiguredModel(starfish, 180, 270, false), new ConfiguredModel(starfish_rotated, 180, 0, false), new ConfiguredModel(starfish_rotated, 180, 90, false), new ConfiguredModel(starfish_rotated, 180, 180, false), new ConfiguredModel(starfish_rotated, 180, 270, false))
+                .partialState().with(StarfishBlock.FACING, Direction.NORTH).addModels(new ConfiguredModel(starfish, 90, 0, false), new ConfiguredModel(starfish, 270, 180, false), new ConfiguredModel(starfish_alt, 90, 0, false), new ConfiguredModel(starfish_alt, 270, 180, false), new ConfiguredModel(starfish_rotated, 90, 0, false), new ConfiguredModel(starfish_rotated, 270, 180, false), new ConfiguredModel(starfish_rotated_alt, 90, 0, false), new ConfiguredModel(starfish_rotated_alt, 270, 180, false))
+                .partialState().with(StarfishBlock.FACING, Direction.SOUTH).addModels(new ConfiguredModel(starfish, 90, 180, false), new ConfiguredModel(starfish, 270, 0, false), new ConfiguredModel(starfish_alt, 90, 180, false), new ConfiguredModel(starfish_alt, 270, 0, false), new ConfiguredModel(starfish_rotated, 90, 180, false), new ConfiguredModel(starfish_rotated, 270, 0, false), new ConfiguredModel(starfish_rotated_alt, 90, 180, false), new ConfiguredModel(starfish_rotated_alt, 270, 0, false))
+                .partialState().with(StarfishBlock.FACING, Direction.EAST).addModels(new ConfiguredModel(starfish, 90, 90, false), new ConfiguredModel(starfish, 270, 270, false), new ConfiguredModel(starfish_alt, 90, 90, false), new ConfiguredModel(starfish_alt, 270, 270, false), new ConfiguredModel(starfish_rotated, 90, 90, false), new ConfiguredModel(starfish_rotated, 270, 270, false), new ConfiguredModel(starfish_rotated_alt, 90, 90, false), new ConfiguredModel(starfish_rotated_alt, 270, 270, false))
+                .partialState().with(StarfishBlock.FACING, Direction.WEST).addModels(new ConfiguredModel(starfish, 90, 270, false), new ConfiguredModel(starfish, 270, 90, false), new ConfiguredModel(starfish_alt, 90, 270, false), new ConfiguredModel(starfish_alt, 270, 90, false), new ConfiguredModel(starfish_rotated, 90, 270, false), new ConfiguredModel(starfish_rotated, 270, 90, false), new ConfiguredModel(starfish_rotated_alt, 90, 270, false), new ConfiguredModel(starfish_rotated_alt, 270, 90, false)
+        );
+    }
+
+    private void randomBlock(RegistryObject<Block> block, int variants) {
+        String name = getBlockName(block.get());
+        Function<Integer, ModelFile> model = i -> this.models().cubeAll(name + "_" + i, this.modLoc("block/" + name + "_" + i));
+        for (int j = 0; j <= variants - 1; j++) {
+            this.getVariantBuilder(block.get()).partialState().addModels(new ConfiguredModel(model.apply(j)));
+        }
+        this.itemModels().withExistingParent(name, this.modLoc("block/" + name + "_0"));
+    }
+
+    private void floweringJungleLeaves(RegistryObject<Block> leaves) {
+        String name = getItemName(leaves.get());
+        ResourceLocation base_texture = this.blockTexture(Blocks.JUNGLE_LEAVES);
+        ResourceLocation flowers_0 = new ResourceLocation(this.blockTexture(leaves.get()).getNamespace(), this.blockTexture(leaves.get()).getPath() + "_overlay_0");
+        ResourceLocation flowers_1 = new ResourceLocation(this.blockTexture(leaves.get()).getNamespace(), this.blockTexture(leaves.get()).getPath() + "_overlay_1");
+        ModelFile flowering_leaves_0 = this.models().withExistingParent(name + "_0", "seafarer:block/overlay_leaves").texture("all", base_texture).texture("overlay", flowers_0);
+        ModelFile flowering_leaves_1 = this.models().withExistingParent(name + "_1", "seafarer:block/overlay_leaves").texture("all", base_texture).texture("overlay", flowers_1);
+        this.itemModels().withExistingParent(name, this.modLoc("block/" + name + "_0"));
+        this.getVariantBuilder(leaves.get()).partialState().addModels(new ConfiguredModel(flowering_leaves_0), new ConfiguredModel(flowering_leaves_1));
     }
 
     // utils

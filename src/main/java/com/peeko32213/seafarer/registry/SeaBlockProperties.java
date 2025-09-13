@@ -23,6 +23,8 @@ public class SeaBlockProperties {
 
     public static final BlockBehaviour.Properties SCORIA = BlockBehaviour.Properties.of().sound(SoundType.BASALT).mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.GUITAR).requiresCorrectToolForDrops().strength(1.2F, 4.0F);
 
+    public static final BlockBehaviour.Properties LEAVES = BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(SeaBlockProperties::ocelotOrParrot).isSuffocating(SeaBlockProperties::never).isViewBlocking(SeaBlockProperties::never).ignitedByLava().pushReaction(PushReaction.DESTROY).isRedstoneConductor(SeaBlockProperties::never);
+
     public static BlockBehaviour.Properties shellBlock(MapColor color) {
         return BlockBehaviour.Properties.of().mapColor(color).instrument(NoteBlockInstrument.XYLOPHONE).requiresCorrectToolForDrops().strength(2.0F).sound(SoundType.BONE_BLOCK);
     }
@@ -61,6 +63,10 @@ public class SeaBlockProperties {
 
     public static BlockBehaviour.Properties flower(MapColor color) {
         return BlockBehaviour.Properties.of().mapColor(color).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY);
+    }
+
+    public static boolean ocelotOrParrot(BlockState state, BlockGetter reader, BlockPos pos, EntityType<?> entity) {
+        return entity == EntityType.OCELOT || entity == EntityType.PARROT;
     }
 
     public static boolean never(BlockState state, BlockGetter getter, BlockPos pos) {

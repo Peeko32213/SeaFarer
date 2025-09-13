@@ -34,11 +34,21 @@ public class SeaSurfaceRules {
                 SurfaceRules.ifTrue(abovePreliminarySurface(), beachSandRuleSource(SAND, SANDSTONE))
         );
 
+//        SurfaceRules.RuleSource volcanic_island = SurfaceRules.ifTrue(
+//                SurfaceRules.isBiome(SeaBiomes.VOLCANIC_ISLAND),
+//                SurfaceRules.sequence(
+//                        SurfaceRules.ifTrue(not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(65), 0)), beachSandRuleSource(VOLCANIC_SAND, VOLCANIC_SANDSTONE)),
+//                        SurfaceRules.ifTrue(ON_FLOOR, GRASS_BLOCK),
+//                        SurfaceRules.ifTrue(UNDER_FLOOR, DIRT),
+//                        SurfaceRules.ifTrue(DEEP_UNDER_FLOOR, sequence(ifTrue(noiseRange(0.3F, 2.2F), SCORIA), SMOOTH_BASALT)),
+//                        SurfaceRules.ifTrue(VERY_DEEP_UNDER_FLOOR, sequence(ifTrue(noiseRange(0.3F, 2.2F), SCORIA), SMOOTH_BASALT))
+//                ));
+
         SurfaceRules.RuleSource volcanic_island = SurfaceRules.ifTrue(
                 SurfaceRules.isBiome(SeaBiomes.VOLCANIC_ISLAND),
                 SurfaceRules.sequence(
                         SurfaceRules.ifTrue(not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(65), 0)), beachSandRuleSource(VOLCANIC_SAND, VOLCANIC_SANDSTONE)),
-                        SurfaceRules.ifTrue(ON_FLOOR, GRASS_BLOCK),
+                        SurfaceRules.ifTrue(ON_FLOOR, sequence(ifTrue(noiseRange(1.5F, 2.5F), beachSandRuleSource(VOLCANIC_SAND, VOLCANIC_SANDSTONE)), GRASS_BLOCK)),
                         SurfaceRules.ifTrue(UNDER_FLOOR, DIRT),
                         SurfaceRules.ifTrue(DEEP_UNDER_FLOOR, sequence(ifTrue(noiseRange(0.3F, 2.2F), SCORIA), SMOOTH_BASALT)),
                         SurfaceRules.ifTrue(VERY_DEEP_UNDER_FLOOR, sequence(ifTrue(noiseRange(0.3F, 2.2F), SCORIA), SMOOTH_BASALT))

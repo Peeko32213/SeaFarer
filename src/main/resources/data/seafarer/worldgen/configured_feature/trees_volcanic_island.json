@@ -8,12 +8,20 @@
         "feature": "seafarer:volcanic_island_fancy_oak"
       },
       {
-        "chance": 0.06,
+        "chance": 0.07,
         "feature": "minecraft:jungle_bush"
       },
       {
         "chance": 0.2,
         "feature": "seafarer:mega_volcanic_island_tree"
+      },
+      {
+        "chance": 0.08,
+        "feature": "seafarer:flowering_volcanic_island_trees"
+      },
+      {
+        "chance": 0.03,
+        "feature": "seafarer:mega_flowering_volcanic_island_trees"
       }
     ]
   }

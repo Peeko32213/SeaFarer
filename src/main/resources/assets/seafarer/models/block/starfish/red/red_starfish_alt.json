@@ -1,7 +1,0 @@
-{
-	"parent": "seafarer:block/starfish/starfish_alt",
-	"textures": {
-		"starfish": "seafarer:block/red_starfish",
-		"particle": "seafarer:block/red_starfish_particle"
-	}
-}

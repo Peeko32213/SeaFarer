@@ -1,0 +1,6 @@
+{
+  "parent": "seafarer:block/starfish_rotated_alt",
+  "textures": {
+    "starfish": "seafarer:block/orange_starfish"
+  }
+}

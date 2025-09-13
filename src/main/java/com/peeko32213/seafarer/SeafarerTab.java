@@ -67,6 +67,11 @@ public class SeafarerTab {
                         output.accept(SeaBlocks.TWILIGHT_BLADE.get());
                         output.accept(SeaBlocks.DAWNFLAME.get());
                         output.accept(SeaBlocks.SAPPHIRE_COWBELL.get());
+                        output.accept(SeaBlocks.WHITE_FLOWERING_JUNGLE_LEAVES.get());
+                        output.accept(SeaBlocks.ORANGE_FLOWERING_JUNGLE_LEAVES.get());
+                        output.accept(SeaBlocks.YELLOW_FLOWERING_JUNGLE_LEAVES.get());
+                        output.accept(SeaBlocks.BLUE_FLOWERING_JUNGLE_LEAVES.get());
+                        output.accept(SeaBlocks.MAGENTA_FLOWERING_JUNGLE_LEAVES.get());
                         output.accept(SeaBlocks.BLACK_CHRISTMAS_TREE_WORM.get());
                         output.accept(SeaBlocks.WHITE_CHRISTMAS_TREE_WORM.get());
                         output.accept(SeaBlocks.RED_CHRISTMAS_TREE_WORM.get());

@@ -1,0 +1,29 @@
+{
+  "feature": "seafarer:mega_flowering_volcanic_island_trees",
+  "placement": [
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "minecraft:jungle_sapling"
+        }
+      }
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:not",
+        "predicate": {
+          "type": "minecraft:matching_blocks",
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "blocks": "seafarer:mossy_scoria"
+        }
+      }
+    }
+  ]
+}

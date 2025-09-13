@@ -1,0 +1,6 @@
+{
+  "parent": "seafarer:block/large_starfish_rotated",
+  "textures": {
+    "starfish": "seafarer:block/ochre_starfish"
+  }
+}

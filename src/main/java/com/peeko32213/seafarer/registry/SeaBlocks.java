@@ -391,6 +391,12 @@ public class SeaBlocks {
     public static final RegistryObject<Block> DAWNFLAME = registerBlock("dawnflame", () -> new TallBeachPlantBlock(SeaBlockProperties.PLANT));
     public static final RegistryObject<Block> SAPPHIRE_COWBELL = registerBlock("sapphire_cowbell", () -> new TallBeachPlantBlock(SeaBlockProperties.PLANT));
 
+    public static final RegistryObject<Block> WHITE_FLOWERING_JUNGLE_LEAVES = registerBlock("white_flowering_jungle_leaves", () -> new LeavesBlock(SeaBlockProperties.LEAVES));
+    public static final RegistryObject<Block> ORANGE_FLOWERING_JUNGLE_LEAVES = registerBlock("orange_flowering_jungle_leaves", () -> new LeavesBlock(SeaBlockProperties.LEAVES));
+    public static final RegistryObject<Block> YELLOW_FLOWERING_JUNGLE_LEAVES = registerBlock("yellow_flowering_jungle_leaves", () -> new LeavesBlock(SeaBlockProperties.LEAVES));
+    public static final RegistryObject<Block> BLUE_FLOWERING_JUNGLE_LEAVES = registerBlock("blue_flowering_jungle_leaves", () -> new LeavesBlock(SeaBlockProperties.LEAVES));
+    public static final RegistryObject<Block> MAGENTA_FLOWERING_JUNGLE_LEAVES = registerBlock("magenta_flowering_jungle_leaves", () -> new LeavesBlock(SeaBlockProperties.LEAVES));
+
     public static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {
         RegistryObject<B> block = BLOCKS.register(name, supplier);
         SeaItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));

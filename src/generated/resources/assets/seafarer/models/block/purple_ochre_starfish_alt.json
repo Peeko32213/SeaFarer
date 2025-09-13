@@ -1,0 +1,6 @@
+{
+  "parent": "seafarer:block/large_starfish_alt",
+  "textures": {
+    "starfish": "seafarer:block/purple_ochre_starfish"
+  }
+}

@@ -23,7 +23,8 @@
     [],
     [
       "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
+      "seafarer:volcanic_island_lava_lake",
+      "seafarer:volcanic_island_lake"
     ],
     [
       "minecraft:amethyst_geode",
