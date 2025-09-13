@@ -333,6 +333,7 @@ public class SeaBlocks {
     public static final RegistryObject<Block> ANTLER_GORGONIAN = registerBlock("antler_gorgonian",() -> new GorgonianCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_PURPLE)));
     public static final RegistryObject<Block> TOWERING_GORGONIAN = registerBlock("towering_gorgonian",() -> new GorgonianCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_ORANGE)));
     public static final RegistryObject<Block> ATTUM_GORGONIAN = registerBlock("attum_gorgonian",() -> new GorgonianCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_YELLOW)));
+    public static final RegistryObject<Block> FLORAL_GORGONIAN = registerBlock("floral_gorgonian",() -> new GorgonianCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_RED)));
 
     public static final RegistryObject<Block> BLUE_CHRISTMAS_TREE_WORM = registerBlock("blue_christmas_tree_worm",() -> new FloweryCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_BLUE)));
     public static final RegistryObject<Block> BLACK_CHRISTMAS_TREE_WORM = registerBlock("black_christmas_tree_worm",() -> new FloweryCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_BLACK)));

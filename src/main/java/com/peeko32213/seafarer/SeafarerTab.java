@@ -84,6 +84,7 @@ public class SeafarerTab {
                         output.accept(SeaBlocks.ANTLER_GORGONIAN.get());
                         output.accept(SeaBlocks.ATTUM_GORGONIAN.get());
                         output.accept(SeaBlocks.TOWERING_GORGONIAN.get());
+                        output.accept(SeaBlocks.FLORAL_GORGONIAN.get());
 
                         // corals
                         output.accept(SeaBlocks.AMBER_CORAL_BLOCK.get());
