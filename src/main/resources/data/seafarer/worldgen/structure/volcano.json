@@ -1,8 +1,14 @@
 {
   "type": "seafarer:volcano",
   "biomes": "#seafarer:has_structure/volcano",
-  "y_level": {
-    "absolute": 0
+  "start_height": {
+    "type": "minecraft:uniform",
+    "min_inclusive": {
+      "absolute": 0
+    },
+    "max_inclusive": {
+      "absolute": 24
+    }
   },
   "radius": {
     "type": "minecraft:uniform",

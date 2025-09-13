@@ -23,10 +23,10 @@ import net.minecraft.world.ticks.ScheduledTick;
 public class VolcanoStructurePiece extends StructurePiece {
 
     private final static int calderCuttoff = 128;
-    private final static int volcanoTop = calderCuttoff - 7;
+    private final static int volcanoTop = calderCuttoff - 5;
     public final static int volcanoCrust = volcanoTop - 3;
     public final int lavaLevel = calderCuttoff - 16;
-    private static final float steepness = 4.5F;
+    private static final float steepness = 4.0F;
 
     private final int radiusX;
     private final int radiusZ;
@@ -83,10 +83,10 @@ public class VolcanoStructurePiece extends StructurePiece {
     }
 
     private void placeColumn(WorldGenLevel level, RandomSource random, int x, int z, int calderaCutoffY, int lavaY, int topY, int crustY, float height) {
-        BlockState volcanoState = SeaBlocks.SCORIA.get().defaultBlockState();
+        BlockState volcanoState = random.nextInt(5) == 0 ? SeaBlocks.SMOOTH_SCORIA.get().defaultBlockState() : SeaBlocks.SCORIA.get().defaultBlockState();
 
         int terrainY = Math.min(level.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, x, z), lavaY - 3);
-        int lavaBottom = lavaY - 12 + random.nextInt(4);
+        int lavaBottom = lavaY - 24 + random.nextInt(4);
         int volcanoBottom = lavaY - 108 + random.nextInt(4);
 
         BlockPos.MutableBlockPos mutablePos = new BlockPos.MutableBlockPos();
@@ -103,8 +103,6 @@ public class VolcanoStructurePiece extends StructurePiece {
                             level.setBlock(mutablePos, SeaBlocks.VOLCANIC_SAND.get().defaultBlockState(), 2);
                         }
                     }
-                } else if (y == crustY - 1) {
-                    level.setBlock(mutablePos, volcanoState, 2);
                 } else if (y <= topY) {
                     level.setBlock(mutablePos, volcanoState, 2);
                 }

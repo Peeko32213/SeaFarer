@@ -196,7 +196,10 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.WALLS).add(
                 VOLCANIC_SANDSTONE_WALL.get(),
                 CORALINE_SANDSTONE_WALL.get(),
-                SCORIA_WALL.get()
+                SCORIA_WALL.get(),
+                POLISHED_SCORIA_WALL.get(),
+                SCORIA_BRICK_WALL.get(),
+                SMOOTH_SCORIA_WALL.get()
         );
 
     }

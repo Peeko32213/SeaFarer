@@ -378,6 +378,24 @@ public class SeaBlocks {
     public static final RegistryObject<Block> SCORIA_SLAB = registerBlock("scoria_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SCORIA.get())));
     public static final RegistryObject<Block> SCORIA_WALL = registerBlock("scoria_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(SCORIA.get())));
 
+    public static final RegistryObject<Block> POLISHED_SCORIA = registerBlock("polished_scoria", () -> new Block(SeaBlockProperties.SCORIA));
+    public static final RegistryObject<Block> POLISHED_SCORIA_STAIRS = registerBlock("polished_scoria_stairs", () -> new StairBlock(() -> POLISHED_SCORIA.get().defaultBlockState(), BlockBehaviour.Properties.copy(POLISHED_SCORIA.get())));
+    public static final RegistryObject<Block> POLISHED_SCORIA_SLAB = registerBlock("polished_scoria_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(POLISHED_SCORIA.get())));
+    public static final RegistryObject<Block> POLISHED_SCORIA_WALL = registerBlock("polished_scoria_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(POLISHED_SCORIA.get())));
+
+    public static final RegistryObject<Block> SCORIA_BRICKS = registerBlock("scoria_bricks", () -> new Block(SeaBlockProperties.SCORIA));
+    public static final RegistryObject<Block> SCORIA_BRICK_STAIRS = registerBlock("scoria_brick_stairs", () -> new StairBlock(() -> SCORIA_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(SCORIA_BRICKS.get())));
+    public static final RegistryObject<Block> SCORIA_BRICK_SLAB = registerBlock("scoria_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SCORIA_BRICKS.get())));
+    public static final RegistryObject<Block> SCORIA_BRICK_WALL = registerBlock("scoria_brick_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(SCORIA_BRICKS.get())));
+    public static final RegistryObject<Block> CHISELED_SCORIA_BRICKS = registerBlock("chiseled_scoria_bricks", () -> new Block(SeaBlockProperties.SCORIA));
+
+    public static final RegistryObject<Block> SMOOTH_SCORIA = registerBlock("smooth_scoria", () -> new Block(SeaBlockProperties.SCORIA));
+    public static final RegistryObject<Block> SMOOTH_SCORIA_STAIRS = registerBlock("smooth_scoria_stairs", () -> new StairBlock(() -> SMOOTH_SCORIA.get().defaultBlockState(), BlockBehaviour.Properties.copy(SMOOTH_SCORIA.get())));
+    public static final RegistryObject<Block> SMOOTH_SCORIA_SLAB = registerBlock("smooth_scoria_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SMOOTH_SCORIA.get())));
+    public static final RegistryObject<Block> SMOOTH_SCORIA_WALL = registerBlock("smooth_scoria_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(SMOOTH_SCORIA.get())));
+
+    public static final RegistryObject<Block> MOLTEN_SCORIA = registerBlock("molten_scoria", () -> new MagmaBlock(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel((state) -> 3).strength(0.75F, 2.5F).isValidSpawn((state, getter, pos, entityType) -> entityType.fireImmune()).hasPostProcess((state, getter, pos) -> true).emissiveRendering((state, getter, pos) -> true)));
+
     public static final RegistryObject<Block> SEA_URCHIN = registerBlockWithoutItem("sea_urchin_block", () -> new SeaUrchinBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instabreak().sound(SoundType.WET_GRASS).pushReaction(PushReaction.DESTROY).strength(1.0F)));
 
     public static final RegistryObject<Block> FIERY_DUSTER = registerBlock("fiery_duster", () -> new SeaFlowerBlock(() -> MobEffects.DAMAGE_BOOST, 7, SeaBlockProperties.flower(MapColor.COLOR_ORANGE)));

@@ -16,11 +16,11 @@
         "feature": "seafarer:mega_volcanic_island_tree"
       },
       {
-        "chance": 0.08,
+        "chance": 0.1,
         "feature": "seafarer:flowering_volcanic_island_trees"
       },
       {
-        "chance": 0.03,
+        "chance": 0.05,
         "feature": "seafarer:mega_flowering_volcanic_island_trees"
       }
     ]

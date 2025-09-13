@@ -334,10 +334,30 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.simpleBlockItem(SeaBlocks.CUT_VOLCANIC_SANDSTONE_SLAB.get(), this.existingModel((getName(SeaBlocks.CUT_VOLCANIC_SANDSTONE_SLAB.get()))));
         this.simpleBlockItem(SeaBlocks.CHISELED_VOLCANIC_SANDSTONE.get(), this.existingModel((getName(SeaBlocks.CHISELED_VOLCANIC_SANDSTONE.get()))));
 
+        // scoria
         this.cubeAllBlock(SCORIA);
         this.stairs(SCORIA_STAIRS, this.blockTexture(SCORIA.get()));
         this.slab(SCORIA_SLAB, this.blockTexture(SCORIA.get()));
         this.wall(SCORIA_WALL, this.blockTexture(SCORIA.get()));
+
+        this.cubeAllBlock(POLISHED_SCORIA);
+        this.stairs(POLISHED_SCORIA_STAIRS, this.blockTexture(POLISHED_SCORIA.get()));
+        this.slab(POLISHED_SCORIA_SLAB, this.blockTexture(POLISHED_SCORIA.get()));
+        this.wall(POLISHED_SCORIA_WALL, this.blockTexture(POLISHED_SCORIA.get()));
+
+        this.cubeAllBlock(SCORIA_BRICKS);
+        this.stairs(SCORIA_BRICK_STAIRS, this.blockTexture(SCORIA_BRICKS.get()));
+        this.slab(SCORIA_BRICK_SLAB, this.blockTexture(SCORIA_BRICKS.get()));
+        this.wall(SCORIA_BRICK_WALL, this.blockTexture(SCORIA_BRICKS.get()));
+
+        this.cubeAllBlock(SMOOTH_SCORIA);
+        this.stairs(SMOOTH_SCORIA_STAIRS, this.blockTexture(SMOOTH_SCORIA.get()));
+        this.slab(SMOOTH_SCORIA_SLAB, this.blockTexture(SMOOTH_SCORIA.get()));
+        this.wall(SMOOTH_SCORIA_WALL, this.blockTexture(SMOOTH_SCORIA.get()));
+
+        this.cubeAllBlock(CHISELED_SCORIA_BRICKS);
+
+        this.cubeAllBlock(MOLTEN_SCORIA);
 
         this.floweringJungleLeaves(WHITE_FLOWERING_JUNGLE_LEAVES);
         this.floweringJungleLeaves(ORANGE_FLOWERING_JUNGLE_LEAVES);

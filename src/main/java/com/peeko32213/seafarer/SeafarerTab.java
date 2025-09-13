@@ -204,9 +204,27 @@ public class SeafarerTab {
                         // scoria
                         output.accept(SeaBlocks.SCORIA.get());
                         output.accept(SeaBlocks.MOSSY_SCORIA.get());
+                        output.accept(SeaBlocks.MOLTEN_SCORIA.get());
                         output.accept(SeaBlocks.SCORIA_STAIRS.get());
                         output.accept(SeaBlocks.SCORIA_SLAB.get());
                         output.accept(SeaBlocks.SCORIA_WALL.get());
+
+                        output.accept(SeaBlocks.POLISHED_SCORIA.get());
+                        output.accept(SeaBlocks.POLISHED_SCORIA_STAIRS.get());
+                        output.accept(SeaBlocks.POLISHED_SCORIA_SLAB.get());
+                        output.accept(SeaBlocks.POLISHED_SCORIA_WALL.get());
+
+                        output.accept(SeaBlocks.SCORIA_BRICKS.get());
+                        output.accept(SeaBlocks.SCORIA_BRICK_STAIRS.get());
+                        output.accept(SeaBlocks.SCORIA_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.SCORIA_BRICK_WALL.get());
+
+                        output.accept(SeaBlocks.SMOOTH_SCORIA.get());
+                        output.accept(SeaBlocks.SMOOTH_SCORIA_STAIRS.get());
+                        output.accept(SeaBlocks.SMOOTH_SCORIA_SLAB.get());
+                        output.accept(SeaBlocks.SMOOTH_SCORIA_WALL.get());
+
+                        output.accept(SeaBlocks.CHISELED_SCORIA_BRICKS.get());
 
                         output.accept(SeaItems.SEA_GLASS_PEBBLES.get());
 

@@ -18,18 +18,18 @@ public class VolcanoStructure extends Structure {
 
     public static final Codec<VolcanoStructure> CODEC = RecordCodecBuilder.create(volcano -> volcano.group(
             settingsCodec(volcano),
-            HeightProvider.CODEC.fieldOf("y_level").forGetter(volcanoStructure -> volcanoStructure.y_level),
+            HeightProvider.CODEC.fieldOf("start_height").forGetter(volcanoStructure -> volcanoStructure.start_height),
             IntProvider.CODEC.fieldOf("radius").forGetter(volcanoStructure -> volcanoStructure.radius),
             Codec.BOOL.fieldOf("wide").orElse(false).forGetter(volcanoStructure -> volcanoStructure.wide)
     ).apply(volcano, VolcanoStructure::new));
 
-    private final HeightProvider y_level;
+    private final HeightProvider start_height;
     private final IntProvider radius;
     private final boolean wide;
 
-    public VolcanoStructure(StructureSettings settings, HeightProvider y_level, IntProvider radius, Boolean wide) {
+    public VolcanoStructure(StructureSettings settings, HeightProvider startHeight, IntProvider radius, Boolean wide) {
         super(settings);
-        this.y_level = y_level;
+        this.start_height = startHeight;
         this.radius = radius;
         this.wide = wide;
     }
@@ -38,12 +38,12 @@ public class VolcanoStructure extends Structure {
     public Optional<GenerationStub> findGenerationPoint(GenerationContext context) {
         ChunkPos chunkPos = context.chunkPos();
         WorldgenRandom random = context.random();
-        int y_level = this.y_level.sample(random, new WorldGenerationContext(context.chunkGenerator(), context.heightAccessor()));
+        int startHeight = this.start_height.sample(random, new WorldGenerationContext(context.chunkGenerator(), context.heightAccessor()));
         int radiusX = this.radius.sample(random);
         int radiusZ = this.radius.sample(random);
         long noiseSeed = random.nextLong();
 
-        BlockPos pos = new BlockPos(chunkPos.getMinBlockX() + 8, y_level, chunkPos.getMinBlockZ() + 8);
+        BlockPos pos = new BlockPos(chunkPos.getMinBlockX() + 8, startHeight, chunkPos.getMinBlockZ() + 8);
         return Optional.of(new GenerationStub(pos, builder -> builder.addPiece(wide ? new WideVolcanoStructurePiece(context.heightAccessor(), pos, radiusX, radiusZ, noiseSeed) : new VolcanoStructurePiece(context.heightAccessor(), pos, radiusX, radiusZ, noiseSeed))));
     }
 
