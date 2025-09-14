@@ -20,18 +20,21 @@ public class VolcanoStructure extends Structure {
             settingsCodec(volcano),
             HeightProvider.CODEC.fieldOf("start_height").forGetter(volcanoStructure -> volcanoStructure.start_height),
             IntProvider.CODEC.fieldOf("radius").forGetter(volcanoStructure -> volcanoStructure.radius),
-            Codec.BOOL.fieldOf("wide").orElse(false).forGetter(volcanoStructure -> volcanoStructure.wide)
+            Codec.BOOL.fieldOf("wide").orElse(false).forGetter(volcanoStructure -> volcanoStructure.wide),
+            Codec.BOOL.fieldOf("overgrown").orElse(false).forGetter(volcanoStructure -> volcanoStructure.overgrown)
     ).apply(volcano, VolcanoStructure::new));
 
     private final HeightProvider start_height;
     private final IntProvider radius;
     private final boolean wide;
+    private final boolean overgrown;
 
-    public VolcanoStructure(StructureSettings settings, HeightProvider startHeight, IntProvider radius, Boolean wide) {
+    public VolcanoStructure(StructureSettings settings, HeightProvider startHeight, IntProvider radius, Boolean wide, boolean overgrown) {
         super(settings);
         this.start_height = startHeight;
         this.radius = radius;
         this.wide = wide;
+        this.overgrown = overgrown;
     }
 
     @Override
@@ -44,7 +47,7 @@ public class VolcanoStructure extends Structure {
         long noiseSeed = random.nextLong();
 
         BlockPos pos = new BlockPos(chunkPos.getMinBlockX() + 8, startHeight, chunkPos.getMinBlockZ() + 8);
-        return Optional.of(new GenerationStub(pos, builder -> builder.addPiece(wide ? new WideVolcanoStructurePiece(context.heightAccessor(), pos, radiusX, radiusZ, noiseSeed) : new VolcanoStructurePiece(context.heightAccessor(), pos, radiusX, radiusZ, noiseSeed))));
+        return Optional.of(new GenerationStub(pos, builder -> builder.addPiece(this.wide ? new WideVolcanoStructurePiece(context.heightAccessor(), pos, radiusX, radiusZ, noiseSeed, overgrown) : new VolcanoStructurePiece(context.heightAccessor(), pos, radiusX, radiusZ, noiseSeed, overgrown))));
     }
 
     @Override

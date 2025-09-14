@@ -25,6 +25,7 @@ public class SeaSurfaceRules {
     private static final SurfaceRules.RuleSource SMOOTH_BASALT = makeStateRule(Blocks.SMOOTH_BASALT);
     private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
     private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
+    private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
     private static final SurfaceRules.RuleSource WATER = makeStateRule(Blocks.WATER);
 
     public static void register() {
@@ -50,8 +51,8 @@ public class SeaSurfaceRules {
                         SurfaceRules.ifTrue(not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(65), 0)), beachSandRuleSource(VOLCANIC_SAND, VOLCANIC_SANDSTONE)),
                         SurfaceRules.ifTrue(ON_FLOOR, sequence(ifTrue(noiseRange(1.5F, 2.5F), beachSandRuleSource(VOLCANIC_SAND, VOLCANIC_SANDSTONE)), GRASS_BLOCK)),
                         SurfaceRules.ifTrue(UNDER_FLOOR, DIRT),
-                        SurfaceRules.ifTrue(DEEP_UNDER_FLOOR, sequence(ifTrue(noiseRange(0.3F, 2.2F), SCORIA), SMOOTH_BASALT)),
-                        SurfaceRules.ifTrue(VERY_DEEP_UNDER_FLOOR, sequence(ifTrue(noiseRange(0.3F, 2.2F), SCORIA), SMOOTH_BASALT))
+                        SurfaceRules.ifTrue(DEEP_UNDER_FLOOR, sequence(ifTrue(noiseRange(1.3F, 2.2F), SCORIA), SMOOTH_BASALT)),
+                        SurfaceRules.ifTrue(VERY_DEEP_UNDER_FLOOR, sequence(ifTrue(noiseRange(1.3F, 2.2F), SCORIA), SMOOTH_BASALT))
                 ));
 
         SurfaceRules.RuleSource warm_reef = SurfaceRules.ifTrue(

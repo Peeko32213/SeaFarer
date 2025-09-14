@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "seafarer:volcanic_island/trees/volcanic_jungle_tree",
+    "features": [
+      {
+        "chance": 0.04,
+        "feature": "seafarer:volcanic_island/trees/volcanic_fancy_oak"
+      },
+      {
+        "chance": 0.07,
+        "feature": "minecraft:jungle_bush"
+      },
+      {
+        "chance": 0.22,
+        "feature": "seafarer:volcanic_island/trees/mega_volcanic_jungle_tree"
+      },
+      {
+        "chance": 0.14,
+        "feature": "seafarer:volcanic_island/flowering_trees"
+      },
+      {
+        "chance": 0.08,
+        "feature": "seafarer:volcanic_island/mega_flowering_trees"
+      }
+    ]
+  }
+}

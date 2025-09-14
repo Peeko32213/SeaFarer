@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "seafarer:volcanic_island/patch_twilight_blade",
+    "features": [
+      {
+        "chance": 0.5,
+        "feature": "seafarer:volcanic_island/patch_fiery_duster"
+      },
+      {
+        "chance": 0.3,
+        "feature": "seafarer:volcanic_island/patch_silk_lilies"
+      },
+      {
+        "chance": 0.6,
+        "feature": "seafarer:volcanic_island/patch_twilight_blade"
+      },
+      {
+        "chance": 0.2,
+        "feature": "seafarer:volcanic_island/patch_dawnflame"
+      },
+      {
+        "chance": 0.2,
+        "feature": "seafarer:volcanic_island/patch_sapphire_cowbell"
+      }
+    ]
+  }
+}

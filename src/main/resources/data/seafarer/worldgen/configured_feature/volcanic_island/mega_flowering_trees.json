@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      "seafarer:volcanic_island/trees/mega_white_flowering_jungle_tree",
+      "seafarer:volcanic_island/trees/mega_orange_flowering_jungle_tree",
+      "seafarer:volcanic_island/trees/mega_yellow_flowering_jungle_tree",
+      "seafarer:volcanic_island/trees/mega_blue_flowering_jungle_tree",
+      "seafarer:volcanic_island/trees/mega_magenta_flowering_jungle_tree"
+    ]
+  }
+}

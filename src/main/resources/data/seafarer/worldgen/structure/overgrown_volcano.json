@@ -11,6 +11,7 @@
       "min_inclusive": 48
     }
   },
+  "overgrown": true,
   "spawn_overrides": {},
   "step": "raw_generation"
 }

@@ -22,9 +22,9 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
-      "seafarer:volcanic_island_lava_lake",
-      "seafarer:volcanic_island_lake"
+      "seafarer:volcanic_island/lava_lake_underground",
+      "seafarer:volcanic_island/lava_lake",
+      "seafarer:volcanic_island/lake"
     ],
     [
       "minecraft:amethyst_geode",
@@ -66,7 +66,9 @@
       "minecraft:disk_clay",
       "minecraft:disk_gravel",
       "seafarer:ore_obsidian",
-      "seafarer:disk_volcanic_island_sand"
+      "seafarer:disk_volcanic_island_sand",
+      "seafarer:volcanic_island/disk_podzol",
+      "seafarer:volcanic_island/disk_moss"
     ],
     [],
     [
@@ -75,15 +77,15 @@
     ],
     [
       "minecraft:glow_lichen",
-      "seafarer:trees_volcanic_island",
-      "minecraft:flower_warm",
-      "minecraft:patch_grass_jungle",
+      "seafarer:volcanic_island/trees",
+      "seafarer:volcanic_island/patch_grass",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "minecraft:seagrass_warm",
-      "seafarer:volcanic_island_starfish"
+      "seafarer:volcanic_island/flowers",
+      "seafarer:volcanic_island/patch_starfish"
     ],
     [
       "minecraft:freeze_top_layer"
@@ -102,30 +104,6 @@
     ],
     "axolotls": [],
     "creature": [
-      {
-        "type": "minecraft:sheep",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 12
-      },
-      {
-        "type": "minecraft:pig",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:chicken",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 10
-      },
-      {
-        "type": "minecraft:cow",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 8
-      },
       {
         "type": "minecraft:chicken",
         "maxCount": 4,

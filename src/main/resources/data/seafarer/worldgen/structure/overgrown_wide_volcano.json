@@ -7,10 +7,12 @@
   "radius": {
     "type": "minecraft:uniform",
     "value": {
-      "max_inclusive": 64,
-      "min_inclusive": 48
+      "max_inclusive": 80,
+      "min_inclusive": 66
     }
   },
+  "wide": true,
+  "overgrown": true,
   "spawn_overrides": {},
   "step": "raw_generation"
 }
