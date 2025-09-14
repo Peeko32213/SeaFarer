@@ -16,11 +16,11 @@
     },
     {
       "structure": "seafarer:overgrown_wide_volcano",
-      "weight": 1
+      "weight": 2
     },
     {
       "structure": "seafarer:overgrown_volcano",
-      "weight": 2
+      "weight": 3
     }
   ]
 }

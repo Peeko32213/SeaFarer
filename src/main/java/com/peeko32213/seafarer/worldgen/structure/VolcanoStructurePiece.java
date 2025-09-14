@@ -4,6 +4,7 @@ import com.peeko32213.seafarer.registry.SeaBlocks;
 import com.peeko32213.seafarer.registry.SeaStructurePieces;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.ChunkPos;
@@ -98,11 +99,10 @@ public class VolcanoStructurePiece extends StructurePiece {
         int volcanoBottom = lavaY - 108 + random.nextInt(4);
 
         BlockPos.MutableBlockPos mutablePos = new BlockPos.MutableBlockPos();
+        float noiseValue = (float) (noise.noise((double) (mutablePos.getX() + 19000 + 20) / 20, (mutablePos.getY() * 0.5F + this.getCalderaHeight() + 20) / 20, (double) (mutablePos.getZ() + 19000 + 20) / 20));
 
         for (int y = level.getMaxBuildHeight(); y > level.getMinBuildHeight(); y--) {
             mutablePos.set(x, y, z);
-            float noiseValue = (float) (noise.noise((double) (mutablePos.getX() + 19000 + 20) / 20, (mutablePos.getY() * 0.5F + this.getCalderaHeight() + 20) / 20, (double) (mutablePos.getZ() + 19000 + 20) / 20));
-
             if (height + terrainY < calderaCutoffY) {
                 if (height + terrainY <= topY) {
                     if (y <= height + terrainY) {
@@ -117,9 +117,17 @@ public class VolcanoStructurePiece extends StructurePiece {
                                     level.setBlock(mutablePos, volcanoState, 2);
                                 }
                             }
-                        }
-                        else if (y > terrainY - 2) {
-                            level.setBlock(mutablePos, SeaBlocks.VOLCANIC_SAND.get().defaultBlockState(), 2);
+                        } else {
+                            if (this.overgrown && y > terrainY - 3) {
+                                if (level.getFluidState(mutablePos).is(FluidTags.WATER)) {
+                                    level.setBlock(mutablePos, SeaBlocks.VOLCANIC_SAND.get().defaultBlockState(), 2);
+                                } else {
+                                    level.setBlock(mutablePos, Blocks.GRASS_BLOCK.defaultBlockState(), 2);
+                                    level.scheduleTick(mutablePos, Blocks.GRASS_BLOCK.defaultBlockState().getBlock(), 0);
+                                }
+                            } else if (y > terrainY - 2) {
+                                level.setBlock(mutablePos, SeaBlocks.VOLCANIC_SAND.get().defaultBlockState(), 2);
+                            }
                         }
                     }
                 } else if (y <= topY - 2 && y > volcanoBottom) {
@@ -155,6 +163,6 @@ public class VolcanoStructurePiece extends StructurePiece {
             return Float.NaN;
         }
         float noiseValue = (float) Math.abs(noise.noise(x * 0.21 + 0.01, 0.0, z * 0.21 + 0.01)) * 0.45F + 1.0F;
-        return 2.5F / distanceSquared * noiseValue - 2.5F - 4.0F;
+        return 2.0F / distanceSquared * noiseValue - 2.0F - 4.0F;
     }
 }
