@@ -79,6 +79,11 @@ public class VolcanoStructurePiece extends StructurePiece {
         int lavaY = pos.getY() + this.getLavaLevel();
         int topY = pos.getY() + this.getCalderaHeight() - 3;
 
+        if (!this.overgrown) {
+            BlockPos corePos = new BlockPos(pos.getX(), this.getLavaLevel() - 10, pos.getZ());
+            level.setBlock(corePos, SeaBlocks.VOLCANIC_CORE.get().defaultBlockState(), 2);
+        }
+
         for (int z = chunkBox.minZ(); z <= chunkBox.maxZ(); z++) {
             for (int x = chunkBox.minX(); x <= chunkBox.maxX(); x++) {
                 float height = getColumnHeight(x - pos.getX(), z - pos.getZ());
@@ -122,8 +127,11 @@ public class VolcanoStructurePiece extends StructurePiece {
                                 if (level.getFluidState(mutablePos).is(FluidTags.WATER)) {
                                     level.setBlock(mutablePos, SeaBlocks.VOLCANIC_SAND.get().defaultBlockState(), 2);
                                 } else {
-                                    level.setBlock(mutablePos, Blocks.GRASS_BLOCK.defaultBlockState(), 2);
-                                    level.scheduleTick(mutablePos, Blocks.GRASS_BLOCK.defaultBlockState().getBlock(), 0);
+                                    if (level.getBlockState(mutablePos.above()).getBlock() == Blocks.AIR) {
+                                        level.setBlock(mutablePos, Blocks.GRASS_BLOCK.defaultBlockState(), 2);
+                                    } else {
+                                        level.setBlock(mutablePos, Blocks.DIRT.defaultBlockState(), 2);
+                                    }
                                 }
                             } else if (y > terrainY - 2) {
                                 level.setBlock(mutablePos, SeaBlocks.VOLCANIC_SAND.get().defaultBlockState(), 2);

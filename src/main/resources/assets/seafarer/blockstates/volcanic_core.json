@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "active=true": {
+      "model": "seafarer:block/volcanic_core_active"
+    },
+    "active=false": {
+      "model": "seafarer:block/volcanic_core_dormant"
+    }
+  }
+}

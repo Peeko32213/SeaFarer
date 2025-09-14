@@ -226,6 +226,9 @@ public class SeafarerTab {
 
                         output.accept(SeaBlocks.CHISELED_SCORIA_BRICKS.get());
 
+                        // volcanic core
+                        output.accept(SeaBlocks.VOLCANIC_CORE.get());
+
                         output.accept(SeaItems.SEA_GLASS_PEBBLES.get());
 
                         // white sea glass

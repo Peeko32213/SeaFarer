@@ -41,8 +41,9 @@ public class Seafarer {
 
         context.registerConfig(ModConfig.Type.COMMON, SeafarerConfig.COMMON_CONFIG);
 
-        SeaBlocks.BLOCKS.register(bus);
         SeaItems.ITEMS.register(bus);
+        SeaBlocks.BLOCKS.register(bus);
+        SeaBlockEntities.BLOCK_ENTITIES.register(bus);
         SeafarerTab.CREATIVE_TABS.register(bus);
         SeaEntities.ENTITY_TYPES.register(bus);
         SeaFeatures.FEATURES.register(bus);
@@ -50,6 +51,7 @@ public class Seafarer {
         SeaStructurePieces.STRUCTURE_PIECES.register(bus);
         SeaLootModifiers.LOOT_MODIFIERS.register(bus);
         SeaSoundEvents.SOUND_EVENTS.register(bus);
+        SeaParticles.PARTICLE_TYPES.register(bus);
         SeaPaintings.PAINTING_VARIANTS.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);

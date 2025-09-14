@@ -13,5 +13,5 @@
   },
   "overgrown": true,
   "spawn_overrides": {},
-  "step": "raw_generation"
+  "step": "surface_structures"
 }
