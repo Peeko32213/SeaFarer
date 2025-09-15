@@ -13,9 +13,9 @@ public class VolcanicSmokeParticle extends TextureSheetParticle {
     VolcanicSmokeParticle(ClientLevel level, double x, double y, double z, double motionX, double motionY, double motionZ) {
         super(level, x, y, z);
         this.setSize(0.5F, 0.5F);
-        this.quadSize = 0.8F + level.random.nextFloat() * 0.3F;
-        this.lifetime = (int) (Math.random() * 20.0D) + 400;
-        this.friction = 0.999F;
+        this.quadSize = 1.0F + level.random.nextFloat() * 0.3F;
+        this.lifetime = this.random.nextInt(50) + 300;
+        this.gravity = 3.0E-6F;
         this.xd = motionX;
         this.yd = motionY;
         this.zd = motionZ;
@@ -61,6 +61,7 @@ public class VolcanicSmokeParticle extends TextureSheetParticle {
         public Particle createParticle(SimpleParticleType particleType, ClientLevel level, double x, double y, double z, double motionX, double motionY, double motionZ) {
             VolcanicSmokeParticle particle = new VolcanicSmokeParticle(level, x, y, z, motionX, motionY, motionZ);
             particle.pickSprite(this.sprites);
+            particle.setAlpha(0.9F);
             return particle;
         }
     }

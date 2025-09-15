@@ -15,23 +15,13 @@ public class VolcanicCoreBlockEntity extends BlockEntity {
         super(SeaBlockEntities.VOLCANIC_CORE.get(), pos, state);
     }
 
-    public static void tick(Level level, BlockPos pos, BlockState state, VolcanicCoreBlockEntity volcanicCore) {
+    public static void particleTick(Level level, BlockPos pos, BlockState state, VolcanicCoreBlockEntity blockEntity) {
+        RandomSource random = level.getRandom();
         if (state.getValue(VolcanicCoreBlock.ACTIVE)) {
-            volcanicCore.spawnSmoke(level);
-        }
-    }
-
-    private void spawnSmoke(Level level) {
-        if (level == null) return;
-
-        if (level.isClientSide()) {
-            RandomSource random = level.getRandom();
-
-            float x = (level.random.nextFloat() - 0.5F) * 0.5F;
-            float z = (level.random.nextFloat() - 0.5F) * 0.5F;
-
-            if (random.nextFloat() < 0.1F) {
-                level.addAlwaysVisibleParticle(SeaParticles.VOLCANIC_SMOKE.get(), true, worldPosition.getX() + 0.5F + x, worldPosition.getY() + 4.0F, worldPosition.getZ() + 0.5F + z, x * 0.2F, 0.18F + level.random.nextFloat() * 0.05F, z * 0.2F);
+            if (random.nextFloat() < 0.03F) {
+                float x = (random.nextFloat() - 0.5F) * 0.5F;
+                float z = (random.nextFloat() - 0.5F) * 0.5F;
+                level.addAlwaysVisibleParticle(SeaParticles.VOLCANIC_SMOKE.get(), true, pos.getX() + 0.5F + x, pos.getY() + 4.0F, pos.getZ() + 0.5F + z, x * 0.2F, 0.2F + random.nextFloat() * 0.05F, z * 0.2F);
             }
         }
     }

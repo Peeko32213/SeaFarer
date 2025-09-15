@@ -394,6 +394,7 @@ public class SeaBlocks {
     public static final RegistryObject<Block> SMOOTH_SCORIA_SLAB = registerBlock("smooth_scoria_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SMOOTH_SCORIA.get())));
     public static final RegistryObject<Block> SMOOTH_SCORIA_WALL = registerBlock("smooth_scoria_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(SMOOTH_SCORIA.get())));
 
+    public static final RegistryObject<Block> BLAZED_SCORIA = registerBlock("blazed_scoria", () -> new MagmaBlock(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel((state) -> 3).strength(0.75F, 2.5F).isValidSpawn((state, getter, pos, entityType) -> entityType.fireImmune())));
     public static final RegistryObject<Block> MOLTEN_SCORIA = registerBlock("molten_scoria", () -> new MagmaBlock(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel((state) -> 3).strength(0.75F, 2.5F).isValidSpawn((state, getter, pos, entityType) -> entityType.fireImmune()).hasPostProcess((state, getter, pos) -> true).emissiveRendering((state, getter, pos) -> true)));
 
     // volcanic core

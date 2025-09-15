@@ -15,12 +15,20 @@
       "weight": 7
     },
     {
-      "structure": "seafarer:overgrown_wide_volcano",
-      "weight": 2
+      "structure": "seafarer:molten_volcano",
+      "weight": 5
+    },
+    {
+      "structure": "seafarer:molten_wide_volcano",
+      "weight": 4
     },
     {
       "structure": "seafarer:overgrown_volcano",
       "weight": 3
+    },
+    {
+      "structure": "seafarer:overgrown_wide_volcano",
+      "weight": 2
     }
   ]
 }

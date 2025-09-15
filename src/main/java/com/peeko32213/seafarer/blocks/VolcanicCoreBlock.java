@@ -86,6 +86,10 @@ public class VolcanicCoreBlock extends BaseEntityBlock {
     @Override
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
-        return VolcanicCoreBlock.createTickerHelper(type, SeaBlockEntities.VOLCANIC_CORE.get(), VolcanicCoreBlockEntity::tick);
+        if (level.isClientSide) {
+            return VolcanicCoreBlock.createTickerHelper(type, SeaBlockEntities.VOLCANIC_CORE.get(), VolcanicCoreBlockEntity::particleTick);
+        } else {
+            return null;
+        }
     }
 }

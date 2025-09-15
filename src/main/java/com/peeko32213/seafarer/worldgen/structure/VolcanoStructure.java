@@ -21,20 +21,23 @@ public class VolcanoStructure extends Structure {
             HeightProvider.CODEC.fieldOf("start_height").forGetter(volcanoStructure -> volcanoStructure.start_height),
             IntProvider.CODEC.fieldOf("radius").forGetter(volcanoStructure -> volcanoStructure.radius),
             Codec.BOOL.fieldOf("wide").orElse(false).forGetter(volcanoStructure -> volcanoStructure.wide),
-            Codec.BOOL.fieldOf("overgrown").orElse(false).forGetter(volcanoStructure -> volcanoStructure.overgrown)
+            Codec.BOOL.fieldOf("overgrown").orElse(false).forGetter(volcanoStructure -> volcanoStructure.overgrown),
+            Codec.BOOL.fieldOf("molten").orElse(false).forGetter(volcanoStructure -> volcanoStructure.molten)
     ).apply(volcano, VolcanoStructure::new));
 
     private final HeightProvider start_height;
     private final IntProvider radius;
     private final boolean wide;
     private final boolean overgrown;
+    private final boolean molten;
 
-    public VolcanoStructure(StructureSettings settings, HeightProvider startHeight, IntProvider radius, Boolean wide, boolean overgrown) {
+    public VolcanoStructure(StructureSettings settings, HeightProvider startHeight, IntProvider radius, Boolean wide, boolean overgrown, boolean molten) {
         super(settings);
         this.start_height = startHeight;
         this.radius = radius;
         this.wide = wide;
         this.overgrown = overgrown;
+        this.molten = molten;
     }
 
     @Override
@@ -47,7 +50,7 @@ public class VolcanoStructure extends Structure {
         long noiseSeed = random.nextLong();
 
         BlockPos pos = new BlockPos(chunkPos.getMinBlockX() + 8, startHeight, chunkPos.getMinBlockZ() + 8);
-        return Optional.of(new GenerationStub(pos, builder -> builder.addPiece(this.wide ? new WideVolcanoStructurePiece(context.heightAccessor(), pos, radiusX, radiusZ, noiseSeed, overgrown) : new VolcanoStructurePiece(context.heightAccessor(), pos, radiusX, radiusZ, noiseSeed, overgrown))));
+        return Optional.of(new GenerationStub(pos, builder -> builder.addPiece(new VolcanoStructurePiece(context.heightAccessor(), pos, radiusX, radiusZ, noiseSeed, wide, overgrown, molten))));
     }
 
     @Override

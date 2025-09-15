@@ -357,6 +357,7 @@ public class SeaBlockstateProvider extends BlockStateProvider {
 
         this.cubeAllBlock(CHISELED_SCORIA_BRICKS);
 
+        this.cubeAllBlock(BLAZED_SCORIA);
         this.cubeAllBlock(MOLTEN_SCORIA);
 
         this.floweringJungleLeaves(WHITE_FLOWERING_JUNGLE_LEAVES);

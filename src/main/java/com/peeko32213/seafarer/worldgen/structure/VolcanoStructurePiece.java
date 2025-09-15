@@ -27,25 +27,33 @@ public class VolcanoStructurePiece extends StructurePiece {
     private final int radiusZ;
     private final long noiseSeed;
 
+    protected final boolean wide;
     private final boolean overgrown;
+    protected final boolean molten;
 
     private final ImprovedNoise noise;
 
     public int getCalderaHeight() {
-        return 124;
+        return wide ? 92 : 124;
     }
 
     public int getLavaLevel() {
-        return 110;
+        if (this.wide) {
+            return this.molten ? 85 : 79;
+        } else {
+            return this.molten ? 113 : 104;
+        }
     }
 
-    protected VolcanoStructurePiece(LevelHeightAccessor heightAccessor, BlockPos pos, int radiusX, int radiusZ, long noiseSeed, boolean overgrown) {
+    protected VolcanoStructurePiece(LevelHeightAccessor heightAccessor, BlockPos pos, int radiusX, int radiusZ, long noiseSeed, boolean wide, boolean overgrown, boolean molten) {
         super(SeaStructurePieces.VOLCANO.get(), 0, boundingBox(heightAccessor, pos, radiusX, radiusZ));
         this.radiusX = radiusX;
         this.radiusZ = radiusZ;
         this.noiseSeed = noiseSeed;
         this.noise = createNoise(noiseSeed);
+        this.wide = wide;
         this.overgrown = overgrown;
+        this.molten = molten;
     }
 
     public VolcanoStructurePiece(StructurePieceSerializationContext context, CompoundTag compoundTag) {
@@ -53,8 +61,10 @@ public class VolcanoStructurePiece extends StructurePiece {
         this.radiusX = compoundTag.getInt("radius_x");
         this.radiusZ = compoundTag.getInt("radius_z");
         this.noiseSeed = compoundTag.getLong("noise_seed");
+        this.wide = compoundTag.getBoolean("wide");
         this.overgrown = compoundTag.getBoolean("overgrown");
-        this.noise = createNoise(noiseSeed);
+        this.molten = compoundTag.getBoolean("molten");
+        this.noise = createNoise(this.noiseSeed);
     }
 
     public static BoundingBox boundingBox(LevelHeightAccessor heightAccessor, BlockPos pos, int radiusX, int radiusZ) {
@@ -67,10 +77,12 @@ public class VolcanoStructurePiece extends StructurePiece {
 
     @Override
     protected void addAdditionalSaveData(StructurePieceSerializationContext context, CompoundTag compoundTag) {
-        compoundTag.putInt("radius_x", radiusX);
-        compoundTag.putInt("radius_z", radiusZ);
-        compoundTag.putLong("noise_seed", noiseSeed);
-        compoundTag.putBoolean("overgrown", overgrown);
+        compoundTag.putInt("radius_x", this.radiusX);
+        compoundTag.putInt("radius_z", this.radiusZ);
+        compoundTag.putLong("noise_seed", this.noiseSeed);
+        compoundTag.putBoolean("wide", this.wide);
+        compoundTag.putBoolean("overgrown", this.overgrown);
+        compoundTag.putBoolean("molten", this.molten);
     }
 
     @Override
@@ -79,8 +91,8 @@ public class VolcanoStructurePiece extends StructurePiece {
         int lavaY = pos.getY() + this.getLavaLevel();
         int topY = pos.getY() + this.getCalderaHeight() - 3;
 
-        if (!this.overgrown) {
-            BlockPos corePos = new BlockPos(pos.getX(), this.getLavaLevel() - 10, pos.getZ());
+        if (this.molten) {
+            BlockPos corePos = new BlockPos(pos.getX(), this.getLavaLevel() - 12, pos.getZ());
             level.setBlock(corePos, SeaBlocks.VOLCANIC_CORE.get().defaultBlockState(), 2);
         }
 
@@ -96,6 +108,7 @@ public class VolcanoStructurePiece extends StructurePiece {
 
     private void placeColumn(WorldGenLevel level, RandomSource random, int x, int z, int calderaCutoffY, int lavaY, int topY, float height) {
         BlockState volcanoState = SeaBlocks.SCORIA.get().defaultBlockState();
+        BlockState blazedVolcanoState = SeaBlocks.BLAZED_SCORIA.get().defaultBlockState();
         BlockState moltenVolcanoState = SeaBlocks.MOLTEN_SCORIA.get().defaultBlockState();
         BlockState mossyVolcanoState = SeaBlocks.MOSSY_SCORIA.get().defaultBlockState();
 
@@ -112,15 +125,38 @@ public class VolcanoStructurePiece extends StructurePiece {
                 if (height + terrainY <= topY) {
                     if (y <= height + terrainY) {
                         if (y > terrainY) {
-                            if (noiseValue < 0.09F && noiseValue > -0.09F && this.overgrown) {
-                                level.setBlock(mutablePos, volcanoState, 2);
-                            } else {
-                                if (this.overgrown) {
+                            if (this.overgrown) {
+                                if (noiseValue < 0.09F && noiseValue > -0.09F) {
+                                    level.setBlock(mutablePos, volcanoState, 2);
+                                } else {
                                     level.setBlock(mutablePos, mossyVolcanoState, 2);
                                     level.scheduleTick(mutablePos, mossyVolcanoState.getBlock(), 0);
-                                } else {
+                                }
+                            }
+                            else if (this.molten) {
+                                if (y > this.getLavaLevel() + random.nextInt(this.wide ? 4 : 6) + random.nextInt(5)) {
+                                    level.setBlock(mutablePos, moltenVolcanoState, 2);
+                                }
+                                else if (y > this.getLavaLevel() - 6 + random.nextInt(5)) {
+                                    if (random.nextInt(6) != 0) {
+                                        level.setBlock(mutablePos, blazedVolcanoState, 2);
+                                    } else {
+                                        level.setBlock(mutablePos, volcanoState, 2);
+                                    }
+                                }
+                                else if (y > this.getLavaLevel() - 9 + random.nextInt(5)) {
+                                    if (random.nextInt(3) != 0) {
+                                        level.setBlock(mutablePos, blazedVolcanoState, 2);
+                                    } else {
+                                        level.setBlock(mutablePos, volcanoState, 2);
+                                    }
+                                }
+                                else {
                                     level.setBlock(mutablePos, volcanoState, 2);
                                 }
+                            }
+                            else {
+                                level.setBlock(mutablePos, volcanoState, 2);
                             }
                         } else {
                             if (this.overgrown && y > terrainY - 3) {
@@ -133,7 +169,8 @@ public class VolcanoStructurePiece extends StructurePiece {
                                         level.setBlock(mutablePos, Blocks.DIRT.defaultBlockState(), 2);
                                     }
                                 }
-                            } else if (y > terrainY - 2) {
+                            }
+                            else if (y > terrainY - 2) {
                                 level.setBlock(mutablePos, SeaBlocks.VOLCANIC_SAND.get().defaultBlockState(), 2);
                             }
                         }
@@ -142,7 +179,30 @@ public class VolcanoStructurePiece extends StructurePiece {
                     if (this.overgrown) {
                         level.setBlock(mutablePos, mossyVolcanoState, 2);
                         level.scheduleTick(mutablePos, mossyVolcanoState.getBlock(), 0);
-                    } else {
+                    }
+                    else if (this.molten) {
+                        if (y > this.getLavaLevel() + random.nextInt(6)) {
+                            level.setBlock(mutablePos, moltenVolcanoState, 2);
+                        }
+                        else if (y > this.getLavaLevel() - 6 + random.nextInt(5)) {
+                            if (random.nextInt(6) != 0) {
+                                level.setBlock(mutablePos, blazedVolcanoState, 2);
+                            } else {
+                                level.setBlock(mutablePos, volcanoState, 2);
+                            }
+                        }
+                        else if (y > this.getLavaLevel() - 9 + random.nextInt(5)) {
+                            if (random.nextInt(3) != 0) {
+                                level.setBlock(mutablePos, blazedVolcanoState, 2);
+                            } else {
+                                level.setBlock(mutablePos, volcanoState, 2);
+                            }
+                        }
+                        else {
+                            level.setBlock(mutablePos, volcanoState, 2);
+                        }
+                    }
+                    else {
                         level.setBlock(mutablePos, volcanoState, 2);
                     }
                 }

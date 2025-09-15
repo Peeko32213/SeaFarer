@@ -204,6 +204,7 @@ public class SeafarerTab {
                         // scoria
                         output.accept(SeaBlocks.SCORIA.get());
                         output.accept(SeaBlocks.MOSSY_SCORIA.get());
+                        output.accept(SeaBlocks.BLAZED_SCORIA.get());
                         output.accept(SeaBlocks.MOLTEN_SCORIA.get());
                         output.accept(SeaBlocks.SCORIA_STAIRS.get());
                         output.accept(SeaBlocks.SCORIA_SLAB.get());
