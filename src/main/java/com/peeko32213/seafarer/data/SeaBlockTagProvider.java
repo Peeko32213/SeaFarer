@@ -73,7 +73,11 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
 
         this.tag(SeaBlockTags.STARFISH).add(
                 CORAL_STARFISH.get(),
-                LAGOON_STARFISH.get()
+                LAGOON_STARFISH.get(),
+                PLUMERIA_STARFISH.get(),
+                SKY_BLUE_STARFISH.get(),
+                SUNNY_STARFISH.get(),
+                SUNSET_STARFISH.get()
         );
 
         this.tag(SeaBlockTags.BEACH_FLOWERS).add(

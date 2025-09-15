@@ -36,11 +36,6 @@ public class SeafarerTab {
                         // sunfish
                         output.accept(SeaItems.SUNFISH_SPAWN_EGG.get());
 
-                        // starfish
-                        output.accept(SeaBlocks.CORAL_STARFISH.get());
-                        output.accept(SeaBlocks.LAGOON_STARFISH.get());
-                        output.accept(SeaItems.DRIED_STARFISH.get());
-
                         output.accept(SeaItems.SEA_URCHIN.get());
                         output.accept(SeaItems.SOY_SAUCE.get());
                         output.accept(SeaItems.SEA_SALT.get());
@@ -79,6 +74,15 @@ public class SeafarerTab {
                         output.accept(SeaBlocks.ATTUM_GORGONIAN.get());
                         output.accept(SeaBlocks.TOWERING_GORGONIAN.get());
                         output.accept(SeaBlocks.FLORAL_GORGONIAN.get());
+
+                        // starfish
+                        output.accept(SeaBlocks.CORAL_STARFISH.get());
+                        output.accept(SeaBlocks.LAGOON_STARFISH.get());
+                        output.accept(SeaBlocks.PLUMERIA_STARFISH.get());
+                        output.accept(SeaBlocks.SKY_BLUE_STARFISH.get());
+                        output.accept(SeaBlocks.SUNNY_STARFISH.get());
+                        output.accept(SeaBlocks.SUNSET_STARFISH.get());
+                        output.accept(SeaItems.DRIED_STARFISH.get());
 
                         // corals
                         output.accept(SeaBlocks.AMBER_CORAL_BLOCK.get());

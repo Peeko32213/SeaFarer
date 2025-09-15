@@ -36,7 +36,7 @@ public class StarfishFeature extends Feature<NoneFeatureConfiguration> {
         int i = 0;
 
         BlockState block = starfish.map(Block::defaultBlockState).orElseGet(SeaBlocks.CORAL_STARFISH.get()::defaultBlockState).setValue(StarfishBlock.FACING, Direction.UP).setValue(StarfishBlock.WATERLOGGED, true);
-        for (int j = 0; j < 10; j++) {
+        for (int j = 0; j < 64; j++) {
             BlockPos blockpos = pos.offset(random.nextInt(8) - random.nextInt(8), random.nextInt(4) - random.nextInt(4), random.nextInt(8) - random.nextInt(8));
             if (level.getFluidState(blockpos).is(FluidTags.WATER) && blockpos.getY() < 255 && block.canSurvive(level, blockpos)) {
                 Direction direction = Direction.getRandom(random);

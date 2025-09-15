@@ -192,6 +192,10 @@ public class SeaBlocks {
     // starfish
     public static final RegistryObject<Block> CORAL_STARFISH = registerBlock("coral_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_RED)));
     public static final RegistryObject<Block> LAGOON_STARFISH = registerBlock("lagoon_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_BLUE)));
+    public static final RegistryObject<Block> PLUMERIA_STARFISH = registerBlock("plumeria_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_PINK)));
+    public static final RegistryObject<Block> SKY_BLUE_STARFISH = registerBlock("sky_blue_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_CYAN)));
+    public static final RegistryObject<Block> SUNNY_STARFISH = registerBlock("sunny_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_YELLOW)));
+    public static final RegistryObject<Block> SUNSET_STARFISH = registerBlock("sunset_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_ORANGE)));
 
     public static final RegistryObject<Block> TALL_BEACHGRASS = registerBlock("tall_beachgrass", () -> new TallBeachPlantBlock(SeaBlockProperties.PLANT));
     public static final RegistryObject<Block> BEACHGRASS = registerBlock("beachgrass", () -> new BeachgrassBlock(SeaBlockProperties.PLANT));
