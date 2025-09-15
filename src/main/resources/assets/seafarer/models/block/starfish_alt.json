@@ -1,0 +1,18 @@
+{
+	"ambientocclusion": false,
+	"render_type": "cutout",
+	"textures": {
+		"particle": "#starfish"
+	},
+	"elements": [
+		{
+			"from": [0, 0.05, 0],
+			"to": [16, 0.05, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0.05, 8]},
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#starfish"},
+				"down": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#starfish"}
+			}
+		}
+	]
+}

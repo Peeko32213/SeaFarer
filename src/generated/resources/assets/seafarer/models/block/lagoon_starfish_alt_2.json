@@ -1,0 +1,6 @@
+{
+  "parent": "seafarer:block/starfish_alt",
+  "textures": {
+    "starfish_2": "seafarer:block/lagoon_starfish_2"
+  }
+}

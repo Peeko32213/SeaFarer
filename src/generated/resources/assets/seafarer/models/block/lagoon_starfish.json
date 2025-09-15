@@ -1,0 +1,7 @@
+{
+  "parent": "seafarer:block/starfish",
+  "textures": {
+    "starfish_1": "seafarer:block/lagoon_starfish_1",
+    "starfish_2": "seafarer:block/lagoon_starfish_2"
+  }
+}

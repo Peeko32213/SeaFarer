@@ -38,6 +38,7 @@ public class SeafarerTab {
 
                         // starfish
                         output.accept(SeaBlocks.CORAL_STARFISH.get());
+                        output.accept(SeaBlocks.LAGOON_STARFISH.get());
                         output.accept(SeaItems.DRIED_STARFISH.get());
 
                         output.accept(SeaItems.SEA_URCHIN.get());
