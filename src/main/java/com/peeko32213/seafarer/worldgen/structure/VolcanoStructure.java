@@ -19,22 +19,16 @@ public class VolcanoStructure extends Structure {
     public static final Codec<VolcanoStructure> CODEC = RecordCodecBuilder.create(volcano -> volcano.group(
             settingsCodec(volcano),
             HeightProvider.CODEC.fieldOf("start_height").forGetter(volcanoStructure -> volcanoStructure.start_height),
-            IntProvider.CODEC.fieldOf("radius").forGetter(volcanoStructure -> volcanoStructure.radius),
-            Codec.BOOL.fieldOf("wide").orElse(false).forGetter(volcanoStructure -> volcanoStructure.wide),
-            Codec.BOOL.fieldOf("overgrown").orElse(false).forGetter(volcanoStructure -> volcanoStructure.overgrown)
+            IntProvider.CODEC.fieldOf("radius").forGetter(volcanoStructure -> volcanoStructure.radius)
     ).apply(volcano, VolcanoStructure::new));
 
     private final HeightProvider start_height;
     private final IntProvider radius;
-    private final boolean wide;
-    private final boolean overgrown;
 
-    public VolcanoStructure(StructureSettings settings, HeightProvider startHeight, IntProvider radius, Boolean wide, boolean overgrown) {
+    public VolcanoStructure(StructureSettings settings, HeightProvider startHeight, IntProvider radius) {
         super(settings);
         this.start_height = startHeight;
         this.radius = radius;
-        this.wide = wide;
-        this.overgrown = overgrown;
     }
 
     @Override
@@ -44,11 +38,12 @@ public class VolcanoStructure extends Structure {
         int startHeight = this.start_height.sample(random, new WorldGenerationContext(context.chunkGenerator(), context.heightAccessor()));
         int radiusX = this.radius.sample(random);
         int radiusZ = this.radius.sample(random);
-        boolean molten = random.nextInt(3) == 0;
+        boolean wide = random.nextFloat() <= 0.45F;
+        boolean overgrown = random.nextFloat() <= 0.3F;
         long noiseSeed = random.nextLong();
 
         BlockPos pos = new BlockPos(chunkPos.getMinBlockX() + 8, startHeight, chunkPos.getMinBlockZ() + 8);
-        return Optional.of(new GenerationStub(pos, builder -> builder.addPiece(new VolcanoStructurePiece(context.heightAccessor(), pos, radiusX, radiusZ, noiseSeed, wide, overgrown, molten))));
+        return Optional.of(new GenerationStub(pos, builder -> builder.addPiece(new VolcanoStructurePiece(context.heightAccessor(), pos, radiusX, radiusZ, noiseSeed, wide, overgrown))));
     }
 
     @Override

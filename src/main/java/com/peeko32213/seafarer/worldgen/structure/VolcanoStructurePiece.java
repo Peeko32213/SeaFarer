@@ -29,7 +29,6 @@ public class VolcanoStructurePiece extends StructurePiece {
 
     protected final boolean wide;
     private final boolean overgrown;
-    protected final boolean molten;
 
     private final ImprovedNoise noise;
 
@@ -39,13 +38,13 @@ public class VolcanoStructurePiece extends StructurePiece {
 
     public int getLavaLevel() {
         if (this.wide) {
-            return this.molten ? 80 : 76;
+            return 76;
         } else {
-            return this.molten ? 110 : 100;
+            return 100;
         }
     }
 
-    protected VolcanoStructurePiece(LevelHeightAccessor heightAccessor, BlockPos pos, int radiusX, int radiusZ, long noiseSeed, boolean wide, boolean overgrown, boolean molten) {
+    protected VolcanoStructurePiece(LevelHeightAccessor heightAccessor, BlockPos pos, int radiusX, int radiusZ, long noiseSeed, boolean wide, boolean overgrown) {
         super(SeaStructurePieces.VOLCANO.get(), 0, boundingBox(heightAccessor, pos, radiusX, radiusZ));
         this.radiusX = radiusX;
         this.radiusZ = radiusZ;
@@ -53,7 +52,6 @@ public class VolcanoStructurePiece extends StructurePiece {
         this.noise = createNoise(noiseSeed);
         this.wide = wide;
         this.overgrown = overgrown;
-        this.molten = molten;
     }
 
     public VolcanoStructurePiece(StructurePieceSerializationContext context, CompoundTag compoundTag) {
@@ -63,7 +61,6 @@ public class VolcanoStructurePiece extends StructurePiece {
         this.noiseSeed = compoundTag.getLong("noise_seed");
         this.wide = compoundTag.getBoolean("wide");
         this.overgrown = compoundTag.getBoolean("overgrown");
-        this.molten = compoundTag.getBoolean("molten");
         this.noise = createNoise(this.noiseSeed);
     }
 
@@ -82,7 +79,6 @@ public class VolcanoStructurePiece extends StructurePiece {
         compoundTag.putLong("noise_seed", this.noiseSeed);
         compoundTag.putBoolean("wide", this.wide);
         compoundTag.putBoolean("overgrown", this.overgrown);
-        compoundTag.putBoolean("molten", this.molten);
     }
 
     @Override
@@ -91,7 +87,7 @@ public class VolcanoStructurePiece extends StructurePiece {
         int lavaY = pos.getY() + this.getLavaLevel();
         int topY = pos.getY() + this.getCalderaHeight() - 3;
 
-        if (this.molten && !this.overgrown) {
+        if (!this.overgrown) {
             BlockPos corePos = new BlockPos(pos.getX(), this.getLavaLevel() - 9, pos.getZ());
             level.setBlock(corePos, SeaBlocks.VOLCANIC_CORE.get().defaultBlockState(), 2);
         }
