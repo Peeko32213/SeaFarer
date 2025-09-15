@@ -28,7 +28,6 @@ public class SeaBiomeTagProvider extends BiomeTagsProvider {
     protected void addTags() {
         this.tag(SeaTags.IS_CRAB_BIOME).add(Biomes.BEACH).add(Biomes.STONY_SHORE);
         this.tag(SeaTags.IS_HORSECRAB_BIOME).add(Biomes.BEACH);
-        this.tag(SeaTags.IS_MARINE_IGUANA_BIOME).add(Biomes.STONY_SHORE);
         this.tag(SeaTags.IS_SUNFISH_BIOME).add(Biomes.OCEAN).add(Biomes.LUKEWARM_OCEAN).add(Biomes.COLD_OCEAN).add(TagEntry.element(new ResourceLocation(Seafarer.MOD_ID, "warm_reef")));
 
         this.tag(SeaTags.IS_BEACH_BIOME).add(Biomes.BEACH).add(Biomes.STONY_SHORE);

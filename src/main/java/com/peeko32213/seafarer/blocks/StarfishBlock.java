@@ -7,11 +7,13 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -21,8 +23,10 @@ import javax.annotation.Nullable;
 
 public class StarfishBlock extends Block implements SimpleWaterloggedBlock {
 
-    public static final BooleanProperty WATERLOGGED;
-    public static final DirectionProperty FACING;
+    public static final IntegerProperty STARFISH_AMOUNT = IntegerProperty.create("starfish_amount", 1, 3);
+    public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+    public static final DirectionProperty FACING = BlockStateProperties.FACING;
+
     protected static final VoxelShape EAST_AABB;
     protected static final VoxelShape WEST_AABB;
     protected static final VoxelShape SOUTH_AABB;
@@ -30,11 +34,12 @@ public class StarfishBlock extends Block implements SimpleWaterloggedBlock {
     protected static final VoxelShape UP_AABB;
     protected static final VoxelShape DOWN_AABB;
 
-    public StarfishBlock(Properties pProperties) {
-        super(pProperties);
-        this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false).setValue(FACING, Direction.UP));
+    public StarfishBlock(BlockBehaviour.Properties properties) {
+        super(properties);
+        this.registerDefaultState(this.stateDefinition.any().setValue(STARFISH_AMOUNT, 1).setValue(WATERLOGGED, true));
     }
 
+    @Override
     public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
         return switch (state.getValue(FACING)) {
             case DOWN -> DOWN_AABB;
@@ -46,53 +51,73 @@ public class StarfishBlock extends Block implements SimpleWaterloggedBlock {
         };
     }
 
-    public boolean canSurvive(BlockState pState, LevelReader pLevel, BlockPos pPos) {
-        Direction direction = pState.getValue(FACING);
-        BlockPos pos = pPos.relative(direction.getOpposite());
-        return pLevel.getBlockState(pos).isFaceSturdy(pLevel, pos, direction);
+    @Override
+    public BlockState rotate(BlockState state, Rotation rotation) {
+        return state.setValue(FACING, rotation.rotate(state.getValue(FACING)));
     }
 
-    public BlockState updateShape(BlockState pState, Direction pDirection, BlockState pNeighborState, LevelAccessor pLevel, BlockPos pPos, BlockPos pNeighborPos) {
-        if (pState.getValue(WATERLOGGED)) {
-            pLevel.scheduleTick(pPos, Fluids.WATER, Fluids.WATER.getTickDelay(pLevel));
-        }
-        return pDirection == pState.getValue(FACING).getOpposite() && !pState.canSurvive(pLevel, pPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(pState, pDirection, pNeighborState, pLevel, pPos, pNeighborPos);
+    @Override
+    public BlockState mirror(BlockState state, Mirror mirror) {
+        return state.rotate(mirror.getRotation(state.getValue(FACING)));
     }
 
     @Nullable
-    public BlockState getStateForPlacement(BlockPlaceContext pContext) {
-        LevelAccessor level = pContext.getLevel();
-        BlockPos pos = pContext.getClickedPos();
-        return this.defaultBlockState().setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER).setValue(FACING, pContext.getClickedFace());
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        BlockState blockstate = context.getLevel().getBlockState(context.getClickedPos());
+        if (blockstate.is(this)) {
+            return blockstate.setValue(STARFISH_AMOUNT, Math.min(3, blockstate.getValue(STARFISH_AMOUNT) + 1)).setValue(FACING, context.getClickedFace());
+        } else {
+            FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
+            boolean flag = fluidstate.getType() == Fluids.WATER;
+            return super.getStateForPlacement(context).setValue(WATERLOGGED, flag).setValue(FACING, context.getClickedFace());
+        }
     }
 
-    public BlockState rotate(BlockState pState, Rotation pRotation) {
-        return pState.setValue(FACING, pRotation.rotate(pState.getValue(FACING)));
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        Direction direction = state.getValue(FACING);
+        BlockPos blockPos = pos.relative(direction.getOpposite());
+        return level.getBlockState(blockPos).isFaceSturdy(level, blockPos, direction);
     }
 
-    public BlockState mirror(BlockState pState, Mirror pMirror) {
-        return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
+    @Override
+    public BlockState updateShape(BlockState state, Direction direction, BlockState blockState, LevelAccessor level, BlockPos pos, BlockPos blockPos) {
+        if (!state.canSurvive(level, pos)) {
+            return Blocks.AIR.defaultBlockState();
+        } else {
+            if (state.getValue(WATERLOGGED)) {
+                level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level));
+            }
+            return super.updateShape(state, direction, blockState, level, pos, blockPos);
+        }
     }
 
-    public FluidState getFluidState(BlockState pState) {
-        return pState.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(pState);
+    @Override
+    public boolean canBeReplaced(BlockState state, BlockPlaceContext context) {
+        return !context.isSecondaryUseActive() && context.getItemInHand().is(this.asItem()) && state.getValue(STARFISH_AMOUNT) < 3 || super.canBeReplaced(state, context);
     }
 
-    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
-        pBuilder.add(WATERLOGGED, FACING);
+    @Override
+    public FluidState getFluidState(BlockState state) {
+        return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
+    }
+
+    @Override
+    public boolean propagatesSkylightDown(BlockState state, BlockGetter blockGetter, BlockPos blockPos) {
+        return state.getFluidState().isEmpty();
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> stateBuilder) {
+        stateBuilder.add(STARFISH_AMOUNT, WATERLOGGED, FACING);
     }
 
     static {
-        WATERLOGGED = BlockStateProperties.WATERLOGGED;
-        FACING = BlockStateProperties.FACING;
-
-        UP_AABB = Block.box(3, 0.0F, 3, 13, 3, 13);
-        DOWN_AABB = Block.box(3, 13, 3, 13, 16.0F, 13);
-
-        NORTH_AABB = Block.box(3, 3, 13, 13, 13, 16.0F);
-        SOUTH_AABB = Block.box(3, 3, 0.0F, 13, 13, 3);
-
-        EAST_AABB = Block.box(0.0F, 3, 3, 3, 13, 13);
-        WEST_AABB = Block.box(13, 3, 3, 16.0F, 13, 13);
+        DOWN_AABB = Block.box(0.0D, 14.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+        UP_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
+        EAST_AABB = Block.box(0.0D, 0.0D, 0.0D, 2.0D, 16.0D, 16.0D);
+        WEST_AABB = Block.box(14.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+        SOUTH_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 2.0D);
+        NORTH_AABB = Block.box(0.0D, 0.0D, 14.0D, 16.0D, 16.0D, 16.0D);
     }
 }

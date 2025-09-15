@@ -35,7 +35,7 @@ public class StarfishFeature extends Feature<NoneFeatureConfiguration> {
 
         int i = 0;
 
-        BlockState block = starfish.map(Block::defaultBlockState).orElseGet(SeaBlocks.ORANGE_STARFISH.get()::defaultBlockState).setValue(StarfishBlock.FACING, Direction.UP).setValue(StarfishBlock.WATERLOGGED, true);
+        BlockState block = starfish.map(Block::defaultBlockState).orElseGet(SeaBlocks.CORAL_STARFISH.get()::defaultBlockState).setValue(StarfishBlock.FACING, Direction.UP).setValue(StarfishBlock.WATERLOGGED, true);
         for (int j = 0; j < 10; j++) {
             BlockPos blockpos = pos.offset(random.nextInt(8) - random.nextInt(8), random.nextInt(4) - random.nextInt(4), random.nextInt(8) - random.nextInt(8));
             if (level.getFluidState(blockpos).is(FluidTags.WATER) && blockpos.getY() < 255 && block.canSurvive(level, blockpos)) {
@@ -43,7 +43,7 @@ public class StarfishFeature extends Feature<NoneFeatureConfiguration> {
                 while (!block.setValue(StarfishBlock.FACING, direction).canSurvive(level, blockpos)) {
                     direction = Direction.getRandom(random);
                 }
-                level.setBlock(blockpos, block.setValue(StarfishBlock.FACING, direction).setValue(StarfishBlock.WATERLOGGED, true), 2);
+                level.setBlock(blockpos, block.setValue(StarfishBlock.FACING, direction).setValue(StarfishBlock.WATERLOGGED, true).setValue(StarfishBlock.STARFISH_AMOUNT, random.nextInt(1, 3)), 2);
                 i++;
             }
         }

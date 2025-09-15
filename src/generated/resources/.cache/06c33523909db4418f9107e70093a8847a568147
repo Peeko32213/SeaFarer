@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-13T13:10:36.2509089	seafarer Block Tags
+// 1.20.1	2025-09-15T11:57:42.1049523	seafarer Block Tags
 e297ce907af9c43578a16003652b2f7ef3f9134a data/minecraft/tags/blocks/bee_growables.json
 57e55f1235b197e6e6b3e3e3df6e7365dac98715 data/minecraft/tags/blocks/coral_blocks.json
 b8d9d4d8607c2273f376c1d43a35a177a3b3f8a9 data/minecraft/tags/blocks/coral_plants.json
@@ -11,8 +11,5 @@ dc32bcc344b02e925f18c1e2663c8a084736f2b6 data/minecraft/tags/blocks/sand.json
 e297ce907af9c43578a16003652b2f7ef3f9134a data/seafarer/tags/blocks/beach_flowers.json
 c1b2a217bb3fcb7e1d67f5bc45409796720bd171 data/seafarer/tags/blocks/beach_plant_placeable.json
 3454077425d2acb041f7ebb50d5914b9ca12a80f data/seafarer/tags/blocks/gorgonians.json
-7b044f88bf253840e73ca576b0ab2d4543809f78 data/seafarer/tags/blocks/large_starfish.json
-a86fab386501683d2721d8100245edc3ef2d92f1 data/seafarer/tags/blocks/shells.json
-a74d59f8d07a6df699af71e809de49df540366bd data/seafarer/tags/blocks/sprinkled_sand.json
-29f4b684aace59b7cbd960be8e390e9007472b14 data/seafarer/tags/blocks/starfish.json
-c985f32400c3b0562f0d7cdc48060d57c59db6b0 data/seafarer/tags/blocks/volcanic_beach_flowers.json
+6f5c50e7a1f3da4fc5075caa1e5691c2773dcd09 data/seafarer/tags/blocks/starfish.json
+c985f32400c3b0562f0d7cdc48060d57c59db6b0 data/seafarer/tags/blocks/volcanic_island_flowers.json

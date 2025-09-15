@@ -189,14 +189,7 @@ public class SeaBlocks {
 
     public static final RegistryObject<Block> FISHING_NET = registerPlaceOnWaterBlockItem("fishing_net", () -> new FishingNet(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion().strength(0.2F).sound(SoundType.LADDER)));
 
-    public static final RegistryObject<Block> ORANGE_STARFISH = registerBlock("orange_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_ORANGE)));
-    public static final RegistryObject<Block> PINK_STARFISH = registerBlock("pink_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_PINK)));
-    public static final RegistryObject<Block> RED_STARFISH = registerBlock("red_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_RED)));
-    public static final RegistryObject<Block> CHOCOLATE_CHIP_STARFISH = registerBlock("chocolate_chip_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_BROWN)));
-    public static final RegistryObject<Block> BLUE_STARFISH = registerBlock("blue_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_BLUE)));
-    public static final RegistryObject<Block> PURPLE_OCHRE_STARFISH = registerBlock("purple_ochre_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_MAGENTA)));
-    public static final RegistryObject<Block> ROYAL_STARFISH = registerBlock("royal_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_PURPLE)));
-    public static final RegistryObject<Block> OCHRE_STARFISH = registerBlock("ochre_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_YELLOW)));
+    public static final RegistryObject<Block> CORAL_STARFISH = registerBlock("coral_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_RED)));
 
     public static final RegistryObject<Block> TALL_BEACHGRASS = registerBlock("tall_beachgrass", () -> new TallBeachPlantBlock(SeaBlockProperties.PLANT));
     public static final RegistryObject<Block> BEACHGRASS = registerBlock("beachgrass", () -> new BeachgrassBlock(SeaBlockProperties.PLANT));
@@ -394,11 +387,8 @@ public class SeaBlocks {
     public static final RegistryObject<Block> SMOOTH_SCORIA_SLAB = registerBlock("smooth_scoria_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(SMOOTH_SCORIA.get())));
     public static final RegistryObject<Block> SMOOTH_SCORIA_WALL = registerBlock("smooth_scoria_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(SMOOTH_SCORIA.get())));
 
-    public static final RegistryObject<Block> BLAZED_SCORIA = registerBlock("blazed_scoria", () -> new MagmaBlock(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel((state) -> 3).strength(0.75F, 2.5F).isValidSpawn((state, getter, pos, entityType) -> entityType.fireImmune())));
-    public static final RegistryObject<Block> MOLTEN_SCORIA = registerBlock("molten_scoria", () -> new MagmaBlock(BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel((state) -> 3).strength(0.75F, 2.5F).isValidSpawn((state, getter, pos, entityType) -> entityType.fireImmune()).hasPostProcess((state, getter, pos) -> true).emissiveRendering((state, getter, pos) -> true)));
-
-    // volcanic core
-    public static final RegistryObject<Block> VOLCANIC_CORE = registerBlock("volcanic_core", () -> new VolcanicCoreBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel((state) -> 8).strength(55.0F, 1200.0F).isValidSpawn((state, getter, pos, entityType) -> entityType.fireImmune()).hasPostProcess((state, getter, pos) -> true).emissiveRendering((state, getter, pos) -> true).sound(SoundType.BASALT)));
+    public static final RegistryObject<Block> MOLTEN_SCORIA = registerBlock("molten_scoria", () -> new MoltenScoriaBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel((state) -> 3).strength(0.75F, 2.5F).isValidSpawn((state, getter, pos, entityType) -> entityType.fireImmune()).sound(SoundType.BASALT)));
+    public static final RegistryObject<Block> VOLCANIC_CORE = registerBlock("volcanic_core", () -> new VolcanicCoreBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().lightLevel((state) -> 8).strength(50.0F, 1200.0F).isValidSpawn((state, getter, pos, entityType) -> entityType.fireImmune()).sound(SoundType.BASALT)));
 
     public static final RegistryObject<Block> SEA_URCHIN = registerBlockWithoutItem("sea_urchin_block", () -> new SeaUrchinBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instabreak().sound(SoundType.WET_GRASS).pushReaction(PushReaction.DESTROY).strength(1.0F)));
 
@@ -419,6 +409,12 @@ public class SeaBlocks {
     public static final RegistryObject<Block> YELLOW_FLOWERING_JUNGLE_LEAVES = registerBlock("yellow_flowering_jungle_leaves", () -> new LeavesBlock(SeaBlockProperties.LEAVES));
     public static final RegistryObject<Block> BLUE_FLOWERING_JUNGLE_LEAVES = registerBlock("blue_flowering_jungle_leaves", () -> new LeavesBlock(SeaBlockProperties.LEAVES));
     public static final RegistryObject<Block> MAGENTA_FLOWERING_JUNGLE_LEAVES = registerBlock("magenta_flowering_jungle_leaves", () -> new LeavesBlock(SeaBlockProperties.LEAVES));
+
+    public static final RegistryObject<Block> BLUE_VOLCANIC_GRASS = registerBlock("blue_volcanic_grass", () -> new BeachPlantBlock(SeaBlockProperties.PLANT));
+    public static final RegistryObject<Block> POTTED_BLUE_VOLCANIC_GRASS = registerBlockWithoutItem("potted_blue_volcanic_grass", () -> new FlowerPotBlock(SeaBlocks.BLUE_VOLCANIC_GRASS.get(), registerFlowerPot()));
+
+    public static final RegistryObject<Block> ORANGE_VOLCANIC_GRASS = registerBlock("orange_volcanic_grass", () -> new BeachPlantBlock(SeaBlockProperties.PLANT));
+    public static final RegistryObject<Block> POTTED_ORANGE_VOLCANIC_GRASS = registerBlockWithoutItem("potted_orange_volcanic_grass", () -> new FlowerPotBlock(SeaBlocks.ORANGE_VOLCANIC_GRASS.get(), registerFlowerPot()));
 
     public static <B extends Block> RegistryObject<B> registerBlock(String name, Supplier<? extends B> supplier) {
         RegistryObject<B> block = BLOCKS.register(name, supplier);

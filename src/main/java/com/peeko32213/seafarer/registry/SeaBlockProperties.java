@@ -50,7 +50,7 @@ public class SeaBlockProperties {
     }
 
     public static BlockBehaviour.Properties starfish(MapColor color) {
-        return BlockBehaviour.Properties.of().mapColor(color).strength(0.4F).sound(SoundType.CORAL_BLOCK).instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
+        return BlockBehaviour.Properties.of().mapColor(color).strength(0.2F).sound(SoundType.CORAL_BLOCK).instabreak().noOcclusion().noCollission().instabreak().pushReaction(PushReaction.DESTROY);
     }
 
     public static BlockBehaviour.Properties coral(MapColor color) {

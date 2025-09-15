@@ -21,7 +21,7 @@ public class VolcanicCoreBlockEntity extends BlockEntity {
             if (random.nextFloat() < 0.03F) {
                 float x = (random.nextFloat() - 0.5F) * 0.5F;
                 float z = (random.nextFloat() - 0.5F) * 0.5F;
-                level.addAlwaysVisibleParticle(SeaParticles.VOLCANIC_SMOKE.get(), true, pos.getX() + 0.5F + x, pos.getY() + 4.0F, pos.getZ() + 0.5F + z, x * 0.2F, 0.2F + random.nextFloat() * 0.05F, z * 0.2F);
+                level.addAlwaysVisibleParticle(SeaParticles.VOLCANIC_SMOKE.get(), true, pos.getX() + 0.5F + x, pos.getY() + 0.5F, pos.getZ() + 0.5F + z, x * 0.2F, 0.2F + random.nextFloat() * 0.05F, z * 0.2F);
             }
         }
     }

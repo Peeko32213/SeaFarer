@@ -3,7 +3,6 @@ package com.peeko32213.seafarer.data;
 import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.registry.SeaBlocks;
 import com.peeko32213.seafarer.registry.tags.SeaBlockTags;
-import com.peeko32213.seafarer.registry.tags.SeaTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -73,17 +72,7 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
         );
 
         this.tag(SeaBlockTags.STARFISH).add(
-                RED_STARFISH.get(),
-                PINK_STARFISH.get(),
-                ORANGE_STARFISH.get(),
-                CHOCOLATE_CHIP_STARFISH.get()
-        );
-
-        this.tag(SeaBlockTags.LARGE_STARFISH).add(
-                BLUE_STARFISH.get(),
-                OCHRE_STARFISH.get(),
-                ROYAL_STARFISH.get(),
-                PURPLE_OCHRE_STARFISH.get()
+                CORAL_STARFISH.get()
         );
 
         this.tag(SeaBlockTags.BEACH_FLOWERS).add(
@@ -93,13 +82,12 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
                 SEA_THRIFT.get()
         );
 
-        this.tag(SeaBlockTags.VOLCANIC_BEACH_FLOWERS).add(
+        this.tag(SeaBlockTags.VOLCANIC_ISLAND_FLOWERS).add(
                 FIERY_DUSTER.get(),
                 SILK_LILIES.get(),
                 TWILIGHT_BLADE.get(),
                 DAWNFLAME.get()
         );
-
 
         this.tag(BlockTags.SAND).add(
                 VOLCANIC_SAND.get(),
@@ -118,25 +106,6 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
 
         this.tag(SeaBlockTags.BEACH_PLANT_PLACEABLE).addTag(BlockTags.SAND);
 
-        tag(SeaTags.SHELLS)
-                .add(SeaBlocks.CLAM_SHELL.get())
-                .add(SeaBlocks.SWIRL_SHELL.get())
-                .add(SeaBlocks.HORN_SHELL.get())
-                .add(SeaBlocks.PYRAMID_SHELL.get())
-                .add(SeaBlocks.SPIKY_SHELL.get())
-        ;
-
-        tag(SeaTags.STARFISH)
-                .add(SeaBlocks.ROYAL_STARFISH.get())
-                .add(SeaBlocks.PURPLE_OCHRE_STARFISH.get())
-                .add(SeaBlocks.BLUE_STARFISH.get())
-                .add(SeaBlocks.OCHRE_STARFISH.get())
-                .add(SeaBlocks.RED_STARFISH.get())
-                .add(SeaBlocks.PINK_STARFISH.get())
-                .add(SeaBlocks.ORANGE_STARFISH.get())
-                .add(SeaBlocks.CHOCOLATE_CHIP_STARFISH.get())
-        ;
-
         tag(BlockTags.BEE_GROWABLES)
                 .add(SeaBlocks.COASTAL_WILDFLOWER.get())
                 .add(SeaBlocks.COASTAL_LAVENDER.get())
@@ -147,10 +116,6 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(SeaBlocks.SHELLY_SAND.get())
                 .add(SeaBlocks.CORALINE_SAND.get())
-        ;
-
-        tag(SeaTags.SPRINKLED_SAND)
-                .add(SeaBlocks.SHELLY_SAND.get())
         ;
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)

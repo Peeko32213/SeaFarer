@@ -15,9 +15,6 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.IForgeRegistry;
-import net.minecraftforge.registries.RegistryObject;
-import org.codehaus.plexus.util.StringUtils;
 
 import java.util.Objects;
 import java.util.function.Supplier;
@@ -38,8 +35,7 @@ public class SeaLanguageProvider extends LanguageProvider {
 
         // Raw food
         this.addItem(SeaItems.RAW_HORSESHOE_CRAB, "Raw Horseshoe Crab");
-        this.addItem(SeaItems.RAW_SHORE_CRAB_LEG, "Raw Shore Crab Leg");
-        this.addItem(SeaItems.RAW_MARINE_IGUANA_TAIL, "Raw Marine Iguana Tail");
+        this.addItem(SeaItems.RAW_CRAB_LEG, "Raw Crab Leg");
 
         this.addItem(SeaItems.SHORE_CRAB_BUCKET, "Bucket of Shore Crab");
         this.addItem(SeaItems.HORSESHOE_CRAB_BUCKET, "Bucket of Horseshoe Crab");

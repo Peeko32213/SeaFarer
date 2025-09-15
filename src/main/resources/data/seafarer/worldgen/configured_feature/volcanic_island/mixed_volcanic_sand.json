@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      "seafarer:volcanic_island/disk_shelly_volcanic_sand",
+      "seafarer:volcanic_island/disk_starry_volcanic_sand"
+    ]
+  }
+}

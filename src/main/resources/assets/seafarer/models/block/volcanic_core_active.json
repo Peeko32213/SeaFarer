@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "seafarer:block/emissive_block",
   "textures": {
-    "all": "seafarer:block/volcanic_core_active"
+    "all": "seafarer:block/volcanic_core_active",
+    "glow": "seafarer:block/volcanic_core_active_glow"
   }
 }

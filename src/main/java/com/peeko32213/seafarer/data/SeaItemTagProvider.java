@@ -18,8 +18,7 @@ public class SeaItemTagProvider extends ItemTagsProvider {
     }
 
     @Override
-    protected void addTags(HolderLookup.Provider pProvider) {
-        this.copy(SeaTags.STARFISH, SeaTags.STARFISH_ITEM);
+    protected void addTags(HolderLookup.Provider provider) {
     }
 
     @Override

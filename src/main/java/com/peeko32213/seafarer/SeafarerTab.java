@@ -30,23 +30,16 @@ public class SeafarerTab {
                         // shore crab
                         output.accept(SeaItems.SHORE_CRAB_SPAWN_EGG.get());
                         output.accept(SeaItems.SHORE_CRAB_BUCKET.get());
-                        output.accept(SeaItems.RAW_SHORE_CRAB_LEG.get());
-                        output.accept(SeaItems.COOKED_SHORE_CRAB_LEG.get());
+                        output.accept(SeaItems.RAW_CRAB_LEG.get());
+                        output.accept(SeaItems.COOKED_CRAB_LEG.get());
 
                         // sunfish
                         output.accept(SeaItems.SUNFISH_SPAWN_EGG.get());
 
-                        output.accept(SeaItems.RAW_MARINE_IGUANA_TAIL.get());
-                        output.accept(SeaItems.COOKED_MARINE_IGUANA_TAIL.get());
-                        output.accept(SeaBlocks.ORANGE_STARFISH.get());
-                        output.accept(SeaBlocks.PINK_STARFISH.get());
-                        output.accept(SeaBlocks.RED_STARFISH.get());
-                        output.accept(SeaBlocks.CHOCOLATE_CHIP_STARFISH.get());
-                        output.accept(SeaBlocks.BLUE_STARFISH.get());
-                        output.accept(SeaBlocks.PURPLE_OCHRE_STARFISH.get());
-                        output.accept(SeaBlocks.ROYAL_STARFISH.get());
-                        output.accept(SeaBlocks.OCHRE_STARFISH.get());
+                        // starfish
+                        output.accept(SeaBlocks.CORAL_STARFISH.get());
                         output.accept(SeaItems.DRIED_STARFISH.get());
+
                         output.accept(SeaItems.SEA_URCHIN.get());
                         output.accept(SeaItems.SOY_SAUCE.get());
                         output.accept(SeaItems.SEA_SALT.get());
@@ -204,7 +197,6 @@ public class SeafarerTab {
                         // scoria
                         output.accept(SeaBlocks.SCORIA.get());
                         output.accept(SeaBlocks.MOSSY_SCORIA.get());
-                        output.accept(SeaBlocks.BLAZED_SCORIA.get());
                         output.accept(SeaBlocks.MOLTEN_SCORIA.get());
                         output.accept(SeaBlocks.SCORIA_STAIRS.get());
                         output.accept(SeaBlocks.SCORIA_SLAB.get());

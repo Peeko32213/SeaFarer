@@ -235,6 +235,9 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.tallPlant(DAWNFLAME);
         this.tallPlant(SAPPHIRE_COWBELL);
 
+        this.pottedPlant(BLUE_VOLCANIC_GRASS, POTTED_BLUE_VOLCANIC_GRASS);
+        this.pottedPlant(ORANGE_VOLCANIC_GRASS, POTTED_ORANGE_VOLCANIC_GRASS);
+
         // corals
         this.cubeAllBlock(AMBER_CORAL_BLOCK);
         this.cubeAllBlock(DEAD_AMBER_CORAL_BLOCK);
@@ -292,15 +295,7 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.zoa(PURPLE_ZOA);
 
         // starfish
-        this.starfish(ORANGE_STARFISH);
-        this.starfish(CHOCOLATE_CHIP_STARFISH);
-        this.starfish(PINK_STARFISH);
-        this.starfish(RED_STARFISH);
 
-        this.largeStarfish(BLUE_STARFISH);
-        this.largeStarfish(PURPLE_OCHRE_STARFISH);
-        this.largeStarfish(ROYAL_STARFISH);
-        this.largeStarfish(OCHRE_STARFISH);
 
         this.randomBlock(STARRY_SAND, 4);
         this.randomBlock(SHELLY_SAND, 3);
@@ -357,8 +352,7 @@ public class SeaBlockstateProvider extends BlockStateProvider {
 
         this.cubeAllBlock(CHISELED_SCORIA_BRICKS);
 
-        this.cubeAllBlock(BLAZED_SCORIA);
-        this.cubeAllBlock(MOLTEN_SCORIA);
+        this.emissiveOverlayBlock(MOLTEN_SCORIA);
 
         this.floweringJungleLeaves(WHITE_FLOWERING_JUNGLE_LEAVES);
         this.floweringJungleLeaves(ORANGE_FLOWERING_JUNGLE_LEAVES);
@@ -604,45 +598,45 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.generatedItem(zoa.get(), TextureFolder.ITEM);
     }
 
-    private void starfish(RegistryObject<Block> block) {
-        ResourceLocation texture = this.blockTexture(block.get());
-        String name = getItemName(block.get());
-
-        ModelFile starfish = this.models().withExistingParent(name, "seafarer:block/starfish").texture("starfish", texture);
-        ModelFile starfish_alt = this.models().withExistingParent(name + "_alt", "seafarer:block/starfish_alt").texture("starfish", texture);
-        ModelFile starfish_rotated = this.models().withExistingParent(name + "_rotated", "seafarer:block/starfish_rotated").texture("starfish", texture);
-        ModelFile starfish_rotated_alt = this.models().withExistingParent(name + "_rotated_alt", "seafarer:block/starfish_rotated_alt").texture("starfish", texture);
-
-        this.generatedItem(block.get(), TextureFolder.ITEM);
-        this.getVariantBuilder(block.get())
-                .partialState().with(StarfishBlock.FACING, Direction.UP).addModels(new ConfiguredModel(starfish), new ConfiguredModel(starfish, 0, 90, false), new ConfiguredModel(starfish, 0, 180, false), new ConfiguredModel(starfish, 0, 270, false), new ConfiguredModel(starfish_rotated), new ConfiguredModel(starfish_rotated, 0, 90, false), new ConfiguredModel(starfish_rotated, 0, 180, false), new ConfiguredModel(starfish_rotated, 0, 270, false))
-                .partialState().with(StarfishBlock.FACING, Direction.DOWN).addModels(new ConfiguredModel(starfish, 180, 0, false), new ConfiguredModel(starfish, 180, 90, false), new ConfiguredModel(starfish, 180, 180, false), new ConfiguredModel(starfish, 180, 270, false), new ConfiguredModel(starfish_rotated, 180, 0, false), new ConfiguredModel(starfish_rotated, 180, 90, false), new ConfiguredModel(starfish_rotated, 180, 180, false), new ConfiguredModel(starfish_rotated, 180, 270, false))
-                .partialState().with(StarfishBlock.FACING, Direction.NORTH).addModels(new ConfiguredModel(starfish, 90, 0, false), new ConfiguredModel(starfish, 270, 180, false), new ConfiguredModel(starfish_alt, 90, 0, false), new ConfiguredModel(starfish_alt, 270, 180, false), new ConfiguredModel(starfish_rotated, 90, 0, false), new ConfiguredModel(starfish_rotated, 270, 180, false), new ConfiguredModel(starfish_rotated_alt, 90, 0, false), new ConfiguredModel(starfish_rotated_alt, 270, 180, false))
-                .partialState().with(StarfishBlock.FACING, Direction.SOUTH).addModels(new ConfiguredModel(starfish, 90, 180, false), new ConfiguredModel(starfish, 270, 0, false), new ConfiguredModel(starfish_alt, 90, 180, false), new ConfiguredModel(starfish_alt, 270, 0, false), new ConfiguredModel(starfish_rotated, 90, 180, false), new ConfiguredModel(starfish_rotated, 270, 0, false), new ConfiguredModel(starfish_rotated_alt, 90, 180, false), new ConfiguredModel(starfish_rotated_alt, 270, 0, false))
-                .partialState().with(StarfishBlock.FACING, Direction.EAST).addModels(new ConfiguredModel(starfish, 90, 90, false), new ConfiguredModel(starfish, 270, 270, false), new ConfiguredModel(starfish_alt, 90, 90, false), new ConfiguredModel(starfish_alt, 270, 270, false), new ConfiguredModel(starfish_rotated, 90, 90, false), new ConfiguredModel(starfish_rotated, 270, 270, false), new ConfiguredModel(starfish_rotated_alt, 90, 90, false), new ConfiguredModel(starfish_rotated_alt, 270, 270, false))
-                .partialState().with(StarfishBlock.FACING, Direction.WEST).addModels(new ConfiguredModel(starfish, 90, 270, false), new ConfiguredModel(starfish, 270, 90, false), new ConfiguredModel(starfish_alt, 90, 270, false), new ConfiguredModel(starfish_alt, 270, 90, false), new ConfiguredModel(starfish_rotated, 90, 270, false), new ConfiguredModel(starfish_rotated, 270, 90, false), new ConfiguredModel(starfish_rotated_alt, 90, 270, false), new ConfiguredModel(starfish_rotated_alt, 270, 90, false)
-        );
-    }
-
-    private void largeStarfish(RegistryObject<Block> block) {
-        ResourceLocation texture = this.blockTexture(block.get());
-        String name = getItemName(block.get());
-
-        ModelFile starfish = this.models().withExistingParent(name, "seafarer:block/large_starfish").texture("starfish", texture);
-        ModelFile starfish_alt = this.models().withExistingParent(name + "_alt", "seafarer:block/large_starfish_alt").texture("starfish", texture);
-        ModelFile starfish_rotated = this.models().withExistingParent(name + "_rotated", "seafarer:block/large_starfish_rotated").texture("starfish", texture);
-        ModelFile starfish_rotated_alt = this.models().withExistingParent(name + "_rotated_alt", "seafarer:block/large_starfish_rotated_alt").texture("starfish", texture);
-
-        this.generatedItem(block.get(), TextureFolder.ITEM);
-        this.getVariantBuilder(block.get())
-                .partialState().with(StarfishBlock.FACING, Direction.UP).addModels(new ConfiguredModel(starfish), new ConfiguredModel(starfish, 0, 90, false), new ConfiguredModel(starfish, 0, 180, false), new ConfiguredModel(starfish, 0, 270, false), new ConfiguredModel(starfish_rotated), new ConfiguredModel(starfish_rotated, 0, 90, false), new ConfiguredModel(starfish_rotated, 0, 180, false), new ConfiguredModel(starfish_rotated, 0, 270, false))
-                .partialState().with(StarfishBlock.FACING, Direction.DOWN).addModels(new ConfiguredModel(starfish, 180, 0, false), new ConfiguredModel(starfish, 180, 90, false), new ConfiguredModel(starfish, 180, 180, false), new ConfiguredModel(starfish, 180, 270, false), new ConfiguredModel(starfish_rotated, 180, 0, false), new ConfiguredModel(starfish_rotated, 180, 90, false), new ConfiguredModel(starfish_rotated, 180, 180, false), new ConfiguredModel(starfish_rotated, 180, 270, false))
-                .partialState().with(StarfishBlock.FACING, Direction.NORTH).addModels(new ConfiguredModel(starfish, 90, 0, false), new ConfiguredModel(starfish, 270, 180, false), new ConfiguredModel(starfish_alt, 90, 0, false), new ConfiguredModel(starfish_alt, 270, 180, false), new ConfiguredModel(starfish_rotated, 90, 0, false), new ConfiguredModel(starfish_rotated, 270, 180, false), new ConfiguredModel(starfish_rotated_alt, 90, 0, false), new ConfiguredModel(starfish_rotated_alt, 270, 180, false))
-                .partialState().with(StarfishBlock.FACING, Direction.SOUTH).addModels(new ConfiguredModel(starfish, 90, 180, false), new ConfiguredModel(starfish, 270, 0, false), new ConfiguredModel(starfish_alt, 90, 180, false), new ConfiguredModel(starfish_alt, 270, 0, false), new ConfiguredModel(starfish_rotated, 90, 180, false), new ConfiguredModel(starfish_rotated, 270, 0, false), new ConfiguredModel(starfish_rotated_alt, 90, 180, false), new ConfiguredModel(starfish_rotated_alt, 270, 0, false))
-                .partialState().with(StarfishBlock.FACING, Direction.EAST).addModels(new ConfiguredModel(starfish, 90, 90, false), new ConfiguredModel(starfish, 270, 270, false), new ConfiguredModel(starfish_alt, 90, 90, false), new ConfiguredModel(starfish_alt, 270, 270, false), new ConfiguredModel(starfish_rotated, 90, 90, false), new ConfiguredModel(starfish_rotated, 270, 270, false), new ConfiguredModel(starfish_rotated_alt, 90, 90, false), new ConfiguredModel(starfish_rotated_alt, 270, 270, false))
-                .partialState().with(StarfishBlock.FACING, Direction.WEST).addModels(new ConfiguredModel(starfish, 90, 270, false), new ConfiguredModel(starfish, 270, 90, false), new ConfiguredModel(starfish_alt, 90, 270, false), new ConfiguredModel(starfish_alt, 270, 90, false), new ConfiguredModel(starfish_rotated, 90, 270, false), new ConfiguredModel(starfish_rotated, 270, 90, false), new ConfiguredModel(starfish_rotated_alt, 90, 270, false), new ConfiguredModel(starfish_rotated_alt, 270, 90, false)
-        );
-    }
+//    private void starfish(RegistryObject<Block> block) {
+//        ResourceLocation texture = this.blockTexture(block.get());
+//        String name = getItemName(block.get());
+//
+//        ModelFile starfish = this.models().withExistingParent(name, "seafarer:block/starfish").texture("starfish", texture);
+//        ModelFile starfish_alt = this.models().withExistingParent(name + "_alt", "seafarer:block/starfish_alt").texture("starfish", texture);
+//        ModelFile starfish_rotated = this.models().withExistingParent(name + "_rotated", "seafarer:block/starfish_rotated").texture("starfish", texture);
+//        ModelFile starfish_rotated_alt = this.models().withExistingParent(name + "_rotated_alt", "seafarer:block/starfish_rotated_alt").texture("starfish", texture);
+//
+//        this.generatedItem(block.get(), TextureFolder.ITEM);
+//        this.getVariantBuilder(block.get())
+//                .partialState().with(StarfishBlock.FACING, Direction.UP).addModels(new ConfiguredModel(starfish), new ConfiguredModel(starfish, 0, 90, false), new ConfiguredModel(starfish, 0, 180, false), new ConfiguredModel(starfish, 0, 270, false), new ConfiguredModel(starfish_rotated), new ConfiguredModel(starfish_rotated, 0, 90, false), new ConfiguredModel(starfish_rotated, 0, 180, false), new ConfiguredModel(starfish_rotated, 0, 270, false))
+//                .partialState().with(StarfishBlock.FACING, Direction.DOWN).addModels(new ConfiguredModel(starfish, 180, 0, false), new ConfiguredModel(starfish, 180, 90, false), new ConfiguredModel(starfish, 180, 180, false), new ConfiguredModel(starfish, 180, 270, false), new ConfiguredModel(starfish_rotated, 180, 0, false), new ConfiguredModel(starfish_rotated, 180, 90, false), new ConfiguredModel(starfish_rotated, 180, 180, false), new ConfiguredModel(starfish_rotated, 180, 270, false))
+//                .partialState().with(StarfishBlock.FACING, Direction.NORTH).addModels(new ConfiguredModel(starfish, 90, 0, false), new ConfiguredModel(starfish, 270, 180, false), new ConfiguredModel(starfish_alt, 90, 0, false), new ConfiguredModel(starfish_alt, 270, 180, false), new ConfiguredModel(starfish_rotated, 90, 0, false), new ConfiguredModel(starfish_rotated, 270, 180, false), new ConfiguredModel(starfish_rotated_alt, 90, 0, false), new ConfiguredModel(starfish_rotated_alt, 270, 180, false))
+//                .partialState().with(StarfishBlock.FACING, Direction.SOUTH).addModels(new ConfiguredModel(starfish, 90, 180, false), new ConfiguredModel(starfish, 270, 0, false), new ConfiguredModel(starfish_alt, 90, 180, false), new ConfiguredModel(starfish_alt, 270, 0, false), new ConfiguredModel(starfish_rotated, 90, 180, false), new ConfiguredModel(starfish_rotated, 270, 0, false), new ConfiguredModel(starfish_rotated_alt, 90, 180, false), new ConfiguredModel(starfish_rotated_alt, 270, 0, false))
+//                .partialState().with(StarfishBlock.FACING, Direction.EAST).addModels(new ConfiguredModel(starfish, 90, 90, false), new ConfiguredModel(starfish, 270, 270, false), new ConfiguredModel(starfish_alt, 90, 90, false), new ConfiguredModel(starfish_alt, 270, 270, false), new ConfiguredModel(starfish_rotated, 90, 90, false), new ConfiguredModel(starfish_rotated, 270, 270, false), new ConfiguredModel(starfish_rotated_alt, 90, 90, false), new ConfiguredModel(starfish_rotated_alt, 270, 270, false))
+//                .partialState().with(StarfishBlock.FACING, Direction.WEST).addModels(new ConfiguredModel(starfish, 90, 270, false), new ConfiguredModel(starfish, 270, 90, false), new ConfiguredModel(starfish_alt, 90, 270, false), new ConfiguredModel(starfish_alt, 270, 90, false), new ConfiguredModel(starfish_rotated, 90, 270, false), new ConfiguredModel(starfish_rotated, 270, 90, false), new ConfiguredModel(starfish_rotated_alt, 90, 270, false), new ConfiguredModel(starfish_rotated_alt, 270, 90, false)
+//        );
+//    }
+//
+//    private void largeStarfish(RegistryObject<Block> block) {
+//        ResourceLocation texture = this.blockTexture(block.get());
+//        String name = getItemName(block.get());
+//
+//        ModelFile starfish = this.models().withExistingParent(name, "seafarer:block/large_starfish").texture("starfish", texture);
+//        ModelFile starfish_alt = this.models().withExistingParent(name + "_alt", "seafarer:block/large_starfish_alt").texture("starfish", texture);
+//        ModelFile starfish_rotated = this.models().withExistingParent(name + "_rotated", "seafarer:block/large_starfish_rotated").texture("starfish", texture);
+//        ModelFile starfish_rotated_alt = this.models().withExistingParent(name + "_rotated_alt", "seafarer:block/large_starfish_rotated_alt").texture("starfish", texture);
+//
+//        this.generatedItem(block.get(), TextureFolder.ITEM);
+//        this.getVariantBuilder(block.get())
+//                .partialState().with(StarfishBlock.FACING, Direction.UP).addModels(new ConfiguredModel(starfish), new ConfiguredModel(starfish, 0, 90, false), new ConfiguredModel(starfish, 0, 180, false), new ConfiguredModel(starfish, 0, 270, false), new ConfiguredModel(starfish_rotated), new ConfiguredModel(starfish_rotated, 0, 90, false), new ConfiguredModel(starfish_rotated, 0, 180, false), new ConfiguredModel(starfish_rotated, 0, 270, false))
+//                .partialState().with(StarfishBlock.FACING, Direction.DOWN).addModels(new ConfiguredModel(starfish, 180, 0, false), new ConfiguredModel(starfish, 180, 90, false), new ConfiguredModel(starfish, 180, 180, false), new ConfiguredModel(starfish, 180, 270, false), new ConfiguredModel(starfish_rotated, 180, 0, false), new ConfiguredModel(starfish_rotated, 180, 90, false), new ConfiguredModel(starfish_rotated, 180, 180, false), new ConfiguredModel(starfish_rotated, 180, 270, false))
+//                .partialState().with(StarfishBlock.FACING, Direction.NORTH).addModels(new ConfiguredModel(starfish, 90, 0, false), new ConfiguredModel(starfish, 270, 180, false), new ConfiguredModel(starfish_alt, 90, 0, false), new ConfiguredModel(starfish_alt, 270, 180, false), new ConfiguredModel(starfish_rotated, 90, 0, false), new ConfiguredModel(starfish_rotated, 270, 180, false), new ConfiguredModel(starfish_rotated_alt, 90, 0, false), new ConfiguredModel(starfish_rotated_alt, 270, 180, false))
+//                .partialState().with(StarfishBlock.FACING, Direction.SOUTH).addModels(new ConfiguredModel(starfish, 90, 180, false), new ConfiguredModel(starfish, 270, 0, false), new ConfiguredModel(starfish_alt, 90, 180, false), new ConfiguredModel(starfish_alt, 270, 0, false), new ConfiguredModel(starfish_rotated, 90, 180, false), new ConfiguredModel(starfish_rotated, 270, 0, false), new ConfiguredModel(starfish_rotated_alt, 90, 180, false), new ConfiguredModel(starfish_rotated_alt, 270, 0, false))
+//                .partialState().with(StarfishBlock.FACING, Direction.EAST).addModels(new ConfiguredModel(starfish, 90, 90, false), new ConfiguredModel(starfish, 270, 270, false), new ConfiguredModel(starfish_alt, 90, 90, false), new ConfiguredModel(starfish_alt, 270, 270, false), new ConfiguredModel(starfish_rotated, 90, 90, false), new ConfiguredModel(starfish_rotated, 270, 270, false), new ConfiguredModel(starfish_rotated_alt, 90, 90, false), new ConfiguredModel(starfish_rotated_alt, 270, 270, false))
+//                .partialState().with(StarfishBlock.FACING, Direction.WEST).addModels(new ConfiguredModel(starfish, 90, 270, false), new ConfiguredModel(starfish, 270, 90, false), new ConfiguredModel(starfish_alt, 90, 270, false), new ConfiguredModel(starfish_alt, 270, 90, false), new ConfiguredModel(starfish_rotated, 90, 270, false), new ConfiguredModel(starfish_rotated, 270, 90, false), new ConfiguredModel(starfish_rotated_alt, 90, 270, false), new ConfiguredModel(starfish_rotated_alt, 270, 90, false)
+//        );
+//    }
 
     private void randomBlock(RegistryObject<Block> block, int variants) {
         String name = getBlockName(block.get());
@@ -662,6 +656,13 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         ModelFile flowering_leaves_1 = this.models().withExistingParent(name + "_1", "seafarer:block/overlay_leaves").texture("all", base_texture).texture("overlay", flowers_1);
         this.itemModels().withExistingParent(name, this.modLoc("block/" + name + "_0"));
         this.getVariantBuilder(leaves.get()).partialState().addModels(new ConfiguredModel(flowering_leaves_0), new ConfiguredModel(flowering_leaves_1));
+    }
+
+    private void emissiveOverlayBlock(RegistryObject<Block> block) {
+        ResourceLocation texture = this.blockTexture(block.get());
+        ResourceLocation glow = new ResourceLocation(texture.getNamespace(), texture.getPath() + "_glow");
+        this.simpleBlock(block.get(), this.models().withExistingParent(getItemName(block.get()), "seafarer:block/emissive_block").texture("all", texture).texture("glow", glow));
+        this.itemModel(block);
     }
 
     // utils

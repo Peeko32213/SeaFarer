@@ -21,23 +21,20 @@ public class VolcanoStructure extends Structure {
             HeightProvider.CODEC.fieldOf("start_height").forGetter(volcanoStructure -> volcanoStructure.start_height),
             IntProvider.CODEC.fieldOf("radius").forGetter(volcanoStructure -> volcanoStructure.radius),
             Codec.BOOL.fieldOf("wide").orElse(false).forGetter(volcanoStructure -> volcanoStructure.wide),
-            Codec.BOOL.fieldOf("overgrown").orElse(false).forGetter(volcanoStructure -> volcanoStructure.overgrown),
-            Codec.BOOL.fieldOf("molten").orElse(false).forGetter(volcanoStructure -> volcanoStructure.molten)
+            Codec.BOOL.fieldOf("overgrown").orElse(false).forGetter(volcanoStructure -> volcanoStructure.overgrown)
     ).apply(volcano, VolcanoStructure::new));
 
     private final HeightProvider start_height;
     private final IntProvider radius;
     private final boolean wide;
     private final boolean overgrown;
-    private final boolean molten;
 
-    public VolcanoStructure(StructureSettings settings, HeightProvider startHeight, IntProvider radius, Boolean wide, boolean overgrown, boolean molten) {
+    public VolcanoStructure(StructureSettings settings, HeightProvider startHeight, IntProvider radius, Boolean wide, boolean overgrown) {
         super(settings);
         this.start_height = startHeight;
         this.radius = radius;
         this.wide = wide;
         this.overgrown = overgrown;
-        this.molten = molten;
     }
 
     @Override
@@ -47,6 +44,7 @@ public class VolcanoStructure extends Structure {
         int startHeight = this.start_height.sample(random, new WorldGenerationContext(context.chunkGenerator(), context.heightAccessor()));
         int radiusX = this.radius.sample(random);
         int radiusZ = this.radius.sample(random);
+        boolean molten = random.nextInt(3) == 0;
         long noiseSeed = random.nextLong();
 
         BlockPos pos = new BlockPos(chunkPos.getMinBlockX() + 8, startHeight, chunkPos.getMinBlockZ() + 8);
