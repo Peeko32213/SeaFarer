@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-15T10:29:38.9872	Item Models: seafarer
+// 1.20.1	2025-09-15T22:33:47.2096688	Item Models: seafarer
 28e7461083dc5d037dbf2dd8262e6bcf45922c9b assets/seafarer/models/item/cooked_crab_leg.json
 023ad0ac08249552a1bf59309a271de130255508 assets/seafarer/models/item/cooked_horseshoe_crab.json
 4fc271c96c0630da1cf2419eee995ec3e21e07e9 assets/seafarer/models/item/crab_leg.json
@@ -7,6 +7,7 @@ fb68873cb17d6a8805ae20da476a598ea8b5ad01 assets/seafarer/models/item/horseshoe_c
 99a2cacbc5e540faffca6fcab3ed8ce740b0ce14 assets/seafarer/models/item/horseshoe_crab_bucket.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/horseshoe_crab_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/seafarer/models/item/manta_ray_spawn_egg.json
+64d71670e081b55b5804311af6f8dc1b8258f637 assets/seafarer/models/item/seafarer.json
 d209ed16dc7700b940710f459e8a756b3b3d6f1e assets/seafarer/models/item/sea_glass_pebbles.json
 a2052eebceebd2c149288263f3e5e98ae02a67ca assets/seafarer/models/item/sea_salt.json
 dfb2d60dea619171f052d8016e24e9ce8606c052 assets/seafarer/models/item/sea_urchin.json

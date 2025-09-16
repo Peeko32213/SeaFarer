@@ -14,7 +14,7 @@ public class SeafarerTab {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Seafarer.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> SEAFARER_TAB = CREATIVE_TABS.register("seafarer_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(SeaBlocks.SUNSET_STARFISH.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(SeaItems.SEAFARER.get()))
                     .title(Component.translatable("itemGroup.seafarer"))
                     .displayItems((parameters, output) -> {
 

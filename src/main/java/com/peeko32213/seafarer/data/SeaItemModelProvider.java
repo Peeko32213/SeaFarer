@@ -29,6 +29,8 @@ public class SeaItemModelProvider extends ItemModelProvider {
             }
         }
 
+        this.item(SeaItems.SEAFARER);
+
         this.item(SeaItems.SEA_GLASS_PEBBLES);
 
         this.item(SeaItems.RAW_CRAB_LEG);
