@@ -57,6 +57,9 @@ public class SeafarerTab {
                         output.accept(SeaBlocks.WIDOWBLOOM.get());
                         output.accept(SeaBlocks.DAWNFLAME.get());
                         output.accept(SeaBlocks.SAPPHIRE_COWBELL.get());
+                        output.accept(SeaBlocks.ORANGE_VOLCANIC_GRASS.get());
+                        output.accept(SeaBlocks.YELLOW_VOLCANIC_GRASS.get());
+                        output.accept(SeaBlocks.BLUE_VOLCANIC_GRASS.get());
                         output.accept(SeaBlocks.WHITE_FLOWERING_JUNGLE_LEAVES.get());
                         output.accept(SeaBlocks.ORANGE_FLOWERING_JUNGLE_LEAVES.get());
                         output.accept(SeaBlocks.YELLOW_FLOWERING_JUNGLE_LEAVES.get());

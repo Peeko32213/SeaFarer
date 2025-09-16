@@ -12,7 +12,7 @@
                 "data": {
                   "Name": "minecraft:grass"
                 },
-                "weight": 20
+                "weight": 21
               },
               {
                 "data": {
@@ -29,6 +29,12 @@
               {
                 "data": {
                   "Name": "seafarer:orange_volcanic_grass"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "seafarer:yellow_volcanic_grass"
                 },
                 "weight": 1
               }

@@ -238,8 +238,10 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.tallPlant(DAWNFLAME);
         this.tallPlant(SAPPHIRE_COWBELL);
 
+        // volcanic grass
         this.pottedPlant(BLUE_VOLCANIC_GRASS, POTTED_BLUE_VOLCANIC_GRASS);
         this.pottedPlant(ORANGE_VOLCANIC_GRASS, POTTED_ORANGE_VOLCANIC_GRASS);
+        this.pottedPlant(YELLOW_VOLCANIC_GRASS, POTTED_YELLOW_VOLCANIC_GRASS);
 
         // corals
         this.cubeAllBlock(AMBER_CORAL_BLOCK);
