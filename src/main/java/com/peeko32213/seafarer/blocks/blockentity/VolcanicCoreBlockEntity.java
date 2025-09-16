@@ -18,10 +18,22 @@ public class VolcanicCoreBlockEntity extends BlockEntity {
     public static void particleTick(Level level, BlockPos pos, BlockState state, VolcanicCoreBlockEntity blockEntity) {
         RandomSource random = level.getRandom();
         if (state.getValue(VolcanicCoreBlock.ACTIVE)) {
-            if (random.nextFloat() < 0.03F) {
+            if (random.nextFloat() < 0.02F) {
                 float x = (random.nextFloat() - 0.5F) * 0.5F;
                 float z = (random.nextFloat() - 0.5F) * 0.5F;
-                level.addAlwaysVisibleParticle(SeaParticles.VOLCANIC_SMOKE.get(), true, pos.getX() + 0.5F + x, pos.getY() + 0.5F, pos.getZ() + 0.5F + z, x * 0.2F, 0.2F + random.nextFloat() * 0.05F, z * 0.2F);
+                if (random.nextFloat() <= 0.3F) {
+                    if (random.nextBoolean()) {
+                        level.addAlwaysVisibleParticle(SeaParticles.BIG_VOLCANIC_SMOKE.get(), true, pos.getX() + 0.5F + x, pos.getY() + 0.5F, pos.getZ() + 0.5F + z, x * 0.15F, 0.2F + random.nextFloat() * 0.03F, z * 0.15F);
+                    } else {
+                        level.addAlwaysVisibleParticle(SeaParticles.GIANT_VOLCANIC_SMOKE.get(), true, pos.getX() + 0.5F + x, pos.getY() + 0.5F, pos.getZ() + 0.5F + z, x * 0.15F, 0.2F + random.nextFloat() * 0.03F, z * 0.15F);
+                    }
+                } else {
+                    if (random.nextBoolean()) {
+                        level.addAlwaysVisibleParticle(SeaParticles.SMALL_VOLCANIC_SMOKE.get(), true, pos.getX() + 0.5F + x, pos.getY() + 0.5F, pos.getZ() + 0.5F + z, x * 0.15F, 0.2F + random.nextFloat() * 0.03F, z * 0.15F);
+                    } else {
+                        level.addAlwaysVisibleParticle(SeaParticles.MEDIUM_VOLCANIC_SMOKE.get(), true, pos.getX() + 0.5F + x, pos.getY() + 0.5F, pos.getZ() + 0.5F + z, x * 0.15F, 0.2F + random.nextFloat() * 0.03F, z * 0.15F);
+                    }
+                }
             }
         }
     }

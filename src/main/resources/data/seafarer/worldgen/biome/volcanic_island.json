@@ -65,6 +65,10 @@
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel",
+      "seafarer:volcanic_island/ore_scoria_lower",
+      "seafarer:volcanic_island/ore_scoria_upper",
+      "seafarer:volcanic_island/ore_smooth_basalt_lower",
+      "seafarer:volcanic_island/ore_smooth_basalt_upper",
       "seafarer:volcanic_island/mixed_volcanic_sand",
       "seafarer:volcanic_island/disk_podzol",
       "seafarer:volcanic_island/disk_moss"

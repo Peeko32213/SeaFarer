@@ -27,8 +27,8 @@ public class VolcanicSmokeParticle extends TextureSheetParticle {
         this.yo = this.y;
         this.zo = this.z;
         if (this.age++ < this.lifetime && !(this.alpha <= 0.0F)) {
-            this.xd += this.random.nextFloat() / 5000.0F * (float)(this.random.nextBoolean() ? 1 : -1);
-            this.zd += this.random.nextFloat() / 5000.0F * (float)(this.random.nextBoolean() ? 1 : -1);
+            this.xd += this.random.nextFloat() / 5000.0F * (float) (this.random.nextBoolean() ? 1 : -1);
+            this.zd += this.random.nextFloat() / 5000.0F * (float) (this.random.nextBoolean() ? 1 : -1);
             this.yd -= this.gravity;
             this.move(this.xd, this.yd, this.zd);
             if (this.age >= this.lifetime - 60 && this.alpha > 0.01F) {
@@ -41,7 +41,7 @@ public class VolcanicSmokeParticle extends TextureSheetParticle {
 
     @Override
     public float getQuadSize(float scaleFactor) {
-        return this.quadSize * Mth.clamp(((float) this.age + scaleFactor) / (float) this.lifetime * 16.0F, 0.0F, 6.0F);
+        return this.quadSize * Mth.clamp(((float) this.age + scaleFactor) / (float) this.lifetime * 12.0F, 0.0F, 4.0F);
     }
 
     @Override
