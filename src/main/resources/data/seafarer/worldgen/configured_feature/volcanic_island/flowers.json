@@ -16,6 +16,10 @@
         "feature": "seafarer:volcanic_island/patch_twilight_blade"
       },
       {
+        "chance": 0.3,
+        "feature": "seafarer:volcanic_island/patch_widowbloom"
+      },
+      {
         "chance": 0.2,
         "feature": "seafarer:volcanic_island/patch_dawnflame"
       },

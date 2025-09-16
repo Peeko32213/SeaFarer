@@ -91,6 +91,7 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
                 FIERY_DUSTER.get(),
                 SILK_LILIES.get(),
                 TWILIGHT_BLADE.get(),
+                WIDOWBLOOM.get(),
                 DAWNFLAME.get()
         );
 

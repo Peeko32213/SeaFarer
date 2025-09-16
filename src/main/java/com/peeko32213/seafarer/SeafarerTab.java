@@ -54,6 +54,7 @@ public class SeafarerTab {
                         output.accept(SeaBlocks.FIERY_DUSTER.get());
                         output.accept(SeaBlocks.SILK_LILIES.get());
                         output.accept(SeaBlocks.TWILIGHT_BLADE.get());
+                        output.accept(SeaBlocks.WIDOWBLOOM.get());
                         output.accept(SeaBlocks.DAWNFLAME.get());
                         output.accept(SeaBlocks.SAPPHIRE_COWBELL.get());
                         output.accept(SeaBlocks.WHITE_FLOWERING_JUNGLE_LEAVES.get());

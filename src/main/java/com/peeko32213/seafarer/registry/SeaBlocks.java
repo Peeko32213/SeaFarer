@@ -405,6 +405,9 @@ public class SeaBlocks {
     public static final RegistryObject<Block> TWILIGHT_BLADE = registerBlock("twilight_blade", () -> new SeaFlowerBlock(() -> MobEffects.DAMAGE_BOOST, 7, SeaBlockProperties.flower(MapColor.COLOR_PURPLE)));
     public static final RegistryObject<Block> POTTED_TWILIGHT_BLADE = registerBlockWithoutItem("potted_twilight_blade", () -> new FlowerPotBlock(SeaBlocks.TWILIGHT_BLADE.get(), registerFlowerPot()));
 
+    public static final RegistryObject<Block> WIDOWBLOOM = registerBlock("widowbloom", () -> new SeaFlowerBlock(() -> MobEffects.DAMAGE_BOOST, 7, SeaBlockProperties.flower(MapColor.COLOR_MAGENTA)));
+    public static final RegistryObject<Block> POTTED_WIDOWBLOOM = registerBlockWithoutItem("potted_widowbloom", () -> new FlowerPotBlock(SeaBlocks.WIDOWBLOOM.get(), registerFlowerPot()));
+
     public static final RegistryObject<Block> DAWNFLAME = registerBlock("dawnflame", () -> new TallBeachPlantBlock(SeaBlockProperties.PLANT));
     public static final RegistryObject<Block> SAPPHIRE_COWBELL = registerBlock("sapphire_cowbell", () -> new TallBeachPlantBlock(SeaBlockProperties.PLANT));
 

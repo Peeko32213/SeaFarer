@@ -233,6 +233,7 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.pottedPlant(FIERY_DUSTER, POTTED_FIERY_DUSTER);
         this.pottedPlant(SILK_LILIES, POTTED_SILK_LILIES);
         this.pottedPlant(TWILIGHT_BLADE, POTTED_TWILIGHT_BLADE);
+        this.pottedPlant(WIDOWBLOOM, POTTED_WIDOWBLOOM);
 
         this.tallPlant(DAWNFLAME);
         this.tallPlant(SAPPHIRE_COWBELL);
