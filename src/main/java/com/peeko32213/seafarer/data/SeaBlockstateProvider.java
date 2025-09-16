@@ -49,6 +49,8 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(WHITE_SEA_GLASS_BRICK_SLAB, this.blockTexture(WHITE_SEA_GLASS_BRICKS.get()));
         this.stairs(WHITE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(WHITE_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(WHITE_SEA_GLASS_LAMP);
+        this.pillar(WHITE_NETTED_SEA_GLASS_LAMP);
+        this.pillar(WHITE_MOSAIC_SEA_GLASS_LAMP);
         this.glassPane(WHITE_SEA_GLASS_PANE, this.blockTexture(WHITE_SEA_GLASS.get()));
 
         // light gray sea glass
@@ -59,6 +61,7 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.stairs(LIGHT_GRAY_SEA_GLASS_BRICK_STAIRS, this.blockTexture(LIGHT_GRAY_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(LIGHT_GRAY_SEA_GLASS_LAMP);
         this.pillar(LIGHT_GRAY_NETTED_SEA_GLASS_LAMP);
+        this.pillar(LIGHT_GRAY_MOSAIC_SEA_GLASS_LAMP);
         this.glassPane(LIGHT_GRAY_SEA_GLASS_PANE, this.blockTexture(LIGHT_GRAY_SEA_GLASS.get()));
 
         // gray sea glass
@@ -69,6 +72,7 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.stairs(GRAY_SEA_GLASS_BRICK_STAIRS, this.blockTexture(GRAY_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(GRAY_SEA_GLASS_LAMP);
         this.pillar(GRAY_NETTED_SEA_GLASS_LAMP);
+        this.pillar(GRAY_MOSAIC_SEA_GLASS_LAMP);
         this.glassPane(GRAY_SEA_GLASS_PANE, this.blockTexture(GRAY_SEA_GLASS.get()));
 
         // black sea glass
@@ -78,6 +82,8 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(BLACK_SEA_GLASS_BRICK_SLAB, this.blockTexture(BLACK_SEA_GLASS_BRICKS.get()));
         this.stairs(BLACK_SEA_GLASS_BRICK_STAIRS, this.blockTexture(BLACK_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(BLACK_SEA_GLASS_LAMP);
+        this.pillar(BLACK_NETTED_SEA_GLASS_LAMP);
+        this.pillar(BLACK_MOSAIC_SEA_GLASS_LAMP);
         this.glassPane(BLACK_SEA_GLASS_PANE, this.blockTexture(BLACK_SEA_GLASS.get()));
 
         // brown sea glass
@@ -88,6 +94,7 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.stairs(BROWN_SEA_GLASS_BRICK_STAIRS, this.blockTexture(BROWN_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(BROWN_SEA_GLASS_LAMP);
         this.pillar(BROWN_NETTED_SEA_GLASS_LAMP);
+        this.pillar(BROWN_MOSAIC_SEA_GLASS_LAMP);
         this.glassPane(BROWN_SEA_GLASS_PANE, this.blockTexture(BROWN_SEA_GLASS.get()));
 
         // red sea glass
@@ -97,6 +104,8 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(RED_SEA_GLASS_BRICK_SLAB, this.blockTexture(RED_SEA_GLASS_BRICKS.get()));
         this.stairs(RED_SEA_GLASS_BRICK_STAIRS, this.blockTexture(RED_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(RED_SEA_GLASS_LAMP);
+        this.pillar(RED_NETTED_SEA_GLASS_LAMP);
+        this.pillar(RED_MOSAIC_SEA_GLASS_LAMP);
         this.glassPane(RED_SEA_GLASS_PANE, this.blockTexture(RED_SEA_GLASS.get()));
 
         // orange sea glass
@@ -106,6 +115,8 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(ORANGE_SEA_GLASS_BRICK_SLAB, this.blockTexture(ORANGE_SEA_GLASS_BRICKS.get()));
         this.stairs(ORANGE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(ORANGE_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(ORANGE_SEA_GLASS_LAMP);
+        this.pillar(ORANGE_NETTED_SEA_GLASS_LAMP);
+        this.pillar(ORANGE_MOSAIC_SEA_GLASS_LAMP);
         this.glassPane(ORANGE_SEA_GLASS_PANE, this.blockTexture(ORANGE_SEA_GLASS.get()));
 
         // yellow sea glass
@@ -115,6 +126,8 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(YELLOW_SEA_GLASS_BRICK_SLAB, this.blockTexture(YELLOW_SEA_GLASS_BRICKS.get()));
         this.stairs(YELLOW_SEA_GLASS_BRICK_STAIRS, this.blockTexture(YELLOW_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(YELLOW_SEA_GLASS_LAMP);
+        this.pillar(YELLOW_NETTED_SEA_GLASS_LAMP);
+        this.pillar(YELLOW_MOSAIC_SEA_GLASS_LAMP);
         this.glassPane(YELLOW_SEA_GLASS_PANE, this.blockTexture(YELLOW_SEA_GLASS.get()));
 
         // lime sea glass
@@ -124,6 +137,8 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(LIME_SEA_GLASS_BRICK_SLAB, this.blockTexture(LIME_SEA_GLASS_BRICKS.get()));
         this.stairs(LIME_SEA_GLASS_BRICK_STAIRS, this.blockTexture(LIME_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(LIME_SEA_GLASS_LAMP);
+        this.pillar(LIME_NETTED_SEA_GLASS_LAMP);
+        this.pillar(LIME_MOSAIC_SEA_GLASS_LAMP);
         this.glassPane(LIME_SEA_GLASS_PANE, this.blockTexture(LIME_SEA_GLASS.get()));
 
         // green sea glass
@@ -133,6 +148,8 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(GREEN_SEA_GLASS_BRICK_SLAB, this.blockTexture(GREEN_SEA_GLASS_BRICKS.get()));
         this.stairs(GREEN_SEA_GLASS_BRICK_STAIRS, this.blockTexture(GREEN_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(GREEN_SEA_GLASS_LAMP);
+        this.pillar(GREEN_NETTED_SEA_GLASS_LAMP);
+        this.pillar(GREEN_MOSAIC_SEA_GLASS_LAMP);
         this.glassPane(GREEN_SEA_GLASS_PANE, this.blockTexture(GREEN_SEA_GLASS.get()));
 
         // cyan sea glass
@@ -143,6 +160,7 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.stairs(CYAN_SEA_GLASS_BRICK_STAIRS, this.blockTexture(CYAN_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(CYAN_SEA_GLASS_LAMP);
         this.pillar(CYAN_NETTED_SEA_GLASS_LAMP);
+        this.pillar(CYAN_MOSAIC_SEA_GLASS_LAMP);
         this.glassPane(CYAN_SEA_GLASS_PANE, this.blockTexture(CYAN_SEA_GLASS.get()));
 
         // light blue sea glass
@@ -152,6 +170,8 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(LIGHT_BLUE_GLASS_BRICK_SLAB, this.blockTexture(LIGHT_BLUE_SEA_GLASS_BRICKS.get()));
         this.stairs(LIGHT_BLUE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(LIGHT_BLUE_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(LIGHT_BLUE_SEA_GLASS_LAMP);
+        this.pillar(LIGHT_BLUE_NETTED_SEA_GLASS_LAMP);
+        this.pillar(LIGHT_BLUE_MOSAIC_SEA_GLASS_LAMP);
         this.glassPane(LIGHT_BLUE_SEA_GLASS_PANE, this.blockTexture(LIGHT_BLUE_SEA_GLASS.get()));
 
         // blue sea glass
@@ -162,6 +182,7 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.stairs(BLUE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(BLUE_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(BLUE_SEA_GLASS_LAMP);
         this.pillar(BLUE_NETTED_SEA_GLASS_LAMP);
+        this.pillar(BLUE_MOSAIC_SEA_GLASS_LAMP);
         this.glassPane(BLUE_SEA_GLASS_PANE, this.blockTexture(BLUE_SEA_GLASS.get()));
 
         // purple sea glass
@@ -172,6 +193,7 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.stairs(PURPLE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(PURPLE_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(PURPLE_SEA_GLASS_LAMP);
         this.pillar(PURPLE_NETTED_SEA_GLASS_LAMP);
+        this.pillar(PURPLE_MOSAIC_SEA_GLASS_LAMP);
         this.glassPane(PURPLE_SEA_GLASS_PANE, this.blockTexture(PURPLE_SEA_GLASS.get()));
 
         // magenta sea glass
@@ -181,6 +203,8 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(MAGENTA_SEA_GLASS_BRICK_SLAB, this.blockTexture(MAGENTA_SEA_GLASS_BRICKS.get()));
         this.stairs(MAGENTA_SEA_GLASS_BRICK_STAIRS, this.blockTexture(MAGENTA_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(MAGENTA_SEA_GLASS_LAMP);
+        this.pillar(MAGENTA_NETTED_SEA_GLASS_LAMP);
+        this.pillar(MAGENTA_MOSAIC_SEA_GLASS_LAMP);
         this.glassPane(MAGENTA_SEA_GLASS_PANE, this.blockTexture(MAGENTA_SEA_GLASS.get()));
 
         // pink sea glass
@@ -190,6 +214,8 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(PINK_SEA_GLASS_BRICK_SLAB, this.blockTexture(PINK_SEA_GLASS_BRICKS.get()));
         this.stairs(PINK_SEA_GLASS_BRICK_STAIRS, this.blockTexture(PINK_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(PINK_SEA_GLASS_LAMP);
+        this.pillar(PINK_NETTED_SEA_GLASS_LAMP);
+        this.pillar(PINK_MOSAIC_SEA_GLASS_LAMP);
         this.glassPane(PINK_SEA_GLASS_PANE, this.blockTexture(PINK_SEA_GLASS.get()));
 
         // shell blocks

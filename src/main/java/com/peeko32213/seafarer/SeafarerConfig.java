@@ -26,31 +26,31 @@ public class SeafarerConfig {
                 .define("biomes", true);
 
         FLOWERING_BEACH = COMMON_BUILDER
-                .comment("If the flowering beach sub-biome is enabled")
+                .comment("If the flowering beach biome is enabled")
                 .define("floweringBeach", true);
 
         GLASS_BEACH = COMMON_BUILDER
-                .comment("If the glass beach sub-biome is enabled")
+                .comment("If the glass beach biome is enabled")
                 .define("glassBeach", true);
 
         GRASSY_BEACH = COMMON_BUILDER
-                .comment("If the grassy beach sub-biome is enabled")
+                .comment("If the grassy beach biome is enabled")
                 .define("grassyBeach", true);
 
         KELP_FOREST = COMMON_BUILDER
-                .comment("If the kelp forest sub-biome is enabled (incomplete)")
+                .comment("If the kelp forest biome is enabled (incomplete)")
                 .define("kelpForest", false);
 
         TROPICAL_RIVER = COMMON_BUILDER
-                .comment("If the tropical river sub-biome is enabled")
-                .define("tropicalRiver", true);
+                .comment("If the tropical river biome is enabled (incomplete)")
+                .define("tropicalRiver", false);
 
         VOLCANIC_ISLAND = COMMON_BUILDER
                 .comment("If the volcanic island biome is enabled")
                 .define("volcanicBeach", true);
 
         WARM_REEF = COMMON_BUILDER
-                .comment("If the warm reef sub-biome is enabled")
+                .comment("If the warm reef biome is enabled")
                 .define("warmReef", true);
 
         COMMON_BUILDER.pop();

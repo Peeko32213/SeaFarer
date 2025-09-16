@@ -1,35 +1,26 @@
 {
   "variants": {
-    "": [
+    "facing=north": [
       {
-        "model": "seafarer:block/shells/pyramid_shell"
-      },
-      {
-        "model": "seafarer:block/shells/pyramid_shell",
+        "model": "seafarer:block/pyramid_shell",
         "y": 90
-      },
+      }
+    ],
+    "facing=south": [
       {
-        "model": "seafarer:block/shells/pyramid_shell",
-        "y": 180
-      },
-      {
-        "model": "seafarer:block/shells/pyramid_shell",
+        "model": "seafarer:block/pyramid_shell",
         "y": 270
-      },
+      }
+    ],
+    "facing=east": [
       {
-        "model": "seafarer:block/shells/pyramid_shell_rotated"
-      },
-      {
-        "model": "seafarer:block/shells/pyramid_shell_rotated",
-        "y": 90
-      },
-      {
-        "model": "seafarer:block/shells/pyramid_shell_rotated",
+        "model": "seafarer:block/pyramid_shell",
         "y": 180
-      },
+      }
+    ],
+    "facing=west": [
       {
-        "model": "seafarer:block/shells/pyramid_shell_rotated",
-        "y": 270
+        "model": "seafarer:block/pyramid_shell"
       }
     ]
   }

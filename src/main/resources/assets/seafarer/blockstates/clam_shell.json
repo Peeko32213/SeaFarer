@@ -1,20 +1,26 @@
 {
   "variants": {
-    "": [
+    "facing=north": [
       {
-        "model": "seafarer:block/shells/clam_shell"
-      },
-      {
-        "model": "seafarer:block/shells/clam_shell",
+        "model": "seafarer:block/clam_shell",
         "y": 90
-      },
+      }
+    ],
+    "facing=south": [
       {
-        "model": "seafarer:block/shells/clam_shell",
-        "y": 180
-      },
-      {
-        "model": "seafarer:block/shells/clam_shell",
+        "model": "seafarer:block/clam_shell",
         "y": 270
+      }
+    ],
+    "facing=east": [
+      {
+        "model": "seafarer:block/clam_shell",
+        "y": 180
+      }
+    ],
+    "facing=west": [
+      {
+        "model": "seafarer:block/clam_shell"
       }
     ]
   }
