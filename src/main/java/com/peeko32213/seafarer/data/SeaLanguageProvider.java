@@ -47,6 +47,12 @@ public class SeaLanguageProvider extends LanguageProvider {
         this.translateBiome(SeaBiomes.KELP_FOREST);
         this.translateBiome(SeaBiomes.TROPICAL_RIVER);
         this.translateBiome(SeaBiomes.GRASSY_BEACH);
+
+        this.translateSound(SeaSoundEvents.FISH_IDLE, "Fish gurgles");
+        this.translateSound(SeaSoundEvents.FISH_DEATH, "Fish dies");
+        this.translateSound(SeaSoundEvents.FISH_HURT, "Fish hurts");
+        this.translateSound(SeaSoundEvents.FISH_FLOP, "Fish flops");
+        this.translateSound(SeaSoundEvents.FISH_JUMP, "Fish jumps");
     }
 
     @Override

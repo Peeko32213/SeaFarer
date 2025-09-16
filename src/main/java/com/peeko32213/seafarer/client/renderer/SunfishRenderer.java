@@ -13,12 +13,12 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 
 @OnlyIn(Dist.CLIENT)
-public class SunfishRenderer extends MobRenderer<Sunfish, SunfishModel<Sunfish>> {
+public class SunfishRenderer extends MobRenderer<Sunfish, SunfishModel> {
 
     private static final ResourceLocation TEXTURE = new ResourceLocation(Seafarer.MOD_ID, "textures/entity/sunfish.png");
 
     public SunfishRenderer(EntityRendererProvider.Context context) {
-        super(context, new SunfishModel<>(context.bakeLayer(SeaModelLayers.SUNFISH)), 0.7F);
+        super(context, new SunfishModel(context.bakeLayer(SeaModelLayers.SUNFISH)), 0.7F);
     }
 
     @Override

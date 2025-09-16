@@ -39,10 +39,18 @@ public class SeaEntities {
                     .build(new ResourceLocation(Seafarer.MOD_ID, "shore_crab").toString())
     );
 
+    public static final RegistryObject<EntityType<SnakeMackerel>> SNAKE_MACKEREL = ENTITY_TYPES.register(
+            "snake_mackerel", () ->
+            EntityType.Builder.of(SnakeMackerel::new, MobCategory.WATER_AMBIENT)
+                    .sized(0.5F, 0.5F)
+                    .clientTrackingRange(10)
+                    .build(new ResourceLocation(Seafarer.MOD_ID, "snake_mackerel").toString())
+    );
+
     public static final RegistryObject<EntityType<Sunfish>> SUNFISH = ENTITY_TYPES.register(
             "sunfish", () ->
             EntityType.Builder.of(Sunfish::new, MobCategory.WATER_CREATURE)
-                    .sized(1.5F, 2.0F)
+                    .sized(1.5F, 1.98F)
                     .clientTrackingRange(10)
                     .build(new ResourceLocation(Seafarer.MOD_ID, "sunfish").toString())
     );

@@ -10,9 +10,16 @@ import net.minecraftforge.registries.RegistryObject;
 
 @Mod.EventBusSubscriber(modid = Seafarer.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SeaSoundEvents {
+
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, Seafarer.MOD_ID);
 
-    private static RegistryObject<SoundEvent> createSoundEvent(final String soundName) {
+    public static final RegistryObject<SoundEvent> FISH_IDLE = registerSoundEvent("fish_idle");
+    public static final RegistryObject<SoundEvent> FISH_HURT = registerSoundEvent("fish_hurt");
+    public static final RegistryObject<SoundEvent> FISH_DEATH = registerSoundEvent("fish_death");
+    public static final RegistryObject<SoundEvent> FISH_FLOP = registerSoundEvent("fish_flop");
+    public static final RegistryObject<SoundEvent> FISH_JUMP = registerSoundEvent("fish_jump");
+
+    private static RegistryObject<SoundEvent> registerSoundEvent(final String soundName) {
         return SOUND_EVENTS.register(soundName, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(Seafarer.MOD_ID, soundName)));
     }
 }

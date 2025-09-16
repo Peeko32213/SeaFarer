@@ -41,6 +41,9 @@ public class SeaItems {
     public static final RegistryObject<Item> RAW_CRAB_LEG = registerItemNoLang("crab_leg", () -> new Item(new Item.Properties().food(SeaFoodValues.RAW_SHORE_CRAB)));
     public static final RegistryObject<Item> COOKED_CRAB_LEG = registerItem("cooked_crab_leg", () -> new Item(new Item.Properties().food(SeaFoodValues.COOKED_SHORE_CRAB)));
 
+    // snake mackerel
+    public static final RegistryObject<Item> SNAKE_MACKEREL_SPAWN_EGG = registerSpawnEgg("snake_mackerel", SeaEntities.SNAKE_MACKEREL, 0x1f1526, 0x355450);
+
     // sunfish
     public static final RegistryObject<Item> SUNFISH_SPAWN_EGG = registerSpawnEgg("sunfish", SeaEntities.SUNFISH , 0x628398, 0x33436b);
 

@@ -14,7 +14,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 @SuppressWarnings("FieldCanBeLocal, unused")
-public class SunfishModel<T extends Sunfish> extends HierarchicalModel<T> {
+public class SunfishModel extends HierarchicalModel<Sunfish> {
 
 	private final ModelPart root;
 	private final ModelPart body_main;

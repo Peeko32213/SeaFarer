@@ -187,9 +187,9 @@
     ],
     "water_ambient": [
       {
-        "type": "minecraft:cod",
-        "maxCount": 6,
-        "minCount": 3,
+        "type": "seafarer:snake_mackerel",
+        "maxCount": 2,
+        "minCount": 2,
         "weight": 10
       },
       {

@@ -69,6 +69,7 @@ public final class ClientEvents {
         event.registerEntityRenderer(SeaEntities.HORSESHOE_CRAB.get(), HorseshoeCrabRenderer::new);
         event.registerEntityRenderer(SeaEntities.MANTA_RAY.get(), MantaRayRenderer::new);
         event.registerEntityRenderer(SeaEntities.SHORE_CRAB.get(), ShoreCrabRenderer::new);
+        event.registerEntityRenderer(SeaEntities.SNAKE_MACKEREL.get(), SnakeMackerelRenderer::new);
         event.registerEntityRenderer(SeaEntities.SUNFISH.get(), SunfishRenderer::new);
     }
 
@@ -77,6 +78,7 @@ public final class ClientEvents {
         event.registerLayerDefinition(SeaModelLayers.HORSESHOE_CRAB, HorseshoeCrabModel::createBodyLayer);
         event.registerLayerDefinition(SeaModelLayers.MANTA_RAY, MantaRayModel::createBodyLayer);
         event.registerLayerDefinition(SeaModelLayers.SHORE_CRAB, ShoreCrabModel::createBodyLayer);
+        event.registerLayerDefinition(SeaModelLayers.SNAKE_MACKEREL, SnakeMackerelModel::createBodyLayer);
         event.registerLayerDefinition(SeaModelLayers.SUNFISH, SunfishModel::createBodyLayer);
     }
 }
