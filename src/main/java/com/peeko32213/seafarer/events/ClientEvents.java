@@ -58,7 +58,10 @@ public final class ClientEvents {
 
     @SubscribeEvent
     public static void registerParticles(RegisterParticleProvidersEvent event) {
-        event.registerSpriteSet(SeaParticles.VOLCANIC_SMOKE.get(), VolcanicSmokeParticle.Factory::new);
+        event.registerSpriteSet(SeaParticles.SMALL_VOLCANIC_SMOKE.get(), VolcanicSmokeParticle.Factory::new);
+        event.registerSpriteSet(SeaParticles.MEDIUM_VOLCANIC_SMOKE.get(), VolcanicSmokeParticle.Factory::new);
+        event.registerSpriteSet(SeaParticles.BIG_VOLCANIC_SMOKE.get(), VolcanicSmokeParticle.Factory::new);
+        event.registerSpriteSet(SeaParticles.GIANT_VOLCANIC_SMOKE.get(), VolcanicSmokeParticle.Factory::new);
     }
 
     @SubscribeEvent

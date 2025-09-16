@@ -40,9 +40,7 @@ public class SeaSurfaceRules {
                 SurfaceRules.sequence(
                         SurfaceRules.ifTrue(not(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(65), 0)), beachSandRuleSource(VOLCANIC_SAND, VOLCANIC_SANDSTONE)),
                         SurfaceRules.ifTrue(ON_FLOOR, sequence(ifTrue(noiseRange(1.5F, 2.5F), beachSandRuleSource(VOLCANIC_SAND, VOLCANIC_SANDSTONE)), GRASS_BLOCK)),
-                        SurfaceRules.ifTrue(UNDER_FLOOR, DIRT),
-                        SurfaceRules.ifTrue(DEEP_UNDER_FLOOR, sequence(ifTrue(noiseRange(1.3F, 2.2F), SMOOTH_BASALT), SCORIA))
-//                        SurfaceRules.ifTrue(VERY_DEEP_UNDER_FLOOR, sequence(ifTrue(noiseRange(1.3F, 2.2F), SCORIA), SMOOTH_BASALT))
+                        SurfaceRules.ifTrue(UNDER_FLOOR, DIRT)
         ));
 
         SurfaceRules.RuleSource warm_reef = SurfaceRules.ifTrue(

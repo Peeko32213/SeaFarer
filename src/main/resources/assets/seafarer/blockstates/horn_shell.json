@@ -15,21 +15,6 @@
       {
         "model": "seafarer:block/shells/horn_shell",
         "y": 270
-      },
-      {
-        "model": "seafarer:block/shells/horn_shell_rotated"
-      },
-      {
-        "model": "seafarer:block/shells/horn_shell_rotated",
-        "y": 90
-      },
-      {
-        "model": "seafarer:block/shells/horn_shell_rotated",
-        "y": 180
-      },
-      {
-        "model": "seafarer:block/shells/horn_shell_rotated",
-        "y": 270
       }
     ]
   }

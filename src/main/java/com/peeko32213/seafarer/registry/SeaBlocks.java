@@ -2,8 +2,6 @@ package com.peeko32213.seafarer.registry;
 
 import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.blocks.*;
-import com.peeko32213.seafarer.blocks.PyramidShellBlock;
-import com.peeko32213.seafarer.blocks.ShellBlock;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.flag.FeatureFlag;
 import net.minecraft.world.item.BlockItem;
@@ -222,7 +220,7 @@ public class SeaBlocks {
     public static final RegistryObject<Block> SPIKY_SHELL = registerBlock("spiky_shell", () -> new ShellBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.STONE).noOcclusion().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> SPIRAL_SHELL = registerBlock("spiral_shell", () -> new ShellBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.STONE).noOcclusion().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> SWIRL_SHELL = registerBlock("swirl_shell", () -> new ShellBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.STONE).noOcclusion().pushReaction(PushReaction.DESTROY)));
-    public static final RegistryObject<Block> PYRAMID_SHELL = registerBlock("pyramid_shell", () -> new PyramidShellBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.STONE).noOcclusion().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> PYRAMID_SHELL = registerBlock("pyramid_shell", () -> new ShellBlock(BlockBehaviour.Properties.of().instabreak().sound(SoundType.STONE).noOcclusion().pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> CLAM_SHELL_BRICKS = registerBlock("clam_shell_bricks", () -> new Block(SeaBlockProperties.shellBlock(MapColor.TERRACOTTA_YELLOW)));
     public static final RegistryObject<Block> CLAM_SHELL_BRICK_STAIRS = registerBlock("clam_shell_brick_stairs", () -> new StairBlock(() -> CLAM_SHELL_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(CLAM_SHELL_BRICKS.get())));
