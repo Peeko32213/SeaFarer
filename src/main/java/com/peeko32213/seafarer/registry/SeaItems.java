@@ -22,7 +22,7 @@ public class SeaItems {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Seafarer.MOD_ID);
 
-    public static final RegistryObject<Item> SEAFARER = ITEMS.register("seafarer", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SEAFARER = registerItem("seafarer", () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
 
     public static final RegistryObject<Item> SEA_GLASS_PEBBLES = registerItem("sea_glass_pebbles", () -> new Item(new Item.Properties()));
 
