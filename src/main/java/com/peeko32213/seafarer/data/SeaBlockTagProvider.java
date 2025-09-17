@@ -173,6 +173,9 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
                 SMOOTH_SCORIA_WALL.get()
         );
 
+        this.tag(BlockTags.CLIMBABLE).add(
+                FISHING_NET.get()
+        );
     }
 
 

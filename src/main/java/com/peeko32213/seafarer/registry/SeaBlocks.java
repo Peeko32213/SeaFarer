@@ -201,7 +201,7 @@ public class SeaBlocks {
     public static final RegistryObject<Block> PINK_NETTED_SEA_GLASS_LAMP = registerBlock("pink_netted_sea_glass_lamp", () -> new RotatedPillarBlock(SeaBlockProperties.seaGlassLamp(MapColor.COLOR_PINK)));
     public static final RegistryObject<Block> PINK_MOSAIC_SEA_GLASS_LAMP = registerBlock("pink_mosaic_sea_glass_lamp", () -> new RotatedPillarBlock(SeaBlockProperties.seaGlassLamp(MapColor.COLOR_PINK)));
 
-    public static final RegistryObject<Block> FISHING_NET = registerBlock("fishing_net", () -> new FishingNetBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).replaceable().noCollission().strength(0.2F).sound(SoundType.WOOL).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> FISHING_NET = registerBlock("fishing_net", () -> new FishingNetBlock(BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).noCollission().strength(0.2F).sound(SoundType.WOOL).ignitedByLava().pushReaction(PushReaction.DESTROY)));
 
     // starfish
     public static final RegistryObject<Block> CORAL_STARFISH = registerBlock("coral_starfish", () -> new StarfishBlock(SeaBlockProperties.starfish(MapColor.COLOR_RED)));

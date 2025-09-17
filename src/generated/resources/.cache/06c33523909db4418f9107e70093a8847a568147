@@ -1,5 +1,6 @@
-// 1.20.1	2025-09-15T19:24:38.3787833	seafarer Block Tags
+// 1.20.1	2025-09-17T11:34:26.056023	seafarer Block Tags
 e297ce907af9c43578a16003652b2f7ef3f9134a data/minecraft/tags/blocks/bee_growables.json
+b87b1e8f8b609efef5f62c0295b9059dc34c2c94 data/minecraft/tags/blocks/climbable.json
 57e55f1235b197e6e6b3e3e3df6e7365dac98715 data/minecraft/tags/blocks/coral_blocks.json
 b8d9d4d8607c2273f376c1d43a35a177a3b3f8a9 data/minecraft/tags/blocks/coral_plants.json
 ce3dad0dd9a59527207483593e7e454fe37b9e58 data/minecraft/tags/blocks/dirt.json

@@ -1,21 +1,21 @@
 {
-  "ambientocclusion": false,
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "particle": "seafarer:block/fishing_net",
-    "net": "seafarer:block/fishing_net"
-  },
-  "elements": [
-    {
-      "from": [ 0, 0, 0.8 ],
-      "to": [ 16, 16, 0.8 ],
-      "shade": false,
-      "faces": {
-        "north": { "uv": [ 16, 0, 0, 16 ], "texture": "#net" },
-        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#net" }
-      }
-    }
-  ]
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"render_type": "minecraft:cutout",
+	"textures": {
+		"particle": "seafarer:block/fishing_net",
+		"net": "seafarer:block/fishing_net"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 15.2],
+			"to": [16, 16, 15.2],
+			"shade": false,
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#net"},
+				"south": {"uv": [16, 0, 0, 16], "texture": "#net"}
+			}
+		}
+	]
 }
-
-
