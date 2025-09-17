@@ -24,6 +24,9 @@ public class SeafarerTab {
                         output.accept(SeaItems.RAW_HORSESHOE_CRAB.get());
                         output.accept(SeaItems.COOKED_HORSESHOE_CRAB.get());
 
+                        // magmaw
+                        output.accept(SeaItems.MAGMAW_SPAWN_EGG.get());
+
                         // manta ray
                         output.accept(SeaItems.MANTA_RAY_SPAWN_EGG.get());
 

@@ -23,6 +23,15 @@ public class SeaEntities {
                     .build(new ResourceLocation(Seafarer.MOD_ID, "horseshoe_crab").toString())
     );
 
+    public static final RegistryObject<EntityType<Magmaw>> MAGMAW = ENTITY_TYPES.register(
+            "magmaw", () ->
+            EntityType.Builder.of(Magmaw::new, MobCategory.WATER_CREATURE)
+                    .sized(1.2F, 1.3F)
+                    .clientTrackingRange(10)
+                    .fireImmune()
+                    .build(new ResourceLocation(Seafarer.MOD_ID, "magmaw").toString())
+    );
+
     public static final RegistryObject<EntityType<MantaRay>> MANTA_RAY = ENTITY_TYPES.register(
             "manta_ray", () ->
             EntityType.Builder.of(MantaRay::new, MobCategory.WATER_CREATURE)

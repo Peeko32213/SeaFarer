@@ -58,7 +58,7 @@ public abstract class SeaMob extends WaterAnimal {
         }
     }
 
-    private void setupAnimationStates() {
+    public void setupAnimationStates() {
         this.flopAnimationState.animateWhen(!this.isInWaterOrBubble(), this.tickCount);
         this.swimmingAnimationState.animateWhen(this.isInWaterOrBubble(), this.tickCount);
     }

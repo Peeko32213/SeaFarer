@@ -10,6 +10,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class SeaModelLayers {
 
     public static final ModelLayerLocation HORSESHOE_CRAB = main("horseshoe_crab");
+    public static final ModelLayerLocation MAGMAW = main("magmaw");
     public static final ModelLayerLocation MANTA_RAY = main("manta_ray");
     public static final ModelLayerLocation SHORE_CRAB = main("shore_crab");
     public static final ModelLayerLocation SNAKE_MACKEREL = main("snake_mackerel");
