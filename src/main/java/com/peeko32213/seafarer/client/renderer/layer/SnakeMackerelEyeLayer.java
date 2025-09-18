@@ -17,7 +17,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 @OnlyIn(Dist.CLIENT)
 public class SnakeMackerelEyeLayer extends RenderLayer<SnakeMackerel, SnakeMackerelModel> {
 
-    private static final RenderType GLOW_TEXTURE = RenderType.eyes(new ResourceLocation(Seafarer.MOD_ID, "textures/entity/snake_mackerel/snake_mackerel_eyes.png"));
+    private static final RenderType GLOW_TEXTURE = RenderType.entityTranslucentEmissive(new ResourceLocation(Seafarer.MOD_ID, "textures/entity/snake_mackerel/snake_mackerel_eyes.png"));
 
     public SnakeMackerelEyeLayer(RenderLayerParent<SnakeMackerel, SnakeMackerelModel> parentModel) {
         super(parentModel);

@@ -10,7 +10,6 @@ public class SeaBlockTags {
 
     public static final TagKey<Block> GORGONIANS = modBlockTag("gorgonians");
     public static final TagKey<Block> STARFISH = modBlockTag("starfish");
-    public static final TagKey<Block> LARGE_STARFISH = modBlockTag("large_starfish");
     public static final TagKey<Block> BEACH_FLOWERS = modBlockTag("beach_flowers");
 
     public static final TagKey<Block> BEACH_PLANT_PLACEABLE = modBlockTag("beach_plant_placeable");

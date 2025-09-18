@@ -1,5 +1,6 @@
 package com.peeko32213.seafarer.blocks;
 
+import com.peeko32213.seafarer.registry.tags.SeaEntityTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -8,6 +9,9 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -21,11 +25,12 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.EntityCollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.IForgeShearable;
 
-@SuppressWarnings("deprecation")
-public class FishingNetBlock extends LadderBlock {
+public class FishingNetBlock extends LadderBlock implements IForgeShearable {
 
     public FishingNetBlock(BlockBehaviour.Properties properties) {
         super(properties);
@@ -64,19 +69,6 @@ public class FishingNetBlock extends LadderBlock {
                     }
                 }
             }
-            if (player.isCrouching() && (player.getAbilities().instabuild || player.getInventory().add(new ItemStack(this.asItem())))) {
-                BlockPos.MutableBlockPos below = pos.mutable().move(Direction.DOWN);
-                while (below.getY() >= level.getMinBuildHeight()) {
-                    BlockState belowState = level.getBlockState(below);
-                    if (belowState.is(this)) {
-                        below.move(Direction.DOWN);
-                    } else {
-                        below.move(Direction.UP);
-                        level.destroyBlock(below, false, player);
-                        return InteractionResult.sidedSuccess(level.isClientSide);
-                    }
-                }
-            }
         }
         return super.use(state, level, pos, player, hand, hitResult);
     }
@@ -91,8 +83,8 @@ public class FishingNetBlock extends LadderBlock {
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        BlockState blockState = level.getBlockState(pos.relative(Direction.UP));
-        return super.canSurvive(state, level, pos) || (blockState.is(this) && state.getValue(FACING).equals(blockState.getValue(FACING)));
+        BlockState aboveState = level.getBlockState(pos.relative(Direction.UP));
+        return super.canSurvive(state, level, pos) || (aboveState.is(this) && state.getValue(FACING).equals(aboveState.getValue(FACING)));
     }
 
     @Override
@@ -104,11 +96,18 @@ public class FishingNetBlock extends LadderBlock {
 
     @Override
     public boolean isPathfindable(BlockState state, BlockGetter level, BlockPos pos, PathComputationType type) {
-        return true;
+        return false;
     }
 
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        if (context instanceof EntityCollisionContext collisionContext) {
+            if (collisionContext.getEntity() instanceof Mob mob) {
+                if (!mob.isLeashed() && (mob instanceof WaterAnimal || mob.getType().is(SeaEntityTags.COLLIDES_WITH_FISHING_NETS))) {
+                    return this.getShape(state, level, pos, context);
+                }
+            }
+        }
         return Shapes.empty();
     }
 }
