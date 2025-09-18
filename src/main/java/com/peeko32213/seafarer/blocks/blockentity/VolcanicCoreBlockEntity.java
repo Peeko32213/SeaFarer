@@ -18,11 +18,11 @@ public class VolcanicCoreBlockEntity extends BlockEntity {
     public static void particleTick(Level level, BlockPos pos, BlockState state, VolcanicCoreBlockEntity blockEntity) {
         RandomSource random = level.getRandom();
         if (state.getValue(VolcanicCoreBlock.ACTIVE)) {
-            if (random.nextFloat() < 0.02F) {
+            if (random.nextFloat() < 0.04F) {
                 float x = (random.nextFloat() - 0.5F) * 0.5F;
                 float z = (random.nextFloat() - 0.5F) * 0.5F;
                 if (random.nextFloat() <= 0.3F) {
-                    if (random.nextBoolean()) {
+                    if (random.nextFloat() <= 0.7F) {
                         level.addAlwaysVisibleParticle(SeaParticles.BIG_VOLCANIC_SMOKE.get(), true, pos.getX() + 0.5F + x, pos.getY() + 0.5F, pos.getZ() + 0.5F + z, x * 0.15F, 0.2F + random.nextFloat() * 0.03F, z * 0.15F);
                     } else {
                         level.addAlwaysVisibleParticle(SeaParticles.GIANT_VOLCANIC_SMOKE.get(), true, pos.getX() + 0.5F + x, pos.getY() + 0.5F, pos.getZ() + 0.5F + z, x * 0.15F, 0.2F + random.nextFloat() * 0.03F, z * 0.15F);

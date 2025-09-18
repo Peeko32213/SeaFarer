@@ -3,8 +3,7 @@
 	"render_type": "minecraft:cutout",
 	"texture_size": [64, 32],
 	"textures": {
-		"particle": "seafarer:block/antler_gorgonian_top",
-		"top": "seafarer:block/antler_gorgonian_top"
+		"particle": "#top"
 	},
 	"elements": [
 		{
@@ -24,30 +23,8 @@
 			"rotation": {"angle": -22.5, "axis": "y", "origin": [8, 9.5, 8]},
 			"faces": {
 				"north": {"uv": [0, 0, 16, 16], "texture": "#top"},
-				"south": {"uv": [0, 0, 16, 16], "texture": "#top"},
-				"down": {"uv": [16, 0, 8, 0], "texture": "#top"}
+				"south": {"uv": [0, 0, 16, 16], "texture": "#top"}
 			}
-		}
-	],
-	"groups": [
-		{
-			"name": "Root",
-			"origin": [6, 0, 8],
-			"color": 0,
-			"children": [
-				{
-					"name": "Body",
-					"origin": [6, 0, 8],
-					"color": 0,
-					"children": [0]
-				},
-				{
-					"name": "Body",
-					"origin": [6, 0, 8],
-					"color": 0,
-					"children": [1]
-				}
-			]
 		}
 	]
 }

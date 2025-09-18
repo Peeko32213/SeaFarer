@@ -338,16 +338,19 @@ public class SeaBlocks {
     public static final RegistryObject<Block> VERDANT_CORAL_WALL_FAN = registerBlockWithoutItem("verdant_coral_wall_fan", () -> new CoralWallFanBlock(DEAD_VERDANT_CORAL_WALL_FAN.get(), SeaBlockProperties.coral(MapColor.COLOR_GREEN)));
     public static final RegistryObject<Block> VERDANT_CORAL_FAN = registerBlockWithoutItem("verdant_coral_fan", () -> new CoralFanBlock(DEAD_VERDANT_CORAL_FAN.get(), SeaBlockProperties.coral(MapColor.COLOR_GREEN)));
 
+    // zoas
     public static final RegistryObject<Block> CYAN_ZOA = registerBlock("cyan_zoa",() -> new FloweryCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_CYAN)));
     public static final RegistryObject<Block> ORANGE_ZOA = registerBlock("orange_zoa",() -> new FloweryCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_ORANGE)));
     public static final RegistryObject<Block> RED_ZOA = registerBlock("red_zoa",() -> new FloweryCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_RED)));
     public static final RegistryObject<Block> PURPLE_ZOA = registerBlock("purple_zoa",() -> new FloweryCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_PURPLE)));
 
+    // gorgonians
     public static final RegistryObject<Block> ANTLER_GORGONIAN = registerBlock("antler_gorgonian",() -> new GorgonianCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_PURPLE)));
-    public static final RegistryObject<Block> TOWERING_GORGONIAN = registerBlock("towering_gorgonian",() -> new GorgonianCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_ORANGE)));
     public static final RegistryObject<Block> ATTUM_GORGONIAN = registerBlock("attum_gorgonian",() -> new GorgonianCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_YELLOW)));
     public static final RegistryObject<Block> FLORAL_GORGONIAN = registerBlock("floral_gorgonian",() -> new GorgonianCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_RED)));
+    public static final RegistryObject<Block> TOWERING_GORGONIAN = registerBlock("towering_gorgonian",() -> new GorgonianCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_ORANGE)));
 
+    // christmas tree worms
     public static final RegistryObject<Block> BLUE_CHRISTMAS_TREE_WORM = registerBlock("blue_christmas_tree_worm",() -> new FloweryCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_BLUE)));
     public static final RegistryObject<Block> BLACK_CHRISTMAS_TREE_WORM = registerBlock("black_christmas_tree_worm",() -> new FloweryCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_BLACK)));
     public static final RegistryObject<Block> RED_CHRISTMAS_TREE_WORM = registerBlock("red_christmas_tree_worm",() -> new FloweryCoralBlock(SeaBlockProperties.coral(MapColor.COLOR_RED)));

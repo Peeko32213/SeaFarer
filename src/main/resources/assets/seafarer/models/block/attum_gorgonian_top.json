@@ -1,7 +1,0 @@
-{
-  "parent": "seafarer:block/gorgonian_top",
-  "textures": {
-    "top": "seafarer:block/attum_gorgonian_top",
-    "particle": "seafarer:block/attum_gorgonian_top"
-  }
-}

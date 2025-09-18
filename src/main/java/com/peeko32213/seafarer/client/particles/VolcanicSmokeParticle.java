@@ -41,7 +41,7 @@ public class VolcanicSmokeParticle extends TextureSheetParticle {
 
     @Override
     public float getQuadSize(float scaleFactor) {
-        return this.quadSize * Mth.clamp(((float) this.age + scaleFactor) / (float) this.lifetime * 12.0F, 0.0F, 4.0F);
+        return this.quadSize * Mth.clamp(((float) this.age + scaleFactor) / (float) this.lifetime * 4.0F, 0.0F, 3.0F);
     }
 
     @Override
@@ -50,11 +50,11 @@ public class VolcanicSmokeParticle extends TextureSheetParticle {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public static class Factory implements ParticleProvider<SimpleParticleType> {
+    public static class SmokeFactory implements ParticleProvider<SimpleParticleType> {
 
         private final SpriteSet sprites;
 
-        public Factory(SpriteSet sprites) {
+        public SmokeFactory(SpriteSet sprites) {
             this.sprites = sprites;
         }
 
@@ -62,6 +62,24 @@ public class VolcanicSmokeParticle extends TextureSheetParticle {
             VolcanicSmokeParticle particle = new VolcanicSmokeParticle(level, x, y, z, motionX, motionY, motionZ);
             particle.pickSprite(this.sprites);
             particle.setAlpha(0.9F);
+            return particle;
+        }
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public static class LargeSmokeFactory implements ParticleProvider<SimpleParticleType> {
+
+        private final SpriteSet sprites;
+
+        public LargeSmokeFactory(SpriteSet sprites) {
+            this.sprites = sprites;
+        }
+
+        public Particle createParticle(SimpleParticleType particleType, ClientLevel level, double x, double y, double z, double motionX, double motionY, double motionZ) {
+            VolcanicSmokeParticle particle = new VolcanicSmokeParticle(level, x, y, z, motionX, motionY, motionZ);
+            particle.pickSprite(this.sprites);
+            particle.setAlpha(0.9F);
+            particle.scale(2.0F);
             return particle;
         }
     }

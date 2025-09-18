@@ -1,32 +1,32 @@
 {
   "variants": {
-    "half=lower,facing=north": {
+    "facing=east,half=lower": {
+      "model": "seafarer:block/floral_gorgonian_bottom",
+      "y": 90
+    },
+    "facing=east,half=upper": {
+      "model": "seafarer:block/floral_gorgonian_top",
+      "y": 90
+    },
+    "facing=north,half=lower": {
       "model": "seafarer:block/floral_gorgonian_bottom"
     },
-    "half=upper,facing=north": {
+    "facing=north,half=upper": {
       "model": "seafarer:block/floral_gorgonian_top"
     },
-    "half=lower,facing=east": {
-      "model": "seafarer:block/floral_gorgonian_bottom",
-      "y": 90
-    },
-    "half=upper,facing=east": {
-      "model": "seafarer:block/floral_gorgonian_top",
-      "y": 90
-    },
-    "half=lower,facing=south": {
+    "facing=south,half=lower": {
       "model": "seafarer:block/floral_gorgonian_bottom",
       "y": 180
     },
-    "half=upper,facing=south": {
+    "facing=south,half=upper": {
       "model": "seafarer:block/floral_gorgonian_top",
       "y": 180
     },
-    "half=lower,facing=west": {
+    "facing=west,half=lower": {
       "model": "seafarer:block/floral_gorgonian_bottom",
       "y": 270
     },
-    "half=upper,facing=west": {
+    "facing=west,half=upper": {
       "model": "seafarer:block/floral_gorgonian_top",
       "y": 270
     }

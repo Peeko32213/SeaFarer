@@ -82,8 +82,8 @@ public class SeafarerTab {
                         output.accept(SeaBlocks.PURPLE_ZOA.get());
                         output.accept(SeaBlocks.ANTLER_GORGONIAN.get());
                         output.accept(SeaBlocks.ATTUM_GORGONIAN.get());
-                        output.accept(SeaBlocks.TOWERING_GORGONIAN.get());
                         output.accept(SeaBlocks.FLORAL_GORGONIAN.get());
+                        output.accept(SeaBlocks.TOWERING_GORGONIAN.get());
 
                         // starfish
                         output.accept(SeaBlocks.CORAL_STARFISH.get());

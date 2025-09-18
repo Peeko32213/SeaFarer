@@ -1,6 +1,8 @@
 package com.peeko32213.seafarer.data;
 
 import com.peeko32213.seafarer.Seafarer;
+import com.peeko32213.seafarer.blocks.GorgonianCoralBlock;
+import com.peeko32213.seafarer.blocks.RotatableDoublePlantBlock;
 import com.peeko32213.seafarer.blocks.StarfishBlock;
 import com.peeko32213.seafarer.registry.SeaBlocks;
 import net.minecraft.core.Direction;
@@ -323,6 +325,12 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.zoa(RED_ZOA);
         this.zoa(PURPLE_ZOA);
 
+        // gorgonians
+        this.largeGorgonian(ANTLER_GORGONIAN);
+        this.largeGorgonian(ATTUM_GORGONIAN);
+        this.largeGorgonian(FLORAL_GORGONIAN);
+        this.largeGorgonian(TOWERING_GORGONIAN);
+
         // starfish
         this.starfish(CORAL_STARFISH);
         this.starfish(LAGOON_STARFISH);
@@ -393,32 +401,6 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.floweringJungleLeaves(YELLOW_FLOWERING_JUNGLE_LEAVES);
         this.floweringJungleLeaves(BLUE_FLOWERING_JUNGLE_LEAVES);
         this.floweringJungleLeaves(MAGENTA_FLOWERING_JUNGLE_LEAVES);
-    }
-
-    private void createPottedPlant(RegistryObject<Block> plant, RegistryObject<Block> pottedPlant, String renderType){
-        ConfiguredModel cFfile = new ConfiguredModel(pottedPlant(name(pottedPlant.get()), blockTexture(plant.get()), renderType));
-        getVariantBuilder(pottedPlant.get()).partialState().setModels(cFfile);
-    }
-
-    public ModelFile pottedPlant(String name, ResourceLocation plant, String renderType) {
-        return singleTexture(name, BLOCK_FOLDER + "/flower_pot_cross", "plant", plant, renderType);
-    }
-
-    private ModelFile singleTexture(String name, String parent, String textureKey, ResourceLocation texture, String renderType) {
-        return singleTexture(name, mcLoc(parent), textureKey, texture, renderType);
-    }
-
-    public ModelFile singleTexture(String name, ResourceLocation parent, String textureKey, ResourceLocation texture, String renderType) {
-        return models().withExistingParent(name, parent)
-                .texture(textureKey, texture).renderType(renderType);
-    }
-
-    private BlockModelBuilder generated(String name, ResourceLocation... layers) {
-        BlockModelBuilder builder = models().withExistingParent("item/" + name, "item/generated");
-        for (int i = 0; i < layers.length; i++) {
-            builder = builder.texture("layer" + i, layers[i]);
-        }
-        return builder;
     }
 
     private String name(Block block) {
@@ -630,6 +612,15 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         ResourceLocation texture = this.blockTexture(zoa.get());
         this.simpleBlock(zoa.get(), this.models().withExistingParent(getItemName(zoa.get()), "seafarer:block/zoa").texture("zoa", texture));
         this.generatedItem(zoa.get(), TextureFolder.ITEM);
+    }
+
+    private void largeGorgonian(RegistryObject<Block> gorgonian) {
+        ResourceLocation texture = this.blockTexture(gorgonian.get());
+        String name = getItemName(gorgonian.get());
+        ModelFile largeGorgonianTop = this.models().withExistingParent(name + "_top", "seafarer:block/large_gorgonian_top").texture("top", texture + "_top");
+        ModelFile largeGorgonianBottom = this.models().withExistingParent(name + "_bottom", "seafarer:block/large_gorgonian_bottom").texture("bottom", texture + "_bottom");
+        this.getVariantBuilder(gorgonian.get()).partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).with(RotatableDoublePlantBlock.FACING, Direction.NORTH).addModels(new ConfiguredModel(largeGorgonianTop)).partialState().partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).with(RotatableDoublePlantBlock.FACING, Direction.NORTH).addModels(new ConfiguredModel(largeGorgonianBottom)).partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).with(RotatableDoublePlantBlock.FACING, Direction.EAST).addModels(new ConfiguredModel(largeGorgonianTop, 0, 90, false)).partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).with(RotatableDoublePlantBlock.FACING, Direction.EAST).addModels(new ConfiguredModel(largeGorgonianBottom, 0, 90, false)).partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).with(RotatableDoublePlantBlock.FACING, Direction.SOUTH).addModels(new ConfiguredModel(largeGorgonianTop, 0, 180, false)).partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).with(RotatableDoublePlantBlock.FACING, Direction.SOUTH).addModels(new ConfiguredModel(largeGorgonianBottom, 0, 180, false)).partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).with(RotatableDoublePlantBlock.FACING, Direction.WEST).addModels(new ConfiguredModel(largeGorgonianTop, 0, 270, false)).partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).with(RotatableDoublePlantBlock.FACING, Direction.WEST).addModels(new ConfiguredModel(largeGorgonianBottom, 0, 270, false));
+        this.generatedItem(gorgonian.get(), TextureFolder.ITEM);
     }
 
     private void starfish(RegistryObject<Block> block) {

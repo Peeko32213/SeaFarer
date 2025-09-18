@@ -2,6 +2,9 @@
 	"ambientocclusion": false,
 	"render_type": "minecraft:cutout",
 	"texture_size": [64, 32],
+	"textures": {
+		"particle": "#bottom"
+	},
 	"elements": [
 		{
 			"name": "Body",
@@ -22,27 +25,6 @@
 				"north": {"uv": [0, 0, 16, 16], "texture": "#bottom"},
 				"south": {"uv": [0, 0, 16, 16], "texture": "#bottom"}
 			}
-		}
-	],
-	"groups": [
-		{
-			"name": "Root",
-			"origin": [6, 0, 8],
-			"color": 0,
-			"children": [
-				{
-					"name": "Body",
-					"origin": [6, 0, 8],
-					"color": 0,
-					"children": [0]
-				},
-				{
-					"name": "Body",
-					"origin": [6, 0, 8],
-					"color": 0,
-					"children": [1]
-				}
-			]
 		}
 	]
 }
