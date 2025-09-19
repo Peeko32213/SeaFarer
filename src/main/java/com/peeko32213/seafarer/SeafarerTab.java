@@ -44,8 +44,6 @@ public class SeafarerTab {
 
                         output.accept(SeaItems.SEA_URCHIN.get());
                         output.accept(SeaItems.SOY_SAUCE.get());
-                        output.accept(SeaItems.SEA_SALT.get());
-                        output.accept(SeaBlocks.SALT_BLOCK.get());
 
                         // junk
                         output.accept(SeaBlocks.FISHING_NET.get());

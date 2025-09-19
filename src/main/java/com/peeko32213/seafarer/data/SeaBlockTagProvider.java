@@ -80,21 +80,6 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
                 SUNSET_STARFISH.get()
         );
 
-        this.tag(SeaBlockTags.BEACH_FLOWERS).add(
-                COASTAL_WILDFLOWER.get(),
-                COASTAL_LAVENDER.get(),
-                SEA_HOLLY.get(),
-                SEA_THRIFT.get()
-        );
-
-        this.tag(SeaBlockTags.VOLCANIC_ISLAND_FLOWERS).add(
-                FIERY_DUSTER.get(),
-                SILK_LILIES.get(),
-                TWILIGHT_BLADE.get(),
-                WIDOWBLOOM.get(),
-                DAWNFLAME.get()
-        );
-
         this.tag(BlockTags.SAND).add(
                 VOLCANIC_SAND.get(),
                 SHELLY_VOLCANIC_SAND.get(),
@@ -110,59 +95,79 @@ public class SeaBlockTagProvider extends BlockTagsProvider {
                 MOSSY_SCORIA.get()
         );
 
-        this.tag(SeaBlockTags.BEACH_PLANT_PLACEABLE).addTag(BlockTags.SAND);
+        this.tag(SeaBlockTags.BEACH_PLANT_PLACEABLE)
+                .addTag(BlockTags.SAND)
+                .addTag(BlockTags.DIRT);
 
-        tag(BlockTags.BEE_GROWABLES)
-                .add(SeaBlocks.COASTAL_WILDFLOWER.get())
-                .add(SeaBlocks.COASTAL_LAVENDER.get())
-                .add(SeaBlocks.SEA_HOLLY.get())
-                .add(SeaBlocks.SEA_THRIFT.get())
-        ;
+        this.tag(BlockTags.SMALL_FLOWERS).add(
+                COASTAL_WILDFLOWER.get(),
+                COASTAL_LAVENDER.get(),
+                SEA_THRIFT.get(),
+                SEA_HOLLY.get(),
+                FIERY_DUSTER.get(),
+                SILK_LILIES.get(),
+                TWILIGHT_BLADE.get(),
+                WIDOWBLOOM.get()
+        );
 
-        tag(BlockTags.MINEABLE_WITH_SHOVEL)
-                .add(SeaBlocks.SHELLY_SAND.get())
-                .add(SeaBlocks.CORALINE_SAND.get())
-        ;
+        this.tag(BlockTags.FLOWER_POTS).add(
+                POTTED_COASTAL_WILDFLOWER.get(),
+                POTTED_COASTAL_LAVENDER.get(),
+                POTTED_SEA_THRIFT.get(),
+                POTTED_SEA_HOLLY.get(),
+                POTTED_FIERY_DUSTER.get(),
+                POTTED_SILK_LILIES.get(),
+                POTTED_TWILIGHT_BLADE.get(),
+                POTTED_WIDOWBLOOM.get(),
+                POTTED_BEACHGRASS.get(),
+                POTTED_SHORT_BEACHGRASS.get(),
+                POTTED_YELLOW_VOLCANIC_GRASS.get(),
+                POTTED_BLUE_VOLCANIC_GRASS.get(),
+                POTTED_ORANGE_VOLCANIC_GRASS.get()
+        );
 
-        this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(SeaBlocks.LIGHT_BLUE_SEA_GLASS.get())
-                .add(SeaBlocks.LIGHT_BLUE_SEA_GLASS_PANE.get())
-                .add(SeaBlocks.LIGHT_BLUE_SEA_GLASS_BRICKS.get())
-                .add(SeaBlocks.LIGHT_BLUE_GLASS_BRICK_SLAB.get())
-                .add(SeaBlocks.LIGHT_BLUE_SEA_GLASS_BRICK_STAIRS.get())
+        this.tag(BlockTags.TALL_FLOWERS).add(
+                DAWNFLAME.get(),
+                SAPPHIRE_COWBELL.get()
+        );
 
-                .add(SeaBlocks.SALT_BLOCK.get())
+        this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
+                SHELLY_SAND.get(),
+                STARRY_SAND.get(),
+                SEA_GLASS_SAND.get(),
+                CORALINE_SAND.get(),
+                SHELLY_CORALINE_SAND.get(),
+                STARRY_CORALINE_SAND.get(),
+                VOLCANIC_SAND.get(),
+                SHELLY_VOLCANIC_SAND.get(),
+                STARRY_VOLCANIC_SAND.get()
+        );
 
-                .add(SeaBlocks.CLAM_SHELL_BRICKS.get())
-                .add(SeaBlocks.CLAM_SHELL_BRICK_SLAB.get())
-                .add(SeaBlocks.CLAM_SHELL_BRICK_STAIRS.get())
-                .add(SeaBlocks.CLAM_SHELL_PILLAR.get())
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+                SPIKY_SHELL_BRICKS.get(), SPIKY_SHELL_BRICK_STAIRS.get(), SPIKY_SHELL_BRICK_SLAB.get(), SPIKY_SHELL_PILLAR.get(),
+                CLAM_SHELL_BRICKS.get(), CLAM_SHELL_BRICK_STAIRS.get(), CLAM_SHELL_BRICK_SLAB.get(), CLAM_SHELL_PILLAR.get(),
+                HORN_SHELL_BRICKS.get(), HORN_SHELL_BRICK_STAIRS.get(), HORN_SHELL_BRICK_SLAB.get(), HORN_SHELL_PILLAR.get(),
+                SWIRL_SHELL_BRICKS.get(), SWIRL_SHELL_BRICK_STAIRS.get(), SWIRL_SHELL_BRICK_SLAB.get(), SWIRL_SHELL_PILLAR.get(),
+                SPIRAL_SHELL_BRICKS.get(), SPIRAL_SHELL_BRICK_STAIRS.get(), SPIRAL_SHELL_BRICK_SLAB.get(), SPIRAL_SHELL_PILLAR.get(),
+                PYRAMID_SHELL_BRICKS.get(), PYRAMID_SHELL_BRICK_STAIRS.get(), PYRAMID_SHELL_BRICK_SLAB.get(), PYRAMID_SHELL_PILLAR.get(),
 
-                .add(SeaBlocks.HORN_SHELL_BRICKS.get())
-                .add(SeaBlocks.HORN_SHELL_BRICK_SLAB.get())
-                .add(SeaBlocks.HORN_SHELL_BRICK_STAIRS.get())
-                .add(SeaBlocks.HORN_SHELL_PILLAR.get())
+                CORALINE_SANDSTONE.get(), CORALINE_SANDSTONE_STAIRS.get(), CORALINE_SANDSTONE_SLAB.get(), CORALINE_SANDSTONE_WALL.get(),
+                CHISELED_CORALINE_SANDSTONE.get(),
+                SMOOTH_CORALINE_SANDSTONE.get(), SMOOTH_CORALINE_SANDSTONE_STAIRS.get(), SMOOTH_CORALINE_SANDSTONE_SLAB.get(),
+                CUT_CORALINE_SANDSTONE.get(), CUT_CORALINE_SANDSTONE_SLAB.get(),
 
-                .add(SeaBlocks.SPIKY_SHELL_BRICKS.get())
-                .add(SeaBlocks.SPIKY_SHELL_BRICK_SLAB.get())
-                .add(SeaBlocks.SPIKY_SHELL_BRICK_STAIRS.get())
-                .add(SeaBlocks.SPIKY_SHELL_PILLAR.get())
+                VOLCANIC_SANDSTONE.get(), VOLCANIC_SANDSTONE_STAIRS.get(), VOLCANIC_SANDSTONE_SLAB.get(), VOLCANIC_SANDSTONE_WALL.get(),
+                CHISELED_VOLCANIC_SANDSTONE.get(),
+                SMOOTH_VOLCANIC_SANDSTONE.get(), SMOOTH_VOLCANIC_SANDSTONE_STAIRS.get(), SMOOTH_VOLCANIC_SANDSTONE_SLAB.get(),
+                CUT_VOLCANIC_SANDSTONE.get(), CUT_VOLCANIC_SANDSTONE_SLAB.get(),
 
-                .add(SeaBlocks.SPIRAL_SHELL_BRICKS.get())
-                .add(SeaBlocks.SPIRAL_SHELL_BRICK_SLAB.get())
-                .add(SeaBlocks.SPIRAL_SHELL_BRICK_STAIRS.get())
-                .add(SeaBlocks.SPIRAL_SHELL_PILLAR.get())
-
-                .add(SeaBlocks.SWIRL_SHELL_BRICKS.get())
-                .add(SeaBlocks.SWIRL_SHELL_BRICK_SLAB.get())
-                .add(SeaBlocks.SWIRL_SHELL_BRICK_STAIRS.get())
-                .add(SeaBlocks.SWIRL_SHELL_PILLAR.get())
-
-                .add(SeaBlocks.PYRAMID_SHELL_BRICKS.get())
-                .add(SeaBlocks.PYRAMID_SHELL_BRICK_SLAB.get())
-                .add(SeaBlocks.PYRAMID_SHELL_BRICK_STAIRS.get())
-                .add(SeaBlocks.PYRAMID_SHELL_PILLAR.get())
-        ;
+                MOLTEN_SCORIA.get(), MOSSY_SCORIA.get(),
+                SCORIA.get(), SCORIA_STAIRS.get(), SCORIA_SLAB.get(), SCORIA_WALL.get(),
+                POLISHED_SCORIA.get(), POLISHED_SCORIA_STAIRS.get(), POLISHED_SCORIA_SLAB.get(), POLISHED_SCORIA_WALL.get(),
+                SCORIA_BRICKS.get(), SCORIA_BRICK_STAIRS.get(), SCORIA_BRICK_SLAB.get(), SCORIA_BRICK_WALL.get(),
+                SMOOTH_SCORIA.get(), SMOOTH_SCORIA_STAIRS.get(), SMOOTH_SCORIA_SLAB.get(), SMOOTH_SCORIA_WALL.get(),
+                CHISELED_SCORIA_BRICKS.get()
+        );
 
         this.tag(BlockTags.WALLS).add(
                 VOLCANIC_SANDSTONE_WALL.get(),

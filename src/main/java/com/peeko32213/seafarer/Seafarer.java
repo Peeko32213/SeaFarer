@@ -91,7 +91,7 @@ public class Seafarer {
         generator.addProvider(server, new SeaEntityTagProvider(output, provider, helper));
         generator.addProvider(server, new SeaBiomeTagProvider(output, provider, helper));
         generator.addProvider(server, new SeaPaintingTagProvider(output, provider, helper));
-        generator.addProvider(server, new SeaRecipeGenerator(output));
+        generator.addProvider(server, new SeaRecipeProvider(output));
         generator.addProvider(server, SeaLootProvider.create(output));
 
         boolean client = event.includeClient();

@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-15T21:20:00.6003178	Loot Tables
+// 1.20.1	2025-09-18T22:42:36.8159617	Loot Tables
 d65d5a717456268ec82a8338b2ba9bc6a5f7f4c3 data/seafarer/loot_tables/blocks/beachgrass.json
 5ea43f3020eba9ddc7a93413dc2e8a6c475fb8e9 data/seafarer/loot_tables/blocks/black_pebbled_sea_glass.json
 70a2c5e89df32088e44f612a0598eebe4ba3abe8 data/seafarer/loot_tables/blocks/black_sea_glass.json
@@ -74,7 +74,6 @@ b172bdb6d5feb047ff00a52375eaae813e7d5389 data/seafarer/loot_tables/blocks/red_se
 7ba93fefba7b62c778d511ba5d69451d2e153589 data/seafarer/loot_tables/blocks/red_sea_glass_brick_slab.json
 bde716ca0384efe387b72d5e0dfebaef53f09484 data/seafarer/loot_tables/blocks/red_sea_glass_brick_stairs.json
 d4caac92ac0b3079b632c302c0af4553836c90c9 data/seafarer/loot_tables/blocks/red_sea_glass_pane.json
-b5cae98d1988893f9cfb50c1fc24610b4433096b data/seafarer/loot_tables/blocks/salt_block.json
 5a9659a36cfcc444ffcc3e327385015ecb1fae01 data/seafarer/loot_tables/blocks/sea_holly.json
 c4dc4eebac6ee3ab794927ce5244dfe48844a4d3 data/seafarer/loot_tables/blocks/sea_thrift.json
 b07aab82c086d1425a143de0b42e622eb1f98d32 data/seafarer/loot_tables/blocks/spiky_shell.json

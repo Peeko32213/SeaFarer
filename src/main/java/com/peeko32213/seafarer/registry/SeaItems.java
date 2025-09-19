@@ -54,7 +54,6 @@ public class SeaItems {
 
     // spices and sauces
     public static final RegistryObject<Item> SOY_SAUCE = registerItem("soy_sauce", () -> new SeaDrinkableItem(new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16).food(SeaFoodValues.SOY_SAUCE), false, false));
-    public static final RegistryObject<Item> SEA_SALT = registerItem("sea_salt", () -> new Item(new Item.Properties().food(SeaFoodValues.SALT)));
 
     // amber coral
     public static final RegistryObject<Item> AMBER_CORAL_FAN = registerItemNoLang("amber_coral_fan", () -> new StandingAndWallBlockItem(SeaBlocks.AMBER_CORAL_FAN.get(), SeaBlocks.AMBER_CORAL_WALL_FAN.get(), new Item.Properties(), Direction.DOWN));

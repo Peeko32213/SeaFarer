@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-17T18:33:33.2320156	Block States: seafarer
+// 1.20.1	2025-09-18T22:42:36.8109443	Block States: seafarer
 e242b70bf2d088a8f620425331334961987ba03d assets/seafarer/blockstates/amber_coral.json
 986f46bd5db6084185d9f1305b3cf45b557adb8e assets/seafarer/blockstates/amber_coral_block.json
 0efa2873906c0342c180328d41b80fd763fa00c5 assets/seafarer/blockstates/amber_coral_fan.json
@@ -218,7 +218,6 @@ b53805dcc0b7e6ecd05a19b6b8b5909c1e8390c4 assets/seafarer/blockstates/red_pebbled
 fec1432f04f195ed8b7a747537ae1b6f4fdbff3d assets/seafarer/blockstates/red_sea_glass_lamp.json
 d1177a60c55c51a76ec1e6d301b1e18d2ed885b8 assets/seafarer/blockstates/red_sea_glass_pane.json
 9b442c5e61e9b7d34361787e8d918d42f9a7fa23 assets/seafarer/blockstates/red_zoa.json
-06628e371a5dbb0a8d00391215b893da73c5f8e5 assets/seafarer/blockstates/salt_block.json
 69e5284c850dcd666ac8e9e5524c1b15c2ea3095 assets/seafarer/blockstates/sapphire_cowbell.json
 7aeafc7f94b62a4ac59fc51fa76e01553f686882 assets/seafarer/blockstates/scoria.json
 8cf497d6bbe4bf5aecc9a67347a068f3388a5523 assets/seafarer/blockstates/scoria_bricks.json
@@ -685,7 +684,6 @@ a22e1ecade39deb069e5e025f41d12c25b6784b2 assets/seafarer/models/block/red_sea_gl
 6d6e39fb621ea6e99acffe6a94103cd3a7aad324 assets/seafarer/models/block/red_sea_glass_pane_side.json
 adaa8b4b029453682762d3f43432f4d67ef27b51 assets/seafarer/models/block/red_sea_glass_pane_side_alt.json
 1c600507631336adace5fb8282d72f60d7b5e849 assets/seafarer/models/block/red_zoa.json
-d370e800d1ce387c16709ed8128fda41aad61920 assets/seafarer/models/block/salt_block.json
 dd8cfb84dc9b327479d8d6ce8ad57e9bc961583f assets/seafarer/models/block/sapphire_cowbell_bottom.json
 a466c6cb12facaab5139ec549b521275b9bd088f assets/seafarer/models/block/sapphire_cowbell_top.json
 38d1aed4373784247c6ab6593995e6ef22ccba30 assets/seafarer/models/block/scoria.json
@@ -1063,7 +1061,6 @@ ecee55bf3ee9a5bddf06b38f9c17bc54e390971a assets/seafarer/models/item/red_sea_gla
 241fd4ec0b6f07d58ea8d851e5f037d0586b4ae3 assets/seafarer/models/item/red_sea_glass_lamp.json
 b780733153160bc98f63e88803be1c1ef61a58e1 assets/seafarer/models/item/red_sea_glass_pane.json
 b2e4de9fa5053b87ee53b48d8e573a0948115695 assets/seafarer/models/item/red_zoa.json
-e22a13779fb1c6167c9e14083537b5c7f4c8fb78 assets/seafarer/models/item/salt_block.json
 d3b296c1a4dcfd26884e2120390dd9d4a6284de2 assets/seafarer/models/item/sapphire_cowbell.json
 96a58fd22b8463d27c5c3d35bb9c47e0fa6f7cd2 assets/seafarer/models/item/scoria.json
 6ee59daadba69a5343c7565547ecb09e9771dcb7 assets/seafarer/models/item/scoria_bricks.json

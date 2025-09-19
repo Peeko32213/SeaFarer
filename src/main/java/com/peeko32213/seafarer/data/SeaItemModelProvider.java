@@ -43,8 +43,6 @@ public class SeaItemModelProvider extends ItemModelProvider {
 
         this.item(SeaItems.SHORE_CRAB_BUCKET);
         this.item(SeaItems.HORSESHOE_CRAB_BUCKET);
-
-        this.item(SeaItems.SEA_SALT);
     }
 
     private void toBlock(RegistryObject<Block> b) {

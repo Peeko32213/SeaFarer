@@ -249,8 +249,6 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.slab(PYRAMID_SHELL_BRICK_SLAB, this.blockTexture(PYRAMID_SHELL_BRICKS.get()));
         this.pillar(PYRAMID_SHELL_PILLAR);
 
-        this.cubeAllBlock(SALT_BLOCK);
-
         this.pottedPlant(SEA_THRIFT, POTTED_SEA_THRIFT);
         this.pottedPlant(COASTAL_LAVENDER, POTTED_COASTAL_LAVENDER);
         this.pottedPlant(COASTAL_WILDFLOWER, POTTED_COASTAL_WILDFLOWER);

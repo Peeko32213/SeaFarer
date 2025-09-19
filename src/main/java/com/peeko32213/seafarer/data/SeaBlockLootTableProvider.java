@@ -126,8 +126,6 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(SeaBlocks.COASTAL_LAVENDER.get());
         dropSelf(SeaBlocks.COASTAL_WILDFLOWER.get());
 
-        dropSelf(SeaBlocks.SALT_BLOCK.get());
-
         dropSelf(SeaBlocks.CLAM_SHELL_BRICKS.get());
         dropSelf(SeaBlocks.CLAM_SHELL_PILLAR.get());
         dropSelf(SeaBlocks.CLAM_SHELL_BRICK_STAIRS.get());
