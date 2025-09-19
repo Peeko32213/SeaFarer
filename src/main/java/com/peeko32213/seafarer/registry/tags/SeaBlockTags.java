@@ -11,6 +11,8 @@ public class SeaBlockTags {
     public static final TagKey<Block> GORGONIANS = modBlockTag("gorgonians");
     public static final TagKey<Block> STARFISH = modBlockTag("starfish");
     public static final TagKey<Block> BEACH_PLANT_PLACEABLE = modBlockTag("beach_plant_placeable");
+    public static final TagKey<Block> SEA_GLASS = modBlockTag("sea_glass");
+    public static final TagKey<Block> SEA_GLASS_PANES = modBlockTag("sea_glass_panes");
 
     private static TagKey<Block> modBlockTag(String name) {
         return blockTag(Seafarer.MOD_ID, name);

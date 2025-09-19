@@ -1,7 +1,6 @@
 package com.peeko32213.seafarer.data;
 
 import com.peeko32213.seafarer.Seafarer;
-import com.peeko32213.seafarer.blocks.GorgonianCoralBlock;
 import com.peeko32213.seafarer.blocks.RotatableDoublePlantBlock;
 import com.peeko32213.seafarer.blocks.StarfishBlock;
 import com.peeko32213.seafarer.registry.SeaBlocks;
@@ -20,7 +19,6 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Function;
 
 import static com.peeko32213.seafarer.registry.SeaBlocks.*;
-import static net.minecraftforge.client.model.generators.ModelProvider.BLOCK_FOLDER;
 
 public class SeaBlockstateProvider extends BlockStateProvider {
 
@@ -167,7 +165,7 @@ public class SeaBlockstateProvider extends BlockStateProvider {
         this.cubeAllBlock(LIGHT_BLUE_PEBBLED_SEA_GLASS);
         this.glassBlock(LIGHT_BLUE_SEA_GLASS);
         this.cubeAllBlock(LIGHT_BLUE_SEA_GLASS_BRICKS);
-        this.slab(LIGHT_BLUE_GLASS_BRICK_SLAB, this.blockTexture(LIGHT_BLUE_SEA_GLASS_BRICKS.get()));
+        this.slab(LIGHT_BLUE_SEA_GLASS_BRICK_SLAB, this.blockTexture(LIGHT_BLUE_SEA_GLASS_BRICKS.get()));
         this.stairs(LIGHT_BLUE_SEA_GLASS_BRICK_STAIRS, this.blockTexture(LIGHT_BLUE_SEA_GLASS_BRICKS.get()));
         this.directionalBlock(LIGHT_BLUE_SEA_GLASS_LAMP);
         this.pillar(LIGHT_BLUE_NETTED_SEA_GLASS_LAMP);

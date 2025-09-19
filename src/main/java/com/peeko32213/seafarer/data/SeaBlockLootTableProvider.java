@@ -44,7 +44,7 @@ public class SeaBlockLootTableProvider extends BlockLootSubProvider {
         dropWhenSilkTouch(SeaBlocks.LIGHT_BLUE_SEA_GLASS.get());
         dropWhenSilkTouch(SeaBlocks.LIGHT_BLUE_SEA_GLASS_PANE.get());
         dropSelf(SeaBlocks.LIGHT_BLUE_SEA_GLASS_BRICKS.get());
-        dropSelf(SeaBlocks.LIGHT_BLUE_GLASS_BRICK_SLAB.get());
+        dropSelf(SeaBlocks.LIGHT_BLUE_SEA_GLASS_BRICK_SLAB.get());
         dropSelf(SeaBlocks.LIGHT_BLUE_SEA_GLASS_BRICK_STAIRS.get());
         dropSelf(SeaBlocks.LIGHT_BLUE_PEBBLED_SEA_GLASS.get());
 

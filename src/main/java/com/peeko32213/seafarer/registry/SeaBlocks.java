@@ -152,7 +152,7 @@ public class SeaBlocks {
     public static final RegistryObject<Block> LIGHT_BLUE_SEA_GLASS_PANE = registerBlock("light_blue_sea_glass_pane", () -> new IronBarsBlock(SeaBlockProperties.seaGlass(MapColor.COLOR_LIGHT_BLUE)));
     public static final RegistryObject<Block> LIGHT_BLUE_SEA_GLASS_BRICKS = registerBlock("light_blue_sea_glass_bricks", () -> new Block(SeaBlockProperties.seaGlassSolid(MapColor.COLOR_LIGHT_BLUE)));
     public static final RegistryObject<Block> LIGHT_BLUE_SEA_GLASS_BRICK_STAIRS = registerBlock("light_blue_sea_glass_brick_stairs", () -> new StairBlock(() -> LIGHT_BLUE_SEA_GLASS_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(LIGHT_BLUE_SEA_GLASS_BRICKS.get())));
-    public static final RegistryObject<Block> LIGHT_BLUE_GLASS_BRICK_SLAB = registerBlock("light_blue_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_SEA_GLASS_BRICKS.get())));
+    public static final RegistryObject<Block> LIGHT_BLUE_SEA_GLASS_BRICK_SLAB = registerBlock("light_blue_sea_glass_brick_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(LIGHT_BLUE_SEA_GLASS_BRICKS.get())));
     public static final RegistryObject<Block> LIGHT_BLUE_SEA_GLASS_LAMP = registerBlock("light_blue_sea_glass_lamp", () -> new SeaDirectionalBlock(SeaBlockProperties.seaGlassLamp(MapColor.COLOR_LIGHT_BLUE)));
     public static final RegistryObject<Block> LIGHT_BLUE_NETTED_SEA_GLASS_LAMP = registerBlock("light_blue_netted_sea_glass_lamp", () -> new RotatedPillarBlock(SeaBlockProperties.seaGlassLamp(MapColor.COLOR_LIGHT_BLUE)));
     public static final RegistryObject<Block> LIGHT_BLUE_MOSAIC_SEA_GLASS_LAMP = registerBlock("light_blue_mosaic_sea_glass_lamp", () -> new RotatedPillarBlock(SeaBlockProperties.seaGlassLamp(MapColor.COLOR_LIGHT_BLUE)));
@@ -464,8 +464,10 @@ public class SeaBlocks {
         return block;
     }
 
-    private static <B extends Block> RegistryObject<B> registerBlockWithoutItem(String name, Supplier<B> block) {
-        return BLOCKS.register(name, block);
+    private static <B extends Block> RegistryObject<B> registerBlockWithoutItem(String name, Supplier<? extends B> supplier) {
+        RegistryObject<B> block = BLOCKS.register(name, supplier);
+        BLOCK_TRANSLATIONS.add(block);
+        return block;
     }
 
     private static BlockBehaviour.Properties registerFlowerPot(FeatureFlag... featureFlags) {

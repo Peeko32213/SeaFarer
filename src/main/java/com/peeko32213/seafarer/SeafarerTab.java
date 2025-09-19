@@ -95,40 +95,51 @@ public class SeafarerTab {
                         // corals
                         output.accept(SeaBlocks.AMBER_CORAL_BLOCK.get());
                         output.accept(SeaBlocks.AMBER_CORAL.get());
-                        output.accept(SeaBlocks.AMBER_CORAL_FAN.get());
+                        output.accept(SeaItems.AMBER_CORAL_FAN.get());
+
                         output.accept(SeaBlocks.CERULEAN_CORAL_BLOCK.get());
                         output.accept(SeaBlocks.CERULEAN_CORAL.get());
-                        output.accept(SeaBlocks.CERULEAN_CORAL_FAN.get());
+                        output.accept(SeaItems.CERULEAN_CORAL_FAN.get());
+
                         output.accept(SeaBlocks.MAROON_CORAL_BLOCK.get());
                         output.accept(SeaBlocks.MAROON_CORAL.get());
-                        output.accept(SeaBlocks.MAROON_CORAL_FAN.get());
+                        output.accept(SeaItems.MAROON_CORAL_FAN.get());
+
                         output.accept(SeaBlocks.OLIVE_CORAL_BLOCK.get());
                         output.accept(SeaBlocks.OLIVE_CORAL.get());
-                        output.accept(SeaBlocks.OLIVE_CORAL_FAN.get());
+                        output.accept(SeaItems.OLIVE_CORAL_FAN.get());
+
                         output.accept(SeaBlocks.TURQUOISE_CORAL_BLOCK.get());
                         output.accept(SeaBlocks.TURQUOISE_CORAL.get());
-                        output.accept(SeaBlocks.TURQUOISE_CORAL_FAN.get());
+                        output.accept(SeaItems.TURQUOISE_CORAL_FAN.get());
+
                         output.accept(SeaBlocks.VERDANT_CORAL_BLOCK.get());
                         output.accept(SeaBlocks.VERDANT_CORAL.get());
-                        output.accept(SeaBlocks.VERDANT_CORAL_FAN.get());
+                        output.accept(SeaItems.VERDANT_CORAL_FAN.get());
+
                         output.accept(SeaBlocks.DEAD_AMBER_CORAL_BLOCK.get());
                         output.accept(SeaBlocks.DEAD_AMBER_CORAL.get());
-                        output.accept(SeaBlocks.DEAD_AMBER_CORAL_FAN.get());
+                        output.accept(SeaItems.DEAD_AMBER_CORAL_FAN.get());
+
                         output.accept(SeaBlocks.DEAD_CERULEAN_CORAL_BLOCK.get());
                         output.accept(SeaBlocks.DEAD_CERULEAN_CORAL.get());
-                        output.accept(SeaBlocks.DEAD_CERULEAN_CORAL_FAN.get());
+                        output.accept(SeaItems.DEAD_CERULEAN_CORAL_FAN.get());
+
                         output.accept(SeaBlocks.DEAD_MAROON_CORAL_BLOCK.get());
                         output.accept(SeaBlocks.DEAD_MAROON_CORAL.get());
-                        output.accept(SeaBlocks.DEAD_MAROON_CORAL_FAN.get());
+                        output.accept(SeaItems.DEAD_MAROON_CORAL_FAN.get());
+
                         output.accept(SeaBlocks.DEAD_OLIVE_CORAL_BLOCK.get());
                         output.accept(SeaBlocks.DEAD_OLIVE_CORAL.get());
-                        output.accept(SeaBlocks.DEAD_OLIVE_CORAL_FAN.get());
+                        output.accept(SeaItems.DEAD_OLIVE_CORAL_FAN.get());
+
                         output.accept(SeaBlocks.DEAD_TURQUOISE_CORAL_BLOCK.get());
                         output.accept(SeaBlocks.DEAD_TURQUOISE_CORAL.get());
-                        output.accept(SeaBlocks.DEAD_TURQUOISE_CORAL_FAN.get());
+                        output.accept(SeaItems.DEAD_TURQUOISE_CORAL_FAN.get());
+
                         output.accept(SeaBlocks.DEAD_VERDANT_CORAL_BLOCK.get());
                         output.accept(SeaBlocks.DEAD_VERDANT_CORAL.get());
-                        output.accept(SeaBlocks.DEAD_VERDANT_CORAL_FAN.get());
+                        output.accept(SeaItems.DEAD_VERDANT_CORAL_FAN.get());
 
                         // spiky shell blocks
                         output.accept(SeaBlocks.SPIKY_SHELL.get());
@@ -349,7 +360,7 @@ public class SeafarerTab {
                         output.accept(SeaBlocks.LIGHT_BLUE_SEA_GLASS_PANE.get());
                         output.accept(SeaBlocks.LIGHT_BLUE_SEA_GLASS_BRICKS.get());
                         output.accept(SeaBlocks.LIGHT_BLUE_SEA_GLASS_BRICK_STAIRS.get());
-                        output.accept(SeaBlocks.LIGHT_BLUE_GLASS_BRICK_SLAB.get());
+                        output.accept(SeaBlocks.LIGHT_BLUE_SEA_GLASS_BRICK_SLAB.get());
                         output.accept(SeaBlocks.LIGHT_BLUE_SEA_GLASS_LAMP.get());
                         output.accept(SeaBlocks.LIGHT_BLUE_NETTED_SEA_GLASS_LAMP.get());
                         output.accept(SeaBlocks.LIGHT_BLUE_MOSAIC_SEA_GLASS_LAMP.get());
