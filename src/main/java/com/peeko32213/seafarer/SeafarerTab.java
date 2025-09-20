@@ -33,8 +33,8 @@ public class SeafarerTab {
                         // shore crab
                         output.accept(SeaItems.SHORE_CRAB_SPAWN_EGG.get());
                         output.accept(SeaItems.SHORE_CRAB_BUCKET.get());
-                        output.accept(SeaItems.RAW_CRAB_LEG.get());
-                        output.accept(SeaItems.COOKED_CRAB_LEG.get());
+                        output.accept(SeaItems.RAW_SHORE_CRAB_LEG.get());
+                        output.accept(SeaItems.COOKED_SHORE_CRAB_LEG.get());
 
                         // snake mackerel
                         output.accept(SeaItems.SNAKE_MACKEREL_SPAWN_EGG.get());

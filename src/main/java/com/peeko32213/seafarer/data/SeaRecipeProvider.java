@@ -2,15 +2,20 @@ package com.peeko32213.seafarer.data;
 
 import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.registry.SeaItems;
+import com.peeko32213.seafarer.registry.tags.SeaItemTags;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ICondition;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
+import net.minecraftforge.common.crafting.conditions.NotCondition;
+import net.minecraftforge.common.crafting.conditions.OrCondition;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.function.Consumer;
@@ -26,6 +31,42 @@ public class SeaRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> consumer) {
+        // horseshoe crab
+        cooking(SeaItems.RAW_HORSESHOE_CRAB.get(), SeaItems.COOKED_HORSESHOE_CRAB.get(), consumer);
+
+        // shore crab
+        cooking(SeaItems.RAW_SHORE_CRAB_LEG.get(), SeaItems.COOKED_SHORE_CRAB_LEG.get(), consumer);
+
+        // fishing net
+        conditionalRecipe(ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, FISHING_NET.get(), 16).define('#', Items.STRING).pattern("###").pattern("###").unlockedBy(getHasName(Items.STRING), has(Items.STRING)), new OrCondition(new NotCondition(new ModLoadedCondition("farmersdelight")), new NotCondition(new ModLoadedCondition("supplementaries"))), consumer, getSaveLocation("fishing_net_from_string"));
+        conditionalRecipe(ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, FISHING_NET.get(), 16).define('#', SeaItemTags.ROPES).pattern("###").pattern("###").unlockedBy(getHasName(Items.STRING), has(SeaItemTags.ROPES)), new OrCondition(new ModLoadedCondition("farmersdelight"), new ModLoadedCondition("supplementaries")), consumer, getSaveLocation("fishing_net_from_rope"));
+
+        flowerToDye(SEA_THRIFT.get(), Items.PINK_DYE, consumer);
+        flowerToDye(SEA_HOLLY.get(), Items.BLUE_DYE, consumer);
+        flowerToDye(COASTAL_LAVENDER.get(), Items.PURPLE_DYE, consumer);
+        flowerToDye(COASTAL_WILDFLOWER.get(), Items.YELLOW_DYE, consumer);
+        flowerToDye(FIERY_DUSTER.get(), Items.ORANGE_DYE, consumer);
+        flowerToDye(SILK_LILIES.get(), Items.WHITE_DYE, consumer);
+        flowerToDye(TWILIGHT_BLADE.get(), Items.RED_DYE, consumer);
+        flowerToDye(WIDOWBLOOM.get(), Items.ORANGE_DYE, consumer);
+        flowerToDye(ORANGE_VOLCANIC_GRASS.get(), Items.ORANGE_DYE, consumer);
+        flowerToDye(YELLOW_VOLCANIC_GRASS.get(), Items.YELLOW_DYE, consumer);
+        flowerToDye(BLUE_VOLCANIC_GRASS.get(), Items.BLUE_DYE, consumer);
+
+        flowerToDye(BLACK_CHRISTMAS_TREE_WORM.get(), Items.BLACK_DYE, consumer);
+        flowerToDye(WHITE_CHRISTMAS_TREE_WORM.get(), Items.WHITE_DYE, consumer);
+        flowerToDye(RED_CHRISTMAS_TREE_WORM.get(), Items.RED_DYE, consumer);
+        flowerToDye(YELLOW_CHRISTMAS_TREE_WORM.get(), Items.YELLOW_DYE, consumer);
+        flowerToDye(BLUE_CHRISTMAS_TREE_WORM.get(), Items.BLUE_DYE, consumer);
+
+        flowerToDye(RED_ZOA.get(), Items.RED_DYE, consumer);
+        flowerToDye(ORANGE_ZOA.get(), Items.ORANGE_DYE, consumer);
+        flowerToDye(CYAN_ZOA.get(), Items.CYAN_DYE, consumer);
+        flowerToDye(PURPLE_ZOA.get(), Items.PURPLE_DYE, consumer);
+
+        tallFlowerToDye(DAWNFLAME.get(), Items.LIGHT_BLUE_DYE, consumer);
+        tallFlowerToDye(SAPPHIRE_COWBELL.get(), Items.BLUE_DYE, consumer);
+
         // spiky shell
         shellBlockset(SPIKY_SHELL.get(), SPIKY_SHELL_BRICKS.get(), SPIKY_SHELL_BRICK_SLAB.get(), SPIKY_SHELL_BRICK_STAIRS.get(), SPIKY_SHELL_PILLAR.get(), consumer);
 
@@ -143,10 +184,6 @@ public class SeaRecipeProvider extends RecipeProvider {
         SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), BUILDING_BLOCKS, result, amount).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getSaveLocation(getName(ingredient) + "_from_" + getName(result) + "_stonecutting"));
     }
 
-    private static void conditionalStonecutting(ItemLike ingredient, ItemLike result, int amount, ICondition condition, Consumer<FinishedRecipe> consumer) {
-        conditionalRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(ingredient), BUILDING_BLOCKS, result, amount).unlockedBy(getHasName(ingredient), has(ingredient)), condition, consumer, getSaveLocation(getName(ingredient) + "_from_" + getName(result) + "_stonecutting"));
-    }
-
     private static void stairs(ItemLike ingredient, ItemLike stairs, Consumer<FinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, stairs, 4).define('#', ingredient).pattern("#  ").pattern("## ").pattern("###").unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getSaveLocation(getName(stairs)));
     }
@@ -163,6 +200,14 @@ public class SeaRecipeProvider extends RecipeProvider {
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(ingredient), FOOD, result, .35f, 200).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getSaveLocation(result));
         SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ingredient), FOOD, result, .35f, 600).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getSaveLocation(getName(result) + "_from_campfire_cooking"));
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(ingredient), FOOD, result, .35f, 100).unlockedBy(getHasName(ingredient), has(ingredient)).save(consumer, getSaveLocation(getName(result) + "_from_smoking"));
+    }
+
+    private static void flowerToDye(Block flower, Item dye, Consumer<FinishedRecipe> consumer) {
+        ShapelessRecipeBuilder.shapeless(MISC, dye).group(getName(dye)).requires(flower).unlockedBy(getHasName(flower), has(flower)).save(consumer, getSaveLocation(getName(dye) + "_from_" + getName(flower)));
+    }
+
+    private static void tallFlowerToDye(Block flower, Item dye, Consumer<FinishedRecipe> consumer) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, dye, 2).group(getName(dye)).requires(flower).unlockedBy(getHasName(flower), has(flower)).save(consumer, getSaveLocation(getName(dye) + "_from_" + getName(flower)));
     }
 
     private static String getName(ItemLike object) {

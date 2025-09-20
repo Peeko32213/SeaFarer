@@ -1,4 +1,4 @@
-// 1.20.1	2025-09-19T16:46:23.2433617	seafarer Item Tags
+// 1.20.1	2025-09-19T18:16:23.3441159	seafarer Item Tags
 27a183ba458ab908477e9639e88a6f47c4f4c74c data/forge/tags/items/glass.json
 f2e43e5cde503a926499072ef73c5cd5dc5626e5 data/forge/tags/items/glass/black.json
 087d3a480f9d8a5d584d8563d90f3a826e03f926 data/forge/tags/items/glass/blue.json
@@ -39,5 +39,6 @@ a781c3822b8afa4ed05b84be592c574191972c00 data/minecraft/tags/items/slabs.json
 0421c238a7e1abf799e16d39f0359ad7d091e2c6 data/minecraft/tags/items/stairs.json
 dd44f876a28e6cb315ebb3299119d68548b69307 data/minecraft/tags/items/tall_flowers.json
 33eeb56df6be71d8602d20180a4b370471455444 data/minecraft/tags/items/walls.json
+4c827984d4c1d70430c4e85091aa93ca477f62d2 data/seafarer/tags/items/ropes.json
 9a13bd0ddf0afde60389dab41f13d40b1d35e613 data/seafarer/tags/items/sea_glass.json
 d5570691ec0aad71abfd6387e92a96d62620073a data/seafarer/tags/items/sea_glass_panes.json

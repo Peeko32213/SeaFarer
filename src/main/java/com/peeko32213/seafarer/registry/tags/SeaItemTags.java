@@ -11,6 +11,8 @@ public class SeaItemTags {
     public static final TagKey<Item> SEA_GLASS = modItemTag("sea_glass");
     public static final TagKey<Item> SEA_GLASS_PANES = modItemTag("sea_glass_panes");
 
+    public static final TagKey<Item> ROPES = modItemTag("ropes");
+
     private static TagKey<Item> modItemTag(String name) {
         return itemTag(Seafarer.MOD_ID, name);
     }

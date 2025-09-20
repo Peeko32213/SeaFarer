@@ -41,8 +41,8 @@ public class SeaItems {
     // shore crab
     public static final RegistryObject<Item> SHORE_CRAB_SPAWN_EGG = registerSpawnEgg("shore_crab", SeaEntities.SHORE_CRAB, 0xf3901f, 0x92fedb);
     public static final RegistryObject<Item> SHORE_CRAB_BUCKET = registerItemNoLang("shore_crab_bucket", () -> new SeaMobBucketItem(SeaEntities.SHORE_CRAB, () -> Fluids.WATER, false, new Item.Properties().stacksTo(1)));
-    public static final RegistryObject<Item> RAW_CRAB_LEG = registerItemNoLang("crab_leg", () -> new Item(new Item.Properties().food(SeaFoodValues.RAW_SHORE_CRAB)));
-    public static final RegistryObject<Item> COOKED_CRAB_LEG = registerItem("cooked_crab_leg", () -> new Item(new Item.Properties().food(SeaFoodValues.COOKED_SHORE_CRAB)));
+    public static final RegistryObject<Item> RAW_SHORE_CRAB_LEG = registerItemNoLang("shore_crab_leg", () -> new Item(new Item.Properties().food(SeaFoodValues.RAW_SHORE_CRAB)));
+    public static final RegistryObject<Item> COOKED_SHORE_CRAB_LEG = registerItem("cooked_shore_crab_leg", () -> new Item(new Item.Properties().food(SeaFoodValues.COOKED_SHORE_CRAB)));
 
     // snake mackerel
     public static final RegistryObject<Item> SNAKE_MACKEREL_SPAWN_EGG = registerSpawnEgg("snake_mackerel", SeaEntities.SNAKE_MACKEREL, 0x1f1526, 0x355450);

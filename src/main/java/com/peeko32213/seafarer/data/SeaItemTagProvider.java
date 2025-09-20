@@ -6,6 +6,7 @@ import com.peeko32213.seafarer.registry.tags.SeaItemTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
@@ -70,6 +71,10 @@ public class SeaItemTagProvider extends ItemTagsProvider {
         this.copy(Tags.Blocks.GLASS_PANES_PURPLE, Tags.Items.GLASS_PANES_PURPLE);
         this.copy(Tags.Blocks.GLASS_PANES_MAGENTA, Tags.Items.GLASS_PANES_MAGENTA);
         this.copy(Tags.Blocks.GLASS_PANES_PINK, Tags.Items.GLASS_PANES_PINK);
+
+        this.tag(SeaItemTags.ROPES)
+                .addOptional(new ResourceLocation("supplementaries", "rope"))
+                .addOptional(new ResourceLocation("farmersdelight", "rope"));
     }
 
     @Override

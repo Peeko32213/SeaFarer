@@ -33,8 +33,8 @@ public class SeaItemModelProvider extends ItemModelProvider {
 
         this.item(SeaItems.SEA_GLASS_PEBBLES);
 
-        this.item(SeaItems.RAW_CRAB_LEG);
-        this.item(SeaItems.COOKED_CRAB_LEG);
+        this.item(SeaItems.RAW_SHORE_CRAB_LEG);
+        this.item(SeaItems.COOKED_SHORE_CRAB_LEG);
         this.item(SeaItems.RAW_HORSESHOE_CRAB);
         this.item(SeaItems.COOKED_HORSESHOE_CRAB);
         this.item(SeaItems.DRIED_STARFISH);

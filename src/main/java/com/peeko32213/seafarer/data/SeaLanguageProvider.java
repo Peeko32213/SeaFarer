@@ -35,7 +35,7 @@ public class SeaLanguageProvider extends LanguageProvider {
 
         // Raw food
         this.addItem(SeaItems.RAW_HORSESHOE_CRAB, "Raw Horseshoe Crab");
-        this.addItem(SeaItems.RAW_CRAB_LEG, "Raw Crab Leg");
+        this.addItem(SeaItems.RAW_SHORE_CRAB_LEG, "Raw Shore Crab Leg");
 
         this.addItem(SeaItems.SHORE_CRAB_BUCKET, "Bucket of Shore Crab");
         this.addItem(SeaItems.HORSESHOE_CRAB_BUCKET, "Bucket of Horseshoe Crab");
