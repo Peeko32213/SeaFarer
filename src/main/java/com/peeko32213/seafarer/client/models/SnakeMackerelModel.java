@@ -3,7 +3,6 @@ package com.peeko32213.seafarer.client.models;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.peeko32213.seafarer.client.animations.SnakeMackerelAnimations;
-import com.peeko32213.seafarer.client.animations.SunfishAnimations;
 import com.peeko32213.seafarer.entities.SnakeMackerel;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelPart;
