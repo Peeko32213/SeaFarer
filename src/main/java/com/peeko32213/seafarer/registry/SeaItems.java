@@ -33,7 +33,7 @@ public class SeaItems {
     public static final RegistryObject<Item> COOKED_HORSESHOE_CRAB = registerItem("cooked_horseshoe_crab", () -> new Item(new Item.Properties().food(SeaFoodValues.COOKED_HORSESHOE_CRAB)));
 
     // magmaw
-    public static final RegistryObject<Item> MAGMAW_SPAWN_EGG = registerSpawnEgg("magmaw", SeaEntities.MAGMAW , 0x0f0a0b, 0xf98016);
+    public static final RegistryObject<Item> MAGMAW_SPAWN_EGG = registerSpawnEgg("magmaw", SeaEntities.MAGMAW , 0x131613, 0xbd7f0d);
 
     // manta ray
     public static final RegistryObject<Item> MANTA_RAY_SPAWN_EGG = registerSpawnEgg("manta_ray", SeaEntities.MANTA_RAY , 0x070708, 0xedf5f5);

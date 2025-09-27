@@ -4,6 +4,7 @@ import com.peeko32213.seafarer.entities.ai.goal.LavaOrWaterRandomSwimGoal;
 import com.peeko32213.seafarer.entities.ai.navigation.LavaPathNavigation;
 import com.peeko32213.seafarer.entities.ai.utils.LavaSwimmingMoveControl;
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -72,14 +73,12 @@ public class Magmaw extends Monster {
         this.swimmingAnimationState.animateWhen(this.isInWaterOrBubble() || this.isInLava(), this.tickCount);
     }
 
-//    @Override
-//    public float getWalkTargetValue(BlockPos pos, LevelReader level) {
-//        if (level.getBlockState(pos).getFluidState().is(FluidTags.WATER) || level.getBlockState(pos).getFluidState().is(FluidTags.LAVA)) {
-//            return 10.0F;
-//        } else {
-//            return this.isInLava() ? Float.NEGATIVE_INFINITY : 0.0F;
-//        }
-//    }
+    @Override
+    public void calculateEntityAnimation(boolean flying) {
+        float f1 = (float) Mth.length(this.getX() - this.xo, this.getY() - this.yo, this.getZ() - this.zo);
+        float f2 = Math.min(f1 * 10.0F, 1.0F);
+        this.walkAnimation.update(f2, 0.4F);
+    }
 
     @Override
     public boolean isPushedByFluid() {

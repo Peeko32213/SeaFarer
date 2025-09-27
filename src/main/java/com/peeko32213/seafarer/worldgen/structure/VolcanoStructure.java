@@ -39,7 +39,7 @@ public class VolcanoStructure extends Structure {
         int radiusX = this.radius.sample(random);
         int radiusZ = this.radius.sample(random);
         boolean wide = random.nextFloat() <= 0.45F;
-        boolean overgrown = random.nextFloat() <= 0.3F;
+        boolean overgrown = random.nextFloat() <= 0.1F;
         long noiseSeed = random.nextLong();
 
         BlockPos pos = new BlockPos(chunkPos.getMinBlockX() + 8, startHeight, chunkPos.getMinBlockZ() + 8);

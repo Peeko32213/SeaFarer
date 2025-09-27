@@ -1,5 +1,6 @@
 package com.peeko32213.seafarer.client.models;
 
+import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.peeko32213.seafarer.client.animations.MagmawAnimations;
@@ -11,6 +12,8 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.util.Mth;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+
+import java.util.List;
 
 @OnlyIn(Dist.CLIENT)
 @SuppressWarnings("FieldCanBeLocal, unused")
@@ -28,6 +31,7 @@ public class MagmawModel extends HierarchicalModel<Magmaw> {
 	private final ModelPart tail_fin_bottom;
 	private final ModelPart right_fin;
 	private final ModelPart back_right_fin;
+	private final List<ModelPart> pulsatingLayerModelParts;
 
 	public MagmawModel(ModelPart root) {
 		this.root = root.getChild("root");
@@ -42,6 +46,7 @@ public class MagmawModel extends HierarchicalModel<Magmaw> {
 		this.tail_fin_bottom = this.tail_fin.getChild("tail_fin_bottom");
 		this.right_fin = this.root.getChild("right_fin");
 		this.back_right_fin = this.root.getChild("back_right_fin");
+		this.pulsatingLayerModelParts = ImmutableList.of(this.root, this.head, this.jaw, this.dorsal_fin, this.left_fin, this.back_left_fin, this.tail, this.tail_fin, this.tail_fin_top, this.tail_fin_bottom, this.right_fin, this.back_right_fin);
 	}
 
 	public static LayerDefinition createBodyLayer() {
@@ -106,5 +111,9 @@ public class MagmawModel extends HierarchicalModel<Magmaw> {
 
 	public ModelPart root() {
 		return this.root;
+	}
+
+	public List<ModelPart> getPulsatingLayerModelParts() {
+		return this.pulsatingLayerModelParts;
 	}
 }
