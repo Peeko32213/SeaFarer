@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.blocks;
 
-import com.peeko32213.seafarer.registry.tags.SeaBlockTags;
+import com.peeko32213.seafarer.registry.tags.SeafarerBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
@@ -23,6 +23,6 @@ public class TallBeachPlantBlock extends DoublePlantBlock {
 
     @Override
     protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
-        return state.is(SeaBlockTags.BEACH_PLANT_PLACEABLE);
+        return state.is(SeafarerBlockTags.BEACH_PLANT_PLACEABLE);
     }
 }

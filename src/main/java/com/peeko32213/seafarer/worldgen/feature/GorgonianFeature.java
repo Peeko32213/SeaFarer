@@ -2,8 +2,8 @@ package com.peeko32213.seafarer.worldgen.feature;
 
 import com.mojang.serialization.Codec;
 import com.peeko32213.seafarer.blocks.GorgonianCoralBlock;
-import com.peeko32213.seafarer.registry.SeaBlocks;
-import com.peeko32213.seafarer.registry.tags.SeaBlockTags;
+import com.peeko32213.seafarer.registry.SeafarerBlocks;
+import com.peeko32213.seafarer.registry.tags.SeafarerBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
@@ -33,11 +33,11 @@ public class GorgonianFeature extends Feature<NoneFeatureConfiguration> {
         BlockPos pos = context.origin();
         RandomSource random = context.random();
 
-        Optional<Block> gorgonian = BuiltInRegistries.BLOCK.getTag(SeaBlockTags.GORGONIANS).flatMap((holders) -> holders.getRandomElement(level.getRandom())).map(Holder::value);
+        Optional<Block> gorgonian = BuiltInRegistries.BLOCK.getTag(SeafarerBlockTags.GORGONIANS).flatMap((holders) -> holders.getRandomElement(level.getRandom())).map(Holder::value);
 
         int i = 0;
 
-        BlockState block = gorgonian.map(Block::defaultBlockState).orElseGet(SeaBlocks.TOWERING_GORGONIAN.get()::defaultBlockState).setValue(GorgonianCoralBlock.WATERLOGGED, true);
+        BlockState block = gorgonian.map(Block::defaultBlockState).orElseGet(SeafarerBlocks.TOWERING_GORGONIAN.get()::defaultBlockState).setValue(GorgonianCoralBlock.WATERLOGGED, true);
         BlockPos blockpos = pos.offset(random.nextInt(8) - random.nextInt(8), random.nextInt(4) - random.nextInt(4), random.nextInt(8) - random.nextInt(8));
         for (int j = 0; j < 4; j++) {
             if (level.getFluidState(blockpos).is(FluidTags.WATER) && blockpos.getY() < 255 && block.canSurvive(level, blockpos)) {

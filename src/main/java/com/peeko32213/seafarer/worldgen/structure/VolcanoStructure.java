@@ -2,7 +2,7 @@ package com.peeko32213.seafarer.worldgen.structure;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import com.peeko32213.seafarer.registry.SeaStructureTypes;
+import com.peeko32213.seafarer.registry.SeafarerStructureTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.ChunkPos;
@@ -48,6 +48,6 @@ public class VolcanoStructure extends Structure {
 
     @Override
     public StructureType<?> type() {
-        return SeaStructureTypes.VOLCANO.get();
+        return SeafarerStructureTypes.VOLCANO.get();
     }
 }

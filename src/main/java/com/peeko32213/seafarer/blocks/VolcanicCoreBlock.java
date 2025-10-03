@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.blocks;
 
 import com.peeko32213.seafarer.blocks.blockentity.VolcanicCoreBlockEntity;
-import com.peeko32213.seafarer.registry.SeaBlockEntities;
+import com.peeko32213.seafarer.registry.SeafarerBlockEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -87,7 +87,7 @@ public class VolcanicCoreBlock extends BaseEntityBlock {
     @Nullable
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state, BlockEntityType<T> type) {
         if (level.isClientSide) {
-            return VolcanicCoreBlock.createTickerHelper(type, SeaBlockEntities.VOLCANIC_CORE.get(), VolcanicCoreBlockEntity::particleTick);
+            return VolcanicCoreBlock.createTickerHelper(type, SeafarerBlockEntities.VOLCANIC_CORE.get(), VolcanicCoreBlockEntity::particleTick);
         } else {
             return null;
         }

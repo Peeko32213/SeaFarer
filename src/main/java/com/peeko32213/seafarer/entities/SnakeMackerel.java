@@ -3,7 +3,7 @@ package com.peeko32213.seafarer.entities;
 import com.peeko32213.seafarer.entities.ai.goal.CustomRandomSwimGoal;
 import com.peeko32213.seafarer.entities.ai.goal.FollowSchoolLeaderGoal;
 import com.peeko32213.seafarer.entities.base.SchoolingFishMob;
-import com.peeko32213.seafarer.registry.SeaEntities;
+import com.peeko32213.seafarer.registry.SeafarerEntities;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.entity.*;
@@ -58,7 +58,7 @@ public class SnakeMackerel extends SchoolingFishMob {
             if (schoolCount > 0 && !this.level().isClientSide()) {
                 for (int i = 0; i < schoolCount; i++) {
                     float distance = 1.5F;
-                    SnakeMackerel entity = new SnakeMackerel(SeaEntities.SNAKE_MACKEREL.get(), this.level());
+                    SnakeMackerel entity = new SnakeMackerel(SeafarerEntities.SNAKE_MACKEREL.get(), this.level());
                     entity.moveTo(this.getX() + this.getRandom().nextFloat() * distance, this.getY() + this.getRandom().nextFloat() * distance, this.getZ() + this.getRandom().nextFloat() * distance);
                     entity.startFollowing(this);
                     this.level().addFreshEntity(entity);

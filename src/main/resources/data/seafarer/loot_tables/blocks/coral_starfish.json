@@ -1,0 +1,68 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "seafarer:coral_starfish",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "starfish_amount": "1"
+              }
+            }
+          ],
+          "name": "seafarer:coral_starfish"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "seafarer:coral_starfish",
+              "properties": {
+                "starfish_amount": "2"
+              }
+            }
+          ],
+          "name": "seafarer:coral_starfish"
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 3
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "seafarer:coral_starfish",
+              "properties": {
+                "starfish_amount": "3"
+              }
+            }
+          ],
+          "name": "seafarer:coral_starfish"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "seafarer:blocks/coral_starfish"
+}

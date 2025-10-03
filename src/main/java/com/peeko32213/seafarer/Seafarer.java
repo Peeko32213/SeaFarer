@@ -41,34 +41,34 @@ public class Seafarer {
 
         context.registerConfig(ModConfig.Type.COMMON, SeafarerConfig.COMMON_CONFIG);
 
-        SeaItems.ITEMS.register(bus);
-        SeaBlocks.BLOCKS.register(bus);
-        SeaBlockEntities.BLOCK_ENTITIES.register(bus);
+        SeafarerItems.ITEMS.register(bus);
+        SeafarerBlocks.BLOCKS.register(bus);
+        SeafarerBlockEntities.BLOCK_ENTITIES.register(bus);
         SeafarerTab.CREATIVE_TABS.register(bus);
-        SeaEntities.ENTITY_TYPES.register(bus);
-        SeaFeatures.FEATURES.register(bus);
-        SeaStructureTypes.STRUCTURE_TYPES.register(bus);
-        SeaStructurePieces.STRUCTURE_PIECES.register(bus);
-        SeaLootModifiers.LOOT_MODIFIERS.register(bus);
-        SeaSoundEvents.SOUND_EVENTS.register(bus);
-        SeaParticles.PARTICLE_TYPES.register(bus);
-        SeaPaintings.PAINTING_VARIANTS.register(bus);
+        SeafarerEntities.ENTITY_TYPES.register(bus);
+        SeafarerFeatures.FEATURES.register(bus);
+        SeafarerStructureTypes.STRUCTURE_TYPES.register(bus);
+        SeafarerStructurePieces.STRUCTURE_PIECES.register(bus);
+        SeafarerLootModifiers.LOOT_MODIFIERS.register(bus);
+        SeafarerSoundEvents.SOUND_EVENTS.register(bus);
+        SeafarerParticles.PARTICLE_TYPES.register(bus);
+        SeafarerPaintings.PAINTING_VARIANTS.register(bus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            if (SeafarerConfig.BIOMES.get()) SeaBiomePlacements.register();
-            SeaSurfaceRules.register();
-            addToComposter(SeaBlocks.COASTAL_LAVENDER, 0.7F);
-            addToComposter(SeaBlocks.COASTAL_WILDFLOWER, 0.3F);
-            addToComposter(SeaBlocks.SEA_THRIFT, 0.5F);
-            addToComposter(SeaBlocks.SEA_HOLLY, 0.6F);
-            addToComposter(SeaBlocks.FIERY_DUSTER, 0.6F);
-            addToComposter(SeaBlocks.SILK_LILIES, 0.6F);
-            addToComposter(SeaBlocks.TWILIGHT_BLADE, 0.6F);
-            addToComposter(SeaBlocks.DAWNFLAME, 0.7F);
+            if (SeafarerConfig.BIOMES.get()) SeafarerBiomePlacements.register();
+            SeafarerSurfaceRules.register();
+            addToComposter(SeafarerBlocks.COASTAL_LAVENDER, 0.7F);
+            addToComposter(SeafarerBlocks.COASTAL_WILDFLOWER, 0.3F);
+            addToComposter(SeafarerBlocks.SEA_THRIFT, 0.5F);
+            addToComposter(SeafarerBlocks.SEA_HOLLY, 0.6F);
+            addToComposter(SeafarerBlocks.FIERY_DUSTER, 0.6F);
+            addToComposter(SeafarerBlocks.SILK_LILIES, 0.6F);
+            addToComposter(SeafarerBlocks.TWILIGHT_BLADE, 0.6F);
+            addToComposter(SeafarerBlocks.DAWNFLAME, 0.7F);
 
         });
     }
@@ -81,25 +81,25 @@ public class Seafarer {
 
         boolean server = event.includeServer();
 
-        SeaDatapackProvider datapackEntries = new SeaDatapackProvider(output, provider);
+        SeafarerDatapackProvider datapackEntries = new SeafarerDatapackProvider(output, provider);
         generator.addProvider(server, datapackEntries);
         provider = datapackEntries.getRegistryProvider();
 
-        SeaBlockTagProvider blockTags = new SeaBlockTagProvider(output, provider, helper);
+        SeafarerBlockTagProvider blockTags = new SeafarerBlockTagProvider(output, provider, helper);
         generator.addProvider(server, blockTags);
-        generator.addProvider(server, new SeaItemTagProvider(output, provider, blockTags.contentsGetter(), helper));
-        generator.addProvider(server, new SeaEntityTagProvider(output, provider, helper));
-        generator.addProvider(server, new SeaBiomeTagProvider(output, provider, helper));
-        generator.addProvider(server, new SeaPaintingTagProvider(output, provider, helper));
-        generator.addProvider(server, new SeaRecipeProvider(output));
-        generator.addProvider(server, SeaLootProvider.create(output));
+        generator.addProvider(server, new SeafarerItemTagProvider(output, provider, blockTags.contentsGetter(), helper));
+        generator.addProvider(server, new SeafarerEntityTagProvider(output, provider, helper));
+        generator.addProvider(server, new SeafarerBiomeTagProvider(output, provider, helper));
+        generator.addProvider(server, new SeafarerPaintingTagProvider(output, provider, helper));
+        generator.addProvider(server, new SeafarerRecipeProvider(output));
+        generator.addProvider(server, new SeafarerLootTableProvider(output));
 
         boolean client = event.includeClient();
 
-        generator.addProvider(client, new SeaBlockstateProvider(output, helper));
-        generator.addProvider(client, new SeaItemModelProvider(output, helper));
-        generator.addProvider(client, new SeaLanguageProvider(output));
-        generator.addProvider(client, new SeaSoundDefinitionsProvider(output, helper));
+        generator.addProvider(client, new SeafarerBlockstateProvider(output, helper));
+        generator.addProvider(client, new SeafarerItemModelProvider(output, helper));
+        generator.addProvider(client, new SeafarerLanguageProvider(output));
+        generator.addProvider(client, new SeafarerSoundDefinitionsProvider(output, helper));
     }
 
     public static void addToComposter(RegistryObject<Block> item, float amountOfCompost){

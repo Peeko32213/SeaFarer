@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.blocks;
 
-import com.peeko32213.seafarer.registry.SeaBlocks;
+import com.peeko32213.seafarer.registry.SeafarerBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
@@ -52,7 +52,7 @@ public class MossyScoriaBlock extends Block implements BonemealableBlock {
     @Override
     public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (!canBeMossy(state, level, pos)) {
-            level.setBlockAndUpdate(pos, SeaBlocks.SCORIA.get().defaultBlockState());
+            level.setBlockAndUpdate(pos, SeafarerBlocks.SCORIA.get().defaultBlockState());
         }
         super.tick(state, level, pos, random);
     }

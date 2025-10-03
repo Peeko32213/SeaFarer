@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.worldgen.structure;
 
-import com.peeko32213.seafarer.registry.SeaBlocks;
-import com.peeko32213.seafarer.registry.SeaStructurePieces;
+import com.peeko32213.seafarer.registry.SeafarerBlocks;
+import com.peeko32213.seafarer.registry.SeafarerStructurePieces;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.FluidTags;
@@ -45,7 +45,7 @@ public class VolcanoStructurePiece extends StructurePiece {
     }
 
     protected VolcanoStructurePiece(LevelHeightAccessor heightAccessor, BlockPos pos, int radiusX, int radiusZ, long noiseSeed, boolean wide, boolean overgrown) {
-        super(SeaStructurePieces.VOLCANO.get(), 0, boundingBox(heightAccessor, pos, radiusX, radiusZ));
+        super(SeafarerStructurePieces.VOLCANO.get(), 0, boundingBox(heightAccessor, pos, radiusX, radiusZ));
         this.radiusX = radiusX;
         this.radiusZ = radiusZ;
         this.noiseSeed = noiseSeed;
@@ -55,7 +55,7 @@ public class VolcanoStructurePiece extends StructurePiece {
     }
 
     public VolcanoStructurePiece(StructurePieceSerializationContext context, CompoundTag compoundTag) {
-        super(SeaStructurePieces.VOLCANO.get(), compoundTag);
+        super(SeafarerStructurePieces.VOLCANO.get(), compoundTag);
         this.radiusX = compoundTag.getInt("radius_x");
         this.radiusZ = compoundTag.getInt("radius_z");
         this.noiseSeed = compoundTag.getLong("noise_seed");
@@ -89,7 +89,7 @@ public class VolcanoStructurePiece extends StructurePiece {
 
         if (!this.overgrown) {
             BlockPos corePos = new BlockPos(pos.getX(), this.getLavaLevel() - 9, pos.getZ());
-            level.setBlock(corePos, SeaBlocks.VOLCANIC_CORE.get().defaultBlockState(), 2);
+            level.setBlock(corePos, SeafarerBlocks.VOLCANIC_CORE.get().defaultBlockState(), 2);
         }
 
         for (int z = chunkBox.minZ(); z <= chunkBox.maxZ(); z++) {
@@ -103,8 +103,8 @@ public class VolcanoStructurePiece extends StructurePiece {
     }
 
     private void placeColumn(WorldGenLevel level, RandomSource random, int x, int z, int calderaCutoffY, int lavaY, int topY, float height) {
-        BlockState volcanoState = SeaBlocks.SCORIA.get().defaultBlockState();
-        BlockState mossyVolcanoState = SeaBlocks.MOSSY_SCORIA.get().defaultBlockState();
+        BlockState volcanoState = SeafarerBlocks.SCORIA.get().defaultBlockState();
+        BlockState mossyVolcanoState = SeafarerBlocks.MOSSY_SCORIA.get().defaultBlockState();
 
         int terrainY = Math.min(level.getHeight(Heightmap.Types.OCEAN_FLOOR_WG, x, z), lavaY - 3);
         int lavaBottom = lavaY - 20 + random.nextInt(4);
@@ -127,7 +127,7 @@ public class VolcanoStructurePiece extends StructurePiece {
                         } else {
                             if (this.overgrown && y > terrainY - 3) {
                                 if (level.getFluidState(mutablePos).is(FluidTags.WATER)) {
-                                    level.setBlock(mutablePos, SeaBlocks.VOLCANIC_SAND.get().defaultBlockState(), 2);
+                                    level.setBlock(mutablePos, SeafarerBlocks.VOLCANIC_SAND.get().defaultBlockState(), 2);
                                 } else {
                                     if (level.getBlockState(mutablePos.above()).getBlock() == Blocks.AIR) {
                                         level.setBlock(mutablePos, Blocks.GRASS_BLOCK.defaultBlockState(), 2);
@@ -136,7 +136,7 @@ public class VolcanoStructurePiece extends StructurePiece {
                                     }
                                 }
                             } else if (y > terrainY - 2) {
-                                level.setBlock(mutablePos, SeaBlocks.VOLCANIC_SAND.get().defaultBlockState(), 2);
+                                level.setBlock(mutablePos, SeafarerBlocks.VOLCANIC_SAND.get().defaultBlockState(), 2);
                             }
                         }
                     }
@@ -156,7 +156,7 @@ public class VolcanoStructurePiece extends StructurePiece {
                     level.setBlock(mutablePos, Blocks.AIR.defaultBlockState(), 2);
                 } else if (y > volcanoBottom) {
                     if (random.nextInt(3) != 0 && !this.overgrown) {
-                        level.setBlock(mutablePos, SeaBlocks.MOLTEN_SCORIA.get().defaultBlockState(), 2);
+                        level.setBlock(mutablePos, SeafarerBlocks.MOLTEN_SCORIA.get().defaultBlockState(), 2);
                     } else {
                         level.setBlock(mutablePos, volcanoState, 2);
                     }

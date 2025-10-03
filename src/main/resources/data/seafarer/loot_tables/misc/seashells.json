@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "seafarer:spiky_shell",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "seafarer:clam_shell",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "seafarer:horn_shell",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "seafarer:swirl_shell",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "seafarer:spiral_shell",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "seafarer:pyramid_shell",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

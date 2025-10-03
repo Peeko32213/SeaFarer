@@ -1,7 +1,7 @@
 package com.peeko32213.seafarer.blocks;
 
-import com.peeko32213.seafarer.registry.SeaBlocks;
-import com.peeko32213.seafarer.registry.tags.SeaBlockTags;
+import com.peeko32213.seafarer.registry.SeafarerBlocks;
+import com.peeko32213.seafarer.registry.tags.SeafarerBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -29,11 +29,11 @@ public class BeachgrassBlock extends BushBlock implements IForgeShearable, Bonem
 
     @Override
     public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
-        if (state.is(SeaBlocks.SHORT_BEACHGRASS.get()) && SeaBlocks.BEACHGRASS.get().defaultBlockState().canSurvive(level, pos)) {
-            level.setBlockAndUpdate(pos, SeaBlocks.BEACHGRASS.get().defaultBlockState());
+        if (state.is(SeafarerBlocks.SHORT_BEACHGRASS.get()) && SeafarerBlocks.BEACHGRASS.get().defaultBlockState().canSurvive(level, pos)) {
+            level.setBlockAndUpdate(pos, SeafarerBlocks.BEACHGRASS.get().defaultBlockState());
         }
-        if (state.is(SeaBlocks.BEACHGRASS.get()) && SeaBlocks.TALL_BEACHGRASS.get().defaultBlockState().canSurvive(level, pos) && level.isEmptyBlock(pos.above())) {
-            TallBeachPlantBlock.placeAt(level, SeaBlocks.TALL_BEACHGRASS.get().defaultBlockState(), pos, 2);
+        if (state.is(SeafarerBlocks.BEACHGRASS.get()) && SeafarerBlocks.TALL_BEACHGRASS.get().defaultBlockState().canSurvive(level, pos) && level.isEmptyBlock(pos.above())) {
+            TallBeachPlantBlock.placeAt(level, SeafarerBlocks.TALL_BEACHGRASS.get().defaultBlockState(), pos, 2);
         }
     }
 
@@ -49,6 +49,6 @@ public class BeachgrassBlock extends BushBlock implements IForgeShearable, Bonem
 
     @Override
     protected boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
-        return state.is(SeaBlockTags.BEACH_PLANT_PLACEABLE);
+        return state.is(SeafarerBlockTags.BEACH_PLANT_PLACEABLE);
     }
 }

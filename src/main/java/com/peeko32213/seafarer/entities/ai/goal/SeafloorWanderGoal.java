@@ -1,6 +1,5 @@
 package com.peeko32213.seafarer.entities.ai.goal;
 
-import com.peeko32213.seafarer.entities.ShoreCrab;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;

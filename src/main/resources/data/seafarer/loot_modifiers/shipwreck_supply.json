@@ -1,0 +1,10 @@
+{
+  "type": "seafarer:add_loot_table",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/shipwreck_supply"
+    }
+  ],
+  "loot_table": "seafarer:chests/soy_sauce"
+}

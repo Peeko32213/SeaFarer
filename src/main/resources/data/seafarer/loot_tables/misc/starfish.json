@@ -1,0 +1,40 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "seafarer:coral_starfish",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "seafarer:lagoon_starfish",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "seafarer:plumeria_starfish",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "seafarer:sky_blue_starfish",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "seafarer:sunny_starfish",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "seafarer:sunset_starfish",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

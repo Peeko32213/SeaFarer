@@ -2,7 +2,7 @@ package com.peeko32213.seafarer.entities;
 
 import com.peeko32213.seafarer.entities.ai.goal.LeaveWaterGoal;
 import com.peeko32213.seafarer.entities.ai.goal.SeafloorWanderGoal;
-import com.peeko32213.seafarer.registry.SeaItems;
+import com.peeko32213.seafarer.registry.SeafarerItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -155,7 +155,7 @@ public class ShoreCrab extends Animal implements Bucketable {
 
     @Override
     public ItemStack getBucketItemStack() {
-        ItemStack stack = new ItemStack(SeaItems.SHORE_CRAB_BUCKET.get());
+        ItemStack stack = new ItemStack(SeafarerItems.SHORE_CRAB_BUCKET.get());
         if (this.hasCustomName()) {
             stack.setHoverName(this.getCustomName());
         }

@@ -4,7 +4,7 @@ import com.peeko32213.seafarer.Seafarer;
 import com.peeko32213.seafarer.client.models.SnakeMackerelModel;
 import com.peeko32213.seafarer.client.renderer.layer.SnakeMackerelEyeLayer;
 import com.peeko32213.seafarer.entities.SnakeMackerel;
-import com.peeko32213.seafarer.registry.SeaModelLayers;
+import com.peeko32213.seafarer.registry.SeafarerModelLayers;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
@@ -19,7 +19,7 @@ public class SnakeMackerelRenderer extends MobRenderer<SnakeMackerel, SnakeMacke
     private static final ResourceLocation TEXTURE = new ResourceLocation(Seafarer.MOD_ID, "textures/entity/snake_mackerel/snake_mackerel.png");
 
     public SnakeMackerelRenderer(EntityRendererProvider.Context context) {
-        super(context, new SnakeMackerelModel(context.bakeLayer(SeaModelLayers.SNAKE_MACKEREL)), 0.4F);
+        super(context, new SnakeMackerelModel(context.bakeLayer(SeafarerModelLayers.SNAKE_MACKEREL)), 0.4F);
         this.addLayer(new SnakeMackerelEyeLayer(this));
     }
 

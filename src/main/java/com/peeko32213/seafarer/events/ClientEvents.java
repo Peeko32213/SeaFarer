@@ -23,7 +23,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 public final class ClientEvents {
 
     public static void init(FMLClientSetupEvent event) {
-        event.enqueueWork(SeaItemProperties::addItemProperties);
+        event.enqueueWork(SeafarerItemProperties::addItemProperties);
     }
 
     @SubscribeEvent
@@ -34,11 +34,11 @@ public final class ClientEvents {
                     }
                     return BiomeColors.getAverageFoliageColor(world, pos);
                 },
-                SeaBlocks.WHITE_FLOWERING_JUNGLE_LEAVES.get(),
-                SeaBlocks.ORANGE_FLOWERING_JUNGLE_LEAVES.get(),
-                SeaBlocks.YELLOW_FLOWERING_JUNGLE_LEAVES.get(),
-                SeaBlocks.BLUE_FLOWERING_JUNGLE_LEAVES.get(),
-                SeaBlocks.MAGENTA_FLOWERING_JUNGLE_LEAVES.get()
+                SeafarerBlocks.WHITE_FLOWERING_JUNGLE_LEAVES.get(),
+                SeafarerBlocks.ORANGE_FLOWERING_JUNGLE_LEAVES.get(),
+                SeafarerBlocks.YELLOW_FLOWERING_JUNGLE_LEAVES.get(),
+                SeafarerBlocks.BLUE_FLOWERING_JUNGLE_LEAVES.get(),
+                SeafarerBlocks.MAGENTA_FLOWERING_JUNGLE_LEAVES.get()
         );
     }
 
@@ -48,39 +48,39 @@ public final class ClientEvents {
                     BlockState blockstate = ((BlockItem)stack.getItem()).getBlock().defaultBlockState();
                     return event.getBlockColors().getColor(blockstate, null, null, tintIndex);
                 },
-                SeaBlocks.WHITE_FLOWERING_JUNGLE_LEAVES.get(),
-                SeaBlocks.ORANGE_FLOWERING_JUNGLE_LEAVES.get(),
-                SeaBlocks.YELLOW_FLOWERING_JUNGLE_LEAVES.get(),
-                SeaBlocks.BLUE_FLOWERING_JUNGLE_LEAVES.get(),
-                SeaBlocks.MAGENTA_FLOWERING_JUNGLE_LEAVES.get()
+                SeafarerBlocks.WHITE_FLOWERING_JUNGLE_LEAVES.get(),
+                SeafarerBlocks.ORANGE_FLOWERING_JUNGLE_LEAVES.get(),
+                SeafarerBlocks.YELLOW_FLOWERING_JUNGLE_LEAVES.get(),
+                SeafarerBlocks.BLUE_FLOWERING_JUNGLE_LEAVES.get(),
+                SeafarerBlocks.MAGENTA_FLOWERING_JUNGLE_LEAVES.get()
         );
     }
 
     @SubscribeEvent
     public static void registerParticles(RegisterParticleProvidersEvent event) {
-        event.registerSpriteSet(SeaParticles.SMALL_VOLCANIC_SMOKE.get(), VolcanicSmokeParticle.SmokeFactory::new);
-        event.registerSpriteSet(SeaParticles.MEDIUM_VOLCANIC_SMOKE.get(), VolcanicSmokeParticle.SmokeFactory::new);
-        event.registerSpriteSet(SeaParticles.BIG_VOLCANIC_SMOKE.get(), VolcanicSmokeParticle.LargeSmokeFactory::new);
-        event.registerSpriteSet(SeaParticles.GIANT_VOLCANIC_SMOKE.get(), VolcanicSmokeParticle.LargeSmokeFactory::new);
+        event.registerSpriteSet(SeafarerParticles.SMALL_VOLCANIC_SMOKE.get(), VolcanicSmokeParticle.SmokeFactory::new);
+        event.registerSpriteSet(SeafarerParticles.MEDIUM_VOLCANIC_SMOKE.get(), VolcanicSmokeParticle.SmokeFactory::new);
+        event.registerSpriteSet(SeafarerParticles.BIG_VOLCANIC_SMOKE.get(), VolcanicSmokeParticle.LargeSmokeFactory::new);
+        event.registerSpriteSet(SeafarerParticles.GIANT_VOLCANIC_SMOKE.get(), VolcanicSmokeParticle.LargeSmokeFactory::new);
     }
 
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(SeaEntities.HORSESHOE_CRAB.get(), HorseshoeCrabRenderer::new);
-        event.registerEntityRenderer(SeaEntities.MAGMAW.get(), MagmawRenderer::new);
-        event.registerEntityRenderer(SeaEntities.MANTA_RAY.get(), MantaRayRenderer::new);
-        event.registerEntityRenderer(SeaEntities.SHORE_CRAB.get(), ShoreCrabRenderer::new);
-        event.registerEntityRenderer(SeaEntities.SNAKE_MACKEREL.get(), SnakeMackerelRenderer::new);
-        event.registerEntityRenderer(SeaEntities.SUNFISH.get(), SunfishRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.HORSESHOE_CRAB.get(), HorseshoeCrabRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.MAGMAW.get(), MagmawRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.MANTA_RAY.get(), MantaRayRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.SHORE_CRAB.get(), ShoreCrabRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.SNAKE_MACKEREL.get(), SnakeMackerelRenderer::new);
+        event.registerEntityRenderer(SeafarerEntities.SUNFISH.get(), SunfishRenderer::new);
     }
 
     @SubscribeEvent
     public static void registerEntityLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(SeaModelLayers.HORSESHOE_CRAB, HorseshoeCrabModel::createBodyLayer);
-        event.registerLayerDefinition(SeaModelLayers.MAGMAW, MagmawModel::createBodyLayer);
-        event.registerLayerDefinition(SeaModelLayers.MANTA_RAY, MantaRayModel::createBodyLayer);
-        event.registerLayerDefinition(SeaModelLayers.SHORE_CRAB, ShoreCrabModel::createBodyLayer);
-        event.registerLayerDefinition(SeaModelLayers.SNAKE_MACKEREL, SnakeMackerelModel::createBodyLayer);
-        event.registerLayerDefinition(SeaModelLayers.SUNFISH, SunfishModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.HORSESHOE_CRAB, HorseshoeCrabModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.MAGMAW, MagmawModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.MANTA_RAY, MantaRayModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.SHORE_CRAB, ShoreCrabModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.SNAKE_MACKEREL, SnakeMackerelModel::createBodyLayer);
+        event.registerLayerDefinition(SeafarerModelLayers.SUNFISH, SunfishModel::createBodyLayer);
     }
 }

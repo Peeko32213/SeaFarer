@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.blocks;
 
-import com.peeko32213.seafarer.registry.tags.SeaEntityTags;
+import com.peeko32213.seafarer.registry.tags.SeafarerEntityTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -9,7 +9,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.entity.player.Player;
@@ -103,7 +102,7 @@ public class FishingNetBlock extends LadderBlock implements IForgeShearable {
     public VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         if (context instanceof EntityCollisionContext collisionContext) {
             if (collisionContext.getEntity() instanceof Mob mob) {
-                if (!mob.isLeashed() && (mob instanceof WaterAnimal || mob.getType().is(SeaEntityTags.COLLIDES_WITH_FISHING_NETS))) {
+                if (!mob.isLeashed() && (mob instanceof WaterAnimal || mob.getType().is(SeafarerEntityTags.COLLIDES_WITH_FISHING_NETS))) {
                     return this.getShape(state, level, pos, context);
                 }
             }

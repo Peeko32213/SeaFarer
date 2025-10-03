@@ -1,6 +1,6 @@
 package com.peeko32213.seafarer.entities.ai.goal;
 
-import com.peeko32213.seafarer.entities.ai.utils.SeaBehaviourUtils;
+import com.peeko32213.seafarer.entities.ai.utils.SeafarerBehaviourUtils;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.phys.Vec3;
@@ -53,6 +53,6 @@ public class LavaOrWaterRandomSwimGoal extends RandomStrollGoal {
     @Nullable
     @Override
     protected Vec3 getPosition() {
-        return SeaBehaviourUtils.getRandomSwimmableLavaOrWaterPos(this.mob, 10, 7);
+        return SeafarerBehaviourUtils.getRandomSwimmableLavaOrWaterPos(this.mob, 10, 7);
     }
 }
