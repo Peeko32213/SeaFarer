@@ -215,7 +215,7 @@ public class SeafarerLootTableProvider extends LootTableProvider {
             this.dropSelf(PINK_MOSAIC_SEA_GLASS_LAMP.get());
 
             this.dropSelf(MOLTEN_SCORIA.get());
-            this.dropWhenSilkTouch(MOSSY_SCORIA.get());
+            this.add(MOSSY_SCORIA.get(), block -> this.createSingleItemTableWithSilkTouch(block, SCORIA.get()));
             this.dropSelf(SCORIA.get());
             this.dropSelf(SCORIA_STAIRS.get());
             this.add(SCORIA_SLAB.get(), this::createSlabItemTable);

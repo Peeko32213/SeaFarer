@@ -1,4 +1,4 @@
-// 1.20.1	2025-10-02T19:37:35.6220007	Loot Tables
+// 1.20.1	2025-10-07T19:00:27.7028482	Loot Tables
 f0eafa2a82c5536fe57b6ecc5cfd7fa137336d7d data/seafarer/loot_tables/blocks/amber_coral.json
 5686111df94dec9403be512736a940acd4b65b67 data/seafarer/loot_tables/blocks/amber_coral_block.json
 56695975f8951371449f390a30d1292469d241c0 data/seafarer/loot_tables/blocks/amber_coral_fan.json
@@ -157,7 +157,7 @@ c5e99c5f05bcd9d3816f54e4f8e47f01ff6706ad data/seafarer/loot_tables/blocks/magent
 1e41e8eb6dae955c31cee645467ddce2376e2410 data/seafarer/loot_tables/blocks/maroon_coral_fan.json
 f602daa5be68dfcefde88b62ba2c115f2cdca569 data/seafarer/loot_tables/blocks/maroon_coral_wall_fan.json
 2726eb7f325916a8e1b4be77b107a244e5bb7e55 data/seafarer/loot_tables/blocks/molten_scoria.json
-20545543cd7b9176753c5b80a64af14b47e9b2ef data/seafarer/loot_tables/blocks/mossy_scoria.json
+09cdfa106cba23cb020a48dc9040d2b854a82a97 data/seafarer/loot_tables/blocks/mossy_scoria.json
 ae2f7cb217fac28c5f2406fc188261d6044867db data/seafarer/loot_tables/blocks/olive_coral.json
 4bdae539af388a7871180925cbd089066517ea19 data/seafarer/loot_tables/blocks/olive_coral_block.json
 a62e76f7bd57101089229ac28bd4082cd58073ff data/seafarer/loot_tables/blocks/olive_coral_fan.json
